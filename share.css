@@ -232,7 +232,9 @@ a{
     mask: var(--icon-chevron-down) no-repeat center / contain;
     /* transform: rotate(180deg); */
 }
-
+.faq .accordion-header button.collapsed {
+    color: var(--black);
+}
 .faq .accordion-header:has(button:not(.collapsed)) {
     background-color: var(--brand-dark-primary);
     color: var(--white);
