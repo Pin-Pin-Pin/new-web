@@ -1,0 +1,49 @@
+/* 各種募款頁的 */
+
+/* 捐款方案卡片 */
+.donation-plan .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 30px; 
+    justify-items: center;
+}
+.donation-plan .container:not(:has(.donation-plan__cards)) {
+    column-gap: 32px;
+}
+
+.donation-plan__cards {
+    display: grid;
+    gap: 32px;
+    width: 100%;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+    .donation-plan__cards {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* 無 slogan / wrapper 的頁面（如 general_donate） */
+    .donation-plan .container:not(:has(.donation-plan__cards)) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    .donation-plan__cards {
+        gap: 80px;
+    }
+    .donation-plan .container:not(:has(.donation-plan__cards)) {
+        column-gap: 80px;
+    }
+}
+.card {
+    text-align: center;
+}
+.card-body {
+    padding: 24px;
+}
+.card .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+}
+

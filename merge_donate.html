@@ -1,0 +1,661 @@
+<style type="text/css">
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css");
+/* * {
+    outline: 1px solid blue !important;
+} */
+
+:root {
+    --brand-primary: #35A97C;
+    --brand-dark-primary:  #55716C;
+    --brand-dark-background: #E5EAE3;
+    --black:#000000;  
+    --white:#FFFFFF;
+    --gray-900:#2B2B2B;
+    --gray-800:#454545;
+    --gray-700:#5D5D5D;
+    --gray-600:#838383;
+    --gray-500:#C0C0C0;
+    --gray-400:#E1E1E1;
+    --gray-300:#E5E5E5;
+    --gray-200:#EFEFEF;
+    --gray-100:#F8F9FA;
+    --icon-arrow-right-mini: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 9.99989C3 9.80097 3.07902 9.61021 3.21967 9.46956C3.36032 9.3289 3.55109 9.24989 3.75 9.24989H14.388L10.23 5.28989C10.1557 5.22245 10.0956 5.14077 10.0534 5.0497C10.0112 4.95863 9.98771 4.86002 9.98432 4.7597C9.98093 4.65939 9.99771 4.55941 10.0337 4.4657C10.0696 4.37199 10.124 4.28644 10.1937 4.21414C10.2633 4.14184 10.3467 4.08425 10.439 4.04479C10.5313 4.00532 10.6306 3.98478 10.7309 3.98438C10.8313 3.98398 10.9307 4.00374 11.0233 4.04247C11.1159 4.08121 11.1998 4.13814 11.27 4.20989L16.77 9.45989C16.8426 9.52985 16.9003 9.61373 16.9398 9.70651C16.9792 9.79929 16.9995 9.89907 16.9995 9.99989C16.9995 10.1007 16.9792 10.2005 16.9398 10.2933C16.9003 10.386 16.8426 10.4699 16.77 10.5399L11.27 15.7899C11.1998 15.8616 11.1159 15.9186 11.0233 15.9573C10.9307 15.996 10.8313 16.0158 10.7309 16.0154C10.6306 16.015 10.5313 15.9945 10.439 15.955C10.3467 15.9155 10.2633 15.8579 10.1937 15.7856C10.124 15.7133 10.0696 15.6278 10.0337 15.5341C9.99771 15.4404 9.98093 15.3404 9.98432 15.2401C9.98771 15.1398 10.0112 15.0411 10.0534 14.9501C10.0956 14.859 10.1557 14.7773 10.23 14.7099L14.388 10.7499H3.75C3.55109 10.7499 3.36032 10.6709 3.21967 10.5302C3.07902 10.3896 3 10.1988 3 9.99989Z' fill='%23000'/%3E%3C/svg%3E");
+    --icon-arrow-top-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25'/%3E%3C/svg%3E");
+    --icon-chevron-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.47 7.72007C11.6106 7.57962 11.8012 7.50073 12 7.50073C12.1987 7.50073 12.3894 7.57962 12.53 7.72007L20.03 15.2201C20.1037 15.2887 20.1628 15.3715 20.2038 15.4635C20.2448 15.5555 20.2668 15.6548 20.2686 15.7556C20.2704 15.8563 20.2518 15.9563 20.2141 16.0497C20.1764 16.1431 20.1203 16.2279 20.049 16.2991C19.9778 16.3703 19.893 16.4265 19.7996 16.4642C19.7062 16.5019 19.6062 16.5204 19.5055 16.5187C19.4048 16.5169 19.3055 16.4948 19.2135 16.4539C19.1215 16.4129 19.0387 16.3538 18.97 16.2801L12 9.31007L5.03 16.2801C4.88782 16.4126 4.69978 16.4847 4.50548 16.4812C4.31118 16.4778 4.12579 16.3991 3.98838 16.2617C3.85096 16.1243 3.77225 15.9389 3.76882 15.7446C3.7654 15.5503 3.83752 15.3622 3.97 15.2201L11.47 7.72007Z' fill='white'/%3E%3C/svg%3E");
+    --icon-chevron-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.53 16.2799C12.3894 16.4204 12.1987 16.4992 12 16.4992C11.8012 16.4992 11.6106 16.4204 11.47 16.2799L3.97 8.77991C3.83752 8.63773 3.7654 8.44969 3.76882 8.25539C3.77225 8.06109 3.85096 7.8757 3.98838 7.73829C4.12579 7.60087 4.31118 7.52216 4.50548 7.51873C4.69978 7.51531 4.88782 7.58743 5.03 7.71991L12 14.6899L18.97 7.71991C19.0387 7.64622 19.1215 7.58712 19.2135 7.54613C19.3055 7.50514 19.4048 7.48309 19.5055 7.48132C19.6062 7.47954 19.7062 7.49807 19.7996 7.53579C19.893 7.57351 19.9778 7.62965 20.049 7.70087C20.1203 7.77209 20.1764 7.85692 20.2141 7.95031C20.2518 8.0437 20.2704 8.14373 20.2686 8.24443C20.2668 8.34513 20.2448 8.44445 20.2038 8.53645C20.1628 8.62845 20.1037 8.71125 20.03 8.77991L12.53 16.2799Z' fill='%2355716C'/%3E%3C/svg%3E");
+  }
+
+body{
+    color: var(--black);
+}
+section{
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.container{
+    /* border: 1px solid red; */
+    display: flex;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 342px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+@media (min-width: 768px) {
+    section{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .container{
+        max-width: 760px;
+    }
+}
+@media (min-width: 1200px) {
+    section{
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+    .container{
+        max-width: 960px;
+    }
+}
+h1{
+    font-family: "Noto Sans TC";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+h2,.h2{
+    font-family: "Noto Sans TC";
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+h3,.h3{
+    font-family: "Noto Sans TC";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+h4,.h4{
+    font-family: "Noto Sans TC";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+p,.p{
+    font-family: "Noto Sans TC";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem; /* 175% */
+}
+a{
+    color: var(--brand-dark-primary);
+    font-family: "Noto Sans TC";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem; /* 175% */
+}
+.description{
+    font-family: "Noto Sans TC";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem; /* 166.667% */
+}
+.section-title{
+    display: inline-block; 
+    padding: 16px 0 4px 0;
+    border-top: 1px solid var(--brand-dark-primary);
+    gap: 10px;
+    color: var(--brand-dark-primary);
+    margin-bottom: 0;
+}
+/* 組件 */
+.btn{
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 8px 8px 12px;
+    gap: 4px;
+    border-radius: 4px;
+
+}
+.btn-primary{
+    background-color: var(--brand-primary);
+    color: var(--white);
+    border: none;
+
+}
+.btn-primary:hover{
+    background-color: var(--brand-dark-primary);
+}
+.btn-primary.btn-icon-arrow-right-mini::after{
+    background-color: var(--white);
+}
+.btn-secondary{
+    border: 1px solid var(--brand-primary);
+    background-color: var(--white);
+    color: var(--black);
+}
+.btn-secondary:hover{
+    border: 1px solid var(--Brand-Primary, #35A97C);
+    background-color: var(--gray-200);
+}
+
+/* Heroicons: arrow-top-right-on-square (outline) */
+.btn-icon-arrow-right-mini{
+    line-height: 1;
+}
+.btn-icon-arrow-right-mini::after {
+    align-self: center;
+    content: "";
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    -webkit-mask: var(--icon-arrow-right-mini) no-repeat center / contain;
+    mask: var(--icon-arrow-right-mini) no-repeat center / contain;
+}
+/* faq */
+.accordion{
+    width: 100%;
+}
+.faq .accordion-item{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid var(--brand-dark-primary);
+    overflow: hidden;
+}
+.accordion-item:first-of-type {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.faq .accordion-item:not(:first-of-type) {
+    border-top: 1px solid var(--brand-dark-primary);
+}
+.faq .accordion-header {
+    margin-bottom: 0;
+    padding: 8px 16px;
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+.faq .accordion-body{
+    padding: 8px 16px;
+    background-color: var(--white);
+    color: var(--black);
+    transition: opacity 0.3s ease;
+}
+
+.faq .accordion-header button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    transition: color 0.35s ease;
+}
+
+/* 展開前：向下箭頭 */
+.accordion-header button.collapsed::after {
+    content: "";
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--brand-dark-primary);
+    -webkit-mask: var(--icon-chevron-down) no-repeat center / contain;
+    mask: var(--icon-chevron-down) no-repeat center / contain;
+    transition: background-color 0.35s ease;
+}
+
+/* 展開後：向上箭頭 */
+.accordion-header button:not(.collapsed)::after {
+    content: "";
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--white);
+    -webkit-mask: var(--icon-chevron-down) no-repeat center / contain;
+    mask: var(--icon-chevron-down) no-repeat center / contain;
+    /* transform: rotate(180deg); */
+}
+
+.faq .accordion-header:has(button:not(.collapsed)) {
+    background-color: var(--brand-dark-primary);
+    color: var(--white);
+}
+
+.faq .accordion-header:has(button:not(.collapsed)) button {
+    color: var(--white);
+}
+
+.faq .accordion-collapse.collapsing {
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq .accordion-collapse:not(.show):not(.collapsing) .accordion-body {
+    opacity: 0;
+}
+/* faq */
+.faq .container{
+    display: flex;
+    flex-direction: column;
+    gap:24px ;
+    align-items: flex-start;
+}
+.faq .accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.faq p{
+    margin-bottom: 0;
+}
+.faq button{
+    padding: 0;
+    align-items: center;
+}
+
+/* *{
+    border: 1px solid black;
+} */
+picture source {
+    display: none; 
+    line-height: 0;
+}
+/* 以上debug */
+
+#navbar {
+    display: none;
+}
+picture{
+    display: block;
+    height: 100%;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none !important;
+    /* color: inherit !important; */
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none !important;
+    /* color: inherit !important; */
+}
+/* --------------------------------- */
+/* 各section css */
+/* about */
+.about .container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* align-self: stretch; */
+}
+.about .img-box{
+    width:100%;
+}
+.about img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top right;
+    border-radius: 8px;
+
+}
+.about h3{
+    color: var(--brand-dark-primary);
+    margin-bottom: 40px;
+}
+/* .text-box{
+
+} */
+@media (min-width: 768px){
+    .about .container{
+        flex-direction: row;
+        align-items: stretch;
+    }
+}
+
+.about-grid-layout {
+    display: grid;
+    gap: 40px;
+    align-items: center;    /* ? */
+    grid-template-columns: 1fr
+
+  }
+
+@media (min-width: 768px)  {
+    .about-grid-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    .about-grid-layout {
+        grid-template-columns: 1fr 596px; 
+    }
+}
+.img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* .core-values--------- */
+.core-values{
+    background-color: var(--brand-dark-primary);
+}
+.core-values p{
+    color: var(--white);
+}
+.core-values .container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+     
+}
+.slogan-box{
+    max-width: 100%; 
+}
+.signature-box{
+    width: 218px;
+    height: auto  ;
+}
+/* 捐款方案 */
+.donation-plan{
+    background-color: var(--brand-dark-background);
+}
+.donation-plan h3{
+    color: var(--brand-primary);
+}
+.donation-plan .container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+@media (min-width: 768px){
+    .donation-plan .container{
+        flex-direction: row;
+        align-items: center;
+    }
+
+}
+@media (min-width: 1200px){
+    .donation-plan .container{
+        gap: 80px;
+    }
+
+}
+.card{
+    text-align: center;
+}
+.card-body{ 
+    padding: 24px;
+}
+.card .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+}
+/* .btn{
+    position: relative;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 1px solid red;
+    pointer-events: none;
+  } */
+   /* faq */
+.faq {
+    background-color: var(--white );
+}
+
+
+</style>
+<!-- meta charset="utf-8" -->
+<!-- meta name="viewport" content="width=device-width, initial-scale=1.0" -->
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<section class="about">
+    <div class="container">
+        <div class="about-grid-layout">
+            <div class="text-box">
+                <h2 class="h3">許多環境問題，<br />需要聚集公民力量才能改變</h2>                     
+                <p class="">流失的農地、挖掉的山頭、工廠排放的污染跟難以處理的萬年核廢，這些現場缺乏良好的環境政策，造成食安、空污……生活在其中令人憂慮。</p>
+                <p class="mb-0">
+                18 年來地球公民透過調查研究與行動，集結公民力量，促成環境個案與法令政策的改變，例如礦業法、水污法、毒物管理法……。我們深信每個人都可以為環境付出一份心力，只要提升環境意識並積極參與，這座島嶼將邁上永續之路。</p>
+            </div>
+            <div class="img-box">
+                <picture>
+                    <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-dt.webp" type="image/webp" media="(min-width: 1200px)"/>
+                    <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-tbl.webp" type="image/webp" media="(min-width: 768px)"/>
+                    <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-mb.webp" type="image/webp"/>
+                    <img  alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/.jpg" fetchpriority="high" decoding="async"/>
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="achievements container-fluid px-0">
+    <div class="row g-0">
+        <div class="col-md-6 col-12">
+            <picture>
+                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260306-05-w_960.webp" type="image/webp" media="(min-width: 1400px)"/>
+                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260306-04-w_750.webp" type="image/webp"/>
+                <img decoding="async" loading="lazy" alt="多個議題的集會遊行倡議的現場" class="img-fluid w-100" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-mb.jpg"
+                width="684" height="480" />
+            </picture>
+        </div>
+        <div class="col-md-6 col-12">
+            <picture>
+                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260306-07-w_960.webp" type="image/webp" media="(min-width: 1400px)"/>
+                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260306-06-w_750.webp" type="image/webp"/>
+                <img decoding="async" loading="lazy" alt="那些看不見的地方，改變正在發生" class="img-fluid w-100" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-mb.jpg" 
+                width="684" height="480" />
+            </picture>
+        </div>
+    </div>
+</section>
+<section class="core-values">
+    <div class="container">
+        <p class="mb-0">為了維持公正獨立，地球公民堅持不接受政府與被監督企業的資助，不分黨派監督，只說對得起環境的真話。</p>
+        <div class="slogan-box">
+            <picture>
+                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240812_01.webp" type="image/webp" /><img decoding="async" loading="lazy" alt="環境友善的政策不會從天而降，需要你的支持才會發生" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240812_01.png" />
+            </picture>
+        </div>
+        <div class="signature-box">
+            <picture>
+                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240820_09.webp" type="image/webp" /><img decoding="async" loading="lazy" alt="地球公民基金會董事長李根政敬上" class="img-fluid " src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240820_09.png" />
+            </picture>
+        </div>
+        
+        
+    </div>
+</section>
+<!-- 這也太模糊 -->
+<section class="donation-plan">
+    <div class="container">
+
+        <div class="card">
+            <picture>
+                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240730_01.webp" type="image/webp" />
+                <img decoding="async" loading="lazy" alt=""  id="img_1" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240730_01.png" />
+            </picture>
+            <div class="card-body">
+                <h3 class="card-title mb-0">定期支持方案</h3>
+                <p>$500/$1000/$1500</p>
+                <p class="card-text"><span style="white-space: nowrap;">我們不是因為看見希望才堅持，</span><span style="white-space: nowrap;">而是因為堅持了，所以看見希望</span></p>
+                <a href="#" class="btn btn-primary btn-icon-arrow-right-mini">訂閱美好環境</a>
+                <!--  -->
+            </div>
+        </div>
+ 
+        <div class="card">
+            <picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240730_02.webp" type="image/webp" />
+                <img decoding="async" loading="lazy" alt=""  id="img_2" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240730_02.png" />
+            </picture>
+            <div class="card-body">
+                <h3 class="card-title mb-0">單筆支持方案</h3>
+                <p>$1200/$3000/$5000</p>
+                <p class="card-text">在關鍵時刻做出的關鍵決定</br>重磅出擊，創造影響力！</p>
+                <a href="#" class="btn btn-primary btn-icon-arrow-right-mini">打造永續家園</a>
+                
+                <!--  -->
+            </div>
+        </div>
+
+   
+    </div>
+</section> 
+<section class="faq">
+    <div class="container">
+        <h2 class="h3 section-title">常見問答</h2>
+        <div class="accordion" id="accordionExample" style="color:#2b2d2d"></div>
+    </div>
+</section>
+<footer class="footer py-xxl-4 py-0 mt-0 container-fluid" style="background-color:#009d7e;color: white;">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-sm-8 px-0 d-flex flex-wrap align-items-center">
+            <div class="col-12 col-xxl-6  p-0 m-0">
+                <h2 class="my-0 mx-0  py-3 text-center" style="color:white;"><a class="pb-6" href="https://www.cet-taiwan.org/about/annualreport" target="_blank">進一步了解地球公民</a></h2>
+            </div>
+            <div class="col-12 col-xxl-6 p-0 my-3 my-xxl-0">
+                <div class="mx-xl-4 mx-0 px-0" style="white-space: nowrap;">
+                    <p class="mb-0 mx-0 px-0 text-xxl-end text-center">立案字號：環署綜字第 0990100475 號</p>
+                    <p class="mb-0 px-0 text-xxl-end text-center">勸募字號：衛部救字第 1141362106 號</p>
+                    <p class="mb-0 text-xxl-end text-center px-0 text-end"><a href="https://www.cet-taiwan.org/node/3261" target="_blank">隱私政策與個人資料收集聲明</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+// window.onload = function() {
+//     setEqualHeight_2();
+// }
+
+// function setEqualHeight_2() {
+//     var div1 = document.getElementById('plan_1');
+//     var div2 = document.getElementById('plan_2');
+//     var div3 = document.getElementById('amount_1');
+//     var div4 = document.getElementById('amount_2');
+//     var div5 = document.getElementById('img_1');
+//     var div6 = document.getElementById('img_2');
+//     var div7 = document.getElementById('p_1');
+//     var div8 = document.getElementById('p_2');
+//     var div9 = document.getElementById('btn_1');
+//     var div10 = document.getElementById('btn_2');
+//     var plan_maxHeight = Math.max(div1.offsetHeight, div2.offsetHeight);
+//     var amount_maxHeight = Math.max(div3.offsetHeight, div4.offsetHeight);
+//     var p_maxHeight = Math.max(div7.offsetHeight, div8.offsetHeight);
+//     var btn_maxHeight = Math.max(div9.offsetHeight, div10.offsetHeight);
+//     div1.style.height = plan_maxHeight + 'px';
+//     div2.style.height = plan_maxHeight + 'px';
+//     div3.style.height = amount_maxHeight + 'px';
+//     div4.style.height = amount_maxHeight + 'px';
+//     div7.style.height = p_maxHeight + 'px';
+//     div8.style.height = p_maxHeight + 'px';
+//     div9.style.height = btn_maxHeight + 'px';
+//     div10.style.height = btn_maxHeight + 'px';
+// }
+
+function single() {
+    window.parent.ContribPage.setContributeType('non-recurring');
+};
+
+function recurring() {
+    window.parent.ContribPage.setContributeType('recurring');
+};
+
+var faqData = [
+    {
+        question: '地球公民將捐款用於哪些環境專案？',
+        content: [
+            '我們投入的環保工作範疇為山林國土、環境污染、能源轉型、永續花東、環境民主。藉由調查研究、揭露環境問題，提出解決方案，並據以進行政策施壓、國會遊說、教育推廣等，促成改變。'
+        ]
+    },
+    {
+        question: '我如何知道地球公民基金會年度捐款使用明細？',
+        content: [
+            '每年度的帳目皆送環境部備查後公開，可以在地球公民官網閱讀線上版<a  href="https://www.cet-taiwan.org/node/3155" target="_blank">財報 & 徵信</a>，了解地球公民各項經費支出。<a  href="https://www.cet-taiwan.org/about/annualreport" target="_blank">線上年度報告</a>在隔年出刊，同時以紙本和電子報將摘要及連結寄予每位捐款會員。'
+        ]
+    },
+    {
+        question: '地球公民的財務報告受到哪些單位的審核？',
+        content: [
+            '依我國法令設立之財團法人地球公民基金會（以下簡稱本會），受董事會監督，董事會設董事 7 名，監事 2 名董監事成員均為義務性質，成員涵蓋各領域專業之人士，並具備獨立性。本會年度財務報表，皆先經由董監事會審核，並送主管機關環境部備查。據衛生福利部規定，公益勸募需每年申請募款字號，申請流程包括遞交勸募計畫書、由衛福部審核後核發募款字號。募款字號年度結束時，也需遞交報告。'
+        ]
+    },
+    {
+        question: '捐款是否會有收據？',
+        content: [
+            '您在進行捐款時請填寫正確地址，將會收到本會正式收據。可利用捐款收據作為抵扣所得稅額之用。'
+        ]
+    },
+    {
+        question: '何時會收到捐款收據？',
+        content: [
+            '單次捐款人會在捐款成功後，可以選擇捐款隔月收到捐款收據與相關資料或年度收到捐款收據。每月定期定額捐款人則於每年報稅月前，寄發上一年度全年的捐款總額證明，收據可作為抵扣稅額使用，亦明列個人全年度捐款紀錄。'
+        ]
+    },
+    {
+        question: '捐款會員如何了解會務與環境行動成果？',
+        content: [
+            '地球公民有義務向捐款會員回報環境行動的進度、成果與財務報告，形式包括電子報、期刊或出版品等。',
+            '．每年發表「<a href="https://www.cet-taiwan.org/about/annualreport" target="_blank">年度報告</a>」，彙整當年度重大工作成果。',
+            '．不定期寄發「會員電子報」，報告最新的環境行動進度與參加管道，讓您掌握第一手消息。',
+            '．不定期發行電子期刊「地球公民通訊」專文解析環境專題，讓您深度了解環境議題。',
+            '．不定期舉辦「會員活動」，將以電子郵件、簡訊等管道與您聯繫。',
+            '．您也可以追蹤本會的 <a href="https://www.facebook.com/CitizenoftheEarth" target="_blank">FB</a>、<a  href="https://www.instagram.com/cettw/" target="_blank">IG </a>粉絲專頁，即時更新地球公民最新的倡議進度。'
+        ]
+    }
+];
+
+function renderFaq() {
+    var accordion = document.getElementById('accordionExample');
+    if (!accordion) return;
+
+    accordion.innerHTML = faqData.map(function (item, index) {
+        var id = index + 1;
+        var isLast = index === faqData.length - 1;
+        var bodyHtml = item.content.map(function (text) {
+            return '<p class="faq-w">' + text + '</p>';
+        }).join('');
+
+        return (
+            '<div class="accordion-item"' + (isLast ? ' style=""' : '') + '>' +
+                '<h3 class="accordion-header" id="heading-' + id + '">' +
+                    '<button aria-controls="collapse-' + id + '" aria-expanded="false" class="collapsed p " data-bs-target="#collapse-' + id + '" data-bs-toggle="collapse" type="button">' + item.question + '</button>' +
+                '</h3>' +
+                '<div aria-labelledby="heading-' + id + '" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-' + id + '">' +
+                    '<div class="accordion-body">' + bodyHtml + '</div>' +
+                '</div>' +
+            '</div>'
+        );
+    }).join('');
+}
+
+renderFaq();
+</script>
+</body>
