@@ -62,7 +62,7 @@ section{
 .donation-plan .container {
     display: grid;
 }
-
+/* 文字 */
 h1{
     font-family: "Noto Sans TC";
     font-size: 3rem;
@@ -121,10 +121,35 @@ a{
     color: var(--brand-dark-primary);
     margin-bottom: 0;
 }
+/* 圖片 */
+picture{
+    display: block;
+    height: 100%;
+}
 img{
     display: block;
     max-width: 100%;
     height: auto;
+}
+.bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    pointer-events: none;
+}
+.bg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* max-width: none; */
+    object-fit: cover;
+    object-position: center top;
+}
+
+section:has(.bg) > .bg-uplayer {
+    position: relative;
+    z-index: 1;
 }
 /* 組件 */
 .btn{
