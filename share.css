@@ -5,7 +5,7 @@
 :root {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
-    --brand-dark-background: #E5EAE3;
+    --brand-background-green: #E5EAE3;
     --black:#000000;  
     --white:#FFFFFF;
     --gray-900:#2B2B2B;
@@ -120,6 +120,11 @@ a{
     gap: 10px;
     color: var(--brand-dark-primary);
     margin-bottom: 0;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 /* 組件 */
 .btn{

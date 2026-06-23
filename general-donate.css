@@ -1,24 +1,15 @@
 /* *{
     border: 1px solid black;
 } */
-picture source {
+/* picture source {
     display: none; 
     line-height: 0;
-}
+} */
 /* 以上debug */
 
 #navbar {
     display: none;
 }
-picture{
-    display: block;
-    height: 100%;
-}
-img{
-    display: block;
-    max-width: 100%;
-}
-
 a {
     text-decoration: none !important;
     /* color: inherit !important; */
@@ -111,7 +102,7 @@ a:active {
 }
 /* 捐款方案 */
 .donation-plan{
-    background-color: var(--brand-dark-background);
+    background-color: var(--brand-background-green);
 }
 .donation-plan h3{
     color: var(--brand-primary);
@@ -134,4 +125,5 @@ a:active {
 .faq {
     background-color: var(--white );
 }
+
 

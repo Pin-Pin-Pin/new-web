@@ -6,15 +6,12 @@ img {
 
 /* Hero */
 .farm-hero {
+    position: relative;
     display: flex;
     align-items: center;
-    background-image: url(https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20220811-4.jpg?fid=22703);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
     min-height: 60vh;
+    overflow: hidden;
 }
-
 
 @media (min-width: 1200px) {
     .farm-hero {
@@ -188,4 +185,7 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
+}
+footer{
+    background-color: #EFE7C2;
 }
