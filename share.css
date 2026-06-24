@@ -27,35 +27,39 @@
 body{
     color: var(--black);
 }
-section{
+section {
     padding-left: 24px;
     padding-right: 24px;
 }
-.container{
-    /* border: 1px solid red; */
+
+.container {
     display: flex;
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    max-width: 342px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 64px;
     padding-bottom: 64px;
 }
+
 @media (min-width: 768px) {
-    section{
+    section {
         padding-left: 40px;
         padding-right: 40px;
     }
-    .container{
+
+    .container {
         max-width: 760px;
     }
 }
+
 @media (min-width: 1200px) {
-    section{
+    section {
         padding-left: 120px;
         padding-right: 120px;
     }
-    .container{
+
+    .container {
         max-width: 960px;
     }
 }
