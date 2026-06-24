@@ -63,10 +63,6 @@ section {
         max-width: 960px;
     }
 }
-
-.donation-plan .container {
-    display: grid;
-}
 /* 文字 */
 h1{
     font-family: "Noto Sans TC";
