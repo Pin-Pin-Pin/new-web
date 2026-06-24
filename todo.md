@@ -6,6 +6,8 @@
     </picture>
 
 
+#上稿時
+<meta name="robots" content="noindex,nofollow">拿掉
 
 我想請你撰寫一隻python程式碼，依次執行以下步驟：
 1.讓使用者輸入html的檔名，建立同名資料夾，將該檔案內img標籤的圖片下載到該資料夾。
