@@ -113,7 +113,7 @@ a{
     font-weight: 400;
     line-height: 1.25rem; /* 166.667% */
 }
-.section-title{
+.section-title {
     display: inline-block; 
     padding: 16px 0 4px 0;
     border-top: 1px solid var(--brand-dark-primary);
@@ -430,27 +430,66 @@ section:has(.page-top-container){
 .content-tabs-wrap {
     position: relative;
     width: 100%;
-    margin-left: -24px;
-    margin-right: -24px;
+    min-width: 0;
+}
+
+.content-tabs-wrap::before,
+.content-tabs-wrap::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+}
+
+.content-tabs-wrap::before {
+    content: "";
+    left: 0;
+    background: linear-gradient(to left, transparent, var(--white) 70%);
 }
 
 .content-tabs-wrap::after {
     content: "";
-    position: absolute;
-    top: 0;
     right: 0;
-    bottom: 0;
-    width: 48px;
-    background: linear-gradient(to right, transparent, var(--white));
-    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 6px;
+    background: linear-gradient(to right, transparent, var(--white) 55%);
+    color: var(--brand-primary);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.content-tabs-wrap.is-scrollable::after {
+    content: "›";
+    opacity: 1;
+}
+
+.content-tabs-wrap.is-scrollable.is-scrolled-left::before {
+    opacity: 1;
+}
+
+.content-tabs-wrap.is-scrollable.is-scrolled-end::after {
+    opacity: 0;
 }
 
 .content-tabs-nav {
     gap: 16px;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
     scrollbar-width: none;
-    padding: 0 24px;
+    padding: 0;
     border-bottom: 1px solid var(--gray-400);
 }
 
@@ -460,6 +499,7 @@ section:has(.page-top-container){
 
 .content-tabs-nav .nav-item {
     flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 .content-tabs-nav .nav-link {
@@ -494,17 +534,15 @@ section:has(.page-top-container){
 
 .content-tabs-panels {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
 }
 
 
 
 
 @media (min-width: 768px) {
-    .content-tabs-wrap {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
+    .content-tabs-wrap::before,
     .content-tabs-wrap::after {
         display: none;
     }
@@ -513,8 +551,6 @@ section:has(.page-top-container){
         padding-left: 0;
         padding-right: 0;
     }
-
-
 }
 
 
