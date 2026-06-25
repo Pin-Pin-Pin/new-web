@@ -308,6 +308,10 @@ section:has(.bg) > .bg-uplayer {
     gap: 8px;
 }
 .breadcrumb p{
+    font-size: 0.75rem;
+    color: var(--gray-600);
+    font-weight: 400;
+    line-height: 1.25rem; 
     margin: 0;
 }
 .breadcrumb-home{
