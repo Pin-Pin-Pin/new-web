@@ -4,6 +4,14 @@ img {
     height: auto;
 }
 
+/* 覆寫 share.css 的 section padding，維持原有全幅區塊排版 */
+.farm-hero,
+.people-quotes,
+.farm-story,
+.farm-spacer {
+    padding: 0;
+}
+
 /* Hero */
 .farm-hero {
     position: relative;

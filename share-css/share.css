@@ -1,7 +1,6 @@
 /* * {
     outline: 1px solid green !important;
 } */
-
 :root {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
@@ -26,8 +25,9 @@
 
 body{
     color: var(--black);
+    font-family: "Noto Sans TC";
 }
-section {
+section,.section {
     padding: 64px 24px;
 }
 
@@ -42,7 +42,7 @@ section {
 }
 
 @media (min-width: 768px) {
-    section {
+    section,.section {
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -53,7 +53,7 @@ section {
 }
 
 @media (min-width: 1200px) {
-    section {
+    section,.section {
         padding-left: 120px;
         padding-right: 120px;
     }
@@ -91,12 +91,15 @@ h4,.h4{
     font-weight: 500;
     line-height: normal;
 }
-p,.p{
+p,.p,li{
     font-family: "Noto Sans TC";
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.75rem; /* 175% */
+}
+p:last-child,li:last-child{
+    margin-bottom: 0;
 }
 a{
     color: var(--brand-dark-primary);
@@ -114,6 +117,7 @@ a{
     line-height: 1.25rem; /* 166.667% */
 }
 .section-title {
+    font-weight: 700;
     display: inline-block; 
     padding: 16px 0 4px 0;
     border-top: 1px solid var(--brand-dark-primary);
@@ -311,7 +315,9 @@ section:has(.bg) > .bg-uplayer {
     gap: 8px;
     margin-bottom: 0;
 }
-.breadcrumb p{
+.breadcrumb p,
+.breadcrumb .breadcrumb-separator,
+.breadcrumb .breadcrumb-current {
     font-size: 0.75rem;
     color: var(--gray-600);
     font-weight: 400;
@@ -321,9 +327,15 @@ section:has(.bg) > .bg-uplayer {
 .breadcrumb-home{
     display: inline-flex;
     align-items: center;
-    /* color: var(--brand-dark-primary); */
-    color:red;
     text-decoration: none;
+}
+.breadcrumb-home:focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+.breadcrumb-home:focus:not(:focus-visible) {
+    outline: none;
 }
 .breadcrumb-home::before {
     content: "";
@@ -367,10 +379,6 @@ section:has(.page-top-container){
 .page-top-text-group-2 h2{
     margin-bottom: 0;
     color: var(--brand-dark-primary);
-}
-.page-top-text-group-1 p:last-child,
-.page-top-text-group-2 p:last-child{
-    margin-bottom: 0;
 }
 .page-top-text-group-2{
     display: flex;
@@ -554,7 +562,7 @@ section:has(.page-top-container){
 }
 
 
-
+/* 
 *{
     outline: 1px solid black;
-}
+} */

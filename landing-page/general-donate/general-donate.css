@@ -65,9 +65,9 @@ a:active {
 }
 
 
-.about *{
+/* .about *{
     outline: 1px solid black;
-}
+} */
 @media (min-width: 768px)  {
     .about .container {
         grid-template-columns: 1fr 1fr;
