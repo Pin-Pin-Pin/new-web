@@ -1,0 +1,138 @@
+/* ========================================
+   Section: share-content
+======================================== */
+.share-content .share-content-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+#shareTab {
+    justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+    #shareTab {
+        justify-content: center;
+    }
+}
+.content-tab-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.content-tab-text {
+    padding: 40px;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    background-color: var(--brand-background-green        );
+}
+
+.content-tab-text h3 {
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.content-tab-text p {
+    margin-bottom: 0;
+}
+
+.content-tab-img {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.content-tab-img picture {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.content-tab-img img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .content-tab-card {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .content-tab-img {
+        flex: 0 0 379px;
+        width: 379px;
+        max-width: 379px;
+        aspect-ratio: 379 / 368;
+    }
+
+    .content-tab-img picture {
+        height: 100%;
+    }
+
+    .content-tab-img img {
+        height: 100%;
+    }
+
+    .content-tab-text {
+        padding: 40px;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content-tab-img {
+        aspect-ratio: 379 / 284;
+    }
+}
+/* ========================================
+   Section: 第一頁以後
+======================================== */
+.share-content{
+    padding-bottom: 80px;
+}
+.invite-info{
+    padding-top: 0;
+    padding-bottom: 80px;
+}
+.faq{ 
+    padding-top: 0;
+}
+.section-title{
+    border-top: 2px solid var(--brand-dark-primary);
+}
+/* ========================================
+   Section: 邀約方式
+======================================== */
+.invite-info .container{
+    /* display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start; */
+    display:block;
+}
+.invite-info ol{
+    margin-bottom: 0;
+    padding-left: 1rem;
+}
+.invite-info .section-title{
+    margin-bottom: 24px;
+}
+.invite-info-label{
+    font-weight: 700;
+    color: var(--brand-dark-primary);
+    margin-bottom: 0;
+}
+.faq .accordion {
+    color: var(--black);
+}
