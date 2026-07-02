@@ -7,6 +7,7 @@
     --brand-background-green: #E5EAE3;
     --black:#000000;
     --brand-black:#2D2D2D;
+    --brand-white: #FAFAFA;
     --white:#FFFFFF;
     --gray-900:#2B2B2B;
     --gray-800:#454545;
@@ -87,7 +88,7 @@ h3,.h3{
 }
 h4,.h4{
     font-family: "Noto Sans TC";
-    font-size: 0.875rem;
+    font-size: 0.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -97,7 +98,7 @@ p,.p,li{
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.75rem; /* 175% */
+    line-height: 1.5; 
 }
 p:last-child,li:last-child,ol:last-child,ul:last-child{
     margin-bottom: 0;
@@ -108,14 +109,14 @@ a{
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.75rem; /* 175% */
+    line-height: 1.75;
 }
 .description{
     font-family: "Noto Sans TC";
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.25rem; /* 166.667% */
+    line-height: 1.66667; 
 }
 .section-title {
     font-weight: 700;
