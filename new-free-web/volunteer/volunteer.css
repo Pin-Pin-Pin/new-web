@@ -101,22 +101,6 @@
     flex-direction: column;
 
 }
-.cta-container{
-    display: grid;
-    grid-template-columns: 1fr ; 
-    gap: 40px;
-}
-@media (min-width: 768px) {
-    .cta-container{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-.cta-text-container h2{
-    margin-bottom: 16px;
-}
-.cta-text-container p{
-    margin-bottom: 24px;
-}
 .volunteer-share-container .section-title{
     width:100%;
 }
@@ -125,4 +109,36 @@
     flex-direction: column;
     gap: 40px;
 
+}
+/* ========================================
+   Section: person-card
+======================================== */
+.volunteer-share-container .person-card{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.volunteer-share-container .card-title{
+    color: var(--brand-dark-primary);
+}
+.volunteer-share-container .person-card-img-container{
+    width: 95px;
+    height: 95px;
+}
+.volunteer-share-container .person-card-img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.volunteer-share-container .person-card-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+@media (min-width: 768px) {
+    .volunteer-share-container .person-card-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
