@@ -1,0 +1,98 @@
+#about-us-ch .impact{
+    background-color: var(--brand-background-green);
+
+}
+section:has(.page-top-container){
+    padding-left: 24px;
+    padding-right: 24px;
+}
+@media (min-width: 768px) {
+    section:has(.page-top-container){
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+@media (min-width: 1200px) {
+    section:has(.page-top-container){
+        padding-left: 120px;
+        padding-right: 0px;
+    }
+    #about-us-ch .page-top-img-container {
+      position: sticky;
+      top: 24px;           /* 距視窗頂部的留白，依設計調整 */
+      align-self: flex-start; /* 雙重保險，避免被 flex 撐高 */
+    }
+  }
+/* ========================================
+   Section: 工作業務
+======================================== */
+#our-works{
+    background-color: var(--brand-background-green);
+}
+#our-works .container{
+    flex-direction: column;
+}
+#our-works .content-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+#our-works .content-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+@media (min-width: 768px) {
+    #our-works .content-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+#our-works .content-item-icon{
+    align-self: start;
+}
+/* ========================================
+   Section: 成立背景
+======================================== */
+#org-bg .container{
+    flex-direction: column;
+    gap: 24px;
+}
+#org-bg .action-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+#org-bg .action-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+#org-bg .action-item-icon{
+    flex-shrink: 0;
+}
+#org-bg .action-item-icon img{
+    display: block;
+    width: 120px;
+    height: auto;
+}
+#org-bg .action-item-body{
+    align-self: stretch;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    #org-bg .action-item{
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+    }
+    #org-bg .action-item:nth-child(even){
+        flex-direction: row-reverse;
+    }
+    #org-bg .action-item-body{
+        flex: 1;
+        min-width: 0;
+    }
+}

@@ -1,0 +1,128 @@
+/* *{
+    border: 1px solid black;
+} */
+/* picture source {
+    display: none; 
+    line-height: 0;
+} */
+/* 以上debug */
+
+#navbar {
+    display: none;
+}
+a {
+    text-decoration: none !important;
+    /* color: inherit !important; */
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none !important;
+    /* color: inherit !important; */
+}
+/* --------------------------------- */
+/* 各section css */
+/* about */
+.about .container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 0;
+    padding-right: 0;
+    /* align-self: stretch; */
+}
+.about .img-box{
+    width: 100%;
+}
+.about img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* object-fit: cover;
+    object-position: top right; */
+}
+.about h3{
+    color: var(--brand-dark-primary);
+    margin-bottom: 40px;
+}
+/* .text-box{
+
+} */
+.about .container {
+    display: grid;
+    gap: 40px;
+    align-items: center;    /* ? */
+    grid-template-columns: 1fr
+
+  }
+@media (min-width: 768px){
+    .about .container{
+        flex-direction: row;
+        align-items: start;
+    }
+}
+
+
+/* .about *{
+    outline: 1px solid black;
+} */
+@media (min-width: 768px)  {
+    .about .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    .about .container {
+        grid-template-columns: 1fr 596px; 
+    }
+}
+/* .core-values--------- */
+.core-values{
+    background-color: var(--brand-dark-primary);
+}
+.core-values p{
+    color: var(--white);
+}
+.core-values .container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+     
+}
+.slogan-box{
+    max-width: 100%; 
+}
+.signature-box{
+    width: 218px;
+    height: auto  ;
+}
+/* 捐款方案 */
+.donation-plan{
+    background-color: var(--brand-background-green);
+}
+.donation-plan h3{
+    color: var(--brand-primary);
+}
+
+/* .btn{
+    position: relative;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 1px solid red;
+    pointer-events: none;
+  } */
+   /* faq */
+.faq {
+    background-color: var(--white );
+}
+
+
