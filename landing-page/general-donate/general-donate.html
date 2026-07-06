@@ -83,7 +83,7 @@
                 <h3 class="card-title mb-0">定期支持方案</h3>
                 <p>$500/$1000/$1500</p>
                 <p class="card-text"><span style="white-space: nowrap;">我們不是因為看見希望才堅持，</span><span style="white-space: nowrap;">而是因為堅持了，所以看見希望</span></p>
-                <a href="#" class="btn btn-primary btn-icon btn-icon-arrow-right-mini">訂閱美好環境</a>
+                <a href="#" class="btn btn-primary btn-icon btn-icon-arrow-right-mini"><span class="btn-label">訂閱美好環境</span></a>
                 <!--  -->
             </div>
         </div>
@@ -97,7 +97,7 @@
                 <h3 class="card-title mb-0">單筆支持方案</h3>
                 <p>$1200/$3000/$5000</p>
                 <p class="card-text">在關鍵時刻做出的關鍵決定<br>重磅出擊，創造影響力！</p>
-                <a href="#" class="btn btn-primary btn-icon btn-icon-arrow-right-mini">打造永續家園</a>
+                <a href="#" class="btn btn-primary btn-icon btn-icon-arrow-right-mini"><span class="btn-label">打造永續家園</span></a>
             </div>
         </div>
 
@@ -113,8 +113,8 @@
 <footer>
     <div class="logo-container">
         <picture>
-            <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260623-donate-footer-logo.webp" type="image/webp" />
-            <img decoding="async" loading="lazy" alt="地球公民基金會" class="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260623-donate-footer-logo.png" />
+            <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/logo-8.webp" type="image/webp" />
+            <img decoding="async" loading="lazy" alt="地球公民基金會" class="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/logo-8.png" />
         </picture>
     </div>
     <div class="footer-text">
@@ -190,7 +190,7 @@ function renderFaq() {
         return (
             '<div class="accordion-item">' +
                 '<h3 class="accordion-header" id="heading-' + id + '">' +
-                    '<button aria-controls="collapse-' + id + '" aria-expanded="false" class="collapsed p " data-bs-target="#collapse-' + id + '" data-bs-toggle="collapse" type="button">' + item.question + '</button>' +
+                    '<button aria-controls="collapse-' + id + '" aria-expanded="false" class="collapsed p " data-bs-target="#collapse-' + id + '" data-bs-toggle="collapse" type="button"><span class="faq-question-label">' + item.question + '</span></button>' +
                 '</h3>' +
                 '<div aria-labelledby="heading-' + id + '" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-' + id + '">' +
                     '<div class="accordion-body">' + bodyHtml + '</div>' +

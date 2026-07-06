@@ -22,11 +22,6 @@ section:has(.page-top-container){
       top: 24px;           /* 距視窗頂部的留白，依設計調整 */
       align-self: flex-start; /* 雙重保險，避免被 flex 撐高 */
     }
-  
-    /* 可選：section 底部多一點呼吸空間 */
-    #about-us-ch {
-      padding-bottom: 24px;
-    }
   }
 /* ========================================
    Section: 工作業務
