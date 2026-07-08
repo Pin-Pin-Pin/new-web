@@ -5,6 +5,7 @@
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
     --brand-background-green: #E5EAE3;
+    --brand-background-yellow: #F3EEE6;;
     --black:#000000;
     --brand-black:#2D2D2D;
     --brand-white: #FAFAFA;
@@ -135,7 +136,6 @@ a{
 picture{
     display: block;
     max-width: 100%;
-    height: auto;
 }
 img{
     display: block;
