@@ -51,11 +51,14 @@
         <div class="container share-content-container">
             <h2 class="h3 section-title">分享主題</h2>
 
-            <div class="content-tabs-wrap">
-                <ul class="nav content-tabs-nav flex-nowrap" id="shareTab" role="tablist" aria-label="分享主題"></ul>
-            </div>
+            <div class="share-topics-accordion accordion" id="shareTopicsAccordion"></div>
 
-            <div class="content-tabs-panels" id="shareTabContent"></div>
+            <div class="share-topics-tabs">
+                <div class="content-tabs-wrap">
+                    <ul class="nav content-tabs-nav flex-nowrap" id="shareTab" role="tablist" aria-label="分享主題"></ul>
+                </div>
+                <div class="content-tabs-panels" id="shareTabContent"></div>
+            </div>
         </div>
     </section>
 
@@ -168,7 +171,27 @@
             }
         ];
 
-        function renderShareTopics() {
+        function buildTopicSectionsHtml(sections) {
+            return sections.map(function (section) {
+                return (
+                    '<div class="content-tab-block">' +
+                        '<h3>' + escapeHtml(section.title) + '</h3>' +
+                        buildSectionTextHtml(section.text) +
+                    '</div>'
+                );
+            }).join('');
+        }
+
+        function buildTopicCardHtml(item) {
+            return (
+                '<div class="content-tab-card">' +
+                    '<div class="content-tab-img">' + buildTopicPictureHtml(item.image) + '</div>' +
+                    '<div class="content-tab-text">' + buildTopicSectionsHtml(item.sections) + '</div>' +
+                '</div>'
+            );
+        }
+
+        function renderShareTopicsTabs() {
             var nav = document.getElementById('shareTab');
             var panels = document.getElementById('shareTabContent');
             if (!nav || !panels) return;
@@ -184,20 +207,27 @@
 
             panels.innerHTML = shareTopicData.map(function (item, index) {
                 var isActive = index === 0;
-                var sectionsHtml = item.sections.map(function (section) {
-                    return (
-                        '<div class="content-tab-block">' +
-                            '<h3>' + escapeHtml(section.title) + '</h3>' +
-                            buildSectionTextHtml(section.text) +
-                        '</div>'
-                    );
-                }).join('');
-
                 return (
                     '<div class="tab-pane' + (isActive ? ' active' : '') + '" role="tabpanel" id="share-panel-' + index + '" aria-labelledby="share-tab-' + index + '" aria-hidden="' + (isActive ? 'false' : 'true') + '">' +
-                        '<div class="content-tab-card">' +
-                            '<div class="content-tab-img">' + buildTopicPictureHtml(item.image) + '</div>' +
-                            '<div class="content-tab-text">' + sectionsHtml + '</div>' +
+                        buildTopicCardHtml(item) +
+                    '</div>'
+                );
+            }).join('');
+        }
+
+        function renderShareTopicsAccordion() {
+            var accordion = document.getElementById('shareTopicsAccordion');
+            if (!accordion) return;
+
+            accordion.innerHTML = shareTopicData.map(function (item, index) {
+                var id = index + 1;
+                return (
+                    '<div class="accordion-item">' +
+                        '<h3 class="accordion-header" id="share-heading-' + id + '">' +
+                            '<button id="share-acc-btn-' + id + '" aria-controls="share-collapse-' + id + '" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-' + id + '" data-bs-toggle="collapse" type="button">' + escapeHtml(item.title) + '</button>' +
+                        '</h3>' +
+                        '<div aria-labelledby="share-acc-btn-' + id + '" class="accordion-collapse collapse" id="share-collapse-' + id + '">' +
+                            '<div class="accordion-body">' + buildTopicCardHtml(item) + '</div>' +
                         '</div>' +
                     '</div>'
                 );
@@ -205,7 +235,7 @@
         }
 
         function initShareTabScroll() {
-            var wrap = document.querySelector('.content-tabs-wrap');
+            var wrap = document.querySelector('.share-topics-tabs .content-tabs-wrap');
             var nav = document.getElementById('shareTab');
             if (!wrap || !nav) return;
 
@@ -242,7 +272,8 @@
             updateScrollState();
         }
 
-        renderShareTopics();
+        renderShareTopicsAccordion();
+        renderShareTopicsTabs();
         initShareTabScroll();
 
         var faqData = [

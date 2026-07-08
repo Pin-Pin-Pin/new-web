@@ -6,47 +6,118 @@
     align-items: flex-start;
     gap: 24px;
 }
+
+/* Mobile (<768): accordion only / Desktop (≥768): tabs only */
+.share-topics-tabs {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.share-topics-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    color: var(--black);
+}
+
+.share-topics-accordion .accordion-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid var(--brand-dark-primary);
+    overflow: hidden;
+}
+
+.share-topics-accordion .accordion-header {
+    margin-bottom: 0;
+    padding: 8px 16px;
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.share-topics-accordion .accordion-header button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: left;
+    color: var(--black);
+    transition: color 0.35s ease;
+    cursor: pointer;
+}
+
+.share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
+    background-color: var(--brand-dark-primary);
+    color: var(--white);
+}
+
+.share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
+    color: var(--white);
+}
+
+.share-topics-accordion .accordion-body {
+    padding: 0;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.share-topics-accordion .accordion-collapse.collapsing {
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 #shareTab {
     justify-content: flex-start;
 }
 
 @media (min-width: 768px) {
+    .share-topics-accordion {
+        display: none;
+    }
+
+    .share-topics-tabs {
+        display: flex;
+    }
+
     #shareTab {
         justify-content: center;
     }
-}
 
-/* Equal-height panels: stack all panes in one grid cell.
-   Note: no Bootstrap .tab-content class — that rule uses display:none and would
-   remove inactive panes from height calculation. */
-.share-content #shareTabContent.content-tabs-panels {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: stretch;
-}
+    /* Equal-height panels: stack all panes in one grid cell.
+       Note: no Bootstrap .tab-content class — that rule uses display:none and would
+       remove inactive panes from height calculation. */
+    .share-content #shareTabContent.content-tabs-panels {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+    }
 
-.share-content #shareTabContent.content-tabs-panels > .tab-pane {
-    grid-column: 1;
-    grid-row: 1;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    /* keep inactive panes in layout (unlike Bootstrap display:none) */
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-}
+    .share-content #shareTabContent.content-tabs-panels > .tab-pane {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
 
-.share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 1;
-}
+    .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 1;
+    }
 
-.share-content #shareTabContent .content-tab-card {
-    height: 100%;
+    .share-content #shareTabContent .content-tab-card {
+        height: 100%;
+    }
 }
 
 .content-tab-card {
@@ -59,7 +130,7 @@
 }
 
 .content-tab-text {
-    padding: 40px;
+    padding: 24px 16px;
     min-width: 0;
     max-width: 100%;
     overflow-wrap: break-word;
@@ -102,6 +173,11 @@
     max-width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+/* Accordion card: no outer radius conflict with item border */
+.share-topics-accordion .content-tab-card {
+    border-radius: 0;
 }
 
 @media (min-width: 768px) {
