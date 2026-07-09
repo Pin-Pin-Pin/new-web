@@ -15,21 +15,74 @@
     <link rel="stylesheet" href="general-donate.css">
 </head>
 <body>
-<section class="donate-hero"> 
-    <div class="container">
-        <div class="img-box"></div>
-            <picture>
-                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-dt.webp" type="image/webp" media="(min-width: 1200px)"/>
-                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-tbl.webp" type="image/webp" media="(min-width: 768px)"/>
-                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-mb.webp" type="image/webp"/>
-                <img  alt="礦場" width="684" height="480" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260624-mine-img-mb.png" fetchpriority="high" decoding="async"/>
-            </picture>
+<section class="donate-hero">
+    <picture class="donate-hero__bg">
+        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-dt.webp" type="image/webp" media="(min-width: 1200px)"/>
+        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-tbl.webp" type="image/webp" media="(min-width: 768px)"/>
+        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-mb.webp" type="image/webp"/>
+        <img alt="" width="684" height="480" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260624-mine-img-mb.png" fetchpriority="high" decoding="async"/>
+    </picture>
+    <div class="donate-hero__inner">
+        <div class="img-box">
+            <!-- 標語圖待替換：桌機橫排 / 手機直排各一組圖檔 -->
         </div>
-        <div class="table-box"> 
+        <div class="table-box">
+            <div class="donation-box">
+                <h2 class="donation-box__title h4 mb-0">選擇捐款方式</h2>
+
+                <div class="donation-box__tabs" role="tablist" aria-label="捐款方式">
+                    <button type="button" class="donation-box__tab is-active" role="tab" aria-selected="true" id="donate-tab-monthly">每月捐款</button>
+                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-once">單筆捐款</button>
+                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-other">其他方式</button>
+                </div>
+
+                <div class="donation-box__panel" role="tabpanel" aria-labelledby="donate-tab-monthly">
+                    <h3 class="donation-box__subtitle h4 mb-0">選擇金額或自訂金額</h3>
+
+                    <ul class="donation-box__amount-list list-unstyled mb-0">
+                        <li>
+                            <button type="button" class="donation-box__amount-option">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">500</span>
+                                </span>
+                                <span class="donation-box__amount-desc">用行動擺脫無力感，把不可能化為可能。</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="donation-box__amount-option is-active" aria-pressed="true">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">1000</span>
+                                </span>
+                                <span class="donation-box__amount-desc">用行動擺脫無力感，把不可能化為可能。</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="donation-box__amount-option">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">1500</span>
+                                </span>
+                                <span class="donation-box__amount-desc">用行動擺脫無力感，把不可能化為可能。</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="donation-box__custom">
+                        <label class="donation-box__custom-label" for="donate-custom-amount">自訂金額</label>
+                        <input class="donation-box__custom-input" type="text" inputmode="numeric" id="donate-custom-amount" name="custom_amount" placeholder="請輸入金額" autocomplete="off">
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-box__submit">
+                    <span class="btn-label">下一步</span>
+                </a>
+            </div>
         </div>
     </div>
 </section>
-<section class="about">
+<section class="about">    
     <div class="container">
         <div class="text-box">
             <h2 class="h3" style="color:var(--brand-dark-primary)">許多環境問題，<br>需要聚集公民力量才能改變</h2>                     
