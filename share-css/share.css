@@ -625,3 +625,28 @@ section:has(.page-top-container){
     display: grid;
      
 }
+/* ========================================
+   捐款頁
+======================================== */
+.donate-hero .container{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .donate-hero .container{
+        flex-direction: row;
+        gap:40px;
+    }
+}
+@media (min-width: 1200px) {
+    .donate-hero .container{
+        gap:120px
+    }
+}
+.donate-hero .img-box{
+    width: 100%;
+}
+.donate-hero .img-box img{
+    width: 100%;
+    height: auto;
+}
