@@ -55,6 +55,9 @@ section:has(.page-top-container){
 /* ========================================
    Section: 成立背景
 ======================================== */
+#org-bg{
+    background-color: var(--brand-background-yellow);
+}
 #org-bg .container{
     flex-direction: column;
     gap: 24px;
@@ -68,31 +71,92 @@ section:has(.page-top-container){
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
 }
 #org-bg .action-item-icon{
+    width: 100%;
     flex-shrink: 0;
+    height: 256.5px;
 }
 #org-bg .action-item-icon img{
     display: block;
-    width: 120px;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 #org-bg .action-item-body{
     align-self: stretch;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    padding: 24px;
+    background-color: var(--brand-white);
 }
 @media (min-width: 768px) {
+    #org-bg .action-container{
+        gap: 24px;
+    }
     #org-bg .action-item{
         flex-direction: row;
-        align-items: center;
-        gap: 24px;
+        align-items: stretch;
     }
     #org-bg .action-item:nth-child(even){
         flex-direction: row-reverse;
     }
-    #org-bg .action-item-body{
+    #org-bg .action-item-icon {
+        display: flex;
+        flex: 0 0 379px;
+        width: 379px;
+        height: auto;
+    }
+    #org-bg .action-item-icon img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #org-bg .action-item-body {
         flex: 1;
         min-width: 0;
     }
+}
+/* ========================================
+   Section: 董監事成員
+======================================== */
+#d-and-s .container{
+    flex-direction: column;
+}
+#d-and-s .section-title{
+    margin-bottom: 40px;
+}
+.person-card-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+}
+@media (min-width: 768px) {
+    .person-card-container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 64px;
+    }
+}
+.person-card{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.person-card-img-container{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.person-title .name{
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+.person-title .description{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.66667;
+    color: var(--Gray-Gray-700);
 }

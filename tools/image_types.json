@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "label": "Hero",
+    "widths": [768, 1400, 1920]
+  },
+  "page-top": {
+    "label": "page-top",
+    "widths": [800, 1280, 1600]
+  },
+  "article": {
+    "label": "文章圖片",
+    "widths": [800, 1600]
+  },
+  "card-lr": {
+    "label": "左右圖文",
+    "widths": [380, 760]
+  },
+  "card-2col": {
+    "label": "電腦兩欄 card",
+    "widths": [480, 650, 960]
+  },
+  "card-4col": {
+    "label": "電腦四欄 card",
+    "widths": [480, 720]
+  }
+}
