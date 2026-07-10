@@ -118,3 +118,45 @@ section:has(.page-top-container){
         min-width: 0;
     }
 }
+/* ========================================
+   Section: 董監事成員
+======================================== */
+#d-and-s .container{
+    flex-direction: column;
+}
+#d-and-s .section-title{
+    margin-bottom: 40px;
+}
+.person-card-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+}
+@media (min-width: 768px) {
+    .person-card-container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 64px;
+    }
+}
+.person-card{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.person-card-img-container{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.person-title .name{
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+.person-title .description{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.66667;
+    color: var(--Gray-Gray-700);
+}
