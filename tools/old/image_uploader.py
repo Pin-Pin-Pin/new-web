@@ -3,18 +3,21 @@
 """
 CET Taiwan - 圖片上傳工具（Step 2）
 功能：
-  - 掃描指定資料夾中的圖片（WebP 或 JPG/PNG，由使用者選擇）
+  - 掃描指定資料夾中的圖片（WebP、JPG、PNG）
   - 開啟 Firefox，導向登入頁面
   - 自動填入帳號密碼後，等待使用者手動輸入驗證碼並登入
   - 登入成功後，逐一上傳圖片至 IMCE 檔案管理器
 
-上傳 WebP 前，請先執行 image_processor.py 完成轉檔。
+由「加日期與批次上傳.bat」執行時，會自動沿用 Step 1 選擇的資料夾。
 """
 
 import os
+import sys
 import time
 import getpass
+import tkinter as tk
 from pathlib import Path
+from tkinter import filedialog
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -24,10 +27,34 @@ from webdriver_manager.firefox import GeckoDriverManager
 # ─────────────────────────────────────────────
 # 支援的上傳格式
 # ─────────────────────────────────────────────
-FORMAT_OPTIONS = {
-    "1": ({".webp"}, "WebP"),
-    "2": ({".jpg", ".jpeg", ".png"}, "JPG / PNG"),
-}
+SUPPORTED_EXT = {".webp", ".jpg", ".jpeg", ".png"}
+FORMAT_LABEL = "WebP / JPG / PNG"
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+LAST_FOLDER_FILE = SCRIPT_DIR / ".last_target_folder"
+
+
+def select_folder(title: str = "選擇圖片資料夾") -> str:
+    root = tk.Tk()
+    root.withdraw()
+    root.attributes("-topmost", True)
+    folder = filedialog.askdirectory(title=title)
+    root.destroy()
+    return folder
+
+
+def resolve_source_folder() -> str:
+    if os.environ.get("CET_BATCH_UPLOAD") == "1" and LAST_FOLDER_FILE.is_file():
+        folder = LAST_FOLDER_FILE.read_text(encoding="utf-8").strip()
+        if folder and os.path.isdir(folder):
+            print(f"\n📁 使用 Step 1 選擇的資料夾：{folder}")
+            return folder
+        print("❌ 找不到 Step 1 儲存的資料夾，程式結束。")
+        sys.exit(1)
+
+    print("\n📁 請在視窗中選擇圖片資料夾…")
+    return select_folder()
+
 
 # ─────────────────────────────────────────────
 # 互動式設定
@@ -37,26 +64,16 @@ print("  CET Taiwan 圖片上傳工具  (Step 2)")
 print("=" * 50)
 
 # 1. 圖片資料夾
-default_folder = "D:/網頁/cet-change/img/farm-img"
-folder_input = input(f"\n📁 圖片資料夾路徑（直接 Enter 使用預設：{default_folder}）\n> ").strip()
-SOURCE_FOLDER = folder_input if folder_input else default_folder
+SOURCE_FOLDER = resolve_source_folder()
+if not SOURCE_FOLDER:
+    print("❌ 未選擇資料夾，程式結束。")
+    sys.exit(1)
 
 if not os.path.isdir(SOURCE_FOLDER):
     print(f"❌ 找不到資料夾：{SOURCE_FOLDER}")
-    exit(1)
+    sys.exit(1)
 
-# 2. 上傳格式
-print("\n📷 請選擇要上傳的圖片格式：")
-print("   1. WebP 圖片 (.webp)")
-print("   2. JPG / PNG 圖片 (.jpg, .jpeg, .png)")
-format_input = input("> ").strip()
-if format_input not in FORMAT_OPTIONS:
-    print("❌ 請輸入 1 或 2。")
-    exit(1)
-
-SUPPORTED_EXT, FORMAT_LABEL = FORMAT_OPTIONS[format_input]
-
-# 3. 帳號密碼
+# 2. 帳號密碼
 print("\n🔐 請輸入網站登入資訊：")
 USERNAME = input("   帳號：").strip()
 PASSWORD = getpass.getpass("   密碼（不會顯示）：")

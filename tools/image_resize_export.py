@@ -172,7 +172,7 @@ def process_image(
 
         for width in widths:
             jpg_name = f"{stem}-{width}.jpg"
-            webp_name = f"{stem}-{width}-{webp_q}.webp"
+            webp_name = f"{stem}-{width}.webp"
             export_jpg(src_path, jpg_dir / jpg_name, width, orig_width, jpg_quality)
             export_webp(src_path, webp_dir / webp_name, width, orig_width, webp_q)
     except Exception as exc:
@@ -206,13 +206,15 @@ def select_folder_and_files() -> tuple[Path, list[Path]]:
     return folder_path, png_files
 
 
-def choose_image_type(types: dict) -> tuple[str, list[int]]:
+def choose_image_type(types: dict) -> tuple[str, str, list[int]]:
     keys = list(types.keys())
+    custom_option = len(keys) + 1
     print("\n請選擇圖片類型：")
     for i, key in enumerate(keys, 1):
         label = types[key]["label"]
         widths = " / ".join(str(w) for w in types[key]["widths"])
         print(f"  {i}. {label}（{widths}）")
+    print(f"  {custom_option}. 自訂尺寸")
 
     while True:
         raw = input("\n> ").strip()
@@ -220,10 +222,48 @@ def choose_image_type(types: dict) -> tuple[str, list[int]]:
             idx = int(raw) - 1
             if 0 <= idx < len(keys):
                 key = keys[idx]
-                return key, types[key]["widths"]
+                return key, types[key]["label"], types[key]["widths"]
+            if int(raw) == custom_option:
+                widths = ask_custom_widths()
+                return "custom", "自訂尺寸", widths
         if raw in types:
-            return raw, types[raw]["widths"]
+            return raw, types[raw]["label"], types[raw]["widths"]
+        if raw in {"custom", "自訂", "自訂尺寸"}:
+            widths = ask_custom_widths()
+            return "custom", "自訂尺寸", widths
         print("❌ 無效選項，請重新輸入編號。")
+
+
+def ask_custom_widths() -> list[int]:
+    print("\n請輸入輸出寬度（可多個，以空格、逗號或 / 分隔）")
+    print("例如：480 800 1600")
+    while True:
+        raw = input("\n> ").strip()
+        if not raw:
+            print("❌ 請至少輸入一個寬度。")
+            continue
+
+        parts = [p.strip() for p in raw.replace("/", " ").replace(",", " ").split() if p.strip()]
+        widths: list[int] = []
+        invalid = False
+        for part in parts:
+            if not part.isdigit():
+                invalid = True
+                break
+            value = int(part)
+            if value <= 0:
+                invalid = True
+                break
+            widths.append(value)
+
+        if invalid or not widths:
+            print("❌ 請輸入有效的正整數寬度。")
+            continue
+
+        widths = sorted(set(widths))
+        confirm = " / ".join(str(w) for w in widths)
+        print(f"   將使用：{confirm}")
+        return widths
 
 
 def ask_jpg_quality() -> int:
@@ -301,8 +341,7 @@ def main() -> None:
         print("❌ 僅支援 PNG 輸入，請重新選擇。")
         sys.exit(1)
 
-    type_key, type_widths = choose_image_type(types)
-    type_label = types[type_key]["label"]
+    type_key, type_label, type_widths = choose_image_type(types)
     jpg_quality = ask_jpg_quality()
     webp_q = ask_webp_q()
 
@@ -314,6 +353,7 @@ def main() -> None:
     print("\n" + "=" * 50)
     print(f"資料夾：{folder_path}")
     print(f"類型：{type_label}")
+    print(f"輸出寬度：{' / '.join(str(w) for w in type_widths)}")
     print(f"圖片數：{len(png_files)}")
     print(f"JPG quality：{jpg_quality}")
     print(f"WebP q：{webp_q}")

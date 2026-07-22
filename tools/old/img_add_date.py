@@ -10,8 +10,11 @@ CET Taiwan - 圖片檔名加日期前綴工具
 
 import os
 import re
+import sys
+import tkinter as tk
+from datetime import date
 from pathlib import Path
-import arrow
+from tkinter import filedialog
 
 # ─────────────────────────────────────────────
 # 支援的格式
@@ -21,6 +24,23 @@ SUPPORTED_EXT = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp"}
 # 已含 YYYYMMDD- 前綴的檔名（避免重複加前綴）
 DATE_PREFIX_PATTERN = re.compile(r"^\d{8}-")
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+LAST_FOLDER_FILE = SCRIPT_DIR / ".last_target_folder"
+
+
+def save_target_folder(folder: str) -> None:
+    LAST_FOLDER_FILE.write_text(folder, encoding="utf-8")
+
+
+def select_folder(title: str = "選擇圖片資料夾") -> str:
+    root = tk.Tk()
+    root.withdraw()
+    root.attributes("-topmost", True)
+    folder = filedialog.askdirectory(title=title)
+    root.destroy()
+    return folder
+
+
 # ─────────────────────────────────────────────
 # 互動式設定
 # ─────────────────────────────────────────────
@@ -29,16 +49,20 @@ print("  CET Taiwan 圖片檔名加日期前綴工具")
 print("=" * 50)
 
 # 1. 目標資料夾
-default_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
-folder_input = input(f"\n📁 圖片資料夾（直接 Enter 使用預設：{default_folder}）\n> ").strip()
-TARGET_FOLDER = folder_input if folder_input else default_folder
+print("\n📁 請在視窗中選擇圖片資料夾…")
+TARGET_FOLDER = select_folder()
+if not TARGET_FOLDER:
+    print("❌ 未選擇資料夾，程式結束。")
+    sys.exit(1)
 
 if not os.path.isdir(TARGET_FOLDER):
     print(f"❌ 找不到資料夾：{TARGET_FOLDER}")
-    exit(1)
+    sys.exit(1)
+
+save_target_folder(TARGET_FOLDER)
 
 # 2. 日期前綴（預設今天）
-today = arrow.now().format("YYYYMMDD")
+today = date.today().strftime("%Y%m%d")
 date_input = input(f"\n📅 檔名日期前綴（直接 Enter 使用今天：{today}）\n> ").strip()
 DATE_PREFIX = date_input if date_input else today
 
