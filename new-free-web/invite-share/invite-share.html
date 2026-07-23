@@ -32,11 +32,40 @@
             </div>
             <div class="page-top-img-container">
                 <picture>
-                    <source media="(min-width: 1200px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260625-invite-share-dt.webp" type="image/webp" />
-                    <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260625-invite-share-tbl.webp" type="image/webp" />
-                    <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260625-invite-share-mb.webp" type="image/webp" />
-                    <img decoding="async" fetchpriority="high"  alt="邀請分享" width="412" height="85" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260625-invite-share-mb-85.jpg" />
-                </picture>  
+                    <source
+                        type="image/webp"
+                        srcset="
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.webp 1600w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1280.webp 1280w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.webp 800w
+                        "
+                        sizes="
+                            (min-width: 1200px) 640px,
+                            (min-width: 768px) 800px,
+                            calc(100vw - 24px)
+                        "
+                    >
+                
+                    <img
+                        src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg"
+                        srcset="
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg 800w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1280.jpg 1280w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.jpg 1600w
+                        "
+                        sizes="
+                            (min-width: 1200px) 640px,
+                            (min-width: 768px) 800px,
+                            calc(100vw - 24px)
+                        "
+                        width="16"
+                        height="9"
+                        alt=""
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+                </picture>
+
 
 
             </div>
@@ -109,12 +138,24 @@
         }
 
         function buildTopicPictureHtml(image) {
+            var webp380 = IMAGE_BASE + image.slug + '-380.webp';
+            var webp760 = IMAGE_BASE + image.slug + '-760.webp';
+            var jpg380 = IMAGE_BASE + image.slug + '-380.jpg';
+            var jpg760 = IMAGE_BASE + image.slug + '-760.jpg';
+            var sizes = '(min-width: 1200px) 640 px,  calc(100vw - 24px)';
+
             return (
                 '<picture>' +
-                    '<source srcset="' + image.dt + '" type="image/webp" media="(min-width: 1200px)" />' +
-                    '<source srcset="' + image.tbl + '" type="image/webp" media="(min-width: 768px)" />' +
-                    '<source srcset="' + image.mb + '" type="image/webp" />' +
-                    '<img decoding="async" loading="lazy" alt="' + escapeHtml(image.alt) + '" src="' + image.fallback + '" />' +
+                    '<source type="image/webp" srcset="' + webp380 + ' 380w, ' + webp760 + ' 760w" sizes="' + sizes + '">' +
+                    '<img' +
+                        ' src="' + jpg380 + '"' +
+                        ' srcset="' + jpg380 + ' 380w, ' + jpg760 + ' 760w"' +
+                        ' sizes="' + sizes + '"' +
+                        ' width="380" height="285"' +
+                        ' alt="' + escapeHtml(image.alt) + '"' +
+                        ' loading="lazy"' +
+                        ' decoding="async"' +
+                    '>' +
                 '</picture>'
             );
         }
@@ -129,11 +170,8 @@
 
         function topicImage(slug, alt) {
             return {
-                alt: alt,
-                dt: IMAGE_BASE + slug + '-dt.webp',
-                tbl: IMAGE_BASE + slug + '-tbl.webp',
-                mb: IMAGE_BASE + slug + '-mb.webp',
-                fallback: IMAGE_BASE + slug + '-mb-85.jpg'
+                slug: slug,
+                alt: alt
             };
         }
 
@@ -144,7 +182,7 @@
                     { title: '講題一｜環境NGO的工作日常', text:['非營利組織的日常充滿挑戰，從資料蒐集、議題研究到專案規劃與社群媒體經營，每一步都需要大量溝通與合作。','透過實際案例的翻想，邀請大家一起走入環境 NGO 的工作日常，理解如何平衡有限資源與議題需求，以及每次的努力如何累積成對於社會的正向影響，啟發公民思考自身能參與的方式。']},
                     { title: '講題二｜改變社會：從理念到行動', text: ['環境議題與公共政策息息相關。地球公民如何透過倡議、政策對話、公共教育與社群互動，讓環境議題被更多人看見並重視？','環境倡議不只是抗議或請願。在這場講座中，我們將分享許多過去結合研究、溝通與策略的行動，說明我們如何將環境意識轉化為實際的公共影響。'] }
                 ],
-                image: topicImage('20260625-topic-1', '環境倡議現場討論')
+                image: topicImage('20260723-topic-1', '地球公民的員工參與政府會議')
             },
             {
                 title: '校園與空污',
@@ -152,7 +190,7 @@
                     { title: '講題一｜工業區旁的風險', text: ['在台灣，鄰近工業區的學童長期暴露於空氣污染之下，健康風險遠高於一般民眾。鋼鐵與石化產業排放的污染物不僅影響呼吸系統，更可能造成長期慢性健康問題。','我們將以高雄工業區鄰近學校為案例，解析學童空污暴露的現況與風險，並說明環境治理與政策倡議的重要性，邀請社會一同重視兒童環境權，為下一代健康把關。'] },
                     { title: '講題二｜在地行動與防護指南', text: ['除了整體空氣改善，個人與社區行動同樣關鍵。講座中分享可行的防護措施、日常生活防護策略，以及市民如何參與在地倡議行動。','透過地球公民基金會十年來的空污監測與政策倡議經驗，參與者能學習如何從自身與社區出發，降低空污對健康的影響，共同打造永續的生活環境。'] }
                 ],
-                image: topicImage('20260625-topic-1', '校園空污相關討論')
+                image: topicImage('20260723-topic-2', '一名學童舉著我要乾淨空氣的手舉牌，地球公民的員工拿著麥克風向台下介紹空污問題')
             },
             {
                 title: '極端氣候與環境治理',
@@ -160,14 +198,14 @@
                     { title: '講題一｜極端氣候下的任務清單', text: '在極端氣候頻繁發生的現在，環境變得更具風險及脆弱。辨識清楚環境資訊，並與周遭的夥伴形成互助的社群，我們才有機會建構更有能力應對未知風險的社會。' },
                     { title: '講題二｜從馬太鞍流域看環境治理', text: '我們將從馬太鞍堰塞湖事件的實際案例，理解流域的現況、自然環境如何跟城市發展互動互相影響，以及回到自己生活的地方，面對下一次可能來臨的災害，可以如何建立更具能力的社群。' }
                 ],
-                image: topicImage('20260625-topic-1', '極端氣候與環境治理相關討論')
+                image: topicImage('20260723-topic-3', '貨車穿過淹水的馬路')
             },
             {
                 title: '永續發展',
                 sections: [
                     { title: '講題｜發展，只有一種可能嗎？', text: ['只要大型的道路建設、飯店蓋下去，地方就能迎來真正的繁榮嗎？','所謂的發展與幸福，真的只有經濟成長這個單一標準嗎？','地球公民從2010年在花東設立辦公室以來，參與了無數大型道路、觀光開發案，陪伴地方檢視開發帶來的環境影響及社會衝擊。','在這個講題中，我們將從第一線的倡議經驗出發，結合歷史脈絡、法律制度與國內外案例，帶領大家重新審視大型開發案為土地與社會帶來的劇烈變動。','邀請大家一起打破「經濟開發」與「環境保護」的二元對立，探討一條真正適合台灣、兼顧世代正義的永續發展之路。'] }
                 ],
-                image: topicImage('20260625-topic-1', '永續發展相關討論')
+                image: topicImage('20260723-topic-4', '一群民眾在美麗灣飯店前的海灘上手牽著手')
             }
         ];
 

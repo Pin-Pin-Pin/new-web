@@ -5,6 +5,7 @@ CET Taiwan - 圖片檔名加日期前綴工具
 功能：
   - 掃描指定資料夾中的圖片
   - 於檔名前面加上日期前綴（如 20260413-photo.jpg）
+  - 若檔名開頭已是 YYYYMMDD-，則替換為本次設定的日期
   - 原始檔直接重新命名，不複製、不轉檔
 """
 
@@ -21,8 +22,8 @@ from tkinter import filedialog
 # ─────────────────────────────────────────────
 SUPPORTED_EXT = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp"}
 
-# 已含 YYYYMMDD- 前綴的檔名（避免重複加前綴）
-DATE_PREFIX_PATTERN = re.compile(r"^\d{8}-")
+# 檔名開頭的 YYYYMMDD- 前綴
+DATE_PREFIX_PATTERN = re.compile(r"^(\d{8})-(.*)$")
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 LAST_FOLDER_FILE = SCRIPT_DIR / ".last_target_folder"
@@ -85,6 +86,10 @@ def get_image_files(folder):
 
 
 def build_new_filename(filename, date_prefix):
+    """已有 YYYYMMDD- 則替換日期；否則在檔名前加上日期前綴。"""
+    match = DATE_PREFIX_PATTERN.match(filename)
+    if match:
+        return f"{date_prefix}-{match.group(2)}"
     return f"{date_prefix}-{filename}"
 
 
@@ -103,14 +108,14 @@ renamed_count = 0
 skipped_count = 0
 
 for filename in image_files:
-    if DATE_PREFIX_PATTERN.match(filename):
-        print(f"  ⏭️  略過（已有日期前綴）：{filename}")
-        skipped_count += 1
-        continue
-
     new_filename = build_new_filename(filename, DATE_PREFIX)
     src_path = os.path.join(TARGET_FOLDER, filename)
     dst_path = os.path.join(TARGET_FOLDER, new_filename)
+
+    if new_filename == filename:
+        print(f"  ⏭️  略過（日期已是 {DATE_PREFIX}）：{filename}")
+        skipped_count += 1
+        continue
 
     if os.path.exists(dst_path):
         print(f"  ❌  略過（目標檔名已存在）：{filename}  →  {new_filename}")
@@ -119,7 +124,10 @@ for filename in image_files:
 
     try:
         os.rename(src_path, dst_path)
-        print(f"  ✅  {filename}  →  {new_filename}")
+        if DATE_PREFIX_PATTERN.match(filename):
+            print(f"  🔄  {filename}  →  {new_filename}（替換日期）")
+        else:
+            print(f"  ✅  {filename}  →  {new_filename}")
         renamed_count += 1
     except OSError as e:
         print(f"  ❌  重新命名失敗：{filename}  ({e})")
