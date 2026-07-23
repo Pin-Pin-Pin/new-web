@@ -372,7 +372,7 @@ section:has(.page-top-container){
     padding-right: 0;
 }
 .container.page-top-container{
-    max-width: 366px;
+    max-width: 480px;
     padding-left: 0;
     padding-right: 0;
 }
@@ -387,6 +387,7 @@ section:has(.page-top-container){
     flex-direction: column;
     gap:24px;
     min-width: 0;
+    padding-right: 24px;
 }
 .page-top-text-group-2 h1{
     margin-bottom: 0;
@@ -411,6 +412,8 @@ section:has(.page-top-container){
     width: 100%;
     max-width: 100%;
     height: auto;
+    aspect-ratio: 16/9; 
+    object-fit: cover;
 }
 @media (min-width: 768px) {
     .container.page-top-container{
@@ -445,7 +448,22 @@ section:has(.page-top-container){
         min-width: 0;
     }
 }
-
+/* ========================================
+   Component: cta-img-container
+   圖片容器，圖片比例為 16:9
+======================================== */
+.cta-img-container{
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+.cta-img-container img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
 /* ========================================
    Component: content-tabs
    Bootstrap Tab + 水平捲動導覽 + 下方內容面板
