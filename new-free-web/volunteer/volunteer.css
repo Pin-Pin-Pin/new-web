@@ -16,6 +16,8 @@
     /* padding-top: 16px;  */
 }
 .volunteer-cards img{
+    width: 100%;
+    max-width: 100%;
     aspect-ratio: 33 / 20;
     object-fit: cover;
 }

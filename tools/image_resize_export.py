@@ -6,6 +6,7 @@ CET Taiwan - 圖片尺寸輸出工具
 功能：
   - 選擇資料夾與一張以上 PNG 圖片
   - 依圖片類型輸出多尺寸 JPG（magick）與 WebP（cwebp）
+  - WebP：先以 ImageMagick 縮圖，再以 cwebp 編碼（不使用 cwebp -resize）
   - 不放大；原圖小於最小規格時僅格式轉換
   - 輸出至 jpg-{quality} / webp-{q} 子資料夾
 """
@@ -17,6 +18,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 import tkinter as tk
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
@@ -137,11 +139,39 @@ def export_webp(
     q: int,
 ) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
-    cmd = ["cwebp", "-q", str(q)]
-    if target_width < orig_width:
-        cmd.extend(["-resize", str(target_width), "0"])
-    cmd.extend([str(src), "-o", str(dest)])
 
+    # 需縮圖時先用 ImageMagick 縮（Lanczos 等較佳濾鏡），再交 cwebp 編碼；
+    # 不需縮圖則直接從原圖編碼。
+    if target_width < orig_width:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_png = Path(tmpdir) / "resized.png"
+            resize_cmd = [
+                "magick",
+                str(src),
+                "-strip",
+                "-resize",
+                f"{target_width}x",
+                str(tmp_png),
+            ]
+            resize_result = subprocess.run(
+                resize_cmd, capture_output=True, text=True, check=False
+            )
+            if resize_result.returncode != 0:
+                raise RuntimeError(
+                    resize_result.stderr.strip() or "WebP 縮圖失敗（ImageMagick）"
+                )
+
+            encode_cmd = ["cwebp", "-q", str(q), str(tmp_png), "-o", str(dest)]
+            encode_result = subprocess.run(
+                encode_cmd, capture_output=True, text=True, check=False
+            )
+            if encode_result.returncode != 0:
+                raise RuntimeError(
+                    encode_result.stderr.strip() or "WebP 轉換失敗"
+                )
+        return
+
+    cmd = ["cwebp", "-q", str(q), str(src), "-o", str(dest)]
     result = subprocess.run(cmd, capture_output=True, text=True, check=False)
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or "WebP 轉換失敗")
