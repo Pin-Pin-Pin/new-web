@@ -174,23 +174,29 @@
     height: auto;
     object-fit: cover;
 }
+@media (max-width: 767.98px) {
+    .content-tab-img img {
+        aspect-ratio: 4/3;
+    }
+}
 
 /* Accordion card: no outer radius conflict with item border */
-.share-topics-accordion .content-tab-card {
+.content-tab-card {
     border-radius: 0;
+    background-color: var(--brand-background-green);
 }
 
 @media (min-width: 768px) {
     .content-tab-card {
-        flex-direction: row;
+        flex-direction: column;
         align-items: stretch;
     }
 
     .content-tab-img {
-        flex: 0 0 379px;
-        width: 379px;
-        max-width: 379px;
-        aspect-ratio: 379 / 368;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding:40px 40px 0 40px;
     }
 
     .content-tab-img picture {
@@ -198,6 +204,7 @@
     }
 
     .content-tab-img img {
+        width: 100%;
         height: 100%;
     }
 
@@ -209,8 +216,15 @@
 }
 
 @media (min-width: 1200px) {
+    .content-tab-card {
+        flex-direction: row;
+    }
     .content-tab-img {
         aspect-ratio: 379 / 284;
+        flex: 0 0 379px;
+        width: 379px;
+        max-width: 379px;
+        padding:0;
     }
 }
 /* ========================================
