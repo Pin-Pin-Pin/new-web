@@ -7,8 +7,9 @@ CET Taiwan - 圖片尺寸輸出工具
   - 選擇資料夾與一張以上 PNG 圖片
   - 依圖片類型輸出多尺寸 JPG（magick）與 WebP（cwebp）
   - WebP：先以 ImageMagick 縮圖，再以 cwebp 編碼（不使用 cwebp -resize）
+  - WebP 可選有損（預設）或無損壓縮；透明 PNG 轉 WebP 仍保留透明度
   - 不放大；原圖小於最小規格時僅格式轉換
-  - 輸出至 jpg-{quality} / webp-{q} 子資料夾
+  - 輸出至 jpg-{quality} / webp-{lossy|lossless}-{q} 子資料夾
 """
 
 from __future__ import annotations
@@ -131,17 +132,27 @@ def export_jpg(
         raise RuntimeError(result.stderr.strip() or "JPG 轉換失敗")
 
 
+def build_cwebp_cmd(src: Path, dest: Path, q: int, lossless: bool) -> list[str]:
+    """組出 cwebp 指令；有損與無損皆會保留 PNG 透明度。"""
+    cmd = ["cwebp"]
+    if lossless:
+        cmd.append("-lossless")
+    cmd.extend(["-q", str(q), str(src), "-o", str(dest)])
+    return cmd
+
+
 def export_webp(
     src: Path,
     dest: Path,
     target_width: int,
     orig_width: int,
     q: int,
+    lossless: bool = False,
 ) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
 
     # 需縮圖時先用 ImageMagick 縮（Lanczos 等較佳濾鏡），再交 cwebp 編碼；
-    # 不需縮圖則直接從原圖編碼。
+    # 不需縮圖則直接從原圖編碼。透明度由 cwebp 保留（有損／無損皆可）。
     if target_width < orig_width:
         with tempfile.TemporaryDirectory() as tmpdir:
             tmp_png = Path(tmpdir) / "resized.png"
@@ -161,7 +172,7 @@ def export_webp(
                     resize_result.stderr.strip() or "WebP 縮圖失敗（ImageMagick）"
                 )
 
-            encode_cmd = ["cwebp", "-q", str(q), str(tmp_png), "-o", str(dest)]
+            encode_cmd = build_cwebp_cmd(tmp_png, dest, q, lossless)
             encode_result = subprocess.run(
                 encode_cmd, capture_output=True, text=True, check=False
             )
@@ -171,7 +182,7 @@ def export_webp(
                 )
         return
 
-    cmd = ["cwebp", "-q", str(q), str(src), "-o", str(dest)]
+    cmd = build_cwebp_cmd(src, dest, q, lossless)
     result = subprocess.run(cmd, capture_output=True, text=True, check=False)
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or "WebP 轉換失敗")
@@ -184,6 +195,7 @@ def process_image(
     webp_dir: Path,
     jpg_quality: int,
     webp_q: int,
+    webp_lossless: bool = False,
 ) -> ProcessResult:
     filename = src_path.name
     stem = src_path.stem
@@ -204,7 +216,14 @@ def process_image(
             jpg_name = f"{stem}-{width}.jpg"
             webp_name = f"{stem}-{width}.webp"
             export_jpg(src_path, jpg_dir / jpg_name, width, orig_width, jpg_quality)
-            export_webp(src_path, webp_dir / webp_name, width, orig_width, webp_q)
+            export_webp(
+                src_path,
+                webp_dir / webp_name,
+                width,
+                orig_width,
+                webp_q,
+                webp_lossless,
+            )
     except Exception as exc:
         result.errors.append(str(exc))
 
@@ -310,19 +329,37 @@ def ask_jpg_quality() -> int:
     return JPG_DEFAULT_QUALITY
 
 
-def ask_webp_q() -> int:
-    options_text = " / ".join(str(q) for q in WEBP_OPTIONS)
-    raw = input(
-        f"\nWebP q（預設 {WEBP_DEFAULT_Q}，可選 {options_text}）\n> "
-    ).strip()
+def ask_webp_lossless() -> bool:
+    """選擇 WebP 壓縮方式。回傳 True = 無損；空白或無效則預設有損。"""
+    raw = input("\nWebP 壓縮（1=有損 / 2=無損，預設有損）\n> ").strip().lower()
+    if not raw or raw in {"1", "lossy", "有損"}:
+        return False
+    if raw in {"2", "lossless", "無損"}:
+        return True
+    print("⚠️  輸入無效，使用有損壓縮")
+    return False
+
+
+def ask_webp_q(*, lossless: bool = False) -> int:
+    if lossless:
+        # 無損時 -q 代表壓縮程度（愈高愈慢、檔案通常愈小），非畫質
+        raw = input(
+            f"\nWebP 無損壓縮程度 q（預設 {WEBP_DEFAULT_Q}，0–100）\n> "
+        ).strip()
+    else:
+        options_text = " / ".join(str(q) for q in WEBP_OPTIONS)
+        raw = input(
+            f"\nWebP q（預設 {WEBP_DEFAULT_Q}，可選 {options_text}）\n> "
+        ).strip()
     if not raw:
         return WEBP_DEFAULT_Q
     try:
         value = int(raw)
-        if value in WEBP_OPTIONS:
+        if not lossless and value in WEBP_OPTIONS:
             return value
-        if 1 <= value <= 100:
-            print(f"⚠️  {value} 不在建議選項內，仍將使用此數值。")
+        if 0 <= value <= 100:
+            if not lossless and value not in WEBP_OPTIONS:
+                print(f"⚠️  {value} 不在建議選項內，仍將使用此數值。")
             return value
     except ValueError:
         pass
@@ -373,10 +410,12 @@ def main() -> None:
 
     type_key, type_label, type_widths = choose_image_type(types)
     jpg_quality = ask_jpg_quality()
-    webp_q = ask_webp_q()
+    webp_lossless = ask_webp_lossless()
+    webp_q = ask_webp_q(lossless=webp_lossless)
 
     jpg_dir = folder_path / f"jpg-{jpg_quality}"
-    webp_dir = folder_path / f"webp-{webp_q}"
+    webp_mode_tag = "lossless" if webp_lossless else "lossy"
+    webp_dir = folder_path / f"webp-{webp_mode_tag}-{webp_q}"
     jpg_dir.mkdir(exist_ok=True)
     webp_dir.mkdir(exist_ok=True)
 
@@ -386,7 +425,7 @@ def main() -> None:
     print(f"輸出寬度：{' / '.join(str(w) for w in type_widths)}")
     print(f"圖片數：{len(png_files)}")
     print(f"JPG quality：{jpg_quality}")
-    print(f"WebP q：{webp_q}")
+    print(f"WebP：{'無損' if webp_lossless else '有損'}（q={webp_q}）")
     print("開始處理…\n")
 
     results: list[ProcessResult] = []
@@ -402,6 +441,7 @@ def main() -> None:
                 webp_dir,
                 jpg_quality,
                 webp_q,
+                webp_lossless,
             ): src
             for src in png_files
         }
