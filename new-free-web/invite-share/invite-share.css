@@ -174,6 +174,11 @@
     height: auto;
     object-fit: cover;
 }
+@media (max-width: 767.98px) {
+    .content-tab-img img {
+        aspect-ratio: 4/3;
+    }
+}
 
 /* Accordion card: no outer radius conflict with item border */
 .content-tab-card {
@@ -191,7 +196,7 @@
         width: 100%;
         max-width: 100%;
         min-width: 0;
-        padding:48px 48px 0 48px;
+        padding:40px 40px 0 40px;
     }
 
     .content-tab-img picture {

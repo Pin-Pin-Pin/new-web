@@ -42,7 +42,7 @@
                         sizes="
                             (min-width: 1200px) 640px,
                             (min-width: 768px) 800px,
-                            calc(100vw - 24px)
+                            min(calc(100vw - 24px),480px)
                         "
                     >
                 
@@ -56,7 +56,7 @@
                         sizes="
                             (min-width: 1200px) 640px,
                             (min-width: 768px) 800px,
-                            calc(100vw - 24px)
+                            min(calc(100vw - 24px),480px)
                         "
                         width="16"
                         height="9"
@@ -142,7 +142,7 @@
             var webp760 = IMAGE_BASE + image.slug + '-760.webp';
             var jpg380 = IMAGE_BASE + image.slug + '-380.jpg';
             var jpg760 = IMAGE_BASE + image.slug + '-760.jpg';
-            var sizes = '(min-width: 1200px) 640 px,  calc(100vw - 24px)';
+            var sizes = '(min-width: 1200px) 379px, (min-width: 768px) min(680px, calc(100vw - 160px),min(478px, calc(100vw - 48px))';
 
             return (
                 '<picture>' +
@@ -151,7 +151,7 @@
                         ' src="' + jpg380 + '"' +
                         ' srcset="' + jpg380 + ' 380w, ' + jpg760 + ' 760w"' +
                         ' sizes="' + sizes + '"' +
-                        ' width="380" height="285"' +
+                        ' width="4" height="3"' +
                         ' alt="' + escapeHtml(image.alt) + '"' +
                         ' loading="lazy"' +
                         ' decoding="async"' +
