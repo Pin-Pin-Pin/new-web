@@ -1,9 +1,4 @@
-.section-title{
-    margin-bottom: 24px;
-}
-/* ========================================
-   Section: 在這裡你會獲得什麼 
-======================================== */
+
 .volunteer-content-container{
     flex-direction: column;
     gap: 24px;
@@ -23,13 +18,14 @@
 .volunteer-cards img{
     width: 100%;
     max-width: 100%;
-    aspect-ratio: 33 / 20;
+    aspect-ratio: 16 / 9;   
     object-fit: cover;
 }
 
 @media (min-width: 768px) {
     .volunteer-cards {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 }
  
@@ -50,16 +46,6 @@
 .volunteer-card .card-title{
     margin-bottom: 0; 
 }
-/* ========================================
-   Section: 我們正在尋找這樣的你！
-======================================== */
-#requirements .section-title{
-    margin-bottom: 40px;
-}
-/* ========================================
-   Section: 申請方式
-======================================== */
-
 /* ========================================
    Section: 志工模式
 ======================================== */
@@ -90,6 +76,36 @@
         grid-template-columns: repeat(2, 1fr);
     }
 } 
+/* ========================================
+   Section: 我們正在尋找這樣的你！
+======================================== */
+.requirements-item-container-grid{
+    display: grid;
+    grid-template-columns:  1fr;
+    gap: 24px; 
+}
+.requirements-item-container{
+    display: flex;
+    flex-direction: column; 
+    gap: 24px; 
+    height: 100%;
+}
+.requirements-item{
+    flex: 1;
+    padding: 16px;
+    background-color: var(--brand-background-yellow);
+    border-radius: 8px;
+}
+.requirements-item h3{
+    color: var(--brand-dark-primary);
+    font-weight: 700;
+    
+}
+@media (min-width: 768px) {
+    .requirements-item-container-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 /* ========================================
    Section: cta 與 志工心得
 ======================================== */
