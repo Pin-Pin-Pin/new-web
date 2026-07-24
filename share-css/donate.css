@@ -1,6 +1,258 @@
-/* 各種募款頁的 */
+/* ========================================
+   捐款頁 donate-hero
+   手機：Grid 疊層，背景僅覆蓋 img-box；間距 0
+   平板以上：inner 套用 .container 寬度；img-box / table-box 間距 40→120
+======================================== */
+section.donate-hero{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+.donate-hero__inner.container{
+    display: contents;
+}
+.donate-hero__bg{
+    grid-area: 1 / 1;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+.donate-hero__bg img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+.donate-hero .img-box{
+    grid-area: 1 / 1;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 280px;
+    padding: 40px 24px;
+    box-sizing: border-box;
+}
+.donate-hero .img-box__slogan{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+.donate-hero .img-box__slogan img{
+    width: 100%;
+    height: auto;
+}
+.donate-hero .table-box{
+    grid-area: 2 / 1;
+    z-index: 1;
+    width: 100%;
+    max-width: 390px;
+    justify-self: center;
+    padding: 24px 0;
+    box-sizing: border-box;
+}
+@media (min-width: 768px) {
+    section.donate-hero{
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .donate-hero__bg{
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        grid-area: unset;
+    }
+    .donate-hero__inner.container{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 390px;
+        grid-template-rows: 1fr;
+        gap: 40px;
+        position: relative;
+        z-index: 1;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .donate-hero .img-box{
+        grid-area: auto;
+        min-height: 400px;
+        padding: 0;
+    }
+    .donate-hero .table-box{
+        grid-area: auto;
+        width: 390px;
+        max-width: 390px;
+        padding: 0;
+        justify-self: stretch;
+        align-self: center;
+    }
+}
+@media (min-width: 1200px) {
+    .donate-hero__inner.container{
+        gap: 120px;
+    }
+}
 
-/* 捐款方案卡片 */
+/* ========================================
+   donation-box（金額錯誤、其他方式、PayPal）
+======================================== */
+.donation-box__error{
+    color: #b42318;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+.donation-box__notice{
+    color: var(--brand-black);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.donation-box__panel--other{
+    gap: 16px;
+}
+.donation-box__submit{
+    border: none;
+}
+
+/* 其他方式 accordion */
+.donation-box__accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+.donation-box__accordion .accordion-item{
+    border: 1px solid var(--gray-400);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--white);
+}
+.donation-box__accordion .accordion-header{
+    margin-bottom: 0;
+    padding: 8px 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.donation-box__accordion .accordion-header button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: left;
+    color: var(--brand-black);
+    cursor: pointer;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.donation-box__accordion .accordion-header button.collapsed::after{
+    content: "";
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--brand-dark-primary);
+    -webkit-mask: var(--icon-chevron-down) no-repeat center / contain;
+    mask: var(--icon-chevron-down) no-repeat center / contain;
+}
+.donation-box__accordion .accordion-header button:not(.collapsed)::after{
+    content: "";
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--white);
+    -webkit-mask: var(--icon-chevron-down) no-repeat center / contain;
+    mask: var(--icon-chevron-down) no-repeat center / contain;
+    transform: rotate(180deg);
+}
+.donation-box__accordion .accordion-header:has(button:not(.collapsed)){
+    background-color: var(--brand-dark-primary);
+}
+.donation-box__accordion .accordion-header:has(button:not(.collapsed)) button{
+    color: var(--white);
+}
+.donation-box__accordion .accordion-body{
+    padding: 12px;
+    background-color: var(--white);
+    color: var(--brand-black);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.donation-box__accordion .accordion-body p{
+    margin-bottom: 0;
+}
+.donation-box__accordion .accordion-body a,
+.donation-box__accordion .accordion-body a:hover,
+.donation-box__accordion .accordion-body a:focus,
+.donation-box__accordion .accordion-body a:visited{
+    color: var(--brand-primary);
+    text-decoration: underline !important;
+}
+.donation-box__accordion .accordion-body a + a{
+    margin-left: 8px;
+}
+
+/* PayPal */
+.donation-box__paypal-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 12px;
+}
+.donation-box__paypal-form table{
+    width: auto;
+    margin-bottom: 0;
+}
+.donation-box__paypal-form select{
+    min-height: 44px;
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--gray-400);
+    border-radius: 4px;
+    background-color: var(--white);
+    color: var(--brand-black);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 0.875rem;
+}
+.donation-box__paypal-form input[type="image"]{
+    display: block;
+    width: 146px;
+    height: auto;
+    max-width: 100%;
+    cursor: pointer;
+}
+/* ========================================
+   捐款方案卡片
+======================================== */
 .donation-plan .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -46,7 +298,9 @@
     align-items: center;
     align-self: stretch;
 }
-/* footer */ 
+/* ========================================
+   footer
+======================================== */
 footer{
     background-color: var(--brand-background-green);
     padding: 40px;
@@ -78,7 +332,4 @@ footer{
         max-width:608px;
     }
 }
-/* footer *{
-    outline: 1px solid black;
-} */
 

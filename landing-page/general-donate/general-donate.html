@@ -21,27 +21,28 @@
         <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-tbl.webp" type="image/webp" media="(min-width: 768px)"/>
         <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260610-mine-img-mb.webp" type="image/webp"/>
         <img alt="" width="684" height="480" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260624-mine-img-mb.png" fetchpriority="high" decoding="async"/>
+
     </picture>
-    <div class="donate-hero__inner">
+    <div class="donate-hero__inner container">
         <div class="img-box">
             <!-- 標語圖待替換：桌機橫排 / 手機直排各一組圖檔 -->
         </div>
         <div class="table-box">
-            <div class="donation-box">
-                <h2 class="donation-box__title h4 mb-0">選擇捐款方式</h2>
+            <div class="donation-box" id="donation-box">
+                <h2 class="donation-box__title h4">選擇捐款方式</h2>
 
                 <div class="donation-box__tabs" role="tablist" aria-label="捐款方式">
-                    <button type="button" class="donation-box__tab is-active" role="tab" aria-selected="true" id="donate-tab-monthly">每月捐款</button>
-                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-once">單筆捐款</button>
-                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-other">其他方式</button>
+                    <button type="button" class="donation-box__tab is-active" role="tab" aria-selected="true" id="donate-tab-monthly" data-donate-tab="monthly" aria-controls="donate-panel-amount">每月捐款</button>
+                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-once" data-donate-tab="once" aria-controls="donate-panel-amount">單筆捐款</button>
+                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-other" data-donate-tab="other" aria-controls="donate-panel-other">其他方式</button>
                 </div>
 
-                <div class="donation-box__panel" role="tabpanel" aria-labelledby="donate-tab-monthly">
-                    <h3 class="donation-box__subtitle h4 mb-0">選擇金額或自訂金額</h3>
+                <div class="donation-box__panel" id="donate-panel-amount" role="tabpanel" aria-labelledby="donate-tab-monthly">
+                    <h3 class="donation-box__subtitle h4">選擇金額或自訂金額</h3>
 
-                    <ul class="donation-box__amount-list list-unstyled mb-0">
+                    <ul class="donation-box__amount-list list-unstyled mb-0" id="donate-amount-list">
                         <li>
-                            <button type="button" class="donation-box__amount-option">
+                            <button type="button" class="donation-box__amount-option" data-amount="500" aria-pressed="false">
                                 <span class="donation-box__amount-value">
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">500</span>
@@ -50,21 +51,21 @@
                             </button>
                         </li>
                         <li>
-                            <button type="button" class="donation-box__amount-option is-active" aria-pressed="true">
+                            <button type="button" class="donation-box__amount-option is-active" data-amount="1000" aria-pressed="true">
                                 <span class="donation-box__amount-value">
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">1000</span>
                                 </span>
-                                <span class="donation-box__amount-desc">用行動擺脫無力感，把不可能化為可能。</span>
+                                <span class="donation-box__amount-desc">成為守護環境的穩定社會力。</span>
                             </button>
                         </li>
                         <li>
-                            <button type="button" class="donation-box__amount-option">
+                            <button type="button" class="donation-box__amount-option" data-amount="1500" aria-pressed="false">
                                 <span class="donation-box__amount-value">
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">1500</span>
                                 </span>
-                                <span class="donation-box__amount-desc">用行動擺脫無力感，把不可能化為可能。</span>
+                                <span class="donation-box__amount-desc">從關注個案到監督制度，打造專業的環境倡議團隊。</span>
                             </button>
                         </li>
                     </ul>
@@ -73,11 +74,118 @@
                         <label class="donation-box__custom-label" for="donate-custom-amount">自訂金額</label>
                         <input class="donation-box__custom-input" type="text" inputmode="numeric" id="donate-custom-amount" name="custom_amount" placeholder="請輸入金額" autocomplete="off">
                     </div>
+                    <p class="donation-box__error mb-0" id="donate-amount-error" hidden role="alert">請輸入自訂金額或選取建議金額</p>
                 </div>
 
-                <a href="#" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-box__submit">
+                <div class="donation-box__panel donation-box__panel--other" id="donate-panel-other" role="tabpanel" aria-labelledby="donate-tab-other" hidden>
+                    <p class="donation-box__notice mb-0">※溫馨提醒，地球公民不會以抽獎或私訊通知中獎，請您在匯款前慎防詐騙，勿輕信不明訊息。</p>
+                    <div class="accordion donation-box__accordion" id="donateOtherAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-1">
+                                <button type="button" class="p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-1" aria-expanded="true" aria-controls="donate-other-collapse-1">
+                                    <span>信用卡紙本定期 / 單筆捐款</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-1" class="accordion-collapse collapse show" aria-labelledby="donate-other-heading-1" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>任一銀行的VISA、Master Card、JCB信用卡皆可辦理。請填寫<a href="https://drive.google.com/file/d/1v_lIh9Drs6R_sugg7vP0Tb1mRve4j0T8/view?usp=sharing" target="_blank" rel="noopener noreferrer">信用卡授權書</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-2">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-2" aria-expanded="false" aria-controls="donate-other-collapse-2">
+                                    <span>郵局定期扣款</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-2" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-2" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>
+                                        凡於中華郵政開立存簿儲金者，皆可利用郵局定期扣款的方式進行捐款。請填寫<a href="https://drive.google.com/file/d/12mmZhYoa8AToPo3NVX2NEuS6-7u-IZTF/view?usp=sharing" target="_blank" rel="noopener noreferrer">郵局轉帳授權書</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-3">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-3" aria-expanded="false" aria-controls="donate-other-collapse-3">
+                                    <span>郵政劃撥</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-3" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-3" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>至全國各地郵局填寫郵局空白劃撥單，直接以劃撥方式捐款，資料如下：<br>帳號：42275525 戶名：財團法人地球公民基金會</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-4">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-4" aria-expanded="false" aria-controls="donate-other-collapse-4">
+                                    <span>銀行匯款 / ATM 轉帳</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-4" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-4" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>請來電或來信詢問 ATM 轉帳的捐款方式。<br>我們不會透過私訊索取個資，也不會以私人帳戶收取捐款。<br>電話：07-2156809#14<br>email：<a href="mailto:donor@cet-taiwan.org">donor@cet-taiwan.org</a><br>完成匯款後，煩請填寫<a href="https://docs.google.com/forms/d/1zIS2lX5Z-qMsKqVCFvame2eQyxvnQeKhlAy_NPYJmDI/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">匯款通知單</a>，以利核對。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-5">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-5" aria-expanded="false" aria-controls="donate-other-collapse-5">
+                                    <span>現金、支票捐款</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-5" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-5" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>您可直接至本會辦公室現金捐款，或於本會舉辦之宣導活動會場捐款。<br>若不克前往，可以現金袋或開立抬頭為「財團法人地球公民基金會」，且註明<strong>「禁止背書轉讓」</strong>及<strong>劃線</strong>的支票，以掛號寄至高雄總會：801 高雄市前金區中華四路 282 號 5 樓會計收，並請簡單註明捐款收據抬頭開立方式。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-6">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-6" aria-expanded="false" aria-controls="donate-other-collapse-6">
+                                    <span>PayPal</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-6" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-6" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>Please use Donate Button below. 請點擊捐款按鈕，捐款後確認信會寄到您的 PayPal 信箱，如需收據請告知。（僅提供國外 PayPal 帳號使用。）</p>
+                                    <form class="donation-box__paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                        <input name="cmd" type="hidden" value="_s-xclick">
+                                        <input name="hosted_button_id" type="hidden" value="UMXNE5EMKJ49W">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input name="on0" type="hidden" value="Donation Amount">Donation Amount</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select name="os0">
+                                                            <option value="1.Donation Amount">NT$1,000 TWD</option>
+                                                            <option value="2.Donation Amount">NT$3,000 TWD</option>
+                                                            <option value="3.Donation Amount">NT$5,000 TWD</option>
+                                                            <option value="4.Donation Amount">NT$300 TWD</option>
+                                                            <option value="5.Donation Amount">NT$500 TWD</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <input name="currency_code" type="hidden" value="TWD">
+                                        <input alt="PayPal － 更安全、更簡單的線上付款方式！" border="0" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" type="image" width="146" height="47">
+                                        <img alt="" border="0" height="1" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-box__submit" id="donate-submit">
                     <span class="btn-label">下一步</span>
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -193,12 +301,214 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <script type="text/javascript">
 function single() {
-    window.parent.ContribPage.setContributeType('non-recurring');
-};
+    if (window.parent && window.parent.ContribPage) {
+        window.parent.ContribPage.setContributeType('non-recurring');
+    }
+}
 
 function recurring() {
-    window.parent.ContribPage.setContributeType('recurring');
-};
+    if (window.parent && window.parent.ContribPage) {
+        window.parent.ContribPage.setContributeType('recurring');
+    }
+}
+
+(function () {
+    var AMOUNT_DATA = {
+        monthly: [
+            { amount: '500', desc: '用行動擺脫無力感，把不可能化為可能。' },
+            { amount: '1000', desc: '成為守護環境的穩定社會力。' },
+            { amount: '1500', desc: '從關注個案到監督制度，打造專業的環境倡議團隊。' }
+        ],
+        once: [
+            { amount: '1200', desc: '一份捐款，一個珍貴的環保力！' },
+            { amount: '3000', desc: '在關鍵時刻，挺身守護家園。' },
+            { amount: '5000', desc: '和地球公民一起前進，看顧孕育我們的島嶼！' }
+        ]
+    };
+    var DEFAULT_OPTION_INDEX = 1;
+    var TAB_TYPE = {
+        monthly: 'recurring',
+        once: 'non-recurring'
+    };
+
+    var box = document.getElementById('donation-box');
+    if (!box) return;
+
+    var tabs = box.querySelectorAll('.donation-box__tab');
+    var panelAmount = document.getElementById('donate-panel-amount');
+    var panelOther = document.getElementById('donate-panel-other');
+    var amountList = document.getElementById('donate-amount-list');
+    var customInput = document.getElementById('donate-custom-amount');
+    var errorEl = document.getElementById('donate-amount-error');
+    var submitBtn = document.getElementById('donate-submit');
+    var currentTab = 'monthly';
+
+    function toHalfWidthDigits(value) {
+        return String(value || '')
+            .replace(/[０-９]/g, function (ch) {
+                return String.fromCharCode(ch.charCodeAt(0) - 0xFEE0);
+            })
+            .replace(/\D/g, '');
+    }
+
+    function getAmountOptions() {
+        return amountList ? amountList.querySelectorAll('.donation-box__amount-option') : [];
+    }
+
+    function clearAmountSelection() {
+        getAmountOptions().forEach(function (btn) {
+            btn.classList.remove('is-active');
+            btn.setAttribute('aria-pressed', 'false');
+        });
+    }
+
+    function selectAmountOption(btn) {
+        clearAmountSelection();
+        if (!btn) return;
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+        if (customInput) customInput.value = '';
+        hideAmountError();
+    }
+
+    function hideAmountError() {
+        if (errorEl) errorEl.hidden = true;
+    }
+
+    function showAmountError() {
+        if (errorEl) {
+            errorEl.hidden = false;
+            errorEl.focus && errorEl.focus();
+        }
+        if (customInput) customInput.focus();
+    }
+
+    function renderAmountOptions(tabKey) {
+        var data = AMOUNT_DATA[tabKey];
+        if (!data || !amountList) return;
+
+        var options = getAmountOptions();
+        data.forEach(function (item, index) {
+            var btn = options[index];
+            if (!btn) return;
+            btn.setAttribute('data-amount', item.amount);
+            var numberEl = btn.querySelector('.donation-box__number');
+            var descEl = btn.querySelector('.donation-box__amount-desc');
+            if (numberEl) numberEl.textContent = item.amount;
+            if (descEl) descEl.textContent = item.desc;
+        });
+
+        if (customInput) customInput.value = '';
+        selectAmountOption(options[DEFAULT_OPTION_INDEX] || options[0]);
+        hideAmountError();
+    }
+
+    function setActiveTab(tabKey) {
+        currentTab = tabKey;
+        tabs.forEach(function (tab) {
+            var isActive = tab.getAttribute('data-donate-tab') === tabKey;
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        var isOther = tabKey === 'other';
+        if (panelAmount) {
+            panelAmount.hidden = isOther;
+            panelAmount.setAttribute('aria-labelledby', isOther ? '' : (tabKey === 'once' ? 'donate-tab-once' : 'donate-tab-monthly'));
+        }
+        if (panelOther) panelOther.hidden = !isOther;
+        if (submitBtn) submitBtn.hidden = isOther;
+
+        if (!isOther) {
+            renderAmountOptions(tabKey);
+        } else {
+            hideAmountError();
+        }
+    }
+
+    function getSelectedAmount() {
+        var customAmount = toHalfWidthDigits(customInput && customInput.value);
+        if (customAmount) {
+            return customAmount;
+        }
+        var active = amountList && amountList.querySelector('.donation-box__amount-option.is-active');
+        if (active) {
+            return active.getAttribute('data-amount');
+        }
+        return null;
+    }
+
+    // netiCRM 金額預填：https://neticrm.tw/resources/2423#5
+    // &_amt=金額（不在選項中則視為自訂金額）
+    // &_grouping=recurring | non-recurring
+    function getDonatePageBaseUrl() {
+        var link = document.querySelector('link[rel="canonical"]');
+        return (link && link.href) || 'https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=43';
+    }
+
+    function buildDonateUrl(amount, grouping) {
+        var url = new URL(getDonatePageBaseUrl(), window.location.href);
+        url.searchParams.set('_amt', String(amount));
+        url.searchParams.set('_grouping', grouping);
+        return url.toString();
+    }
+
+    function goToDonatePage(amount, grouping) {
+        var target = buildDonateUrl(amount, grouping);
+        if (window.top && window.top !== window) {
+            window.top.location.href = target;
+        } else {
+            window.location.href = target;
+        }
+    }
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            setActiveTab(tab.getAttribute('data-donate-tab'));
+        });
+    });
+
+    if (amountList) {
+        amountList.addEventListener('click', function (event) {
+            var btn = event.target.closest('.donation-box__amount-option');
+            if (!btn || !amountList.contains(btn)) return;
+            selectAmountOption(btn);
+        });
+    }
+
+    if (customInput) {
+        customInput.addEventListener('input', function () {
+            var normalized = toHalfWidthDigits(customInput.value);
+            if (customInput.value !== normalized) {
+                customInput.value = normalized;
+            }
+            if (normalized) {
+                clearAmountSelection();
+                hideAmountError();
+            }
+        });
+        customInput.addEventListener('blur', function () {
+            customInput.value = toHalfWidthDigits(customInput.value);
+        });
+    }
+
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function () {
+            if (currentTab === 'other') return;
+
+            var selectedAmount = getSelectedAmount();
+            if (!selectedAmount || selectedAmount === '0') {
+                showAmountError();
+                return;
+            }
+
+            hideAmountError();
+            goToDonatePage(selectedAmount, TAB_TYPE[currentTab]);
+        });
+    }
+
+    setActiveTab('monthly');
+})();
 
 var faqData = [
     {
