@@ -4,7 +4,7 @@
 CET Taiwan - 圖片尺寸輸出工具
 
 功能：
-  - 選擇資料夾與一張以上 PNG 圖片
+  - 選擇資料夾與一張以上 PNG / JPG 圖片
   - 依圖片類型輸出多尺寸 JPG（magick）與 WebP（cwebp）
   - WebP：先以 ImageMagick 縮圖，再以 cwebp 編碼（不使用 cwebp -resize）
   - WebP 可選有損（預設）或無損壓縮；透明 PNG 轉 WebP 仍保留透明度
@@ -29,6 +29,7 @@ from tkinter import filedialog
 JPG_DEFAULT_QUALITY = 82
 WEBP_DEFAULT_Q = 80
 WEBP_OPTIONS = [90, 85, 80, 75]
+INPUT_EXTS = {".png", ".jpg", ".jpeg"}
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 TYPES_FILE = SCRIPT_DIR / "image_types.json"
@@ -242,17 +243,22 @@ def select_folder_and_files() -> tuple[Path, list[Path]]:
 
     folder_path = Path(folder)
     files = filedialog.askopenfilenames(
-        title="選擇 PNG 圖片（可多選）",
+        title="選擇 PNG / JPG 圖片（可多選）",
         initialdir=folder,
-        filetypes=[("PNG 圖片", "*.png"), ("所有檔案", "*.*")],
+        filetypes=[
+            ("PNG / JPG 圖片", "*.png;*.jpg;*.jpeg"),
+            ("PNG 圖片", "*.png"),
+            ("JPG 圖片", "*.jpg;*.jpeg"),
+            ("所有檔案", "*.*"),
+        ],
     )
     root.destroy()
 
     if not files:
         return folder_path, []
 
-    png_files = [Path(f) for f in files if Path(f).suffix.lower() == ".png"]
-    return folder_path, png_files
+    image_files = [Path(f) for f in files if Path(f).suffix.lower() in INPUT_EXTS]
+    return folder_path, image_files
 
 
 def choose_image_type(types: dict) -> tuple[str, str, list[int]]:
@@ -396,16 +402,16 @@ def main() -> None:
     check_dependencies()
     types = load_image_types()
 
-    print("\n📁 請在視窗中選擇資料夾與 PNG 圖片…")
-    folder_path, png_files = select_folder_and_files()
+    print("\n📁 請在視窗中選擇資料夾與 PNG / JPG 圖片…")
+    folder_path, image_files = select_folder_and_files()
 
-    if not folder_path or not png_files:
+    if not folder_path or not image_files:
         print("❌ 未選擇資料夾或圖片，程式結束。")
         sys.exit(1)
 
-    invalid = [f for f in png_files if f.suffix.lower() != ".png"]
+    invalid = [f for f in image_files if f.suffix.lower() not in INPUT_EXTS]
     if invalid:
-        print("❌ 僅支援 PNG 輸入，請重新選擇。")
+        print("❌ 僅支援 PNG / JPG 輸入，請重新選擇。")
         sys.exit(1)
 
     type_key, type_label, type_widths = choose_image_type(types)
@@ -423,13 +429,13 @@ def main() -> None:
     print(f"資料夾：{folder_path}")
     print(f"類型：{type_label}")
     print(f"輸出寬度：{' / '.join(str(w) for w in type_widths)}")
-    print(f"圖片數：{len(png_files)}")
+    print(f"圖片數：{len(image_files)}")
     print(f"JPG quality：{jpg_quality}")
     print(f"WebP：{'無損' if webp_lossless else '有損'}（q={webp_q}）")
     print("開始處理…\n")
 
     results: list[ProcessResult] = []
-    max_workers = min(len(png_files), os.cpu_count() or 4)
+    max_workers = min(len(image_files), os.cpu_count() or 4)
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {
@@ -443,7 +449,7 @@ def main() -> None:
                 webp_q,
                 webp_lossless,
             ): src
-            for src in png_files
+            for src in image_files
         }
         for future in as_completed(futures):
             src = futures[future]

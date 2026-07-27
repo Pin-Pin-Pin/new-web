@@ -1,4 +1,9 @@
-
+.volunteer-cards img,.page-top-container img{
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;   
+    object-fit: cover;
+}
 .volunteer-content-container{
     flex-direction: column;
     gap: 24px;
@@ -15,13 +20,6 @@
     gap: 24px;
     /* padding-top: 16px;  */
 }
-.volunteer-cards img{
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 9;   
-    object-fit: cover;
-}
-
 @media (min-width: 768px) {
     .volunteer-cards {
         grid-template-columns: 1fr 1fr;
@@ -79,6 +77,13 @@
 /* ========================================
    Section: 我們正在尋找這樣的你！
 ======================================== */
+#requirements {
+    padding-top: 80px;
+    padding-bottom: 64px;
+}
+#requirements .container{
+    gap: 40px;
+}
 .requirements-item-container-grid{
     display: grid;
     grid-template-columns:  1fr;
@@ -106,6 +111,54 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+/* ========================================
+   Section: 申請方式 與 申請時程
+======================================== */
+#apply {
+    padding-top: 64px;
+    padding-bottom: 80px;
+    background-color: var(--brand-background-green);
+}
+#apply-time {
+    background-color: var(--brand-background-green);
+    padding-top: 0;
+    padding-bottom: 64px;
+}
+#apply .container{
+    gap: 24px;
+}
+#apply-time .section-title{
+    margin-bottom: 24px;
+}
+.apply-time-item-container{ 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px; 
+    margin-bottom: 80px; 
+}
+@media (min-width: 768px) {
+    .apply-time-item-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+.apply-time-item{
+    background-color: var(--brand-white);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8 px;
+}
+.apply-time-item h3{
+    color: var(--brand-dark-primary);
+    font-weight: 700;
+    padding-bottom: 8px;
+    text-align: center;
+}
+.apply-time-item-content p{
+    text-align: center;
+}
+
 /* ========================================
    Section: cta 與 志工心得
 ======================================== */
