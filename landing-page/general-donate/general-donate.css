@@ -22,9 +22,9 @@ a:active {
     text-decoration: none !important;
     /* color: inherit !important; */
 }
-/* --------------------------------- */
-/* 各section css */
-/* about */
+/* ========================================
+   Section: about
+======================================== */
 .about .container{
     display: flex;
     flex-direction: column;
@@ -33,23 +33,21 @@ a:active {
     padding-right: 0;
     /* align-self: stretch; */
 }
-.about .img-box{
+.about .img-box {
     width: 100%;
 }
 .about img {
     width: 100%;
     height: auto;
     display: block;
-    /* object-fit: cover;
-    object-position: top right; */
+    object-fit: cover;
+    object-position: top right;
+    border-radius: 8px;
 }
 .about h3{
     color: var(--brand-dark-primary);
     margin-bottom: 40px;
 }
-/* .text-box{
-
-} */
 .about .container {
     display: grid;
     gap: 40px;
@@ -63,11 +61,6 @@ a:active {
         align-items: start;
     }
 }
-
-
-/* .about *{
-    outline: 1px solid black;
-} */
 @media (min-width: 768px)  {
     .about .container {
         grid-template-columns: 1fr 1fr;
@@ -78,7 +71,16 @@ a:active {
         grid-template-columns: 1fr 596px; 
     }
 }
-/* .core-values--------- */
+/* ========================================
+   Section: achievements
+======================================== */
+.achievements img{
+    width: 100%;
+    max-width: 100%;
+}
+/* ========================================
+   Section: core-values
+======================================== */
 .core-values{
     background-color: var(--brand-dark-primary);
 }
@@ -93,18 +95,39 @@ a:active {
      
 }
 .slogan-box{
+    width: 100%;
     max-width: 100%; 
 }
 .signature-box{
     width: 218px;
-    height: auto  ;
+    height: auto;
 }
-/* 捐款方案 */
+.slogan-box img,.signature-box img{
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .slogan-box{
+        width: 760px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .slogan-box{
+        width: 960px;
+    }
+}
+/* ========================================
+   Section: 捐款方案
+======================================== */
 .donation-plan{
     background-color: var(--brand-background-green);
 }
 .donation-plan h3{
     color: var(--brand-primary);
+}
+.donation-plan img{
+    width: 100%;
 }
 
 /* .btn{
