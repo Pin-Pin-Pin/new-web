@@ -7,7 +7,7 @@ CET Taiwan - HTML / CSS 圖檔連結檢查工具
   - 選擇資料夾與一張以上 HTML / CSS 檔案
   - 擷取 img / source / srcset / CSS url() 的圖檔連結
   - 本機相對路徑檢查檔案是否存在
-  - 遠端 http(s) 連結以 HTTP 狀態碼檢查（含 404）
+  - 遠端 http(s) 連結以 GET（stream）檢查 HTTP 狀態碼（含 404；不依賴不可靠的 HEAD）
 """
 
 from __future__ import annotations
@@ -266,23 +266,27 @@ def resolve_target(
 
 
 def check_remote(url: str, session: requests.Session) -> tuple[str, str, int | None]:
+    """
+    一律用 GET（stream）檢查。
+    cet-taiwan.org 等主機對不存在的圖檔 HEAD 仍可能回 200 + Content-Length: 0，
+    只有 GET 才會得到真實 404。
+    """
     headers = {"User-Agent": USER_AGENT, "Accept": "*/*"}
     try:
-        resp = session.head(url, allow_redirects=True, timeout=REQUEST_TIMEOUT, headers=headers)
-        # 部分主機對 HEAD 回 403/405，改用 GET
-        if resp.status_code in {403, 405, 501} or (
-            resp.status_code >= 400 and resp.status_code != 404
-        ):
-            resp = session.get(
-                url,
-                allow_redirects=True,
-                timeout=REQUEST_TIMEOUT,
-                headers=headers,
-                stream=True,
-            )
+        resp = session.get(
+            url,
+            allow_redirects=True,
+            timeout=REQUEST_TIMEOUT,
+            headers=headers,
+            stream=True,
+        )
+        code = resp.status_code
+        # 讀一點 body 確保連線完成狀態，再關掉避免下載整張圖
+        try:
+            next(resp.iter_content(chunk_size=64), None)
+        finally:
             resp.close()
 
-        code = resp.status_code
         if code == 404:
             return "http_error", "HTTP 404 Not Found", code
         if 200 <= code < 400:

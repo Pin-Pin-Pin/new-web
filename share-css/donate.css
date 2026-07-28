@@ -61,7 +61,7 @@ section.donate-hero{
     width: 100%;
     max-width: 390px;
     justify-self: center;
-    padding: 24px 0;
+    padding: 0;
     box-sizing: border-box;
 }
 @media (min-width: 768px) {
@@ -70,8 +70,7 @@ section.donate-hero{
         position: relative;
         width: 100%;
         max-width: none;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 24px 0;
     }
     .donate-hero__bg{
         position: absolute;
