@@ -1,6 +1,6 @@
-/* * {
-    outline: 1px solid green !important;
-} */
+* {
+    outline: 1px solid black !important;
+}
 :root {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;

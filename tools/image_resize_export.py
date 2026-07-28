@@ -5,11 +5,13 @@ CET Taiwan - 圖片尺寸輸出工具
 
 功能：
   - 選擇資料夾與一張以上 PNG / JPG 圖片
-  - 依圖片類型輸出多尺寸 JPG（magick）與 WebP（cwebp）
+  - 可選擇圖片是否透明（預設不透明）
+  - 不透明：輸出多尺寸 JPG（magick）與 WebP（cwebp）
+  - 透明：輸出多尺寸 PNG（magick，保留透明度）與 WebP（cwebp）
   - WebP：先以 ImageMagick 縮圖，再以 cwebp 編碼（不使用 cwebp -resize）
-  - WebP 可選有損（預設）或無損壓縮；透明 PNG 轉 WebP 仍保留透明度
+  - WebP 可選有損（預設）或無損壓縮；透明模式 WebP / PNG 皆保留透明度
   - 不放大；原圖小於最小規格時僅格式轉換
-  - 輸出至 jpg-{quality} / webp-{lossy|lossless}-{q} 子資料夾
+  - 輸出至 jpg-{quality} 或 png / webp-{lossy|lossless}-{q} 子資料夾
 """
 
 from __future__ import annotations
@@ -90,7 +92,8 @@ def has_transparency(image_path: Path) -> bool:
     return result.stdout.strip().lower() == "false"
 
 
-TRANSPARENT_PNG_NOTE = "⚠ 透明 PNG：JPG 已填白底，WebP 保留透明度"
+TRANSPARENT_MODE_NOTE = "透明模式：輸出 PNG + WebP（保留透明度）"
+OPAQUE_ALPHA_NOTE = "⚠ 原圖含透明度：JPG 已填白底，WebP 仍保留透明度"
 
 
 def get_output_widths(type_widths: list[int], orig_width: int) -> tuple[list[int], list[str], list[str]]:
@@ -131,6 +134,24 @@ def export_jpg(
     result = subprocess.run(cmd, capture_output=True, text=True, check=False)
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or "JPG 轉換失敗")
+
+
+def export_png(
+    src: Path,
+    dest: Path,
+    target_width: int,
+    orig_width: int,
+) -> None:
+    """輸出 PNG，保留透明度。"""
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    cmd = ["magick", str(src), "-strip"]
+    if target_width < orig_width:
+        cmd.extend(["-resize", f"{target_width}x"])
+    cmd.append(str(dest))
+
+    result = subprocess.run(cmd, capture_output=True, text=True, check=False)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or "PNG 轉換失敗")
 
 
 def build_cwebp_cmd(src: Path, dest: Path, q: int, lossless: bool) -> list[str]:
@@ -192,8 +213,10 @@ def export_webp(
 def process_image(
     src_path: Path,
     type_widths: list[int],
-    jpg_dir: Path,
+    raster_dir: Path,
     webp_dir: Path,
+    *,
+    transparent: bool,
     jpg_quality: int,
     webp_q: int,
     webp_lossless: bool = False,
@@ -205,18 +228,34 @@ def process_image(
     try:
         orig_width = get_image_width(src_path)
         result.orig_width = orig_width
-        result.has_transparency = has_transparency(src_path)
+        result.has_transparency = transparent
         widths, skipped, size_notes = get_output_widths(type_widths, orig_width)
         result.output_widths = widths
         result.skipped = skipped
         result.notes = size_notes
-        if result.has_transparency:
-            result.notes.append(TRANSPARENT_PNG_NOTE)
+
+        if transparent:
+            result.notes.append(TRANSPARENT_MODE_NOTE)
+        elif has_transparency(src_path):
+            result.notes.append(OPAQUE_ALPHA_NOTE)
 
         for width in widths:
-            jpg_name = f"{stem}-{width}.jpg"
             webp_name = f"{stem}-{width}.webp"
-            export_jpg(src_path, jpg_dir / jpg_name, width, orig_width, jpg_quality)
+            if transparent:
+                export_png(
+                    src_path,
+                    raster_dir / f"{stem}-{width}.png",
+                    width,
+                    orig_width,
+                )
+            else:
+                export_jpg(
+                    src_path,
+                    raster_dir / f"{stem}-{width}.jpg",
+                    width,
+                    orig_width,
+                    jpg_quality,
+                )
             export_webp(
                 src_path,
                 webp_dir / webp_name,
@@ -321,6 +360,17 @@ def ask_custom_widths() -> list[int]:
         return widths
 
 
+def ask_transparent() -> bool:
+    """選擇圖片是否透明。回傳 True = 透明；空白或無效則預設不透明。"""
+    raw = input("\n圖片是否為透明？（1=不透明 / 2=透明，預設不透明）\n> ").strip().lower()
+    if not raw or raw in {"1", "不透明", "opaque", "n", "no"}:
+        return False
+    if raw in {"2", "透明", "transparent", "y", "yes"}:
+        return True
+    print("⚠️  輸入無效，使用不透明")
+    return False
+
+
 def ask_jpg_quality() -> int:
     raw = input(f"\nJPG quality（預設 {JPG_DEFAULT_QUALITY}）\n> ").strip()
     if not raw:
@@ -373,7 +423,13 @@ def ask_webp_q(*, lossless: bool = False) -> int:
     return WEBP_DEFAULT_Q
 
 
-def print_summary(results: list[ProcessResult], jpg_dir: Path, webp_dir: Path) -> None:
+def print_summary(
+    results: list[ProcessResult],
+    raster_dir: Path,
+    webp_dir: Path,
+    *,
+    transparent: bool,
+) -> None:
     print("\n" + "=" * 88)
     print(f"{'檔名':<28} {'原寬':>6} {'輸出尺寸':<22} {'略過 / 備註'}")
     print("-" * 88)
@@ -386,11 +442,12 @@ def print_summary(results: list[ProcessResult], jpg_dir: Path, webp_dir: Path) -
 
     print("=" * 88)
     success = sum(1 for r in results if not r.errors)
-    transparent_count = sum(1 for r in results if r.has_transparency)
     print(f"\n✅ 完成 {success}/{len(results)} 張")
-    if transparent_count:
-        print(f"⚠  其中 {transparent_count} 張為透明 PNG，JPG 已填白底，WebP 保留透明度")
-    print(f"   JPG  → {jpg_dir}")
+    if transparent:
+        print("   透明模式：輸出 PNG + WebP（保留透明度）")
+        print(f"   PNG  → {raster_dir}")
+    else:
+        print(f"   JPG  → {raster_dir}")
     print(f"   WebP → {webp_dir}")
 
 
@@ -415,14 +472,19 @@ def main() -> None:
         sys.exit(1)
 
     type_key, type_label, type_widths = choose_image_type(types)
-    jpg_quality = ask_jpg_quality()
+    transparent = ask_transparent()
+    jpg_quality = ask_jpg_quality() if not transparent else JPG_DEFAULT_QUALITY
     webp_lossless = ask_webp_lossless()
     webp_q = ask_webp_q(lossless=webp_lossless)
 
-    jpg_dir = folder_path / f"jpg-{jpg_quality}"
+    if transparent:
+        raster_dir = folder_path / "png"
+    else:
+        raster_dir = folder_path / f"jpg-{jpg_quality}"
+
     webp_mode_tag = "lossless" if webp_lossless else "lossy"
     webp_dir = folder_path / f"webp-{webp_mode_tag}-{webp_q}"
-    jpg_dir.mkdir(exist_ok=True)
+    raster_dir.mkdir(exist_ok=True)
     webp_dir.mkdir(exist_ok=True)
 
     print("\n" + "=" * 50)
@@ -430,7 +492,9 @@ def main() -> None:
     print(f"類型：{type_label}")
     print(f"輸出寬度：{' / '.join(str(w) for w in type_widths)}")
     print(f"圖片數：{len(image_files)}")
-    print(f"JPG quality：{jpg_quality}")
+    print(f"透明度：{'透明 → PNG + WebP' if transparent else '不透明 → JPG + WebP'}")
+    if not transparent:
+        print(f"JPG quality：{jpg_quality}")
     print(f"WebP：{'無損' if webp_lossless else '有損'}（q={webp_q}）")
     print("開始處理…\n")
 
@@ -443,11 +507,12 @@ def main() -> None:
                 process_image,
                 src,
                 type_widths,
-                jpg_dir,
+                raster_dir,
                 webp_dir,
-                jpg_quality,
-                webp_q,
-                webp_lossless,
+                transparent=transparent,
+                jpg_quality=jpg_quality,
+                webp_q=webp_q,
+                webp_lossless=webp_lossless,
             ): src
             for src in image_files
         }
@@ -462,7 +527,7 @@ def main() -> None:
                 print(f"  ✅  {result.filename}（{result.orig_width}px → {widths}）")
 
     results.sort(key=lambda r: r.filename.lower())
-    print_summary(results, jpg_dir, webp_dir)
+    print_summary(results, raster_dir, webp_dir, transparent=transparent)
 
 
 if __name__ == "__main__":
