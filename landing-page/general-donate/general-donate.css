@@ -23,34 +23,6 @@ a:active {
     /* color: inherit !important; */
 }
 /* ========================================
-   Section: 首頁
-======================================== */
-.donate-hero .img-box{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-.donate-hero .img-box img{
-    object-fit: cover;
-}
-#cet-top-logo{
-    width: 160px;
-}
-#top-slogan{
-    width: 132px; 
-}
-@media screen and (min-width: 768px) {
-    #top-slogan{
-        width: 330px;
-    }
-}
-@media screen and (min-width: 768px) {
-    #top-slogan{
-        width: 450px;
-    }
-}
-/* ========================================
    Section: about
 ======================================== */
 .about{
@@ -66,6 +38,7 @@ a:active {
 }
 .about .img-box {
     width: 100%;
+    
 }
 .about img {
     width: 100%;

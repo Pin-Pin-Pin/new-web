@@ -3,6 +3,32 @@
    手機：Grid 疊層，背景僅覆蓋 img-box；間距 0
    平板以上：inner 套用 .container 寬度；img-box / table-box 間距 40→120
 ======================================== */
+.donate-hero .img-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.donate-hero .img-box img{
+    object-fit: cover;
+}
+#cet-top-logo{
+    width: 160px;
+}
+#top-slogan{
+    width: 132px;
+    max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+    #top-slogan{
+        width: 330px;
+    }
+}
+@media screen and (min-width: 768px) {
+    #top-slogan{
+        width: 450px;
+    }
+}
 section.donate-hero{
     display: grid;
     grid-template-columns: 1fr;
@@ -11,7 +37,7 @@ section.donate-hero{
     width: 100%;
     max-width: 100%;
     margin-inline: auto;
-    padding: 0;
+    /* padding: 0; */
     box-sizing: border-box;
 }
 .donate-hero__inner.container{
@@ -70,7 +96,7 @@ section.donate-hero{
         position: relative;
         width: 100%;
         max-width: none;
-        padding: 24px 0;
+        padding: 0 24px;
     }
     .donate-hero__bg{
         position: absolute;

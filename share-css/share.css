@@ -1,6 +1,6 @@
-/* * {
+* {
     outline: 1px solid black !important;
-} */
+}
 :root {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
@@ -156,6 +156,11 @@ img{
     /* max-width: none; */
     object-fit: cover;
     object-position: center top;
+}
+
+section:has(.bg) {
+    position: relative;
+    overflow: hidden;
 }
 
 section:has(.bg) > .bg-uplayer {

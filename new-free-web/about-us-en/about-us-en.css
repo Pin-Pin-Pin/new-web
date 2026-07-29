@@ -1,0 +1,270 @@
+/* ========================================
+   Section: share-content
+======================================== */
+.share-content .share-content-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Mobile (<768): accordion only / Desktop (≥768): tabs only */
+.share-topics-tabs {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.share-topics-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    color: var(--black);
+}
+
+.share-topics-accordion .accordion-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid var(--brand-dark-primary);
+    overflow: hidden;
+}
+
+.share-topics-accordion .accordion-header {
+    margin-bottom: 0;
+    padding: 8px 16px;
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.share-topics-accordion .accordion-header button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: left;
+    color: var(--black);
+    transition: color 0.35s ease;
+    cursor: pointer;
+}
+
+.share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
+    background-color: var(--brand-dark-primary);
+    color: var(--white);
+}
+
+.share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
+    color: var(--white);
+}
+
+.share-topics-accordion .accordion-body {
+    padding: 0;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.share-topics-accordion .accordion-collapse.collapsing {
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#shareTab {
+    justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+    .share-topics-accordion {
+        display: none;
+    }
+
+    .share-topics-tabs {
+        display: flex;
+    }
+
+    #shareTab {
+        justify-content: center;
+    }
+
+    /* Equal-height panels: stack all panes in one grid cell.
+       Note: no Bootstrap .tab-content class — that rule uses display:none and would
+       remove inactive panes from height calculation. */
+    .share-content #shareTabContent.content-tabs-panels {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+    }
+
+    .share-content #shareTabContent.content-tabs-panels > .tab-pane {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 1;
+    }
+
+    .share-content #shareTabContent .content-tab-card {
+        height: 100%;
+    }
+}
+
+.content-tab-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.content-tab-text {
+    padding: 24px 16px;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    background-color: var(--brand-background-green);
+}
+
+.content-tab-block + .content-tab-block {
+    margin-top: 24px;
+}
+
+.content-tab-text h3 {
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.content-tab-text p {
+    margin-bottom: 0;
+}
+
+.content-tab-text p + p {
+    margin-top: 16px;
+}
+
+.content-tab-img {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.content-tab-img picture {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.content-tab-img img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+@media (max-width: 767.98px) {
+    .content-tab-img img {
+        aspect-ratio: 4/3;
+    }
+}
+
+/* Accordion card: no outer radius conflict with item border */
+.content-tab-card {
+    border-radius: 0;
+    background-color: var(--brand-background-green);
+}
+
+@media (min-width: 768px) {
+    .content-tab-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .content-tab-img {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding:40px 40px 0 40px;
+    }
+
+    .content-tab-img picture {
+        height: 100%;
+    }
+
+    .content-tab-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-tab-text {
+        padding: 40px;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content-tab-card {
+        flex-direction: row;
+    }
+    .content-tab-img {
+        aspect-ratio: 379 / 284;
+        flex: 0 0 379px;
+        width: 379px;
+        max-width: 379px;
+        padding:0;
+    }
+}
+/* ========================================
+   Section: 第一頁以後
+======================================== */
+.share-content{
+    padding-bottom: 80px;
+}
+.invite-info{
+    padding-top: 0;
+    padding-bottom: 80px;
+}
+.faq{ 
+    padding-top: 0;
+}
+.section-title{
+    border-top: 2px solid var(--brand-dark-primary);
+}
+/* ========================================
+   Section: 邀約方式
+======================================== */
+.invite-info .container{
+    /* display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start; */
+    display:block;
+}
+.invite-info ol{
+    margin-bottom: 0;
+    padding-left: 1rem;
+}
+.invite-info .section-title{
+    margin-bottom: 24px;
+}
+.invite-info-label{
+    font-weight: 700;
+    color: var(--brand-dark-primary);
+    margin-bottom: 0;
+}
+.faq .accordion {
+    color: var(--black);
+}
