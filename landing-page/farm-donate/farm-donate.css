@@ -9,40 +9,55 @@ img {
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 60vh;
+    min-height: 20vh;
     overflow: hidden;
 }
 
-@media (min-width: 1200px) {
-    .farm-hero {
-        min-height: 75vh;
+.farm-hero .img-box {
+    max-width: min(100%, 390px);
+}
+
+.donate-hero .img-box {
+    gap: 25px;
+}
+
+#top-slogan {
+    width: 250px;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    #top-slogan {
+        width: 450px;
     }
 }
+
 /* ========================================
    Section: 人物分享
 ======================================== */
-.people-quotes {
+.people-quotes,.donation-plan {
     position: relative;
     overflow: hidden;
     background-image: image-set(
-        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-bg-500.webp") type("image/webp"),
-        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-bg-500.jpg") type("image/jpeg")
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-donate-bg-500.webp") type("image/webp"),
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-donate-bg-500.jpg") type("image/jpeg")
     );
     background-repeat: repeat;
     background-position: center top;
     background-size: auto;
 }
-.people-quotes__card{
+.people-quotes__card {
     display: flex;
     flex-direction: column;
-    /* height: 100%; */
     justify-content: space-between;
 }
-.people-quotes p{
+
+.people-quotes p {
     color: #555;
 }
 
-.people-quotes__quote,.people-quotes__line {
+.people-quotes__quote,
+.people-quotes__line {
     width: 30%;
 }
 
@@ -57,10 +72,6 @@ img {
     width: 80%;
 }
 
-/* .people-quotes__signature--offset-top {
-    padding-top: 10px;
-} */
-
 .people-quotes__attribution {
     padding-left: 20px;
     padding-right: 20px;
@@ -68,74 +79,60 @@ img {
 }
 
 .people-quotes__line {
-    /* padding-right: 0; */
     margin-left: auto;
-    /* width: 100%; */
 }
-
-/* @media (min-width: 768px) {
-    .people-quotes__line {
-        padding-left: 240px;
-    }
-} */
-
-/* Story */
-.farm-story .container{
+/* ========================================
+   Section: 背景介紹
+======================================== */
+.farm-story .container {
     padding-top: 94px;
 }
-.farm-story p{
-    color: #282623;
-}
 
+.farm-story p,
 .farm-story__text {
     color: #282623;
 }
+/* ========================================
+   Section: Donation plan
+======================================== */
 
-/* Donation plan */
 .donation-plan img {
     display: block;
     width: 100%;
     height: auto;
 }
-.donation-plan p{
+
+.donation-plan p {
     color: #282623;
 }
-.donation-plan .amount{
+
+.donation-plan .amount {
     margin-bottom: 16px;
 }
-.donation-plan .card-text{
+
+.donation-plan .card-text {
     margin-top: 16px;
-}
-.donation-plan {
-    background-image: url(https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20220811-13.jpg?fid=22712);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
 }
 
 .donation-plan .card {
     border: 1px solid #564837;
+    outline: 2px solid #564837;
     background-color: #ffffff;
-    background-image: url(https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20220811-1.jpg?fid=22690);
+    background-image: image-set(
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-plan-bg-500.webp") type("image/webp"),
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-plan-bg-500.jpg") type("image/jpeg"));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .donation-plan .card-title {
-    /* padding-top: 30px;
-    padding-bottom: 10px; */
     text-align: center;
-    color: #282623;
-}
-
-.donation-plan .card-title h3 {
     color: #282623;
 }
 
 .donation-plan .card-image {
     display: block;
-    /* padding: 10px; */
 }
 
 .donation-plan .card-body {
@@ -143,29 +140,36 @@ img {
     color: #282623;
 }
 
-.donation-plan a {
-    /* padding-bottom: 20px; */
-    /* padding-left: 3%; */
-}
-.donation-plan .card{
-    outline: 2px solid #564837;
-}
-.donation-plan h3,.donation-plan p{
+.donation-plan h3,
+.donation-plan p {
     font-weight: 700;
 }
-.donation-plan .slogan-box{
+
+.donation-plan .slogan-box {
     width: 100%;
     max-width: 350px;
-    /* width350px */
 }
+
 @media (min-width: 1200px) {
-    .donation-plan .slogan-box{
+    .donation-plan .slogan-box {
         max-width: 570px;
-        /* width: 570px; */
     }
 }
 
-/* Spacer */
-footer{
+.donation-plan__cta {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.donation-plan__cta:focus-visible {
+    outline: 2px solid #564837;
+    outline-offset: 4px;
+}
+
+footer {
     background-color: #EFE7C2;
 }

@@ -1,6 +1,6 @@
-* {
+/* * {
     outline: 1px solid black !important;
-}
+} */
 :root {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
@@ -596,8 +596,8 @@ section:has(.page-top-container){
 }
 .btn-icon-arrow-right-mini::after{
     background-color: var(--brand-dark-primary);
-    -webkit-mask: var(--icon-arrow-up-right-mini) no-repeat center / contain;
-    mask: var(--icon-arrow-up-right-mini) no-repeat center / contain;
+    -webkit-mask: var(--icon-arrow-right-mini) no-repeat center / contain;
+    mask: var(--icon-arrow-right-mini) no-repeat center / contain;
 }
 /* ========================================
    Section: landing page 外連
