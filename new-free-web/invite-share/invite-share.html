@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="邀請地球公民分享環境議題：提供分享主題、邀約方式與常見問答，歡迎社團、教育工作者、企業與社區來信交流。">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../share-css/share.css">
     <link rel="stylesheet" href="invite-share.css">
@@ -23,7 +24,7 @@
                 </nav>
                 <div class="page-top-text-group-2">
                     <h1 class="h2">邀請分享</h1>
-                    <h2 class="h3">將環境現場帶入日常，用對話開啟改變。</h2>
+                    <p class="h3">將環境現場帶入日常，用對話開啟改變。</p>
                     <div class="page-top-text-p">
                         <p>地球公民超過二十年的時間位在台灣環境倡議的第一線。有感於行動的現場，有賴關心環境的大眾力量共同理解與共鳴。</p>
                         <p>透過講座與對話，我們期盼促成具備實質意義的社會對話。無論是高中與大學社團、積極推廣議題的教育工作者，或是關注環境的企業與社區，我們都非常期待與您交流。</p>
@@ -60,7 +61,7 @@
                         "
                         width="16"
                         height="9"
-                        alt=""
+                        alt="地球公民於活動現場進行環境議題分享"
                         fetchpriority="high"
                         decoding="async"
                     >
@@ -96,9 +97,9 @@
             <h2 class="h3 section-title">邀約地球公民分享</h2>
             <p>地球公民期盼透過每一場演講，促成具備實質意義的社會對話。無論是高中與大學社團、積極推廣議題的教育工作者，或是關注環境的企業與社區，我們都非常期待與您交流。
             </p>
-            <p>為了確保雙方對焦，並讓後續合作更順暢，我們期待可以得到您邀約活動的基礎資訊。請參考以下範本及重點，寄至 cet@cet-taiwan.org 。</p>
-            <p class="invite-info-label" >信件主旨</p>
-            <p>演講邀約：[請填寫單位名稱]_[預計活動月份] </p>
+            <p>為了確保雙方對焦，並讓後續合作更順暢，我們期待可以得到您邀約活動的基礎資訊。請參考以下範本及重點，寄至 <a href="mailto:cet@cet-taiwan.org">cet@cet-taiwan.org</a> 。</p>
+            <p class="invite-info-label">信件主旨</p>
+            <p>演講邀約：[請填寫單位名稱]_[預計活動月份]</p>
             <p class="invite-info-label">信件內容</p>
             <ol>
                 <li><strong>邀約單位名稱與簡介：</strong><br>請簡單告知我們單位的背景即可。</li>
@@ -125,9 +126,12 @@
     
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
     <script type="text/javascript">
         var IMAGE_BASE = 'https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/';
+        var shareTopicsMq = window.matchMedia('(min-width: 768px)');
+        var shareTopicsMode = null;
+        var shareTabScrollInited = false;
 
         function escapeHtml(text) {
             return String(text)
@@ -138,19 +142,28 @@
         }
 
         function buildTopicPictureHtml(image) {
-            var webp380 = IMAGE_BASE + image.slug + '-380.webp';
-            var webp760 = IMAGE_BASE + image.slug + '-760.webp';
-            var jpg380 = IMAGE_BASE + image.slug + '-380.jpg';
-            var jpg760 = IMAGE_BASE + image.slug + '-760.jpg';
-            var sizes = '(min-width: 1200px) 379px, (min-width: 768px) min(680px, calc(100vw - 160px),min(478px, calc(100vw - 48px))';
+            var mobileSlug = '20260723-topic-' + image.topicId;
+            var desktopSlug = '20260730-topic-' + image.topicId;
+            var mobileWebp380 = IMAGE_BASE + mobileSlug + '-380.webp';
+            var mobileWebp760 = IMAGE_BASE + mobileSlug + '-760.webp';
+            var mobileJpg380 = IMAGE_BASE + mobileSlug + '-380.jpg';
+            var mobileJpg760 = IMAGE_BASE + mobileSlug + '-760.jpg';
+            var desktopWebp450 = IMAGE_BASE + desktopSlug + '-450.webp';
+            var desktopWebp850 = IMAGE_BASE + desktopSlug + '-850.webp';
+            var desktopJpg450 = IMAGE_BASE + desktopSlug + '-450.jpg';
+            var desktopJpg850 = IMAGE_BASE + desktopSlug + '-850.jpg';
+            var desktopSizes = '379px';
+            var mobileSizes = '(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))';
 
             return (
                 '<picture>' +
-                    '<source type="image/webp" srcset="' + webp380 + ' 380w, ' + webp760 + ' 760w" sizes="' + sizes + '">' +
+                    '<source media="(min-width: 1200px)" type="image/webp" srcset="' + desktopWebp450 + ' 450w, ' + desktopWebp850 + ' 850w" sizes="' + desktopSizes + '">' +
+                    '<source media="(min-width: 1200px)" type="image/jpeg" srcset="' + desktopJpg450 + ' 450w, ' + desktopJpg850 + ' 850w" sizes="' + desktopSizes + '">' +
+                    '<source type="image/webp" srcset="' + mobileWebp380 + ' 380w, ' + mobileWebp760 + ' 760w" sizes="' + mobileSizes + '">' +
                     '<img' +
-                        ' src="' + jpg380 + '"' +
-                        ' srcset="' + jpg380 + ' 380w, ' + jpg760 + ' 760w"' +
-                        ' sizes="' + sizes + '"' +
+                        ' src="' + mobileJpg380 + '"' +
+                        ' srcset="' + mobileJpg380 + ' 380w, ' + mobileJpg760 + ' 760w"' +
+                        ' sizes="' + mobileSizes + '"' +
                         ' width="4" height="3"' +
                         ' alt="' + escapeHtml(image.alt) + '"' +
                         ' loading="lazy"' +
@@ -168,9 +181,9 @@
             }).join('');
         }
 
-        function topicImage(slug, alt) {
+        function topicImage(topicId, alt) {
             return {
-                slug: slug,
+                topicId: topicId,
                 alt: alt
             };
         }
@@ -182,7 +195,7 @@
                     { title: '講題一｜環境NGO的工作日常', text:['非營利組織的日常充滿挑戰，從資料蒐集、議題研究到專案規劃與社群媒體經營，每一步都需要大量溝通與合作。','透過實際案例的翻想，邀請大家一起走入環境 NGO 的工作日常，理解如何平衡有限資源與議題需求，以及每次的努力如何累積成對於社會的正向影響，啟發公民思考自身能參與的方式。']},
                     { title: '講題二｜改變社會：從理念到行動', text: ['環境議題與公共政策息息相關。地球公民如何透過倡議、政策對話、公共教育與社群互動，讓環境議題被更多人看見並重視？','環境倡議不只是抗議或請願。在這場講座中，我們將分享許多過去結合研究、溝通與策略的行動，說明我們如何將環境意識轉化為實際的公共影響。'] }
                 ],
-                image: topicImage('20260723-topic-1', '地球公民的員工參與政府會議')
+                image: topicImage(1, '地球公民的員工參與政府會議')
             },
             {
                 title: '校園與空污',
@@ -190,7 +203,7 @@
                     { title: '講題一｜工業區旁的風險', text: ['在台灣，鄰近工業區的學童長期暴露於空氣污染之下，健康風險遠高於一般民眾。鋼鐵與石化產業排放的污染物不僅影響呼吸系統，更可能造成長期慢性健康問題。','我們將以高雄工業區鄰近學校為案例，解析學童空污暴露的現況與風險，並說明環境治理與政策倡議的重要性，邀請社會一同重視兒童環境權，為下一代健康把關。'] },
                     { title: '講題二｜在地行動與防護指南', text: ['除了整體空氣改善，個人與社區行動同樣關鍵。講座中分享可行的防護措施、日常生活防護策略，以及市民如何參與在地倡議行動。','透過地球公民基金會十年來的空污監測與政策倡議經驗，參與者能學習如何從自身與社區出發，降低空污對健康的影響，共同打造永續的生活環境。'] }
                 ],
-                image: topicImage('20260723-topic-2', '一名學童舉著我要乾淨空氣的手舉牌，地球公民的員工拿著麥克風向台下介紹空污問題')
+                image: topicImage(2, '一名學童舉著我要乾淨空氣的手舉牌，地球公民的員工拿著麥克風向台下介紹空污問題')
             },
             {
                 title: '極端氣候與環境治理',
@@ -198,14 +211,14 @@
                     { title: '講題一｜極端氣候下的任務清單', text: '在極端氣候頻繁發生的現在，環境變得更具風險及脆弱。辨識清楚環境資訊，並與周遭的夥伴形成互助的社群，我們才有機會建構更有能力應對未知風險的社會。' },
                     { title: '講題二｜從馬太鞍流域看環境治理', text: '我們將從馬太鞍堰塞湖事件的實際案例，理解流域的現況、自然環境如何跟城市發展互動互相影響，以及回到自己生活的地方，面對下一次可能來臨的災害，可以如何建立更具能力的社群。' }
                 ],
-                image: topicImage('20260723-topic-3', '貨車穿過淹水的馬路')
+                image: topicImage(3, '貨車穿過淹水的馬路')
             },
             {
                 title: '永續發展',
                 sections: [
                     { title: '講題｜發展，只有一種可能嗎？', text: ['只要大型的道路建設、飯店蓋下去，地方就能迎來真正的繁榮嗎？','所謂的發展與幸福，真的只有經濟成長這個單一標準嗎？','地球公民從2010年在花東設立辦公室以來，參與了無數大型道路、觀光開發案，陪伴地方檢視開發帶來的環境影響及社會衝擊。','在這個講題中，我們將從第一線的倡議經驗出發，結合歷史脈絡、法律制度與國內外案例，帶領大家重新審視大型開發案為土地與社會帶來的劇烈變動。','邀請大家一起打破「經濟開發」與「環境保護」的二元對立，探討一條真正適合台灣、兼顧世代正義的永續發展之路。'] }
                 ],
-                image: topicImage('20260723-topic-4', '一群民眾在美麗灣飯店前的海灘上手牽著手')
+                image: topicImage(4, '一群民眾在美麗灣飯店前的海灘上手牽著手')
             }
         ];
 
@@ -221,9 +234,11 @@
         }
 
         function buildTopicCardHtml(item) {
+            var topicMod = ' content-tab-img--topic-' + item.image.topicId;
+
             return (
                 '<div class="content-tab-card">' +
-                    '<div class="content-tab-img">' + buildTopicPictureHtml(item.image) + '</div>' +
+                    '<div class="content-tab-img' + topicMod + '">' + buildTopicPictureHtml(item.image) + '</div>' +
                     '<div class="content-tab-text">' + buildTopicSectionsHtml(item.sections) + '</div>' +
                 '</div>'
             );
@@ -264,7 +279,7 @@
                         '<h3 class="accordion-header" id="share-heading-' + id + '">' +
                             '<button id="share-acc-btn-' + id + '" aria-controls="share-collapse-' + id + '" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-' + id + '" data-bs-toggle="collapse" type="button">' + escapeHtml(item.title) + '</button>' +
                         '</h3>' +
-                        '<div aria-labelledby="share-acc-btn-' + id + '" class="accordion-collapse collapse" id="share-collapse-' + id + '">' +
+                        '<div aria-labelledby="share-acc-btn-' + id + '" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-' + id + '">' +
                             '<div class="accordion-body">' + buildTopicCardHtml(item) + '</div>' +
                         '</div>' +
                     '</div>'
@@ -300,19 +315,52 @@
                 });
             }
 
-            nav.addEventListener('scroll', updateScrollState, { passive: true });
-            nav.addEventListener('shown.bs.tab', function () {
-                syncPanelAriaHidden();
-                scrollActiveTabIntoView();
-            });
-            window.addEventListener('resize', updateScrollState);
+            if (!shareTabScrollInited) {
+                shareTabScrollInited = true;
+                nav.addEventListener('scroll', updateScrollState, { passive: true });
+                nav.addEventListener('shown.bs.tab', function () {
+                    syncPanelAriaHidden();
+                    scrollActiveTabIntoView();
+                });
+                window.addEventListener('resize', updateScrollState);
+            }
 
             updateScrollState();
         }
 
-        renderShareTopicsAccordion();
-        renderShareTopicsTabs();
-        initShareTabScroll();
+        function clearShareTopicsTabs() {
+            var nav = document.getElementById('shareTab');
+            var panels = document.getElementById('shareTabContent');
+            if (nav) nav.innerHTML = '';
+            if (panels) panels.innerHTML = '';
+        }
+
+        function clearShareTopicsAccordion() {
+            var accordion = document.getElementById('shareTopicsAccordion');
+            if (accordion) accordion.innerHTML = '';
+        }
+
+        function syncShareTopicsView() {
+            var mode = shareTopicsMq.matches ? 'tabs' : 'accordion';
+            if (mode === shareTopicsMode) return;
+            shareTopicsMode = mode;
+
+            if (mode === 'tabs') {
+                clearShareTopicsAccordion();
+                renderShareTopicsTabs();
+                initShareTabScroll();
+            } else {
+                clearShareTopicsTabs();
+                renderShareTopicsAccordion();
+            }
+        }
+
+        syncShareTopicsView();
+        if (typeof shareTopicsMq.addEventListener === 'function') {
+            shareTopicsMq.addEventListener('change', syncShareTopicsView);
+        } else if (typeof shareTopicsMq.addListener === 'function') {
+            shareTopicsMq.addListener(syncShareTopicsView);
+        }
 
         var faqData = [
             {
@@ -342,7 +390,7 @@
             accordion.innerHTML = faqData.map(function (item, index) {
                 var id = index + 1;
                 var bodyHtml = item.content.map(function (text) {
-                    return '<p>' + text + '</p>';
+                    return '<p>' + escapeHtml(text) + '</p>';
                 }).join('');
         
                 return (
