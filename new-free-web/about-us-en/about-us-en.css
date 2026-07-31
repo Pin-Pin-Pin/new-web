@@ -1,10 +1,70 @@
+p{
+    font-size:0.875rem;
+    line-height:2;
+}
+.sections-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.sections-container .container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+/* ========================================
+   Section: Our Approach
+======================================== */
+#vision-approach{
+    background-color: var(--brand-background-green);
+}
+/* ========================================
+   Section: Our Approach
+======================================== */
+#approach-container{
+    background-color: var(--brand-background-green);
+}
+#approach-container.container{
+    flex-direction: column;
+    gap: 24px;
+}
+#approach-container .content-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+#approach-container .content-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+@media (min-width: 768px) {
+    #approach-container .content-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+#approach-container .content-item-icon{
+    align-self: start;
+}
 /* ========================================
    Section: share-content
+   Tab 導覽樣式以 share.css .content-tabs-* 為準，此處只放本頁覆寫
 ======================================== */
+.share-content {
+    padding-bottom: 80px;
+}
+
 .share-content .share-content-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 24px;
+}
+
+.section-title{
+    border-top: 2px solid var(--brand-dark-primary);
 }
 
 /* Mobile (<768): accordion only / Desktop (≥768): tabs only */
@@ -70,201 +130,169 @@
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#shareTab {
-    justify-content: flex-start;
-}
-
 @media (min-width: 768px) {
     .share-topics-accordion {
-        display: none;
+        display: none !important;
     }
 
     .share-topics-tabs {
         display: flex;
     }
 
-    #shareTab {
-        justify-content: center;
-    }
-
-    /* Equal-height panels: stack all panes in one grid cell.
-       Note: no Bootstrap .tab-content class — that rule uses display:none and would
-       remove inactive panes from height calculation. */
-    .share-content #shareTabContent.content-tabs-panels {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        align-items: stretch;
-    }
-
-    .share-content #shareTabContent.content-tabs-panels > .tab-pane {
-        grid-column: 1;
-        grid-row: 1;
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-        z-index: 0;
+    /* 本頁不用等高校面板堆疊，避免蓋住內文 */
+    .share-content #shareTabContent.content-tabs-panels > .tab-pane:not(.active) {
+        display: none !important;
     }
 
     .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
-        visibility: visible;
-        opacity: 1;
-        pointer-events: auto;
-        z-index: 1;
-    }
-
-    .share-content #shareTabContent .content-tab-card {
-        height: 100%;
+        display: block !important;
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
     }
 }
 
-.content-tab-card {
+.share-content #shareTabContent {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: visible;
+}
+
+/* Panel: picture + paragraphs + grid-container */
+.share-panel {
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
+    gap: 24px;
     width: 100%;
-    max-width: 100%;
-    min-width: 0;
 }
 
-.content-tab-text {
-    padding: 24px 16px;
-    min-width: 0;
-    max-width: 100%;
-    overflow-wrap: break-word;
-    background-color: var(--brand-background-green);
-}
-
-.content-tab-block + .content-tab-block {
-    margin-top: 24px;
-}
-
-.content-tab-text h3 {
-    margin-bottom: 8px;
-    font-weight: 700;
-}
-
-.content-tab-text p {
-    margin-bottom: 0;
-}
-
-.content-tab-text p + p {
-    margin-top: 16px;
-}
-
-.content-tab-img {
+.share-panel-media {
     width: 100%;
-    max-width: 100%;
-    min-width: 0;
     overflow: hidden;
 }
 
-.content-tab-img picture {
+.share-panel-media picture {
     display: block;
     width: 100%;
-    max-width: 100%;
 }
 
-.content-tab-img img {
+.share-panel-media img {
     display: block;
     width: 100%;
     max-width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
-@media (max-width: 767.98px) {
-    .content-tab-img img {
-        aspect-ratio: 4/3;
-    }
+
+.share-panel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    overflow: visible;
 }
 
-/* Accordion card: no outer radius conflict with item border */
-.content-tab-card {
-    border-radius: 0;
+.share-panel-body > p {
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+}
+
+.share-achieved {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.share-achieved-title {
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+}
+
+.grid-item {
+    min-width: 0;
+    padding: 24px;
     background-color: var(--brand-background-green);
+    border-radius: 8px;
+}
+
+.grid-item p {
+    margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
-    .content-tab-card {
-        flex-direction: column;
-        align-items: stretch;
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .content-tab-img {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        padding:40px 40px 0 40px;
-    }
-
-    .content-tab-img picture {
-        height: 100%;
-    }
-
-    .content-tab-img img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .content-tab-text {
-        padding: 40px;
-        flex: 1 1 0;
-        min-width: 0;
+    /* 2 或 4 個 items → 一列兩個 */
+    .grid-container--cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (min-width: 1200px) {
-    .content-tab-card {
-        flex-direction: row;
-    }
-    .content-tab-img {
-        aspect-ratio: 379 / 284;
-        flex: 0 0 379px;
-        width: 379px;
-        max-width: 379px;
-        padding:0;
-    }
+.share-topics-accordion .share-panel {
+    padding: 16px;
+}
+
+.share-topics-accordion .share-panel-media {
+    margin: -16px -16px 0;
+    width: calc(100% + 32px);
+    max-width: none;
+}
+
+.share-topics-accordion .share-panel-media img {
+    border-radius: 0;
 }
 /* ========================================
-   Section: 第一頁以後
+   Section: donate-and-contact
 ======================================== */
-.share-content{
-    padding-bottom: 80px;
+#donate-and-contact{
+    background-color: var(--brand-background-yellow);
 }
-.invite-info{
-    padding-top: 0;
-    padding-bottom: 80px;
-}
-.faq{ 
-    padding-top: 0;
-}
-.section-title{
-    border-top: 2px solid var(--brand-dark-primary);
-}
-/* ========================================
-   Section: 邀約方式
-======================================== */
-.invite-info .container{
-    /* display: flex;
+.donation-box__paypal-form{
+    display: flex;
     flex-direction: column;
-    gap: 24px;
-    align-items: flex-start; */
-    display:block;
+    align-items: flex-start;
+    gap: 12px;
 }
-.invite-info ol{
+.donation-box__paypal-field{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 320px;
+}
+.donation-box__paypal-field label{
     margin-bottom: 0;
-    padding-left: 1rem;
+    font-weight: 500;
 }
-.invite-info .section-title{
-    margin-bottom: 24px;
+.donation-box__paypal-form select{
+    min-height: 44px;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--gray-400);
+    border-radius: 4px;
+    background-color: var(--white);
+    color: var(--brand-black);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
 }
-.invite-info-label{
-    font-weight: 700;
-    color: var(--brand-dark-primary);
-    margin-bottom: 0;
-}
-.faq .accordion {
-    color: var(--black);
+.donation-box__paypal-form input[type="image"]{
+    display: block;
+    width: 146px;
+    height: auto;
+    max-width: 100%;
+    cursor: pointer;
 }
