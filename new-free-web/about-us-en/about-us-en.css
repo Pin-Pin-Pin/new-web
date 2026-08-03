@@ -2,16 +2,6 @@ p{
     font-size:0.875rem;
     line-height:2;
 }
-.sections-container{
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-}
-.sections-container .container{
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
 /* ========================================
    Section: Our Approach
 ======================================== */
