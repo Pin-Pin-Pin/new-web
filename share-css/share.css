@@ -1,6 +1,11 @@
 /* * {
     outline: 1px solid black !important;
 } */
+/* picture source {
+    display: none; 
+    line-height: 0;
+} */
+/* 以上debug */
 :root {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
@@ -132,6 +137,16 @@ a{
     color: var(--brand-dark-primary);
     margin-bottom: 0;
 }
+.sections-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.sections-container .container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 /* 圖片 */
 picture{
     display: block;
@@ -176,9 +191,9 @@ section:has(.bg) > .bg-uplayer {
     border-radius: 4px;
 
 }
-/* 讓按鈕文字視覺上垂直置中 */
+/* 讓按鈕／手風琴 header 文字視覺上垂直置中 */
 .btn-label,
-.faq-question-label{
+.accordion-header button{
     display: inline-block;
     transform: translateY(-1px);
 }
