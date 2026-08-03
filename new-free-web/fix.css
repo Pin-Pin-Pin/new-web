@@ -1,0 +1,24 @@
+.path-node:not(.node--type-landing) {
+    #main.container {
+        max-width: none;
+        padding: 0;
+    }
+}
+
+/* 取消 Bootstrap .row 預設 */
+#main > .row {
+    margin-left: 0;
+    margin-right: 0;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+  }
+  
+  /* 一併取消 #content 上 .col 的左右 padding */
+  #content.col {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+}
+#highlighted,#featured-top{
+    display: none;
+}

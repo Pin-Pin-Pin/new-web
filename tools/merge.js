@@ -28,10 +28,10 @@
  *
  * 【輸出範圍 target】
  *   · body：只輸出 <body>…</body>
+ *       - 不搬移 preconnect／dns-prefetch（放 body 效益低）
  *       - body 開頭依 head 原順序放入：
- *         1) preconnect／dns-prefetch 的 <link>
- *         2) 第三方 stylesheet <link>（如 Bootstrap、Google Fonts）
- *         3) 本地 CSS（prod：內嵌 <style>；dev：改寫後的 <link>）
+ *         1) 第三方 stylesheet <link>（如 Bootstrap、Google Fonts）
+ *         2) 本地 CSS（prod：內嵌 <style>；dev：改寫後的 <link>）
  *       - 腳本集中到 body 末尾：
  *         先 head 內的 script，再原 body 內 script，順序不變
  *         （若原頁有 Bootstrap JS 等第三方 <script src>，會一併以外連方式保留；
@@ -179,7 +179,7 @@ function extractStylesheetLinks(headContent) {
   return links;
 }
 
-/** 僅 body 時要搬進 body 開頭的 head <link>：preconnect／dns-prefetch、第三方 CSS */
+/** 僅 body 時要搬進 body 開頭的 head <link>：第三方 CSS（不含 preconnect／dns-prefetch） */
 function extractHeadLinksForBody(headContent) {
   const result = [];
   const regex = /<link\b[^>]*>/gi;
@@ -191,10 +191,6 @@ function extractHeadLinksForBody(headContent) {
     const hrefMatch = tag.match(/\bhref\s*=\s*["']([^"']+)["']/i);
     const href = hrefMatch ? hrefMatch[1] : '';
 
-    if (rel === 'preconnect' || rel === 'dns-prefetch') {
-      result.push(tag);
-      continue;
-    }
     if (rel === 'stylesheet' && href && isThirdPartyUrl(href)) {
       result.push(tag);
     }
