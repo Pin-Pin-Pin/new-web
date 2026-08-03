@@ -8,10 +8,10 @@ cd /d "%~dp0tools"
 echo 使用 Python：%PYTHON%
 echo.
 
-"%PYTHON%" image_resize_export.py
+"%PYTHON%" check_image_links.py
 if errorlevel 1 (
     echo.
-    echo 程式執行失敗，請確認 crm_crawler 環境可用。
+    echo 檢查完成：發現異常連結或連線錯誤。
 )
 
 :end
