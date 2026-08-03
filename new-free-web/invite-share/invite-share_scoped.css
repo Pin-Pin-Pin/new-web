@@ -1,21 +1,21 @@
 /* ========================================
    Section: share-content
 ======================================== */
-#main-content .share-content .share-content-container {
+#content .share-content .share-content-container {
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
 }
 
 /* Mobile (<768): accordion only / Desktop (≥768): tabs only */
-#main-content .share-topics-tabs {
+#content .share-topics-tabs {
     display: none;
     width: 100%;
     flex-direction: column;
     gap: 24px;
 }
 
-#main-content .share-topics-accordion {
+#content .share-topics-accordion {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -23,7 +23,7 @@
     color: var(--black);
 }
 
-#main-content .share-topics-accordion .accordion-item {
+#content .share-topics-accordion .accordion-item {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
@@ -31,13 +31,13 @@
     overflow: hidden;
 }
 
-#main-content .share-topics-accordion .accordion-header {
+#content .share-topics-accordion .accordion-header {
     margin-bottom: 0;
     padding: 8px 16px;
     transition: background-color 0.35s ease, color 0.35s ease;
 }
 
-#main-content .share-topics-accordion .accordion-header button {
+#content .share-topics-accordion .accordion-header button {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,52 +51,52 @@
     cursor: pointer;
 }
 
-#main-content .share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
+#content .share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
     background-color: var(--brand-dark-primary);
     color: var(--white);
 }
 
-#main-content .share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
+#content .share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
     color: var(--white);
 }
 
-#main-content .share-topics-accordion .accordion-body {
+#content .share-topics-accordion .accordion-body {
     padding: 0;
     background-color: var(--white);
     color: var(--black);
 }
 
-#main-content .share-topics-accordion .accordion-collapse.collapsing {
+#content .share-topics-accordion .accordion-collapse.collapsing {
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#main-content #shareTab {
+#content #shareTab {
     justify-content: flex-start;
 }
 
 @media (min-width: 768px) {
-    #main-content .share-topics-accordion {
+    #content .share-topics-accordion {
         display: none;
     }
 
-    #main-content .share-topics-tabs {
+    #content .share-topics-tabs {
         display: flex;
     }
 
-    #main-content #shareTab {
+    #content #shareTab {
         justify-content: center;
     }
 
     /* Equal-height panels: stack all panes in one grid cell.
        Note: no Bootstrap .tab-content class — that rule uses display:none and would
        remove inactive panes from height calculation. */
-    #main-content .share-content #shareTabContent.content-tabs-panels {
+    #content .share-content #shareTabContent.content-tabs-panels {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         align-items: stretch;
     }
 
-    #main-content .share-content #shareTabContent.content-tabs-panels > .tab-pane {
+    #content .share-content #shareTabContent.content-tabs-panels > .tab-pane {
         grid-column: 1;
         grid-row: 1;
         width: 100%;
@@ -108,19 +108,19 @@
         z-index: 0;
     }
 
-    #main-content .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
+    #content .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
         z-index: 1;
     }
 
-    #main-content .share-content #shareTabContent .content-tab-card {
+    #content .share-content #shareTabContent .content-tab-card {
         height: 100%;
     }
 }
 
-#main-content .content-tab-card {
+#content .content-tab-card {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
@@ -129,7 +129,7 @@
     min-width: 0;
 }
 
-#main-content .content-tab-text {
+#content .content-tab-text {
     padding: 24px 16px;
     min-width: 0;
     max-width: 100%;
@@ -137,37 +137,37 @@
     background-color: var(--brand-background-green);
 }
 
-#main-content .content-tab-block + .content-tab-block {
+#content .content-tab-block + .content-tab-block {
     margin-top: 24px;
 }
 
-#main-content .content-tab-text h3 {
+#content .content-tab-text h3 {
     margin-bottom: 8px;
     font-weight: 700;
 }
 
-#main-content .content-tab-text p {
+#content .content-tab-text p {
     margin-bottom: 0;
 }
 
-#main-content .content-tab-text p + p {
+#content .content-tab-text p + p {
     margin-top: 16px;
 }
 
-#main-content .content-tab-img {
+#content .content-tab-img {
     width: 100%;
     max-width: 100%;
     min-width: 0;
     overflow: hidden;
 }
 
-#main-content .content-tab-img picture {
+#content .content-tab-img picture {
     display: block;
     width: 100%;
     max-width: 100%;
 }
 
-#main-content .content-tab-img img {
+#content .content-tab-img img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -176,49 +176,49 @@
     
 }
 /* topic-2 */
-#main-content .content-tab-img--topic-2 img {
+#content .content-tab-img--topic-2 img {
     object-position: top center;
 }
 /* topic-4 */
-#main-content .content-tab-img--topic-4 img {
+#content .content-tab-img--topic-4 img {
     object-position: top;
 }
 
 @media (max-width: 1199.98px) {
-    #main-content .content-tab-img img {
+    #content .content-tab-img img {
         aspect-ratio: 4/3;
     }
 }
 
 /* Accordion card: no outer radius conflict with item border */
-#main-content .content-tab-card {
+#content .content-tab-card {
     border-radius: 0;
     background-color: var(--brand-background-green);
 }
 
 @media (min-width: 768px) {
-    #main-content .content-tab-card {
+    #content .content-tab-card {
         flex-direction: column;
         align-items: stretch;
     }
 
-    #main-content .content-tab-img {
+    #content .content-tab-img {
         width: 100%;
         max-width: 100%;
         min-width: 0;
         padding:40px 40px 0 40px;
     }
 
-    #main-content .content-tab-img picture {
+    #content .content-tab-img picture {
         height: 100%;
     }
 
-    #main-content .content-tab-img img {
+    #content .content-tab-img img {
         width: 100%;
         height: 100%;
     }
 
-    #main-content .content-tab-text {
+    #content .content-tab-text {
         padding: 40px;
         flex: 1 1 0;
         min-width: 0;
@@ -226,10 +226,10 @@
 }
 
 @media (min-width: 1200px) {
-    #main-content .content-tab-card {
+    #content .content-tab-card {
         flex-direction: row;
     }
-    #main-content .content-tab-img {
+    #content .content-tab-img {
         aspect-ratio: 379 / 284;
         flex: 0 0 379px;
         width: 379px;
@@ -240,41 +240,41 @@
 /* ========================================
    Section: 第一頁以後
 ======================================== */
-#main-content .share-content{
+#content .share-content{
     padding-bottom: 80px;
 }
-#main-content .invite-info{
+#content .invite-info{
     padding-top: 0;
     padding-bottom: 80px;
 }
-#main-content .faq{ 
+#content .faq{ 
     padding-top: 0;
 }
-#main-content .section-title{
+#content .section-title{
     border-top: 2px solid var(--brand-dark-primary);
 }
 /* ========================================
    Section: 邀約方式
 ======================================== */
-#main-content .invite-info .container{
+#content .invite-info .container{
     /* display: flex;
     flex-direction: column;
     gap: 24px;
     align-items: flex-start; */
     display:block;
 }
-#main-content .invite-info ol{
+#content .invite-info ol{
     margin-bottom: 0;
     padding-left: 1rem;
 }
-#main-content .invite-info .section-title{
+#content .invite-info .section-title{
     margin-bottom: 24px;
 }
-#main-content .invite-info-label{
+#content .invite-info-label{
     font-weight: 700;
     color: var(--brand-dark-primary);
     margin-bottom: 0;
 }
-#main-content .faq .accordion {
+#content .faq .accordion {
     color: var(--black);
 }

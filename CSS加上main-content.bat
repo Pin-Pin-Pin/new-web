@@ -13,12 +13,13 @@ if errorlevel 1 (
 
 echo.
 echo ========================================
-echo   CSS 選擇器加上 #main-content
+echo   CSS 選擇器加上 #content
 echo ========================================
 echo.
 echo 即將開啟檔案視窗，請選擇要處理的 .css
 echo 輸出會寫成同資料夾的 *_scoped.css（不覆寫原檔）
-echo 已有 #main-content 前綴的選擇器會略過
+echo 已有 #content 前綴的選擇器會略過
+echo 舊前綴 #main-content 會自動改成 #content
 echo.
 
 set "FILE="

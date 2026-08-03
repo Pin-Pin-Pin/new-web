@@ -1,15 +1,17 @@
 /**
- * scope-css.js — 為 CSS 選擇器加上 #main-content 前綴
+ * scope-css.js — 為 CSS 選擇器加上 #content 前綴
  *
  * 【用途】
- * 將選定 CSS 的規則選擇器前面加上 #main-content，避免樣式影響 CMS 其他區塊。
- * 若選擇器開頭已有 #main-content 則略過。
+ * 將選定 CSS 的規則選擇器前面加上 #content（CMS 主內容區 id），
+ * 避免樣式影響 footer 等其他區塊。
+ * 若選擇器開頭已有 #content 則略過。
+ * 若開頭是舊前綴 #main-content，會改寫成 #content。
  *
  * 【用法】
  *   node scope-css.js <css檔路徑>
  *
  * 【規則】
- *   · .foo, .bar  →  #main-content .foo, #main-content .bar
+ *   · .foo, .bar  →  #content .foo, #content .bar
  *   · @media / @supports / @layer 區塊內的規則一併處理
  *   · @keyframes / @font-face / @property 整段保留不改
  *   · :root 不加上前綴（CSS 變數需掛在文件根）
@@ -19,29 +21,41 @@
 const fs = require('fs');
 const path = require('path');
 
-const PREFIX = '#main-content';
+const PREFIX = '#content';
+const LEGACY_PREFIX = '#main-content';
 
 function usage() {
   console.error('用法：node scope-css.js <css檔路徑>');
 }
 
-function alreadyPrefixed(selector) {
+function startsWithPrefixToken(selector, prefix) {
   const s = selector.trim();
-  if (!s) return true;
-  if (s === PREFIX) return true;
-  if (s.startsWith(`${PREFIX} `)) return true;
+  if (!s) return false;
+  if (s === prefix) return true;
+  if (s.startsWith(`${prefix} `)) return true;
   if (
-    s.startsWith(`${PREFIX}.`) ||
-    s.startsWith(`${PREFIX}#`) ||
-    s.startsWith(`${PREFIX}[`) ||
-    s.startsWith(`${PREFIX}:`) ||
-    s.startsWith(`${PREFIX}>`) ||
-    s.startsWith(`${PREFIX}+`) ||
-    s.startsWith(`${PREFIX}~`)
+    s.startsWith(`${prefix}.`) ||
+    s.startsWith(`${prefix}#`) ||
+    s.startsWith(`${prefix}[`) ||
+    s.startsWith(`${prefix}:`) ||
+    s.startsWith(`${prefix}>`) ||
+    s.startsWith(`${prefix}+`) ||
+    s.startsWith(`${prefix}~`)
   ) {
     return true;
   }
   return false;
+}
+
+function alreadyPrefixed(selector) {
+  return startsWithPrefixToken(selector, PREFIX);
+}
+
+/** 舊工具曾用 #main-content；CMS 實際 id 為 #content */
+function rewriteLegacyPrefix(selector) {
+  const s = selector.trim();
+  if (!startsWithPrefixToken(s, LEGACY_PREFIX)) return null;
+  return PREFIX + s.slice(LEGACY_PREFIX.length);
 }
 
 function shouldSkipSelector(selector) {
@@ -95,9 +109,10 @@ function prefixSelectorList(selectorText) {
       const trailing = part.match(/\s*$/)?.[0] ?? '';
       const core = part.trim();
       if (!core) return part;
-      if (shouldSkipSelector(core) || alreadyPrefixed(core)) {
-        return part;
-      }
+      if (shouldSkipSelector(core)) return part;
+      const legacy = rewriteLegacyPrefix(core);
+      if (legacy != null) return `${leading}${legacy}${trailing}`;
+      if (alreadyPrefixed(core)) return part;
       return `${leading}${PREFIX} ${core}${trailing}`;
     })
     .join(',');
