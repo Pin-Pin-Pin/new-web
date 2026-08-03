@@ -277,7 +277,7 @@
                 return (
                     '<div class="accordion-item">' +
                         '<h3 class="accordion-header" id="share-heading-' + id + '">' +
-                            '<button id="share-acc-btn-' + id + '" aria-controls="share-collapse-' + id + '" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-' + id + '" data-bs-toggle="collapse" type="button">' + escapeHtml(item.title) + '</button>' +
+                            '<button id="share-acc-btn-' + id + '" aria-controls="share-collapse-' + id + '" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-' + id + '" data-bs-toggle="collapse" type="button"><span class="faq-question-label">' + escapeHtml(item.title) + '</span></button>' +
                         '</h3>' +
                         '<div aria-labelledby="share-acc-btn-' + id + '" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-' + id + '">' +
                             '<div class="accordion-body">' + buildTopicCardHtml(item) + '</div>' +
