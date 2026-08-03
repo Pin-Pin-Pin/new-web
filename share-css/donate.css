@@ -3,9 +3,31 @@
    手機：Grid 疊層，背景僅覆蓋 img-box；間距 0
    平板以上：inner 套用 .container 寬度；img-box / table-box 間距 40→120
 ======================================== */
+.donate-hero .img-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-self: center
+}
+.donate-hero .img-box img{
+    object-fit: cover;
+}
+#cet-top-logo{
+    width: 160px;
+}
+#top-slogan{
+    width: 132px;
+    max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+    #top-slogan{
+        width: 450px;
+    }
+}
 section.donate-hero{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto;
     gap: 0;
     width: 100%;
@@ -22,7 +44,7 @@ section.donate-hero{
     z-index: 0;
     display: block;
     width: 100%;
-    height: 100%;
+    height: 60vh;
     min-height: 100%;
     overflow: hidden;
     pointer-events: none;
@@ -41,8 +63,10 @@ section.donate-hero{
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-self: center;
     min-width: 0;
-    min-height: 280px;
+    /* min-height: 280px; */
+    max-width: min(100%, 390px);
     padding: 40px 24px;
     box-sizing: border-box;
 }
@@ -59,19 +83,21 @@ section.donate-hero{
     grid-area: 2 / 1;
     z-index: 1;
     width: 100%;
-    max-width: 390px;
+    max-width: min(390px, 100%);
     justify-self: center;
-    padding: 24px 0;
+    padding: 0;
     box-sizing: border-box;
 }
 @media (min-width: 768px) {
     section.donate-hero{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         position: relative;
         width: 100%;
+        min-height: 70vh;
         max-width: none;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0 24px;
     }
     .donate-hero__bg{
         position: absolute;
@@ -81,6 +107,7 @@ section.donate-hero{
         grid-area: unset;
     }
     .donate-hero__inner.container{
+        width: 100%;
         padding-top: 40px;
         padding-bottom: 40px;
         display: grid;
@@ -328,8 +355,10 @@ footer{
 @media (min-width: 768px) {
     .footer-text{
         flex-direction: row;
-        gap: 64px;
-        max-width:608px;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 608px;
+        gap: unset;
     }
 }
 

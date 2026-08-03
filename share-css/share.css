@@ -1,6 +1,11 @@
 /* * {
     outline: 1px solid black !important;
 } */
+/* picture source {
+    display: none; 
+    line-height: 0;
+} */
+/* 以上debug */
 :root {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
@@ -132,6 +137,16 @@ a{
     color: var(--brand-dark-primary);
     margin-bottom: 0;
 }
+.sections-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.sections-container .container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 /* 圖片 */
 picture{
     display: block;
@@ -158,6 +173,11 @@ img{
     object-position: center top;
 }
 
+section:has(.bg) {
+    position: relative;
+    overflow: hidden;
+}
+
 section:has(.bg) > .bg-uplayer {
     position: relative;
     z-index: 1;
@@ -171,9 +191,9 @@ section:has(.bg) > .bg-uplayer {
     border-radius: 4px;
 
 }
-/* 讓按鈕文字視覺上垂直置中 */
+/* 讓按鈕／手風琴 header 文字視覺上垂直置中 */
 .btn-label,
-.faq-question-label{
+.accordion-header button{
     display: inline-block;
     transform: translateY(-1px);
 }
@@ -392,7 +412,8 @@ section:has(.page-top-container){
 .page-top-text-group-2 h1{
     margin-bottom: 0;
 }
-.page-top-text-group-2 h2{
+.page-top-text-group-2 h2,
+.page-top-text-group-2 > .h3{
     margin-bottom: 0;
     color: var(--brand-dark-primary);
 }
@@ -591,8 +612,8 @@ section:has(.page-top-container){
 }
 .btn-icon-arrow-right-mini::after{
     background-color: var(--brand-dark-primary);
-    -webkit-mask: var(--icon-arrow-up-right-mini) no-repeat center / contain;
-    mask: var(--icon-arrow-up-right-mini) no-repeat center / contain;
+    -webkit-mask: var(--icon-arrow-right-mini) no-repeat center / contain;
+    mask: var(--icon-arrow-right-mini) no-repeat center / contain;
 }
 /* ========================================
    Section: landing page 外連
