@@ -45,36 +45,6 @@
     margin-bottom: 0; 
 }
 /* ========================================
-   Section: 志工模式
-======================================== */
-.volunteer-mode{
-    background-color: var(--brand-background-green);
-}
-.volunteer-mode-container{
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-.volunteer-mode-cards{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px; 
-}
-.volunteer-mode-card{
-    padding: 24px;
-    background-color: var(--white);
-    border-radius: 8px;
-}
-.volunteer-mode-card ol,.volunteer-mode-card ul{
-    padding-left: 1.2rem;
-
-}
-@media (min-width: 768px) {
-    .volunteer-mode-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-} 
-/* ========================================
    Section: 我們正在尋找這樣的你！
 ======================================== */
 #requirements {
@@ -130,6 +100,8 @@
 #apply-time .section-title{
     margin-bottom: 24px;
 }
+#apply ol > li + li { margin-top: 16px; }
+#apply ol > li ul > li + li { margin-top: 8px; }
 .apply-time-item-container{ 
     display: grid;
     grid-template-columns: 1fr;
@@ -138,7 +110,7 @@
 }
 @media (min-width: 768px) {
     .apply-time-item-container {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 .apply-time-item{
@@ -147,13 +119,20 @@
     padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 8 px;
+    gap: 8px;
 }
 .apply-time-item h3{
     color: var(--brand-dark-primary);
     font-weight: 700;
     padding-bottom: 8px;
     text-align: center;
+    flex-shrink: 0;
+}
+.apply-time-item-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .apply-time-item-content p{
     text-align: center;
@@ -163,11 +142,6 @@
    Section: cta 與 志工心得
 ======================================== */
 /* 按鈕有上繳箭頭 */
-.join-and-share .container{
-    gap:64px;
-    flex-direction: column;
-
-}
 .volunteer-share-container .section-title{
     width:100%;
     margin-bottom: 40px;
