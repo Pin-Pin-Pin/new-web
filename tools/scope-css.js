@@ -1,17 +1,17 @@
 /**
- * scope-css.js — 為 CSS 選擇器加上 #content 前綴
+ * scope-css.js — 為 CSS 選擇器加上 #main 前綴
  *
  * 【用途】
- * 將選定 CSS 的規則選擇器前面加上 #content（CMS 主內容區 id），
+ * 將選定 CSS 的規則選擇器前面加上 #main（CMS 主內容區 id），
  * 避免樣式影響 footer 等其他區塊。
- * 若選擇器開頭已有 #content 則略過。
- * 若開頭是舊前綴 #main-content，會改寫成 #content。
+ * 若選擇器開頭已有 #main 則略過。
+ * 若開頭是舊前綴 #main-content，會改寫成 #main。
  *
  * 【用法】
  *   node scope-css.js <css檔路徑>
  *
  * 【規則】
- *   · .foo, .bar  →  #content .foo, #content .bar
+ *   · .foo, .bar  →  #main .foo, #main .bar
  *   · @media / @supports / @layer 區塊內的規則一併處理
  *   · @keyframes / @font-face / @property 整段保留不改
  *   · :root 不加上前綴（CSS 變數需掛在文件根）
@@ -21,7 +21,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const PREFIX = '#content';
+const PREFIX = '#main';
 const LEGACY_PREFIX = '#main-content';
 
 function usage() {
@@ -51,7 +51,7 @@ function alreadyPrefixed(selector) {
   return startsWithPrefixToken(selector, PREFIX);
 }
 
-/** 舊工具曾用 #main-content；CMS 實際 id 為 #content */
+/** 舊工具曾用 #main-content；CMS 實際 id 為 #main */
 function rewriteLegacyPrefix(selector) {
   const s = selector.trim();
   if (!startsWithPrefixToken(s, LEGACY_PREFIX)) return null;
