@@ -173,8 +173,18 @@
     max-width: 100%;
     height: auto;
     object-fit: cover;
+    
 }
-@media (max-width: 767.98px) {
+/* topic-2 */
+.content-tab-img--topic-2 img {
+    object-position: top center;
+}
+/* topic-4 */
+.content-tab-img--topic-4 img {
+    object-position: top;
+}
+
+@media (max-width: 1199.98px) {
     .content-tab-img img {
         aspect-ratio: 4/3;
     }
