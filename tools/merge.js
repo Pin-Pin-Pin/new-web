@@ -26,6 +26,10 @@
  *   · 不論 mode／target，一律再附上 share-css/fix.css（若頁面尚未引用）：
  *       - prod → 併入 <style> 末尾
  *       - dev  → 追加 <link rel="stylesheet">（body：接在本地 CSS 後；html：接在 head 末）
+ *   · 本地 CSS 自動改用 scoped 版本（若不存在則報錯）：
+ *       - share-css/share.css → share-css/share_scoped.css
+ *       - {資料夾名}.css → {資料夾名}_scoped.css
+ *       - 已是 *_scoped.css 或其他 CSS 則不改
  *
  * 【輸出範圍 target】
  *   · body：只輸出 <body>…</body>
@@ -239,14 +243,42 @@ function removeLocalStylesheetLinks(headContent, htmlDir) {
   });
 }
 
-function rewriteHeadLocalAssets(headContent, htmlDir, repoRoot, tag) {
+/**
+ * share.css → share_scoped.css；{pageBasename}.css → {pageBasename}_scoped.css
+ * 已是 *_scoped.css 或其他檔名則原樣回傳。
+ */
+function resolveMergeCssPath(absCssPath, pageBasename) {
+  const ext = path.extname(absCssPath);
+  if (ext.toLowerCase() !== '.css') return absCssPath;
+
+  const dir = path.dirname(absCssPath);
+  const base = path.basename(absCssPath, ext);
+  if (/_scoped$/i.test(base)) return absCssPath;
+
+  const fileName = path.basename(absCssPath);
+  const isShareCss = fileName.toLowerCase() === 'share.css';
+  const isPageCss = fileName.toLowerCase() === `${String(pageBasename || '').toLowerCase()}.css`;
+  if (!isShareCss && !isPageCss) return absCssPath;
+
+  const scopedAbs = path.join(dir, `${base}_scoped${ext}`);
+  if (!fs.existsSync(scopedAbs) || !fs.statSync(scopedAbs).isFile()) {
+    throw new Error(
+      `找不到 scoped CSS：${scopedAbs}\n` +
+        `請先對對應的 CSS 執行「CSS加上main-content.bat」（scope-css）產生 *_scoped.css。`
+    );
+  }
+  return scopedAbs;
+}
+
+function rewriteHeadLocalAssets(headContent, htmlDir, repoRoot, tag, pageBasename) {
   let result = headContent.replace(/<link\b[^>]*>/gi, (tagHtml) => {
     if (!/\brel\s*=\s*["']stylesheet["']/i.test(tagHtml)) return tagHtml;
     const hrefMatch = tagHtml.match(/\bhref\s*=\s*["']([^"']+)["']/i);
     if (!hrefMatch || isThirdPartyUrl(hrefMatch[1])) return tagHtml;
     const abs = resolveLocalFile(htmlDir, hrefMatch[1]);
     if (!abs) return tagHtml;
-    return replaceAttrValue(tagHtml, 'href', cdnUrl(tag, toRepoRelative(repoRoot, abs)));
+    const useAbs = resolveMergeCssPath(abs, pageBasename);
+    return replaceAttrValue(tagHtml, 'href', cdnUrl(tag, toRepoRelative(repoRoot, useAbs)));
   });
 
   result = result.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, (full) => {
@@ -299,7 +331,7 @@ function processScripts({ scripts, mode, htmlDir, repoRoot, tag }) {
   });
 }
 
-function collectLocalCss({ links, mode, htmlDir, repoRoot, tag }) {
+function collectLocalCss({ links, mode, htmlDir, repoRoot, tag, pageBasename }) {
   const styleParts = [];
   const devLinks = [];
 
@@ -312,11 +344,12 @@ function collectLocalCss({ links, mode, htmlDir, repoRoot, tag }) {
       continue;
     }
 
-    const repoRel = toRepoRelative(repoRoot, abs);
+    const useAbs = resolveMergeCssPath(abs, pageBasename);
+    const repoRel = toRepoRelative(repoRoot, useAbs);
     if (mode === 'dev') {
       devLinks.push(replaceAttrValue(link.tag, 'href', cdnUrl(tag, repoRel)));
     } else {
-      styleParts.push(`/* ${repoRel} */\n${fs.readFileSync(abs, 'utf8')}`);
+      styleParts.push(`/* ${repoRel} */\n${fs.readFileSync(useAbs, 'utf8')}`);
     }
   }
 
@@ -423,6 +456,7 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
     htmlDir,
     repoRoot,
     tag,
+    pageBasename: basename,
   });
 
   const fixCss = buildFixCssExtra({ mode, repoRoot, tag, links, htmlDir });
@@ -480,7 +514,13 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
       .replace(/<body[^>]*>[\s\S]*?<\/body>/i, newBody);
   } else {
     // dev + 完整 HTML：head 內改寫路徑，並於 head 末追加 fix.css link
-    let newHead = rewriteHeadLocalAssets(headContent, htmlDir, repoRoot, tag).trim();
+    let newHead = rewriteHeadLocalAssets(
+      headContent,
+      htmlDir,
+      repoRoot,
+      tag,
+      basename
+    ).trim();
     if (fixCss.linkHtml) {
       newHead = `${newHead}\n${fixCss.linkHtml}`;
     }
@@ -561,7 +601,13 @@ function main() {
   }
 }
 
-module.exports = { mergeFile, resolveLatestTag, findRepoRoot, normalizeTag };
+module.exports = {
+  mergeFile,
+  resolveLatestTag,
+  findRepoRoot,
+  normalizeTag,
+  resolveMergeCssPath,
+};
 
 if (require.main === module) {
   try {

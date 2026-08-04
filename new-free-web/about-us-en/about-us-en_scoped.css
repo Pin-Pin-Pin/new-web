@@ -1,0 +1,288 @@
+#main p{
+    font-size:0.875rem;
+    line-height:2;
+}
+/* ========================================
+   Section: Our Approach
+======================================== */
+#main #vision-approach{
+    background-color: var(--brand-background-green);
+}
+/* ========================================
+   Section: Our Approach
+======================================== */
+#main #approach-container{
+    background-color: var(--brand-background-green);
+}
+#main #approach-container.container{
+    flex-direction: column;
+    gap: 24px;
+}
+#main #approach-container .content-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+#main #approach-container .content-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+@media (min-width: 768px) {
+    #main #approach-container .content-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+#main #approach-container .content-item-icon{
+    align-self: start;
+}
+/* ========================================
+   Section: share-content
+   Tab 導覽樣式以 share.css .content-tabs-* 為準，此處只放本頁覆寫
+======================================== */
+#main .share-content {
+    padding-bottom: 80px;
+}
+
+#main .share-content .share-content-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+}
+
+#main .section-title{
+    border-top: 2px solid var(--brand-dark-primary);
+}
+
+/* Mobile (<768): accordion only / Desktop (≥768): tabs only */
+#main .share-topics-tabs {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#main .share-topics-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    color: var(--black);
+}
+
+#main .share-topics-accordion .accordion-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid var(--brand-dark-primary);
+    overflow: hidden;
+}
+
+#main .share-topics-accordion .accordion-header {
+    margin-bottom: 0;
+    padding: 8px 16px;
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+#main .share-topics-accordion .accordion-header button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: left;
+    color: var(--black);
+    transition: color 0.35s ease;
+    cursor: pointer;
+}
+
+#main .share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
+    background-color: var(--brand-dark-primary);
+    color: var(--white);
+}
+
+#main .share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
+    color: var(--white);
+}
+
+#main .share-topics-accordion .accordion-body {
+    padding: 0;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+#main .share-topics-accordion .accordion-collapse.collapsing {
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+    #main .share-topics-accordion {
+        display: none !important;
+    }
+
+    #main .share-topics-tabs {
+        display: flex;
+    }
+
+    /* 本頁不用等高校面板堆疊，避免蓋住內文 */
+    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane:not(.active) {
+        display: none !important;
+    }
+
+    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
+        display: block !important;
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
+    }
+}
+
+#main .share-content #shareTabContent {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: visible;
+}
+
+/* Panel: picture + paragraphs + grid-container */
+#main .share-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+#main .share-panel-media {
+    width: 100%;
+    overflow: hidden;
+}
+
+#main .share-panel-media picture {
+    display: block;
+    width: 100%;
+}
+
+#main .share-panel-media img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+#main .share-panel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    overflow: visible;
+}
+
+#main .share-panel-body > p {
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+}
+
+#main .share-achieved {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+#main .share-achieved-title {
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+#main .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+}
+
+#main .grid-item {
+    min-width: 0;
+    padding: 24px;
+    background-color: var(--brand-background-green);
+    border-radius: 8px;
+}
+
+#main .grid-item p {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    #main .grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    /* 2 或 4 個 items → 一列兩個 */
+    #main .grid-container--cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+#main .share-topics-accordion .share-panel {
+    padding: 16px;
+}
+
+#main .share-topics-accordion .share-panel-media {
+    margin: -16px -16px 0;
+    width: calc(100% + 32px);
+    max-width: none;
+}
+
+#main .share-topics-accordion .share-panel-media img {
+    border-radius: 0;
+}
+/* ========================================
+   Section: donate-and-contact
+======================================== */
+#main #donate-and-contact{
+    background-color: var(--brand-background-yellow);
+}
+#main .donation-box__paypal-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+#main .donation-box__paypal-field{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 320px;
+}
+#main .donation-box__paypal-field label{
+    margin-bottom: 0;
+    font-weight: 500;
+}
+#main .donation-box__paypal-form select{
+    min-height: 44px;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--gray-400);
+    border-radius: 4px;
+    background-color: var(--white);
+    color: var(--brand-black);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+#main .donation-box__paypal-form input[type="image"]{
+    display: block;
+    width: 146px;
+    height: auto;
+    max-width: 100%;
+    cursor: pointer;
+}

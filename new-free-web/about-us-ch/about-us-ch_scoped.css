@@ -1,0 +1,154 @@
+#main #about-us-ch .impact{
+    background-color: var(--brand-background-green);
+
+}
+@media (min-width: 1200px) {
+    #main #about-us-ch .page-top-img-container {
+      position: sticky;
+      top: 24px;           /* 距視窗頂部的留白，依設計調整 */
+      align-self: flex-start; /* 雙重保險，避免被 flex 撐高 */
+    }
+  }
+/* ========================================
+   Section: 工作業務
+======================================== */
+#main #our-works{
+    background-color: var(--brand-background-green);
+}
+#main #our-works .container{
+    flex-direction: column;
+}
+#main #our-works .content-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+#main #our-works .content-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+@media (min-width: 768px) {
+    #main #our-works .content-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+#main #our-works .content-item-icon{
+    align-self: start;
+}
+/* ========================================
+   Section: 成立背景
+======================================== */
+#main #org-bg{
+    background-color: var(--brand-background-yellow);
+}
+#main #org-bg .container{
+    flex-direction: column;
+    gap: 24px;
+}
+#main #org-bg .action-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+#main #org-bg .action-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#main #org-bg .action-item-icon{
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+#main #org-bg .action-item-icon img{
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#main #org-bg .action-item-body{
+    width: 100%;
+    padding: 24px;
+    background-color: var(--brand-white);
+}
+@media (min-width: 768px) {
+    #main #org-bg .action-container{
+        gap: 24px;
+    }
+    #main #org-bg .action-item{
+        flex-direction: row;
+        align-items: stretch;
+    }
+    #main #org-bg .action-item:nth-child(even){
+        flex-direction: row-reverse;
+    }
+    #main #org-bg .action-item-icon {
+        flex: 0 0 379px;
+        width: 379px;
+        aspect-ratio: auto;
+        align-self: stretch;
+    }
+    #main #org-bg .action-item-icon img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #main #org-bg .action-item-body {
+        flex: 1;
+        min-width: 0;
+    }
+}
+/* ========================================
+   Section: 董監事成員
+======================================== */
+#main #d-and-s .container{
+    flex-direction: column;
+}
+#main #d-and-s .section-title{
+    margin-bottom: 40px;
+}
+#main .person-card-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+}
+@media (min-width: 768px) {
+    #main .person-card-container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 64px;
+    }
+}
+#main .person-card{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+#main .person-card-img-container{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#main .person-card-img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#main .person-title .name{
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+#main .person-title .description{
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.66667;
+    color: var(--gray-700);
+}
