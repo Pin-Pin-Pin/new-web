@@ -6,8 +6,9 @@
  * 路徑供開發預覽。可點兩下 tools/merge.bat 走選單，或直接用下方 CLI。
  *
  * 【用法】
- *   node merge.js <資料夾路徑> <dev|prod> <body|html>
+ *   node merge.js <資料夾路徑> <dev|prod> <body|html> [tag]
  *   （prod 亦接受 production／正式）
+ *   （dev 模式必須提供 tag，例如 v1.1.3）
  *
  * 【輸入規則】
  *   選擇「頁面資料夾」後，只處理該資料夾內與資料夾同名的 HTML：
@@ -20,11 +21,11 @@
  *       - CSS → <style type="text/css">（內容前註解 repo 相對路徑）
  *       - JS  → <script> 內嵌（去掉 src／defer／async／integrity／crossorigin）
  *   · dev：將本地相對路徑改寫為 jsDelivr：
- *       https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@{最新tag}/{repo相對路徑}
- *     最新 tag 解析：先嘗試 git fetch new-web --tags；再對
- *     new-web/feature、origin/feature、feature 依序執行
- *     git tag --merged <ref> --sort=-v:refname，取第一個；
- *     皆失敗則退回全部 tag 依版本排序取最新。找不到 tag 則報錯結束。
+ *       https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@{使用者輸入的tag}/{repo相對路徑}
+ *     tag 由 CLI 第 4 參數或 merge.bat 提示輸入；不可省略。
+ *   · 不論 mode／target，一律再附上 share-css/fix.css（若頁面尚未引用）：
+ *       - prod → 併入 <style> 末尾
+ *       - dev  → 追加 <link rel="stylesheet">（body：接在本地 CSS 後；html：接在 head 末）
  *
  * 【輸出範圍 target】
  *   · body：只輸出 <body>…</body>
@@ -32,6 +33,7 @@
  *       - body 開頭依 head 原順序放入：
  *         1) 第三方 stylesheet <link>（如 Bootstrap、Google Fonts）
  *         2) 本地 CSS（prod：內嵌 <style>；dev：改寫後的 <link>）
+ *         3) fix.css（同上，依 mode）
  *       - 腳本集中到 body 末尾：
  *         先 head 內的 script，再原 body 內 script，順序不變
  *         （若原頁有 Bootstrap JS 等第三方 <script src>，會一併以外連方式保留；
@@ -39,14 +41,14 @@
  *   · html：輸出完整文件
  *       - prod：從 <head> 移除本地 CSS <link>，樣式改放 body 開頭內嵌；
  *               body 內本地 JS 內嵌後仍置於 body 末
- *       - dev：在 <head> 原地改寫本地 CSS／JS 路徑為 CDN；
+ *       - dev：在 <head> 原地改寫本地 CSS／JS 路徑為 CDN，並於 head 末追加 fix.css；
  *               body 腳本改寫後仍放在 body 末（head 腳本已在 head 改寫）
  *
  * 【輸出檔】
  *   寫回同一資料夾：{basename}_merge.html
  *
  * 【相關】
- *   merge.bat：可點選的選單包裝（選 mode／target、開資料夾選擇器後呼叫本檔）。
+ *   merge.bat：可點選的選單包裝（選 mode／target／tag、開資料夾選擇器後呼叫本檔）。
  */
 
 const fs = require('fs');
@@ -55,14 +57,16 @@ const { execFileSync } = require('child_process');
 
 const CDN_OWNER_REPO = 'Pin-Pin-Pin/new-web';
 const FEATURE_REFS = ['new-web/feature', 'origin/feature', 'feature'];
+const FIX_CSS_REPO_REL = 'share-css/fix.css';
 
 function usage() {
   console.error(
-    '用法：node merge.js <資料夾路徑> <dev|prod> <body|html>\n' +
-      '  dev  = 相對路徑改寫為 jsDelivr（最新 tag）\n' +
-      '  prod = 本地 CSS/JS 內嵌\n' +
+    '用法：node merge.js <資料夾路徑> <dev|prod> <body|html> [tag]\n' +
+      '  dev  = 相對路徑改寫為 jsDelivr（需提供 tag，例如 v1.1.3）\n' +
+      '  prod = 本地 CSS/JS 內嵌（不需 tag）\n' +
       '  body = 僅輸出 <body>\n' +
-      '  html = 輸出完整 HTML'
+      '  html = 輸出完整 HTML\n' +
+      '  tag  = jsDelivr 使用的 git tag（僅 dev 需要）'
   );
 }
 
@@ -319,6 +323,48 @@ function collectLocalCss({ links, mode, htmlDir, repoRoot, tag }) {
   return { styleParts, devLinks };
 }
 
+function resolveFixCssPath(repoRoot) {
+  const abs = path.join(repoRoot, ...FIX_CSS_REPO_REL.split('/'));
+  if (!fs.existsSync(abs) || !fs.statSync(abs).isFile()) {
+    throw new Error(`找不到 ${FIX_CSS_REPO_REL}`);
+  }
+  return abs;
+}
+
+function pageAlreadyHasFixCss(links, htmlDir, fixAbs) {
+  const fixResolved = path.resolve(fixAbs);
+  return links.some((link) => {
+    if (/share-css\/fix\.css(?:[?#]|$)/i.test(link.href)) return true;
+    if (isThirdPartyUrl(link.href)) return false;
+    const abs = resolveLocalFile(htmlDir, link.href);
+    return abs ? path.resolve(abs) === fixResolved : false;
+  });
+}
+
+/**
+ * 取得要追加的 fix.css（prod → style 片段；dev → link 標籤）。
+ * 若頁面已引用則回傳空字串，避免重複。
+ */
+function buildFixCssExtra({ mode, repoRoot, tag, links, htmlDir }) {
+  const fixAbs = resolveFixCssPath(repoRoot);
+  if (pageAlreadyHasFixCss(links, htmlDir, fixAbs)) {
+    return { stylePart: '', linkHtml: '', skipped: true };
+  }
+  const repoRel = toRepoRelative(repoRoot, fixAbs);
+  if (mode === 'dev') {
+    return {
+      stylePart: '',
+      linkHtml: `<link rel="stylesheet" href="${cdnUrl(tag, repoRel)}">`,
+      skipped: false,
+    };
+  }
+  return {
+    stylePart: `/* ${repoRel} */\n${fs.readFileSync(fixAbs, 'utf8')}`,
+    linkHtml: '',
+    skipped: false,
+  };
+}
+
 function buildBodyHtml({ bodyAttrs, bodyContent, headPrefix, scriptsHtml }) {
   const open = bodyAttrs.trim() ? `<body ${bodyAttrs.trim()}>` : '<body>';
   return [open, headPrefix, bodyContent.trim(), scriptsHtml, '</body>']
@@ -326,7 +372,13 @@ function buildBodyHtml({ bodyAttrs, bodyContent, headPrefix, scriptsHtml }) {
     .join('\n');
 }
 
-function mergeFile({ folderPath, mode, target }) {
+function normalizeTag(input) {
+  let tag = String(input || '').trim();
+  if (tag.startsWith('@')) tag = tag.slice(1);
+  return tag;
+}
+
+function mergeFile({ folderPath, mode, target, tag: tagInput }) {
   const absFolder = path.resolve(folderPath);
   if (!fs.existsSync(absFolder) || !fs.statSync(absFolder).isDirectory()) {
     throw new Error(`資料夾不存在：${absFolder}`);
@@ -351,14 +403,11 @@ function mergeFile({ folderPath, mode, target }) {
   let tag = null;
   let tagVia = null;
   if (mode === 'dev') {
-    const tagMeta = resolveLatestTag(repoRoot);
-    if (!tagMeta) {
-      throw new Error(
-        '找不到可用的 git tag。請先在 feature 相關 commit 建立並 push tag（例如 v1.1.0）。'
-      );
+    tag = normalizeTag(tagInput);
+    if (!tag) {
+      throw new Error('dev 模式請提供 git tag（例如 v1.1.3）');
     }
-    tag = tagMeta.tag;
-    tagVia = tagMeta.via;
+    tagVia = 'user';
   }
 
   const html = fs.readFileSync(htmlPath, 'utf8');
@@ -375,6 +424,13 @@ function mergeFile({ folderPath, mode, target }) {
     repoRoot,
     tag,
   });
+
+  const fixCss = buildFixCssExtra({ mode, repoRoot, tag, links, htmlDir });
+  // body／prod：併入 styleParts 或 devLinks；html+dev 改在 head 末追加 link
+  if (target === 'body' || mode === 'prod') {
+    if (fixCss.stylePart) styleParts.push(fixCss.stylePart);
+    if (fixCss.linkHtml) devLinks.push(fixCss.linkHtml);
+  }
 
   const scriptsInHead = extractScriptTags(headContent);
   const scriptsInBody = extractScriptTags(body.content);
@@ -423,8 +479,11 @@ function mergeFile({ folderPath, mode, target }) {
       .replace(/<head[^>]*>[\s\S]*?<\/head>/i, `<head>\n${newHead}\n</head>`)
       .replace(/<body[^>]*>[\s\S]*?<\/body>/i, newBody);
   } else {
-    // dev + 完整 HTML：head 內改寫路徑，body 腳本改寫後仍放在 body 末
-    const newHead = rewriteHeadLocalAssets(headContent, htmlDir, repoRoot, tag).trim();
+    // dev + 完整 HTML：head 內改寫路徑，並於 head 末追加 fix.css link
+    let newHead = rewriteHeadLocalAssets(headContent, htmlDir, repoRoot, tag).trim();
+    if (fixCss.linkHtml) {
+      newHead = `${newHead}\n${fixCss.linkHtml}`;
+    }
     const newBody = buildBodyHtml({
       bodyAttrs: body.attrs,
       bodyContent: bodyWithoutScripts,
@@ -439,7 +498,15 @@ function mergeFile({ folderPath, mode, target }) {
   const outPath = path.join(absFolder, `${basename}_merge.html`);
   fs.writeFileSync(outPath, `${output.trim()}\n`, 'utf8');
 
-  return { outPath, mode, target, tag, tagVia, htmlPath };
+  return {
+    outPath,
+    mode,
+    target,
+    tag,
+    tagVia,
+    htmlPath,
+    fixCss: fixCss.skipped ? 'already-linked' : FIX_CSS_REPO_REL,
+  };
 }
 
 function normalizeMode(input) {
@@ -460,13 +527,20 @@ function main() {
   const folderPath = process.argv[2];
   const mode = normalizeMode(process.argv[3]);
   const target = normalizeTarget(process.argv[4]);
+  const tag = process.argv[5];
 
   if (!folderPath || !mode || !target) {
     usage();
     process.exit(1);
   }
 
-  const result = mergeFile({ folderPath, mode, target });
+  if (mode === 'dev' && !normalizeTag(tag)) {
+    usage();
+    console.error('❌ dev 模式必須提供 tag（第 4 個參數），例如：v1.1.3');
+    process.exit(1);
+  }
+
+  const result = mergeFile({ folderPath, mode, target, tag });
   console.log('✅ 合併完成');
   console.log(`   來源：${result.htmlPath}`);
   console.log(`   輸出：${result.outPath}`);
@@ -476,11 +550,18 @@ function main() {
     }`
   );
   if (result.tag) {
-    console.log(`   CDN tag：${result.tag}${result.tagVia ? `（via ${result.tagVia}）` : ''}`);
+    console.log(`   CDN tag：${result.tag}`);
+  }
+  if (result.fixCss) {
+    console.log(
+      `   fix.css：${
+        result.fixCss === 'already-linked' ? '頁面已引用，略過追加' : `已追加 ${result.fixCss}`
+      }`
+    );
   }
 }
 
-module.exports = { mergeFile, resolveLatestTag, findRepoRoot };
+module.exports = { mergeFile, resolveLatestTag, findRepoRoot, normalizeTag };
 
 if (require.main === module) {
   try {

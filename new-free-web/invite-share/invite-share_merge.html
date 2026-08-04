@@ -7,28 +7,39 @@
     @import url('https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v1.1.6/share-css/share_scoped.css');
     @import url('https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v1.1.6/new-free-web/invite-share/invite-share_scoped.css');
 
-        /* .path-node:not(.node--type-landing) #main.container {
-            max-width: none;
-            padding: 0;
-        } */
+    .path-node:not(.node--type-landing) #main.container {
+        max-width: none;
+        padding: 0;
+    }
 
     /* 取消 Bootstrap .row 預設 */
-    /* #main > .row {
+    #main > .row {
         margin-left: 0;
         margin-right: 0;
         --bs-gutter-x: 0;
         --bs-gutter-y: 0;
-    } */
+    }
     
     /* 一併取消 #content 上 .col 的左右 padding */
-    /* #content.col {
+    #content.col {
         padding-left: 0;
         padding-right: 0;
         max-width: 100%;
     }
     #highlighted,#featured-top{
         display: none;
-    } */
+    }
+    #main section.content-inner.section{
+        padding: 0;
+    }
+ 
+    #main h3, #main h2 {
+        width: 100%;
+        border: none;
+    }
+
+
+    
 </style>
 
 <section class="invite-share">
