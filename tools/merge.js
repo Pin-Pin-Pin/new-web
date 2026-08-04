@@ -28,6 +28,7 @@
  *       - dev  → 追加 <link rel="stylesheet">（body：接在本地 CSS 後；html：接在 head 末）
  *   · 本地 CSS 自動改用 scoped 版本（若不存在則報錯）：
  *       - share-css/share.css → share-css/share_scoped.css
+ *       - share-css/donate.css → share-css/donate_scoped.css
  *       - {資料夾名}.css → {資料夾名}_scoped.css
  *       - 已是 *_scoped.css 或其他 CSS 則不改
  *
@@ -243,8 +244,11 @@ function removeLocalStylesheetLinks(headContent, htmlDir) {
   });
 }
 
+/** merge 時要改指向 *_scoped.css 的共用 CSS 檔名（小寫） */
+const SCOPED_SHARED_CSS = new Set(['share.css', 'donate.css']);
+
 /**
- * share.css → share_scoped.css；{pageBasename}.css → {pageBasename}_scoped.css
+ * share.css / donate.css → *_scoped.css；{pageBasename}.css → {pageBasename}_scoped.css
  * 已是 *_scoped.css 或其他檔名則原樣回傳。
  */
 function resolveMergeCssPath(absCssPath, pageBasename) {
@@ -255,10 +259,10 @@ function resolveMergeCssPath(absCssPath, pageBasename) {
   const base = path.basename(absCssPath, ext);
   if (/_scoped$/i.test(base)) return absCssPath;
 
-  const fileName = path.basename(absCssPath);
-  const isShareCss = fileName.toLowerCase() === 'share.css';
-  const isPageCss = fileName.toLowerCase() === `${String(pageBasename || '').toLowerCase()}.css`;
-  if (!isShareCss && !isPageCss) return absCssPath;
+  const fileName = path.basename(absCssPath).toLowerCase();
+  const isSharedCss = SCOPED_SHARED_CSS.has(fileName);
+  const isPageCss = fileName === `${String(pageBasename || '').toLowerCase()}.css`;
+  if (!isSharedCss && !isPageCss) return absCssPath;
 
   const scopedAbs = path.join(dir, `${base}_scoped${ext}`);
   if (!fs.existsSync(scopedAbs) || !fs.statSync(scopedAbs).isFile()) {

@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<title>通用捐款頁</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=43" rel="canonical" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v1.1.9/share-css/share_scoped.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v1.1.9/share-css/donate_scoped.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v1.1.9/landing-page/general-donate/general-donate_scoped.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v1.1.9/share-css/fix.css">
+</head>
+<body>
+<section class="donate-hero">
+    <h1 class="h1 d-none">捐款支持────匯聚更多守護環境的公民力量</h1>
+    <picture class="donate-hero__bg">
+        <source
+            media="(min-width: 768px)"
+            type="image/webp"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-hero-1400.webp 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-hero-1920.webp 1920w
+            "
+            sizes="100vw"
+        >
+    
+        <source
+            type="image/webp"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/donate-hero-mb-768.webp 768w
+            "
+            sizes="100vw"
+        >
+    
+    
+
+    
+        <img
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/donate-hero-mb-768.jpg"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/donate-hero-mb-768.jpg 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-hero-1400.jpg 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-hero-1920.jpg 1920w
+            "
+            sizes="100vw"
+            width="750"
+            height="581"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+        >
+    </picture>
+
+    <div class="donate-hero__inner container">
+        <div class="img-box">
+            <picture>
+                <source
+                    media="(min-width: 768px)"
+                    type="image/webp"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-tbl-top-slogan-450.webp 450w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-tbl-top-slogan-705.webp 705w
+                    "
+                    sizes="
+                        (min-width: 1200px) 450px,
+                        (min-width: 768px) 330px
+                    "
+                >
+                <source
+                    type="image/webp"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-mb-top-slogan-300.webp 300w
+                    "
+                >
+            
+                <img id="top-slogan"
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-mb-top-slogan-300.png"
+                    width="433"
+                    height="132"
+                    alt="你的支持匯聚更多守護環境的公民力量"
+                    decoding="async"
+                >
+            </picture>
+            <picture>
+                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/cet-logo-12.svg" type="image/svg+xml" />
+                <img id="cet-top-logo" decoding="async" alt="地球公民基金會" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/cet-logo-12.png" width="539" height="159"/>
+            </picture>
+
+        </div>
+        <div class="table-box">
+            <div class="donation-box" id="donation-box">
+                <h2 class="donation-box__title h4">選擇捐款方式</h2>
+
+                <div class="donation-box__tabs" role="tablist" aria-label="捐款方式">
+                    <button type="button" class="donation-box__tab is-active" role="tab" aria-selected="true" id="donate-tab-monthly" data-donate-tab="monthly" aria-controls="donate-panel-amount">每月捐款</button>
+                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-once" data-donate-tab="once" aria-controls="donate-panel-amount">單筆捐款</button>
+                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-other" data-donate-tab="other" aria-controls="donate-panel-other">其他方式</button>
+                </div>
+
+                <div class="donation-box__panel" id="donate-panel-amount" role="tabpanel" aria-labelledby="donate-tab-monthly">
+                    <h3 class="donation-box__subtitle h4">選擇金額或自訂金額</h3>
+
+                    <ul class="donation-box__amount-list list-unstyled mb-0" id="donate-amount-list">
+                        <li>
+                            <button type="button" class="donation-box__amount-option" data-amount="500" aria-pressed="false">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">500</span>
+                                </span>
+                                <span class="donation-box__amount-desc">用行動擺脫無力感，把不可能化為可能。</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="donation-box__amount-option is-active" data-amount="1000" aria-pressed="true">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">1000</span>
+                                </span>
+                                <span class="donation-box__amount-desc">成為守護環境的穩定社會力。</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="donation-box__amount-option" data-amount="1500" aria-pressed="false">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">1500</span>
+                                </span>
+                                <span class="donation-box__amount-desc">從關注個案到監督制度，打造專業的環境倡議團隊。</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="donation-box__custom">
+                        <label class="donation-box__custom-label" for="donate-custom-amount">自訂金額</label>
+                        <input class="donation-box__custom-input" type="text" inputmode="numeric" id="donate-custom-amount" name="custom_amount" placeholder="請輸入金額" autocomplete="off">
+                    </div>
+                    <p class="donation-box__error mb-0" id="donate-amount-error" hidden role="alert">請輸入自訂金額或選取建議金額</p>
+                </div>
+
+                <div class="donation-box__panel donation-box__panel--other" id="donate-panel-other" role="tabpanel" aria-labelledby="donate-tab-other" hidden>
+                    <p class="donation-box__notice mb-0">※溫馨提醒，地球公民不會以抽獎或私訊通知中獎，請您在匯款前慎防詐騙，勿輕信不明訊息。</p>
+                    <div class="accordion donation-box__accordion" id="donateOtherAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-1">
+                                <button type="button" class="p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-1" aria-expanded="true" aria-controls="donate-other-collapse-1">
+                                    <span>信用卡紙本定期 / 單筆捐款</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-1" class="accordion-collapse collapse show" aria-labelledby="donate-other-heading-1" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>任一銀行的VISA、Master Card、JCB信用卡皆可辦理。請填寫<a href="https://drive.google.com/file/d/1v_lIh9Drs6R_sugg7vP0Tb1mRve4j0T8/view?usp=sharing" target="_blank" rel="noopener noreferrer">信用卡授權書</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-2">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-2" aria-expanded="false" aria-controls="donate-other-collapse-2">
+                                    <span>郵局定期扣款</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-2" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-2" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>
+                                        凡於中華郵政開立存簿儲金者，皆可利用郵局定期扣款的方式進行捐款。請填寫<a href="https://drive.google.com/file/d/12mmZhYoa8AToPo3NVX2NEuS6-7u-IZTF/view?usp=sharing" target="_blank" rel="noopener noreferrer">郵局轉帳授權書</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-3">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-3" aria-expanded="false" aria-controls="donate-other-collapse-3">
+                                    <span>郵政劃撥</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-3" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-3" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>至全國各地郵局填寫郵局空白劃撥單，直接以劃撥方式捐款，資料如下：<br>帳號：42275525 戶名：財團法人地球公民基金會</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-4">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-4" aria-expanded="false" aria-controls="donate-other-collapse-4">
+                                    <span>銀行匯款 / ATM 轉帳</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-4" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-4" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>請來電或來信詢問 ATM 轉帳的捐款方式。<br>我們不會透過私訊索取個資，也不會以私人帳戶收取捐款。<br>電話：07-2156809#14<br>email：<a href="mailto:donor@cet-taiwan.org">donor@cet-taiwan.org</a><br>完成匯款後，煩請填寫<a href="https://docs.google.com/forms/d/1zIS2lX5Z-qMsKqVCFvame2eQyxvnQeKhlAy_NPYJmDI/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">匯款通知單</a>，以利核對。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-5">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-5" aria-expanded="false" aria-controls="donate-other-collapse-5">
+                                    <span>現金、支票捐款</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-5" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-5" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>您可直接至本會辦公室現金捐款，或於本會舉辦之宣導活動會場捐款。<br>若不克前往，可以現金袋或開立抬頭為「財團法人地球公民基金會」，且註明<strong>「禁止背書轉讓」</strong>及<strong>劃線</strong>的支票，以掛號寄至高雄總會：801 高雄市前金區中華四路 282 號 5 樓會計收，並請簡單註明捐款收據抬頭開立方式。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-6">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-6" aria-expanded="false" aria-controls="donate-other-collapse-6">
+                                    <span>PayPal</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-6" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-6" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>Please use Donate Button below. 請點擊捐款按鈕，捐款後確認信會寄到您的 PayPal 信箱，如需收據請告知。（僅提供國外 PayPal 帳號使用。）</p>
+                                    <form class="donation-box__paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                        <input name="cmd" type="hidden" value="_s-xclick">
+                                        <input name="hosted_button_id" type="hidden" value="UMXNE5EMKJ49W">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input name="on0" type="hidden" value="Donation Amount">Donation Amount</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select name="os0">
+                                                            <option value="1.Donation Amount">NT$1,000 TWD</option>
+                                                            <option value="2.Donation Amount">NT$3,000 TWD</option>
+                                                            <option value="3.Donation Amount">NT$5,000 TWD</option>
+                                                            <option value="4.Donation Amount">NT$300 TWD</option>
+                                                            <option value="5.Donation Amount">NT$500 TWD</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <input name="currency_code" type="hidden" value="TWD">
+                                        <input alt="PayPal － 更安全、更簡單的線上付款方式！" border="0" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" type="image" width="146" height="47">
+                                        <img alt="" border="0" height="1" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-box__submit" id="donate-submit">
+                    <span class="btn-label">下一步</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about">    
+    <div class="container">
+        <div class="text-box">
+            <h2 class="h3">許多環境問題，<br>需要聚集公民力量才能改變</h2>                     
+            <p>流失的農地、挖掉的山頭、工廠排放的污染跟難以處理的萬年核廢，這些現場缺乏良好的環境政策，造成食安、空污……生活在其中令人憂慮。</p>
+            <p class="mb-0">
+            18 年來地球公民透過調查研究與行動，集結公民力量，促成環境個案與法令政策的改變，例如礦業法、水污法、毒物管理法……。我們深信每個人都可以為環境付出一份心力，只要提升環境意識並積極參與，這座島嶼將邁上永續之路。</p>
+        </div>
+        <div class="img-box">
+            <picture>
+                <source
+                    type="image/webp"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-750.webp 750w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-1200.webp 1200w
+                    "
+                    sizes="
+                        (min-width: 1200px) 596px,
+                        (min-width: 768px) 360px,
+                        calc(100vw - 48px)
+                    "
+                >
+            
+                <img
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-750.jpg"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-750.jpg 750w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-1200.jpg 1200w
+                    "
+                    sizes="
+                        (min-width: 1200px) 596px,
+                        (min-width: 768px) 360px,
+                        calc(100vw - 48px)
+                    "
+                    width="342"
+                    height="240"
+                    alt="山頭被挖去作為礦場"
+                    loading="lazy" 
+                    decoding="async"
+                >
+            </picture>
+        </div>
+        
+    </div>
+</section>
+<section class="achievements p-0">
+    <div class="row g-0">
+        <div class="col-md-6 col-12">
+            <picture>
+                <source
+                    type="image/webp"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-750.webp 750w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-960.webp 960w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-1440.webp 1440w
+                    "
+                    sizes="
+                        (min-width: 768px) 50vw,
+                        100vw
+                    "
+                >
+            
+                <img
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-750.jpg"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-750.jpg 750w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-960.jpg 960w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-1440.jpg 1440w
+                    "
+                    sizes="
+                        (min-width: 768px) 50vw,
+                        100vw
+                    "
+                    width="375"
+                    height="293"
+                    alt="多個地球公民參與集會遊行倡議的現場"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </picture>
+
+        </div>
+        <div class="col-md-6 col-12">
+            <picture>
+                <source
+                    type="image/webp"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-750.webp 750w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-950.webp 950w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-1200.webp 1200w
+                    "
+                    sizes="
+                        (min-width: 768px) 50vw,
+                        100vw
+                    "
+                >
+            
+                <img
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-750.jpg"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-750.jpg 750w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-950.jpg 950w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-1200.jpg 1200w
+                    "
+                    sizes="
+                        (min-width: 768px) 50vw,
+                        100vw
+                    "
+                    width="375"
+                    height="293"
+                    alt="多個地球公民參與集會遊行倡議的現場"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </picture>
+
+        </div>
+    </div>
+</section>
+<section class="core-values">
+    <div class="container">
+        <p class="mb-0">為了維持公正獨立，地球公民堅持不接受政府與被監督企業的資助，不分黨派監督，只說對得起環境的真話。</p>
+        <div class="slogan-box">
+            <picture>
+                <source
+                    type="image/webp"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-700.webp 700w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-960.webp 960w
+                    "
+                    sizes="
+                        (min-width: 1200px) 960px,
+                        (min-width: 768px) 760px, 
+                        calc(100vw - 48px)
+                    "
+                >
+            
+                <img
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-700.png"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-700.png 700w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-960.png 960w
+                    "
+                    sizes="
+                        (min-width: 1200px) 960px,
+                        (min-width: 768px) 760px, 
+                        calc(100vw - 48px)
+                    "
+                    width="335"
+                    height="68"
+                    alt="環境友善的政策不會從天而降，需要你的支持才會發生"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </picture>
+        </div>
+        <div class="signature-box">
+            <picture>
+                <source
+                    type="image/webp"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-sign-360.webp 360w
+                    "
+                    sizes="218px"
+                >
+            
+                <img
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-sign-360.png"
+                    width="218"
+                    height="81"
+                    alt="地球公民基金會董事長李根政敬上"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </picture>
+        </div>
+        
+        
+    </div>
+</section>
+<section class="donation-plan">
+    <div class="container">
+
+        <div class="card">
+            <picture>
+                <source
+                    type="image/webp"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-450.webp 450w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-700.webp 700w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-900.webp 900w
+                    "
+                >
+            
+                <img
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-700.jpg"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-450.jpg 450w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-700.jpg 700w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-900.jpg 900w
+                    "
+                    sizes="
+                        (min-width: 1200px) 440px,
+                        (min-width: 768px) 364px,
+                        calc(100vw - 48px)
+                    "
+                    width="342"
+                    height="228"
+                    alt="一群人伸出雙手為彼此打氣 "
+                    loading="lazy"
+                    decoding="async"
+                >
+            </picture>
+            <div class="card-body d-flex flex-column">
+                <h3 class="card-title mb-0">定期支持方案</h3>
+                <p>$500/$1000/$1500</p>
+                <p class="card-text"><span style="white-space: nowrap;">我們不是因為看見希望才堅持，</span><span style="white-space: nowrap;">而是因為堅持了，所以看見希望</span></p>
+                <button type="button" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-plan__cta" data-donate-tab="monthly"><span class="btn-label">訂閱美好環境</span></button>
+            </div>
+        </div>
+ 
+        <div class="card">
+            <picture>
+                <source
+                    type="image/webp"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-450.webp 450w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-700.webp 700w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-900.webp 900w
+                    "
+                >
+            
+                <img
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-700.jpg"
+                    srcset="
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-450.jpg 450w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-700.jpg 700w,
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-900.jpg 900w
+                    "
+                    sizes="
+                        (min-width: 1200px) 440px,
+                        (min-width: 768px) 364px,
+                        calc(100vw - 48px)
+                    "
+                    width="342"
+                    height="228"
+                    alt="地球公民的研究員參與政府會議"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </picture>
+
+            <div class="card-body d-flex flex-column">
+                <h3 class="card-title mb-0">單筆支持方案</h3>
+                <p>$1200/$3000/$5000</p>
+                <p class="card-text">在關鍵時刻做出的關鍵決定<br>重磅出擊，創造影響力！</p>
+                <button type="button" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-plan__cta" data-donate-tab="once"><span class="btn-label">打造永續家園</span></button>
+            </div>
+        </div>
+
+   
+    </div>
+</section> 
+<section class="faq">
+    <div class="container">
+        <h2 class="h3 section-title">常見問答</h2>
+        <div class="accordion" id="accordionExample" style="color:var(--black);"></div>
+    </div>
+</section>
+<footer>
+    <div class="logo-container">
+        <picture>
+            <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/logo-8.webp" type="image/webp" />
+            <img decoding="async" loading="lazy" alt="地球公民基金會"  src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/logo-8.png" width="330" height="97"/>
+        </picture>
+    </div>
+    <div class="footer-text">
+        <p>立案字號｜環署綜字第 0990100475 號</p>
+        <p>勸募許可文號｜衛部救字第 1151362736 號</p>
+    </div>
+     
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v1.1.9/share-js/donation-box.js" defer></script>
+<script type="text/javascript">
+var faqData = [
+    {
+        question: '地球公民將捐款用於哪些環境專案？',
+        content: [
+            '我們投入的環保工作範疇為山林國土、環境污染、能源轉型、永續花東、環境民主。藉由調查研究、揭露環境問題，提出解決方案，並據以進行政策施壓、國會遊說、教育推廣等，促成改變。'
+        ]
+    },
+    {
+        question: '我如何知道地球公民基金會年度捐款使用明細？',
+        content: [
+            '每年度的帳目皆送環境部備查後公開，可以在地球公民官網閱讀線上版財報 & 徵信，了解地球公民各項經費支出。線上年度報告在隔年出刊，同時以紙本和電子報將摘要及連結寄予每位捐款會員。'
+        ]
+    },
+    {
+        question: '地球公民的財務報告受到哪些單位的審核？',
+        content: [
+            '依我國法令設立之財團法人地球公民基金會（以下簡稱本會），受董事會監督，董事會設董事 7 名，監事 2 名董監事成員均為義務性質，成員涵蓋各領域專業之人士，並具備獨立性。本會年度財務報表，皆先經由董監事會審核，並送主管機關環境部備查。據衛生福利部規定，公益勸募需每年申請募款字號，申請流程包括遞交勸募計畫書、由衛福部審核後核發募款字號。募款字號年度結束時，也需遞交報告。'
+        ]
+    },
+    {
+        question: '捐款是否會有收據？',
+        content: [
+            '您在進行捐款時請填寫正確地址，將會收到本會正式收據。可利用捐款收據作為抵扣所得稅額之用。'
+        ]
+    },
+    {
+        question: '何時會收到捐款收據？',
+        content: [
+            '單次捐款人會在捐款成功後，可以選擇捐款隔月收到捐款收據與相關資料或年度收到捐款收據。每月定期定額捐款人則於每年報稅月前，寄發上一年度全年的捐款總額證明，收據可作為抵扣稅額使用，亦明列個人全年度捐款紀錄。'
+        ]
+    },
+    {
+        question: '捐款會員如何了解會務與環境行動成果？',
+        content: [
+            '地球公民有義務向捐款會員回報環境行動的進度、成果與財務報告，形式包括電子報、期刊或出版品等。',
+            '．每年發表「年度報告」，彙整當年度重大工作成果。',
+            '．不定期寄發「會員電子報」，報告最新的環境行動進度與參加管道，讓您掌握第一手消息。',
+            '．不定期發行電子期刊「地球公民通訊」專文解析環境專題，讓您深度了解環境議題。',
+            '．不定期舉辦「會員活動」，將以電子郵件、簡訊等管道與您聯繫。',
+            '．您也可以追蹤本會的 FB、IG 粉絲專頁，即時更新地球公民最新的倡議進度。'
+        ]
+    }
+];
+
+function renderFaq() {
+    var accordion = document.getElementById('accordionExample');
+    if (!accordion) return;
+
+    accordion.innerHTML = faqData.map(function (item, index) {
+        var id = index + 1;
+        var bodyHtml = item.content.map(function (text) {
+            return '<p>' + text + '</p>';
+        }).join('');
+
+        return (
+            '<div class="accordion-item">' +
+                '<h3 class="accordion-header" id="heading-' + id + '">' +
+                    '<button aria-controls="collapse-' + id + '" aria-expanded="false" class="collapsed p " data-bs-target="#collapse-' + id + '" data-bs-toggle="collapse" type="button"><span class="faq-question-label">' + item.question + '</span></button>' +
+                '</h3>' +
+                '<div aria-labelledby="heading-' + id + '" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-' + id + '">' +
+                    '<div class="accordion-body">' + bodyHtml + '</div>' +
+                '</div>' +
+            '</div>'
+        );
+    }).join('');
+}
+
+renderFaq();
+</script>
+</body>
+</html>

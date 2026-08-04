@@ -1,0 +1,125 @@
+#main #navbar {
+    display: none;
+}
+#main a {
+    text-decoration: none !important;
+    /* color: inherit !important; */
+}
+
+#main a:hover,
+#main a:visited,
+#main a:link,
+#main a:active {
+    text-decoration: none !important;
+    /* color: inherit !important; */
+}
+/* ========================================
+   Section: about
+======================================== */
+#main .about{
+    background-color: var(--brand-white);
+}
+#main .about .container{
+    padding-left: 0;
+    padding-right: 0;
+    display: grid;
+    gap: 40px;
+    align-items: center; 
+    grid-template-columns: 1fr
+
+}
+#main .about .img-box {
+    width: 100%;
+    
+}
+#main .about img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: top right;
+    border-radius: 8px;
+}
+#main .about h2{
+    color: var(--brand-dark-primary);
+    margin-bottom: 40px;
+}
+@media (min-width: 768px){
+    #main .about .container{
+        align-items: start;
+    }
+}
+@media (min-width: 768px)  {
+    #main .about .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    #main .about .container {
+        grid-template-columns: 1fr 596px; 
+    }
+}
+/* ========================================
+   Section: achievements
+======================================== */
+#main .achievements img{
+    width: 100%;
+    max-width: 100%;
+}
+/* ========================================
+   Section: core-values
+======================================== */
+#main .core-values{
+    background-color: var(--brand-dark-primary);
+}
+#main .core-values p{
+    color: var(--white);
+}
+#main .core-values .container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+     
+}
+#main .slogan-box{
+    width: 100%;
+    max-width: 100%; 
+}
+#main .signature-box{
+    width: 218px;
+    height: auto;
+}
+#main .slogan-box img,#main .signature-box img{
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    #main .slogan-box{
+        width: 760px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    #main .slogan-box{
+        width: 960px;
+    }
+}
+/* ========================================
+   Section: 捐款方案
+======================================== */
+#main .donation-plan{
+    background-color: var(--brand-background-green);
+}
+#main .donation-plan h3{
+    color: var(--brand-primary);
+}
+#main .donation-plan img{
+    width: 100%;
+}
+   /* faq */
+#main .faq {
+    background-color: var(--white );
+}
+
+
