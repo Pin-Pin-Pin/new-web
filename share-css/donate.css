@@ -177,6 +177,10 @@ section.donate-hero{
     overflow: hidden;
     background-color: var(--white);
 }
+.donation-box__accordion .accordion-collapse{
+    min-height: 0;
+    overflow-anchor: none;
+}
 .donation-box__accordion .accordion-header{
     margin-bottom: 0;
     padding: 8px 12px;

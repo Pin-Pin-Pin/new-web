@@ -1,0 +1,175 @@
+#main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hero */
+#main .farm-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 20vh;
+    overflow: hidden;
+}
+
+#main .farm-hero .img-box {
+    max-width: min(100%, 390px);
+}
+
+#main .donate-hero .img-box {
+    gap: 25px;
+}
+
+#main #top-slogan {
+    width: 250px;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    #main #top-slogan {
+        width: 450px;
+    }
+}
+
+/* ========================================
+   Section: 人物分享
+======================================== */
+#main .people-quotes,#main .donation-plan {
+    position: relative;
+    overflow: hidden;
+    background-image: image-set(
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-donate-bg-500.webp") type("image/webp"),
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-donate-bg-500.jpg") type("image/jpeg")
+    );
+    background-repeat: repeat;
+    background-position: center top;
+    background-size: auto;
+}
+#main .people-quotes__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#main .people-quotes p {
+    color: #555;
+}
+
+#main .people-quotes__quote,
+#main .people-quotes__line {
+    width: 30%;
+}
+
+#main .people-quotes__text {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#main .people-quotes__signature {
+    padding-top: 5px;
+    padding-left: 23%;
+    width: 80%;
+}
+
+#main .people-quotes__attribution {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: right;
+}
+
+#main .people-quotes__line {
+    margin-left: auto;
+}
+/* ========================================
+   Section: 背景介紹
+======================================== */
+#main .farm-story .container {
+    padding-top: 94px;
+}
+
+#main .farm-story p,
+#main .farm-story__text {
+    color: #282623;
+}
+/* ========================================
+   Section: Donation plan
+======================================== */
+
+#main .donation-plan img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#main .donation-plan p {
+    color: #282623;
+}
+
+#main .donation-plan .amount {
+    margin-bottom: 16px;
+}
+
+#main .donation-plan .card-text {
+    margin-top: 16px;
+}
+
+#main .donation-plan .card {
+    border: 1px solid #564837;
+    outline: 2px solid #564837;
+    background-color: #ffffff;
+    background-image: image-set(
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-plan-bg-500.webp") type("image/webp"),
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-plan-bg-500.jpg") type("image/jpeg"));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#main .donation-plan .card-title {
+    text-align: center;
+    color: #282623;
+}
+
+#main .donation-plan .card-image {
+    display: block;
+}
+
+#main .donation-plan .card-body {
+    text-align: center;
+    color: #282623;
+}
+
+#main .donation-plan h3,
+#main .donation-plan p {
+    font-weight: 700;
+}
+
+#main .donation-plan .slogan-box {
+    width: 100%;
+    max-width: 350px;
+}
+
+@media (min-width: 1200px) {
+    #main .donation-plan .slogan-box {
+        max-width: 570px;
+    }
+}
+
+#main .donation-plan__cta {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#main .donation-plan__cta:focus-visible {
+    outline: 2px solid #564837;
+    outline-offset: 4px;
+}
+
+#main footer {
+    background-color: #EFE7C2;
+}

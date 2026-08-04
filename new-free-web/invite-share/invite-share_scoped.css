@@ -24,11 +24,14 @@
 }
 
 #main .share-topics-accordion .accordion-item {
-    display: flex;
-    flex-direction: column;
     border-radius: 8px;
     border: 1px solid var(--brand-dark-primary);
     overflow: hidden;
+}
+/* flex item 預設 min-height:auto 會擋住 Bootstrap 收合到 height:0 */
+#main .share-topics-accordion .accordion-collapse {
+    min-height: 0;
+    overflow-anchor: none;
 }
 
 #main .share-topics-accordion .accordion-header {

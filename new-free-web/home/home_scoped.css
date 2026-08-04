@@ -1,0 +1,182 @@
+/* === 來自 share.css（home 頁實際用到） === */
+:root {
+    --brand-dark-primary: #55716C;
+    --brand-black: #2D2D2D;
+    --brand-white: #FAFAFA;
+    --brand-background-green: #E5EAE3;
+}
+
+#main *,
+#main *::before,
+#main *::after {
+    box-sizing: border-box;
+}
+
+#main body {
+    margin: 0;
+    color: var(--brand-black);
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+#main h1,
+#main h2,
+#main h3,
+#main h4,
+#main h5,
+#main h6 {
+    margin-top: 0;
+}
+
+#main p {
+    margin-top: 0;
+}
+
+#main section,
+#main .section {
+    padding: 64px 24px;
+}
+
+#main .container {
+    display: flex;
+    width: 100%;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    #main section,
+    #main .section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    #main .container {
+        max-width: 760px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #main section,
+    #main .section {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    #main .container {
+        max-width: 960px;
+    }
+}
+
+#main h2,
+#main .h2 {
+    font-family: "Noto Sans TC" ;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+#main h3,
+#main .h3 {
+    font-family: "Noto Sans TC";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#main p,
+#main .p,
+#main li {
+    font-family: "Noto Sans TC";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+#main p:last-child,
+#main li:last-child,
+#main ol:last-child,
+#main ul:last-child {
+    margin-bottom: 0;
+}
+
+#main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* === 原本 home.css（已合併覆寫） === */
+#main .result{
+    background-color:var(--brand-background-green);
+}
+#main .result .container {
+    background-color:var(--brand-white);
+    padding: 24px 40px;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#main .result h2 {
+    text-align: center;
+    color: var(--brand-dark-primary);
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#main .result .content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+#main .result h3 {
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--brand-dark-primary);
+    margin-bottom: 0;
+}
+
+#main .result .content-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+#main .result .content-item-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 16px;
+}
+
+#main .result .content-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    #main .result .content-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    #main .result .content-item-icon {
+        margin-bottom: 8px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #main .result .content-container {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 0;
+    }
+}

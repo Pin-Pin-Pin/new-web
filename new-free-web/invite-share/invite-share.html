@@ -141,7 +141,7 @@
                 .replace(/"/g, '&quot;');
         }
 
-        function buildTopicPictureHtml(image) {
+        function buildTopicPictureHtml(image, loading) {
             var mobileSlug = '20260723-topic-' + image.topicId;
             var desktopSlug = '20260730-topic-' + image.topicId;
             var mobileWebp380 = IMAGE_BASE + mobileSlug + '-380.webp';
@@ -154,6 +154,8 @@
             var desktopJpg850 = IMAGE_BASE + desktopSlug + '-850.jpg';
             var desktopSizes = '379px';
             var mobileSizes = '(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))';
+            // Accordion panels are display:none when collapsed — skip lazy there.
+            var loadingAttr = loading === 'lazy' ? ' loading="lazy"' : '';
 
             return (
                 '<picture>' +
@@ -166,7 +168,7 @@
                         ' sizes="' + mobileSizes + '"' +
                         ' width="4" height="3"' +
                         ' alt="' + escapeHtml(image.alt) + '"' +
-                        ' loading="lazy"' +
+                        loadingAttr +
                         ' decoding="async"' +
                     '>' +
                 '</picture>'
@@ -233,12 +235,12 @@
             }).join('');
         }
 
-        function buildTopicCardHtml(item) {
+        function buildTopicCardHtml(item, loading) {
             var topicMod = ' content-tab-img--topic-' + item.image.topicId;
 
             return (
                 '<div class="content-tab-card">' +
-                    '<div class="content-tab-img' + topicMod + '">' + buildTopicPictureHtml(item.image) + '</div>' +
+                    '<div class="content-tab-img' + topicMod + '">' + buildTopicPictureHtml(item.image, loading) + '</div>' +
                     '<div class="content-tab-text">' + buildTopicSectionsHtml(item.sections) + '</div>' +
                 '</div>'
             );
@@ -262,7 +264,7 @@
                 var isActive = index === 0;
                 return (
                     '<div class="tab-pane' + (isActive ? ' active' : '') + '" role="tabpanel" id="share-panel-' + index + '" aria-labelledby="share-tab-' + index + '" aria-hidden="' + (isActive ? 'false' : 'true') + '">' +
-                        buildTopicCardHtml(item) +
+                        buildTopicCardHtml(item, 'lazy') +
                     '</div>'
                 );
             }).join('');
@@ -396,7 +398,7 @@
                 return (
                     '<div class="accordion-item">' +
                         '<h3 class="accordion-header" id="heading-' + id + '">' +
-                            '<button id="faq-btn-' + id + '" aria-controls="collapse-' + id + '" aria-expanded="false" class="collapsed p" data-bs-target="#collapse-' + id + '" data-bs-toggle="collapse" type="button">' + escapeHtml(item.question) + '</button>' +
+                            '<button id="faq-btn-' + id + '" aria-controls="collapse-' + id + '" aria-expanded="false" class="collapsed p" data-bs-target="#collapse-' + id + '" data-bs-toggle="collapse" type="button"><span class="faq-question-label">' + escapeHtml(item.question) + '</span></button>' +
                         '</h3>' +
                         '<div aria-labelledby="faq-btn-' + id + '" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-' + id + '">' +
                             '<div class="accordion-body">' + bodyHtml + '</div>' +

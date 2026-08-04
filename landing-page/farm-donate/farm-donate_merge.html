@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="zh-TW">
 <head>
-<title>通用捐款頁</title>
+<title>農地違章工廠捐款頁</title>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=43" rel="canonical" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=41" rel="canonical" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
 </head>
 <body>
 <style type="text/css">
@@ -1227,132 +1227,182 @@ footer{
 
 
 
-/* landing-page/general-donate/general-donate.css */
-#navbar {
-    display: none;
-}
-a {
-    text-decoration: none !important;
-    /* color: inherit !important; */
-}
-
-a:hover,
-a:visited,
-a:link,
-a:active {
-    text-decoration: none !important;
-    /* color: inherit !important; */
-}
-/* ========================================
-   Section: about
-======================================== */
-.about{
-    background-color: var(--brand-white);
-}
-.about .container{
-    padding-left: 0;
-    padding-right: 0;
-    display: grid;
-    gap: 40px;
-    align-items: center; 
-    grid-template-columns: 1fr
-
-}
-.about .img-box {
-    width: 100%;
-    
-}
-.about img {
-    width: 100%;
-    height: auto;
+/* landing-page/farm-donate/farm-donate.css */
+img {
     display: block;
-    object-fit: cover;
-    object-position: top right;
-    border-radius: 8px;
-}
-.about h2{
-    color: var(--brand-dark-primary);
-    margin-bottom: 40px;
-}
-@media (min-width: 768px){
-    .about .container{
-        align-items: start;
-    }
-}
-@media (min-width: 768px)  {
-    .about .container {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media (min-width: 1200px) {
-    .about .container {
-        grid-template-columns: 1fr 596px; 
-    }
-}
-/* ========================================
-   Section: achievements
-======================================== */
-.achievements img{
-    width: 100%;
     max-width: 100%;
-}
-/* ========================================
-   Section: core-values
-======================================== */
-.core-values{
-    background-color: var(--brand-dark-primary);
-}
-.core-values p{
-    color: var(--white);
-}
-.core-values .container{
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-     
-}
-.slogan-box{
-    width: 100%;
-    max-width: 100%; 
-}
-.signature-box{
-    width: 218px;
     height: auto;
 }
-.slogan-box img,.signature-box img{
-    text-align: center;
-    width: 100%;
+
+/* Hero */
+.farm-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 20vh;
+    overflow: hidden;
+}
+
+.farm-hero .img-box {
+    max-width: min(100%, 390px);
+}
+
+.donate-hero .img-box {
+    gap: 25px;
+}
+
+#top-slogan {
+    width: 250px;
+    max-width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-    .slogan-box{
-        width: 760px;
+    #top-slogan {
+        width: 450px;
     }
 }
-@media screen and (min-width: 1200px) {
-    .slogan-box{
-        width: 960px;
-    }
+
+/* ========================================
+   Section: 人物分享
+======================================== */
+.people-quotes,.donation-plan {
+    position: relative;
+    overflow: hidden;
+    background-image: image-set(
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-donate-bg-500.webp") type("image/webp"),
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-donate-bg-500.jpg") type("image/jpeg")
+    );
+    background-repeat: repeat;
+    background-position: center top;
+    background-size: auto;
+}
+.people-quotes__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.people-quotes p {
+    color: #555;
+}
+
+.people-quotes__quote,
+.people-quotes__line {
+    width: 30%;
+}
+
+.people-quotes__text {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.people-quotes__signature {
+    padding-top: 5px;
+    padding-left: 23%;
+    width: 80%;
+}
+
+.people-quotes__attribution {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: right;
+}
+
+.people-quotes__line {
+    margin-left: auto;
 }
 /* ========================================
-   Section: 捐款方案
+   Section: 背景介紹
 ======================================== */
-.donation-plan{
-    background-color: var(--brand-background-green);
+.farm-story .container {
+    padding-top: 94px;
 }
-.donation-plan h3{
-    color: var(--brand-primary);
+
+.farm-story p,
+.farm-story__text {
+    color: #282623;
 }
-.donation-plan img{
+/* ========================================
+   Section: Donation plan
+======================================== */
+
+.donation-plan img {
+    display: block;
     width: 100%;
-}
-   /* faq */
-.faq {
-    background-color: var(--white );
+    height: auto;
 }
 
+.donation-plan p {
+    color: #282623;
+}
 
+.donation-plan .amount {
+    margin-bottom: 16px;
+}
+
+.donation-plan .card-text {
+    margin-top: 16px;
+}
+
+.donation-plan .card {
+    border: 1px solid #564837;
+    outline: 2px solid #564837;
+    background-color: #ffffff;
+    background-image: image-set(
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-plan-bg-500.webp") type("image/webp"),
+        url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-plan-bg-500.jpg") type("image/jpeg"));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.donation-plan .card-title {
+    text-align: center;
+    color: #282623;
+}
+
+.donation-plan .card-image {
+    display: block;
+}
+
+.donation-plan .card-body {
+    text-align: center;
+    color: #282623;
+}
+
+.donation-plan h3,
+.donation-plan p {
+    font-weight: 700;
+}
+
+.donation-plan .slogan-box {
+    width: 100%;
+    max-width: 350px;
+}
+
+@media (min-width: 1200px) {
+    .donation-plan .slogan-box {
+        max-width: 570px;
+    }
+}
+
+.donation-plan__cta {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.donation-plan__cta:focus-visible {
+    outline: 2px solid #564837;
+    outline-offset: 4px;
+}
+
+footer {
+    background-color: #EFE7C2;
+}
 
 
 /* share-css/fix.css */
@@ -1391,39 +1441,30 @@ a:active {
 }
 </style>
 <section class="donate-hero">
-    <h1 class="h1 d-none">捐款支持────匯聚更多守護環境的公民力量</h1>
     <picture class="donate-hero__bg">
         <source
             media="(min-width: 768px)"
             type="image/webp"
             srcset="
-                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-hero-1400.webp 1400w,
-                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-hero-1920.webp 1920w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-1400.webp 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-1920.webp 1920w
             "
             sizes="100vw"
         >
     
         <source
-            type="image/webp"
             srcset="
-                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/donate-hero-mb-768.webp 768w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-mb-596.webp
             "
             sizes="100vw"
         >
-    
-    
-
-    
         <img
-            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/donate-hero-mb-768.jpg"
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-mb-596.jpg"
             srcset="
-                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/donate-hero-mb-768.jpg 768w,
-                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-hero-1400.jpg 1400w,
-                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-hero-1920.jpg 1920w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-mb-596.jpg
             "
-            sizes="100vw"
-            width="750"
-            height="581"
+            width="596"
+            height="596"
             alt=""
             fetchpriority="high"
             decoding="async"
@@ -1431,38 +1472,28 @@ a:active {
     </picture>
 
     <div class="donate-hero__inner container">
+        <h1 class="h1 d-none">農地違章工廠捐款頁</h1>
         <div class="img-box">
             <picture>
                 <source
-                    media="(min-width: 768px)"
                     type="image/webp"
                     srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-tbl-top-slogan-450.webp 450w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-tbl-top-slogan-705.webp 705w
-                    "
-                    sizes="
-                        (min-width: 1200px) 450px,
-                        (min-width: 768px) 330px
-                    "
-                >
-                <source
-                    type="image/webp"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-mb-top-slogan-300.webp 300w
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-slogan-507.webp 507w
                     "
                 >
             
                 <img id="top-slogan"
-                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-mb-top-slogan-300.png"
-                    width="433"
-                    height="132"
-                    alt="你的支持匯聚更多守護環境的公民力量"
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-slogan-507.png"
+                    width="507"
+                    height="236"
+                    alt="監督違章工廠不讓憾事發生"
                     decoding="async"
                 >
             </picture>
             <picture>
                 <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/cet-logo-12.svg" type="image/svg+xml" />
-                <img id="cet-top-logo" decoding="async" alt="地球公民基金會" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/cet-logo-12.png" width="539" height="159"/>
+                <img id="cet-top-logo" decoding="async" alt="地球公民基金會" class="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/cet-logo-12.png"
+                width="160" height="47" />
             </picture>
 
         </div>
@@ -1486,7 +1517,7 @@ a:active {
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">500</span>
                                 </span>
-                                <span class="donation-box__amount-desc">用行動擺脫無力感，把不可能化為可能。</span>
+                                <span class="donation-box__amount-desc"></span>
                             </button>
                         </li>
                         <li>
@@ -1495,7 +1526,7 @@ a:active {
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">1000</span>
                                 </span>
-                                <span class="donation-box__amount-desc">成為守護環境的穩定社會力。</span>
+                                <span class="donation-box__amount-desc"></span>
                             </button>
                         </li>
                         <li>
@@ -1504,7 +1535,7 @@ a:active {
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">1500</span>
                                 </span>
-                                <span class="donation-box__amount-desc">從關注個案到監督制度，打造專業的環境倡議團隊。</span>
+                                <span class="donation-box__amount-desc"></span>
                             </button>
                         </li>
                     </ul>
@@ -1629,280 +1660,378 @@ a:active {
         </div>
     </div>
 </section>
-<section class="about">    
-    <div class="container">
-        <div class="text-box">
-            <h2 class="h3">許多環境問題，<br>需要聚集公民力量才能改變</h2>                     
-            <p>流失的農地、挖掉的山頭、工廠排放的污染跟難以處理的萬年核廢，這些現場缺乏良好的環境政策，造成食安、空污……生活在其中令人憂慮。</p>
-            <p class="mb-0">
-            18 年來地球公民透過調查研究與行動，集結公民力量，促成環境個案與法令政策的改變，例如礦業法、水污法、毒物管理法……。我們深信每個人都可以為環境付出一份心力，只要提升環境意識並積極參與，這座島嶼將邁上永續之路。</p>
-        </div>
+
+<section class="farm-hero container-fluid">
+    <picture class="bg">
+        <source
+            media="(min-width: 768px)"
+            type="image/webp"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-hero-768.webp 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-hero-1400.webp 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-hero-1920.webp 1920w
+            "
+            sizes="100vw"
+        >
+        <source
+            type="image/webp"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260623-farm-high.webp 750w
+            "
+            sizes="100vw"
+        >
+    
+        <img
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260623-farm-high_0.jpg"
+            width="750"
+            height="1000"
+            alt="金黃色稻田的照片"
+            loading="lazy"
+            decoding="async"
+        >
+    </picture>
+    <div class="bg-uplayer container d-flex justify-content-center align-items-center">
         <div class="img-box">
             <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-750.webp 750w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-1200.webp 1200w
-                    "
+                <source 
+                type="image/webp"
+                srcset="
+                    https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-1-600.webp 600w,
+                    https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-1-960.webp 960w"
                     sizes="
-                        (min-width: 1200px) 596px,
-                        (min-width: 768px) 360px,
-                        calc(100vw - 48px)
-                    "
-                >
-            
-                <img
-                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-750.jpg"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-750.jpg 750w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-1200.jpg 1200w
-                    "
-                    sizes="
-                        (min-width: 1200px) 596px,
-                        (min-width: 768px) 360px,
-                        calc(100vw - 48px)
-                    "
-                    width="342"
-                    height="240"
-                    alt="山頭被挖去作為礦場"
-                    loading="lazy" 
-                    decoding="async"
-                >
-            </picture>
-        </div>
-        
-    </div>
-</section>
-<section class="achievements p-0">
-    <div class="row g-0">
-        <div class="col-md-6 col-12">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-750.webp 750w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-960.webp 960w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-1440.webp 1440w
-                    "
-                    sizes="
-                        (min-width: 768px) 50vw,
-                        100vw
-                    "
-                >
-            
-                <img
-                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-750.jpg"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-750.jpg 750w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-960.jpg 960w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-left-1440.jpg 1440w
-                    "
-                    sizes="
-                        (min-width: 768px) 50vw,
-                        100vw
-                    "
-                    width="375"
-                    height="293"
-                    alt="多個地球公民參與集會遊行倡議的現場"
-                    loading="lazy"
-                    decoding="async"
-                >
+                    (min-width: 1200px) 850px,
+                    (min-width: 768px) 520px,
+                    290px"
+                     />
+                
+                <img class="w-100 mb-0" alt="這片金黃不該是人民的噩夢" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-1-600.png" width="290" height="42.8" />
             </picture>
 
-        </div>
-        <div class="col-md-6 col-12">
             <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-750.webp 750w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-950.webp 950w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-1200.webp 1200w
-                    "
+                <source 
+                type="image/webp"
+                srcset="
+                    https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-2-600.webp 600w,
+                    https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-2-960.webp 960w"
                     sizes="
-                        (min-width: 768px) 50vw,
-                        100vw
-                    "
-                >
-            
-                <img
-                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-750.jpg"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-750.jpg 750w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-950.jpg 950w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-right-1200.jpg 1200w
-                    "
-                    sizes="
-                        (min-width: 768px) 50vw,
-                        100vw
-                    "
-                    width="375"
-                    height="293"
-                    alt="多個地球公民參與集會遊行倡議的現場"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
+                    (min-width: 1200px) 850px,
+                    (min-width: 768px) 520px,
+                    290px"
 
+                     />
+                <img class="w-100" alt="而是農業的美夢" src="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-2-600.png" width="290" height="42.8" />
+            </picture>
         </div>
     </div>
 </section>
-<section class="core-values">
+
+<!-- 人物分享 -->
+<section class="people-quotes container-fluid">
     <div class="container">
-        <p class="mb-0">為了維持公正獨立，地球公民堅持不接受政府與被監督企業的資助，不分黨派監督，只說對得起環境的真話。</p>
-        <div class="slogan-box">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-700.webp 700w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-960.webp 960w
-                    "
-                    sizes="
-                        (min-width: 1200px) 960px,
-                        (min-width: 768px) 760px, 
-                        calc(100vw - 48px)
-                    "
-                >
+        <div class="row g-4">
+            <div class="col-md-4 col-12 people-quotes__card">
+                <div class="people-quotes__top">
+                    <picture> 
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.webp" type="image/webp" />
+                        <img class="people-quotes__quote" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.png" 
+                        width="144" height="74"/>
+                    </picture>
+
+                    <p class="people-quotes__text mb-0">我們村子有好幾個違章工廠，過去每次我想檢舉都很害怕，因為之前有人舉報就被報復。不過後來知道有一個農地工廠回報系統，檢舉後也會處理，我們終於可以放心舉報。</p>
+                </div>
             
-                <img
-                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-700.png"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-700.png 700w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-slogan-960.png 960w
-                    "
-                    sizes="
-                        (min-width: 1200px) 960px,
-                        (min-width: 768px) 760px, 
-                        calc(100vw - 48px)
-                    "
-                    width="335"
-                    height="68"
-                    alt="環境友善的政策不會從天而降，需要你的支持才會發生"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
-        </div>
-        <div class="signature-box">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-sign-360.webp 360w
-                    "
-                    sizes="218px"
-                >
+                <div class="people-quotes__bottom">
+                    <picture>
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-1-250.webp" type="image/webp" />
+                        <img class="people-quotes__signature" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-1-250.png" 
+                        width="273" height="273"/>
+                    </picture>
+                 
+                    <p class="people-quotes__attribution mb-0"><strong>農地違章工廠旁居民</strong></p>
+                    <picture>
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.webp" type="image/webp" />
+                        <img class="people-quotes__line" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.png" 
+                        width="144" height="74"/>
+                    </picture>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 people-quotes__card">
+                <div class="people-quotes__top">
+                    <picture> 
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.webp" type="image/webp" />
+                        <img class="people-quotes__quote" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.png"
+                        width="144" height="74" />
+                    </picture>
+
+                    <p class="people-quotes__text mb-0">都說違章工廠是歷史共業，幾十年過去說真的已經絕望了啦。不過這幾年開始看到有人在處理，去年又聽說新增工廠的面積減少一半？原來有人願意投入去做，是真的可以改變什麼。</p>
+                </div>
             
-                <img
-                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-sign-360.png"
-                    width="218"
-                    height="81"
-                    alt="地球公民基金會董事長李根政敬上"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
+                <div class="people-quotes__bottom">
+                    <picture>
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-2-250.webp" type="image/webp" />
+                        <img class="people-quotes__signature" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-2-250.png" 
+                        width="273" height="273"/>
+                    </picture>
+                 
+                    <p class="people-quotes__attribution mb-0"><strong>彰化縣農業工作者</strong></p>
+                    <picture>
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.webp" type="image/webp" />
+                        <img class="people-quotes__line" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.png"
+                        width="144" height="74" />
+                    </picture>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 people-quotes__card">
+                <div class="people-quotes__top">
+                    <picture> 
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.webp" type="image/webp" />
+                        <img class="people-quotes__quote" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.png" 
+                        width="144" height="74"/>
+                    </picture>
+
+                    <p class="people-quotes__text mb-0">我的工作是讓台灣能夠更好，但是明明知道農地工廠造成很多問題，過去卻沒有法源沒有資源，十幾年沒拆過幾間，但這一兩年卻成功斷水斷電數十間。</p>
+                </div>
+            
+                <div class="people-quotes__bottom">
+                    <picture>
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-3-250.webp" type="image/webp" />
+                        <img class="people-quotes__signature" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-3.png" 
+                        width="273" height="273"/>
+                    </picture>
+                 
+                    <p class="people-quotes__attribution mb-0"><strong>一線執法公務員</strong></p>
+                    <picture>
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.webp" type="image/webp" />
+                        <img class="people-quotes__line" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.png"
+                        width="144" height="74" />
+                    </picture>
+                </div>
+            </div>
+
         </div>
-        
-        
+    </div>
+</section>
+
+<!-- Story -->
+<section class="farm-story">
+
+    <picture class="bg">
+        <!-- Tablet >= 768px -->
+        <source
+            media="(min-width: 768px)"
+            type="image/webp"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-768.webp 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-1400.webp 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-1920.webp 1920w
+            "
+            sizes="100vw"
+        >
+    
+        <source
+            media="(min-width: 768px)"
+            type="image/jpeg"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-768.jpg 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-1400.jpg 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-1920.jpg 1920w
+            "
+            sizes="100vw"
+        >
+    
+        <!-- Mobile < 768px -->
+        <source
+            type="image/webp"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-mb-542.webp 542w
+            "
+        >
+        <img
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-mb-542.jpg"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-mb-542.jpg
+            "
+            sizes="100vw"
+            width="542"
+            height="964"
+            alt=""
+            loading="lazy"
+            decoding="async"
+        >
+    </picture>
+
+    <div class="container bg-uplayer justify-content-center">
+        <div class="farm-story__text">
+            <p>80年代的鎘米事件，讓台灣驚覺農地純淨不在、食安深陷危機；30年後的今天，全台每年仍有 3000~6000 間違法農地廠房持續新增在各個縣市。電鍍、染製廢水......流進田間灌溉渠道，違法農地工廠破壞台灣農地，唯有透過為農地止血與整體空間佈局才能守護糧食安全。</p>
+            <p>地球公民長達 6 年來從各種角度與層級切入，嘗試杜絕農地違章工廠帶來的陋習與衝擊。台灣地狹人稠，這就是我們唯一的家，如果發展欠缺規劃、不受管制，將為國土在生態和生計上都帶來浩劫。</p>
+            <p class="mb-0">我們是第一個發起行動整頓農地違章工廠的環境組織，終於讓政府從半世紀以來的不作為變成有作為，在扼止新增建農地工廠獲得相當進展。</p>
+        </div>
+
     </div>
 </section>
 <section class="donation-plan">
-    <div class="container">
 
-        <div class="card">
+    <div class="container">
+        <div class="slogan-box text-center">
             <picture>
                 <source
                     type="image/webp"
                     srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-450.webp 450w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-700.webp 700w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-900.webp 900w
-                    "
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-header-700.webp"
                 >
             
                 <img
-                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-700.jpg"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-450.jpg 450w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-700.jpg 700w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-900.jpg 900w
-                    "
-                    sizes="
-                        (min-width: 1200px) 440px,
-                        (min-width: 768px) 364px,
-                        calc(100vw - 48px)
-                    "
-                    width="342"
-                    height="228"
-                    alt="一群人伸出雙手為彼此打氣 "
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-header-700.png"
+                   
+                    width="700"
+                    height="97"
+                    alt="讓好的改變持續發生"
                     loading="lazy"
                     decoding="async"
                 >
             </picture>
-            <div class="card-body d-flex flex-column">
-                <h3 class="card-title mb-0">定期支持方案</h3>
-                <p>$500/$1000/$1500</p>
-                <p class="card-text"><span style="white-space: nowrap;">我們不是因為看見希望才堅持，</span><span style="white-space: nowrap;">而是因為堅持了，所以看見希望</span></p>
-                <button type="button" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-plan__cta" data-donate-tab="monthly"><span class="btn-label">訂閱美好環境</span></button>
+        </div>
+
+        <div class="donation-plan__cards">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title mb-0 h2">定期支持方案</h3>
+                <p class="h3 amount">$500/$1000/$1500</p>
+                <picture class="card-image">
+                    <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-1-560.webp" type="image/webp" />
+                    <img class="card-img" decoding="async" loading="lazy" alt="地球公民的員工在辦公室裡工作" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-1-560.jpg"
+                    width="314" height="210" />
+                </picture>
+                <p class="card-text">持續監督即報即插即拆<br>遏止新增建工廠</p>
+                <button type="button" class="donation-plan__cta" data-donate-tab="monthly">
+                    <picture>
+                        <source
+                            type="image/webp"
+                            srcset="
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-390.webp 390w,
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.webp 560w
+                            "
+                            sizes="
+                                (min-width: 1200px) calc(960px - 80px - 96px),
+                                (min-width: 768px) calc(760px - 80px - 96px),
+                                calc(100vw - 96px)
+                            "
+                        >
+                    
+                        <img
+                            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg"
+                            srcset="
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg 560w,
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-390.jpg 390w
+                            "
+                            sizes="
+                                (min-width: 1200px) calc(960px - 80px - 96px),
+                                (min-width: 768px) calc(760px - 80px - 96px),
+                                calc(100vw - 96px)
+                            "
+                            width="277"
+                            height="28"
+                            alt="選擇定期支持方案"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </picture>
+                </button>
             </div>
         </div>
  
         <div class="card">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-450.webp 450w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-700.webp 700w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-900.webp 900w
-                    "
-                >
-            
-                <img
-                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-700.jpg"
-                    srcset="
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-450.jpg 450w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-700.jpg 700w,
-                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-900.jpg 900w
-                    "
-                    sizes="
-                        (min-width: 1200px) 440px,
-                        (min-width: 768px) 364px,
-                        calc(100vw - 48px)
-                    "
-                    width="342"
-                    height="228"
-                    alt="地球公民的研究員參與政府會議"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
+            <div class="card-body">
+                <h3 class="card-title mb-0 h2">單筆支持方案</h3>
+                <p class="h3 amount">$1200/$3000/$5000</p>
+                <picture class="card-image">
+                    <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-2-400.webp" type="image/webp" />
+                    <img class="card-img" decoding="async" loading="lazy" alt="地球公民的員工在記者會舉起手舉版，上面寫著「違章工廠該拆就拆，污染該退就退」" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-2-400.jpg"
+                    width="314" height="210" />
+                </picture>
 
-            <div class="card-body d-flex flex-column">
-                <h3 class="card-title mb-0">單筆支持方案</h3>
-                <p>$1200/$3000/$5000</p>
-                <p class="card-text">在關鍵時刻做出的關鍵決定<br>重磅出擊，創造影響力！</p>
-                <button type="button" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-plan__cta" data-donate-tab="once"><span class="btn-label">打造永續家園</span></button>
+                <p class="card-text">聚焦揪出中高污染工廠<br>積極訴求斷水斷電</p>
+                <button type="button" class="donation-plan__cta" data-donate-tab="once">
+                    <picture>
+                        <source
+                            type="image/webp"
+                            srcset="
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-390.webp 390w,
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.webp 560w
+                            "
+                            sizes="
+                                (min-width: 1200px) calc(960px - 80px - 96px),
+                                (min-width: 768px) calc(760px - 80px - 96px),
+                                calc(100vw - 96px)
+                            "
+                        >
+                    
+                        <img
+                            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg"
+                            srcset="
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg 560w,
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-390.jpg 390w
+                            "
+                            sizes="
+                                (min-width: 1200px) calc(960px - 80px - 96px),
+                                (min-width: 768px) calc(760px - 80px - 96px),
+                                calc(100vw - 96px)
+                            "
+                            width="277"
+                            height="28"
+                            alt="選擇單筆支持方案"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </picture>
+                </button>
             </div>
         </div>
+        </div>
 
-   
     </div>
 </section> 
-<section class="faq">
-    <div class="container">
-        <h2 class="h3 section-title">常見問答</h2>
-        <div class="accordion" id="accordionExample" style="color:var(--black);"></div>
-    </div>
+<!-- Spacer -->
+<section class="farm-spacer container-fluid" aria-hidden="true">
+    <picture class="bg">
+        <source
+            type="image/webp"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-768.webp 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-1400.webp 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-1920.webp 1920w
+            "
+            sizes="
+                100vw
+            "
+        >
+    
+        <img
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-768.jpg"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-768.jpg 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-1400.jpg 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-1920.jpg 1920w
+            "
+            sizes="
+                100vw
+            "
+            width="1920"
+            height="128"
+            alt="一片金黃色的稻田"
+            loading="lazy"
+            decoding="async"
+        >
+    </picture>
+
 </section>
 <footer>
     <div class="logo-container">
         <picture>
             <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/logo-8.webp" type="image/webp" />
-            <img decoding="async" loading="lazy" alt="地球公民基金會"  src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/logo-8.png" width="330" height="97"/>
+            <img decoding="async" loading="lazy" alt="地球公民基金會" class="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/logo-8.png"
+            width="165" height="48.5" />
         </picture>
     </div>
     <div class="footer-text">
@@ -1912,6 +2041,20 @@ a:active {
      
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
+<script>
+window.DONATION_BOX_AMOUNT_DATA = {
+    monthly: [
+        { desc: '' },
+        { desc: '' },
+        { desc: '' }
+    ],
+    once: [
+        { desc: '' },
+        { desc: '' },
+        { desc: '' }
+    ]
+};
+</script>
 <script>
 (function () {
     var DEFAULT_AMOUNT_DATA = {
@@ -2143,76 +2286,6 @@ a:active {
     setActiveTab('monthly');
 })();
 
-</script>
-<script type="text/javascript">
-var faqData = [
-    {
-        question: '地球公民將捐款用於哪些環境專案？',
-        content: [
-            '我們投入的環保工作範疇為山林國土、環境污染、能源轉型、永續花東、環境民主。藉由調查研究、揭露環境問題，提出解決方案，並據以進行政策施壓、國會遊說、教育推廣等，促成改變。'
-        ]
-    },
-    {
-        question: '我如何知道地球公民基金會年度捐款使用明細？',
-        content: [
-            '每年度的帳目皆送環境部備查後公開，可以在地球公民官網閱讀線上版財報 & 徵信，了解地球公民各項經費支出。線上年度報告在隔年出刊，同時以紙本和電子報將摘要及連結寄予每位捐款會員。'
-        ]
-    },
-    {
-        question: '地球公民的財務報告受到哪些單位的審核？',
-        content: [
-            '依我國法令設立之財團法人地球公民基金會（以下簡稱本會），受董事會監督，董事會設董事 7 名，監事 2 名董監事成員均為義務性質，成員涵蓋各領域專業之人士，並具備獨立性。本會年度財務報表，皆先經由董監事會審核，並送主管機關環境部備查。據衛生福利部規定，公益勸募需每年申請募款字號，申請流程包括遞交勸募計畫書、由衛福部審核後核發募款字號。募款字號年度結束時，也需遞交報告。'
-        ]
-    },
-    {
-        question: '捐款是否會有收據？',
-        content: [
-            '您在進行捐款時請填寫正確地址，將會收到本會正式收據。可利用捐款收據作為抵扣所得稅額之用。'
-        ]
-    },
-    {
-        question: '何時會收到捐款收據？',
-        content: [
-            '單次捐款人會在捐款成功後，可以選擇捐款隔月收到捐款收據與相關資料或年度收到捐款收據。每月定期定額捐款人則於每年報稅月前，寄發上一年度全年的捐款總額證明，收據可作為抵扣稅額使用，亦明列個人全年度捐款紀錄。'
-        ]
-    },
-    {
-        question: '捐款會員如何了解會務與環境行動成果？',
-        content: [
-            '地球公民有義務向捐款會員回報環境行動的進度、成果與財務報告，形式包括電子報、期刊或出版品等。',
-            '．每年發表「年度報告」，彙整當年度重大工作成果。',
-            '．不定期寄發「會員電子報」，報告最新的環境行動進度與參加管道，讓您掌握第一手消息。',
-            '．不定期發行電子期刊「地球公民通訊」專文解析環境專題，讓您深度了解環境議題。',
-            '．不定期舉辦「會員活動」，將以電子郵件、簡訊等管道與您聯繫。',
-            '．您也可以追蹤本會的 FB、IG 粉絲專頁，即時更新地球公民最新的倡議進度。'
-        ]
-    }
-];
-
-function renderFaq() {
-    var accordion = document.getElementById('accordionExample');
-    if (!accordion) return;
-
-    accordion.innerHTML = faqData.map(function (item, index) {
-        var id = index + 1;
-        var bodyHtml = item.content.map(function (text) {
-            return '<p>' + text + '</p>';
-        }).join('');
-
-        return (
-            '<div class="accordion-item">' +
-                '<h3 class="accordion-header" id="heading-' + id + '">' +
-                    '<button aria-controls="collapse-' + id + '" aria-expanded="false" class="collapsed p " data-bs-target="#collapse-' + id + '" data-bs-toggle="collapse" type="button"><span class="faq-question-label">' + item.question + '</span></button>' +
-                '</h3>' +
-                '<div aria-labelledby="heading-' + id + '" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-' + id + '">' +
-                    '<div class="accordion-body">' + bodyHtml + '</div>' +
-                '</div>' +
-            '</div>'
-        );
-    }).join('');
-}
-
-renderFaq();
 </script>
 </body>
 </html>

@@ -179,13 +179,15 @@
                 .replace(/"/g, '&quot;');
         }
 
-        function buildSharePictureHtml(image) {
+        function buildSharePictureHtml(image, loading) {
             var slug = image.slug;
             var webp800 = IMAGE_BASE + slug + '-800.webp';
             var webp1600 = IMAGE_BASE + slug + '-1600.webp';
             var jpg800 = IMAGE_BASE + slug + '-800.jpg';
             var jpg1600 = IMAGE_BASE + slug + '-1600.jpg';
             var sizes = '(min-width: 1200px) min(960px, calc(100vw - 80px)), (min-width: 768px) min(720px, calc(100vw - 80px)), min(480px, calc(100vw - 24px))';
+            // Accordion panels are display:none when collapsed — skip lazy there.
+            var loadingAttr = loading === 'lazy' ? ' loading="lazy"' : '';
 
             return (
                 '<picture>' +
@@ -196,7 +198,7 @@
                         ' sizes="' + sizes + '"' +
                         ' width="16" height="9"' +
                         ' alt="' + escapeHtml(image.alt || '') + '"' +
-                        ' loading="lazy"' +
+                        loadingAttr +
                         ' decoding="async"' +
                     '>' +
                 '</picture>'
@@ -248,7 +250,7 @@
             var media = document.getElementById('shareTabMedia');
             var item = shareContentData[index];
             if (!media || !item) return;
-            media.innerHTML = buildSharePictureHtml(item.image);
+            media.innerHTML = buildSharePictureHtml(item.image, 'lazy');
         }
 
         var shareContentData = [
@@ -351,7 +353,7 @@
                 return (
                     '<div class="accordion-item">' +
                         '<h3 class="accordion-header" id="share-heading-' + id + '">' +
-                            '<button id="share-acc-btn-' + id + '" aria-controls="share-collapse-' + id + '" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-' + id + '" data-bs-toggle="collapse" type="button">' + escapeHtml(item.title) + '</button>' +
+                            '<button id="share-acc-btn-' + id + '" aria-controls="share-collapse-' + id + '" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-' + id + '" data-bs-toggle="collapse" type="button"><span class="faq-question-label">' + escapeHtml(item.title) + '</span></button>' +
                         '</h3>' +
                         '<div aria-labelledby="share-acc-btn-' + id + '" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-' + id + '">' +
                             '<div class="accordion-body">' + buildSharePanelHtml(item) + '</div>' +
