@@ -8,7 +8,12 @@
  * 若開頭是舊前綴 #main-content，會改寫成 #main。
  *
  * 【用法】
- *   node scope-css.js <css檔路徑>
+ *   node scope-css.js <body|html>
+ *   node scope-css.js <css檔路徑>          （單檔，相容舊用法）
+ *
+ * 【批次範圍】
+ *   · body → 處理 new-free-web/ 底下所有非 *_scoped.css
+ *   · html → 處理 landing-page/ 底下所有非 *_scoped.css
  *
  * 【規則】
  *   · .foo, .bar  →  #main .foo, #main .bar
@@ -24,8 +29,35 @@ const path = require('path');
 const PREFIX = '#main';
 const LEGACY_PREFIX = '#main-content';
 
+/** body／html → repo 相對根目錄 */
+const TARGET_ROOTS = {
+  body: 'new-free-web',
+  html: 'landing-page',
+};
+
 function usage() {
-  console.error('用法：node scope-css.js <css檔路徑>');
+  console.error(
+    '用法：node scope-css.js <body|html>\n' +
+      '  或：node scope-css.js <css檔路徑>\n' +
+      '  body = 處理 new-free-web 底下所有 .css\n' +
+      '  html = 處理 landing-page 底下所有 .css'
+  );
+}
+
+function normalizeTarget(input) {
+  const v = String(input || '').trim().toLowerCase();
+  if (v === 'body' || v === 'html') return v;
+  return null;
+}
+
+function findRepoRoot(startDir) {
+  let dir = path.resolve(startDir);
+  while (true) {
+    if (fs.existsSync(path.join(dir, '.git'))) return dir;
+    const parent = path.dirname(dir);
+    if (parent === dir) return null;
+    dir = parent;
+  }
 }
 
 function startsWithPrefixToken(selector, prefix) {
@@ -285,20 +317,108 @@ function scopeCssFile(cssPath) {
   return { inPath: abs, outPath };
 }
 
+/** 收集 rootDir 底下所有非 *_scoped.css（遞迴） */
+function collectCssFiles(rootDir) {
+  const results = [];
+
+  function walk(dir) {
+    let entries;
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch (_) {
+      return;
+    }
+    for (const ent of entries) {
+      const full = path.join(dir, ent.name);
+      if (ent.isDirectory()) {
+        walk(full);
+        continue;
+      }
+      if (!ent.isFile()) continue;
+      if (!/\.css$/i.test(ent.name)) continue;
+      if (/_scoped\.css$/i.test(ent.name)) continue;
+      results.push(full);
+    }
+  }
+
+  walk(rootDir);
+  return results.sort((a, b) => a.localeCompare(b));
+}
+
+function batchScopeByTarget(target, repoRoot) {
+  const relRoot = TARGET_ROOTS[target];
+  if (!relRoot) throw new Error(`未知 target：${target}`);
+
+  const absRoot = path.join(repoRoot, ...relRoot.split('/'));
+  if (!fs.existsSync(absRoot) || !fs.statSync(absRoot).isDirectory()) {
+    throw new Error(`找不到資料夾：${absRoot}`);
+  }
+
+  const files = collectCssFiles(absRoot);
+  if (files.length === 0) {
+    throw new Error(`在 ${relRoot}/ 底下找不到可處理的 .css`);
+  }
+
+  const ok = [];
+  const failed = [];
+  for (const file of files) {
+    try {
+      ok.push(scopeCssFile(file));
+    } catch (err) {
+      failed.push({ file, message: err.message });
+    }
+  }
+
+  return { target, relRoot, absRoot, ok, failed };
+}
+
 function main() {
-  const cssPath = process.argv[2];
-  if (!cssPath) {
+  const arg = process.argv[2];
+  if (!arg) {
     usage();
     process.exit(1);
   }
-  const result = scopeCssFile(cssPath);
+
+  const target = normalizeTarget(arg);
+  if (target) {
+    const repoRoot = findRepoRoot(__dirname) || findRepoRoot(process.cwd());
+    if (!repoRoot) throw new Error('找不到 git repo 根目錄');
+
+    const result = batchScopeByTarget(target, repoRoot);
+    console.log('✅ 批次完成');
+    console.log(
+      `   範圍：${result.target === 'body' ? '僅 body' : '完整 HTML'} → ${result.relRoot}/`
+    );
+    console.log(`   成功：${result.ok.length} 個`);
+    for (const item of result.ok) {
+      console.log(`   · ${item.outPath}`);
+    }
+    if (result.failed.length) {
+      console.error(`   失敗：${result.failed.length} 個`);
+      for (const item of result.failed) {
+        console.error(`   · ${item.file}：${item.message}`);
+      }
+      process.exit(1);
+    }
+    return;
+  }
+
+  const result = scopeCssFile(arg);
   console.log('✅ 完成');
   console.log(`   來源：${result.inPath}`);
   console.log(`   輸出：${result.outPath}`);
   console.log(`   前綴：${PREFIX}`);
 }
 
-module.exports = { scopeCssFile, prefixSelectorList, transformBlock, PREFIX };
+module.exports = {
+  scopeCssFile,
+  prefixSelectorList,
+  transformBlock,
+  PREFIX,
+  batchScopeByTarget,
+  collectCssFiles,
+  TARGET_ROOTS,
+};
 
 if (require.main === module) {
   try {

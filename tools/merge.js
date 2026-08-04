@@ -3,17 +3,19 @@
  *
  * 【用途】
  * 將頁面 HTML 與本地 CSS／JS 合併，方便貼進 CMS，或改寫為 jsDelivr CDN
- * 路徑供開發預覽。可點兩下 tools/merge.bat 走選單，或直接用下方 CLI。
+ * 路徑供開發預覽。可點兩下 merge.bat 走選單，或直接用下方 CLI。
  *
  * 【用法】
- *   node merge.js <資料夾路徑> <dev|prod> <body|html> [tag]
+ *   node merge.js <dev|prod> <body|html> [tag]
  *   （prod 亦接受 production／正式）
  *   （dev 模式必須提供 tag，例如 v1.1.3）
  *
  * 【輸入規則】
- *   選擇「頁面資料夾」後，只處理該資料夾內與資料夾同名的 HTML：
+ *   依 target 自動批次處理對應根目錄下「與資料夾同名」的 HTML：
  *     {folderName}/{folderName}.html
- *   不會處理 *_merge.html；若資料夾名稱以 _merge 結尾會直接拒絕。
+ *   · body → new-free-web/ 底下所有頁面資料夾
+ *   · html → landing-page/ 底下所有頁面資料夾
+ *   不會處理 *_merge.html；若資料夾名稱以 _merge 結尾會略過。
  *
  * 【模式 mode】
  *   · 第三方資源：href／src 為 http(s): 或 // 開頭者，一律保留原樣不處理。
@@ -22,7 +24,7 @@
  *       - JS  → <script> 內嵌（去掉 src／defer／async／integrity／crossorigin）
  *   · dev：將本地相對路徑改寫為 jsDelivr：
  *       https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@{使用者輸入的tag}/{repo相對路徑}
- *     tag 由 CLI 第 4 參數或 merge.bat 提示輸入；不可省略。
+ *     tag 由 CLI 第 3 參數或 merge.bat 提示輸入；不可省略。
  *   · 不論 mode／target，一律再附上 share-css/fix.css（若頁面尚未引用）：
  *       - prod → 併入 <style> 末尾
  *       - dev  → 追加 <link rel="stylesheet">（body：接在本地 CSS 後；html：接在 head 末）
@@ -31,19 +33,21 @@
  *       - share-css/donate.css → share-css/donate_scoped.css
  *       - {資料夾名}.css → {資料夾名}_scoped.css
  *       - 已是 *_scoped.css 或其他 CSS 則不改
+ *       - 例外：頁面位於 landing-page/ 底下時，一律使用原 CSS（不用 *_scoped.css）
  *
  * 【輸出範圍 target】
- *   · body：只輸出 <body>…</body>
+ *   · body：只輸出 <body>…</body>（批次 new-free-web）
  *       - 不搬移 preconnect／dns-prefetch（放 body 效益低）
+ *       - 不輸出 Bootstrap CSS／JS（假設 CMS 已載入；URL 含 bootstrap 者皆略過）
  *       - body 開頭依 head 原順序放入：
- *         1) 第三方 stylesheet <link>（如 Bootstrap、Google Fonts）
+ *         1) 第三方 stylesheet <link>（如 Google Fonts；不含 Bootstrap）
  *         2) 本地 CSS（prod：內嵌 <style>；dev：改寫後的 <link>）
  *         3) fix.css（同上，依 mode）
  *       - 腳本集中到 body 末尾：
  *         先 head 內的 script，再原 body 內 script，順序不變
- *         （若原頁有 Bootstrap JS 等第三方 <script src>，會一併以外連方式保留；
+ *         （第三方 script 以外連保留，但 Bootstrap JS 略過；
  *          本地 JS 依 mode 內嵌或改 CDN）
- *   · html：輸出完整文件
+ *   · html：輸出完整文件（批次 landing-page）
  *       - prod：從 <head> 移除本地 CSS <link>，樣式改放 body 開頭內嵌；
  *               body 內本地 JS 內嵌後仍置於 body 末
  *       - dev：在 <head> 原地改寫本地 CSS／JS 路徑為 CDN，並於 head 末追加 fix.css；
@@ -53,7 +57,7 @@
  *   寫回同一資料夾：{basename}_merge.html
  *
  * 【相關】
- *   merge.bat：可點選的選單包裝（選 mode／target／tag、開資料夾選擇器後呼叫本檔）。
+ *   merge.bat：可點選的選單包裝（選 mode／target／tag 後批次呼叫本檔）。
  */
 
 const fs = require('fs');
@@ -64,19 +68,30 @@ const CDN_OWNER_REPO = 'Pin-Pin-Pin/new-web';
 const FEATURE_REFS = ['new-web/feature', 'origin/feature', 'feature'];
 const FIX_CSS_REPO_REL = 'share-css/fix.css';
 
+/** body／html → repo 相對根目錄 */
+const TARGET_ROOTS = {
+  body: 'new-free-web',
+  html: 'landing-page',
+};
+
 function usage() {
   console.error(
-    '用法：node merge.js <資料夾路徑> <dev|prod> <body|html> [tag]\n' +
+    '用法：node merge.js <dev|prod> <body|html> [tag]\n' +
       '  dev  = 相對路徑改寫為 jsDelivr（需提供 tag，例如 v1.1.3）\n' +
       '  prod = 本地 CSS/JS 內嵌（不需 tag）\n' +
-      '  body = 僅輸出 <body>\n' +
-      '  html = 輸出完整 HTML\n' +
+      '  body = 僅輸出 <body>，批次處理 new-free-web\n' +
+      '  html = 輸出完整 HTML，批次處理 landing-page\n' +
       '  tag  = jsDelivr 使用的 git tag（僅 dev 需要）'
   );
 }
 
 function isThirdPartyUrl(url) {
   return /^(https?:)?\/\//i.test(String(url || '').trim());
+}
+
+/** Bootstrap CSS／JS（CDN 或路徑含 bootstrap）；body 輸出時略過，避免 CMS 重複載入 */
+function isBootstrapAssetUrl(url) {
+  return /bootstrap/i.test(String(url || ''));
 }
 
 function findRepoRoot(startDir) {
@@ -188,7 +203,10 @@ function extractStylesheetLinks(headContent) {
   return links;
 }
 
-/** 僅 body 時要搬進 body 開頭的 head <link>：第三方 CSS（不含 preconnect／dns-prefetch） */
+/**
+ * 僅 body 時要搬進 body 開頭的 head <link>：第三方 CSS
+ * （不含 preconnect／dns-prefetch，也不含 Bootstrap）
+ */
 function extractHeadLinksForBody(headContent) {
   const result = [];
   const regex = /<link\b[^>]*>/gi;
@@ -200,7 +218,12 @@ function extractHeadLinksForBody(headContent) {
     const hrefMatch = tag.match(/\bhref\s*=\s*["']([^"']+)["']/i);
     const href = hrefMatch ? hrefMatch[1] : '';
 
-    if (rel === 'stylesheet' && href && isThirdPartyUrl(href)) {
+    if (
+      rel === 'stylesheet' &&
+      href &&
+      isThirdPartyUrl(href) &&
+      !isBootstrapAssetUrl(href)
+    ) {
       result.push(tag);
     }
   }
@@ -247,11 +270,20 @@ function removeLocalStylesheetLinks(headContent, htmlDir) {
 /** merge 時要改指向 *_scoped.css 的共用 CSS 檔名（小寫） */
 const SCOPED_SHARED_CSS = new Set(['share.css', 'donate.css']);
 
+/** 頁面資料夾是否在 landing-page/ 底下（此區不用 scoped CSS） */
+function isLandingPageFolder(absFolder, repoRoot) {
+  const rel = toPosix(path.relative(repoRoot, absFolder));
+  if (!rel || rel.startsWith('..')) return false;
+  return rel === 'landing-page' || rel.startsWith('landing-page/');
+}
+
 /**
  * share.css / donate.css → *_scoped.css；{pageBasename}.css → {pageBasename}_scoped.css
- * 已是 *_scoped.css 或其他檔名則原樣回傳。
+ * 已是 *_scoped.css、其他檔名、或 useScoped=false（landing-page）則原樣回傳。
  */
-function resolveMergeCssPath(absCssPath, pageBasename) {
+function resolveMergeCssPath(absCssPath, pageBasename, useScoped = true) {
+  if (!useScoped) return absCssPath;
+
   const ext = path.extname(absCssPath);
   if (ext.toLowerCase() !== '.css') return absCssPath;
 
@@ -274,14 +306,14 @@ function resolveMergeCssPath(absCssPath, pageBasename) {
   return scopedAbs;
 }
 
-function rewriteHeadLocalAssets(headContent, htmlDir, repoRoot, tag, pageBasename) {
+function rewriteHeadLocalAssets(headContent, htmlDir, repoRoot, tag, pageBasename, useScoped) {
   let result = headContent.replace(/<link\b[^>]*>/gi, (tagHtml) => {
     if (!/\brel\s*=\s*["']stylesheet["']/i.test(tagHtml)) return tagHtml;
     const hrefMatch = tagHtml.match(/\bhref\s*=\s*["']([^"']+)["']/i);
     if (!hrefMatch || isThirdPartyUrl(hrefMatch[1])) return tagHtml;
     const abs = resolveLocalFile(htmlDir, hrefMatch[1]);
     if (!abs) return tagHtml;
-    const useAbs = resolveMergeCssPath(abs, pageBasename);
+    const useAbs = resolveMergeCssPath(abs, pageBasename, useScoped);
     return replaceAttrValue(tagHtml, 'href', cdnUrl(tag, toRepoRelative(repoRoot, useAbs)));
   });
 
@@ -335,7 +367,7 @@ function processScripts({ scripts, mode, htmlDir, repoRoot, tag }) {
   });
 }
 
-function collectLocalCss({ links, mode, htmlDir, repoRoot, tag, pageBasename }) {
+function collectLocalCss({ links, mode, htmlDir, repoRoot, tag, pageBasename, useScoped }) {
   const styleParts = [];
   const devLinks = [];
 
@@ -348,7 +380,7 @@ function collectLocalCss({ links, mode, htmlDir, repoRoot, tag, pageBasename }) 
       continue;
     }
 
-    const useAbs = resolveMergeCssPath(abs, pageBasename);
+    const useAbs = resolveMergeCssPath(abs, pageBasename, useScoped);
     const repoRel = toRepoRelative(repoRoot, useAbs);
     if (mode === 'dev') {
       devLinks.push(replaceAttrValue(link.tag, 'href', cdnUrl(tag, repoRel)));
@@ -415,6 +447,36 @@ function normalizeTag(input) {
   return tag;
 }
 
+/**
+ * 收集 target 對應根目錄下可 merge 的頁面資料夾
+ *（直接子資料夾，且存在 {name}/{name}.html）
+ */
+function discoverPageFolders(repoRoot, target) {
+  const relRoot = TARGET_ROOTS[target];
+  if (!relRoot) throw new Error(`未知 target：${target}`);
+
+  const absRoot = path.join(repoRoot, ...relRoot.split('/'));
+  if (!fs.existsSync(absRoot) || !fs.statSync(absRoot).isDirectory()) {
+    throw new Error(`找不到資料夾：${absRoot}`);
+  }
+
+  const folders = [];
+  for (const ent of fs.readdirSync(absRoot, { withFileTypes: true })) {
+    if (!ent.isDirectory()) continue;
+    if (/_merge$/i.test(ent.name)) continue;
+    const absFolder = path.join(absRoot, ent.name);
+    const htmlPath = path.join(absFolder, `${ent.name}.html`);
+    if (!fs.existsSync(htmlPath) || !fs.statSync(htmlPath).isFile()) continue;
+    folders.push(absFolder);
+  }
+
+  folders.sort((a, b) => a.localeCompare(b));
+  if (folders.length === 0) {
+    throw new Error(`在 ${relRoot}/ 底下找不到可合併的頁面資料夾`);
+  }
+  return { relRoot, absRoot, folders };
+}
+
 function mergeFile({ folderPath, mode, target, tag: tagInput }) {
   const absFolder = path.resolve(folderPath);
   if (!fs.existsSync(absFolder) || !fs.statSync(absFolder).isDirectory()) {
@@ -453,6 +515,7 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
   if (!body) throw new Error('找不到 <body> 區塊');
 
   const htmlDir = absFolder;
+  const useScoped = !isLandingPageFolder(absFolder, repoRoot);
   const links = extractStylesheetLinks(headContent);
   const { styleParts, devLinks } = collectLocalCss({
     links,
@@ -461,6 +524,7 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
     repoRoot,
     tag,
     pageBasename: basename,
+    useScoped,
   });
 
   const fixCss = buildFixCssExtra({ mode, repoRoot, tag, links, htmlDir });
@@ -474,10 +538,15 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
   const scriptsInBody = extractScriptTags(body.content);
   const bodyWithoutScripts = removeScriptTags(body.content).replace(/\n{3,}/g, '\n\n');
 
-  // 僅 body：head + body 的 script 都放到輸出 body 末尾（含 Bootstrap CDN）
+  // 僅 body：head + body 的 script 都放到輸出 body 末尾（不含 Bootstrap CDN）
   // 完整 HTML：只處理 body 內 script；head 內 script 留在 head
-  const scriptsForOutput =
+  let scriptsForOutput =
     target === 'body' ? [...scriptsInHead, ...scriptsInBody] : scriptsInBody;
+  if (target === 'body') {
+    scriptsForOutput = scriptsForOutput.filter(
+      (script) => !script.src || !isBootstrapAssetUrl(script.src)
+    );
+  }
 
   const scriptsHtml = processScripts({
     scripts: scriptsForOutput,
@@ -523,7 +592,8 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
       htmlDir,
       repoRoot,
       tag,
-      basename
+      basename,
+      useScoped
     ).trim();
     if (fixCss.linkHtml) {
       newHead = `${newHead}\n${fixCss.linkHtml}`;
@@ -550,6 +620,7 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
     tagVia,
     htmlPath,
     fixCss: fixCss.skipped ? 'already-linked' : FIX_CSS_REPO_REL,
+    useScoped,
   };
 }
 
@@ -567,24 +638,7 @@ function normalizeTarget(input) {
   return null;
 }
 
-function main() {
-  const folderPath = process.argv[2];
-  const mode = normalizeMode(process.argv[3]);
-  const target = normalizeTarget(process.argv[4]);
-  const tag = process.argv[5];
-
-  if (!folderPath || !mode || !target) {
-    usage();
-    process.exit(1);
-  }
-
-  if (mode === 'dev' && !normalizeTag(tag)) {
-    usage();
-    console.error('❌ dev 模式必須提供 tag（第 4 個參數），例如：v1.1.3');
-    process.exit(1);
-  }
-
-  const result = mergeFile({ folderPath, mode, target, tag });
+function printMergeResult(result) {
   console.log('✅ 合併完成');
   console.log(`   來源：${result.htmlPath}`);
   console.log(`   輸出：${result.outPath}`);
@@ -603,14 +657,67 @@ function main() {
       }`
     );
   }
+  if (result.useScoped === false) {
+    console.log('   scoped CSS：landing-page，使用原 CSS');
+  }
+}
+
+function main() {
+  const mode = normalizeMode(process.argv[2]);
+  const target = normalizeTarget(process.argv[3]);
+  const tag = process.argv[4];
+
+  if (!mode || !target) {
+    usage();
+    process.exit(1);
+  }
+
+  if (mode === 'dev' && !normalizeTag(tag)) {
+    usage();
+    console.error('❌ dev 模式必須提供 tag（第 3 個參數），例如：v1.1.3');
+    process.exit(1);
+  }
+
+  const repoRoot = findRepoRoot(__dirname) || findRepoRoot(process.cwd());
+  if (!repoRoot) throw new Error('找不到 git repo 根目錄');
+
+  const { relRoot, folders } = discoverPageFolders(repoRoot, target);
+  console.log(
+    `批次合併：${target === 'body' ? '僅 body' : '完整 HTML'} → ${relRoot}/（${folders.length} 個）`
+  );
+  console.log('');
+
+  const ok = [];
+  const failed = [];
+  for (const folderPath of folders) {
+    try {
+      const result = mergeFile({ folderPath, mode, target, tag });
+      printMergeResult(result);
+      ok.push(result);
+      console.log('');
+    } catch (err) {
+      console.error(`❌ ${folderPath}`);
+      console.error(`   ${err.message}`);
+      console.log('');
+      failed.push({ folderPath, message: err.message });
+    }
+  }
+
+  console.log('————————');
+  console.log(`成功：${ok.length} ／ 失敗：${failed.length}`);
+  if (failed.length) {
+    process.exit(1);
+  }
 }
 
 module.exports = {
   mergeFile,
+  discoverPageFolders,
   resolveLatestTag,
   findRepoRoot,
   normalizeTag,
   resolveMergeCssPath,
+  TARGET_ROOTS,
 };
 
 if (require.main === module) {
