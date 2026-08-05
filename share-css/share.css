@@ -7,7 +7,8 @@
 } */
 /* 以上debug */
 /* :root */
-#main {
+#main
+ {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
     --brand-background-green: #E5EAE3;
@@ -307,9 +308,8 @@ section:has(.bg) > .bg-uplayer {
     width: 1.5rem;
     height: 1.5rem;
     background-color: var(--white);
-    -webkit-mask: var(--icon-chevron-down) no-repeat center / contain;
-    mask: var(--icon-chevron-down) no-repeat center / contain;
-    /* transform: rotate(180deg); */
+    -webkit-mask: var(--icon-chevron-up) no-repeat center / contain;
+    mask: var(--icon-chevron-up) no-repeat center / contain;
 }
 .faq .accordion-header button.collapsed {
     color: var(--black);
