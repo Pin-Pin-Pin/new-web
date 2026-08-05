@@ -458,9 +458,9 @@ section:has(.page-top-container){
 }
 @media (min-width: 1200px) {
     .container.page-top-container{
-        max-width: 1600px;
+        /* max-width: 1600px; */
         /* max-width: 1400px; */
-        /* max-width: 1080px; */
+        max-width: 1080px;
     }
     .page-top-container {
         flex-direction: row;
@@ -476,9 +476,9 @@ section:has(.page-top-container){
     }
     .page-top-img-container{
         flex: 1 1 0;
-        max-width: 1160px;
+        /* max-width: 1160px; */
         /* max-width: 960px; */
-        /* max-width: 640px; */
+        max-width: 640px;
         min-width: 0;
     }
 }

@@ -15,11 +15,7 @@
 #content.col {
     padding-left: 0;
     padding-right: 0;
-    max-width: 100%;
 }
-/* #highlighted,#featured-top{
-    display: none;
-} */
 #main section.content-inner.section{
     padding: 0;
 }
