@@ -17,7 +17,7 @@ echo   CSS 選擇器加上 #main
 echo ========================================
 echo.
 echo 請選擇處理範圍：
-echo   [1] body - 處理 new-free-web 底下所有 .css
+echo   [1] body - 處理 new-free-web 底下所有 .css，另加 share-css/share.css
 echo   [2] html - 處理 landing-page 底下所有 .css
 echo.
 echo 輸出會寫成同資料夾的 *_scoped.css（不覆寫原檔）
@@ -30,7 +30,7 @@ if errorlevel 2 (
   set "TARGET_LABEL=html → landing-page"
 ) else (
   set "TARGET=body"
-  set "TARGET_LABEL=body → new-free-web"
+  set "TARGET_LABEL=body → new-free-web + share-css/share.css"
 )
 
 echo.

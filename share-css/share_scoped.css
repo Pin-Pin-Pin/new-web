@@ -6,7 +6,8 @@
     line-height: 0;
 } */
 /* 以上debug */
-:root {
+/* :root */
+#main {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
     --brand-background-green: #E5EAE3;
@@ -34,10 +35,15 @@
 #main .brand-dark-primary{
     color: var(--brand-dark-primary);
 }
-#main body{
+/* body */
+#main{
     color: var(--brand-black);
     font-family: "Noto Sans TC";
 }
+/* body{
+    color: var(--brand-black);
+    font-family: "Noto Sans TC";
+} */
 #main section,#main .section {
     padding: 64px 24px;
 }
@@ -431,6 +437,7 @@
     max-width: 100%;
     min-width: 0;
     height: auto;
+    border-radius:8px 0 0 8px ;
 }
 #main .page-top-img-container img{
     width: 100%;
@@ -451,9 +458,10 @@
     }
 }
 @media (min-width: 1200px) {
-    /* 400（文字）+ 40（gap）+ 1160（圖片）= 1600 */
     #main .container.page-top-container{
-        max-width: 1600px;
+        /* max-width: 1600px; */
+        /* max-width: 1400px; */
+        max-width: 1080px;
     }
     #main .page-top-container {
         flex-direction: row;
@@ -469,7 +477,9 @@
     }
     #main .page-top-img-container{
         flex: 1 1 0;
-        max-width: 1160px;
+        /* max-width: 1160px; */
+        /* max-width: 960px; */
+        max-width: 640px;
         min-width: 0;
     }
 }

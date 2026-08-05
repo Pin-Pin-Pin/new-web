@@ -12,7 +12,8 @@
  *   node scope-css.js <css檔路徑>          （單檔，相容舊用法）
  *
  * 【批次範圍】
- *   · body → 處理 new-free-web/ 底下所有非 *_scoped.css
+ *   · body → 處理 new-free-web/ 底下所有非 *_scoped.css，
+ *            另加 share-css/share.css（CMS body 共用樣式）
  *   · html → 處理 landing-page/ 底下所有非 *_scoped.css
  *
  * 【規則】
@@ -22,6 +23,9 @@
  *   · :root 不加上前綴（CSS 變數需掛在文件根）
  *   · 輸出：同資料夾 {原檔名}_scoped.css（不覆寫原檔）
  */
+
+/** body 模式額外處理的共用 CSS（相對 repo 根） */
+const BODY_EXTRA_CSS = ['share-css/share.css'];
 
 const fs = require('fs');
 const path = require('path');
@@ -39,7 +43,7 @@ function usage() {
   console.error(
     '用法：node scope-css.js <body|html>\n' +
       '  或：node scope-css.js <css檔路徑>\n' +
-      '  body = 處理 new-free-web 底下所有 .css\n' +
+      '  body = 處理 new-free-web 底下所有 .css，另加 share-css/share.css\n' +
       '  html = 處理 landing-page 底下所有 .css'
   );
 }
@@ -345,6 +349,18 @@ function collectCssFiles(rootDir) {
   return results.sort((a, b) => a.localeCompare(b));
 }
 
+function resolveBodyExtraCss(repoRoot) {
+  const files = [];
+  for (const rel of BODY_EXTRA_CSS) {
+    const abs = path.join(repoRoot, ...rel.split('/'));
+    if (!fs.existsSync(abs) || !fs.statSync(abs).isFile()) {
+      throw new Error(`找不到共用 CSS：${abs}`);
+    }
+    files.push(abs);
+  }
+  return files;
+}
+
 function batchScopeByTarget(target, repoRoot) {
   const relRoot = TARGET_ROOTS[target];
   if (!relRoot) throw new Error(`未知 target：${target}`);
@@ -354,7 +370,25 @@ function batchScopeByTarget(target, repoRoot) {
     throw new Error(`找不到資料夾：${absRoot}`);
   }
 
-  const files = collectCssFiles(absRoot);
+  const seen = new Set();
+  const files = [];
+  for (const file of collectCssFiles(absRoot)) {
+    const key = path.resolve(file);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    files.push(file);
+  }
+
+  // body：new-free-web 頁面 CSS + share-css/share.css（貼 CMS 時 merge 會改指 *_scoped）
+  if (target === 'body') {
+    for (const file of resolveBodyExtraCss(repoRoot)) {
+      const key = path.resolve(file);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      files.push(file);
+    }
+  }
+
   if (files.length === 0) {
     throw new Error(`在 ${relRoot}/ 底下找不到可處理的 .css`);
   }
@@ -387,7 +421,9 @@ function main() {
     const result = batchScopeByTarget(target, repoRoot);
     console.log('✅ 批次完成');
     console.log(
-      `   範圍：${result.target === 'body' ? '僅 body' : '完整 HTML'} → ${result.relRoot}/`
+      result.target === 'body'
+        ? `   範圍：僅 body → ${result.relRoot}/ + share-css/share.css`
+        : `   範圍：完整 HTML → ${result.relRoot}/`
     );
     console.log(`   成功：${result.ok.length} 個`);
     for (const item of result.ok) {
@@ -418,6 +454,7 @@ module.exports = {
   batchScopeByTarget,
   collectCssFiles,
   TARGET_ROOTS,
+  BODY_EXTRA_CSS,
 };
 
 if (require.main === module) {
