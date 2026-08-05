@@ -19,15 +19,17 @@
  *
  * 【模式 mode】
  *   · 第三方資源：href／src 為 http(s): 或 // 開頭者，一律保留原樣不處理。
- *   · prod：將可解析到的本地相對路徑 CSS／JS 內嵌進輸出
- *       - CSS → <style type="text/css">（內容前註解 repo 相對路徑）
- *       - JS  → <script> 內嵌（去掉 src／defer／async／integrity／crossorigin）
+ *   · prod：
+ *       - target=html：本地 CSS／JS 內嵌進輸出
+ *         CSS → <style type="text/css">；JS → <script> 內嵌
+ *       - target=body：本地 CSS 仍以 <link> 保留（改指向 *_scoped.css 相對路徑）；
+ *         本地 JS 仍內嵌
  *   · dev：將本地相對路徑改寫為 jsDelivr：
  *       https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@{使用者輸入的tag}/{repo相對路徑}
  *     tag 由 CLI 第 3 參數或 merge.bat 提示輸入；不可省略。
  *   · 不論 mode／target，一律再附上 share-css/fix.css（若頁面尚未引用）：
- *       - prod → 併入 <style> 末尾
- *       - dev  → 追加 <link rel="stylesheet">（body：接在本地 CSS 後；html：接在 head 末）
+ *       - html+prod → 併入 <style> 末尾
+ *       - 其餘 → 追加 <link rel="stylesheet">（body：接在本地 CSS 後；html+dev：接在 head 末）
  *   · 本地 CSS 自動改用 scoped 版本（若不存在則報錯）：
  *       - share-css/share.css → share-css/share_scoped.css
  *       - share-css/donate.css → share-css/donate_scoped.css
@@ -39,10 +41,15 @@
  *   · body：只輸出 <body>…</body>（批次 new-free-web）
  *       - 不搬移 preconnect／dns-prefetch（放 body 效益低）
  *       - 不輸出 Bootstrap CSS／JS（假設 CMS 已載入；URL 含 bootstrap 者皆略過）
+ *       - Google Fonts Noto Sans TC：CMS 已有 300／400／500，body 輸出只保留其餘字重
+ *         （例如原 300;400;500;700 → 只輸出 700，並保留 display=swap；
+ *          若無額外字重則整段 <link>／@import 略過）
+ *       - 本地 CSS 一律保留為 <link>（不內嵌），並改用 *_scoped.css：
+ *         prod → 相對路徑；dev → jsDelivr CDN
  *       - body 開頭依 head 原順序放入：
  *         1) 第三方 stylesheet <link>（如 Google Fonts；不含 Bootstrap）
- *         2) 本地 CSS（prod：內嵌 <style>；dev：改寫後的 <link>）
- *         3) fix.css（同上，依 mode）
+ *         2) 本地 CSS <link>（*_scoped）
+ *         3) fix.css <link>
  *       - 腳本集中到 body 末尾：
  *         先 head 內的 script，再原 body 內 script，順序不變
  *         （第三方 script 以外連保留，但 Bootstrap JS 略過；
@@ -92,6 +99,69 @@ function isThirdPartyUrl(url) {
 /** Bootstrap CSS／JS（CDN 或路徑含 bootstrap）；body 輸出時略過，避免 CMS 重複載入 */
 function isBootstrapAssetUrl(url) {
   return /bootstrap/i.test(String(url || ''));
+}
+
+/** CMS 已載入的 Noto Sans TC 字重；body 輸出時略過這些 */
+const CMS_NOTO_SANS_TC_WEIGHTS = new Set(['300', '400', '500']);
+
+function isNotoSansTcGoogleFontUrl(url) {
+  const u = String(url || '');
+  return /fonts\.googleapis\.com/i.test(u) && /Noto[+ ]Sans[+ ]TC/i.test(u);
+}
+
+/**
+ * 從 Google Fonts css2 URL 取出 Noto Sans TC 的 wght 清單。
+ * 例：...Noto+Sans+TC:wght@300;400;500;700&display=swap → ['300','400','500','700']
+ */
+function parseNotoSansTcWeights(url) {
+  const m = String(url || '').match(/Noto\+Sans\+TC:wght@([0-9;]+)/i);
+  if (!m) return [];
+  return m[1]
+    .split(';')
+    .map((w) => w.trim())
+    .filter(Boolean);
+}
+
+/**
+ * body 輸出用：只保留 CMS 沒有的字重，並固定 display=swap。
+ * @returns {{ action: 'keep'|'omit'|'rewrite', url?: string }}
+ */
+function rewriteNotoSansTcUrlForBody(url) {
+  if (!isNotoSansTcGoogleFontUrl(url)) return { action: 'keep', url };
+  const weights = parseNotoSansTcWeights(url);
+  const extra = weights.filter((w) => !CMS_NOTO_SANS_TC_WEIGHTS.has(w));
+  if (extra.length === 0) return { action: 'omit' };
+  return {
+    action: 'rewrite',
+    url: `https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@${extra.join(';')}&display=swap`,
+  };
+}
+
+/** 改寫／略過 <link> 上的 Noto Sans TC（body 用） */
+function rewriteNotoSansTcLinkTagForBody(tag) {
+  const hrefMatch = tag.match(/\bhref\s*=\s*["']([^"']+)["']/i);
+  if (!hrefMatch) return tag;
+  const result = rewriteNotoSansTcUrlForBody(hrefMatch[1]);
+  if (result.action === 'omit') return '';
+  if (result.action === 'rewrite') return replaceAttrValue(tag, 'href', result.url);
+  return tag;
+}
+
+/**
+ * 改寫 CSS 內 @import 的 Noto Sans TC（body 用）。
+ * 無額外字重則刪除該 @import；有則改寫 URL 並保留 display=swap。
+ */
+function rewriteNotoSansTcImportsInCssForBody(css) {
+  return String(css || '').replace(
+    /@import\s+(?:url\s*\(\s*)?(['"]?)([^'")\s]+)\1\s*\)?\s*;?/gi,
+    (full, _quote, url) => {
+      if (!isNotoSansTcGoogleFontUrl(url)) return full;
+      const result = rewriteNotoSansTcUrlForBody(url);
+      if (result.action === 'omit') return '';
+      if (result.action === 'rewrite') return `@import url('${result.url}');`;
+      return full;
+    }
+  );
 }
 
 function findRepoRoot(startDir) {
@@ -205,7 +275,8 @@ function extractStylesheetLinks(headContent) {
 
 /**
  * 僅 body 時要搬進 body 開頭的 head <link>：第三方 CSS
- * （不含 preconnect／dns-prefetch，也不含 Bootstrap）
+ * （不含 preconnect／dns-prefetch，也不含 Bootstrap；
+ *  Noto Sans TC 只保留 CMS 以外字重，無額外字重則略過）
  */
 function extractHeadLinksForBody(headContent) {
   const result = [];
@@ -224,7 +295,8 @@ function extractHeadLinksForBody(headContent) {
       isThirdPartyUrl(href) &&
       !isBootstrapAssetUrl(href)
     ) {
-      result.push(tag);
+      const rewritten = rewriteNotoSansTcLinkTagForBody(tag);
+      if (rewritten) result.push(rewritten);
     }
   }
   return result;
@@ -367,9 +439,18 @@ function processScripts({ scripts, mode, htmlDir, repoRoot, tag }) {
   });
 }
 
-function collectLocalCss({ links, mode, htmlDir, repoRoot, tag, pageBasename, useScoped }) {
+function collectLocalCss({
+  links,
+  mode,
+  htmlDir,
+  repoRoot,
+  tag,
+  pageBasename,
+  useScoped,
+  asLinks = false,
+}) {
   const styleParts = [];
-  const devLinks = [];
+  const cssLinks = [];
 
   for (const link of links) {
     if (isThirdPartyUrl(link.href)) continue;
@@ -382,14 +463,16 @@ function collectLocalCss({ links, mode, htmlDir, repoRoot, tag, pageBasename, us
 
     const useAbs = resolveMergeCssPath(abs, pageBasename, useScoped);
     const repoRel = toRepoRelative(repoRoot, useAbs);
-    if (mode === 'dev') {
-      devLinks.push(replaceAttrValue(link.tag, 'href', cdnUrl(tag, repoRel)));
+    if (asLinks || mode === 'dev') {
+      const href =
+        mode === 'dev' ? cdnUrl(tag, repoRel) : toPosix(path.relative(htmlDir, useAbs));
+      cssLinks.push(replaceAttrValue(link.tag, 'href', href));
     } else {
       styleParts.push(`/* ${repoRel} */\n${fs.readFileSync(useAbs, 'utf8')}`);
     }
   }
 
-  return { styleParts, devLinks };
+  return { styleParts, cssLinks };
 }
 
 function resolveFixCssPath(repoRoot) {
@@ -411,19 +494,22 @@ function pageAlreadyHasFixCss(links, htmlDir, fixAbs) {
 }
 
 /**
- * 取得要追加的 fix.css（prod → style 片段；dev → link 標籤）。
+ * 取得要追加的 fix.css（內嵌 style 片段或 <link>）。
  * 若頁面已引用則回傳空字串，避免重複。
+ * asLink=true（body）或 mode=dev → 一律用 <link>。
  */
-function buildFixCssExtra({ mode, repoRoot, tag, links, htmlDir }) {
+function buildFixCssExtra({ mode, repoRoot, tag, links, htmlDir, asLink = false }) {
   const fixAbs = resolveFixCssPath(repoRoot);
   if (pageAlreadyHasFixCss(links, htmlDir, fixAbs)) {
     return { stylePart: '', linkHtml: '', skipped: true };
   }
   const repoRel = toRepoRelative(repoRoot, fixAbs);
-  if (mode === 'dev') {
+  if (asLink || mode === 'dev') {
+    const href =
+      mode === 'dev' ? cdnUrl(tag, repoRel) : toPosix(path.relative(htmlDir, fixAbs));
     return {
       stylePart: '',
-      linkHtml: `<link rel="stylesheet" href="${cdnUrl(tag, repoRel)}">`,
+      linkHtml: `<link rel="stylesheet" href="${href}">`,
       skipped: false,
     };
   }
@@ -516,8 +602,9 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
 
   const htmlDir = absFolder;
   const useScoped = !isLandingPageFolder(absFolder, repoRoot);
+  const keepCssAsLinks = target === 'body';
   const links = extractStylesheetLinks(headContent);
-  const { styleParts, devLinks } = collectLocalCss({
+  const { styleParts, cssLinks } = collectLocalCss({
     links,
     mode,
     htmlDir,
@@ -525,18 +612,26 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
     tag,
     pageBasename: basename,
     useScoped,
+    asLinks: keepCssAsLinks,
   });
 
-  const fixCss = buildFixCssExtra({ mode, repoRoot, tag, links, htmlDir });
-  // body／prod：併入 styleParts 或 devLinks；html+dev 改在 head 末追加 link
+  const fixCss = buildFixCssExtra({
+    mode,
+    repoRoot,
+    tag,
+    links,
+    htmlDir,
+    asLink: keepCssAsLinks,
+  });
+  // body：CSS 一律用 <link>；html+prod：fix 併入 style；html+dev：fix 追加 link
   if (target === 'body' || mode === 'prod') {
     if (fixCss.stylePart) styleParts.push(fixCss.stylePart);
-    if (fixCss.linkHtml) devLinks.push(fixCss.linkHtml);
+    if (fixCss.linkHtml) cssLinks.push(fixCss.linkHtml);
   }
 
   const scriptsInHead = extractScriptTags(headContent);
   const scriptsInBody = extractScriptTags(body.content);
-  const bodyWithoutScripts = removeScriptTags(body.content).replace(/\n{3,}/g, '\n\n');
+  let bodyWithoutScripts = removeScriptTags(body.content).replace(/\n{3,}/g, '\n\n');
 
   // 僅 body：head + body 的 script 都放到輸出 body 末尾（不含 Bootstrap CDN）
   // 完整 HTML：只處理 body 內 script；head 內 script 留在 head
@@ -559,14 +654,11 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
   let output;
 
   if (target === 'body') {
+    // body：頁內 CSS 的 Noto @import 也只保留額外字重（本地 CSS 已改為 <link>）
+    bodyWithoutScripts = rewriteNotoSansTcImportsInCssForBody(bodyWithoutScripts);
+
     const vendorLinks = extractHeadLinksForBody(headContent);
-    const localCssPrefix =
-      mode === 'prod'
-        ? styleParts.length
-          ? buildStyleBlock(styleParts)
-          : ''
-        : devLinks.join('\n');
-    const headPrefix = [...vendorLinks, localCssPrefix].filter(Boolean).join('\n');
+    const headPrefix = [...vendorLinks, ...cssLinks].filter(Boolean).join('\n');
 
     output = buildBodyHtml({
       bodyAttrs: body.attrs,
