@@ -228,7 +228,7 @@
             return sections.map(function (section) {
                 return (
                     '<div class="content-tab-block">' +
-                        '<h3>' + escapeHtml(section.title) + '</h3>' +
+                        '<h3 style="color:var(--black)">' + escapeHtml(section.title) + '</h3>' +
                         buildSectionTextHtml(section.text) +
                     '</div>'
                 );
@@ -241,7 +241,7 @@
             return (
                 '<div class="content-tab-card">' +
                     '<div class="content-tab-img' + topicMod + '">' + buildTopicPictureHtml(item.image, loading) + '</div>' +
-                    '<div class="content-tab-text">' + buildTopicSectionsHtml(item.sections) + '</div>' +
+                    '<div class="content-tab-text" style="color:var(--black);">' + buildTopicSectionsHtml(item.sections) + '</div>' +
                 '</div>'
             );
         }

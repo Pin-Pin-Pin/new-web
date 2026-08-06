@@ -1,0 +1,2179 @@
+@charset "UTF-8";
+
+/*
+ * Goal: For custom styling on a special contribution page, it is recommended to use both of the following selectors:
+ *
+ * 1. `.civicrm-contribute-sp`
+ *    Although this selector is more intuitive and concise, it has two drawbacks due to its reliance on JavaScript:
+ *    a. There is a gap period before this class is added.
+ *    b. The selector may fail if JavaScript does not function properly.
+ *
+ * 2. `body:has(script[data-contribution-page-type="special"])`
+ *    This selector is purely CSS-based, thus it does not have the drawbacks of `.civicrm-contribute-sp`.
+ *    The `:has()` pseudo-class is supported by modern browsers. For compatibility, check https://caniuse.com/css-has.
+ *
+ * The reason for recommending the use of both selectors is to enhance user experience on modern browsers.
+ *
+ * Usage Example:
+ * Hiding the main menu in the header of a special contribution page.
+ *
+ * CSS Code:
+ *
+ * .civicrm-contribute-sp .header .main-menu,
+ * body:has(script[data-contribution-page-type="special"]) .header .main-menu {
+ *   display: none;
+ * }
+ *
+ */
+
+/*SECTION - 基礎排版 */
+body {
+  font-family: var(--cet-font-sans);
+  font-size: var(--cet-fs-body);
+  font-weight: var(--cet-fw-regular);
+  color: var(--cet-gray-900);
+  background-color: var(--cet-white);
+  overflow-x: clip;
+}
+
+/*ANCHOR - Fixed */
+
+.clearfix::after{
+  content: unset;
+}
+
+/*ANCHOR - Container */
+
+@media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 984px; /* 960+24 padding-inline */
+  }
+}
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 984px;
+  }
+}
+
+
+/*!SECTION */
+
+/*SECTION - 頁首 Header / Top header */
+
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: var(--cet-bg);
+  border-bottom: 1px solid #D6D3D1;
+}
+
+.header-inner {
+  padding-block: unset;
+}
+
+/*ANCHOR - Navbar 導覽列  */
+#navbar-main.navbar {
+  min-height: 64px;
+  padding: 0;
+  align-items: center;
+  font-family: var(--cet-font-sans);
+
+  /*ANCHOR - Logo */
+  & .site-logo.navbar-brand {
+    padding: 0;
+    margin-inline-end: clamp(16px, 4vw, 40px);
+    min-height: 64px;                  /* 撐住第一列恆 64 高 → 手機收合不再跳（原 align-items:center 讓 logo 隨 navbar 高度位移）*/
+    display: flex;
+    align-items: center;
+
+    & .site-logo-img {
+      display: block;
+      width: auto;
+    }
+  }
+
+  /*ANCHOR - .mobile 獨立 CTA block（<992 顯示，`.mobile` utility）靠右挨漢堡；
+     覆蓋 nav 預設 justify-content: space-between 把 block 均分到中間的行為
+     右邊留 12 空給漢堡（#47389 A2）*/
+  & > .mobile { margin-left: auto; margin-right: 12px; }
+
+  /*ANCHOR - 漢堡按鈕（< 992）*/
+  & .navbar-toggler {
+    border: 0;
+    padding: 4px 8px;
+    min-height: 64px;        /* 同 logo 撐第一列恆 64 高 → 收合不跳 */
+    color: var(--cet-gray-900);
+    order: 0;                /* 蓋掉 base theme 的 order:5：漢堡留在頂列（否則開抽屜時被擠到最下）*/
+
+    &:focus { box-shadow: none; }
+
+    /* 收合態：客製深黑漢堡（客戶匯出，取代 base theme 半透明 icon；#47389 A3）*/
+    & .navbar-toggler-icon {
+      width: 28px;
+      height: 28px;
+      background-image: url(images/icon-menu.svg);
+      background-size: 28px 28px;
+    }
+
+    /* 抽屜開啟（無 .collapsed）→ 換 ✕ 提示可關閉 */
+    &:not(.collapsed) .navbar-toggler-icon {
+      background-image: url(images/icon-close.svg);
+    }
+  }
+
+  /*ANCHOR - 手機漢堡抽屜白底（header bar 保持綠；只有展開的選單列表白，且滿到螢幕邊）
+     ⚠ 抽屜 overlay 化：sticky 全斷點下，若走 flex 撐高 #header 會佔滿 40% viewport（實測展開後 header 336 高）→
+     改 absolute 從 bar 底浮出，不撐 header。sticky element 隱含 relative containing block，直接吃 top:100% / left:0 / right:0 (#47389 A1 fix2) */
+  & .navbar-collapse {
+    background: #fff;
+    padding-bottom: 16px;      /* 下緣留白（CTA 下方也白）*/
+    position: fixed;           /* 貼 viewport 頂，避開 .navbar / .header-inner 干擾 containing block（sticky #header 同貼頂→兩者連動視覺一致）*/
+    top: 64px;                 /* header bar 下方 */
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    max-height: calc(100vh - 64px);   /* header 恆 64；避免 8 項＋子選單超出視高被截斷 */
+    overflow-y: auto;
+
+    @media (min-width: 992px) {
+      background: transparent;   /* 展開水平選單：透明（header bar 綠透出）*/
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
+      z-index: auto;
+      padding-bottom: 0;
+      max-height: none;
+      overflow-y: visible;
+    }
+  }
+
+  /*ANCHOR - 主選單（手機抽屜 base → md 水平）*/
+  & .navbar-nav {
+    align-items: stretch;
+    @media (min-width: 992px) {
+      align-items: center;
+      gap: clamp(4px, 0.8vw, 12px);
+    }
+
+    & .nav-item > .nav-link {
+      color: #000;
+      font-size: var(--cet-fs-body);
+      font-weight: var(--cet-fw-regular);
+      padding: 8px 24px;
+      white-space: nowrap;
+      cursor: pointer;
+      @media (min-width: 992px) { padding: 8px 14px; }
+    }
+
+
+    & > .nav-item.menu-item--active-trail,
+    & > .nav-item:has(> .nav-link.is-active),
+    & > .nav-item:has(> .nav-link.active) {
+      background: var(--cet-gray-200);
+
+      & > .nav-link { font-weight: var(--cet-fw-medium); }
+
+      @media (min-width: 992px) { background: transparent; }
+    }
+
+    @media (min-width: 992px) {
+      & .nav-item > .nav-link:not(.cta):not(.search) {
+        border-bottom: 2px solid transparent;
+
+        &:hover,
+        &:focus { border-bottom-color: var(--cet-primary-dark); }
+      }
+      & .menu-item--active-trail > .nav-link:not(.cta):not(.search),
+      & .nav-item > .nav-link.is-active:not(.cta):not(.search),
+      & .nav-item > .nav-link.active:not(.cta):not(.search) {
+        background: transparent;
+        color: var(--cet-primary-dark);
+        border-bottom-color: var(--cet-primary-dark);
+      }
+    }
+
+    /* 下拉箭頭＝base theme 的 .nb-dropdown-toggle（可點展開），全斷點單一顆 */
+    & .nav-item.dropdown > .nb-dropdown-toggle {
+      width: 12px;
+      height: 12px;
+      margin-left: -18px;
+      background-image: url(images/icon-down.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform .2s ease;
+
+      @media (min-width: 992px) {
+        display: block;              /* 反制 base theme lg+ 的 display:none（否則水平選單無箭頭）*/
+        margin-left: -8px;           /* 箭頭貼近文字 */
+      }
+    }
+
+    /* 展開後箭頭朝上（#47389 A4）*/
+    & .nav-item.dropdown.show > .nb-dropdown-toggle,
+    & .nav-item.dropdown > .nb-dropdown-toggle[aria-expanded="true"] {
+      transform: rotate(180deg);
+    }
+
+    & > .nav-item.dropdown {
+      display: flex;               /* 不依賴 base theme（其 flex 只綁 <992）：992+ 沒它箭頭會掉行 */
+      align-items: center;
+      justify-content: flex-start;
+      @media (min-width: 992px) { justify-content: center; }
+    }
+
+    /* .cta 通用樣式在 Web Elements 段；此處只做兩件事：
+       (1) base（<992）隱藏——header 另掛獨立 block（`.mobile` utility 顯示）取代抽屜內 CTA
+       (2) override .nav-link 的 8px 14px padding，讓 .cta 的 pill padding 生效 */
+    & > .nav-item > .nav-link.cta {
+      display: none;
+      padding: 0 16px;
+      @media (min-width: 992px) { display: inline-flex; }
+    }
+
+    /*ANCHOR - Search 搜尋 */
+    & > .nav-item > .nav-link.search {
+      font-size: 0;
+      color: transparent;
+      appearance: none;
+      min-height: 40px;
+      border: 0;
+      padding: 0 24px;
+      background: transparent url(images/icon-search.svg) no-repeat 24px center;
+      opacity: 1;
+      transition: opacity .2s ease;
+
+      @media (min-width: 992px) {
+        min-height: 0;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background-position: center center;
+      }
+
+      &:hover,
+      &:focus { opacity: .65; }
+
+      /* overlay 開啟時放大鏡淡出（只留遮罩右上一個 ✕；關閉用 ✕ / ESC / 點空白）*/
+      &.is-open { opacity: 0; pointer-events: none; }
+    }
+
+    /* 水平選單：搜尋移到最右（CTA 之後）。order 套在 <li> nav-item（flex item）上；手機維持原 DOM 順序 */
+    & > .nav-item:has(> .nav-link.search) {
+      @media (min-width: 992px) { order: 1; }
+    }
+  }
+
+  /*ANCHOR - 下拉選單面板 dropdown-menu */
+  & .dropdown-menu {
+    border: 0;
+    box-shadow: none;                    /* base＝手機抽屜內：無浮動面板感 */
+    padding: 0;                          /* 手機：無縮排 → dropdown-item 背景滿邊；子選單文字縮排改靠 a padding */
+
+    & a,
+    & span {                             /* 子選單項：連結 a／nolink span 都套（色一致）；hover/focus 不改文字色 */
+      display: block;
+      padding: 9px 24px 9px 48px;        /* 手機：左 48 縮排（比上層文字深一層）；背景滿邊交給 dropdown-item */
+      color: #000;
+      white-space: nowrap;
+
+      &:hover,
+      &:focus { color: #000; }
+    }
+
+    /* hover／當前項底色（Drupal 當前項是 a.is-active、不是 li.active）：整列滿邊背景、只差背景色 */
+    & .dropdown-item {
+      &:hover,
+      &:has(> .is-active) { background: var(--cet-gray-200); }
+    }
+
+    @media (min-width: 992px) {           /* 水平選單：浮動面板 */
+      top: 100%;                          /* 明確定位：項目正下方水平置中。li 是 flex（自設），absolute 的
+                                             static position 會被 align/justify 置中打飛 → 不可依賴 */
+      left: 50%;
+      translate: -50% 0;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+      padding: 8px 0;
+
+      & a,
+      & span { padding: 9px 18px; }      /* 浮動面板：一般縮排 */
+    }
+  }
+}
+
+/*ANCHOR - 搜尋 Overlay */
+.block-search,
+#block-cet-hot-keywords { display: none; }   /* 兩者都被 JS 搬進 overlay，原位置不顯示 */
+
+.cet-search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 6vw, 64px);
+  background: rgba(255, 255, 255, .9);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .25s ease, visibility .25s;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /*ANCHOR - 關閉鈕（✕，右上）*/
+  & .cet-search-overlay__close {
+    position: absolute;
+    top: clamp(16px, 3vw, 28px);
+    right: clamp(16px, 3vw, 36px);
+    width: 40px;
+    height: 40px;
+    border: 0;
+    font-size: 0;
+    cursor: pointer;
+    background: transparent url(images/icon-close.svg) no-repeat center center;
+    opacity: .8;
+
+    &:hover,
+    &:focus { opacity: 1; }
+  }
+
+  & .cet-search-overlay__inner {
+    width: min(760px, 100%);
+    text-align: center;
+  }
+
+  /*ANCHOR - search form 搜尋表單 */
+  & .block-search {
+    display: block;
+
+    & form { display: block; }
+
+    & .form-item,
+    & .js-form-item { margin: 0; }
+
+    & input[type="search"],
+    & input[type="text"],
+    & .form-search {
+      width: 100%;
+      padding: 8px 0;
+      border: 0;
+      border-bottom: 2px solid var(--cet-gray-300);
+      border-radius: 0;
+      background: transparent;
+      text-align: center;
+      font-size: clamp(36px, 8vw, 64px);   /* 「搜尋」大字 placeholder（比照截圖）*/
+      font-weight: var(--cet-fw-medium);
+      color: var(--cet-gray-900);
+      box-shadow: none;                     /* 清 Bootstrap .form-control 的邊框光暈 */
+
+      &::placeholder { color: var(--cet-gray-900); opacity: 1; }   /* placeholder 深色不淡，呈現如截圖大標 */
+
+      &:focus {
+        outline: 0;
+        box-shadow: none;                   /* 清 Bootstrap .form-control:focus 的藍光暈 */
+        border-bottom-color: var(--cet-primary);
+      }
+    }
+
+    /* 送出鈕隱藏（靠 Enter 送出，仿上下游）*/
+    & .form-submit,
+    & button[type="submit"],
+    & input[type="submit"] { display: none; }
+  }
+
+  /*ANCHOR - 關鍵字標籤 chips */
+  & .cet-search-overlay__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    margin: clamp(16px, 3vw, 24px) 0 0;
+    padding: 0;
+    list-style: none;
+
+    & a {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      color: var(--cet-gray-700);
+      font-size: 14px;
+
+      &:hover,
+      &:focus {
+        color: var(--cet-primary);
+        background: var(--cet-bg);
+        text-decoration: none;
+      }
+    }
+  }
+
+  /*ANCHOR - ESC 提示（右下）*/
+  & .cet-search-overlay__hint {
+    position: absolute;
+    right: clamp(16px, 3vw, 36px);
+    bottom: clamp(16px, 3vw, 28px);
+    margin: 0;
+    color: var(--cet-gray-700);
+    font-size: 13px;
+  }
+}
+
+/* overlay 開啟時鎖背景捲動 */
+body.cet-search-open { overflow: hidden; }
+
+/*!SECTION */
+
+/*SECTION - 頁尾 Footer */
+
+.site-footer {
+  padding-block: unset;
+  border-top: 1px solid #D6D3D1;          /* 比照 #header 的 border-bottom 同色（.fig 這份 nodes.json 未收 stroke 資料，用頁首同款估計值，請把關）*/
+  background: var(--cet-bg);
+  color: var(--cet-gray-900);
+  font-size: var(--cet-fs-body);
+
+  /*ANCHOR - 手機/平板：頁尾全部置中（.fig Mobile/Tablet 皆置中）；桌機 ≥992 恢復靠左 */
+  text-align: center;
+
+  /*ANCHOR - 清父層水平 padding（.row gutter / .navbar-brand / .block wrapper），讓內部項目 outer 貼齊 grid cell 左緣，三塊對齊 */
+  & .region,
+  & .navbar-brand,
+  & .block { padding-inline: 0; }
+
+  & .region-footer-first img,
+  & .region-footer-first .site-logo-img { margin-inline: auto; }   /* logo 置中 */
+
+  & .newsletter { margin-inline: auto; }                           /* 訂閱框整體置中（max-width 484）*/
+
+  & .menu--social ul.nav { justify-content: center; }              /* 社群 icon 置中 */
+
+  & .menu--footer ul { list-style: none; padding-left: 0; }        /* 清各層 ul 的 bullet（含子選單 flex-column；原本只清了頂層 ul.nav）*/
+
+  @media (min-width: 992px) {
+    text-align: start;
+
+    & .region-footer-first img,
+    & .region-footer-first .site-logo-img { margin-inline: 0; }
+    & .newsletter { margin-inline: 0; }
+    & .menu--social ul.nav { justify-content: flex-start; }
+  }
+
+  /* 頁尾連結改墨色（蓋 base theme 藍）；hover 主綠 */
+  & a {
+    color: var(--cet-gray-900);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--cet-primary);
+    }
+  }
+
+  /* 隱藏選單區塊標題（「頁尾選單」「社群選單」），設計稿無；保留給螢幕報讀 */
+  & .block-menu > h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  /*ANCHOR - 主頁尾 site-footer__top（Footer Info + 選單）*/
+  & .site-footer__top {
+    display: grid;
+    grid-template-columns: 1fr;                       /* 手機：單欄直疊 */
+    gap: clamp(24px, 4vw, 40px);
+    padding-block: clamp(32px, 5vw, 48px);
+
+    /* 消 Bootstrap .row 負邊距 + 強制 region 撐滿 grid cell。
+       region 是 display:flex 的 .row、當 grid item 不會自動 stretch（實測 justify-self:stretch 無效、
+       width:100% 才有效）→ 不加的話 region 縮成內容寬(~116px)、選單 3 欄逐字斷行破版。*/
+    & > .region {
+      margin: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    @media (min-width: 992px) {
+      /* 桌機：左 Footer Info(上限 484，對 .fig) | 右 選單(1fr)。
+         左欄彈性 360–484＝窄桌機把空間讓給選單（定寬 484 時右欄被壓、選單 nowrap 會溢出）；
+         下限 360 兜住訂閱框不被壓扁；第 4 列 1fr＝吸收選單多餘高度，
+         讓 logo/訂閱/社群 緊湊靠上、不被選單高度撐開大空隙。*/
+      grid-template-columns: minmax(360px, 484px) 1fr;
+      grid-template-rows: auto auto auto 1fr;
+      column-gap: clamp(48px, 8vw, 117px);
+      row-gap: 24px;
+      align-items: start;
+
+      & > .region-footer-first  { grid-area: 1 / 1; }       /* logo */
+      & > .region-footer-second { grid-area: 2 / 1; }       /* 訂閱框 */
+      & > .region-footer-third  { grid-area: 3 / 1; }       /* 社群 */
+      & > .region-footer-fourth { grid-area: 1 / 2 / 5 / 3; }  /* 選單，跨 4 列（含 spacer）在右欄 */
+    }
+  }
+
+  /*ANCHOR - logo（region-footer-first）*/
+  & .region-footer-first {
+    & img,
+    & .site-logo-img {
+      display: block;
+      width: auto;
+    }
+  }
+
+  /*ANCHOR - 社群 icon（region-footer-third / .menu--social）
+    設計：FB / IG / YT 三個 32×32 灰 icon。menu 連結文字隱藏、改 background-image SVG
+    （灰 #5D5D5D，已在 css/images/；用 background-image 非 mask＝Firefox 相容，見頁尾 social 教訓）。
+    ⚠ Barrio 選單 ul 是 ul.nav（非 ul.menu）；a 是 a.nav-link。
+    icon 以 .social-facebook / .social-instagram / .social-youtube class 套
+    （menu_link_attributes 設於選單連結，不再比對 href）。*/
+  & .menu--social ul.nav {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & a {
+      display: block;
+      width: 32px;
+      height: 32px;
+      padding: 0;                       /* 清 Barrio .nav-link padding，否則 icon 被內縮 */
+      font-size: 0;
+      color: transparent;
+      opacity: 1;
+      transition: opacity .2s ease;
+
+      &:hover { opacity: .65; }
+
+      &.social-facebook  { background: transparent url(images/icon-facebook.svg) no-repeat center center; }
+      &.social-instagram { background: transparent url(images/icon-instagram.svg) no-repeat center center; }
+      &.social-youtube   { background: transparent url(images/icon-youtube.svg) no-repeat center center; }
+    }
+  }
+
+  /*ANCHOR - 頁尾選單 3 欄 */
+  & .menu--footer {
+    & .nav-link {
+      padding: 0;
+      color: var(--cet-gray-900);          
+    }
+
+    & > ul.nav {
+      display: grid;
+      grid-template-columns: 1fr;                     
+      gap: 40px; 
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      white-space: nowrap; 
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, auto); 
+        justify-content: center; 
+      }
+
+      @media (min-width: 992px) {
+        justify-content: flex-end;
+      }
+
+      & > li {
+        & > .nav-link {
+          display: block;
+          font-size: var(--cet-fs-body);
+          font-weight: 700;
+          color: var(--cet-gray-900);
+        }
+
+        & > ul > li > .nav-link {
+          display: block;
+          font-size: var(--cet-fs-body);
+          color: var(--cet-gray-900);
+
+          &:hover,
+          &:focus { color: var(--cet-primary); }
+        }
+      }
+    }
+  }
+
+  /*ANCHOR - Sub Footer 辦公室帶
+     ⚠ 兩層 override：
+     (a) base site-footer.css `.site-footer .content a` rgba(255,255,255,0.8) 半透明白 → 用 `.content` (0,3,0) 蓋
+     (b) editor.css `:is(.text-formatted, .ck.ck-content) & a:not(.cta)` primary-dark ← block_content 走 body 欄位輸出、帶 .text-formatted 觸發內文連結色。
+         editor 展開 spec (0,3,1) 且後載，同 spec 撞平會贏。用 `:not(.cta)` 拉 (0,4,1) 打贏（sub-footer 內無 CTA，無副作用）（#47389 B1）*/
+  & .region-footer-fifth {
+    width: calc(100vw - var(--sbw, 0px));
+    margin-inline: calc(50% - (100vw - var(--sbw, 0px)) / 2);
+    background: var(--cet-gray-800);
+    color: var(--cet-white);
+
+    & .content { color: var(--cet-white); }
+    & .content a:not(.cta) { color: var(--cet-white); }
+  }
+}
+
+.sub-footer-offices {
+  display: grid;
+  grid-template-columns: 1fr;                         /* 手機～平板：直疊（.fig Tablet 840 仍直疊）*/
+  gap: 24px 40px;                                     /* 直疊間距 24／欄間距 40（.fig）*/
+  max-width: 960px;
+  margin-inline: auto;
+  padding: 16px 15px;
+  font-size: 12px;                                    /* .fig 量測 12px（「高雄總部」4 字 48px），非 body 16——16px 時地址+電話行 ~360px 超出欄寬折行 */
+  line-height: 20px;
+  white-space: nowrap;                                /* 地址＋電話一行到底（12px 下最寬台北行 270px，各斷點都放得下）*/
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, auto);           /* 桌機：三辦公室一排、欄寬隨內容（.fig 247/270/254＋gap 40 靠左；1fr 均分每欄 278px 塞不下）*/
+    justify-content: start;
+  }
+
+  & .office__name {
+    font-weight: 700;                                 /* 粗體（設計）；字級/行距繼承 12/20 連續兩行 */
+  }
+
+  & .office__sep {
+    margin-inline: 4px;
+  }
+
+  & a.office__tel:hover {
+    text-decoration: underline;
+  }
+}
+
+/*!SECTION */
+
+/*SECTION - Layout Builder */
+
+.layout{
+  &:not(#slide, #body, #meta){
+    padding-block: clamp(24px, 4vw, 40px);
+  }
+
+  &#intro{
+    padding-block: 0 64px;
+  }
+
+  & > .container { max-width: 1008px; }    /* 內容 960 + gutter 24×2 */
+}
+
+/*ANCHOR - bg-green（LB section 淺綠帶）*/
+.bg-green {
+  background: var(--cet-bg);
+}
+
+/* bg-green 帶內的 CTA 變體：CTA 面板底色跟 .bg-green 同色會糊在一起，帶內改白底 */
+.bg-green .block-content-cta_block {
+  background: var(--cet-white);
+}
+
+/*!SECTION */
+
+/*SECTION - Front 首頁*/
+
+/*ANCHOR - layout fixed */
+
+.path-frontpage{
+  .main{
+    padding-block: unset;
+    .node__content{
+      margin-top: unset;
+    }
+  }
+}
+
+/*ANCHOR - 首頁大圖輪播 slide */
+
+.view-home-slide {
+  & .view-content {
+    display: block;
+    margin: 0;
+
+    & .slick-dots {
+      position: static;
+      margin-top: .5rem;
+    }
+  }
+
+  & .home-slide__group {
+    position: relative;                /* slick 初始化前 title 疊圖的 fallback 基準 */
+    width: 100%;
+
+    & .home-slide__images {
+      line-height: 0;
+
+      & img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* slogan 壓圖置中；內層圖輪播時文字固定（設計：字在圖上、手機字級較小）*/
+    & .home-slide__title {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-inline: clamp(16px, 8vw, 120px);
+      color: #fff;
+      font-size: clamp(18px, 5vw, 60px);
+      font-weight: var(--cet-fw-medium);
+      line-height: 1.7;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    /* 整張 slide 可點（連結不顯示文字）*/
+    & .home-slide__link a {
+      position: absolute;
+      inset: 0;
+      font-size: 0;
+      color: transparent;
+    }
+  }
+}
+
+.path-frontpage {
+  /*ANCHOR - 我們在乎的議題＋影響力帶（#issue）*/
+  #issue{
+  
+    /* 置中小標款（無線）：蓋掉 base 的短線＋左對齊＋灰綠字 */
+    & .block-title {
+      width: auto;
+      padding-top: 0;
+      border-top: 0;
+      font-size: var(--cet-fs-body);
+      font-weight: var(--cet-fw-regular);
+      text-align: center;
+      color: var(--cet-black);
+    }
+  
+    & .name-issue {
+      & li { position: relative; }
+  
+      /* 議題名＝圖右下綠標籤（白字＋圓圈箭頭）*/
+      & .entity-title {
+        position: absolute;
+        inset: auto 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        padding: 8px 12px;
+        border-top-left-radius: 8px;   /* 左上圓；右下由 li 8px clip（Neema #46232 note-23）*/
+        background: var(--cet-primary);
+        color: #fff;
+        font-size: var(--cet-fs-body);
+        font-weight: var(--cet-fw-regular);
+        line-height: 1.5;
+  
+        &::after {
+          content: "";
+          width: 24px;
+          height: 24px;
+          background: url(images/icon-outline.svg) no-repeat center;
+        }
+      }
+  
+      /* 「查看」＝整卡透明熱區 */
+      & .entity-link {
+        margin: 0;
+  
+        & a {
+          position: absolute;
+          inset: 0;
+          font-size: 0;
+          color: transparent;
+        }
+      }
+    }
+  
+    /* 影響力 */
+    & .block-content-free_code {
+      margin-top: clamp(40px, 6vw, 64px);
+      padding: 24px clamp(16px, 4vw, 40px);
+      background: var(--cet-white);
+    }
+  }
+}
+
+
+/*!SECTION */
+
+/*SECTION - Web Elements（按鈕 / 標籤 / 徽章 / 通用 UI 元素）*/
+
+/*ANCHOR - 按鈕 Button（.btn / .button / CTA）*/
+
+/*ANCHOR - CTA pill (.cta) 綠底白字圓角＋右上箭頭；hover 深綠。全站通用
+  selector 用 a.cta 特異度 (0,1,1) 覆蓋 Barrio 自動加的 .nav-link (0,1,0) color/padding */
+a.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 16px;
+  color: #fff !important;
+  background: var(--cet-primary);
+  border-radius: 4px;
+  white-space: nowrap;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-inline-start: 4px;
+    background: url(images/icon-arrow-up-right-wite.svg) no-repeat center;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: var(--cet-primary-dark);
+    text-decoration: none;
+  }
+}
+
+/*ANCHOR - 標籤 / 徽章 / Pill（分類 / tag chip）*/
+
+/*ANCHOR - 圖示 Icon */
+
+/*ANCHOR - Breadcrumb 麵包屑 */
+.block-system-breadcrumb-block {
+  margin-bottom: 24px;
+}
+
+ol.breadcrumb {
+  display: flex;
+  flex-wrap: nowrap;             /* 整列不掉行，過長標題交給最後一項自己內部折行 */
+  align-items: flex-start;       /* 上方對齊，不隨最後一項折行後變高而置中 */
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;                 /* .fig 無明確字級標註，估計值 */
+  & .breadcrumb-item {
+    display: flex;
+    align-items: flex-start;       /* 標題過長換行時 "›" 對齊首行，不隨多行內容垂直置中 */
+    gap: 8px;
+    flex-shrink: 0;                /* 預設不壓縮，維持原始寬度，只有最後一項會被壓縮折行 */
+
+    &:has(a:empty) { display: none; }  /* 濾掉 Drupal 核心產生的空白節點（如 /node）*/
+
+    &:last-child {
+      flex-shrink: 1;               /* 只有最後一項（目前頁標題）可壓縮並自己內部折行 */
+      min-width: 0;                 /* 巢狀 flex 預設 min-width:auto 會撐開不讓文字換行，歸零讓過長標題正常折行 */
+    }
+
+    & + .breadcrumb-item::before {
+      content: '>';
+      flex-shrink: 0;
+    }
+    & a {
+      color: var(--cet-gray-700);
+      text-decoration: none;
+    }
+    &:first-child a{
+      font-size: 0;
+      color: transparent;
+      &::before{
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-top: 5px;    /* font-size:0 讓連結行高歸零、頂端貼齊；文字有行距留白，微調對齊文字視覺起點 */
+        background: url(images/icon-home.svg) no-repeat center / contain;
+      }
+    }
+  }
+
+}
+
+/*!SECTION */
+
+/*SECTION - 表單 Form（一般表單元素 / 電子報訂閱）*/
+
+/*ANCHOR - 一般表單元素（input / select / textarea / button / label）*/
+
+/*ANCHOR - 電子報訂閱表單（.newsletter）
+  設計（Footer Info input field 484×36）：白底輸入框＋主綠訂閱鈕並排、圓角 4。
+  placeholder 灰 #9CA3AF。送出＝POST email-1 到 gid=10 profile（帶入 email），詳見 block body。*/
+.newsletter {
+  display: flex;
+  gap: 8px;                                       /* input/button 分離（#47389 B3）*/
+  width: 100%;
+  max-width: 484px;
+
+  & .newsletter__email {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid #D0D0D0;
+    border-radius: 4px;                           /* 四角都圓 */
+    font-size: var(--cet-fs-body);
+    color: var(--cet-gray-900);
+    background: var(--cet-white);
+
+    &::placeholder { color: #9CA3AF; }
+
+    &:focus {
+      outline: none;
+      border-color: var(--cet-primary);
+    }
+  }
+
+  & .newsletter__submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex: 0 0 auto;
+    height: 40px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 4px;                           /* 四角都圓 */
+    background: var(--cet-primary);
+    color: var(--cet-white);
+    font-size: var(--cet-fs-body);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .2s ease;
+
+    &:hover,
+    &:focus { background: var(--cet-primary-dark); }
+
+    /* 右上箭頭 ↗ */
+    &::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background: url(images/icon-arrow-up-right-wite.svg) no-repeat center center;
+      background-size: contain;
+    }
+  }
+}
+
+/*!SECTION */
+
+/*SECTION - 區塊 Block（block 容器 / block__title / 區塊間距）*/
+
+/*ANCHOR - 通用 block 容器 */
+
+/*ANCHOR - block__title 標題
+  base＝首頁「最新文章/近期活動」款：左對齊、上方短粗線（線寬=文字寬）*/
+.block-title {
+  width: fit-content;
+  margin-block: 0 24px;
+  padding-top: 4px;
+  border-top: 3px solid;                 /* 線色=字色（currentColor）*/
+  font-size: var(--cet-fs-h3);
+  font-weight: var(--cet-fw-medium);
+  line-height: 1.4;
+  color: var(--cet-primary-dark);
+}
+
+/* 變異：section 加 .title-line → 全寬細線（議題介紹「我們的行動」款）*/
+.title-line .block-title {
+  width: auto;
+  padding-top: 14px;
+  border-top-width: 1px;
+}
+
+/*ANCHOR - NETivism Share block（社群分享按鈕，story/press_release 內頁 #46227；覆蓋模組預設 40x40 品牌色圓＝> 26x26 outline monochrome）*/
+.block-netivism-share {
+  margin-bottom: 24px;
+  & .netivism-share-container {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+
+    &::before {
+      content: "分享";
+      color: var(--cet-gray-900);
+      font-size: var(--cet-fs-h4);
+    }
+
+    & .netivism-share-list {
+      gap: 6px;
+      margin-bottom: unset;
+
+      & .netivism-share-btn {
+        width: 36px;
+        height: 36px;
+        border: 0;
+        background: transparent no-repeat center / contain;
+        transition: opacity .2s ease;
+
+        &:hover { opacity: .7; }
+
+        & .netivism-share-icon { display: none; }     /* 藏 fontawesome，改用 background-image svg */
+
+        &.nsl-facebook  { background-image: url(images/soc-fb.svg); }
+        &.nsl-x-twitter { background-image: url(images/soc-x.svg); }
+        &.nsl-line      { background-image: url(images/soc-line.svg); }
+      }
+    }
+  }
+}
+
+/*ANCHOR - 自訂區塊（CTA 區塊 cta_block / free_code）*/
+
+/* CTA 區塊（通用，多頁重用）：淺綠面板＋深綠框；手機直排置中 → md 左圖/中文/右鈕 */
+.block-content-cta_block {
+  border: 1px solid var(--cet-primary-dark);
+  border-radius: 8px;
+  background: var(--cet-bg);
+  padding: clamp(24px, 4vw, 36px) clamp(24px, 5vw, 44px);
+
+  & .block-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-areas: "img title btns" "img body btns";
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: clamp(24px, 5vw, 56px);
+      row-gap: 8px;
+      text-align: start;
+    }
+  }
+
+  & .field--name-field-cta-image {
+    @media (min-width: 768px) { grid-area: img; }
+
+    & img {
+      display: block;
+      width: clamp(100px, 12vw, 120px);
+      height: auto;
+    }
+  }
+
+  & .field--name-field-cta-title {
+    font-size: var(--cet-fs-h3);
+    font-weight: var(--cet-fw-medium);
+    color: var(--cet-primary-dark);
+    @media (min-width: 768px) { grid-area: title; align-self: end; }
+  }
+
+  & .field--name-field-cta-body {
+    color: var(--cet-gray-800);
+    @media (min-width: 768px) { grid-area: body; align-self: start; }
+
+    & p { margin: 0; }
+  }
+
+  /*ANCHOR - CTA 連結按鈕（第 1 顆實心、其餘 outline；箭頭 icon 隨底色換色）*/
+  & .field--name-field-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;                      /* 手機：鈕撐滿 */
+    @media (min-width: 768px) { grid-area: btns; width: auto; }
+
+    & .field__item a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      height: 32px;
+      padding: 0 16px;
+      border: 1px solid var(--cet-primary-dark);
+      border-radius: 4px;
+      background: var(--cet-white);
+      color: var(--cet-primary-dark);
+      font-size: var(--cet-fs-body);
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(images/icon--arrow-up-right.svg) no-repeat center;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: var(--cet-primary);
+        background: var(--cet-primary);
+        color: #fff;
+
+        &::after { background-image: url(images/icon-arrow-up-right-wite.svg); }
+      }
+    }
+
+    /* 第 1 顆＝實心主鈕 */
+    & .field__item:first-child a {
+      border-color: var(--cet-primary);
+      background: var(--cet-primary);
+      color: #fff;
+
+      &::after { background-image: url(images/icon-arrow-up-right-wite.svg); }
+
+      &:hover,
+      &:focus {
+        border-color: var(--cet-primary-dark);
+        background: var(--cet-primary-dark);
+      }
+    }
+  }
+}
+
+/*!SECTION */
+
+/*SECTION - Views（清單 / 卡片 view 容器、pager、exposed filter）*/
+
+/*ANCHOR - 通用 view 容器 / view-content / row */
+
+/*ANCHOR - Pager 分頁 */
+
+/* 通用 view pager（Bootstrap/Barrio：ul.pagination > li.page-item > .page-link）。對 Figma pager 母版：
+   上一頁貼左、下一頁貼右、數字置中；當前頁＝頂部 2px 綠線+深字；其餘灰、無底框；首末頁 «» 隱藏（設計稿無）。*/
+.pager,
+.pagination {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(4px, 1.5vw, 12px);
+  margin-top: 48px;
+  padding: 0;
+  list-style: none;
+
+  /* 隱藏 Drupal 多出的首頁 «/末頁 »（設計稿無；zh-hant title 為固定字串）*/
+  & .page-item:has(.page-link[title*="第一頁"]),
+  & .page-item:has(.page-link[title*="最後一頁"]) {
+    display: none;
+  }
+
+  /* 連結（數字/上下頁）：清掉 Bootstrap 的 1px 邊框/圓角/底色/focus 陰影（特異度提到 .page-item .page-link 壓過 BS）；灰字；頂部留 2px 透明線與當前頁等高 */
+  & .page-item .page-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    border: 0;
+    border-top: 2px solid transparent;
+    border-radius: 0;
+    color: var(--cet-gray-600);
+    font-size: var(--cet-fs-h4);
+    line-height: 1.5;
+    text-decoration: none;
+    background: transparent;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      color: var(--cet-primary);
+      background: transparent;
+    }
+  }
+
+  /* 當前頁：頂綠線 + 深字；明確 background 壓過 Bootstrap 藍底（.page-item.active .page-link＝0,4,0 > BS 的 0,3,0）*/
+  & .page-item.active .page-link {
+    border-top-color: var(--cet-primary);
+    color: var(--cet-gray-900);
+    background: transparent;
+  }
+
+  /* 上一頁貼左、下一頁貼右：絕對定位脫離流 → 數字群永遠置中，不受 prev/next 有無影響（第 1 頁無上一頁也置中）*/
+  & .page-item:has([rel="prev"]),
+  & .page-item:has([rel="next"]) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  & .page-item:has([rel="prev"]) { left: 0; }
+  & .page-item:has([rel="next"]) { right: 0; }
+
+  /* 上/下頁箭頭：重用 icon-arrow-right.svg（原色 #C0C0C0）；上一頁翻轉成左向 */
+  & [rel="prev"]::before,
+  & [rel="next"]::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: url(images/icon-arrow-right.svg) no-repeat center;
+  }
+
+  & [rel="prev"]::before { transform: scaleX(-1); }
+}
+
+/*ANCHOR - Exposed filter 篩選列（BEF Links 頁籤，通用、跨 view 重用）*/
+
+/* better_exposed_filters 的 Links widget：<ul><li><a class="bef-link"></a></li></ul>。
+   對 Figma 財報與徵信母版：純文字頁籤、目前選取項底部 2px 綠線＋深字，其餘灰、無框無底色。*/
+
+/* .bef-exposed-form 預設 display:flex（row）、子項 .form-item 不會自動撐滿 → 底線變成只有內容寬 */
+.bef-exposed-form {
+  & > .form-item { flex: 1; }
+}
+
+.bef-links {
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(16px, 4vw, 40px);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-bottom: 1px solid var(--cet-gray-300);
+  }
+
+  & .bef-link {
+    display: inline-block;
+    padding-block: 12px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    color: var(--cet-gray-600);
+    text-decoration: none;
+
+    &:hover,
+    &:focus { color: var(--cet-gray-900); }
+  }
+
+  & .bef-link--selected {
+    border-bottom-color: var(--cet-primary);
+    color: var(--cet-gray-900);
+  }
+}
+
+/*!SECTION */
+
+/*SECTION - Entity Reusable Components */
+
+/*ANCHOR - Responsive utility：.mobile <992 顯示、>=992 隱藏；.desktop 反之。搭 block_class 加在 block wrapper */
+.mobile {
+  @media (min-width: 992px) { display: none; }
+}
+.desktop {
+  display: none;
+  @media (min-width: 992px) { display: revert; }
+}
+
+/*ANCHOR - full-width（--sbw＝scrollbar 寬，由 custom.js 設定；扣除後內容置中不偏移）*/
+.full-width {
+  width: calc(100vw - var(--sbw, 0px));
+  margin-inline: calc((100% - 100vw + var(--sbw, 0px)) / 2);
+}
+
+/*ANCHOR - 文字截斷 line-clamp（.trim-N）*/
+[class*="trim-"] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.trim-2 { -webkit-line-clamp: 2; line-clamp: 2; }
+.trim-3 { -webkit-line-clamp: 3; line-clamp: 3; }
+.trim-4 { -webkit-line-clamp: 4; line-clamp: 4; }
+
+/*ANCHOR - 卡片格線 */
+.grid--2-columns ul.d-grid,
+.grid--3-columns ul.d-grid {
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  grid-template-columns: 1fr;
+  & > li{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: var(--cet-white);
+        border-radius: 8px;
+        transition: transform .2s ease, box-shadow .2s ease;
+      
+        &:hover {
+          transform: translateY(-4px);
+        }
+
+        /* tag 列推到卡片底緣、跨卡對齊，不隨標題行數/摘要長度浮動（#46231）。
+           :has(>)＝只認欄位直出的 tag 列（story 卡）；活動卡 meta 行的 entity-tags 是 rewrite 內嵌孫層、不推底 */
+        & > .views-field:has(> .entity-tags) { margin-top: auto; }
+    }
+}
+
+.grid--2-columns ul.d-grid {
+  @media (min-width: 768px) { grid-template-columns: repeat(2, 1fr); }
+}
+
+.grid--3-columns ul.d-grid {
+  @media (min-width: 768px) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 992px) { grid-template-columns: repeat(3, 1fr); }
+}
+
+/*ANCHOR - 卡片欄位（.entity-*，通用、跨 view 重用）*/
+.entity-img {
+  border-radius: 8px;              /* 圖 4 角圓（Neema #46235 note-24：圖片下方 radius）；上邊被 li 8px clip 重合、下邊獨立 */
+  overflow: hidden;
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.entity-badge {
+  width: fit-content;              /* badge wrapper 非 flex item，align-self 無效 → 用 fit-content 收寬 */
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 0 4px 0 4px;      /* 右上＋左下對角圓（設計稿實測 4px）；左邊靠 li 邊 clip */
+  font-size: 13px;                 /* .fig blog-post chip 量測值（非 Style token）*/
+  line-height: 18px;
+  color: #fff;
+  background: var(--cet-gray-800);
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* 內容為 rendered term（issue_badge view mode）→ field wrapper 不佔行 */
+  & .field,
+  & .field__item { display: inline; }
+
+  &:empty { display: none; }
+}
+
+/* 有圖卡：分類 chip 疊圖左下（貼齊圖底左緣；26 = chip 高）*/
+[class*="grid--"] li:has(.entity-img img) .entity-badge {
+  position: relative;
+  margin-top: -26px;
+}
+
+.entity-title {
+  margin: 16px 0 0;
+  font-size: 18px;                 /* .fig blog-post title 量測值（非 Style token）*/
+  font-weight: var(--cet-fw-medium);
+  line-height: 1.4;
+  color: var(--cet-gray-900);
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus { color: var(--cet-primary); }
+  }
+}
+
+.entity-body {
+  margin: 12px 0 0;
+  font-size: var(--cet-fs-h4);
+  line-height: 1.7;
+  color: var(--cet-gray-700);
+
+  & p { margin: 0; }
+}
+
+.entity-link {
+  margin: 0;
+
+  & a {
+    font-size: var(--cet-fs-desc);
+    color: var(--cet-primary);
+    text-decoration: none;
+
+    &:hover,
+    &:focus { text-decoration: underline; }
+  }
+}
+
+.entity-location {
+  margin: 12px 0 0;
+  font-size: var(--cet-fs-desc);
+  color: var(--cet-gray-700);
+
+  &:empty { display: none; }
+}
+
+/* 關鍵字標籤 pill 組（白底細框膠囊）*/
+.entity-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+
+  & a {
+    padding: 4px 8px;
+    border: 1px solid var(--cet-primary-dark);
+    border-radius: 999px;
+    font-size: 12px;               /* .fig tag 母版 60×20（非 Style token）*/
+    line-height: 20px;
+    color: var(--cet-primary-dark);
+    text-decoration: none;
+  }
+
+  &:empty { display: none; }
+}
+
+/* 活動卡 meta 行 v1（首頁 home_latest_activity 專用；分類 tag pill＋地區·形式同行、用 view rewrite 併入 span.entity-place）*/
+.entity-place {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;                 /* 標題→meta 行（.fig event-post title y0→top 行 y25，扣行高）*/
+  font-size: var(--cet-fs-desc);
+  color: var(--cet-gray-700);
+
+  & .entity-tags { margin: 0; }
+  & .entity-format { display: inline; }
+}
+
+/* 活動卡 meta 行 v2（activity_list 列表用；Views fieldset 包 events_category + place + format，內部 .d-flex.gap-3 排位）*/
+.views-field-fieldset {
+  margin-top: 12px;                /* 標題→meta 行 */
+  font-size: var(--cet-fs-desc);
+  color: var(--cet-gray-700);
+
+  & > .field-content { display: block; }
+  & .entity-tags { margin: 0; }    /* 撲掉外部 .entity-tags margin-top，避免推歪 flex baseline */
+
+  /* 空的 place / format 完整隱藏（避免 flex gap 佔位）*/
+  & .views-field:has(.entity-place-raw:empty),
+  & .views-field:has(.entity-format-raw:empty) { display: none; }
+}
+
+.entity-datetime {
+  margin-top: 12px;                /* meta 行底→date（.fig y53→y65）*/
+  font-size: var(--cet-fs-desc);
+  color: var(--cet-gray-700);
+}
+
+.entity-date {
+  margin-top: 12px;                /* meta 行底→date（.fig y53→y65）*/
+  font-size: var(--cet-fs-h4);
+  font-weight: var(--cet-fw-medium);
+  line-height: 1.6;
+  color: var(--cet-gray-700);
+  white-space: nowrap;
+}
+
+.entity-time {
+  font-size: var(--cet-fs-h4);
+  font-weight: var(--cet-fw-medium);
+  line-height: 1.6;
+  color: var(--cet-gray-700);
+  white-space: nowrap;
+}
+
+.entity-download {
+  display: flex;
+  align-items: center;
+
+  & a {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    font-size: 0;
+    color: transparent;
+    background: url(images/icon-download.svg) no-repeat center;
+  }
+}
+
+/*!SECTION */
+
+/*SECTION - List Page 單元頁  */
+
+/*ANCHOR - Events 活動一覽 primary tabs（Drupal local tasks，Bootstrap 5 .nav-tabs override）*/
+nav.tabs {
+  margin-block: 24px 32px;
+
+  & .nav.nav-tabs {
+    border-bottom: 1px solid var(--cet-gray-300);
+    gap: 32px;
+
+    & .nav-item .nav-link {
+      padding: 8px 4px;
+      border: none;
+      color: var(--cet-gray-500);
+      background: transparent;
+
+      &:hover { color: var(--cet-primary-dark); }
+
+      &.active {
+        color: var(--cet-primary-dark);
+        border-bottom: 2px solid var(--cet-primary-dark);
+        margin-bottom: -1px;         /* 蓋過 .nav-tabs 底線接縫 */
+      }
+    }
+  }
+}
+
+/*ANCHOR - News 新聞稿 */
+
+/* 條列式：li 已由 View row_class 的 Bootstrap d-flex/justify-content-between 排「標題左 ←→ 日期右」。
+   以下補列分隔線、標題單行截斷、日期次要灰。字級/色/間距為設計稿估計值，待精調。*/
+.name-news {
+  & .view-content .list-unstyled > li {
+    padding-block: 8px;
+    border-bottom: 1px solid var(--cet-gray-500);
+  }
+
+  & .entity-title {
+    margin: 0;
+    font-size: var(--cet-fs-body);
+    font-weight: var(--cet-fw-regular);
+    line-height: 1.6;
+  }
+}
+
+/*ANCHOR - 財報與徵信 */
+
+.name-report {
+  & .list-unstyled > li {
+    border-bottom: 1px solid var(--cet-gray-300);
+    padding-block: .5em;
+
+    &:last-child { border-bottom: 0; }
+  }
+
+  & .entity-title {
+    margin: 0;
+    font-size: var(--cet-fs-body);
+    font-weight: var(--cet-fw-regular);
+  }
+}
+
+/*!SECTION */
+
+/*SECTION - Node 內頁 */
+
+/*ANCHOR - node layout */
+
+.path-node:not(.node--type-landing) {
+  #main.container {
+    max-width: 744px; /* 720+24 padding-inline */
+  }
+}
+
+.block-page-title-block h1 {
+  margin-bottom: 40px;
+  font-size: var(--cet-fs-h2);
+  font-weight: var(--cet-fw-regular);
+}
+
+/*ANCHOR - 關鍵字標籤結果頁標題（page-vocabulary-keyword：term canonical 頁補「議題觀點庫」大標，term 名稱降級為 # 標籤樣式）*/
+body.page-vocabulary-keyword #block-page-title {
+  &::before {
+    content: '議題觀點庫';
+    display: block;
+    margin-bottom: 40px; /* .fig 量測：議題觀點庫→#標籤 間距 */
+    font-size: var(--cet-fs-h2);
+    font-weight: var(--cet-fw-regular);
+    color: var(--cet-gray-900);
+  }
+
+  & h1 {
+    display: flex;               /* field--name-name 是 block div，::before 需靠 flex 才不會被擠到自己一行 */
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 40px; /* .fig 量測：標題區→卡片區 間距 */
+    font-size: var(--cet-fs-h3);       /* Neema #46235 note-24 指定 20pt */
+    font-weight: var(--cet-fw-medium);
+    color: var(--cet-gray-700);
+
+    &::before { content: '#'; }
+  }
+}
+
+/*ANCHOR - 代表圖 field_newimage（內頁上方純圖、無圖說、直角；node 通用）*/
+.path-node .field--name-field-newimage {
+  margin-bottom: 40px;
+
+  /* base theme（barrio field.css）有 .node .field--type-image{float:left}（舊式圖文繞排），
+     外層 block 容器沒清浮動 → 高度塌陷成 0、圖片溢出蓋住下方內文（活動內頁 #46237 實測）。
+     複合 class 讓特異度 0,3,0 > base 的 0,2,0，不靠載入順序決勝 */
+  &.field--type-image { float: none; }
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*ANCHOR - 文章 story */
+
+/*ANCHOR - 內頁 meta */
+.name-meta {
+  margin-bottom: 24px;
+  color: var(--cet-gray-900);
+
+  & .views-field-name { margin-top: 16px; }         /* 副標題 → 議題分類列，.fig 量測 16px */
+  & .views-field-field-keyword { margin-top: 24px; } /* 日期 → 關鍵字標籤，.fig 量測 24px（與 .entity-tags 自身 12px margin collapse 取大值）*/
+
+  & .entity-lable,
+  & .node-meta-date {
+    font-size: var(--cet-fs-h4);
+    line-height: 1.8;
+  }
+
+  & .entity-term {
+    margin: 0;
+    gap: 0;
+    font-size: var(--cet-fs-h4);       /* wrapper line-box 對齊 .entity-lable，讓 flex align-items:center 不錯位（#46235） */
+    line-height: 1.8;
+
+    & a {
+      color: inherit;
+
+      &:not(:last-child)::after { content: '、'; }
+    }
+  }
+}
+
+/*ANCHOR - 活動內頁 activity（#46237；meta 區 + 條件按鈕）
+  meta 由 activity_meta view 出（block_1＝日期/時間/形式/地點/地址、block_2＝報名或活動側記）。
+  設計稿三斷點縱向間距完全相同（只差水平 padding），故不設斷點差異。
+  量測（字形邊界）：標題→日期 13、meta 各行間隙 9–10（靠 line-height 給）、
+  地址→按鈕 23、按鈕→主圖 81、主圖→內文 69、內文→第二顆按鈕 85 */
+body.node--type-activity {
+  /* 標題→日期緊貼，覆蓋內頁通用的 40px */
+  & .block-page-title-block h1 { margin-bottom: 12px; }
+
+  & .name-activity-meta {
+    font-size: var(--cet-fs-h4);
+    line-height: 1.6;
+
+    /* 撲掉卡片版 .entity-date 的 12px（內頁行距一律交給 line-height）*/
+    & .entity-date,
+    & .entity-time {
+      margin-top: 0;
+      color: var(--cet-gray-900);
+    }
+
+    & .entity-meta-item { color: var(--cet-gray-700); } /* 設計稿 sample #5D5D5D */
+  }
+
+  /*ANCHOR - 地址：Google Map 外連，補右上箭頭
+    沿用現有 icon--arrow-up-right.svg（深色版；.cta 用的是同款白色版 -wite）*/
+  & .views-field-field-venue a {
+    color: inherit;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      vertical-align: -3px;
+      background: url(images/icon--arrow-up-right.svg) no-repeat center / contain;
+    }
+  }
+
+  /*ANCHOR - 條件按鈕（meta 下方與內文下方各一顆，共用 a.cta）*/
+  & .name-activity-action { margin-top: 20px; }
+
+  /*ANCHOR - 區塊間距 */
+  & .block-field-blocknodeactivityfield-newimage { margin-top: 81px; }
+  & .field--name-field-newimage { margin-bottom: 69px; }  /* 覆蓋 .path-node 通用的 40px */
+  & #action { margin-top: 85px; }
+}
+
+/*ANCHOR - 附加檔案下載列表 */
+.field--name-field-files {
+  margin-top: 40px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin-bottom: 16px;
+    background: var(--cet-primary-dark);
+  }
+
+  & .field__label {
+    margin-bottom: 16px;
+    font-size: var(--cet-fs-h3);
+    font-weight: var(--cet-fw-medium);
+    color: var(--cet-primary-dark);
+  }
+
+  & table.table {                     
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
+
+  & thead { display: none; }
+
+  & tbody tr {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    border: 0;
+    background: none;
+
+    &:last-child { margin-bottom: 0; }
+
+    &::after {
+      content: '';
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      background: url(images/icon-download.svg) no-repeat center;
+      margin-left: 1rem;
+    }
+  }
+
+  & tbody td {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+
+    &:first-child { flex: 1; }
+    &:nth-child(2) { display: none; }
+  }
+
+  & .file {
+    padding: 0;
+    background: none;
+
+    & a {
+      font-size: var(--cet-fs-body);
+      color: var(--cet-primary-dark);
+      text-decoration: none;
+    }
+  }
+}
+
+/*ANCHOR - 基本頁面 page / 自由頁面 freepage_a·b */
+/* 容器／標題共用上方；內文 h2/清單樣式見 editor.css（CKEditor 所見即所得需同時套用）*/
+
+/*ANCHOR - 議題介紹頁 / 行動介紹頁（分類驅動模板）*/
+
+/* #main.container 的 padding-bottom（base theme 全站通用）在這頁會在 bg-green 帶與頁尾間留一截白邊，僅本頁拿掉 */
+body.page-vocabulary-issue-category #main.container {
+  padding-bottom: 0;
+}
+
+/*ANCHOR - 議題介紹頁 滿版代表圖（featured_top region，View issue_hero，圖蓋到麵包屑上方比照設計稿）*/
+body.page-vocabulary-issue-category #featured-top .name-issue-hero {
+  width: calc(100vw - var(--sbw, 0px));               /* 沿用 .full-width 公式，含 scrollbar 補償 */
+  margin-inline: calc((100% - 100vw + var(--sbw, 0px)) / 2);
+
+  /* Bootstrap5 .row 預設 margin-inline: -12px，在 full-width no-padding parent 下會往左溢出，手機觸控左右滑動 */
+  & .view-content.row {
+    --bs-gutter-x: 0;
+    margin-inline: 0;
+  }
+
+  & img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+
+    @media (min-width: 768px) { height: clamp(336px, 33.33vw + 80px, 480px); }
+  }
+}
+
+/*ANCHOR - 議題介紹頁 內文（description，首段視為副標）*/
+#intro .field--name-description {
+  & p:first-child {
+    margin-bottom: 40px;
+    font-size: var(--cet-fs-h3);
+    font-weight: var(--cet-fw-medium);
+    color: var(--cet-primary-dark);
+  }
+
+  & p {
+    color: var(--cet-gray-900);
+    line-height: var(--cet-lh-body);
+  }
+}
+
+/*ANCHOR - 議題介紹頁「我們的行動」/「至今的影響力」/CTA 共用 #actions section 內的區塊間距（.fig 量測 80px）*/
+#actions .layout__region--content > * + * {
+  margin-top: clamp(40px, 6vw, 80px);
+}
+
+/*ANCHOR - 議題介紹頁「我們的行動」/「至今的影響力」標題→內容間距（.fig 量測 24px，蓋掉 .block-title 母規則跑掉的間距）*/
+.name-issue-actions .view-header,
+.name-issue-influence .view-header {
+  margin-bottom: 24px;
+}
+
+/*ANCHOR - 議題介紹頁 我們的行動 卡片（View issue_actions；圖右下深色 label bar + 箭頭）*/
+.name-issue-actions {
+  & li {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  & .entity-img {
+    aspect-ratio: 320 / 180;
+  }
+
+  & .entity-title {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 62.5%;
+    height: 40px;
+    margin: 0;
+    border-top-left-radius: 6px;     /* 左上圓；右下由 li 6px clip（Neema #46232 note-23）*/
+    background: var(--cet-primary-dark);
+    font-size: var(--cet-fs-body);
+    font-weight: var(--cet-fw-regular);
+
+    & a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      height: 100%;
+      padding-inline: 12px;
+      overflow: hidden;
+      color: #fff;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &::after {
+        content: '';
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        background: url(images/icon-outline.svg) no-repeat center;
+      }
+    }
+  }
+}
+
+/*ANCHOR - 議題介紹頁 至今的影響力（View issue_influence，改用 views block 撈 field_influence，標題走 view header，不用偽元素）*/
+/* #actions section：客戶已把「我們的行動」/「至今的影響力」/CTA 合併進同一個 full-width+bg-green section，共用連續色帶 */
+/* 沿用 .grid--3-columns / .entity-title / .entity-body 既有原子化系統（卡片白底圓角已內建），只補 padding 與這裡專屬的標題色 */
+.name-issue-influence {
+  & .grid--3-columns ul.d-grid > li { padding: 24px; }
+
+  & .entity-title {
+    margin-top: 0;
+    color: var(--cet-primary-dark);
+  }
+
+  & .entity-body {
+    margin-top: 8px;
+    font-size: var(--cet-fs-body);
+    color: var(--cet-gray-900);
+
+    & p { margin: 0; }
+  }
+}
+
+/*ANCHOR - 行動介紹頁 隱藏系統預設麵包屑/標題（客戶已把麵包屑+標題拉進 LB 自己排版，避免重複）*/
+body.page-vocabulary-action-category {
+  & #block-breadcrumbs,
+  & #block-page-title {
+    display: none;
+  }
+}
+
+/*ANCHOR - 行動介紹頁 hero 雙欄（.fig：左文 400 / gap 40 / 右圖 640×360＝37:59，非 50-50；右欄代表圖 16:9 sticky）*/
+body.page-vocabulary-action-category #hero {
+  gap: 40px;
+
+  & > .layout__region--first {
+    @media (min-width: 768px) { flex: 0 1 37%; }
+  }
+
+  & > .layout__region--second {
+    @media (min-width: 768px) { flex: 1 1 0; min-width: 0; }  /* basis 0＝按剩餘空間分配；auto 會被圖片內容寬撐到換行 */
+
+    /* sticky 掛 region 直接子層：region 被 flex stretch 撐到左欄高（有滑動空間），block 以下到 img 全是內容高、掛 img 會零空間不動 */
+    & > .block {
+      @media (min-width: 768px) {
+        position: sticky;
+        top: clamp(24px, 4vw, 100px);
+      }
+    }
+  }
+
+  & .layout__region--second img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;              /* .fig photo 640×360；固定框，任何上傳圖都裁滿 */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+/*ANCHOR - 行動介紹頁 標題（term name field；系統 page-title 已隱藏，LB 內的 name field 補大標樣式）*/
+#hero .field--name-name {
+  margin-block: 24px 0;                /* 麵包屑→標題 24（.fig）*/
+  font-size: var(--cet-fs-h2);         /* 28px（.fig title 5 字寬 140）*/
+  font-weight: var(--cet-fw-medium);   /* 推定：Style 頁 H2=Regular，設計稿視覺偏粗，用 500 待把關 */
+  line-height: 1.4;
+  color: var(--cet-gray-900);
+}
+
+/*ANCHOR - 行動介紹頁 議題分類標籤（.fig Tag 元件＝白底綠框膠囊，同卡片 .entity-tags 款；點擊前往議題介紹頁）*/
+#hero .field--name-field-issue-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 24px 40px;             /* 標題→標籤 24、標籤→內文 40（.fig）*/
+
+  & a {
+    padding: 4px 12px;
+    border: 1px solid var(--cet-primary-dark);
+    border-radius: 999px;
+    background: #fff;
+    font-size: 12px;                   /* .fig tag 母版 5 字寬 60 */
+    line-height: 20px;
+    color: var(--cet-primary-dark);
+    text-decoration: none;
+
+    &:hover { background: var(--cet-bg); }
+  }
+}
+
+/*ANCHOR - 行動介紹頁 內文（description）*/
+#hero .field--name-description {
+  color: var(--cet-gray-900);
+  line-height: var(--cet-lh-body);
+
+  & p + p { margin-top: 16px; }
+}
+
+/*ANCHOR - 行動介紹頁 關鍵個案（.fig：淺底卡 padding 16、標題 16px primary-dark＋book icon 24（素材待客戶）、內文 gray-800）*/
+#hero .field--name-field-key-case {
+  margin-top: 40px;                    /* 內文→關鍵個案 40（.fig）*/
+  padding: 16px;
+  background: var(--cet-bg);           /* .fig 未收此卡 fill，推定值待把關 */
+  border-radius: 8px;
+
+  & h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;                         /* .fig icon 24 → 文字 x=34 */
+    width: auto;                       /* 蓋掉 editor.css .text-formatted 內文小標的 fit-content＋黑上線 */
+    margin: 0 0 10px;
+    padding-top: 0;
+    border-top: 0;
+    font-size: var(--cet-fs-body);     /* 16px（.fig 4 字寬 64）*/
+    font-weight: var(--cet-fw-medium);
+    color: var(--cet-primary-dark);    /* .fig #55716C */
+
+    &::before {
+      content: '';
+      flex: 0 0 24px;
+      height: 24px;
+      background: url(images/icon-book.svg) no-repeat center;
+    }
+  }
+
+  & p {
+    margin: 0;
+    font-size: var(--cet-fs-body);
+    line-height: var(--cet-lh-body);
+    color: var(--cet-gray-800);        /* .fig #454545 */
+  }
+
+  & p + p { margin-top: 12px; }
+}
+
+/*ANCHOR - 行動介紹頁 地球公民的行動（View action_item_list；.fig：bg 帶內 #FAFAFA 卡 960×200、圖 320×200 滿高貼邊佔 1/3、內距 24、卡間 24、左右交替）*/
+/* ⚠️ grid 屬性一律設在 li 的直接子層 .views-field-*（.entity-* 是孫層，設了靜默無效）；圖在圖格「內」絕對定位＝不參與列高計算（跨列 grid item 撐高 auto 列的坑），皆見 troubleshooting #16 */
+.name-action-items {
+  & .view-header { margin-bottom: 24px; }
+
+  & .list--media > ul.list-unstyled {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  & li {
+    background: var(--cet-white);
+    border-radius: 8px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;   /* 圖 320 : 文 640（.fig）*/
+      grid-template-rows: auto 1fr;
+      min-height: 200px;
+    }
+  }
+
+  & .views-field-field-comp-image {
+    @media (min-width: 768px) {
+      grid-area: 1 / 1 / 3 / 2;
+      position: relative;
+    }
+  }
+
+  & .entity-img {
+    @media (min-width: 768px) { position: absolute; inset: 0; }
+
+    & img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 16 / 10;            /* 手機圖上文下的固定比例；桌機被 absolute 拉滿、不生效 */
+    }
+  }
+
+  & .views-field-title {
+    padding: 24px 24px 0;
+    @media (min-width: 768px) { grid-area: 1 / 2 / 2 / 3; }
+
+    & .entity-title {
+      margin: 0;
+      font-size: var(--cet-fs-h3);      /* 20px（.fig 標題框高 24 ÷ 行高 1.2）*/
+    }
+  }
+
+  & .views-field-field-comp-body {
+    padding: 8px 24px 24px;
+    @media (min-width: 768px) { grid-area: 2 / 2 / 3 / 3; }
+
+    & .entity-body {
+      font-size: var(--cet-fs-body);
+      line-height: 1.5;                 /* .fig 內文 5 行 120px */
+      color: var(--cet-gray-900);
+    }
+  }
+
+  /* 偶數卡圖文互換（欄寬定義跟著換邊）*/
+  & li:nth-child(even) {
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 1fr;
+
+      & .views-field-field-comp-image { grid-area: 1 / 2 / 3 / 3; }
+      & .views-field-title { grid-area: 1 / 1 / 2 / 2; }
+      & .views-field-field-comp-body { grid-area: 2 / 1 / 3 / 2; }
+    }
+  }
+}
+
+/*ANCHOR - 行動介紹頁 策展圖文區（View curation_list；.fig：一列一卡 左圖 460×259 右文、卡間 80、按鈕 outline；欄位無圖片（#46215 既定），版型先就位、圖片欄位待客戶定案）*/
+.name-curations {
+  & .grid--2-columns ul.d-grid {
+    grid-template-columns: 1fr;         /* .fig 一列一卡（覆蓋 View 帶的 2 欄格線）*/
+    gap: clamp(40px, 6vw, 80px);
+  }
+
+  /* 左圖右文（.fig 圖 460/960＝48%、gap 40、文字垂直置中）；上下 1fr 空列吸收圖片高度差，auto 文字列不被跨列圖撐高 */
+  /* selector 疊全鏈：通用卡系統 .grid--2-columns ul.d-grid > li（flex/白底/圓角/hover 浮起）specificity 較高，須蓋掉 */
+  & .grid--2-columns ul.d-grid > li {
+    background: none;
+    border-radius: 0;
+    overflow: visible;
+
+    &:hover { transform: none; }
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 48% 1fr;
+      grid-template-rows: 1fr auto auto auto 1fr;
+      column-gap: 40px;
+    }
+  }
+
+  & .views-field-field-comp-image {
+    @media (min-width: 768px) { grid-area: 1 / 1 / 6 / 2; }
+
+    & img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 460 / 259;          /* .fig Cover Image */
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+
+  & .views-field-title { @media (min-width: 768px) { grid-area: 2 / 2 / 3 / 3; } }
+  & .views-field-field-comp-summary { @media (min-width: 768px) { grid-area: 3 / 2 / 4 / 3; } }
+  & .views-field-field-comp-link { @media (min-width: 768px) { grid-area: 4 / 2 / 5 / 3; } }
+
+  & .entity-title {
+    margin: 0;
+    font-size: var(--cet-fs-h3);
+  }
+
+  & .entity-body {
+    margin-top: 8px;
+    color: var(--cet-gray-900);
+  }
+
+  & .entity-link {
+    margin-top: 16px;
+
+    /* .fig button/Secondary 母版＝白底綠框 outline＋箭頭（節點 fill 黑為過期快取不可信）；icon 換色雙檔法同 CTA 按鈕 */
+    & a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 20px;
+      border: 1px solid var(--cet-primary);
+      border-radius: 999px;
+      font-size: var(--cet-fs-body);
+      font-weight: var(--cet-fw-medium);
+      color: var(--cet-primary);
+      text-decoration: none;
+
+      &::after {
+        content: '';
+        width: 16px;
+        height: 16px;
+        background: url(images/icon--arrow-up-right.svg) no-repeat center;
+      }
+
+      &:hover {
+        background: var(--cet-primary);
+        color: #fff;
+
+        &::after { background-image: url(images/icon-arrow-up-right-wite.svg); }
+      }
+    }
+  }
+}
+
+/*ANCHOR - 行動介紹頁 延伸閱讀／相關活動（沿用既有 grid--3-columns 卡片系統）*/
+.name-related-reading .view-header,
+.name-related-activities .view-header {
+  margin-bottom: 24px;
+}
+
+/* 活動卡 meta（.entity-place / .entity-datetime）樣式在 Entity Reusable Components 通用區，首頁近期活動卡共用 */
+
+/*ANCHOR - 年度報告 / 捐報徵信（PDF 下載列表）*/
+
+/*!SECTION */
+
+/*SECTION - netiCRM（募款 / 活動報名 / 資料表單 / 會員中心 / 收據）*/
+
+/*ANCHOR - 特殊募款頁（.civicrm-contribute-sp，見檔首說明）*/
+
+/*ANCHOR - 一般募款頁 Contribution */
+
+/*ANCHOR - 活動報名 Event */
+
+/*ANCHOR - 資料表單 Profile */
+
+/*ANCHOR - 會員中心 Member Center */
+
+/*ANCHOR - 年度收據 Annual Receipt */
+
+/*!SECTION */

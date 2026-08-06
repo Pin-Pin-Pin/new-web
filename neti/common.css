@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/*
+ * Design Tokens（CSS 變數）
+ *
+ */
+
+:root,
+.ck-content {
+
+  /*ANCHOR - 品牌色（Style 頁 Brand colors）*/
+  --cet-primary: #35A97C;          /* Brand/Primary（Style 色彩樣式真值；舊 .fig 快取為過期的 #17AE09）*/
+  --cet-primary-dark: #55716C;     /* Brand/Dark Primary（真值；舊快取過期的 #0B6C02）hover / 強調 */
+  --cet-bg: #E5EAE3;               /* Brand/Background：淺灰綠（live Figma 現值；舊 .fig 匯出檔為過期的 #F3EEE6）*/
+
+  /*ANCHOR - 中性灰階（Style 頁 Grays；figdec tokens.json 變數真值，2026-06-29）*/
+  --cet-gray-900: #2B2B2B;
+  --cet-gray-800: #454545;         /* 頁尾 Sub Footer 辦公室帶 */
+  --cet-gray-700: #5D5D5D;         /* 次要文字（摘要 / meta / 標籤 / 地點）*/
+  --cet-gray-600: #838383;
+  --cet-gray-500: #C0C0C0;
+  --cet-gray-400: #E1E1E1;
+  --cet-gray-300: #E5E5E5;
+  --cet-gray-200: #EFEFEF;
+  --cet-gray-100: #F8F9FA;
+  --cet-black: #000000;
+
+  /*ANCHOR - 其他中性（主要文字用 --cet-gray-900、次要用 --cet-gray-700）*/
+  --cet-white: #FAFAFA;            /* Brand/White（卡片底、面板底；純白文字用 #fff）*/
+  --cet-primary-contrast: #FFFFFF; /* 品牌色底上的文字色（徽章等）*/
+
+  /*ANCHOR - 字型家族 */
+  --cet-font-sans: "Noto Sans TC", sans-serif;   /* 全站字型（需 libraries.yml 載入）*/
+
+  /*ANCHOR - 字重 */
+  --cet-fw-light: 300;             /* H1 */
+  --cet-fw-regular: 400;           /* H2 / Body / Description */
+  --cet-fw-medium: 500;            /* H3 / H4 */
+
+  /*ANCHOR - 字級（Style 頁桌機值；手機若不同待改 clamp）*/
+  --cet-fs-h1: 48px;               /* H1 Light */
+  --cet-fs-h2: 28px;               /* H2 Regular */
+  --cet-fs-h3: 20px;               /* H3 Medium */
+  --cet-fs-h4: 14px;               /* H4 Medium */
+  --cet-fs-body: 16px;             /* B1 Body Regular */
+  --cet-fs-desc: 10px;             /* B2 Description Regular */
+
+  /*ANCHOR - 行距 */
+  --cet-lh-body: 1.8;              /* 內文行距 */
+}
+
+/* CKEditor */
+.ck.ck-content {
+  --ck-content-font-family: var(--cet-font-sans);
+  --ck-content-font-size: var(--cet-fs-body);
+  --ck-content-line-height: var(--cet-lh-body);
+  --ck-content-font-color: var(--cet-gray-900);
+}

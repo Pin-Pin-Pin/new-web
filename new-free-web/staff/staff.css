@@ -23,6 +23,9 @@
     padding: 24px;
     border-radius: 8px; 
 }
+#looking-for .content-item p{
+    font-weight: 700;
+}
 #looking-for .content-item-button .btn{
     width: fit-content;
 }

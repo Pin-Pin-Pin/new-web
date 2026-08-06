@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/**
+ * @file
+ * .text-formatted 元件樣式（CKEditor + 前台共用，所見即所得）。
+ */
+
+/* 為 CKEditor 載入 Web Font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap');
+
+.text-formatted,
+.ck.ck-content {
+
+  /*ANCHOR - Headings 基礎（字型/字級/字重＝從 custom.css 搬入，讓 CKEditor 內文也套到、前後台一致）*/
+  & h1, & h2, & h3, & h4, & h5, & h6 {
+    font-family: var(--cet-font-sans);
+    color: var(--cet-gray-900);
+  }
+  & h1 { font-size: var(--cet-fs-h1); font-weight: var(--cet-fw-light); }
+  & h2 { font-size: var(--cet-fs-h2); font-weight: var(--cet-fw-regular); }
+  & h3 { font-size: var(--cet-fs-h3); font-weight: var(--cet-fw-medium); }
+  & h4 { font-size: var(--cet-fs-h4); font-weight: var(--cet-fw-medium); }
+
+  /*ANCHOR - 內文小標短粗線款（h2/h3；覆蓋上面基礎；設計稿內文小標＝綠色短上線。body 遷移內容小標用 h3）*/
+  & h2, & h3 {
+    width: fit-content;
+    margin-block: 40px 24px;
+    padding-top: 4px;
+    border-top: 3px solid;
+    font-size: var(--cet-fs-h3);
+    font-weight: var(--cet-fw-medium);
+    line-height: 1.4;
+    color: var(--cet-primary-dark);
+
+    &:first-child { margin-top: 0; }
+  }
+
+  /*ANCHOR - Paragraph */
+  & p {
+    margin-block: 0 16px;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  /*ANCHOR - 內文圖 + 圖說（舊站遷移結構 <p><img><span>圖說</span></p>）*/
+  & p:has(> img) {
+    & img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    & span {
+      display: block;
+      text-align: center;
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--cet-gray-700);
+    }
+  }
+
+  /*ANCHOR - Links（Style 頁 B1 Body Link＝Brand/Dark Primary #55716C；RAW guid 113:4401→styleIdForFill 113:1763 確認，非估計值）*/
+  & a:not(.cta) {
+    color: var(--cet-primary-dark);
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }   /* Style 頁無 hover 範例，暫用底線，不臆測換色 */
+  }
+
+  /*ANCHOR - Lists（一般清單基礎款，不含連結樣式——連結色一律吃上面 & a）*/
+  & ul,
+  & ol {
+    margin-block: 0 16px;
+    padding-inline-start: 1.5em;
+
+    & li { margin-bottom: 8px; }
+  }
+
+  /*ANCHOR - 清單連結列版面（舊站遷移常見結構：li 整列即連結，如性平專頁公開資訊列表；只處理排版/圖示，連結色沿用上面 & a，不重複宣告）*/
+  & ul:has(> li > h3 > a) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-inline-start: 0;
+    list-style: none;
+
+    & li { margin-bottom: 0; }
+
+    & h3 {
+      margin: 0;
+      font-size: var(--cet-fs-body);
+      font-weight: var(--cet-fw-regular);
+      line-height: 24px;
+    }
+
+    & a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      &::after {
+        content: '';
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        background: url(images/icon--arrow-up-right.svg) no-repeat center / contain;
+      }
+    }
+  }
+}
