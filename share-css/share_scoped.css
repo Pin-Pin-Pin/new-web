@@ -6,8 +6,8 @@
     line-height: 0;
 } */
 /* 以上debug */
-/* :root */
-#main
+:root
+/* #main */
  {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
@@ -36,15 +36,16 @@
 #main .brand-dark-primary{
     color: var(--brand-dark-primary);
 }
-/* body */
-#main{
+#main body
+/* #main */
+{
     color: var(--brand-black);
     font-family: "Noto Sans TC";
 }
-/* body{
+#main body{
     color: var(--brand-black);
     font-family: "Noto Sans TC";
-} */
+}
 #main section,#main .section {
     padding: 64px 24px;
 }
@@ -91,6 +92,7 @@
 #main h2,#main .h2{
     font-family: "Noto Sans TC";
     font-size: 1.75rem;
+    /* 28px */
     font-style: normal;
     font-weight: 300;
     line-height: normal;
@@ -98,6 +100,7 @@
 #main h3,#main .h3{
     font-family: "Noto Sans TC";
     font-size: 1.25rem;
+    /* 20px */
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -576,6 +579,7 @@
 #main .content-tabs-nav .nav-item {
     flex-shrink: 0;
     scroll-snap-align: start;
+    margin-bottom: 0;
 }
 
 #main .content-tabs-nav .nav-link {
