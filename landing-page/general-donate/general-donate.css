@@ -108,6 +108,14 @@ a:active {
 /* ========================================
    Section: 捐款方案
 ======================================== */
+.donation-plan .card{
+    border-radius: 8px;
+    overflow: hidden;
+
+}
+.donation-plan .card-body p{
+    color: var(--black);
+}
 .donation-plan{
     background-color: var(--brand-background-green);
 }
@@ -117,9 +125,15 @@ a:active {
 .donation-plan img{
     width: 100%;
 }
-   /* faq */
+/* ========================================
+   Section: faq
+======================================== */
 .faq {
     background-color: var(--white );
+}
+.footer-text p{
+    color: var(--black);
+
 }
 
 

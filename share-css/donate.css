@@ -140,8 +140,162 @@ section.donate-hero{
 }
 
 /* ========================================
-   donation-box（金額錯誤、其他方式、PayPal）
+   Component: donation-box（捐款表單）
 ======================================== */
+.donation-box{
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background-color: var(--white);
+    border-radius: 4px;
+}
+.donation-box__title{
+    color: var(--brand-dark-primary);
+    margin-bottom: 8px !important;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.donation-box__tabs{
+    display: flex;
+    width: 100%;
+    margin-bottom: 24px;
+    border: 1px solid var(--brand-primary);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.donation-box__tab{
+    flex: 1 1 0;
+    padding: 8px 12px;
+    border: none;
+    border-right: 1px solid var(--brand-primary);
+    background-color: var(--white);
+    color: var(--brand-primary);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.donation-box__tab:last-child{
+    border-right: none;
+}
+.donation-box__tab.is-active{
+    background-color: var(--brand-primary);
+    color: var(--white);
+}
+.donation-box__tab:focus-visible{
+    outline: 2px solid var(--brand-dark-primary);
+    outline-offset: -2px;
+    z-index: 1;
+}
+.donation-box__tab:focus:not(:focus-visible){
+    outline: none;
+}
+.donation-box__panel{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+.donation-box__panel--other{
+    gap: 24px;
+    margin-bottom: 0;
+}
+.donation-box__subtitle{
+    color: var(--brand-dark-primary);
+    margin-bottom: 8px !important;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.donation-box__amount-list{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+.donation-box__amount-list > li:not(:last-child){
+    border-bottom: 1px solid var(--gray-400);
+}
+.donation-box__amount-option{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+}
+.donation-box__amount-option:focus-visible{
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+.donation-box__amount-option:focus:not(:focus-visible){
+    outline: none;
+}
+.donation-box__amount-value{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 72px;
+}
+.donation-box__currency{
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--gray-600);
+}
+.donation-box__number{
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--brand-black);
+    transition: color 0.2s ease;
+}
+.donation-box__amount-option.is-active .donation-box__number{
+    color: var(--brand-primary);
+}
+.donation-box__amount-desc{
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--brand-black);
+}
+.donation-box__custom{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.donation-box__custom-label{
+    flex-shrink: 0;
+    margin-bottom: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--brand-dark-primary);
+}
+.donation-box__custom-input{
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid var(--gray-400);
+    border-radius: 4px;
+    background-color: var(--white);
+    color: var(--brand-black);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.donation-box__custom-input::placeholder{
+    color: var(--gray-600);
+}
+.donation-box__custom-input:focus{
+    outline: none;
+    border-color: var(--brand-primary);
+}
 .donation-box__error{
     color: #b42318;
     font-family: "Noto Sans TC", sans-serif;
@@ -157,18 +311,29 @@ section.donate-hero{
     font-weight: 400;
     line-height: 1.5;
 }
-.donation-box__panel--other{
+/* .donation-box__panel--other{
     gap: 16px;
-}
+} */
+/* ? */
 .donation-box__submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 16px;
     border: none;
+    border-radius: 4px;
+}
+.donation-box__submit.btn-primary.btn-icon::after{
+    background-color: var(--white);
 }
 
-/* 其他方式 accordion */
+/* donation-box：其他方式 accordion */
 .donation-box__accordion{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 24px;
     width: 100%;
 }
 .donation-box__accordion .accordion-item{

@@ -76,6 +76,9 @@
     font-weight: 700;
     
 }
+.requirements-item p,.requirements-item ul{
+    color:var(--black);
+}
 @media (min-width: 768px) {
     .requirements-item-container-grid {
         grid-template-columns: 1fr 1fr;
@@ -88,6 +91,9 @@
     padding-top: 64px;
     padding-bottom: 80px;
     background-color: var(--brand-background-green);
+}
+#apply p,#apply ul{
+    color:var(--black);
 }
 #apply-time {
     background-color: var(--brand-background-green);
