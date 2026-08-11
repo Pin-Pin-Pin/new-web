@@ -133,7 +133,7 @@ section.donate-hero{
         align-self: center;
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .donate-hero__inner.container{
         gap: 120px;
     }
@@ -473,7 +473,7 @@ section.donate-hero{
         grid-template-columns: 1fr 1fr;
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .donation-plan__cards {
         gap: 80px;
     }

@@ -86,6 +86,7 @@
     border: none;
     border-radius: 8px;
     background-color: var(--brand-background-green);
+    overflow: hidden;
 }
 #main .volunteer-card .card-body {
     padding: 16px;

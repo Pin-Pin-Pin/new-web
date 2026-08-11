@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-TW">
 <head>
     <title>邀請分享</title>
@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../share-css/share.css">
     <link rel="stylesheet" href="invite-share.css">
+    <!-- <link rel="stylesheet" href="測試左圖右文.css"> -->
 </head>
 <body>
+    <!-- 原本 section（右出血／桌機固定 img max） -->
     <section class="invite-share">
         <div class="container page-top-container">
             <div class="page-top-text-container">
@@ -41,12 +43,11 @@
                             https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.webp 800w
                         "
                         sizes="
-                            (min-width: 1200px) 1160px,
+                            (min-width: 992px) 1160px,
                             (min-width: 768px) 800px,
-                            min(calc(100vw - 24px),480px)
+                            min(calc(100vw - 48px), 540px)
                         "
                     >
-                
                     <img
                         src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg"
                         srcset="
@@ -55,9 +56,9 @@
                             https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.jpg 1600w
                         "
                         sizes="
-                            (min-width: 1200px) 1160px,
+                            (min-width: 992px) 1160px,
                             (min-width: 768px) 800px,
-                            min(calc(100vw - 24px),480px)
+                            min(calc(100vw - 48px), 540px)
                         "
                         width="16"
                         height="9"
@@ -66,15 +67,70 @@
                         decoding="async"
                     >
                 </picture>
-
-
-
             </div>
-
-
         </div>
-
     </section>
+   
+
+    <!-- 試用：右緣對齊 .content-tab-text；sizes 改為對應實際顯示寬 -->
+    <!-- <section class="invite-share">
+        <div class="container page-top-container">
+            <div class="page-top-text-container">
+                <nav class="breadcrumb page-top-text-group-1" aria-label="麵包屑">
+                    <a href="https://dev.cet-taiwan.org/" class="breadcrumb-home" aria-label="首頁"></a>
+                    <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                    <span class="breadcrumb-current" aria-current="page">邀請分享</span>
+                </nav>
+                <div class="page-top-text-group-2">
+                    <h1 class="h2">邀請分享</h1>
+                    <p class="h3">將環境現場帶入日常，用對話開啟改變。</p>
+                    <div class="page-top-text-p">
+                        <p>地球公民超過二十年的時間位在台灣環境倡議的第一線。有感於行動的現場，有賴關心環境的大眾力量共同理解與共鳴。</p>
+                        <p>透過講座與對話，我們期盼促成具備實質意義的社會對話。無論是高中與大學社團、積極推廣議題的教育工作者，或是關注環境的企業與社區，我們都非常期待與您交流。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-top-img-container">
+                <picture>
+                    <source
+                        type="image/webp"
+                        srcset="
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.webp 1600w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1280.webp 1280w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.webp 800w
+                        "
+                        sizes="
+                            (min-width: 1200px) 544px,
+                            (min-width: 1008px) 520px,
+                            (min-width: 992px) 504px,
+                            (min-width: 768px) calc(100vw - max(24px, (100vw - 720px) / 2)),
+                            calc(100vw - 24px)
+                        "
+                    >
+                    <img
+                        src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg"
+                        srcset="
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg 800w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1280.jpg 1280w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.jpg 1600w
+                        "
+                        sizes="
+                            (min-width: 1200px) 544px,
+                            (min-width: 1008px) 520px,
+                            (min-width: 992px) 504px,
+                            (min-width: 768px) calc(100vw - max(24px, (100vw - 720px) / 2)),
+                            calc(100vw - 24px)
+                        "
+                        width="16"
+                        height="9"
+                        alt="地球公民於活動現場進行環境議題分享"
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+                </picture>
+            </div>
+        </div>
+    </section> -->
     
     
     <section class="share-content">
@@ -159,8 +215,8 @@
 
             return (
                 '<picture>' +
-                    '<source media="(min-width: 1200px)" type="image/webp" srcset="' + desktopWebp450 + ' 450w, ' + desktopWebp850 + ' 850w" sizes="' + desktopSizes + '">' +
-                    '<source media="(min-width: 1200px)" type="image/jpeg" srcset="' + desktopJpg450 + ' 450w, ' + desktopJpg850 + ' 850w" sizes="' + desktopSizes + '">' +
+                    '<source media="(min-width: 992px)" type="image/webp" srcset="' + desktopWebp450 + ' 450w, ' + desktopWebp850 + ' 850w" sizes="' + desktopSizes + '">' +
+                    '<source media="(min-width: 992px)" type="image/jpeg" srcset="' + desktopJpg450 + ' 450w, ' + desktopJpg850 + ' 850w" sizes="' + desktopSizes + '">' +
                     '<source type="image/webp" srcset="' + mobileWebp380 + ' 380w, ' + mobileWebp760 + ' 760w" sizes="' + mobileSizes + '">' +
                     '<img' +
                         ' src="' + mobileJpg380 + '"' +

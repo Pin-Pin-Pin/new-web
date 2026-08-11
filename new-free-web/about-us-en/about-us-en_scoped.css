@@ -57,7 +57,11 @@
     border-top: 2px solid var(--brand-dark-primary);
 }
 
-/* Mobile (<768): accordion only / Desktop (≥768): tabs only */
+#main .share-content-title-mobile {
+    margin-bottom: 0;
+}
+
+/* Mobile (<768): accordion only / Desktop (≥768): sticky tabs only */
 #main .share-topics-tabs {
     display: none;
     width: 100%;
@@ -78,6 +82,7 @@
     border: 1px solid var(--brand-dark-primary);
     overflow: hidden;
 }
+
 #main .share-topics-accordion .accordion-collapse {
     min-height: 0;
     overflow-anchor: none;
@@ -122,33 +127,120 @@
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+#main .share-topics-accordion .share-panel {
+    gap: 0;
+}
+
+#main .share-topics-accordion .share-panel-body {
+    padding: 24px 16px;
+}
+
 @media (min-width: 768px) {
+    #main .share-content .share-content-container {
+        gap: 0;
+    }
+
+    #main .share-content-title-mobile {
+        display: none;
+    }
+
     #main .share-topics-accordion {
-        display: none !important;
+        display: none;
     }
 
     #main .share-topics-tabs {
         display: flex;
     }
+}
 
-    /* 本頁不用等高校面板堆疊，避免蓋住內文 */
-    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane:not(.active) {
-        display: none !important;
-    }
+#main .share-topics-sticky {
+    position: sticky;
+    top: 64px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    /* Use margin instead of gap — flex gap is transparent and lets
+       scrolled content show through while sticky is stuck. */
+    gap: 0;
+    background-color: var(--brand-white);
+}
 
-    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
-        display: block !important;
-        width: 100%;
-        max-width: 100%;
-        overflow: visible;
+/* Fill the 64px sticky top gap so scrolled content doesn't show through */
+#main .share-topics-sticky::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: 64px;
+    background-color: var(--brand-white);
+    pointer-events: none;
+}
+
+#main .share-topics-sticky .section-title {
+    margin-bottom: 24px;
+}
+
+#main .share-topics-nav {
+    background-color: var(--brand-white);
+}
+
+#main #shareTab {
+    justify-content: flex-start;
+}
+
+#main #shareTab .nav-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Only the current section gets the green underline (not :hover/:focus) */
+#main #shareTab .nav-link:hover,
+#main #shareTab .nav-link:focus,
+#main #shareTab .nav-link:focus-visible {
+    color: var(--gray-700);
+    background: none;
+    border-color: transparent;
+    isolation: auto;
+}
+
+#main #shareTab .nav-link.active,
+#main #shareTab .nav-link.active:hover,
+#main #shareTab .nav-link.active:focus,
+#main #shareTab .nav-link.active:focus-visible {
+    color: var(--brand-black);
+    background: none;
+    border-color: transparent transparent var(--brand-primary);
+}
+
+#main #shareTab .nav-link:focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    #main #shareTab {
+        justify-content: center;
     }
 }
 
-#main .share-content #shareTabContent {
-    position: relative;
-    z-index: 1;
+#main .share-topics-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
     width: 100%;
-    overflow: visible;
+}
+
+#main .share-content .share-panel {
+    scroll-margin-top: var(--share-sticky-offset, 64px);
+}
+
+#main .share-panel-title {
+    margin-bottom: 0;
+    color: var(--brand-black);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.75;
 }
 
 /* Panel: picture + paragraphs + grid-container */
@@ -230,20 +322,6 @@
     #main .grid-container--cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-}
-
-#main .share-topics-accordion .share-panel {
-    padding: 16px;
-}
-
-#main .share-topics-accordion .share-panel-media {
-    margin: -16px -16px 0;
-    width: calc(100% + 32px);
-    max-width: none;
-}
-
-#main .share-topics-accordion .share-panel-media img {
-    border-radius: 0;
 }
 /* ========================================
    Section: donate-and-contact

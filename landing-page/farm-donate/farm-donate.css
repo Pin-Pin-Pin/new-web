@@ -150,7 +150,7 @@ img {
     max-width: 350px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .donation-plan .slogan-box {
         max-width: 570px;
     }

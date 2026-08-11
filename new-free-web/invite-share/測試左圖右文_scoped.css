@@ -1,0 +1,35 @@
+    #main <!-- 試用：<992 圖片右貼邊、文字置中；≥992 右緣對齊下方 section 的 container／.content-tab-text -->
+    <style>
+        /*
+          <992：沿用 share.css 主網 grid
+          - 文字在 col2（水平置中）
+          - 圖片 col2 / -1 向右貼齊螢幕邊緣
+        */
+        .invite-share .page-top-img-container {
+            grid-column: 2 / -1;
+            border-radius: 8px 0 0 8px;
+        }
+
+        /*
+          ≥992：圖片右緣對齊其他 section 的 .container 右緣
+          實際 content 寬 = min(content-max, 100% - 2*section-pad)，
+          避免 viewport 僅略大於 992 時仍用 content-max 造成偏右
+        */
+        @media (min-width: 992px) {
+            #main .invite-share .container.page-top-container {
+                --page-top-content-width: min(var(--content-max), calc(100% - 2 * var(--section-pad-x)));
+                align-items: center;
+                grid-template-columns:
+                    max(var(--section-pad-x), calc((100% - var(--content-max)) / 2))
+                    var(--page-top-text-width)
+                    40px
+                    minmax(0, calc(var(--page-top-content-width) - var(--page-top-text-width) - 40px))
+                    minmax(0, 1fr);
+            }
+
+            #main .invite-share .page-top-img-container {
+                grid-column: 4;
+                border-radius: 8px;
+            }
+        }
+    </style>

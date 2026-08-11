@@ -54,7 +54,7 @@ a:active {
         grid-template-columns: 1fr 1fr;
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .about .container {
         grid-template-columns: 1fr 596px; 
     }
@@ -97,12 +97,17 @@ a:active {
 
 @media screen and (min-width: 768px) {
     .slogan-box{
-        width: 760px;
+        width: 720px; /* 768–991 */
+    }
+}
+@media screen and (min-width: 992px) {
+    .slogan-box{
+        width: 960px; /* 992–1199 */
     }
 }
 @media screen and (min-width: 1200px) {
     .slogan-box{
-        width: 960px;
+        width: 984px; /* ≥1200 */
     }
 }
 /* ========================================

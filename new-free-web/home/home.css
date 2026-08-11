@@ -33,40 +33,40 @@ p {
 
 section,
 .section {
-    padding: 64px 24px;
+    padding: 64px 24px; /* 左右最小邊緣距 24 */
 }
 
 .container {
     display: flex;
     width: 100%;
-    max-width: 480px;
+    max-width: 100%; /* <576：同 BS／neti 滿寬 */
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
     padding-right: 0;
 }
 
-@media (min-width: 768px) {
-    section,
-    .section {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-
+@media (min-width: 576px) {
     .container {
-        max-width: 760px;
+        max-width: 540px; /* 576–767：BS sm */
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px; /* 768–991 */
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px; /* 992–1199 */
     }
 }
 
 @media (min-width: 1200px) {
-    section,
-    .section {
-        padding-left: 120px;
-        padding-right: 120px;
-    }
-
     .container {
-        max-width: 960px;
+        max-width: 984px; /* ≥1200 */
     }
 }
 

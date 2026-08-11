@@ -187,7 +187,7 @@
     object-position: top;
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 991.98px) {
     .content-tab-img img {
         aspect-ratio: 4/3;
     }
@@ -228,7 +228,7 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .content-tab-card {
         flex-direction: row;
     }

@@ -2,7 +2,7 @@
     background-color: var(--brand-background-green);
 
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     #main #about-us-ch .page-top-img-container {
       position: sticky;
       top: 24px;           /* 距視窗頂部的留白，依設計調整 */

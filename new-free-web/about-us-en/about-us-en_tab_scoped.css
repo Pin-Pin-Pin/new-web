@@ -1,29 +1,29 @@
-p{
+#main p{
     font-size:0.875rem;
     line-height:2;
 }
 /* ========================================
    Section: Our Approach
 ======================================== */
-#vision-approach{
+#main #vision-approach{
     background-color: var(--brand-background-green);
 }
 /* ========================================
    Section: Our Approach
 ======================================== */
-#approach-container{
+#main #approach-container{
     background-color: var(--brand-background-green);
 }
-#approach-container.container{
+#main #approach-container.container{
     flex-direction: column;
     gap: 24px;
 }
-#approach-container .content-container{
+#main #approach-container .content-container{
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
 }
-#approach-container .content-item{
+#main #approach-container .content-item{
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -32,128 +32,40 @@ p{
     min-width: 0;
 }
 @media (min-width: 768px) {
-    #approach-container .content-container{
+    #main #approach-container .content-container{
         grid-template-columns: repeat(3, 1fr);
     }
 }
-#approach-container .content-item-icon{
+#main #approach-container .content-item-icon{
     align-self: start;
 }
 /* ========================================
    Section: share-content
    Tab 導覽樣式以 share.css .content-tabs-* 為準，此處只放本頁覆寫
 ======================================== */
-.share-content {
+#main .share-content {
     padding-bottom: 80px;
 }
 
-.share-content .share-content-container {
+#main .share-content .share-content-container {
     flex-direction: column;
     align-items: stretch;
-    gap: 24px;
-}
-
-.section-title{
-    border-top: 2px solid var(--brand-dark-primary);
-}
-
-.share-content-title-mobile {
-    margin-bottom: 0;
-}
-
-/* Mobile (<768): accordion only / Desktop (≥768): sticky tabs only */
-.share-topics-tabs {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.share-topics-accordion {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    color: var(--black);
-}
-
-.share-topics-accordion .accordion-item {
-    border-radius: 8px;
-    border: 1px solid var(--brand-dark-primary);
-    overflow: hidden;
-}
-
-.share-topics-accordion .accordion-collapse {
-    min-height: 0;
-    overflow-anchor: none;
-}
-
-.share-topics-accordion .accordion-header {
-    margin-bottom: 0;
-    padding: 8px 16px;
-    transition: background-color 0.35s ease, color 0.35s ease;
-}
-
-.share-topics-accordion .accordion-header button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-    border: none;
-    background: none;
-    text-align: left;
-    color: var(--black);
-    transition: color 0.35s ease;
-    cursor: pointer;
-}
-
-.share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
-    background-color: var(--brand-dark-primary);
-    color: var(--white);
-}
-
-.share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
-    color: var(--white);
-}
-
-.share-topics-accordion .accordion-body {
-    padding: 0;
-    background-color: var(--white);
-    color: var(--black);
-}
-
-.share-topics-accordion .accordion-collapse.collapsing {
-    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.share-topics-accordion .share-panel {
     gap: 0;
 }
 
-.share-topics-accordion .share-panel-body {
-    padding: 24px 16px;
+#main .section-title{
+    border-top: 2px solid var(--brand-dark-primary);
 }
 
-@media (min-width: 768px) {
-    .share-content .share-content-container {
-        gap: 0;
-    }
-
-    .share-content-title-mobile {
-        display: none;
-    }
-
-    .share-topics-accordion {
-        display: none;
-    }
-
-    .share-topics-tabs {
-        display: flex;
-    }
+/* Sticky header: section title + tabs stay together with 24px gap */
+#main .share-topics-tabs {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.share-topics-sticky {
+#main .share-topics-sticky {
     position: sticky;
     top: 64px;
     z-index: 20;
@@ -166,7 +78,7 @@ p{
 }
 
 /* Fill the 64px sticky top gap so scrolled content doesn't show through */
-.share-topics-sticky::before {
+#main .share-topics-sticky::before {
     content: "";
     position: absolute;
     left: 0;
@@ -177,65 +89,65 @@ p{
     pointer-events: none;
 }
 
-.share-topics-sticky .section-title {
+#main .share-topics-sticky .section-title {
     margin-bottom: 24px;
 }
 
-.share-topics-nav {
+#main .share-topics-nav {
     background-color: var(--brand-white);
 }
 
-#shareTab {
+#main #shareTab {
     justify-content: flex-start;
 }
 
-#shareTab .nav-link {
+#main #shareTab .nav-link {
     text-decoration: none;
     cursor: pointer;
 }
 
 /* Only the current section gets the green underline (not :hover/:focus) */
-#shareTab .nav-link:hover,
-#shareTab .nav-link:focus,
-#shareTab .nav-link:focus-visible {
+#main #shareTab .nav-link:hover,
+#main #shareTab .nav-link:focus,
+#main #shareTab .nav-link:focus-visible {
     color: var(--gray-700);
     background: none;
     border-color: transparent;
     isolation: auto;
 }
 
-#shareTab .nav-link.active,
-#shareTab .nav-link.active:hover,
-#shareTab .nav-link.active:focus,
-#shareTab .nav-link.active:focus-visible {
+#main #shareTab .nav-link.active,
+#main #shareTab .nav-link.active:hover,
+#main #shareTab .nav-link.active:focus,
+#main #shareTab .nav-link.active:focus-visible {
     color: var(--brand-black);
     background: none;
     border-color: transparent transparent var(--brand-primary);
 }
 
-#shareTab .nav-link:focus-visible {
+#main #shareTab .nav-link:focus-visible {
     outline: 2px solid var(--brand-primary);
     outline-offset: 2px;
 }
 
 @media (min-width: 768px) {
-    #shareTab {
+    #main #shareTab {
         justify-content: center;
     }
 }
 
-.share-topics-stack {
+#main .share-topics-stack {
     display: flex;
     flex-direction: column;
     gap: 48px;
     width: 100%;
 }
 
-.share-content .share-panel {
+#main .share-content .share-panel {
     scroll-margin-top: var(--share-sticky-offset, 64px);
 }
 
-.share-panel-title {
+#main .share-panel-title {
     margin-bottom: 0;
     color: var(--brand-black);
     font-size: 18px;
@@ -244,24 +156,24 @@ p{
 }
 
 /* Panel: picture + paragraphs + grid-container */
-.share-panel {
+#main .share-panel {
     display: flex;
     flex-direction: column;
     gap: 24px;
     width: 100%;
 }
 
-.share-panel-media {
+#main .share-panel-media {
     width: 100%;
     overflow: hidden;
 }
 
-.share-panel-media picture {
+#main .share-panel-media picture {
     display: block;
     width: 100%;
 }
 
-.share-panel-media img {
+#main .share-panel-media img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -270,7 +182,7 @@ p{
     object-fit: cover;
 }
 
-.share-panel-body {
+#main .share-panel-body {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -278,75 +190,75 @@ p{
     overflow: visible;
 }
 
-.share-panel-body > p {
+#main .share-panel-body > p {
     margin-bottom: 0;
     overflow-wrap: break-word;
 }
 
-.share-achieved {
+#main .share-achieved {
     display: flex;
     flex-direction: column;
     gap: 24px;
     width: 100%;
 }
 
-.share-achieved-title {
+#main .share-achieved-title {
     margin-bottom: 0;
     font-weight: 700;
 }
 
-.grid-container {
+#main .grid-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
     width: 100%;
 }
 
-.grid-item {
+#main .grid-item {
     min-width: 0;
     padding: 24px;
     background-color: var(--brand-background-green);
     border-radius: 8px;
 }
 
-.grid-item p {
+#main .grid-item p {
     margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
-    .grid-container {
+    #main .grid-container {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     /* 2 或 4 個 items → 一列兩個 */
-    .grid-container--cols-2 {
+    #main .grid-container--cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 /* ========================================
    Section: donate-and-contact
 ======================================== */
-#donate-and-contact{
+#main #donate-and-contact{
     background-color: var(--brand-background-yellow);
 }
-.donation-box__paypal-form{
+#main .donation-box__paypal-form{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
 }
-.donation-box__paypal-field{
+#main .donation-box__paypal-field{
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 100%;
     max-width: 320px;
 }
-.donation-box__paypal-field label{
+#main .donation-box__paypal-field label{
     margin-bottom: 0;
     font-weight: 500;
 }
-.donation-box__paypal-form select{
+#main .donation-box__paypal-form select{
     min-height: 44px;
     width: 100%;
     max-width: 100%;
@@ -359,7 +271,7 @@ p{
     font-size: 0.875rem;
     cursor: pointer;
 }
-.donation-box__paypal-form input[type="image"]{
+#main .donation-box__paypal-form input[type="image"]{
     display: block;
     width: 146px;
     height: auto;

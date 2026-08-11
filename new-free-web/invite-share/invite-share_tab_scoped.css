@@ -3,11 +3,15 @@
 ======================================== */
 #main .share-content .share-content-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 24px;
 }
 
-/* Mobile (<768): accordion only / Desktop (≥768): tabs only */
+#main .share-content-title-mobile {
+    margin-bottom: 0;
+}
+
+/* Mobile (<768): accordion only / Desktop (≥768): sticky tabs only */
 #main .share-topics-tabs {
     display: none;
     width: 100%;
@@ -28,7 +32,7 @@
     border: 1px solid var(--brand-dark-primary);
     overflow: hidden;
 }
-/* flex item 預設 min-height:auto 會擋住 Bootstrap 收合到 height:0 */
+
 #main .share-topics-accordion .accordion-collapse {
     min-height: 0;
     overflow-anchor: none;
@@ -73,11 +77,54 @@
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+#main .share-topics-accordion .content-tab-card {
+    border-radius: 0;
+}
+
+#main .share-topics-sticky {
+    position: sticky;
+    top: 64px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    /* Use margin instead of gap — flex gap is transparent and lets
+       the green tab card show through while sticky is stuck. */
+    gap: 0;
+    background-color: var(--brand-white);
+}
+
+#main .share-topics-sticky::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: 64px;
+    background-color: var(--brand-white);
+    pointer-events: none;
+}
+
+#main .share-topics-sticky .section-title {
+    margin-bottom: 24px;
+}
+
+#main .share-topics-nav {
+    background-color: var(--brand-white);
+}
+
 #main #shareTab {
     justify-content: flex-start;
 }
 
 @media (min-width: 768px) {
+    #main .share-content .share-content-container {
+        gap: 0;
+    }
+
+    #main .share-content-title-mobile {
+        display: none;
+    }
+
     #main .share-topics-accordion {
         display: none;
     }
@@ -91,8 +138,8 @@
     }
 
     /* Equal-height panels: stack all panes in one grid cell.
-       Note: no Bootstrap .tab-content class — that rule uses display:none and would
-       remove inactive panes from height calculation. */
+       Overrides Bootstrap .tab-content > .tab-pane { display:none } so inactive
+       panes still contribute to height. */
     #main .share-content #shareTabContent.content-tabs-panels {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
@@ -100,6 +147,7 @@
     }
 
     #main .share-content #shareTabContent.content-tabs-panels > .tab-pane {
+        display: block;
         grid-column: 1;
         grid-row: 1;
         width: 100%;
@@ -127,9 +175,11 @@
     display: flex;
     flex-direction: column;
     border-radius: 8px;
+    overflow: hidden;
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    background-color: var(--brand-background-green);
 }
 
 #main .content-tab-text {
@@ -191,12 +241,6 @@
     #main .content-tab-img img {
         aspect-ratio: 4/3;
     }
-}
-
-/* Accordion card: no outer radius conflict with item border */
-#main .content-tab-card {
-    border-radius: 0;
-    background-color: var(--brand-background-green);
 }
 
 @media (min-width: 768px) {

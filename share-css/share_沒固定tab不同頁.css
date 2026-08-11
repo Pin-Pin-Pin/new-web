@@ -6,8 +6,8 @@
     line-height: 0;
 } */
 /* 以上debug */
-/* :root */
-#main
+:root
+/* #main */
  {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
@@ -39,51 +39,51 @@
     --page-top-img-max: 800px;
 }
 @media (min-width: 576px) {
-    /* :root */
-    #main
+    :root
+    /* #main */
     {
         --content-max: 540px; /* 576–767：BS sm */
     }
 }
 @media (min-width: 768px) {
-    /* :root */
-    #main
+    :root
+    /* #main */
     {
         --content-max: 720px; /* 768–991 */
     }
 }
 @media (min-width: 992px) {
-    /* :root */
-    #main
+    :root
+    /* #main */
     {
         --content-max: 960px; /* 992–1199 */
     }
 }
 @media (min-width: 1200px) {
-    /* :root */
-    #main
+    :root
+    /* #main */
     {
         --content-max: 984px; /* ≥1200 */
     }
 }
-#main .brand-dark-primary{
+.brand-dark-primary{
     color: var(--brand-dark-primary);
 }
-/* body */
-#main
+body
+/* #main */
 {
     color: var(--brand-black);
     font-family: "Noto Sans TC";
 }
-#main body{
+body{
     color: var(--brand-black);
     font-family: "Noto Sans TC";
 }
-#main section,#main .section {
+section,.section {
     padding: 64px var(--section-pad-x);
 }
 
-#main .container {
+.container {
     display: flex;
     width: 100%;
     max-width: var(--content-max);
@@ -93,14 +93,14 @@
     padding-right: 0;
 }
 /* 文字 */
-#main h1{
+h1{
     font-family: "Noto Sans TC";
     font-size: 3rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
 }
-#main h2,#main .h2{
+h2,.h2{
     font-family: "Noto Sans TC";
     font-size: 1.75rem;
     /* 28px */
@@ -108,7 +108,7 @@
     font-weight: 300;
     line-height: normal;
 }
-#main h3,#main .h3{
+h3,.h3{
     font-family: "Noto Sans TC";
     font-size: 1.25rem;
     /* 20px */
@@ -116,25 +116,25 @@
     font-weight: 500;
     line-height: normal;
 }
-#main h4,#main .h4{
+h4,.h4{
     font-family: "Noto Sans TC";
     font-size: 0.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
-#main p,#main .p,#main li{
+p,.p,li{
     font-family: "Noto Sans TC";
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5; 
 }
-#main ul li::marker{font-size: 0.625rem;}
-#main p:last-child,#main li:last-child,#main ol:last-child,#main ul:last-child{
+ul li::marker{font-size: 0.625rem;}
+p:last-child,li:last-child,ol:last-child,ul:last-child{
     margin-bottom: 0;
 }
-#main a{
+a{
     color: var(--brand-dark-primary);
     font-family: "Noto Sans TC";
     font-size: 1rem;
@@ -142,14 +142,14 @@
     font-weight: 400;
     line-height: 1.75;
 }
-#main .description{
+.description{
     font-family: "Noto Sans TC";
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.66667; 
 }
-#main .section-title {
+.section-title {
     font-weight: 700;
     display: inline-block; 
     width: fit-content;
@@ -159,34 +159,34 @@
     color: var(--brand-dark-primary);
     margin-bottom: 0;
 }
-#main .sections-container{
+.sections-container{
     display: flex;
     flex-direction: column;
     gap: 80px;
 }
-#main .sections-container .container{
+.sections-container .container{
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 /* 圖片 */
-#main picture{
+picture{
     display: block;
     max-width: 100%;
 }
-#main img{
+img{
     display: block;
     max-width: 100%;
     height: auto;
 }
-#main .bg {
+.bg {
     position: absolute;
     inset: 0;
     z-index: 0;
     display: block;
     pointer-events: none;
 }
-#main .bg img {
+.bg img {
     display: block;
     width: 100%;
     height: 100%;
@@ -195,17 +195,17 @@
     object-position: center top;
 }
 
-#main section:has(.bg) {
+section:has(.bg) {
     position: relative;
     overflow: hidden;
 }
 
-#main section:has(.bg) > .bg-uplayer {
+section:has(.bg) > .bg-uplayer {
     position: relative;
     z-index: 1;
 }
 /* 組件 */
-#main .btn{
+.btn{
     display: inline-flex;
     align-items: center;
     padding: 8px 8px 8px 12px;
@@ -214,39 +214,39 @@
 
 }
 /* 讓按鈕／手風琴 header 文字視覺上垂直置中（勿加在 button 本身，transform 易造成展開時頁面跳動） */
-#main .btn-label,
-#main .faq-question-label{
+.btn-label,
+.faq-question-label{
     display: inline-block;
     transform: translateY(-1px);
 }
-#main .btn-primary{
+.btn-primary{
     background-color: var(--brand-primary);
     color: var(--white);
     border: none;
 
 }
-#main .btn-primary:hover,#main .btn-primary:active,#main .btn-primary:focus{
+.btn-primary:hover,.btn-primary:active,.btn-primary:focus{
     background-color: var(--brand-dark-primary);
 }
-#main .btn-primary.btn-icon::after{
+.btn-primary.btn-icon::after{
     background-color: var(--white);
 }
-#main .btn-secondary{
+.btn-secondary{
     border: 1px solid var(--brand-primary);
     background-color: var(--white);
     color: var(--brand-black);
 }
-#main .btn-secondary:hover,#main .btn-secondary:active,#main .btn-secondary:focus{
+.btn-secondary:hover,.btn-secondary:active,.btn-secondary:focus{
     border: 1px solid var(--Brand-Primary, #35A97C);
     background-color: var(--gray-200);
     color: var(--brand-black);
 }
 
 /* Heroicons: arrow-top-right-on-square (outline) */
-#main .btn-icon{
+.btn-icon{
     line-height: 1;
 }
-#main .btn-icon::after {
+.btn-icon::after {
     align-self: center;
     content: "";
     display: inline-block;
@@ -256,13 +256,13 @@
     flex-shrink: 0;
     background-color: var(--brand-dark-primary);
 }
-#main .btn-icon-arrow-right-mini::after {
+.btn-icon-arrow-right-mini::after {
     -webkit-mask: var(--icon-arrow-right-mini) no-repeat center / contain;
     mask: var(--icon-arrow-right-mini) no-repeat center / contain;
     padding: 0;
 }
 
-#main .btn-icon-arrow-top-right::after {
+.btn-icon-arrow-top-right::after {
     -webkit-mask: var(--icon-arrow-top-right) no-repeat center / contain;
     mask: var(--icon-arrow-top-right) no-repeat center / contain;
 }
@@ -270,39 +270,39 @@
 
 
 /* faq */
-#main .accordion{
+.accordion{
     width: 100%;
 }
-#main .faq .accordion-item{
+.faq .accordion-item{
     border-radius: 8px;
     border: 1px solid var(--brand-dark-primary);
     overflow: hidden;
 }
 /* 手風琴共用：避免 flex min-height 擋收合、展開時 scroll anchoring 造成下滑 */
-#main .accordion .accordion-collapse{
+.accordion .accordion-collapse{
     min-height: 0;
     overflow-anchor: none;
 }
-#main .accordion-item:first-of-type {
+.accordion-item:first-of-type {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
-#main .faq .accordion-item:not(:first-of-type) {
+.faq .accordion-item:not(:first-of-type) {
     border-top: 1px solid var(--brand-dark-primary);
 }
-#main .faq .accordion-header {
+.faq .accordion-header {
     margin-bottom: 0;
     padding: 8px 16px;
     transition: background-color 0.35s ease, color 0.35s ease;
 }
-#main .faq .accordion-body{
+.faq .accordion-body{
     padding: 8px 16px;
     background-color: var(--white);
     color: var(--black);
     transition: opacity 0.3s ease;
 }
 
-#main .faq .accordion-header button {
+.faq .accordion-header button {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -313,7 +313,7 @@
 }
 
 /* 展開前：向下箭頭 */
-#main .accordion-header button.collapsed::after {
+.accordion-header button.collapsed::after {
     content: "";
     flex-shrink: 0;
     width: 1.5rem;
@@ -325,7 +325,7 @@
 }
 
 /* 展開後：向上箭頭 */
-#main .accordion-header button:not(.collapsed)::after {
+.accordion-header button:not(.collapsed)::after {
     content: "";
     flex-shrink: 0;
     width: 1.5rem;
@@ -334,47 +334,47 @@
     -webkit-mask: var(--icon-chevron-up) no-repeat center / contain;
     mask: var(--icon-chevron-up) no-repeat center / contain;
 }
-#main .faq .accordion-header button.collapsed {
+.faq .accordion-header button.collapsed {
     color: var(--black);
 }
-#main .faq .accordion-header:has(button:not(.collapsed)) {
+.faq .accordion-header:has(button:not(.collapsed)) {
     background-color: var(--brand-dark-primary);
     color: var(--white);
 }
 
-#main .faq .accordion-header:has(button:not(.collapsed)) button {
+.faq .accordion-header:has(button:not(.collapsed)) button {
     color: var(--white);
 }
 
-#main .faq .accordion-collapse.collapsing {
+.faq .accordion-collapse.collapsing {
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#main .faq .accordion-collapse:not(.show):not(.collapsing) .accordion-body {
+.faq .accordion-collapse:not(.show):not(.collapsing) .accordion-body {
     opacity: 0;
 }
-#main .faq .container{
+.faq .container{
     display: flex;
     flex-direction: column;
     gap:24px ;
     align-items: flex-start;
 }
-#main .faq .accordion{
+.faq .accordion{
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
-#main .faq p{
+.faq p{
     margin-bottom: 0;
 }
-#main .faq button{
+.faq button{
     padding: 0;
     align-items: center;
 }
 /* ========================================
    breadcrumb
 ======================================== */
-#main .breadcrumb{
+.breadcrumb{
     line-height: 1;
     display: inline-flex;
     flex-direction: row;
@@ -382,29 +382,29 @@
     gap: 8px;
     margin-bottom: 0;
 }
-#main .breadcrumb p,
-#main .breadcrumb .breadcrumb-separator,
-#main .breadcrumb .breadcrumb-current {
+.breadcrumb p,
+.breadcrumb .breadcrumb-separator,
+.breadcrumb .breadcrumb-current {
     font-size: 0.75rem;
     color: var(--gray-600);
     font-weight: 400;
     line-height: 1.25rem; 
     margin: 0;
 }
-#main .breadcrumb-home{
+.breadcrumb-home{
     display: inline-flex;
     align-items: center;
     text-decoration: none;
 }
-#main .breadcrumb-home:focus-visible {
+.breadcrumb-home:focus-visible {
     outline: 2px solid var(--brand-primary);
     outline-offset: 2px;
     border-radius: 2px;
 }
-#main .breadcrumb-home:focus:not(:focus-visible) {
+.breadcrumb-home:focus:not(:focus-visible) {
     outline: none;
 }
-#main .breadcrumb-home::before {
+.breadcrumb-home::before {
     content: "";
     display: inline-block;
     width: 0.8rem;
@@ -414,7 +414,7 @@
     mask: var(--icon-home-mini) no-repeat center / contain;
     background-color: var(--brand-dark-primary);
 }
-#main .breadcrumb-home:hover::before{
+.breadcrumb-home:hover::before{
     background-color: var(--brand-primary);
 }
 /* ========================================
@@ -422,11 +422,11 @@
    共用內容欄 grid：文字左緣對齊其他 section 的 .container；
    圖片可向右出血。左右 gutter 由 grid 第一／末欄承擔。
 ======================================== */
-#main section:has(.page-top-container){
+section:has(.page-top-container){
     padding-left: 0;
     padding-right: 0;
 }
-#main .container.page-top-container{
+.container.page-top-container{
     display: grid;
     width: 100%;
     max-width: none;
@@ -447,28 +447,28 @@
         min(var(--content-max), calc(100% - 2 * var(--section-pad-x)))
         minmax(0, 1fr);
 }
-#main .page-top-text-container{
+.page-top-text-container{
     grid-column: 2;
     display: flex;
     flex-direction: column;
     gap:24px;
     min-width: 0;
 }
-#main .page-top-text-group-2 h1{
+.page-top-text-group-2 h1{
     margin-bottom: 0;
 }
-#main .page-top-text-group-2 h2,
-#main .page-top-text-group-2 > .h3{
+.page-top-text-group-2 h2,
+.page-top-text-group-2 > .h3{
     margin-bottom: 0;
     color: var(--brand-dark-primary);
 }
-#main .page-top-text-group-2{
+.page-top-text-group-2{
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-#main .page-top-img-container{
+.page-top-img-container{
     grid-column: 2 / -1;
     width: 100%;
     max-width: 100%;
@@ -477,7 +477,7 @@
     border-radius:8px 0 0 8px ;
     overflow: hidden;
 }
-#main .page-top-img-container img{
+.page-top-img-container img{
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -485,7 +485,7 @@
     object-fit: cover;
 }
 @media (min-width: 992px) {
-    #main .container.page-top-container{
+    .container.page-top-container{
         align-items: start;
         /*
           1: 左 spacer（對齊主網）
@@ -501,10 +501,10 @@
             minmax(0, var(--page-top-img-max))
             minmax(0, 1fr);
     }
-    #main .page-top-text-container{
+    .page-top-text-container{
         grid-column: 2;
     }
-    #main .page-top-img-container{
+    .page-top-img-container{
         grid-column: 4;
     }
 }
@@ -512,12 +512,12 @@
    Component: cta-img-container
    圖片容器，圖片比例為 16:9
 ======================================== */
-#main .cta-img-container{
+.cta-img-container{
     width: 100%;
     max-width: 100%;
     min-width: 0;
 }
-#main .cta-img-container img{
+.cta-img-container img{
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -528,7 +528,7 @@
    Component: content-tabs
    Bootstrap Tab + 水平捲動導覽 + 下方內容面板
 ======================================== */
-#main .content-tabs-wrap {
+.content-tabs-wrap {
     position: relative;
     width: 100%;
     min-width: 0;
@@ -536,8 +536,8 @@
 
 /* Overflow arrows (PyMdown/Material alternate tabs pattern):
    show ‹ on the left / › on the right only when that side can still scroll. */
-#main .content-tabs-wrap::before,
-#main .content-tabs-wrap::after {
+.content-tabs-wrap::before,
+.content-tabs-wrap::after {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -555,7 +555,7 @@
     line-height: 1;
 }
 
-#main .content-tabs-wrap::before {
+.content-tabs-wrap::before {
     content: "‹";
     left: 0;
     justify-content: flex-start;
@@ -563,7 +563,7 @@
     background: linear-gradient(to right, var(--white) 55%, transparent);
 }
 
-#main .content-tabs-wrap::after {
+.content-tabs-wrap::after {
     content: "›";
     right: 0;
     justify-content: flex-end;
@@ -571,32 +571,32 @@
     background: linear-gradient(to left, var(--white) 55%, transparent);
 }
 
-#main .content-tabs-wrap.is-scrollable-left::before,
-#main .content-tabs-wrap.is-scrollable-right::after {
+.content-tabs-wrap.is-scrollable-left::before,
+.content-tabs-wrap.is-scrollable-right::after {
     opacity: 1;
     pointer-events: auto;
     cursor: pointer;
 }
 
 /* Backward-compatible class names used by older pages */
-#main .content-tabs-wrap.is-scrollable.is-scrolled-left::before {
+.content-tabs-wrap.is-scrollable.is-scrolled-left::before {
     opacity: 1;
     pointer-events: auto;
     cursor: pointer;
 }
 
-#main .content-tabs-wrap.is-scrollable:not(.is-scrolled-end)::after {
+.content-tabs-wrap.is-scrollable:not(.is-scrolled-end)::after {
     opacity: 1;
     pointer-events: auto;
     cursor: pointer;
 }
 
-#main .content-tabs-wrap.is-scrollable.is-scrolled-end::after {
+.content-tabs-wrap.is-scrollable.is-scrolled-end::after {
     opacity: 0;
     pointer-events: none;
 }
 
-#main .content-tabs-nav {
+.content-tabs-nav {
     gap: 16px;
     justify-content: flex-start;
     width: 100%;
@@ -610,17 +610,17 @@
     border-bottom: 1px solid var(--gray-400);
 }
 
-#main .content-tabs-nav::-webkit-scrollbar {
+.content-tabs-nav::-webkit-scrollbar {
     display: none;
 }
 
-#main .content-tabs-nav .nav-item {
+.content-tabs-nav .nav-item {
     flex-shrink: 0;
     scroll-snap-align: start;
     margin-bottom: 0;
 }
 
-#main .content-tabs-nav .nav-link {
+.content-tabs-nav .nav-link {
     margin: 0 0 -1px;
     padding: 8px 12px;
     border: none;
@@ -636,39 +636,39 @@
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-#main .content-tabs-nav .nav-link:hover,
-#main .content-tabs-nav .nav-link:focus {
+.content-tabs-nav .nav-link:hover,
+.content-tabs-nav .nav-link:focus {
     color: var(--gray-700);
     background: none;
     border-bottom-color: var(--brand-primary);
     isolation: auto;
 }
 
-#main .content-tabs-nav .nav-link.active {
+.content-tabs-nav .nav-link.active {
     color: var(--brand-black);
     background: none;
     border-bottom-color: var(--brand-primary);
 }
 
 /* Neutralize Bootstrap .nav-tabs defaults when combined with content-tabs-nav */
-#main .content-tabs-nav.nav-tabs {
+.content-tabs-nav.nav-tabs {
     border-bottom-color: var(--gray-400);
 }
 
-#main .content-tabs-nav.nav-tabs .nav-link {
+.content-tabs-nav.nav-tabs .nav-link {
     border: none;
     border-bottom: 2px solid transparent;
     border-radius: 0;
 }
 
-#main .content-tabs-nav.nav-tabs .nav-link:hover,
-#main .content-tabs-nav.nav-tabs .nav-link:focus,
-#main .content-tabs-nav.nav-tabs .nav-link.active {
+.content-tabs-nav.nav-tabs .nav-link:hover,
+.content-tabs-nav.nav-tabs .nav-link:focus,
+.content-tabs-nav.nav-tabs .nav-link.active {
     background: none;
     border-color: transparent transparent var(--brand-primary);
 }
 
-#main .content-tabs-panels {
+.content-tabs-panels {
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -677,41 +677,41 @@
 /* ========================================
    Section: landing page 外連
 ======================================== */
-#main .landing-page-container{
+.landing-page-container{
     display: grid;
     grid-template-columns: 1fr ; 
     gap: 40px;
 }
 @media (min-width: 768px) {
-    #main .landing-page-container{
+    .landing-page-container{
         grid-template-columns: repeat(2, 1fr);
     }
 }
-#main .landing-page-title{
+.landing-page-title{
     font-weight: 700;
 }
-#main .landing-page-text-container{
+.landing-page-text-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-#main .landing-page-text-container h2{
+.landing-page-text-container h2{
     margin-bottom: 16px;
 }
-#main .landing-page-text-container p{
+.landing-page-text-container p{
     margin-bottom: 24px;
 }
-#main .landing-page-container .btn{
+.landing-page-container .btn{
     width: fit-content;
 }
 /* ========================================
    Component: 其他元件
 ======================================== */
-#main .impact{
+.impact{
     padding: 24px;
     border-radius: 8px;
 }
-#main .impact-title{
+.impact-title{
     font-weight: 700;
     margin-bottom: 8px;
     color: var(--brand-dark-primary);
@@ -719,7 +719,7 @@
 /* ========================================
    Component:  
 ======================================== */
-#main .action-container{
+.action-container{
     display: grid;
      
 }
@@ -727,7 +727,7 @@
 /* ========================================
    Component: donation-box（捐款表單）
 ======================================== */
-#main .donation-box{
+.donation-box{
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -735,11 +735,11 @@
     background-color: var(--white);
     border-radius: 4px;
 }
-#main .donation-box__title{
+.donation-box__title{
     color: var(--brand-black);
     margin-bottom: 8px !important;
 }
-#main .donation-box__tabs{
+.donation-box__tabs{
     display: flex;
     width: 100%;
     margin-bottom: 24px;
@@ -747,7 +747,7 @@
     border-radius: 4px;
     overflow: hidden;
 }
-#main .donation-box__tab{
+.donation-box__tab{
     flex: 1 1 0;
     /* min-height: 44px; */
     padding: 8px 12px;
@@ -758,40 +758,40 @@
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-#main .donation-box__tab:last-child{
+.donation-box__tab:last-child{
     border-right: none;
 }
-#main .donation-box__tab.is-active{
+.donation-box__tab.is-active{
     background-color: var(--brand-primary);
     color: var(--white);
 }
-#main .donation-box__tab:focus-visible{
+.donation-box__tab:focus-visible{
     outline: 2px solid var(--brand-dark-primary);
     outline-offset: -2px;
     z-index: 1;
 }
-#main .donation-box__tab:focus:not(:focus-visible){
+.donation-box__tab:focus:not(:focus-visible){
     outline: none;
 }
-#main .donation-box__panel{
+.donation-box__panel{
     display: flex;
     flex-direction: column;
     gap: 0;
     margin-bottom: 24px;
 }
-#main .donation-box__subtitle{
+.donation-box__subtitle{
     color: var(--brand-dark-primary);
     margin-bottom: 8px !important;
 }
-#main .donation-box__amount-list{
+.donation-box__amount-list{
     display: flex;
     flex-direction: column;
     margin-bottom: 24px;
 }
-#main .donation-box__amount-list > li:not(:last-child){
+.donation-box__amount-list > li:not(:last-child){
     border-bottom: 1px solid var(--gray-400);
 }
-#main .donation-box__amount-option{
+.donation-box__amount-option{
     display: flex;
     align-items: center;
     gap: 16px;
@@ -802,28 +802,28 @@
     text-align: left;
     cursor: pointer;
 }
-#main .donation-box__amount-option:focus-visible{
+.donation-box__amount-option:focus-visible{
     outline: 2px solid var(--brand-primary);
     outline-offset: 2px;
     border-radius: 4px;
 }
-#main .donation-box__amount-option:focus:not(:focus-visible){
+.donation-box__amount-option:focus:not(:focus-visible){
     outline: none;
 }
-#main .donation-box__amount-value{
+.donation-box__amount-value{
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     width: 72px;
 }
-#main .donation-box__currency{
+.donation-box__currency{
     font-family: "Noto Sans TC", sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1.5;
     color: var(--gray-600);
 }
-#main .donation-box__number{
+.donation-box__number{
     font-family: "Noto Sans TC", sans-serif;
     font-size: 2rem;
     font-weight: 500;
@@ -831,22 +831,22 @@
     color: var(--brand-black);
     transition: color 0.2s ease;
 }
-#main .donation-box__amount-option.is-active .donation-box__number{
+.donation-box__amount-option.is-active .donation-box__number{
     color: var(--brand-primary);
 }
-#main .donation-box__amount-desc{
+.donation-box__amount-desc{
     font-family: "Noto Sans TC", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: var(--brand-black);
 }
-#main .donation-box__custom{
+.donation-box__custom{
     display: flex;
     align-items: center;
     gap: 8px;
 }
-#main .donation-box__custom-label{
+.donation-box__custom-label{
     flex-shrink: 0;
     margin-bottom: 0;
     font-family: "Noto Sans TC", sans-serif;
@@ -855,7 +855,7 @@
     line-height: 1.5;
     color: var(--brand-dark-primary);
 }
-#main .donation-box__custom-input{
+.donation-box__custom-input{
     flex: 1 1 0;
     min-width: 0;
     min-height: 44px;
@@ -869,14 +869,14 @@
     font-weight: 400;
     line-height: 1.5;
 }
-#main .donation-box__custom-input::placeholder{
+.donation-box__custom-input::placeholder{
     color: var(--gray-600);
 }
-#main .donation-box__custom-input:focus{
+.donation-box__custom-input:focus{
     outline: none;
     border-color: var(--brand-primary);
 }
-#main .donation-box__submit{
+.donation-box__submit{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -885,7 +885,7 @@
     padding: 12px 16px;
     border-radius: 4px;
 }
-#main .donation-box__submit.btn-primary.btn-icon::after{
+.donation-box__submit.btn-primary.btn-icon::after{
     background-color: var(--white);
 }
 
