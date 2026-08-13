@@ -1,8 +1,8 @@
 <body>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.7/share-css/share_scoped.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.7/new-free-web/about-us-en/about-us-en_scoped.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.7/share-css/fix.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.9/share-css/share_scoped.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.9/new-free-web/about-us-en/about-us-en_scoped.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.9/share-css/fix.css">
 <section>
         <div class="container page-top-container">
             <div class="page-top-text-container">
@@ -28,9 +28,9 @@
                             https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-top-hero-800.webp 800w
                         "
                         sizes="
-                            (min-width: 1200px) 640px,
+                            (min-width: 992px) 640px,
                             (min-width: 768px) 800px,
-                            min(calc(100vw - 24px),480px)
+                            min(calc(100vw - 48px), 540px)
                         "
                     >
                 
@@ -42,9 +42,9 @@
                             https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-top-hero-1600.jpg 1600w
                         "
                         sizes="
-                            (min-width: 1200px) 640px,
+                            (min-width: 992px) 640px,
                             (min-width: 768px) 800px,
-                            min(calc(100vw - 24px),480px)
+                            min(calc(100vw - 48px), 540px)
                         "
                         width="16"
                         height="9"
@@ -96,16 +96,233 @@
     </section>
     <section class="share-content" id="share-content">
         <div class="container share-content-container">
-            <h2 class="h3 section-title">Taiwan's Environmental Challenges & What We Do</h2>
+            <h2 class="h3 section-title share-content-title-mobile">Taiwan's Environmental Challenges & What We Do</h2>
 
-            <div class="share-topics-accordion accordion" id="shareTopicsAccordion"></div>
-
-            <div class="share-topics-tabs">
-                <div class="share-panel-media" id="shareTabMedia"></div>
-                <div class="content-tabs-wrap">
-                    <ul class="nav content-tabs-nav flex-nowrap" id="shareTab" role="tablist" aria-label="Share content topics"></ul>
+            <!-- Mobile (<768): static accordion -->
+            <div class="share-topics-accordion accordion" id="shareTopicsAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="share-heading-1">
+                        <button id="share-acc-btn-1" aria-controls="share-collapse-1" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-1" data-bs-toggle="collapse" type="button"><span class="faq-question-label">Restoring Land Order</span></button>
+                    </h3>
+                    <div aria-labelledby="share-acc-btn-1" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-1">
+                        <div class="accordion-body">
+                            <div class="share-panel">
+                                <div class="share-panel-media">
+                                    <picture>
+                                        <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-800.webp 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-1600.webp 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))">
+                                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-800.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-800.jpg 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-1600.jpg 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))" width="16" height="9" alt="An illustrative scene: Excavators are digging into a mountain, factories are belching white smoke and discharging wastewater onto farmland, and a hotel has been built on the beach. A pair of hands is placing the forest and the coastline back onto the land." decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="share-panel-body">
+                                    <p>Taiwan confronts the scars left on the land by inadequate legal frameworks and political-economic interests: from illegal factories on farmlands and outdated mining operations in mountains, to large-scale tourism developments and energy facilities on coasts and in forests that ignore local autonomy. Our goal is to end the reckless plundering of national land and rebuild a new order of land governance that respects ecological boundaries, social justice, and local sovereignty.</p>
+                                    <div class="share-achieved">
+                                        <h4 class="share-achieved-title p">What we achieved</h4>
+                                        <div class="grid-container">
+                                            <div class="grid-item"><p>We have prevented tens of thousands of hectares of deforestation in Taiwan and preserved large areas of precious farmland, coasts, and wetlands.</p></div>
+                                            <div class="grid-item"><p>In collaboration with NGOs and legislators, the Mining Act was finally amended in 2023, marking the most significant mining reform in Taiwan in 20 years. During the 7 years of pushing the act, we also facilitated the government's reclamation of 96 mining rights, covering a total area of 16,073 hectares.</p></div>
+                                            <div class="grid-item"><p>Together with g0v, we developed the “Illegal Factory on Farmland Reporting System," which offers a user-friendly interface and allows anonymous reporting. With the system, we collected 1,546 cases and reported over 500 illegal factories on farmland, leading to the demolition of 11 illegal factories.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="content-tabs-panels" id="shareTabContent"></div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="share-heading-2">
+                        <button id="share-acc-btn-2" aria-controls="share-collapse-2" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-2" data-bs-toggle="collapse" type="button"><span class="faq-question-label">Transforming Polluted Realities</span></button>
+                    </h3>
+                    <div aria-labelledby="share-acc-btn-2" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-2">
+                        <div class="accordion-body">
+                            <div class="share-panel">
+                                <div class="share-panel-media">
+                                    <picture>
+                                        <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-800.webp 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-1600.webp 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))">
+                                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-800.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-800.jpg 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-1600.jpg 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))" width="16" height="9" alt="A pair of hands holds a ball; beneath it lies a gray industrial zone filled with smokestacks, while above, a girl smiles as she gazes out the window at solar panels, wind turbines, and rare birds and butterflies." loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="share-panel-body">
+                                    <p>We reject the outdated narrative that development inevitably brings pollution, dedicating ourselves to dismantling the environmental burdens imposed by aging industries and industrial expansion. We monitor the environmental commitments of the petrochemical, steel, and semiconductor industries, exposing the hidden air, water, and social costs behind corporate profits. Through requiring the government to ensure information transparency, enforce strict regulations, enhance monitoring, and present accurate pollution data, we aim to transform the daily lives of those trapped in sacrifice zones. We strive to restore the right to a clean environment for communities long plagued by pollution, ensuring that corporations take on their rightful environmental and social responsibilities during industrial transitions, returning to all citizens the dignity of breathing and living with peace of mind.</p>
+                                    <div class="share-achieved">
+                                        <h4 class="share-achieved-title p">What we achieved</h4>
+                                        <div class="grid-container grid-container--cols-2">
+                                            <div class="grid-item"><p>We have successfully fought for the closure of CPC’s No. 5 Naphtha Cracker. We opposed the expansion of the No. 3 cracker in Linyuan and supervising it.</p></div>
+                                            <div class="grid-item"><p>We stopped two coal-fired units at Dalin Power Plant and ended coal-burning at the aging Southeast Cement Plant.</p></div>
+                                            <div class="grid-item"><p>We have also advocated for air quality index reform, air pollution caps, and reducing the transmission of electricity from south to north during periods of heavy air pollution.</p></div>
+                                            <div class="grid-item"><p>We have exposed and monitored water pollution by companies such as Formosa Plastics and ASE Group in the Houjin River, and AU Optronics and Chunghwa Picture Tubes in the Shiao-Li River, successfully pushing for the amendment of regulatory laws.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="share-heading-3">
+                        <button id="share-acc-btn-3" aria-controls="share-collapse-3" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-3" data-bs-toggle="collapse" type="button"><span class="faq-question-label">Rethinking Energy</span></button>
+                    </h3>
+                    <div aria-labelledby="share-acc-btn-3" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-3">
+                        <div class="accordion-body">
+                            <div class="share-panel">
+                                <div class="share-panel-media">
+                                    <picture>
+                                        <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-800.webp 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-1600.webp 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))">
+                                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-800.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-800.jpg 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-1600.jpg 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))" width="16" height="9" alt="Illustrative image: A pair of hands is attempting to untie a knot. The part of the knot yet to be untied consists of factory chimneys, while the part already undone features farmland and solar panels. Farmers are tending their fields and fishermen are casting their nets, with rare birds hunting nearby." loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="share-panel-body">
+                                    <p>We advocate that the energy transition must encompass more than mere technological shifts; it requires a profound social deliberation on democratic participation and ecological balance. While combatting the climate crisis and moving toward a net-zero future, we monitor the quality of renewable energy development, opposing chaotic solar deployments that sacrifice food security and wildlife habitats. By pushing for the legalization of rooftop solar, we bring energy back to everyday life. Simultaneously, we monitor generational safety following nuclear decommissioning and establish a transparent, accountable pathway for energy governance, ensuring that Taiwan's pursuit of energy autonomy upholds environmental justice and social democracy.</p>
+                                    <div class="share-achieved">
+                                        <h4 class="share-achieved-title p">What we achieved</h4>
+                                        <div class="grid-container">
+                                            <div class="grid-item"><p>We facilitated the Environmental and Social Check Process for solar fish farms and the ecological compensation plan for the solar fish farm area in Tainan.</p></div>
+                                            <div class="grid-item"><p>We prompted the Executive Yuan to increase the 2025 rooftop PV target from 6GW to 8GW and facilitated the regulation of rooftop PV proportions for new factories in industrial areas.</p></div>
+                                            <div class="grid-item"><p>We contributed to the passage of the "Renewable Energy Development Act," which mandates the installation of solar panels in new, expanded, and renovated buildings.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="share-heading-4">
+                        <button id="share-acc-btn-4" aria-controls="share-collapse-4" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-4" data-bs-toggle="collapse" type="button"><span class="faq-question-label">Intergenerational Justice and Equitable Development</span></button>
+                    </h3>
+                    <div aria-labelledby="share-acc-btn-4" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-4">
+                        <div class="accordion-body">
+                            <div class="share-panel">
+                                <div class="share-panel-media">
+                                    <picture>
+                                        <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-800.webp 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-1600.webp 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))">
+                                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-800.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-800.jpg 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-1600.jpg 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))" width="16" height="9" alt="Illustrative image: A pair of hands cradling a beautiful seaside scene featuring distant mountains; a mother riding a bicycle with a child; people holding up an anti-nuclear banner while speaking out; a person casting a ballot into a ballot box; a person planting a seed." loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="share-panel-body">
+                                    <p>We oppose development driven by short-term interests and safeguard the land's capacity for future choices. We intervene in major decisions made in the name of economic growth that could irreversibly restrict the living space of future generations—such as large-scale tourism developments, water resource disputes, and cultural heritage conflicts—to ensure that resources are not monopolized by specific interest groups. We defend the rights of local communities to participate in development decisions and deliberate on the fairness of resource allocation amid the challenges of climate change. This is a process of preserving a fair, diverse, and dignified living environment for the next generation, free from the erosion of contemporary hegemonic interests.</p>
+                                    <div class="share-achieved">
+                                        <h4 class="share-achieved-title p">What we achieved</h4>
+                                        <div class="grid-container grid-container--cols-2">
+                                            <div class="grid-item"><p>Together with society, we facilitated Taiwan’s 2025 plan for a low-carbon and nuclear-free energy transition and helped halt the construction of the Lungmen Nuclear Power Plant.</p></div>
+                                            <div class="grid-item"><p>We have strived to integrate indigenous and local cultures and drive homeland and resource sustainability by influencing upper-level spatial planning and industrial systems.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop (≥768): sticky tabs + scroll stack -->
+            <div class="share-topics-tabs">
+                <div class="share-topics-sticky">
+                    <h2 class="h3 section-title">Taiwan's Environmental Challenges & What We Do</h2>
+                    <nav class="content-tabs-wrap share-topics-nav" aria-label="Topics in this section">
+                        <ul class="nav nav-tabs content-tabs-nav flex-nowrap" id="shareTab">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#restoring-land-order" data-topic-index="0" aria-current="true">Restoring Land Order</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#transforming-polluted-realities" data-topic-index="1">Transforming Polluted Realities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#rethinking-energy" data-topic-index="2">Rethinking Energy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#intergenerational-justice" data-topic-index="3">Intergenerational Justice and Equitable Development</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="share-topics-stack" id="shareTopicsStack">
+                    <article class="share-panel" id="restoring-land-order" data-topic-index="0">
+                        <h3 class="share-panel-title h4">Restoring Land Order</h3>
+                        <div class="share-panel-media">
+                            <picture>
+                                <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-800.webp 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-1600.webp 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))">
+                                <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-800.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-800.jpg 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-1-1600.jpg 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))" width="16" height="9" alt="An illustrative scene: Excavators are digging into a mountain, factories are belching white smoke and discharging wastewater onto farmland, and a hotel has been built on the beach. A pair of hands is placing the forest and the coastline back onto the land." decoding="async">
+                            </picture>
+                        </div>
+                        <div class="share-panel-body">
+                            <p>Taiwan confronts the scars left on the land by inadequate legal frameworks and political-economic interests: from illegal factories on farmlands and outdated mining operations in mountains, to large-scale tourism developments and energy facilities on coasts and in forests that ignore local autonomy. Our goal is to end the reckless plundering of national land and rebuild a new order of land governance that respects ecological boundaries, social justice, and local sovereignty.</p>
+                            <div class="share-achieved">
+                                <h4 class="share-achieved-title p">What we achieved</h4>
+                                <div class="grid-container">
+                                    <div class="grid-item"><p>We have prevented tens of thousands of hectares of deforestation in Taiwan and preserved large areas of precious farmland, coasts, and wetlands.</p></div>
+                                    <div class="grid-item"><p>In collaboration with NGOs and legislators, the Mining Act was finally amended in 2023, marking the most significant mining reform in Taiwan in 20 years. During the 7 years of pushing the act, we also facilitated the government's reclamation of 96 mining rights, covering a total area of 16,073 hectares.</p></div>
+                                    <div class="grid-item"><p>Together with g0v, we developed the “Illegal Factory on Farmland Reporting System," which offers a user-friendly interface and allows anonymous reporting. With the system, we collected 1,546 cases and reported over 500 illegal factories on farmland, leading to the demolition of 11 illegal factories.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="share-panel" id="transforming-polluted-realities" data-topic-index="1">
+                        <h3 class="share-panel-title h4">Transforming Polluted Realities</h3>
+                        <div class="share-panel-media">
+                            <picture>
+                                <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-800.webp 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-1600.webp 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))">
+                                <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-800.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-800.jpg 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-2-1600.jpg 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))" width="16" height="9" alt="A pair of hands holds a ball; beneath it lies a gray industrial zone filled with smokestacks, while above, a girl smiles as she gazes out the window at solar panels, wind turbines, and rare birds and butterflies." loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="share-panel-body">
+                            <p>We reject the outdated narrative that development inevitably brings pollution, dedicating ourselves to dismantling the environmental burdens imposed by aging industries and industrial expansion. We monitor the environmental commitments of the petrochemical, steel, and semiconductor industries, exposing the hidden air, water, and social costs behind corporate profits. Through requiring the government to ensure information transparency, enforce strict regulations, enhance monitoring, and present accurate pollution data, we aim to transform the daily lives of those trapped in sacrifice zones. We strive to restore the right to a clean environment for communities long plagued by pollution, ensuring that corporations take on their rightful environmental and social responsibilities during industrial transitions, returning to all citizens the dignity of breathing and living with peace of mind.</p>
+                            <div class="share-achieved">
+                                <h4 class="share-achieved-title p">What we achieved</h4>
+                                <div class="grid-container grid-container--cols-2">
+                                    <div class="grid-item"><p>We have successfully fought for the closure of CPC’s No. 5 Naphtha Cracker. We opposed the expansion of the No. 3 cracker in Linyuan and supervising it.</p></div>
+                                    <div class="grid-item"><p>We stopped two coal-fired units at Dalin Power Plant and ended coal-burning at the aging Southeast Cement Plant.</p></div>
+                                    <div class="grid-item"><p>We have also advocated for air quality index reform, air pollution caps, and reducing the transmission of electricity from south to north during periods of heavy air pollution.</p></div>
+                                    <div class="grid-item"><p>We have exposed and monitored water pollution by companies such as Formosa Plastics and ASE Group in the Houjin River, and AU Optronics and Chunghwa Picture Tubes in the Shiao-Li River, successfully pushing for the amendment of regulatory laws.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="share-panel" id="rethinking-energy" data-topic-index="2">
+                        <h3 class="share-panel-title h4">Rethinking Energy</h3>
+                        <div class="share-panel-media">
+                            <picture>
+                                <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-800.webp 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-1600.webp 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))">
+                                <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-800.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-800.jpg 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-3-1600.jpg 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))" width="16" height="9" alt="Illustrative image: A pair of hands is attempting to untie a knot. The part of the knot yet to be untied consists of factory chimneys, while the part already undone features farmland and solar panels. Farmers are tending their fields and fishermen are casting their nets, with rare birds hunting nearby." loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="share-panel-body">
+                            <p>We advocate that the energy transition must encompass more than mere technological shifts; it requires a profound social deliberation on democratic participation and ecological balance. While combatting the climate crisis and moving toward a net-zero future, we monitor the quality of renewable energy development, opposing chaotic solar deployments that sacrifice food security and wildlife habitats. By pushing for the legalization of rooftop solar, we bring energy back to everyday life. Simultaneously, we monitor generational safety following nuclear decommissioning and establish a transparent, accountable pathway for energy governance, ensuring that Taiwan's pursuit of energy autonomy upholds environmental justice and social democracy.</p>
+                            <div class="share-achieved">
+                                <h4 class="share-achieved-title p">What we achieved</h4>
+                                <div class="grid-container">
+                                    <div class="grid-item"><p>We facilitated the Environmental and Social Check Process for solar fish farms and the ecological compensation plan for the solar fish farm area in Tainan.</p></div>
+                                    <div class="grid-item"><p>We prompted the Executive Yuan to increase the 2025 rooftop PV target from 6GW to 8GW and facilitated the regulation of rooftop PV proportions for new factories in industrial areas.</p></div>
+                                    <div class="grid-item"><p>We contributed to the passage of the "Renewable Energy Development Act," which mandates the installation of solar panels in new, expanded, and renovated buildings.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="share-panel" id="intergenerational-justice" data-topic-index="3">
+                        <h3 class="share-panel-title h4">Intergenerational Justice and Equitable Development</h3>
+                        <div class="share-panel-media">
+                            <picture>
+                                <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-800.webp 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-1600.webp 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))">
+                                <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-800.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-800.jpg 800w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260731-topic-4-1600.jpg 1600w" sizes="(min-width: 1200px) min(984px, calc(100vw - 48px)), (min-width: 992px) min(960px, calc(100vw - 48px)), (min-width: 768px) min(720px, calc(100vw - 48px)), min(540px, calc(100vw - 48px))" width="16" height="9" alt="Illustrative image: A pair of hands cradling a beautiful seaside scene featuring distant mountains; a mother riding a bicycle with a child; people holding up an anti-nuclear banner while speaking out; a person casting a ballot into a ballot box; a person planting a seed." loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="share-panel-body">
+                            <p>We oppose development driven by short-term interests and safeguard the land's capacity for future choices. We intervene in major decisions made in the name of economic growth that could irreversibly restrict the living space of future generations—such as large-scale tourism developments, water resource disputes, and cultural heritage conflicts—to ensure that resources are not monopolized by specific interest groups. We defend the rights of local communities to participate in development decisions and deliberate on the fairness of resource allocation amid the challenges of climate change. This is a process of preserving a fair, diverse, and dignified living environment for the next generation, free from the erosion of contemporary hegemonic interests.</p>
+                            <div class="share-achieved">
+                                <h4 class="share-achieved-title p">What we achieved</h4>
+                                <div class="grid-container grid-container--cols-2">
+                                    <div class="grid-item"><p>Together with society, we facilitated Taiwan’s 2025 plan for a low-carbon and nuclear-free energy transition and helped halt the construction of the Lungmen Nuclear Power Plant.</p></div>
+                                    <div class="grid-item"><p>We have strived to integrate indigenous and local cultures and drive homeland and resource sustainability by influencing upper-level spatial planning and industrial systems.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
@@ -154,301 +371,147 @@
 
     </section>
 <script type="text/javascript">
-        var IMAGE_BASE = 'https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/';
-        var shareTopicsMq = window.matchMedia('(min-width: 768px)');
-        var shareTopicsMode = null;
-        var shareTabScrollInited = false;
-
-        function escapeHtml(text) {
-            return String(text)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;');
-        }
-
-        function buildSharePictureHtml(image, loading) {
-            var slug = image.slug;
-            var webp800 = IMAGE_BASE + slug + '-800.webp';
-            var webp1600 = IMAGE_BASE + slug + '-1600.webp';
-            var jpg800 = IMAGE_BASE + slug + '-800.jpg';
-            var jpg1600 = IMAGE_BASE + slug + '-1600.jpg';
-            var sizes = '(min-width: 1200px) min(960px, calc(100vw - 80px)), (min-width: 768px) min(720px, calc(100vw - 80px)), min(480px, calc(100vw - 24px))';
-            // Accordion panels are display:none when collapsed — skip lazy there.
-            var loadingAttr = loading === 'lazy' ? ' loading="lazy"' : '';
-
-            return (
-                '<picture>' +
-                    '<source type="image/webp" srcset="' + webp800 + ' 800w, ' + webp1600 + ' 1600w" sizes="' + sizes + '">' +
-                    '<img' +
-                        ' src="' + jpg800 + '"' +
-                        ' srcset="' + jpg800 + ' 800w, ' + jpg1600 + ' 1600w"' +
-                        ' sizes="' + sizes + '"' +
-                        ' width="16" height="9"' +
-                        ' alt="' + escapeHtml(image.alt || '') + '"' +
-                        loadingAttr +
-                        ' decoding="async"' +
-                    '>' +
-                '</picture>'
-            );
-        }
-
-        function buildParagraphsHtml(paragraphs) {
-            return (paragraphs || []).map(function (paragraph) {
-                return '<p>' + escapeHtml(paragraph) + '</p>';
-            }).join('');
-        }
-
-        function buildGridHtml(items) {
-            var count = items && items.length ? items.length : 0;
-            var colsClass = (count === 2 || count === 4) ? ' grid-container--cols-2' : '';
-            var gridInner = !count
-                ? ''
-                : items.map(function (item) {
-                    return '<div class="grid-item"><p>' + escapeHtml(item) + '</p></div>';
-                }).join('');
-
-            return (
-                '<div class="share-achieved">' +
-                    '<h3 class="share-achieved-title p">What we achieved</h3>' +
-                    '<div class="grid-container' + colsClass + '">' + gridInner + '</div>' +
-                '</div>'
-            );
-        }
-
-        function buildSharePanelBodyHtml(item) {
-            return (
-                '<div class="share-panel-body">' +
-                    buildParagraphsHtml(item.paragraphs) +
-                    buildGridHtml(item.gridItems) +
-                '</div>'
-            );
-        }
-
-        function buildSharePanelHtml(item) {
-            return (
-                '<div class="share-panel">' +
-                    '<div class="share-panel-media">' + buildSharePictureHtml(item.image) + '</div>' +
-                    buildSharePanelBodyHtml(item) +
-                '</div>'
-            );
-        }
-
-        function updateShareTabMedia(index) {
-            var media = document.getElementById('shareTabMedia');
-            var item = shareContentData[index];
-            if (!media || !item) return;
-            media.innerHTML = buildSharePictureHtml(item.image, 'lazy');
-        }
-
-        var shareContentData = [
-            {
-                title: 'Restoring Land Order',
-                image: {
-                    slug: '20260731-topic-1',
-                    alt: 'An illustrative scene: Excavators are digging into a mountain, factories are belching white smoke and discharging wastewater onto farmland, and a hotel has been built on the beach. A pair of hands is placing the forest and the coastline back onto the land.'
-                },
-                paragraphs: [
-                    'Taiwan confronts the scars left on the land by inadequate legal frameworks and political-economic interests: from illegal factories on farmlands and outdated mining operations in mountains, to large-scale tourism developments and energy facilities on coasts and in forests that ignore local autonomy. Our goal is to end the reckless plundering of national land and rebuild a new order of land governance that respects ecological boundaries, social justice, and local sovereignty.'
-                ],
-                gridItems: [
-                    'We have prevented tens of thousands of hectares of deforestation in Taiwan and preserved large areas of precious farmland, coasts, and wetlands.',
-                    'In collaboration with NGOs and legislators, the Mining Act was finally amended in 2023, marking the most significant mining reform in Taiwan in 20 years. During the 7 years of pushing the act, we also facilitated the government\'s reclamation of 96 mining rights, covering a total area of 16,073 hectares.',
-                    'Together with g0v, we developed the “Illegal Factory on Farmland Reporting System," which offers a user-friendly interface and allows anonymous reporting. With the system, we collected 1,546 cases and reported over 500 illegal factories on farmland, leading to the demolition of 11 illegal factories.'
-                    
-                ]
-            },
-            {
-                title: 'Transforming Polluted Realities',
-                image: {
-                    slug: '20260731-topic-2',
-                    alt: 'A pair of hands holds a ball; beneath it lies a gray industrial zone filled with smokestacks, while above, a girl smiles as she gazes out the window at solar panels, wind turbines, and rare birds and butterflies.'
-                },
-                paragraphs: [
-                    'We reject the outdated narrative that development inevitably brings pollution, dedicating ourselves to dismantling the environmental burdens imposed by aging industries and industrial expansion. We monitor the environmental commitments of the petrochemical, steel, and semiconductor industries, exposing the hidden air, water, and social costs behind corporate profits. Through requiring the government to ensure information transparency, enforce strict regulations, enhance monitoring, and present accurate pollution data, we aim to transform the daily lives of those trapped in sacrifice zones. We strive to restore the right to a clean environment for communities long plagued by pollution, ensuring that corporations take on their rightful environmental and social responsibilities during industrial transitions, returning to all citizens the dignity of breathing and living with peace of mind.'
-                ],
-                gridItems: [
-                    'We have successfully fought for the closure of CPC’s No. 5 Naphtha Cracker. We opposed the expansion of the No. 3 cracker in Linyuan and supervising it.',
-                    'We stopped two coal-fired units at Dalin Power Plant and ended coal-burning at the aging Southeast Cement Plant.',
-                    'We have also advocated for air quality index reform, air pollution caps, and reducing the transmission of electricity from south to north during periods of heavy air pollution.',
-                    'We have exposed and monitored water pollution by companies such as Formosa Plastics and ASE Group in the Houjin River, and AU Optronics and Chunghwa Picture Tubes in the Shiao-Li River, successfully pushing for the amendment of regulatory laws.'
-                ]
-            },
-            {
-                title: 'Rethinking Energy',
-                image: {
-                    slug: '20260731-topic-3',
-                    alt: 'Illustrative image: A pair of hands is attempting to untie a knot. The part of the knot yet to be untied consists of factory chimneys, while the part already undone features farmland and solar panels. Farmers are tending their fields and fishermen are casting their nets, with rare birds hunting nearby.'
-                },
-                paragraphs: [
-                   'We advocate that the energy transition must encompass more than mere technological shifts; it requires a profound social deliberation on democratic participation and ecological balance. While combatting the climate crisis and moving toward a net-zero future, we monitor the quality of renewable energy development, opposing chaotic solar deployments that sacrifice food security and wildlife habitats. By pushing for the legalization of rooftop solar, we bring energy back to everyday life. Simultaneously, we monitor generational safety following nuclear decommissioning and establish a transparent, accountable pathway for energy governance, ensuring that Taiwan\'s pursuit of energy autonomy upholds environmental justice and social democracy.'
-                ],
-                gridItems: [
-                  'We facilitated the Environmental and Social Check Process for solar fish farms and the ecological compensation plan for the solar fish farm area in Tainan.',
-                  'We prompted the Executive Yuan to increase the 2025 rooftop PV target from 6GW to 8GW and facilitated the regulation of rooftop PV proportions for new factories in industrial areas.',
-                  'We contributed to the passage of the "Renewable Energy Development Act," which mandates the installation of solar panels in new, expanded, and renovated buildings.'
-                ]
-            },
-            {
-                title: 'Intergenerational Justice and Equitable Development',
-                image: {
-                    slug: '20260731-topic-4',
-                    alt: 'Illustrative image: A pair of hands cradling a beautiful seaside scene featuring distant mountains; a mother riding a bicycle with a child; people holding up an anti-nuclear banner while speaking out; a person casting a ballot into a ballot box; a person planting a seed.'
-                },
-                paragraphs: [
-                    'We oppose development driven by short-term interests and safeguard the land\'s capacity for future choices. We intervene in major decisions made in the name of economic growth that could irreversibly restrict the living space of future generations—such as large-scale tourism developments, water resource disputes, and cultural heritage conflicts—to ensure that resources are not monopolized by specific interest groups. We defend the rights of local communities to participate in development decisions and deliberate on the fairness of resource allocation amid the challenges of climate change. This is a process of preserving a fair, diverse, and dignified living environment for the next generation, free from the erosion of contemporary hegemonic interests.'
-                
-                ],
-                gridItems: [
-                    'Together with society, we facilitated Taiwan’s 2025 plan for a low-carbon and nuclear-free energy transition and helped halt the construction of the Lungmen Nuclear Power Plant.',
-                    'We have strived to integrate indigenous and local cultures and drive homeland and resource sustainability by influencing upper-level spatial planning and industrial systems.'
-                ]
-            }
-        ];
-
-        function renderShareTopicsTabs() {
+        function initShareTopicsNav() {
+            var sticky = document.querySelector('.share-topics-tabs .share-topics-sticky');
+            var wrap = document.querySelector('.share-topics-tabs .share-topics-nav');
             var nav = document.getElementById('shareTab');
-            var panels = document.getElementById('shareTabContent');
-            if (!nav || !panels) return;
+            var stack = document.getElementById('shareTopicsStack');
+            if (!sticky || !wrap || !nav || !stack) return;
 
-            updateShareTabMedia(0);
+            var ZONE = 40;
+            var STICKY_TOP = 64;
+            var links = Array.prototype.slice.call(nav.querySelectorAll('.nav-link'));
+            var panels = Array.prototype.slice.call(stack.querySelectorAll('.share-panel'));
+            var scrollingToId = null;
+            var activeIndex = 0;
 
-            nav.innerHTML = shareContentData.map(function (item, index) {
-                var isActive = index === 0;
-                return (
-                    '<li class="nav-item" role="presentation">' +
-                        '<button type="button" class="nav-link' + (isActive ? ' active' : '') + '" id="share-tab-' + index + '" data-bs-toggle="tab" data-bs-target="#share-panel-' + index + '" role="tab" aria-controls="share-panel-' + index + '" aria-selected="' + isActive + '" tabindex="' + (isActive ? '0' : '-1') + '">' + escapeHtml(item.title) + '</button>' +
-                    '</li>'
-                );
-            }).join('');
-
-            panels.innerHTML = shareContentData.map(function (item, index) {
-                var isActive = index === 0;
-                return (
-                    '<div class="tab-pane' + (isActive ? ' active' : '') + '" role="tabpanel" id="share-panel-' + index + '" aria-labelledby="share-tab-' + index + '" aria-hidden="' + (isActive ? 'false' : 'true') + '">' +
-                        buildSharePanelBodyHtml(item) +
-                    '</div>'
-                );
-            }).join('');
-        }
-
-        function renderShareTopicsAccordion() {
-            var accordion = document.getElementById('shareTopicsAccordion');
-            if (!accordion) return;
-
-            accordion.innerHTML = shareContentData.map(function (item, index) {
-                var id = index + 1;
-                return (
-                    '<div class="accordion-item">' +
-                        '<h3 class="accordion-header" id="share-heading-' + id + '">' +
-                            '<button id="share-acc-btn-' + id + '" aria-controls="share-collapse-' + id + '" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-' + id + '" data-bs-toggle="collapse" type="button"><span class="faq-question-label">' + escapeHtml(item.title) + '</span></button>' +
-                        '</h3>' +
-                        '<div aria-labelledby="share-acc-btn-' + id + '" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-' + id + '">' +
-                            '<div class="accordion-body">' + buildSharePanelHtml(item) + '</div>' +
-                        '</div>' +
-                    '</div>'
-                );
-            }).join('');
-        }
-
-        function initShareTabScroll() {
-            var wrap = document.querySelector('.share-topics-tabs .content-tabs-wrap');
-            var nav = document.getElementById('shareTab');
-            if (!wrap || !nav) return;
-
-            function updateScrollState() {
-                var maxScroll = nav.scrollWidth - nav.clientWidth;
-                var scrollable = maxScroll > 4;
-
-                wrap.classList.toggle('is-scrollable', scrollable);
-                wrap.classList.toggle('is-scrolled-left', nav.scrollLeft > 4);
-                wrap.classList.toggle('is-scrolled-end', nav.scrollLeft >= maxScroll - 4);
+            function getStickyOffset() {
+                return STICKY_TOP + sticky.offsetHeight + 8;
             }
 
-            function scrollActiveTabIntoView() {
-                var activeTab = nav.querySelector('.nav-link.active');
-                if (!activeTab) return;
-
-                // Scroll only within the tab nav — scrollIntoView can shift page
-                // horizontally and clip the left edge of panel text.
-                var index = Array.prototype.indexOf.call(
-                    nav.querySelectorAll('.nav-link'),
-                    activeTab
-                );
-                if (index === 0) {
-                    nav.scrollLeft = 0;
-                    return;
-                }
-
-                var navRect = nav.getBoundingClientRect();
-                var tabRect = activeTab.getBoundingClientRect();
-                if (tabRect.left < navRect.left) {
-                    nav.scrollLeft -= (navRect.left - tabRect.left);
-                } else if (tabRect.right > navRect.right) {
-                    nav.scrollLeft += (tabRect.right - navRect.right);
-                }
+            function updateArrows() {
+                var max = nav.scrollWidth - nav.clientWidth;
+                wrap.classList.toggle('is-scrollable-left', nav.scrollLeft > 4);
+                wrap.classList.toggle('is-scrollable-right', max > 4 && nav.scrollLeft < max - 4);
             }
 
-            function syncPanelAriaHidden() {
-                var panels = document.querySelectorAll('#shareTabContent .tab-pane');
-                panels.forEach(function (panel) {
-                    panel.setAttribute('aria-hidden', panel.classList.contains('active') ? 'false' : 'true');
-                });
-            }
+            function setActiveLink(index) {
+                if (index < 0 || index >= links.length) return;
+                activeIndex = index;
 
-            if (!shareTabScrollInited) {
-                shareTabScrollInited = true;
-                nav.addEventListener('scroll', updateScrollState, { passive: true });
-                nav.addEventListener('shown.bs.tab', function (event) {
-                    var targetId = event.target.getAttribute('data-bs-target') || '';
-                    var index = parseInt(targetId.replace('#share-panel-', ''), 10);
-                    if (!isNaN(index)) {
-                        updateShareTabMedia(index);
+                links.forEach(function (link, i) {
+                    var isActive = i === index;
+                    link.classList.toggle('active', isActive);
+                    if (isActive) {
+                        link.setAttribute('aria-current', 'true');
+                    } else {
+                        link.removeAttribute('aria-current');
+                        if (document.activeElement === link) {
+                            link.blur();
+                        }
                     }
-                    syncPanelAriaHidden();
-                    scrollActiveTabIntoView();
                 });
-                window.addEventListener('resize', updateScrollState);
+
+                var active = links[index];
+                if (!active) return;
+
+                var navBox = nav.getBoundingClientRect();
+                var tabBox = active.getBoundingClientRect();
+                if (tabBox.left < navBox.left + ZONE) {
+                    nav.scrollLeft -= navBox.left + ZONE - tabBox.left;
+                } else if (tabBox.right > navBox.right - ZONE) {
+                    nav.scrollLeft += tabBox.right - (navBox.right - ZONE);
+                }
+                updateArrows();
             }
 
-            updateScrollState();
-            nav.scrollLeft = 0;
-        }
+            function getIndexFromScroll() {
+                var marker = getStickyOffset() + 1;
+                var current = 0;
+                for (var i = 0; i < panels.length; i++) {
+                    if (panels[i].getBoundingClientRect().top <= marker) {
+                        current = i;
+                    } else {
+                        break;
+                    }
+                }
+                return current;
+            }
 
-        function clearShareTopicsTabs() {
-            var media = document.getElementById('shareTabMedia');
-            var nav = document.getElementById('shareTab');
-            var panels = document.getElementById('shareTabContent');
-            if (media) media.innerHTML = '';
-            if (nav) nav.innerHTML = '';
-            if (panels) panels.innerHTML = '';
-        }
+            function syncActiveFromScroll() {
+                if (scrollingToId) return;
+                var index = getIndexFromScroll();
+                if (index !== activeIndex) setActiveLink(index);
+            }
 
-        function clearShareTopicsAccordion() {
-            var accordion = document.getElementById('shareTopicsAccordion');
-            if (accordion) accordion.innerHTML = '';
-        }
+            function scrollToPanel(index, updateHash) {
+                var panel = panels[index];
+                if (!panel) return;
+                scrollingToId = panel.id;
+                setActiveLink(index);
 
-        function syncShareTopicsView() {
-            var mode = shareTopicsMq.matches ? 'tabs' : 'accordion';
-            if (mode === shareTopicsMode) return;
-            shareTopicsMode = mode;
+                var top = panel.getBoundingClientRect().top + window.pageYOffset - getStickyOffset();
+                window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
 
-            if (mode === 'tabs') {
-                clearShareTopicsAccordion();
-                renderShareTopicsTabs();
-                initShareTabScroll();
+                if (updateHash !== false && history.replaceState) {
+                    history.replaceState(null, '', '#' + panel.id);
+                }
+
+                window.setTimeout(function () {
+                    if (scrollingToId === panel.id) scrollingToId = null;
+                    syncActiveFromScroll();
+                }, 800);
+            }
+
+            links.forEach(function (link, index) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    scrollToPanel(index, true);
+                });
+            });
+
+            wrap.addEventListener('click', function (e) {
+                if (e.target.closest && e.target.closest('.nav-link')) return;
+                var x = e.clientX - wrap.getBoundingClientRect().left;
+                if (wrap.classList.contains('is-scrollable-left') && x <= ZONE) {
+                    e.preventDefault();
+                    scrollToPanel(Math.max(0, activeIndex - 1), true);
+                } else if (wrap.classList.contains('is-scrollable-right') && x >= wrap.clientWidth - ZONE) {
+                    e.preventDefault();
+                    scrollToPanel(Math.min(panels.length - 1, activeIndex + 1), true);
+                }
+            });
+
+            nav.addEventListener('scroll', updateArrows, { passive: true });
+            window.addEventListener('scroll', syncActiveFromScroll, { passive: true });
+            window.addEventListener('resize', function () {
+                updateArrows();
+                syncActiveFromScroll();
+            });
+
+            if (typeof ResizeObserver === 'function') {
+                new ResizeObserver(updateArrows).observe(nav);
+                new ResizeObserver(function () {
+                    document.documentElement.style.setProperty('--share-sticky-offset', getStickyOffset() + 'px');
+                    syncActiveFromScroll();
+                }).observe(sticky);
+            }
+            document.documentElement.style.setProperty('--share-sticky-offset', getStickyOffset() + 'px');
+            updateArrows();
+            setActiveLink(0);
+
+            var hashId = (location.hash || '').replace(/^#/, '');
+            var hashIndex = panels.findIndex(function (panel) { return panel.id === hashId; });
+            if (hashIndex >= 0) {
+                window.requestAnimationFrame(function () {
+                    scrollToPanel(hashIndex, false);
+                });
             } else {
-                clearShareTopicsTabs();
-                renderShareTopicsAccordion();
+                syncActiveFromScroll();
             }
         }
 
-        syncShareTopicsView();
-        if (typeof shareTopicsMq.addEventListener === 'function') {
-            shareTopicsMq.addEventListener('change', syncShareTopicsView);
-        } else if (typeof shareTopicsMq.addListener === 'function') {
-            shareTopicsMq.addListener(syncShareTopicsView);
-        }
+        initShareTopicsNav();
     </script>
 </body>

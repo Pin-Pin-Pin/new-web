@@ -1,9 +1,63 @@
 <body>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.7/share-css/share_scoped.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.7/new-free-web/invite-share/invite-share_scoped.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.7/share-css/fix.css">
-<section class="invite-share">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.9/share-css/share_scoped.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.9/new-free-web/invite-share/invite-share_scoped.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.1.9/share-css/fix.css">
+<!-- ========== A：不出血＋圖文水平置中（啟用中） ========== -->
+    <style>
+        /*
+          page-top-container 與下一 section 的 .container 同寬：
+          - 還原 section 左右 pad（蓋過 share.css 的 padding:0）
+          - max-width: var(--content-max)，margin auto 置中
+          <992：圖文直向堆疊於同寬 container 內（row-gap: 40px）
+          ≥992：文字 | 圖片，column-gap: 40px，皆在同一 container 寬度內
+        */
+        /* #main section.invite-share:has(.page-top-container) {
+            padding-left: var(--section-pad-x);
+            padding-right: var(--section-pad-x);
+        }
+
+        #main .invite-share .container.page-top-container {
+            width: 100%;
+            max-width: var(--content-max);
+            margin-left: auto;
+            margin-right: auto;
+            grid-template-columns: minmax(0, 1fr);
+            align-items: stretch;
+            column-gap: 40px;
+            row-gap: 40px;
+        }
+
+        #main .invite-share .page-top-text-container,
+        #main .invite-share .page-top-img-container {
+            grid-column: 1;
+        }
+
+        #main .invite-share .page-top-img-container {
+            border-radius: 8px;
+        }
+
+        @media (min-width: 992px) {
+            #main .invite-share .container.page-top-container {
+                align-items: center;
+                column-gap: 40px;
+                row-gap: 40px;
+                grid-template-columns:
+                    var(--page-top-text-width)
+                    minmax(0, 1fr);
+            }
+
+            #main .invite-share .page-top-text-container {
+                grid-column: 1;
+            }
+
+            #main .invite-share .page-top-img-container {
+                grid-column: 2;
+                border-radius: 8px;
+            }
+        } */
+    </style>
+    <!-- <section class="invite-share">
         <div class="container page-top-container">
             <div class="page-top-text-container">
                 <nav class="breadcrumb page-top-text-group-1" aria-label="麵包屑">
@@ -30,12 +84,12 @@
                             https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.webp 800w
                         "
                         sizes="
-                            (min-width: 1200px) 1160px,
-                            (min-width: 768px) 800px,
-                            min(calc(100vw - 24px),480px)
+                            (min-width: 1200px) 544px,
+                            (min-width: 992px) 520px,
+                            (min-width: 768px) min(720px, calc(100vw - 48px)),
+                            min(calc(100vw - 48px), 540px)
                         "
                     >
-                
                     <img
                         src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg"
                         srcset="
@@ -44,9 +98,10 @@
                             https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.jpg 1600w
                         "
                         sizes="
-                            (min-width: 1200px) 1160px,
-                            (min-width: 768px) 800px,
-                            min(calc(100vw - 24px),480px)
+                            (min-width: 1200px) 544px,
+                            (min-width: 992px) 520px,
+                            (min-width: 768px) min(720px, calc(100vw - 48px)),
+                            min(calc(100vw - 48px), 540px)
                         "
                         width="16"
                         height="9"
@@ -55,17 +110,153 @@
                         decoding="async"
                     >
                 </picture>
-
-
-
             </div>
-
-
         </div>
+    </section> -->
+    <!-- ========== /A ========== -->
 
+    <!-- ========== B：右出血（share.css 預設；目前停用） ==========
+    <section class="invite-share">
+        <div class="container page-top-container">
+            <div class="page-top-text-container">
+                <nav class="breadcrumb page-top-text-group-1" aria-label="麵包屑">
+                    <a href="https://dev.cet-taiwan.org/" class="breadcrumb-home" aria-label="首頁"></a>
+                    <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                    <span class="breadcrumb-current" aria-current="page">邀請分享</span>
+                </nav>
+                <div class="page-top-text-group-2">
+                    <h1 class="h2">邀請分享</h1>
+                    <p class="h3">將環境現場帶入日常，用對話開啟改變。</p>
+                    <div class="page-top-text-p">
+                        <p>地球公民超過二十年的時間位在台灣環境倡議的第一線。有感於行動的現場，有賴關心環境的大眾力量共同理解與共鳴。</p>
+                        <p>透過講座與對話，我們期盼促成具備實質意義的社會對話。無論是高中與大學社團、積極推廣議題的教育工作者，或是關注環境的企業與社區，我們都非常期待與您交流。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-top-img-container">
+                <picture>
+                    <source
+                        type="image/webp"
+                        srcset="
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.webp 1600w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1280.webp 1280w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.webp 800w
+                        "
+                        sizes="
+                            (min-width: 992px) 1160px,
+                            (min-width: 768px) 800px,
+                            min(calc(100vw - 48px), 540px)
+                        "
+                    >
+                    <img
+                        src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg"
+                        srcset="
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg 800w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1280.jpg 1280w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.jpg 1600w
+                        "
+                        sizes="
+                            (min-width: 992px) 1160px,
+                            (min-width: 768px) 800px,
+                            min(calc(100vw - 48px), 540px)
+                        "
+                        width="16"
+                        height="9"
+                        alt="地球公民於活動現場進行環境議題分享"
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+                </picture>
+            </div>
+        </div>
     </section>
-    
-    
+    ========== /B ========== -->
+
+    <!-- ========== C：全裝置右出血、圖最寬 652px（目前停用） ========== -->
+    <style>
+        /*
+          沿用 share.css 出血 grid：左 spacer 對齊下一 section 的 .container 左緣。
+          <768：圖 col2 / -1 向右出血，max-width: 652px
+          768–991：圖 col2 / -1 貼齊螢幕右緣（不套 652 上限，避免右側空白）
+          ≥992：左 spacer | 400 文 | 40 | 圖(≤652) | 右側剩餘
+        */
+        .invite-share .container.page-top-container,
+        #main .invite-share .container.page-top-container {
+            --page-top-img-max: 652px;
+        }
+
+        .invite-share .page-top-img-container,
+        #main .invite-share .page-top-img-container {
+            max-width: 652px;
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .invite-share .page-top-img-container,
+            #main .invite-share .page-top-img-container {
+                max-width: none;
+                width: 100%;
+                grid-column: 2 / -1;
+            }
+        }
+    </style>
+    <section class="invite-share">
+        <div class="container page-top-container">
+            <div class="page-top-text-container">
+                <nav class="breadcrumb page-top-text-group-1" aria-label="麵包屑">
+                    <a href="https://dev.cet-taiwan.org/" class="breadcrumb-home" aria-label="首頁"></a>
+                    <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                    <span class="breadcrumb-current" aria-current="page">邀請分享</span>
+                </nav>
+                <div class="page-top-text-group-2">
+                    <h1 class="h2">邀請分享</h1>
+                    <p class="h3">將環境現場帶入日常，用對話開啟改變。</p>
+                    <div class="page-top-text-p">
+                        <p>地球公民超過二十年的時間位在台灣環境倡議的第一線。有感於行動的現場，有賴關心環境的大眾力量共同理解與共鳴。</p>
+                        <p>透過講座與對話，我們期盼促成具備實質意義的社會對話。無論是高中與大學社團、積極推廣議題的教育工作者，或是關注環境的企業與社區，我們都非常期待與您交流。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-top-img-container">
+                <picture>
+                    <source
+                        type="image/webp"
+                        srcset="
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.webp 1600w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1280.webp 1280w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.webp 800w
+                        "
+                        sizes="
+                            (min-width: 1200px) 652px,
+                            (min-width: 992px) min(652px, calc(100vw - 464px)),
+                            (min-width: 768px) calc(100vw - max(24px, (100vw - 720px) / 2)),
+                            min(652px, calc(100vw - 24px))
+                        "
+                    >
+                    <img
+                        src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg"
+                        srcset="
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-800.jpg 800w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1280.jpg 1280w,
+                            https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-invite-hero-1600.jpg 1600w
+                        "
+                        sizes="
+                            (min-width: 1200px) 652px,
+                            (min-width: 992px) min(652px, calc(100vw - 464px)),
+                            (min-width: 768px) calc(100vw - max(24px, (100vw - 720px) / 2)),
+                            min(652px, calc(100vw - 24px))
+                        "
+                        width="16"
+                        height="9"
+                        alt="地球公民於活動現場進行環境議題分享"
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+                </picture>
+            </div>
+        </div>
+    </section>
+    <!-- ========== /C ========== -->
+
     <section class="share-content">
         <div class="container share-content-container">
             <h2 class="h3 section-title">分享主題</h2>
@@ -143,8 +334,8 @@
 
             return (
                 '<picture>' +
-                    '<source media="(min-width: 1200px)" type="image/webp" srcset="' + desktopWebp450 + ' 450w, ' + desktopWebp850 + ' 850w" sizes="' + desktopSizes + '">' +
-                    '<source media="(min-width: 1200px)" type="image/jpeg" srcset="' + desktopJpg450 + ' 450w, ' + desktopJpg850 + ' 850w" sizes="' + desktopSizes + '">' +
+                    '<source media="(min-width: 992px)" type="image/webp" srcset="' + desktopWebp450 + ' 450w, ' + desktopWebp850 + ' 850w" sizes="' + desktopSizes + '">' +
+                    '<source media="(min-width: 992px)" type="image/jpeg" srcset="' + desktopJpg450 + ' 450w, ' + desktopJpg850 + ' 850w" sizes="' + desktopSizes + '">' +
                     '<source type="image/webp" srcset="' + mobileWebp380 + ' 380w, ' + mobileWebp760 + ' 760w" sizes="' + mobileSizes + '">' +
                     '<img' +
                         ' src="' + mobileJpg380 + '"' +

@@ -27,3 +27,7 @@
 #main .node__content{
     margin-top: 0;
 }
+.text-formatted h2, .text-formatted h3, .ck.ck-content h2, .ck.ck-content h3 {
+    width: fit-content;
+    margin-block: 0;
+}
