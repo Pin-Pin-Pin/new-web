@@ -11,7 +11,7 @@
     margin-bottom: 0;
 }
 
-/* Mobile (<768): accordion only / Desktop (≥768): sticky tabs only */
+/* Mobile (<768): .share-topics-accordion 為 tab / Desktop (≥768): sticky tabs */
 #main .share-topics-tabs {
     display: none;
     width: 100%;
@@ -22,63 +22,21 @@
 #main .share-topics-accordion {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     width: 100%;
     color: var(--black);
 }
 
-#main .share-topics-accordion .accordion-item {
-    border-radius: 8px;
-    border: 1px solid var(--brand-dark-primary);
-    overflow: hidden;
+#main .share-topics-accordion .content-tabs-nav {
+    justify-content: flex-start;
 }
 
-#main .share-topics-accordion .accordion-collapse {
-    min-height: 0;
-    overflow-anchor: none;
+#main .share-topics-accordion .content-tabs-wrap::before {
+    background: linear-gradient(to right, #FAFAFA 55%, transparent);
 }
 
-#main .share-topics-accordion .accordion-header {
-    margin-bottom: 0;
-    padding: 8px 16px;
-    transition: background-color 0.35s ease, color 0.35s ease;
-}
-
-#main .share-topics-accordion .accordion-header button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-    border: none;
-    background: none;
-    text-align: left;
-    color: var(--black);
-    transition: color 0.35s ease;
-    cursor: pointer;
-}
-
-#main .share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
-    background-color: var(--brand-dark-primary);
-    color: var(--white);
-}
-
-#main .share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
-    color: var(--white);
-}
-
-#main .share-topics-accordion .accordion-body {
-    padding: 0;
-    background-color: var(--white);
-    color: var(--black);
-}
-
-#main .share-topics-accordion .accordion-collapse.collapsing {
-    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#main .share-topics-accordion .content-tab-card {
-    border-radius: 0;
+#main .share-topics-accordion .content-tabs-wrap::after {
+    background: linear-gradient(to left, #FAFAFA 55%, transparent);
 }
 
 #main .share-topics-sticky {
@@ -90,7 +48,7 @@
     /* Use margin instead of gap — flex gap is transparent and lets
        the green tab card show through while sticky is stuck. */
     gap: 0;
-    background-color: var(--brand-white);
+    background-color: #FAFAFA;
 }
 
 #main .share-topics-sticky::before {
@@ -100,7 +58,7 @@
     right: 0;
     bottom: 100%;
     height: 64px;
-    background-color: var(--brand-white);
+    background-color: #FAFAFA;
     pointer-events: none;
 }
 
@@ -109,7 +67,29 @@
 }
 
 #main .share-topics-nav {
-    background-color: var(--brand-white);
+    background-color: #FAFAFA;
+}
+
+@media (max-width: 767.98px) {
+    #main .share-content .share-content-container {
+        gap: 0;
+    }
+
+    #main .share-topics-accordion .share-topics-sticky {
+        margin-left: calc(-1 * var(--section-pad-x));
+        margin-right: calc(-1 * var(--section-pad-x));
+        padding-left: var(--section-pad-x);
+        padding-right: var(--section-pad-x);
+        background-color: #FAFAFA;
+    }
+
+    #main .share-topics-accordion .share-topics-sticky::before {
+        background-color: #FAFAFA;
+    }
+
+    #main .share-topics-accordion .share-topics-nav {
+        background-color: #FAFAFA;
+    }
 }
 
 #main #shareTab {

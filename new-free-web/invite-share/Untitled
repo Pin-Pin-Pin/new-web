@@ -1,21 +1,25 @@
 /* ========================================
    Section: share-content
 ======================================== */
-.share-content .share-content-container {
+#main .share-content .share-content-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 24px;
 }
 
-/* Mobile (<768): accordion only / Desktop (≥768): tabs only */
-.share-topics-tabs {
+#main .share-content-title-mobile {
+    margin-bottom: 0;
+}
+
+/* Mobile (<768): accordion only / Desktop (≥768): sticky tabs only */
+#main .share-topics-tabs {
     display: none;
     width: 100%;
     flex-direction: column;
     gap: 24px;
 }
 
-.share-topics-accordion {
+#main .share-topics-accordion {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -23,25 +27,24 @@
     color: var(--black);
 }
 
-.share-topics-accordion .accordion-item {
+#main .share-topics-accordion .accordion-item {
     border-radius: 8px;
     border: 1px solid var(--brand-dark-primary);
     overflow: hidden;
 }
-/* flex item 預設 min-height:auto 會擋住 Bootstrap 收合到 height:0 */
-.share-topics-accordion .accordion-collapse {
+
+#main .share-topics-accordion .accordion-collapse {
     min-height: 0;
     overflow-anchor: none;
 }
 
-.share-topics-accordion .accordion-header {
+#main .share-topics-accordion .accordion-header {
     margin-bottom: 0;
     padding: 8px 16px;
-    background-color: var(--brand-white);
     transition: background-color 0.35s ease, color 0.35s ease;
 }
 
-.share-topics-accordion .accordion-header button {
+#main .share-topics-accordion .accordion-header button {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,52 +58,96 @@
     cursor: pointer;
 }
 
-.share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
+#main .share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
     background-color: var(--brand-dark-primary);
     color: var(--white);
 }
 
-.share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
+#main .share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
     color: var(--white);
 }
 
-.share-topics-accordion .accordion-body {
+#main .share-topics-accordion .accordion-body {
     padding: 0;
-    background-color: var(--brand-white);
+    background-color: var(--white);
     color: var(--black);
 }
 
-.share-topics-accordion .accordion-collapse.collapsing {
+#main .share-topics-accordion .accordion-collapse.collapsing {
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#shareTab {
+#main .share-topics-accordion .content-tab-card {
+    border-radius: 0;
+}
+
+#main .share-topics-sticky {
+    position: sticky;
+    top: 64px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    /* Use margin instead of gap — flex gap is transparent and lets
+       the green tab card show through while sticky is stuck. */
+    gap: 0;
+    background-color: var(--brand-white);
+}
+
+#main .share-topics-sticky::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: 64px;
+    background-color: var(--brand-white);
+    pointer-events: none;
+}
+
+#main .share-topics-sticky .section-title {
+    margin-bottom: 24px;
+}
+
+#main .share-topics-nav {
+    background-color: var(--brand-white);
+}
+
+#main #shareTab {
     justify-content: flex-start;
 }
 
 @media (min-width: 768px) {
-    .share-topics-accordion {
+    #main .share-content .share-content-container {
+        gap: 0;
+    }
+
+    #main .share-content-title-mobile {
         display: none;
     }
 
-    .share-topics-tabs {
+    #main .share-topics-accordion {
+        display: none;
+    }
+
+    #main .share-topics-tabs {
         display: flex;
     }
 
-    #shareTab {
+    #main #shareTab {
         justify-content: center;
     }
 
     /* Equal-height panels: stack all panes in one grid cell.
-       Note: no Bootstrap .tab-content class — that rule uses display:none and would
-       remove inactive panes from height calculation. */
-    .share-content #shareTabContent.content-tabs-panels {
+       Overrides Bootstrap .tab-content > .tab-pane { display:none } so inactive
+       panes still contribute to height. */
+    #main .share-content #shareTabContent.content-tabs-panels {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         align-items: stretch;
     }
 
-    .share-content #shareTabContent.content-tabs-panels > .tab-pane {
+    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane {
+        display: block;
         grid-column: 1;
         grid-row: 1;
         width: 100%;
@@ -112,28 +159,30 @@
         z-index: 0;
     }
 
-    .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
+    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
         z-index: 1;
     }
 
-    .share-content #shareTabContent .content-tab-card {
+    #main .share-content #shareTabContent .content-tab-card {
         height: 100%;
     }
 }
 
-.content-tab-card {
+#main .content-tab-card {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
+    overflow: hidden;
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    background-color: var(--brand-background-green);
 }
 
-.content-tab-text {
+#main .content-tab-text {
     padding: 24px 16px;
     min-width: 0;
     max-width: 100%;
@@ -141,37 +190,37 @@
     background-color: var(--brand-background-green);
 }
 
-.content-tab-block + .content-tab-block {
+#main .content-tab-block + .content-tab-block {
     margin-top: 24px;
 }
 
-.content-tab-text h3 {
+#main .content-tab-text h3 {
     margin-bottom: 8px;
     font-weight: 700;
 }
 
-.content-tab-text p {
+#main .content-tab-text p {
     margin-bottom: 0;
 }
 
-.content-tab-text p + p {
+#main .content-tab-text p + p {
     margin-top: 16px;
 }
 
-.content-tab-img {
+#main .content-tab-img {
     width: 100%;
     max-width: 100%;
     min-width: 0;
     overflow: hidden;
 }
 
-.content-tab-img picture {
+#main .content-tab-img picture {
     display: block;
     width: 100%;
     max-width: 100%;
 }
 
-.content-tab-img img {
+#main .content-tab-img img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -180,49 +229,43 @@
     
 }
 /* topic-2 */
-.content-tab-img--topic-2 img {
+#main .content-tab-img--topic-2 img {
     object-position: top center;
 }
 /* topic-4 */
-.content-tab-img--topic-4 img {
+#main .content-tab-img--topic-4 img {
     object-position: top;
 }
 
 @media (max-width: 991.98px) {
-    .content-tab-img img {
+    #main .content-tab-img img {
         aspect-ratio: 4/3;
     }
 }
 
-/* Accordion card: no outer radius conflict with item border */
-.content-tab-card {
-    border-radius: 0;
-    background-color: var(--brand-background-green);
-}
-
 @media (min-width: 768px) {
-    .content-tab-card {
+    #main .content-tab-card {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .content-tab-img {
+    #main .content-tab-img {
         width: 100%;
         max-width: 100%;
         min-width: 0;
         padding:40px 40px 0 40px;
     }
 
-    .content-tab-img picture {
+    #main .content-tab-img picture {
         height: 100%;
     }
 
-    .content-tab-img img {
+    #main .content-tab-img img {
         width: 100%;
         height: 100%;
     }
 
-    .content-tab-text {
+    #main .content-tab-text {
         padding: 40px;
         flex: 1 1 0;
         min-width: 0;
@@ -230,10 +273,10 @@
 }
 
 @media (min-width: 992px) {
-    .content-tab-card {
+    #main .content-tab-card {
         flex-direction: row;
     }
-    .content-tab-img {
+    #main .content-tab-img {
         aspect-ratio: 379 / 284;
         flex: 0 0 379px;
         width: 379px;
@@ -244,41 +287,41 @@
 /* ========================================
    Section: 第一頁以後
 ======================================== */
-.share-content{
+#main .share-content{
     padding-bottom: 80px;
 }
-.invite-info{
+#main .invite-info{
     padding-top: 0;
     padding-bottom: 80px;
 }
-.faq{ 
+#main .faq{ 
     padding-top: 0;
 }
-.section-title{
+#main .section-title{
     border-top: 2px solid var(--brand-dark-primary);
 }
 /* ========================================
    Section: 邀約方式
 ======================================== */
-.invite-info .container{
+#main .invite-info .container{
     /* display: flex;
     flex-direction: column;
     gap: 24px;
     align-items: flex-start; */
     display:block;
 }
-.invite-info ol{
+#main .invite-info ol{
     margin-bottom: 0;
     padding-left: 1rem;
 }
-.invite-info .section-title{
+#main .invite-info .section-title{
     margin-bottom: 24px;
 }
-.invite-info-label{
+#main .invite-info-label{
     font-weight: 700;
     color: var(--brand-dark-primary);
     margin-bottom: 0;
 }
-.faq .accordion {
+#main .faq .accordion {
     color: var(--black);
 }

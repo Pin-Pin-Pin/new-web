@@ -79,133 +79,15 @@
     
     <section class="share-content">
         <div class="container share-content-container">
-            <h2 class="h3 section-title share-content-title-mobile">分享主題</h2>
-
-            <!-- Mobile (<768): static accordion -->
-            <div class="share-topics-accordion accordion" id="shareTopicsAccordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header" id="share-heading-1">
-                        <button id="share-acc-btn-1" aria-controls="share-collapse-1" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-1" data-bs-toggle="collapse" type="button"><span class="faq-question-label">倡議如何改變社會</span></button>
-                    </h3>
-                    <div aria-labelledby="share-acc-btn-1" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-1">
-                        <div class="accordion-body">
-                            <div class="content-tab-card">
-                                <div class="content-tab-img content-tab-img--topic-1">
-                                    <picture>
-                                        <source media="(min-width: 992px)" type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-1-450.webp 450w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-1-850.webp 850w" sizes="379px">
-                                        <source media="(min-width: 992px)" type="image/jpeg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-1-450.jpg 450w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-1-850.jpg 850w" sizes="379px">
-                                        <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-1-380.webp 380w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-1-760.webp 760w" sizes="(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))">
-                                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-1-380.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-1-380.jpg 380w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-1-760.jpg 760w" sizes="(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))" width="4" height="3" alt="地球公民的員工參與政府會議" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="content-tab-text" style="color:var(--black);">
-                                    <div class="content-tab-block">
-                                        <h3 style="color:var(--black)">講題一｜環境NGO的工作日常</h3>
-                                        <p>非營利組織的日常充滿挑戰，從資料蒐集、議題研究到專案規劃與社群媒體經營，每一步都需要大量溝通與合作。</p>
-                                        <p>透過實際案例的翻想，邀請大家一起走入環境 NGO 的工作日常，理解如何平衡有限資源與議題需求，以及每次的努力如何累積成對於社會的正向影響，啟發公民思考自身能參與的方式。</p>
-                                    </div>
-                                    <div class="content-tab-block">
-                                        <h3 style="color:var(--black)">講題二｜改變社會：從理念到行動</h3>
-                                        <p>環境議題與公共政策息息相關。地球公民如何透過倡議、政策對話、公共教育與社群互動，讓環境議題被更多人看見並重視？</p>
-                                        <p>環境倡議不只是抗議或請願。在這場講座中，我們將分享許多過去結合研究、溝通與策略的行動，說明我們如何將環境意識轉化為實際的公共影響。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Mobile (<768): sticky 標題 + tabs（寬度不足時 content-tabs-wrap 顯示左右箭頭） -->
+            <div class="share-topics-accordion" id="shareTopicsAccordion">
+                <div class="share-topics-sticky">
+                    <h2 class="h3 section-title share-content-title-mobile">分享主題</h2>
+                    <div class="content-tabs-wrap share-topics-nav">
+                        <ul class="nav nav-tabs content-tabs-nav flex-nowrap" id="shareAccordionTab" role="tablist" aria-label="分享主題"></ul>
                     </div>
                 </div>
-
-                <div class="accordion-item">
-                    <h3 class="accordion-header" id="share-heading-2">
-                        <button id="share-acc-btn-2" aria-controls="share-collapse-2" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-2" data-bs-toggle="collapse" type="button"><span class="faq-question-label">校園與空污</span></button>
-                    </h3>
-                    <div aria-labelledby="share-acc-btn-2" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-2">
-                        <div class="accordion-body">
-                            <div class="content-tab-card">
-                                <div class="content-tab-img content-tab-img--topic-2">
-                                    <picture>
-                                        <source media="(min-width: 992px)" type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-2-450.webp 450w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-2-850.webp 850w" sizes="379px">
-                                        <source media="(min-width: 992px)" type="image/jpeg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-2-450.jpg 450w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-2-850.jpg 850w" sizes="379px">
-                                        <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-2-380.webp 380w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-2-760.webp 760w" sizes="(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))">
-                                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-2-380.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-2-380.jpg 380w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-2-760.jpg 760w" sizes="(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))" width="4" height="3" alt="一名學童舉著我要乾淨空氣的手舉牌，地球公民的員工拿著麥克風向台下介紹空污問題" loading="lazy" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="content-tab-text" style="color:var(--black);">
-                                    <div class="content-tab-block">
-                                        <h3 style="color:var(--black)">講題一｜工業區旁的風險</h3>
-                                        <p>在台灣，鄰近工業區的學童長期暴露於空氣污染之下，健康風險遠高於一般民眾。鋼鐵與石化產業排放的污染物不僅影響呼吸系統，更可能造成長期慢性健康問題。</p>
-                                        <p>我們將以高雄工業區鄰近學校為案例，解析學童空污暴露的現況與風險，並說明環境治理與政策倡議的重要性，邀請社會一同重視兒童環境權，為下一代健康把關。</p>
-                                    </div>
-                                    <div class="content-tab-block">
-                                        <h3 style="color:var(--black)">講題二｜在地行動與防護指南</h3>
-                                        <p>除了整體空氣改善，個人與社區行動同樣關鍵。講座中分享可行的防護措施、日常生活防護策略，以及市民如何參與在地倡議行動。</p>
-                                        <p>透過地球公民基金會十年來的空污監測與政策倡議經驗，參與者能學習如何從自身與社區出發，降低空污對健康的影響，共同打造永續的生活環境。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h3 class="accordion-header" id="share-heading-3">
-                        <button id="share-acc-btn-3" aria-controls="share-collapse-3" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-3" data-bs-toggle="collapse" type="button"><span class="faq-question-label">極端氣候與環境治理</span></button>
-                    </h3>
-                    <div aria-labelledby="share-acc-btn-3" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-3">
-                        <div class="accordion-body">
-                            <div class="content-tab-card">
-                                <div class="content-tab-img content-tab-img--topic-3">
-                                    <picture>
-                                        <source media="(min-width: 992px)" type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-3-450.webp 450w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-3-850.webp 850w" sizes="379px">
-                                        <source media="(min-width: 992px)" type="image/jpeg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-3-450.jpg 450w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-3-850.jpg 850w" sizes="379px">
-                                        <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-3-380.webp 380w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-3-760.webp 760w" sizes="(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))">
-                                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-3-380.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-3-380.jpg 380w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-3-760.jpg 760w" sizes="(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))" width="4" height="3" alt="貨車穿過淹水的馬路" loading="lazy" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="content-tab-text" style="color:var(--black);">
-                                    <div class="content-tab-block">
-                                        <h3 style="color:var(--black)">講題一｜極端氣候下的任務清單</h3>
-                                        <p>在極端氣候頻繁發生的現在，環境變得更具風險及脆弱。辨識清楚環境資訊，並與周遭的夥伴形成互助的社群，我們才有機會建構更有能力應對未知風險的社會。</p>
-                                    </div>
-                                    <div class="content-tab-block">
-                                        <h3 style="color:var(--black)">講題二｜從馬太鞍流域看環境治理</h3>
-                                        <p>我們將從馬太鞍堰塞湖事件的實際案例，理解流域的現況、自然環境如何跟城市發展互動互相影響，以及回到自己生活的地方，面對下一次可能來臨的災害，可以如何建立更具能力的社群。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h3 class="accordion-header" id="share-heading-4">
-                        <button id="share-acc-btn-4" aria-controls="share-collapse-4" aria-expanded="false" class="collapsed p" data-bs-target="#share-collapse-4" data-bs-toggle="collapse" type="button"><span class="faq-question-label">永續發展</span></button>
-                    </h3>
-                    <div aria-labelledby="share-acc-btn-4" class="accordion-collapse collapse" data-bs-parent="#shareTopicsAccordion" id="share-collapse-4">
-                        <div class="accordion-body">
-                            <div class="content-tab-card">
-                                <div class="content-tab-img content-tab-img--topic-4">
-                                    <picture>
-                                        <source media="(min-width: 992px)" type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-4-450.webp 450w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-4-850.webp 850w" sizes="379px">
-                                        <source media="(min-width: 992px)" type="image/jpeg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-4-450.jpg 450w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260730-topic-4-850.jpg 850w" sizes="379px">
-                                        <source type="image/webp" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-4-380.webp 380w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-4-760.webp 760w" sizes="(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))">
-                                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-4-380.jpg" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-4-380.jpg 380w, https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260723-topic-4-760.jpg 760w" sizes="(min-width: 768px) min(680px, calc(100vw - 160px)), min(478px, calc(100vw - 48px))" width="4" height="3" alt="一群民眾在美麗灣飯店前的海灘上手牽著手" loading="lazy" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="content-tab-text" style="color:var(--black);">
-                                    <div class="content-tab-block">
-                                        <h3 style="color:var(--black)">講題｜發展，只有一種可能嗎？</h3>
-                                        <p>只要大型的道路建設、飯店蓋下去，地方就能迎來真正的繁榮嗎？</p>
-                                        <p>所謂的發展與幸福，真的只有經濟成長這個單一標準嗎？</p>
-                                        <p>地球公民從2010年在花東設立辦公室以來，參與了無數大型道路、觀光開發案，陪伴地方檢視開發帶來的環境影響及社會衝擊。</p>
-                                        <p>在這個講題中，我們將從第一線的倡議經驗出發，結合歷史脈絡、法律制度與國內外案例，帶領大家重新審視大型開發案為土地與社會帶來的劇烈變動。</p>
-                                        <p>邀請大家一起打破「經濟開發」與「環境保護」的二元對立，探討一條真正適合台灣、兼顧世代正義的永續發展之路。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="tab-content content-tabs-panels" id="shareAccordionTabContent"></div>
             </div>
 
             <!-- Desktop (≥768): sticky tabs -->
@@ -258,7 +140,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
     <script type="text/javascript">
         var IMAGE_BASE = 'https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/';
-        var shareTabScrollInited = false;
 
         function escapeHtml(text) {
             return String(text)
@@ -372,36 +253,37 @@
             );
         }
 
-        function renderShareTopicsTabs() {
-            var nav = document.getElementById('shareTab');
-            var panels = document.getElementById('shareTabContent');
+        function renderShareTopicsTabs(navId, panelsId, idPrefix, loading) {
+            var nav = document.getElementById(navId);
+            var panels = document.getElementById(panelsId);
             if (!nav || !panels) return;
 
             nav.innerHTML = shareTopicData.map(function (item, index) {
                 var isActive = index === 0;
                 return (
                     '<li class="nav-item" role="presentation">' +
-                        '<button type="button" class="nav-link' + (isActive ? ' active' : '') + '" id="share-tab-' + index + '" data-bs-toggle="tab" data-bs-target="#share-panel-' + index + '" role="tab" aria-controls="share-panel-' + index + '" aria-selected="' + isActive + '">' + escapeHtml(item.title) + '</button>' +
+                        '<button type="button" class="nav-link' + (isActive ? ' active' : '') + '" id="' + idPrefix + '-tab-' + index + '" data-bs-toggle="tab" data-bs-target="#' + idPrefix + '-panel-' + index + '" role="tab" aria-controls="' + idPrefix + '-panel-' + index + '" aria-selected="' + isActive + '" tabindex="' + (isActive ? '0' : '-1') + '">' + escapeHtml(item.title) + '</button>' +
                     '</li>'
                 );
             }).join('');
 
             panels.innerHTML = shareTopicData.map(function (item, index) {
                 var isActive = index === 0;
+                var imgLoading = (index === 0 && !loading) ? undefined : 'lazy';
                 return (
-                    '<div class="tab-pane' + (isActive ? ' show active' : '') + '" role="tabpanel" id="share-panel-' + index + '" aria-labelledby="share-tab-' + index + '" aria-hidden="' + (isActive ? 'false' : 'true') + '" tabindex="0">' +
-                        buildTopicCardHtml(item, 'lazy') +
+                    '<div class="tab-pane' + (isActive ? ' show active' : '') + '" role="tabpanel" id="' + idPrefix + '-panel-' + index + '" aria-labelledby="' + idPrefix + '-tab-' + index + '" aria-hidden="' + (isActive ? 'false' : 'true') + '" tabindex="0">' +
+                        buildTopicCardHtml(item, imgLoading) +
                     '</div>'
                 );
             }).join('');
         }
 
         /* Overflow arrows + keep active tab visible; switching is Bootstrap */
-        function initShareTabScroll() {
-            var wrap = document.querySelector('.share-topics-tabs .content-tabs-wrap');
-            var nav = document.getElementById('shareTab');
-            if (!wrap || !nav || shareTabScrollInited) return;
-            shareTabScrollInited = true;
+        function initShareTabScroll(wrapSelector, navId, panelsId) {
+            var wrap = document.querySelector(wrapSelector);
+            var nav = document.getElementById(navId);
+            if (!wrap || !nav || wrap.getAttribute('data-tab-scroll') === '1') return;
+            wrap.setAttribute('data-tab-scroll', '1');
 
             var ZONE = 40;
 
@@ -412,8 +294,8 @@
             }
 
             function syncPanelAriaHidden() {
-                var panels = document.querySelectorAll('#shareTabContent .tab-pane');
-                panels.forEach(function (panel) {
+                var tabPanels = document.querySelectorAll('#' + panelsId + ' .tab-pane');
+                tabPanels.forEach(function (panel) {
                     panel.setAttribute('aria-hidden', panel.classList.contains('active') ? 'false' : 'true');
                 });
             }
@@ -465,8 +347,10 @@
             updateArrows();
         }
 
-        renderShareTopicsTabs();
-        initShareTabScroll();
+        renderShareTopicsTabs('shareAccordionTab', 'shareAccordionTabContent', 'share-acc');
+        renderShareTopicsTabs('shareTab', 'shareTabContent', 'share', 'lazy');
+        initShareTabScroll('.share-topics-accordion .content-tabs-wrap', 'shareAccordionTab', 'shareAccordionTabContent');
+        initShareTabScroll('.share-topics-tabs .content-tabs-wrap', 'shareTab', 'shareTabContent');
 
         var faqData = [
             {

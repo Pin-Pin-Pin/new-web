@@ -285,11 +285,12 @@ section:has(.bg) > .bg-uplayer {
 .faq .accordion-header {
     margin-bottom: 0;
     padding: 8px 16px;
+    background-color: var(--brand-white);
     transition: background-color 0.35s ease, color 0.35s ease;
 }
 .faq .accordion-body{
     padding: 8px 16px;
-    background-color: var(--white);
+    background-color: var(--brand-white);
     color: var(--black);
     transition: opacity 0.3s ease;
 }
@@ -304,27 +305,25 @@ section:has(.bg) > .bg-uplayer {
     transition: color 0.35s ease;
 }
 
-/* 展開前：向下箭頭 */
-.accordion-header button.collapsed::after {
-    content: "";
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: var(--brand-dark-primary);
-    -webkit-mask: var(--icon-chevron-down) no-repeat center / contain;
-    mask: var(--icon-chevron-down) no-repeat center / contain;
-    transition: background-color 0.35s ease;
-}
-
-/* 展開後：向上箭頭 */
+/* 展開前／後：箭頭底色透明，圖示來自 SVG */
+.accordion-header button.collapsed::after,
 .accordion-header button:not(.collapsed)::after {
     content: "";
     flex-shrink: 0;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: var(--white);
-    -webkit-mask: var(--icon-chevron-up) no-repeat center / contain;
-    mask: var(--icon-chevron-up) no-repeat center / contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-mask: none;
+    mask: none;
+}
+.accordion-header button.collapsed::after {
+    background-image: var(--icon-chevron-down);
+}
+.accordion-header button:not(.collapsed)::after {
+    background-image: var(--icon-chevron-up);
 }
 .faq .accordion-header button.collapsed {
     color: var(--black);
@@ -1033,7 +1032,7 @@ section.donate-hero{
     border: 1px solid var(--gray-400);
     border-radius: 4px;
     overflow: hidden;
-    background-color: var(--white);
+    background-color: var(--brand-white);
 }
 .donation-box__accordion .accordion-collapse{
     min-height: 0;
@@ -1042,6 +1041,7 @@ section.donate-hero{
 .donation-box__accordion .accordion-header{
     margin-bottom: 0;
     padding: 8px 12px;
+    background-color: var(--brand-white);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 .donation-box__accordion .accordion-header button{
@@ -1061,23 +1061,24 @@ section.donate-hero{
     font-weight: 400;
     line-height: 1.5;
 }
-.donation-box__accordion .accordion-header button.collapsed::after{
-    content: "";
-    flex-shrink: 0;
-    width: 1.25rem;
-    height: 1.25rem;
-    background-color: var(--brand-dark-primary);
-    -webkit-mask: var(--icon-chevron-down) no-repeat center / contain;
-    mask: var(--icon-chevron-down) no-repeat center / contain;
-}
+.donation-box__accordion .accordion-header button.collapsed::after,
 .donation-box__accordion .accordion-header button:not(.collapsed)::after{
     content: "";
     flex-shrink: 0;
     width: 1.25rem;
     height: 1.25rem;
-    background-color: var(--white);
-    -webkit-mask: var(--icon-chevron-up) no-repeat center / contain;
-    mask: var(--icon-chevron-up) no-repeat center / contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-mask: none;
+    mask: none;
+}
+.donation-box__accordion .accordion-header button.collapsed::after{
+    background-image: var(--icon-chevron-down);
+}
+.donation-box__accordion .accordion-header button:not(.collapsed)::after{
+    background-image: var(--icon-chevron-up);
 }
 .donation-box__accordion .accordion-header:has(button:not(.collapsed)){
     background-color: var(--brand-dark-primary);
@@ -1087,7 +1088,7 @@ section.donate-hero{
 }
 .donation-box__accordion .accordion-body{
     padding: 12px;
-    background-color: var(--white);
+    background-color: var(--brand-white);
     color: var(--brand-black);
     font-family: "Noto Sans TC", sans-serif;
     font-size: 0.875rem;

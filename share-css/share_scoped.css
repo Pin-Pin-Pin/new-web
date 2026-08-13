@@ -274,6 +274,9 @@
     border: 1px solid var(--brand-dark-primary);
     overflow: hidden;
 }
+#main .accordion-item,#main .accordion-body,#main .accordion-header{
+    background-color: var(--brand-white);
+}
 /* 手風琴共用：避免 flex min-height 擋收合、展開時 scroll anchoring 造成下滑 */
 #main .accordion .accordion-collapse{
     min-height: 0;
@@ -289,11 +292,12 @@
 #main .faq .accordion-header {
     margin-bottom: 0;
     padding: 8px 16px;
+    background-color: var(--brand-white);
     transition: background-color 0.35s ease, color 0.35s ease;
 }
 #main .faq .accordion-body{
     padding: 8px 16px;
-    background-color: var(--white);
+    background-color: var(--brand-white);
     color: var(--black);
     transition: opacity 0.3s ease;
 }
@@ -308,27 +312,25 @@
     transition: color 0.35s ease;
 }
 
-/* 展開前：向下箭頭 */
-#main .accordion-header button.collapsed::after {
-    content: "";
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: var(--brand-dark-primary);
-    -webkit-mask: var(--icon-chevron-down) no-repeat center / contain;
-    mask: var(--icon-chevron-down) no-repeat center / contain;
-    transition: background-color 0.35s ease;
-}
-
-/* 展開後：向上箭頭 */
+/* 展開前／後：箭頭底色透明，圖示來自 SVG */
+#main .accordion-header button.collapsed::after,
 #main .accordion-header button:not(.collapsed)::after {
     content: "";
     flex-shrink: 0;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: var(--white);
-    -webkit-mask: var(--icon-chevron-up) no-repeat center / contain;
-    mask: var(--icon-chevron-up) no-repeat center / contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-mask: none;
+    mask: none;
+}
+#main .accordion-header button.collapsed::after {
+    background-image: var(--icon-chevron-down);
+}
+#main .accordion-header button:not(.collapsed)::after {
+    background-image: var(--icon-chevron-up);
 }
 #main .faq .accordion-header button.collapsed {
     color: var(--black);
