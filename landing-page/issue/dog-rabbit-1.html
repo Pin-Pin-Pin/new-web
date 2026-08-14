@@ -1,0 +1,496 @@
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<style type="text/css">@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css');
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/hsuan8524/woff2-subset@v0.0.6/dog1/Noto_Sans_TC_400-subset.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/hsuan8524/woff2-subset@v0.0.6/dog1/Noto_Sans_TC_700-subset.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/hsuan8524/woff2-subset@v0.0.6/dog1/Noto_Sans_TC_900-subset.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: naikaifont;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/hsuan8524/woff2-subset@v0.0.6/dog1/naikaifont_400-subset.woff2') format('woff2');
+}
+</style>
+<style type="text/css">#navbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.qa {
+    text-decoration: underline !important;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+}
+
+.btn-outline-custom {
+    color: #b6d3cd;
+    border-color: #b6d3cd;
+}
+
+.btn-outline-custom:hover {
+    color: #28393d;
+    background-color: #b6d3cd;
+    border-color: #b6d3cd;
+}
+
+.btn-check:focus+.btn-outline-custom,
+.btn-outline-custom:focus {
+    box-shadow: 0 0 0 0.25rem rgba(182, 211, 12, 0);
+}
+
+.btn-check:checked+.btn-outline-custom,
+.btn-check:active+.btn-outline-custom,
+.btn-outline-custom:active,
+.btn-outline-custom.active,
+.btn-outline-custom.dropdown-toggle.show {
+    color: #28393d;
+    background-color: #b6d3cd;
+    border-color: #b6d3cd;
+}
+
+.btn-check:checked+.btn-outline-custom:focus,
+.btn-check:active+.btn-outline-custom:focus,
+.btn-outline-custom:active:focus,
+.btn-outline-custom.active:focus,
+.btn-outline-custom.dropdown-toggle.show:focus {
+    box-shadow: 0 0 0 0.25rem rgba(182, 211, 12, 0);
+}
+
+.btn-outline-custom:disabled,
+.btn-outline-custom.disabled {
+    color: #b6d3cd;
+    background-color: transparent;
+}
+
+
+
+.title_div {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 15vh;
+}
+
+.gray_text {
+    color: #767d85;
+    font-size: 1.7rem;
+}
+
+
+
+hr {
+    width: 100%;
+    /* Makes the hr take the full width of its parent column */
+    border-top: 1px solid black;
+    /* Sets the style of the hr */
+}
+
+
+h3 {
+    font-size: 2rem;
+    color: #90b09a;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 900;
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: #90b09a;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 900;
+}
+
+.title {
+    font-family: setofont;
+    font-weight: 600;
+}
+
+p {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.emph {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 700;
+}
+
+.story_card {
+    font-family: naikaifont;
+    color: #1c4978;
+    font-size: 1.45rem;
+}
+
+span.ext {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .title_div {
+        height: auto;
+    }
+
+    .mine_ex {
+        width: 90%;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    p {
+        font-size: 1.3rem;
+        /*18px  */
+    }
+
+    .story_card {
+        font-family: naikaifont;
+        color: #1c4978;
+        font-size: 1.3rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .mobile {
+        display: none;
+    }
+
+}
+
+p {
+    text-align: justify;
+    letter-spacing: 0.025rem;
+    /*0.4px */
+}
+
+/* 讓 #second_case 內三個橘色欄位用 flex 等高 */
+#second_case .row.justify-content-center {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#second_case .row.justify-content-center > [id^="eqh_div_"] {
+    display: flex;
+    flex-direction: column;
+}
+</style>
+<script crossorigin="anonymous" src="https://kit.fontawesome.com/2360de9dbf.js"></script><script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+<div style="overflow-x: hidden;">
+	<div class="container-fluid" style="background-color:#ddddcc;">
+		<div class="p-0 d-none d-md-block" style="position: relative;"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-0-0-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-0-0.webp" type="image/webp" /> <img decoding="async" fetchpriority="high" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-00-0-0.png" style="width:100%" /> </picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-0-1-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-0-1.webp" type="image/webp" /> <img class="col-6" decoding="async" fetchpriority="high" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-00-0-1.png" style="width:40%;background-repeat: no-repeat;background-size: 100%;background-position:center;position: absolute;top: 30%;right: 30%;" /></picture></div>
+		<div class="p-0 d-block d-md-none" style="position: relative;"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-0-0_P-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-0-0_P.webp" type="image/webp" /><img decoding="async" fetchpriority="high" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-00-0-0_P.png" style="width:100%" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-0-1-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-0-1.webp" type="image/webp" /><img class="col-6" decoding="async" fetchpriority="high" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-00-0-1.png" style="width:70%;background-repeat: no-repeat;background-size: 100%;background-position:center;position: absolute;top: 35%;right: 15%;" /></picture></div>
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-md-8 col-lg-6 align-self-center align-items-center py-3 px-4 my-3" style="background-color:#90b09a;border-radius: 10pt;">
+				<p style="color:#fff;">大家是不是常常在新聞上聽到「國土計畫」？如果你關心國家發展、開發，或是你擁有土地，都有機會直接或間接的在未來遇到「國土計畫」。</p>
+				<p style="color:#fff;">規劃國土是像大家搬家後規劃新家的使用一樣，讓我們先撇開複雜的實際運作、政府分工，<span style="color: #f9e244;font-weight: 700;">從核心上了解「國土計畫」的運作原理</span>，一起藉著狗兔雞花小家庭搬新家的比喻，對應實際國土使用的情境，看看遇到了哪些問題。</p>
+				<p class="mb-0" style="color:#fff;">未來遇到實際案例的時候，能理解眼前情境對應到的是什麼概念。可以點擊以下圖示直接跳到不同階段。</p></div></div></div>
+	<div class="container-fluid" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-md-8 col-lg-6 row align-items-center py-3 px-4 my-3">
+				<div class="mx-auto col-10 col-md-4 align-self-center pb-5">
+					<p class="text-center"><a class="gray_text" href="#first" style="font-family: naikaifont;">搬新家</a></p><a href="#first"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-1.webp" type="image/webp" /><img class="w-100" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-00-1.png" /></picture> </a></div>
+				<div class="mx-auto col-10 col-md-4 align-self-center pb-5">
+					<p class="text-center"><a class="gray_text" href="#second" style="font-family: naikaifont;">遇到困擾</a></p><a href="#second"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-2.webp" type="image/webp" /><img class="w-100" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-00-2.png" /></picture> </a></div>
+				<div class="mx-auto col-10 col-md-4 align-self-center pb-5">
+					<p class="text-center"><a class="gray_text" href="#third" style="font-family: naikaifont;">怎麼解決</a></p><a href="#third"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-00-3.webp" type="image/webp" /><img class="w-100" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-00-3.png" /></picture> </a></div></div></div></div><!--第一段-->
+	<div class="container-fluid py-5" id="first" style="background-color:#ddddcc;">
+		<div class="row align-items-center justify-content-center mx-0 px-0">
+			<div class="col-4 col-md-5 px-0">
+				<hr class="my-0 px-0" /><!-- my-0 removes default margin from the hr --></div>
+			<div class="col-4 col-md-2 px-0">
+				<p class="inline-paragraph text-center gray_text mb-0 px-0" style="font-family: naikaifont;">搬新家囉</p></div>
+			<div class="col-4 col-md-5 px-0">
+				<hr class="my-0 px-0" /><!-- my-0 removes default margin from the hr --></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-1-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-1.webp" type="image/webp" /> <img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-1.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240307-001-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240307-001.webp" type="image/webp" /> <img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240307-001.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">狗兔帶著雞與花買了一間二手屋，三人一花各有不同工作角色。</p></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0018-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0018.webp" type="image/webp" /><img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0018.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0014-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0014.webp" type="image/webp" /><img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0014.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">舊屋主搬走後，裝潢跟家具都還留著，小家庭能省則省；格局都維持不更改，兔喜歡泡澡但沒浴缸，於是買了一個澡盆。</p></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0021-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0021.webp" type="image/webp" /><img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0021.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0022-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0022.webp" type="image/webp" /><img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0022.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">兔需要寫作空間，把客房當工作室，工作用的資料跟參考書堆滿床與衣櫃；沒有書桌的雞放學回家後，只能在餐桌上寫作業。</p></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0012-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0012.webp" type="image/webp" /><img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0012.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0023-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0023.webp" type="image/webp" /><img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0023.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">因為沒有陽台，把花種在有陽光的廁所；廁所被當成倉庫堆滿了雜物，放不下的書一樣收納在衣櫃中；雞沒有地方睡覺，就在主臥室多買了一張床。</p></div></div></div><!--第一段解說文字-->
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<h3 class="col-12 col-md-8 col-lg-6 text-center">區域計畫就像搬進二手屋卻沒重新裝潢</h3></div>
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-md-8 col-lg-6 align-self-center align-items-center py-3 px-4 my-3" style="background-color:#90b09a;border-radius: 10pt;">
+				<p style="color:#fff;">在進入到「國土計畫」之前，整個台灣的土地哪裏可以做什麼，怎麼使用，是由「區域計畫」所管理。</p>
+				<p style="color:#fff;">都市地區在日治時期已經有「都市計畫」，其餘國土的規劃使用，在1974年《區域計畫法》公告實施後才有依據，當時期待透過管理，解決發展分散導致的國土利用混亂，以及農地流失的情況。</p><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0024-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0024.webp" type="image/webp" /><img class="w-100 py-4 px-5 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0024.png" /></picture> <picture> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-009.webp" type="image/webp" /><img class="w-100 py-4 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-009.png" /></picture>
+				<p style="color:#fff;">但區域計畫進場時，土地並不是全新未開發的狀態，許多土地上已經有人使用，就像已經有人住過的二手屋。</p>
+				<p class="mb-0" style="color:#fff;">因為要保障既有權利，也就是不影響已經在使用的人，同時又趕著讓區域計畫上路，只好妥協照著當時使用的現況進行土地編定。</p></div></div></div><!--第二段-->
+	<div class="container-fluid py-5" id="second" style="background-color:#ddddcc;">
+		<div class="row align-items-center justify-content-center mx-0 px-0">
+			<div class="col-2 col-md-5 px-0">
+				<hr class="my-0 px-0" /><!-- my-0 removes default margin from the hr --></div>
+			<div class="col-8 col-md-2 px-0">
+				<p class="inline-paragraph text-center gray_text mb-0 px-0" style="font-family: naikaifont;">就這麼住了一陣子之後，會有什麼問題呢？</p></div>
+			<div class="col-2 col-md-5 px-0">
+				<hr class="my-0 px-0" /><!-- my-0 removes default margin from the hr --></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0013-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0013.webp" type="image/webp" /><img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0013.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0010-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0010.webp" type="image/webp" /><img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0010.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">大家都在不一樣的地方活動，導致每個地方都放了衛生紙跟垃圾桶；沒有地方放東西就買櫃子，櫃子愈來愈多；大家還沒吃完晚餐，但雞要寫作業，只好在飯菜旁寫；吃飯都端到客廳吃，餐桌變成只是放菜的地方。</p></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0017-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0017.webp" type="image/webp" /><img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0017.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-005-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-005.webp" type="image/webp" /><img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-005.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">兔在泡澡的時候，因為另一間廁所被拿來堆雜物所以大家都沒辦法上廁所。</p></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0015-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0015.webp" type="image/webp" /><img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0015.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0011-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0011.webp" type="image/webp" /><img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0011.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">整疊的書在軟軟的床墊上常常倒下來，到處都是的垃圾桶，佔位置又常常踢到；雞長大了，不想再跟狗兔同房，需要獨立的空間。</p></div></div></div><!--第二段解說文字-->
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<h3 class="col-12 col-md-8 col-lg-6 text-center">區域計畫的管理方式缺乏統整性規劃</h3></div>
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-md-8 col-lg-6 align-self-center align-items-center py-3 px-4 my-3" style="background-color:#90b09a;border-radius: 10pt;">
+				<p style="color:#fff;">前一段有提到，區域計畫原本期待能夠透過管理規劃，反轉很多地方的發展各自分散、農地大量流失的情況。</p>
+				<p style="color:#fff;">但是，只是將現況寫下來的土地編定方式，讓土地使用的「規劃」與「管理」脫鉤，導致區域計畫沒有辦法發揮預期的作用。</p>
+				<p style="color:#fff;">沒有先規劃讓大家自由發展土地使用，很容易發生「蛙躍式的成長」，就像聚落之間分散導致需求分散，本來可以集中提供的公共建設像是馬路、水電、網路等，會因此需要分散提供造成土地與資源的浪費。</p>
+				<p style="color:#fff;">就像住家動線規劃，如果沒有將活動的需求集中，就容易發生家裡到處都需要有一包衛生紙，到處都需要有垃圾桶，或垃圾懶得丟到垃圾桶就隨意亂放。</p>
+				<p class="mb-0" style="color:#fff;">分散隨意成長的聚落，也很常發生實際土地的使用與他原本理想的使用不符的情況，就像被拿來堆雜物的廁所，或是拿來置物的床，可能會排擠到原本的用途。</p></div></div></div><!--第二段實際案例-->
+	<div class="container-fluid py-3" id="second_case" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<h3 class="col-12 col-md-8 col-lg-6 text-center" style="color:#dfaa43">也許合法但可能不合理</h3></div>
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-md-3 py-3 px-4 my-3 mx-3" id="eqh_div_1" style="background-color:#dfaa43;border-radius: 10pt;">
+				<div class="row">
+					<div class="col-9 col-md-12 mx-auto"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0019.webp" type="image/webp" /><img class="w-100" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0019.png" /></picture></div></div>
+				<p class="mb-0" style="color:#fff;">散落農地上的工廠，即便在區域計畫的脈絡下，被編定為合法的工業用地，也因為農地的地理狀況本就不是為了工業生產設計而發生許多外溢的效果（外部性），其中包含但不僅限於污水排放至灌溉溝渠、狹窄的農地道路上有卡車奔馳、公安發生時消防人員難以靠近等，這些情形都沒有違法，但並不合理。</p></div>
+			<div class="col-12 col-md-3 py-3 px-4 my-3 mx-3" id="eqh_div_2" style="background-color:#dfaa43;border-radius: 10pt;">
+				<div class="row">
+					<div class="col-9 col-md-12 mx-auto"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-002.webp" type="image/webp" /><img class="w-100" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-002.png" /></picture></div></div>
+				<p class="mb-0" style="color:#fff;">礦業用地原本是根據採礦需求如實劃設，但當採礦結束後，採礦用地雖還是採礦用地，但缺早已沒有採礦的需求，針對符合採礦需求的管理雖然合法，但無法銜接現在的使用需求，顯然也是不合理。</p></div>
+			<div class="col-12 col-md-3 py-3 px-4 my-3 mx-3" id="eqh_div_3" style="background-color:#dfaa43;border-radius: 10pt;">
+				<div class="row">
+					<div class="col-9 col-md-12 mx-auto"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0020.webp" type="image/webp" /><img class="w-100" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0020.png" /></picture></div></div>
+				<p class="mb-0" style="color:#fff;">原本在都市外圍的工業區，與都市保持一定距離，但隨著都市擴張，跟都市距離愈來愈近，甚至被包裹進都市之中。雖然這些工業區都沒有違反土地使用，也就是都合法，但居住與工業混雜不是合理的現象，這個時候這些工業區就必須轉型、或轉作其他用途。</p></div></div></div><!--第三段-->
+	<div class="container-fluid py-5" id="third" style="background-color:#ddddcc;">
+		<div class="row align-items-center justify-content-center mx-0 px-0">
+			<div class="col-2 col-md-5 px-0">
+				<hr class="my-0 px-0" /><!-- my-0 removes default margin from the hr --></div>
+			<div class="col-8 col-md-2 px-0">
+				<p class="inline-paragraph text-center gray_text mb-0 px-0" style="font-family: naikaifont;">那麼，該怎麼辦呢?</p></div>
+			<div class="col-2 col-md-5 px-0">
+				<hr class="my-0 px-0" /><!-- my-0 removes default margin from the hr --></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-10-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-10.webp" type="image/webp" /><img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-10.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240307-008-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240307-008.webp" type="image/webp" /><img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240307-008.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">大家覺得這樣下去並不是辦法，決定一起來討論；重新討論家裡每個地方可以做什麼，廁所應該要有廁所的功能，客房要有房間的功能。</p></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-003-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-003.webp" type="image/webp" /><img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-003.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-004-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-004.webp" type="image/webp" /><img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-004.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">大家列出需求，狗需要一小區有陽光的地方種花；兔要工作室跟放資料的櫃子，雞需要自己的空間。</p></div></div></div><!--第三段解說文字-->
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<h3 class="col-12 col-md-8 col-lg-6 text-center">「國土計畫」改變土地的使用邏輯</h3></div>
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-md-8 col-lg-6 align-self-center align-items-center justify-content-center py-3 px-4 my-3" style="background-color:#90b09a;border-radius: 10pt;">
+				<p style="color:#fff;">為了解決區域計畫施行以來造成的問題，嘗試以國土計畫取代區域計畫並整合都市計畫。</p>
+				<p style="color:#fff;">國土計畫將台灣土地依自然環境特性、空間佈局中被賦予的角色劃分為4大功能分區。中央各部會，以及地方政府提出各自的計畫，並再照著計畫執行土地管理與使用，最大的差異，就是將土地使用改變成「計畫引導使用」，並且以計畫為優先。</p>
+				<p style="color:#fff;">就像故事中，先把家中什麼地方該怎麼使用確定下來，接著各自提出需求，再一起討論要怎麼重新規劃家裡的空間使用。</p>
+				<p style="color:#f9e244;font-weight: 700;">最大的變化就是——從「沒有不行的都放行」變成「沒有允許的都不行」。</p>
+				<p style="color:#fff;">如果要變更某塊土地的使用時，以前只要「沒有規定不能這樣用」就「可以申請變更」；「符合國土計畫的允許才能使用」，如果真的有需要變更土地使用，就必須走國土計畫的變更方式。</p>
+				<div class="row align-self-start">
+					<div class="col-8 col-md-5 mx-auto"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-008.webp" type="image/webp" /><img class="w-100 mx-auto my-3" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-008.png" /></picture></div></div>
+				<p style="color:#fff;">假設有一塊農地想改做工廠，申請用地變更的時候，在區域計畫的時代，只要目的事業主管機關也就是經發單位、農地主管機關都同意，就可以變更。</p>
+				<div class="row align-self-start">
+					<div class="col-8 col-md-5 mx-auto"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-0016.webp" type="image/webp" /><img class="w-100 mx-auto my-3" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-0016.png" /></picture></div></div>
+				<p class="mb-0" style="color:#fff;">但進到國土計畫之中後，首先要確認「這片土地在計畫上有開放工業使用嗎？」如果沒有，就不能轉作工業用途。假設這一個區域未來要發展成工業區或聚落，也須經國土計畫中定期的通盤檢討，或其他變更方式，先改變功能分區，才能改變實際使用。</p></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-lg-10 align-self-center"><picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-006-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-006.webp" type="image/webp" /><img class="w-100 d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-006.png" /></picture> <picture> <source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-001-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240429-001.webp" type="image/webp" /><img class="w-100 d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240429-001.png" /></picture></div>
+			<div class="col-12 col-md-8 align-self-center align-items-center py-4 px-4 my-3" style="background-color:#f9e244;border-radius: 10pt;">
+				<p class="mb-0 story_card">照著重新規劃的房子，大家各自調整自己生活的使用，就算未來需求改變，也可以再一次坐下來好好重新討論怎麼調整。</p></div></div></div>
+	<div class="container-fluid py-3" style="background-color:#ddddcc;">
+		<div class="mx-auto row justify-content-center">
+			<h3 class="col-12 col-md-8 col-lg-6 text-center">並不會決定好就不能改變</h3></div>
+		<div class="mx-auto row justify-content-center">
+			<div class="col-12 col-md-8 col-lg-6 align-self-center align-items-center py-3 px-4 my-3" style="background-color:#90b09a;border-radius: 10pt;">
+				<p style="color:#fff;">而故事裡狗兔雞花討論、列出需求、建立家中各區域的使用原則，就像過渡到國土計畫法的時候，各部門與地方先提交計畫，再進行國土功能分區的劃設。</p>
+				<p style="color:#fff;">重新規劃一個房子看似簡單，但對應到現實世界裡的政府各部門時，就會涉及國土計畫中的各種協調機制以及國土功能分區的劃設與使用管理原則，這也是國土計畫如何落實國土管理的關鍵。</p>
+				<p style="color:#fff;">「國土計畫」重要的不只是「改變國土使用邏輯」，更重要的是創造一個討論與協調的空間，讓最終的使用，能在顧及土地秩序的前提下符合彼此需求。</p>
+				<p class="mb-0" style="color:#fff;">至於這個機制如何運作？可以<a href="https://www.cet-taiwan.org/node/4640" style="color:#f9e244;" target="_blank"><u><b>閱讀下集</b></u></a>，有更詳細的介紹</p></div></div></div><!--QA-->
+	<div class="container-fluid py-2" style="background-color:#ddddcc;">
+		<div class="row align-items-center justify-content-center mx-0 px-0">
+			<div class="col-4 col-md-5 px-0">
+				<hr class="my-0 px-0" /><!-- my-0 removes default margin from the hr --></div>
+			<div class="col-4 col-md-2 px-0">
+				<p class="inline-paragraph text-center gray_text mb-0 px-0" style="font-family: naikaifont;">Q &amp; A</p></div>
+			<div class="col-4 col-md-5 px-0">
+				<hr class="my-0 px-0" /><!-- my-0 removes default margin from the hr --></div></div>
+		<div class="container-fluid py-3" style="background-color:#ddddcc;">
+			<div class="mx-auto row justify-content-center">
+				<div class="col-12 col-md-8 col-lg-6 align-self-center align-items-center py-3 px-4 my-3" style="border:5pt dashed #dfaa43;border-radius: 10pt;background-color:rgba(255,255,255,0.5);">
+					<p aria-controls="collapseExample" aria-expanded="false" class="emph" data-bs-target="#collapse1" data-bs-toggle="collapse" style="color:#dfaa43;font-size:1.4rem" type="button">▾ 名詞解釋</p>
+					<div class="collapse" id="collapse1">
+						<p class="emph" style="color:#dfaa43;">編定、地目</p>
+						<p style="color:#dfaa43;">每一塊地的「編定」或「地目」，是依照現行的區域計畫法給每一塊地一個分類，是管理非都市土地的手段，用以掌握內每一筆土地使用狀況，並作合理之用途分配，達到管制的目的。</p>
+						<p class="emph" style="color:#dfaa43;">部門、部會</p>
+						<p style="color:#dfaa43;">指的是同一件事情，都是指政府機關中分別擔任不同職務的單位，例如負責交通的交通部、負責經濟發展的經濟部，就是不同的部門/部會。</p>
+						<p class="emph" style="color:#dfaa43;">功能分區</p>
+						<p style="color:#dfaa43;">國土計畫將土地依自然環境特性、空間佈局中被賦予的角色劃分為4大功能分區——基於保育及保安，不能開發或有條件才能開發的「國土保育地區」；陸地之外的「海洋資源地區」；因應發展需求、城鄉發展願景的「城鄉發展地區」；以及最後也是較常出現爭議，保護重要農林漁牧生產環境的「農業發展地區」。</p>
+						<p class="mb-3" style="color:#dfaa43;">各功能分區之下，則將依環境敏感程度或農地生產資源條件、都市發展需求再予以分類。</p></div>
+					<p aria-controls="collapseExample" aria-expanded="false" class="emph" data-bs-target="#collapse2" data-bs-toggle="collapse" style="color:#dfaa43;font-size:1.4rem" type="button">▾ 國土計畫上路會解決到處都是違建的問題嗎？</p>
+					<div class="collapse" id="collapse2">
+						<p class="mb-3" style="color:#dfaa43;">國土計畫處理的不是「不合法」，而是「不合理」。「違建」，就是土地的「違法使用」，在沒有國土計畫的現況下就有法源可以解決，解決問題的方法不在法律怎麼訂，而是政府要積極執法，如果訂法律卻不執行，法律怎麼規定都沒有用。</p></div>
+					<p aria-controls="collapseExample" aria-expanded="false" class="emph" data-bs-target="#collapse3" data-bs-toggle="collapse" style="color:#dfaa43;font-size:1.4rem" type="button">▾ 什麼是既有權利的保障？</p>
+					<div class="collapse" id="collapse3">
+						<p style="color:#dfaa43;">簡單來說只要是合法使用「現在在做什麼，以後就都可以做什麼」。就算土地被劃入「國土保育」、「農業發展」等對開發管制比較嚴格的區位，仍然可以持續既有的合法使用，建築用地就可以改房子，農地就可以耕作。</p>
+						<p class="mb-3" style="color:#dfaa43;">而為處理《建築法》前，不在合法建築用地上的合法建物，未來被標示為違規使用，目前地方政府也刻正開放所有權人向地方政府提出申請，以進一步地保障民眾權利。</p></div>
+					<p aria-controls="collapseExample" aria-expanded="false" class="emph" data-bs-target="#collapse4" data-bs-toggle="collapse" style="color:#dfaa43;font-size:1.4rem" type="button">▾ 公告完就不能修改嗎？</p>
+					<div class="collapse" id="collapse4">
+						<p class="mb-3" style="color:#dfaa43;">不會劃好就不能改！雖然公告後的國土計畫、國土功能分區圖具有法定效力，不得任意變更功能分區、分類。修改的方式除了直轄市、縣（市）國土計畫依法每5年通盤檢討一次；同時，鄉村地區整體規劃，也有提供其他因地制宜的修正管道。</p></div>
+					<p aria-controls="collapseExample" aria-expanded="false" class="emph" data-bs-target="#collapse5" data-bs-toggle="collapse" style="color:#dfaa43;font-size:1.4rem" type="button">▾ 國土計畫上路誰會受影響？</p>
+					<div class="collapse" id="collapse5">
+						<p class="mb-3" style="color:#dfaa43;">所有現在的合法使用都不會受到影響。在既有權利的保障下，國土計畫的上路不會有負面影響，反而是藉由計畫辦理的過程，許多合理但不合法的使用，有了討論、解決的空間。</p></div>
+					<p aria-controls="collapseExample" aria-expanded="false" class="emph" data-bs-target="#collapse6" data-bs-toggle="collapse" style="color:#dfaa43;font-size:1.4rem" type="button">▾ 國土計畫上路到底是好是壞？</p>
+					<div class="collapse" id="collapse6">
+						<p style="color:#dfaa43;">過去區域計畫的管理邏輯，只看單塊土地的使用，因此非常容易變更地目，但實際使用缺乏彈性空間，可能造成合理但違法的使用。而「國土計畫」最重要的概念，除了以計畫引導土地使用之外，也在制度中設計了許多因地制宜的調整方式。</p>
+						<p style="color:#dfaa43;">另外，也因為計畫引導、不得任意變更的規範，民眾不用擔心，自己的土地突如其來的面臨開發迫遷；也較不會面臨隔壁土地使用不相同而產生的影響。</p>
+						<p class="mb-3" style="color:#dfaa43;">「國土計畫」的實施是重新建構國土秩序的開始；不得任意變更功能分區分類，也對於守護農地邁向國土永續至關重要，而永續國土也才是我們可以持續有品質的生活在這片土地上的關鍵。</p></div>
+					<p aria-controls="collapseExample" aria-expanded="false" class="emph" data-bs-target="#collapse7" data-bs-toggle="collapse" style="color:#dfaa43;font-size:1.4rem" type="button">▾ 怎麼知道我的土地在什麼功能分區中，以及可以做什麼？</p>
+					<div class="collapse" id="collapse7">
+						<p class="mb-3" style="color:#dfaa43;">查詢功能分區，可至【<a class="qa" href="https://nsp.tcd.gov.tw/ngis/" style="border-bottom:1px;color:#dfaa43;">國土規劃地理資訊圖台</a>】，查詢功能分區分類的容許使用項目，可至【國土計畫土地使用管制專區】查詢「<a class="qa" href="https://www.nlma.gov.tw/%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF/%E6%A5%AD%E5%8B%99%E6%96%B0%E8%A8%8A/36-%E7%B6%9C%E5%90%88%E8%A8%88%E7%95%AB%E7%B5%84/33737-%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E5%9C%9F%E5%9C%B0%E4%BD%BF%E7%94%A8%E7%AE%A1%E5%88%B6%E5%B0%88%E5%8D%80.html" style="border-bottom:1px;color:#dfaa43;">容許使用情形表</a>」。</p></div>
+					<p aria-controls="collapseExample" aria-expanded="false" class="emph" data-bs-target="#collapse8" data-bs-toggle="collapse" style="color:#dfaa43;font-size:1.4rem" type="button">▾ 國土計畫的施行的進度如何？</p>
+					<div class="collapse" id="collapse8">
+						<p class="mb-3" style="color:#dfaa43;">可以參考<a class="qa" href="https://e-info.org.tw/spatial_planning2020" style="border-bottom:1px;color:#dfaa43;">環境資訊中心的專題報導總整理</a></p></div>
+					<hr style="color:#dfaa43;border: 3px;" />
+					<p style="color:#dfaa43;">若你對國土計畫有其他疑問，歡迎在這邊留下你的問題，我們會整理重要的提問內容，並在這邊公開回答！</p>
+					<div class="row">
+						<div class="p-2 col-10 col-md-3 mx-auto mb-3" style="background-color: #dfaa43;border-radius: 10pt;">
+							<h4 class="text-center p-0 m-0" style="color:#fff"><a href="https://forms.gle/X31wxHiiZsF2btbN6" style="color:#fff">歡迎提問</a></h4></div></div></div></div></div></div><!--訂閱電子報-->
+	<div class="container-fluid py-2" style="background-color:#ddddcc;width:100% ;">
+		<div class="mx-auto row justify-content-center pt-5"><!--
+            <div class="col-10 col-md-4 align-self-center align-items-center py-3 px-4 my-3" style="background-color:#90b09a;border-radius: 10pt;">
+                <h4 class="mb-0 text-center" style="color:#fff;">訂閱電子報追蹤更多環境議題</h4>
+            </div>
+            -->
+			<div class="mx-auto row justify-content-center">
+				<h3 class="col-12 col-md-8 col-lg-6 text-center">訂閱電子報追蹤更多環境議題</h3></div></div>
+		<div class="mx-auto row justify-content-center pb-5">
+			<div class="col-12 col-md-8 col-lg-6 align-self-center align-items-center my-3" style="border:5pt dashed #90b09a;border-radius: 10pt;">
+				<div class="py-3 px-4 my-3">
+					<p class="mb-0 text-center" style="color:#90b09a;">您好，請填寫以下欄位資料，以完成電子報的訂閱：<br />
+						請以 gmail 優先（學校信箱、hotmail、yahoo、hinet 會擋信）</p></div>
+				<div class="mx-auto row justify-content-center">
+					<div class="col-9 col-md-4 justify-content-center py-3 mx-auto"><iframe class="crm-container-embed" frameborder="0" scrolling="no" src="https://www.cet-taiwan.org/civicrm/profile/create?reset=1&amp;embed=1&amp;gid=62" style="min-height:100px;width:100%;border:none;overflow:hidden;"></iframe><script src="https://www.cet-taiwan.org/sites/all/modules/civicrm/js/iframeresizer.js"></script><script type="text/javascript">
+                        setTimeout(iFrameResize, 300);
+                        </script></div></div></div>
+			<div class="lh-3 mt-3 row justify-content-center d-md-none">
+				<p class="col-10 col-md-3 text-center mx-auto" style="color: #767d85;">文字解說 │ 黃子芸、李宇恩</p>
+				<p class="col-10 col-md-3 text-center mx-auto" style="color: #767d85;">美術設計 │ 李宇恩</p>
+				<p class="col-10 col-md-3 text-center mx-auto" style="color: #767d85;">網　　頁 │ 鄧宇佑</p></div>
+			<div class="lh-3 mt-3 row justify-content-center d-none d-md-block">
+				<p class="col-10 text-center mx-auto" style="color: #767d85;">文字解說 │ 黃子芸、李宇恩　美術設計 │ 李宇恩　網　　頁 │ 鄧宇佑</p></div></div></div><!--footer-->
+	<div class="container-fluid" style="background-color:#90b09a;width:100%;height:30px;">&nbsp;</div>
+	<div class="container-fluid" style="background-color:#ddddcc;width:100% ;">
+		<div class="row justify-content-center align-items-center py-5">
+			<div class="col-10 col-sm-2 order-2 order-sm-1">
+				<h4 style="text-align:center;color:#90b09a;font-weight: 500;">本土專業</h4>
+				<p style="color:#767d85;text-align:center;">理性堅定，促進社會對話</p></div>
+			<div class="col-10 col-sm-2 order-3 order-sm-2">
+				<h4 style="text-align:center;color:#90b09a;font-weight: 500;">動身護土</h4>
+				<p style="color:#767d85;text-align:center;">行動有力，帶來正面改變</p></div>
+			<div class="col-10 col-sm-2 order-1 order-sm-3 px-0 py-3 py-md-0"><a href="https://www.cet-taiwan.org/donate"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240125-11.webp" type="image/webp" /><img alt="" class="d-block mx-auto" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20240125-11.png" style="max-width: 60%;" /></picture> </a></div>
+			<div class="col-10 col-sm-2 order-4 order-sm-4">
+				<h4 style="text-align:center;color:#90b09a;font-weight: 500;">公正獨立</h4>
+				<p style="color:#767d85;text-align:center;">財務自主，經費來自大眾捐款，不接受政府補助</p></div>
+			<div class="col-10 col-sm-2 order-5 order-sm-5">
+				<h4 style="text-align:center;color:#90b09a;font-weight: 500;">深化民主</h4>
+				<p style="color:#767d85;text-align:center;">堅持環境與世代正義，壯大公民社會</p></div></div></div><script>
+    // margin: 0 !important;
+    // padding: 0 !important;
+    // border: none !important;
+    // box-shadow: none !important;
+    // 確保在 iframe 內部真的載入完成後執行
+    document.querySelector('.crm-container-embed').addEventListener('load', function() {
+        const waitForIframe = setInterval(() => {
+            const iframe = document.getElementById('iFrameResizer0');
+            if (!iframe) return; // 尚未建立，繼續等
+
+            try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                if (!iframeDoc || !iframeDoc.head) return;
+
+                const style = iframeDoc.createElement('style');
+                style.textContent = `
+                       body, #crm-container {
+                        
+                            background-color: #DDDDCC !important;
+                            
+                        }
+                    
+                        #crm-container {
+                            background-color: #DDDDCC;
+                        }
+                        #crm-container label {
+                            color: #767d85;
+                            font-size:1rem;
+                        }
+                        @media(max-width: 575px){
+                            #crm-container label {
+                                font-size:1.1rem;
+                            }
+                        }
+                        #_qf_Edit_next {
+                            background: #90b09a;
+                        }
+                    `;
+                iframeDoc.head.appendChild(style);
+                clearInterval(waitForIframe); // 完成後清除監聽
+            } catch (error) {
+                console.error("⚠️ 無法存取 iframe，可能是跨域限制。", error);
+                clearInterval(waitForIframe);
+            }
+        }, 200);
+    });
+    </script></div>
