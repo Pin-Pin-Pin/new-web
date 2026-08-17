@@ -168,6 +168,10 @@ h3,
     max-width: 100%;
 }
 
+.problems .box {
+    overflow-y: visible;
+}
+
 .slide-box {
     margin-top: 10px;
     height: 23rem;
@@ -177,24 +181,45 @@ h3,
     /*    1024px    */
 }
 
+@media (min-width: 1025px) {
+    .problems .slide-box {
+        height: 26rem;
+        min-height: 26rem;
+    }
+}
+
 .slide-item {
     background-color: #BF3000;
     border-radius: 20pt;
     border: 1px solid #ccc;
-    padding: 8px 18px;
+    padding: 0.375rem 1.125rem;
+    min-height: 80px;
     height: auto;
-    overflow-y: auto;
+    overflow: visible;
     position: absolute;
     text-align: center;
     display: block;
-    height: 80px;
+    box-sizing: border-box;
+}
+
+.slide-item .custom-h,
+.slide-item h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.3;
 }
 
 .slide-quote {
     color: #fff;
-    margin: 0.2rem;
+    margin: 0.125rem 0;
     display: block;
     text-align: center;
+}
+
+.slide-item p.slide-quote {
+    margin-top: 0.125rem;
+    margin-bottom: 0;
+    line-height: 1.4;
 }
 
 .slide-box-2 {
@@ -251,10 +276,13 @@ h3,
         top: 0 !important;
         right: 0 !important;
         left: 0 !important;
-        bottom: 0 !important;
+        bottom: auto !important;
         position: relative;
         width: 90%;
         max-width: 100%;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
         margin-bottom: 0.5rem;
         align-self: center;
     }
@@ -478,7 +506,7 @@ h3,
 				<p class="slide-quote xs-phone-block mx-1 mx-xs-3" style="color:#EEDEBD">潭南部落北原礦業採礦案</p></div>
 			<div class="slide-item d-flex justify-content-center align-items-center" style="top: 13rem;left: 0rem;">
 				<h3 class="custom-h slide-quote red-box-h mx-0 mx-xs-3">廠商不完整揭露開發可能影響</h3></div>
-			<div class="slide-item d-flex align-items-center justify-content-center" style="top: 13rem;right: 19rem;height: 80px;">
+			<div class="slide-item d-flex align-items-center justify-content-center" style="top: 13rem;right: 19rem;">
 				<h3 class="custom-h slide-quote red-box-h mx-1 mx-xs-3">廠商要求臨時取消部落會議</h3></div>
 			<div class="slide-item d-flex justify-content-center align-items-center" style="top: 19rem;left: 8rem;">
 				<h3 class="custom-h slide-quote red-box-h mx-0 mx-xs-3">部落對法律程序不了解錯過談判機會</h3></div>
@@ -623,8 +651,8 @@ h3,
 				<p>你的支持，能夠匯聚更多守護台灣環境的公民力量。</p>
 				<p class="mb-0">邀請你捐款支持，讓改變持續發生。</p>
 				<div class="justify-content-center d-sm-none d-flex">
-					<div class="h2 custom-h mt-4 mb-0"><a class="btn-2 align-middle" href="https://www.cet-taiwan.org/donate" style="white-space: nowrap; margin-bottom: 35px;" target="_blank">捐款支持</a></div></div>
-				<div class="h2 custom-h mt-4 mb-0 d-sm-block d-none"><a class="btn-2 align-middle" href="https://www.cet-taiwan.org/donate?utm_source=web&amp;utm_medium=button&amp;utm_campaign=general&amp;utm_content=consult-agree" style="white-space: nowrap; margin-bottom: 35px;" target="_blank">捐款支持</a></div></div></div></div></section>
+					<div class="h2 custom-h mt-4 mb-0"><a class="btn-2 align-middle" href="https://dev.cet-taiwan.org/freepageb/100037" style="white-space: nowrap; margin-bottom: 35px;" target="_blank">捐款支持</a></div></div>
+				<div class="h2 custom-h mt-4 mb-0 d-sm-block d-none"><a class="btn-2 align-middle" href="https://dev.cet-taiwan.org/freepageb/100037" style="white-space: nowrap; margin-bottom: 35px;" target="_blank">捐款支持</a></div></div></div></div></section>
 <footer class="container-fluid" style="background-color:#BF3000">
 	<div class="row justify-content-center py-4">
 		<div class="d-flex flex-column align-self-center col-10 col-sm-2 order-2 order-sm-1">
@@ -633,7 +661,7 @@ h3,
 		<div class="d-flex flex-column align-self-center col-10 col-sm-2 order-3 order-sm-2">
 			<h4 class="custom-h text-center" id="heading_2" style="color:#EEDEBD;">動身護土</h4>
 			<p id="paragraph_2" style="color:#FFFFFF;text-align:center;">行動有力，帶來正面改變</p></div>
-		<div class="col-10 col-sm-2 order-1 order-sm-2 px-0 py-3 py-md-0"><a href="https://www.cet-taiwan.org/donate"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240927_16.webp" type="image/webp" /><img alt="" class="d-block mx-auto" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240927_16.png" style="max-width: 60%;
+		<div class="col-10 col-sm-2 order-1 order-sm-2 px-0 py-3 py-md-0"><a href="https://dev.cet-taiwan.org/"><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240927_16.webp" type="image/webp" /><img alt="" class="d-block mx-auto" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20240927_16.png" style="max-width: 60%;
 " /></picture> </a></div>
 		<div class="d-flex flex-column col-10 col-sm-2 order-4 order-sm-4 align-self-center">
 			<h4 class="custom-h text-center" id="heading_3" style="color:#EEDEBD;">公正獨立</h4>
