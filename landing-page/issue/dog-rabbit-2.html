@@ -1002,19 +1002,25 @@ iframe.crm-container-embed {
 				<p>若你對國土計畫有其他疑問，歡迎在這邊留下你的問題，我們會整理重要的提問內容，並在這邊公開回答！</p><!-- <p><a href="https://forms.gle/X31wxHiiZsF2btbN6" target="_blank">點此提問</a></p> -->
 				<div class="d-inline-block mx-auto px-3 py-2" style="background-color:var(--green);border-radius: 10pt;">
 					<h3 class="text-center" style="color:var(--white)"><a href="https://forms.gle/X31wxHiiZsF2btbN6" style="color:var(--white)">歡迎提問</a></h3></div></div></div><!--訂閱電子報-->
-		<div class="container-md pb-4">
-			<div class="dash py-5 px-md-5 px-4" style="color:var(--gray);--dash-color: var(--gray);">
+		<div class="container-md pb-4 px-1 px-sm-3">
+			<div class="dash py-5 px-2 px-md-5" style="color:var(--gray);--dash-color: var(--gray);">
 				<div class="mx-auto row justify-content-center">
 					<div class="mx-auto row justify-content-center">
 						<h3 class="text-center" style="color:var(--gray);">訂閱電子報<span class="wsnw">追蹤更多環境議題</span></h3></div></div>
 				<div class="mx-auto row justify-content-center">
 					<div class="align-self-center align-items-center">
-						<div class="py-3 px-4">
+						<div class="py-3 px-2 px-md-4">
 							<p class="mb-0 text-center">您好，請填寫以下欄位資料，以完成電子報的訂閱：<br />
 								請以 gmail 優先（學校信箱、hotmail、yahoo、hinet 會擋信）</p></div></div></div>
 				<div class="mx-auto row justify-content-center">
-					<div class="col-9 col-md-4 justify-content-center py-3 mx-auto"><iframe class="crm-container-embed" frameborder="0" scrolling="no" src="https://dev.cet-taiwan.org/civicrm/profile/create?reset=1&embed=1&gid=62" style="min-height:100px;width:100%;border:none;overflow:hidden;background-color:var(--gray-green);"></iframe><script src="https://www.cet-taiwan.org/sites/all/modules/civicrm/js/iframeresizer.js"></script><script type="text/javascript">
-                        setTimeout(iFrameResize, 300);
+					<div class="col-12 mx-auto py-3 px-0" style="max-width: 420px;"><iframe class="crm-container-embed" frameborder="0" scrolling="no" src="https://dev.cet-taiwan.org/civicrm/profile/create?reset=1&embed=1&gid=62" style="min-height:280px;width:100%;border:none;background-color:var(--gray-green);"></iframe><script src="https://www.cet-taiwan.org/sites/all/modules/civicrm/js/iframeresizer.js"></script><script type="text/javascript">
+                        setTimeout(function () {
+                            iFrameResize({ heightCalculationMethod: 'lowestElement' }, '.crm-container-embed');
+                        }, 300);
+                        setTimeout(function () {
+                            var el = document.querySelector('.crm-container-embed');
+                            if (el && el.iFrameResizer) el.iFrameResizer.resize();
+                        }, 2000);
                         </script></div></div></div>
 			<div class="lh-3 mt-3 row justify-content-center d-md-none">
 				<p class="col-10 col-md-3 text-center mx-auto" style="color: #767d85;">內容撰寫 │ 黃子芸、李宇恩</p>
@@ -1072,6 +1078,35 @@ document.querySelector('.crm-container-embed').addEventListener('load', function
                         }
                         #_qf_Edit_next {
                             background: #6f7a74;
+                        }
+                        #editrow-last_name,
+                        #editrow-first_name,
+                        #editrow-email-1 {
+                            display: flex !important;
+                            flex-direction: column;
+                            align-items: center;
+                            text-align: center;
+                        }
+                        #editrow-last_name .label,
+                        #editrow-first_name .label,
+                        #editrow-email-1 .label,
+                        #editrow-last_name .edit-value.content,
+                        #editrow-first_name .edit-value.content,
+                        #editrow-email-1 .edit-value.content {
+                            float: none !important;
+                            width: auto !important;
+                            text-align: center;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                        @media (max-width: 400px) {
+                            #crm-container,
+                            body {
+                                padding-left: 0 !important;
+                                padding-right: 0 !important;
+                                margin-left: 0 !important;
+                                margin-right: 0 !important;
+                            }
                         }
                     `;
             iframeDoc.head.appendChild(style);
