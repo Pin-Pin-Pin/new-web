@@ -195,6 +195,7 @@
     <style>
         /*
           沿用 share.css 出血 grid：左 spacer 對齊下一 section 的 .container 左緣。
+          圖片與文字靠上對齊（不垂直置中）。
           <768：圖 col2 / -1 向右出血，max-width: 652px
           768–991：圖 col2 / -1 貼齊螢幕右緣（不套 652 上限，避免右側空白）
           ≥992：左 spacer | 400 文 | 40 | 圖(≤652) | 右側剩餘
@@ -202,11 +203,13 @@
         .invite-share .container.page-top-container,
         #main .invite-share .container.page-top-container {
             --page-top-img-max: 652px;
+            align-items: start;
         }
 
         .invite-share .page-top-img-container,
         #main .invite-share .page-top-img-container {
             max-width: 652px;
+            align-self: start;
         }
 
         @media (min-width: 768px) and (max-width: 991.98px) {
