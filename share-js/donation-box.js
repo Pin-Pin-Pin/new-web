@@ -148,7 +148,7 @@
     // &_grouping=recurring | non-recurring
     function getDonatePageBaseUrl() {
         var link = document.querySelector('link[rel="canonical"]');
-        return (link && link.href) || 'https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=43';
+        return (link && link.href) || 'https://dev.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=43';
     }
 
     function buildDonateUrl(amount, grouping) {
