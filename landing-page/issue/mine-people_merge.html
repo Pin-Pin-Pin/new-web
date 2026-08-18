@@ -211,6 +211,10 @@ h3,
     max-width: 100%;
 }
 
+.problems .box {
+    overflow-y: visible;
+}
+
 .slide-box {
     margin-top: 10px;
     height: 23rem;
@@ -220,24 +224,50 @@ h3,
     /*    1024px    */
 }
 
+@media (min-width: 1025px) {
+    .problems .slide-box {
+        height: 26rem;
+        min-height: 26rem;
+    }
+}
+
 .slide-item {
     background-color: #BF3000;
     border-radius: 20pt;
     border: 1px solid #ccc;
-    padding: 8px 18px;
-    height: auto;
-    overflow-y: auto;
+    padding: 0.5rem 1.125rem;
+    min-height: 0;
+    height: auto !important;
+    overflow: visible !important;
     position: absolute;
     text-align: center;
-    display: block;
-    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.slide-item .custom-h,
+.slide-item h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.375rem;
+    line-height: 1.3;
 }
 
 .slide-quote {
     color: #fff;
-    margin: 0.2rem;
+    margin: 0.125rem 0 0;
     display: block;
     text-align: center;
+}
+
+.slide-item p.slide-quote {
+    margin-top: 0.125rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 .slide-box-2 {
@@ -253,24 +283,29 @@ h3,
     background-color: transparent;
     border-radius: 15pt;
     border: 2.75px solid #BF3000;
-    padding: 8px 18px;
-    /*       ? */
-    height: auto;
-    overflow-y: auto;
+    padding: 0.5rem 1.125rem;
+    height: auto !important;
+    overflow: visible !important;
     position: absolute;
     text-align: justify;
     display: block;
-    flex-wrap: wrap;
     width: auto;
     max-width: 25rem;
+    box-sizing: border-box;
 }
 
 .slide-quote-2 {
-    margin: 0.2rem 0rem;
+    margin: 0;
     display: block;
-    flex-wrap: wrap;
     text-align: left;
     width: 100%;
+    line-height: 1.4;
+}
+
+.slide-item-odd h4,
+.slide-item-even h4 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 @media (max-width: 1024px) {
@@ -294,10 +329,13 @@ h3,
         top: 0 !important;
         right: 0 !important;
         left: 0 !important;
-        bottom: 0 !important;
+        bottom: auto !important;
         position: relative;
         width: 90%;
         max-width: 100%;
+        height: auto !important;
+        min-height: 0;
+        overflow: visible !important;
         margin-bottom: 0.5rem;
         align-self: center;
     }
@@ -314,10 +352,12 @@ h3,
         top: 0 !important;
         right: auto !important;
         left: 0 !important;
-        bottom: 0 !important;
+        bottom: auto !important;
         position: relative;
         width: 85%;
         max-width: 100%;
+        height: auto !important;
+        overflow: visible !important;
         margin-bottom: 0.5rem;
         align-self: flex-start;
     }
@@ -326,10 +366,12 @@ h3,
         top: 0 !important;
         right: 0 !important;
         left: auto !important;
-        bottom: 0 !important;
+        bottom: auto !important;
         position: relative;
         width: 85%;
         max-width: 100%;
+        height: auto !important;
+        overflow: visible !important;
         margin-bottom: 0.5rem;
         align-self: flex-end;
         /* 確保貼齊右側 */
@@ -521,7 +563,7 @@ h3,
 				<p class="slide-quote xs-phone-block mx-1 mx-xs-3" style="color:#EEDEBD">潭南部落北原礦業採礦案</p></div>
 			<div class="slide-item d-flex justify-content-center align-items-center" style="top: 13rem;left: 0rem;">
 				<h3 class="custom-h slide-quote red-box-h mx-0 mx-xs-3">廠商不完整揭露開發可能影響</h3></div>
-			<div class="slide-item d-flex align-items-center justify-content-center" style="top: 13rem;right: 19rem;height: 80px;">
+			<div class="slide-item d-flex align-items-center justify-content-center" style="top: 13rem;right: 19rem;">
 				<h3 class="custom-h slide-quote red-box-h mx-1 mx-xs-3">廠商要求臨時取消部落會議</h3></div>
 			<div class="slide-item d-flex justify-content-center align-items-center" style="top: 19rem;left: 8rem;">
 				<h3 class="custom-h slide-quote red-box-h mx-0 mx-xs-3">部落對法律程序不了解錯過談判機會</h3></div>
