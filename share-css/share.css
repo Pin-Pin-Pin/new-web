@@ -508,6 +508,41 @@ section:has(.page-top-container){
         grid-column: 4;
     }
 }
+@media (max-width: 991.98px) {
+    section.invite-share:has(.page-top-container){
+        padding-left: var(--section-pad-x);
+        padding-right: var(--section-pad-x);
+    }
+    .invite-share .container.page-top-container{
+        width: 100%;
+        max-width: var(--content-max);
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+    .invite-share .page-top-text-container{
+        grid-column: 1;
+    }
+    .invite-share .page-top-img-container{
+        grid-column: 1;
+        border-radius: 8px;
+    }
+}
+@media (min-width: 992px) {
+    .invite-share .container.page-top-container{
+        --page-top-img-max: 800px;
+        container-type: inline-size;
+        container-name: page-top;
+    }
+}
+@container page-top (min-width: 1497px) {
+    .invite-share .page-top-img-container{
+        border-radius: 8px;
+    }
+}
 /* ========================================
    Component: cta-img-container
    圖片容器，圖片比例為 16:9
