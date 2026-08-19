@@ -487,6 +487,8 @@ section:has(.page-top-container){
 @media (min-width: 992px) {
     .container.page-top-container{
         align-items: start;
+        container-type: inline-size;
+        container-name: page-top;
         /*
           1: 左 spacer（對齊主網）
           2: 文字欄
@@ -509,11 +511,11 @@ section:has(.page-top-container){
     }
 }
 @media (max-width: 991.98px) {
-    section.invite-share:has(.page-top-container){
+    section:has(.page-top-container){
         padding-left: var(--section-pad-x);
         padding-right: var(--section-pad-x);
     }
-    .invite-share .container.page-top-container{
+    .container.page-top-container{
         width: 100%;
         max-width: var(--content-max);
         margin-left: auto;
@@ -523,23 +525,16 @@ section:has(.page-top-container){
         column-gap: 40px;
         row-gap: 40px;
     }
-    .invite-share .page-top-text-container{
+    .page-top-text-container{
         grid-column: 1;
     }
-    .invite-share .page-top-img-container{
+    .page-top-img-container{
         grid-column: 1;
         border-radius: 8px;
     }
 }
-@media (min-width: 992px) {
-    .invite-share .container.page-top-container{
-        --page-top-img-max: 800px;
-        container-type: inline-size;
-        container-name: page-top;
-    }
-}
 @container page-top (min-width: 1497px) {
-    .invite-share .page-top-img-container{
+    .page-top-img-container{
         border-radius: 8px;
     }
 }

@@ -1,6 +1,14 @@
 /* ========================================
    Section: share-content
 ======================================== */
+#main .share-content {
+    padding-bottom: 80px;
+}
+
+#main .section-title {
+    border-top: 2px solid var(--brand-dark-primary);
+}
+
 #main .share-content .share-content-container {
     flex-direction: column;
     align-items: flex-start;
@@ -131,6 +139,7 @@
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    background-color: var(--brand-background-green);
 }
 
 #main .content-tab-text {
@@ -177,7 +186,6 @@
     max-width: 100%;
     height: auto;
     object-fit: cover;
-    
 }
 /* topic-2 */
 #main .content-tab-img--topic-2 img {
@@ -192,12 +200,6 @@
     #main .content-tab-img img {
         aspect-ratio: 4/3;
     }
-}
-
-/* Accordion card: no outer radius conflict with item border */
-#main .content-tab-card {
-    border-radius: 0;
-    background-color: var(--brand-background-green);
 }
 
 @media (min-width: 768px) {
@@ -233,52 +235,55 @@
     #main .content-tab-card {
         flex-direction: row;
     }
+
     #main .content-tab-img {
         aspect-ratio: 379 / 284;
         flex: 0 0 379px;
         width: 379px;
         max-width: 379px;
-        padding:0;
+        padding: 0;
+        border-radius: 8px 0 0 8px;
+    }
+
+    #main .content-tab-text {
+        border-radius: 0 8px 8px 0;
     }
 }
+
 /* ========================================
-   Section: 第一頁以後
+   Section: invite-info
 ======================================== */
-#main .share-content{
-    padding-bottom: 80px;
-}
-#main .invite-info{
+#main .invite-info {
     padding-top: 0;
     padding-bottom: 80px;
 }
-#main .faq{ 
-    padding-top: 0;
+
+#main .invite-info .container {
+    display: block;
 }
-#main .section-title{
-    border-top: 2px solid var(--brand-dark-primary);
-}
-/* ========================================
-   Section: 邀約方式
-======================================== */
-#main .invite-info .container{
-    /* display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: flex-start; */
-    display:block;
-}
-#main .invite-info ol{
+
+#main .invite-info ol {
     margin-bottom: 0;
     padding-left: 1rem;
 }
-#main .invite-info .section-title{
+
+#main .invite-info .section-title {
     margin-bottom: 24px;
 }
-#main .invite-info-label{
+
+#main .invite-info-label {
     font-weight: 700;
     color: var(--brand-dark-primary);
     margin-bottom: 0;
 }
+
+/* ========================================
+   Section: faq
+======================================== */
+#main .faq {
+    padding-top: 0;
+}
+
 #main .faq .accordion {
     color: var(--black);
 }

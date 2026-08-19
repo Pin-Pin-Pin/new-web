@@ -74,6 +74,7 @@
 {
     color: var(--brand-black);
     font-family: "Noto Sans TC";
+    background-color: var(--brand-white);
 }
 #main section,#main .section {
     padding: 64px var(--section-pad-x);
@@ -286,6 +287,7 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+
 #main .faq .accordion-item:not(:first-of-type) {
     border-top: 1px solid var(--brand-dark-primary);
 }
@@ -485,6 +487,8 @@
 @media (min-width: 992px) {
     #main .container.page-top-container{
         align-items: start;
+        container-type: inline-size;
+        container-name: page-top;
         /*
           1: 左 spacer（對齊主網）
           2: 文字欄
@@ -504,6 +508,34 @@
     }
     #main .page-top-img-container{
         grid-column: 4;
+    }
+}
+@media (max-width: 991.98px) {
+    #main section:has(.page-top-container){
+        padding-left: var(--section-pad-x);
+        padding-right: var(--section-pad-x);
+    }
+    #main .container.page-top-container{
+        width: 100%;
+        max-width: var(--content-max);
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+    #main .page-top-text-container{
+        grid-column: 1;
+    }
+    #main .page-top-img-container{
+        grid-column: 1;
+        border-radius: 8px;
+    }
+}
+@container page-top (min-width: 1497px) {
+    #main .page-top-img-container{
+        border-radius: 8px;
     }
 }
 /* ========================================

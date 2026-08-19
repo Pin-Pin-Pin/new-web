@@ -1,25 +1,25 @@
 /* ========================================
    Section: share-content
 ======================================== */
-#main .share-content .share-content-container {
+ #main .share-content .share-content-container {
     flex-direction: column;
     align-items: stretch;
     gap: 24px;
 }
 
-#main .share-content-title-mobile {
+ #main .share-content-title-mobile {
     margin-bottom: 0;
 }
 
 /* Mobile (<768): .share-topics-accordion 為 tab / Desktop (≥768): sticky tabs */
-#main .share-topics-tabs {
+ #main .share-topics-tabs {
     display: none;
     width: 100%;
     flex-direction: column;
     gap: 24px;
 }
 
-#main .share-topics-accordion {
+ #main .share-topics-accordion {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -27,19 +27,19 @@
     color: var(--black);
 }
 
-#main .share-topics-accordion .content-tabs-nav {
+ #main .share-topics-accordion .content-tabs-nav {
     justify-content: flex-start;
 }
 
-#main .share-topics-accordion .content-tabs-wrap::before {
+ #main .share-topics-accordion .content-tabs-wrap::before {
     background: linear-gradient(to right, #FAFAFA 55%, transparent);
 }
 
-#main .share-topics-accordion .content-tabs-wrap::after {
+ #main .share-topics-accordion .content-tabs-wrap::after {
     background: linear-gradient(to left, #FAFAFA 55%, transparent);
 }
 
-#main .share-topics-sticky {
+ #main .share-topics-sticky {
     position: sticky;
     top: 64px;
     z-index: 20;
@@ -51,7 +51,7 @@
     background-color: #FAFAFA;
 }
 
-#main .share-topics-sticky::before {
+ #main .share-topics-sticky::before {
     content: "";
     position: absolute;
     left: 0;
@@ -62,20 +62,20 @@
     pointer-events: none;
 }
 
-#main .share-topics-sticky .section-title {
+ #main .share-topics-sticky .section-title {
     margin-bottom: 24px;
 }
 
-#main .share-topics-nav {
+ #main .share-topics-nav {
     background-color: #FAFAFA;
 }
 
 @media (max-width: 767.98px) {
-    #main .share-content .share-content-container {
+     #main .share-content .share-content-container {
         gap: 0;
     }
 
-    #main .share-topics-accordion .share-topics-sticky {
+     #main .share-topics-accordion .share-topics-sticky {
         margin-left: calc(-1 * var(--section-pad-x));
         margin-right: calc(-1 * var(--section-pad-x));
         padding-left: var(--section-pad-x);
@@ -83,50 +83,50 @@
         background-color: #FAFAFA;
     }
 
-    #main .share-topics-accordion .share-topics-sticky::before {
+     #main .share-topics-accordion .share-topics-sticky::before {
         background-color: #FAFAFA;
     }
 
-    #main .share-topics-accordion .share-topics-nav {
+     #main .share-topics-accordion .share-topics-nav {
         background-color: #FAFAFA;
     }
 }
 
-#main #shareTab {
+ #main #shareTab {
     justify-content: flex-start;
 }
 
 @media (min-width: 768px) {
-    #main .share-content .share-content-container {
+     #main .share-content .share-content-container {
         gap: 0;
     }
 
-    #main .share-content-title-mobile {
+     #main .share-content-title-mobile {
         display: none;
     }
 
-    #main .share-topics-accordion {
+     #main .share-topics-accordion {
         display: none;
     }
 
-    #main .share-topics-tabs {
+     #main .share-topics-tabs {
         display: flex;
     }
 
-    #main #shareTab {
+     #main #shareTab {
         justify-content: center;
     }
 
     /* Equal-height panels: stack all panes in one grid cell.
        Overrides Bootstrap .tab-content > .tab-pane { display:none } so inactive
        panes still contribute to height. */
-    #main .share-content #shareTabContent.content-tabs-panels {
+     #main .share-content #shareTabContent.content-tabs-panels {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         align-items: stretch;
     }
 
-    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane {
+     #main .share-content #shareTabContent.content-tabs-panels > .tab-pane {
         display: block;
         grid-column: 1;
         grid-row: 1;
@@ -139,19 +139,19 @@
         z-index: 0;
     }
 
-    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
+     #main .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
         z-index: 1;
     }
 
-    #main .share-content #shareTabContent .content-tab-card {
+     #main .share-content #shareTabContent .content-tab-card {
         height: 100%;
     }
 }
 
-#main .content-tab-card {
+ #main .content-tab-card {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
@@ -162,7 +162,7 @@
     background-color: var(--brand-background-green);
 }
 
-#main .content-tab-text {
+ #main .content-tab-text {
     padding: 24px 16px;
     min-width: 0;
     max-width: 100%;
@@ -170,37 +170,37 @@
     background-color: var(--brand-background-green);
 }
 
-#main .content-tab-block + .content-tab-block {
+ #main .content-tab-block + .content-tab-block {
     margin-top: 24px;
 }
 
-#main .content-tab-text h3 {
+ #main .content-tab-text h3 {
     margin-bottom: 8px;
     font-weight: 700;
 }
 
-#main .content-tab-text p {
+ #main .content-tab-text p {
     margin-bottom: 0;
 }
 
-#main .content-tab-text p + p {
+ #main .content-tab-text p + p {
     margin-top: 16px;
 }
 
-#main .content-tab-img {
+ #main .content-tab-img {
     width: 100%;
     max-width: 100%;
     min-width: 0;
     overflow: hidden;
 }
 
-#main .content-tab-img picture {
+ #main .content-tab-img picture {
     display: block;
     width: 100%;
     max-width: 100%;
 }
 
-#main .content-tab-img img {
+ #main .content-tab-img img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -209,43 +209,43 @@
     
 }
 /* topic-2 */
-#main .content-tab-img--topic-2 img {
+ #main .content-tab-img--topic-2 img {
     object-position: top center;
 }
 /* topic-4 */
-#main .content-tab-img--topic-4 img {
+ #main .content-tab-img--topic-4 img {
     object-position: top;
 }
 
 @media (max-width: 991.98px) {
-    #main .content-tab-img img {
+     #main .content-tab-img img {
         aspect-ratio: 4/3;
     }
 }
 
 @media (min-width: 768px) {
-    #main .content-tab-card {
+     #main .content-tab-card {
         flex-direction: column;
         align-items: stretch;
     }
 
-    #main .content-tab-img {
+     #main .content-tab-img {
         width: 100%;
         max-width: 100%;
         min-width: 0;
         padding:40px 40px 0 40px;
     }
 
-    #main .content-tab-img picture {
+     #main .content-tab-img picture {
         height: 100%;
     }
 
-    #main .content-tab-img img {
+     #main .content-tab-img img {
         width: 100%;
         height: 100%;
     }
 
-    #main .content-tab-text {
+     #main .content-tab-text {
         padding: 40px;
         flex: 1 1 0;
         min-width: 0;
@@ -253,10 +253,10 @@
 }
 
 @media (min-width: 992px) {
-    #main .content-tab-card {
+     #main .content-tab-card {
         flex-direction: row;
     }
-    #main .content-tab-img {
+     #main .content-tab-img {
         aspect-ratio: 379 / 284;
         flex: 0 0 379px;
         width: 379px;
@@ -267,41 +267,41 @@
 /* ========================================
    Section: 第一頁以後
 ======================================== */
-#main .share-content{
+ #main .share-content{
     padding-bottom: 80px;
 }
-#main .invite-info{
+ #main .invite-info{
     padding-top: 0;
     padding-bottom: 80px;
 }
-#main .faq{ 
+ #main .faq{ 
     padding-top: 0;
 }
-#main .section-title{
+ #main .section-title{
     border-top: 2px solid var(--brand-dark-primary);
 }
 /* ========================================
    Section: 邀約方式
 ======================================== */
-#main .invite-info .container{
+ #main .invite-info .container{
     /* display: flex;
     flex-direction: column;
     gap: 24px;
     align-items: flex-start; */
     display:block;
 }
-#main .invite-info ol{
+ #main .invite-info ol{
     margin-bottom: 0;
     padding-left: 1rem;
 }
-#main .invite-info .section-title{
+ #main .invite-info .section-title{
     margin-bottom: 24px;
 }
-#main .invite-info-label{
+ #main .invite-info-label{
     font-weight: 700;
     color: var(--brand-dark-primary);
     margin-bottom: 0;
 }
-#main .faq .accordion {
+ #main .faq .accordion {
     color: var(--black);
 }
