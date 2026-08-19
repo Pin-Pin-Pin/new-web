@@ -1,0 +1,42 @@
+#main #navbar {
+  display: none;
+}
+
+#main body,
+#main button,
+#main input,
+#main a,
+#main p,
+#main h1,
+#main h2,
+#main h3,
+#main h4,
+#main h5,
+#main span,
+#main label {
+  font-family:
+    "Noto Sans TC",
+    "PingFang TC",
+    "Microsoft JhengHei",
+    sans-serif;
+}
+
+#main body,
+#main p,
+#main .lead {
+  line-height: 1.6;
+}
+
+#main body {
+  font-size: 1rem;
+}
+
+#main html {
+  font-size: 16px;
+}
+
+/* @media (min-width: 1600px) {
+  html {
+    font-size: 24px;
+  }
+} */

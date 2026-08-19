@@ -1,0 +1,28 @@
+
+/* Field display */
+#main .field .field-label {
+  font-weight: bold;
+}
+#main .field-label-inline .field-label,
+#main .field-label-inline .field-items {
+  float:left; /*LTR*/
+}
+
+/* Form display */
+#main form .field-multiple-table {
+  margin: 0;
+}
+#main form .field-multiple-table th.field-label {
+  padding-left: 0; /*LTR*/
+}
+#main form .field-multiple-table td.field-multiple-drag {
+  width: 30px;
+  padding-right: 0; /*LTR*/
+}
+#main form .field-multiple-table td.field-multiple-drag a.tabledrag-handle {
+  padding-right: .5em; /*LTR*/
+}
+
+#main form .field-add-more-submit {
+  margin: .5em 0 0;
+}

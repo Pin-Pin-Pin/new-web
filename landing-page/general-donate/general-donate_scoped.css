@@ -54,7 +54,7 @@
         grid-template-columns: 1fr 1fr;
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     #main .about .container {
         grid-template-columns: 1fr 596px; 
     }
@@ -97,17 +97,30 @@
 
 @media screen and (min-width: 768px) {
     #main .slogan-box{
-        width: 760px;
+        width: 720px; /* 768–991 */
+    }
+}
+@media screen and (min-width: 992px) {
+    #main .slogan-box{
+        width: 960px; /* 992–1199 */
     }
 }
 @media screen and (min-width: 1200px) {
     #main .slogan-box{
-        width: 960px;
+        width: 984px; /* ≥1200 */
     }
 }
 /* ========================================
    Section: 捐款方案
 ======================================== */
+#main .donation-plan .card{
+    border-radius: 8px;
+    overflow: hidden;
+
+}
+#main .donation-plan .card-body p{
+    color: var(--black);
+}
 #main .donation-plan{
     background-color: var(--brand-background-green);
 }
@@ -117,9 +130,15 @@
 #main .donation-plan img{
     width: 100%;
 }
-   /* faq */
+/* ========================================
+   Section: faq
+======================================== */
 #main .faq {
     background-color: var(--white );
+}
+#main .footer-text p{
+    color: var(--black);
+
 }
 
 
