@@ -72,7 +72,7 @@
 
 #main h2,
 #main .h2 {
-    font-family: "Noto Sans TC" ;
+    font-family: "Noto Sans TC", sans-serif;
     font-size: 1.75rem;
     font-style: normal;
     font-weight: 300;
@@ -81,7 +81,7 @@
 
 #main h3,
 #main .h3 {
-    font-family: "Noto Sans TC";
+    font-family: "Noto Sans TC", sans-serif;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
@@ -91,7 +91,7 @@
 #main p,
 #main .p,
 #main li {
-    font-family: "Noto Sans TC";
+    font-family: "Noto Sans TC", sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
