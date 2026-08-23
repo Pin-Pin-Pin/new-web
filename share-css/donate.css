@@ -340,7 +340,7 @@ section.donate-hero{
     border: 1px solid var(--gray-400);
     border-radius: 4px;
     overflow: hidden;
-    background-color: var(--brand-white);
+    background-color: var(--white);
 }
 .donation-box__accordion .accordion-collapse{
     min-height: 0;
@@ -349,7 +349,7 @@ section.donate-hero{
 .donation-box__accordion .accordion-header{
     margin-bottom: 0;
     padding: 8px 12px;
-    background-color: var(--brand-white);
+    background-color: var(--white);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 .donation-box__accordion .accordion-header button{
@@ -396,7 +396,7 @@ section.donate-hero{
 }
 .donation-box__accordion .accordion-body{
     padding: 12px;
-    background-color: var(--brand-white);
+    background-color: var(--white);
     color: var(--brand-black);
     font-family: "Noto Sans TC", sans-serif;
     font-size: 0.875rem;

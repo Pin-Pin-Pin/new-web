@@ -134,7 +134,7 @@ a:active {
    Section: faq
 ======================================== */
 .faq {
-    background-color: var(--white );
+    background-color: var(--brand-white ); 
 }
 .footer-text p{
     color: var(--black);
