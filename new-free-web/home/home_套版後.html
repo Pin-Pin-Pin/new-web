@@ -1,173 +1,189 @@
 <style>
-/* === Scoped styles for result block only === */
-
-div.block-content-free_code {padding:0 !important;}
-.result {
-    --brand-dark-primary: #55716C;
-    --brand-black: #2D2D2D;
-    --brand-white: #FAFAFA;
-    --brand-background-green: #E5EAE3;
-
-    box-sizing: border-box;
-    display: block;
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding: 48px 24px;
-    background-color: var(--brand-background-green);
-    color: var(--brand-black);
-    font-family: "Noto Sans TC", sans-serif;
-}
-
-.result,
-.result *,
-.result *::before,
-.result *::after {
-    box-sizing: border-box;
-}
-
-.result h2,
-.result h3,
-.result p {
-    margin-top: 0;
-    font-family: "Noto Sans TC", sans-serif;
-}
-
-.result__inner {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 32px 24px;
-    gap: 32px;
-    background-color: var(--brand-white);
-}
-
-.result h2 {
-    margin-bottom: 0;
-    text-align: center;
-    color: var(--brand-dark-primary);
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.5;
-}
-
-.result__content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    width: 100%;
-}
-
-.result__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-width: 0;
-    text-align: center;
-}
-
-.result__icon {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 12px;
-    flex: 0 0 auto;
-}
-
-.result__icon img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-.result h3 {
-    margin-bottom: 4px;
-    color: var(--brand-dark-primary);
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-.result p {
-    margin-bottom: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-@media (min-width: 768px) {
+    /* === Scoped styles for result block only === */
+    
+    div.block-content-free_code {padding:0 !important;}
     .result {
-        padding-left: 40px;
-        padding-right: 40px;
+        --brand-dark-primary: #55716C;
+        --brand-black: #2D2D2D;
+        --brand-white: #FAFAFA;
+        --brand-background-green: #E5EAE3;
+    
+        box-sizing: border-box;
+        display: block;
+        /* 與全站 .full-width 相同，從 #issue > .container 拉滿版；--sbw 扣掉捲軸避免橫向溢出 */
+        width: calc(100vw - var(--sbw, 0px));
+        max-width: calc(100vw - var(--sbw, 0px));
+        margin-left: calc((100% - 100vw + var(--sbw, 0px)) / 2);
+        margin-right: calc((100% - 100vw + var(--sbw, 0px)) / 2);
+        /* 左右 24px 對齊 #main.container（<768）內距，白卡寬度＝最新文章 .block-inner */
+        padding: 48px 24px;
+        background-color: var(--brand-background-green);
+        color: var(--brand-black);
+        font-family: "Noto Sans TC", sans-serif;
     }
-
+    
+    .result,
+    .result *,
+    .result *::before,
+    .result *::after {
+        box-sizing: border-box;
+    }
+    
+    .result h2,
+    .result h3,
+    .result p {
+        margin-top: 0;
+        font-family: "Noto Sans TC", sans-serif;
+    }
+    
     .result__inner {
-        max-width: 760px;
-        padding: 40px;
-    }
-
-    .result__content {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 32px 24px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .result {
-        padding: 48px 120px;
-    }
-
-    .result__inner {
-        max-width: 1240px;
-        padding: 40px 48px 36px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 32px 24px;
         gap: 32px;
+        background-color: var(--brand-white);
     }
-
+    
+    .result h2 {
+        margin-bottom: 0;
+        text-align: center;
+        color: var(--brand-dark-primary);
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    
     .result__content {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        column-gap: 56px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        width: 100%;
     }
-}
-
-</style>
-<section class="result">
-    <div class="result__inner">
-        <h2>與台灣社會一起創造改變！</h2>
-        <div class="result__content">
-            <div class="result__item">
-                <div class="result__icon">
-                    <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260702-home-icon1.svg" alt="" width="120" height="120">
+    
+    .result__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-width: 0;
+        text-align: center;
+    }
+    
+    .result__icon {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 12px;
+        flex: 0 0 auto;
+    }
+    
+    .result__icon img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    
+    .result h3 {
+        margin-bottom: 4px;
+        color: var(--brand-dark-primary);
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+    
+    .result p {
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    
+    /* 以下 max-width 對齊 #main.container 內容寬（＝最新文章 .block-inner） */
+    @media (min-width: 576px) {
+        .result__inner {
+            max-width: 492px; /* 540 − 24×2 */
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .result {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    
+        .result__inner {
+            max-width: 720px;
+            padding: 40px;
+        }
+    
+        .result__content {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 32px 24px;
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .result__inner {
+            max-width: 960px;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .result {
+            padding: 48px 0;
+        }
+    
+        .result__inner {
+            max-width: 984px;
+            padding: 40px 48px 36px;
+            gap: 32px;
+        }
+    
+        .result__content {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 56px;
+        }
+    }
+    
+    </style>
+    <section class="result">
+        <div class="result__inner">
+            <h2>與台灣社會一起創造改變！</h2>
+            <div class="result__content">
+                <div class="result__item">
+                    <div class="result__icon">
+                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260702-home-icon1.svg" alt="" width="120" height="120">
+                    </div>
+                    <h3>推動 211,000 位公民</h3>
+                    <p>關注礦業法規修訂</p>
                 </div>
-                <h3>推動 211,000 位公民</h3>
-                <p>關注礦業法規修訂</p>
-            </div>
-            <div class="result__item">
-                <div class="result__icon">
-                    <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260702-home-icon2.svg" alt="" width="120" height="120">
+                <div class="result__item">
+                    <div class="result__icon">
+                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260702-home-icon2.svg" alt="" width="120" height="120">
+                    </div>
+                    <h3>號召 7,000 人次</h3>
+                    <p>參與農地工廠監測與紀錄</p>
                 </div>
-                <h3>號召 7,000 人次</h3>
-                <p>參與農地工廠監測與紀錄</p>
-            </div>
-            <div class="result__item">
-                <div class="result__icon">
-                    <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260702-home-icon3.svg" alt="" width="120" height="120">
+                <div class="result__item">
+                    <div class="result__icon">
+                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260702-home-icon3.svg" alt="" width="120" height="120">
+                    </div>
+                    <h3>凝聚 4,262,451 份民意</h3>
+                    <p>共同實踐非核家園願景</p>
                 </div>
-                <h3>凝聚 4,262,451 份民意</h3>
-                <p>共同實踐非核家園願景</p>
-            </div>
-            <div class="result__item">
-                <div class="result__icon">
-                    <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260702-home-icon4.svg" alt="" width="120" height="120">
+                <div class="result__item">
+                    <div class="result__icon">
+                        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260702-home-icon4.svg" alt="" width="120" height="120">
+                    </div>
+                    <h3>守護 600 億預算資源</h3>
+                    <p>促成更具永續性的交通規劃</p>
                 </div>
-                <h3>守護 600 億預算資源</h3>
-                <p>促成更具永續性的交通規劃</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
