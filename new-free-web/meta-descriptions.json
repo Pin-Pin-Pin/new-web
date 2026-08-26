@@ -1,0 +1,62 @@
+[
+  {
+    "file": "new-free-web/home/home.html",
+    "title": "首頁自由欄位",
+    "description": "地球公民與台灣社會一起創造改變：推動逾二十萬公民關注礦業修法、號召監測農地工廠、凝聚非核家園民意，並守護國家預算資源，創造人本交通規劃空間。",
+    "length": 70
+  },
+  {
+    "file": "new-free-web/volunteer/volunteer.html",
+    "title": "成為志工",
+    "description": "要讓環境議題被更多人看見、理解並產生認同，需要龐大的公民力量支持。地球公民透過持續倡議與行動促成改變，邀請你加入志工，一起為台灣環境尋找解答。",
+    "length": 71
+  },
+  {
+    "file": "new-free-web/intern/intern.html",
+    "title": "成為實習生",
+    "description": "地球公民歡迎對公共事務有熱忱的年輕世代加入實習。你將走進倡議型 NGO 的日常，參與議題研究、組織推廣與媒體行銷，為環境行動打下最堅實的基礎。",
+    "length": 71
+  },
+  {
+    "file": "new-free-web/staff/staff.html",
+    "title": "成為員工",
+    "description": "讓環境倡議成為你的日常。地球公民穿梭於議題現場、街頭市集與國會殿堂，監督政府與企業的環境作為；歡迎加入熱情友善的團隊，一起成就想看見的改變。",
+    "length": 70
+  },
+  {
+    "file": "new-free-web/about-us-ch/about-us-ch.html",
+    "title": "關於我們",
+    "description": "地球公民是由市井小民支撐起的專業環保平台。我們不接受政府專案委辦，仰賴公民涓滴捐款獨立發聲，以專業投入與集體行動為未來世代守護永續的台灣社會。",
+    "length": 71
+  },
+  {
+    "file": "new-free-web/about-us-en/about-us-en.html",
+    "title": "About Us",
+    "description": "CET is a Taiwan environmental NGO with 20+ years of land and community advocacy.",
+    "length": 80
+  },
+  {
+    "file": "new-free-web/about-us-en/about-us-en_tab.html",
+    "title": "About Us",
+    "description": "CET is a Taiwan environmental NGO with 20+ years of land and community advocacy.",
+    "length": 80
+  },
+  {
+    "file": "new-free-web/invite-share/invite-share.html",
+    "title": "邀請分享",
+    "description": "地球公民超過二十年站在台灣環境倡議第一線。歡迎高中與大學社團、教育工作者、企業與社區來邀約講座分享，用講座與對話把環境現場帶入日常、開啟改變。",
+    "length": 71
+  },
+  {
+    "file": "new-free-web/invite-share/invite-share_tab.html",
+    "title": "邀請分享",
+    "description": "地球公民超過二十年站在台灣環境倡議第一線。歡迎高中與大學社團、教育工作者、企業與社區來邀約講座分享，用講座與對話把環境現場帶入日常、開啟改變。",
+    "length": 71
+  },
+  {
+    "file": "new-free-web/will-donate/will-donate.html",
+    "title": "遺產捐贈",
+    "description": "捍衛環境正義需要跨世代接力。歡迎透過遺產捐贈，讓對土地的情感化為影響力，支持地球公民推動環境法案、守護山林與防制污染，為下一代延續這份關懷。",
+    "length": 70
+  }
+]
