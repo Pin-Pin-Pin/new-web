@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+    <title>改善空污捐款頁｜地球公民基金會</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="改善空污，守護孩子的每一口呼吸。捐款支持地球公民持續推動空氣品質改善政策，完善校園空污預警與防護。">
+    <meta property="og:title" content="改善空污｜守護孩子的每一口呼吸">
+    <meta property="og:description" content="改善空污，守護孩子的每一口呼吸。捐款支持地球公民持續推動空氣品質改善政策，完善校園空污預警與防護。">
+    <meta property="og:image" content="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1920.jpg">
+    <meta property="og:site_name" content="地球公民基金會">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../share-css/share.css">
+    <link rel="stylesheet" href="../../share-css/donate.css">
+    <link rel="stylesheet" href="air-donate.css">
+</head>
+<body>
+<section class="donate-hero">
+    <picture class="donate-hero__bg">
+        <source
+            media="(min-width: 768px)"
+            type="image/webp"
+            srcset="
+                /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1400.webp 1400w,
+                /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1920.webp 1920w
+            "
+            sizes="100vw"
+        >
+        <source
+            type="image/webp"
+            srcset="
+                /sites/cet-taiwan.org/files/u422/20260826-air-hero-mb-768.webp 768w
+            "
+            sizes="100vw"
+        >
+        <img
+            src="/sites/cet-taiwan.org/files/u422/20260826-air-hero-mb-768.jpg"
+            srcset="
+                /sites/cet-taiwan.org/files/u422/20260826-air-hero-mb-768.jpg 768w,
+                /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1400.jpg 1400w,
+                /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1920.jpg 1920w
+            "
+            sizes="100vw"
+            width="750"
+            height="581"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+        >
+    </picture>
+
+    <div class="donate-hero__inner container">
+        <div class="img-box">
+            <h1 id="top-slogan">改善空污<br />守護孩子的每一口呼吸</h1>
+            <picture>
+                <img id="cet-top-logo" decoding="async" alt="地球公民基金會" src="/sites/cet-taiwan.org/files/u422/cet-logo-12.png" width="539" height="159" />
+            </picture>
+        </div>
+        <div class="table-box">
+            <div class="donation-box" id="donation-box">
+                <h2 class="donation-box__title h4">選擇捐款方式</h2>
+
+                <div class="donation-box__tabs" role="tablist" aria-label="捐款方式">
+                    <button type="button" class="donation-box__tab is-active" role="tab" aria-selected="true" id="donate-tab-monthly" data-donate-tab="monthly" aria-controls="donate-panel-amount">每月捐款</button>
+                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-once" data-donate-tab="once" aria-controls="donate-panel-amount">單筆捐款</button>
+                    <button type="button" class="donation-box__tab" role="tab" aria-selected="false" id="donate-tab-other" data-donate-tab="other" aria-controls="donate-panel-other">其他方式</button>
+                </div>
+
+                <div class="donation-box__panel" id="donate-panel-amount" role="tabpanel" aria-labelledby="donate-tab-monthly">
+                    <h3 class="donation-box__subtitle h4">選擇金額或自訂金額</h3>
+
+                    <ul class="donation-box__amount-list list-unstyled mb-0" id="donate-amount-list">
+                        <li>
+                            <button type="button" class="donation-box__amount-option" data-amount="500" aria-pressed="false">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">500</span>
+                                </span>
+                                <span class="donation-box__amount-desc"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="donation-box__amount-option is-active" data-amount="1000" aria-pressed="true">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">1000</span>
+                                </span>
+                                <span class="donation-box__amount-desc"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="donation-box__amount-option" data-amount="1500" aria-pressed="false">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">1500</span>
+                                </span>
+                                <span class="donation-box__amount-desc"></span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="donation-box__custom">
+                        <label class="donation-box__custom-label" for="donate-custom-amount">自訂金額</label>
+                        <input class="donation-box__custom-input" type="text" inputmode="numeric" id="donate-custom-amount" name="custom_amount" placeholder="請輸入金額" autocomplete="off">
+                    </div>
+                    <p class="donation-box__error mb-0" id="donate-amount-error" hidden role="alert">請輸入自訂金額或選取建議金額</p>
+                </div>
+
+                <div class="donation-box__panel donation-box__panel--other" id="donate-panel-other" role="tabpanel" aria-labelledby="donate-tab-other" hidden>
+                    <p class="donation-box__notice mb-0">※溫馨提醒，地球公民不會以抽獎或私訊通知中獎，請您在匯款前慎防詐騙，勿輕信不明訊息。</p>
+                    <div class="accordion donation-box__accordion" id="donateOtherAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-1">
+                                <button type="button" class="p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-1" aria-expanded="true" aria-controls="donate-other-collapse-1">
+                                    <span class="faq-question-label">信用卡紙本定期 / 單筆捐款</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-1" class="accordion-collapse collapse show" aria-labelledby="donate-other-heading-1" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>任一銀行的VISA、Master Card、JCB信用卡皆可辦理。請填寫<a href="https://drive.google.com/file/d/1v_lIh9Drs6R_sugg7vP0Tb1mRve4j0T8/view?usp=sharing" target="_blank" rel="noopener noreferrer">信用卡授權書</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-2">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-2" aria-expanded="false" aria-controls="donate-other-collapse-2">
+                                    <span class="faq-question-label">郵局定期扣款</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-2" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-2" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>
+                                        凡於中華郵政開立存簿儲金者，皆可利用郵局定期扣款的方式進行捐款。請填寫<a href="https://drive.google.com/file/d/12mmZhYoa8AToPo3NVX2NEuS6-7u-IZTF/view?usp=sharing" target="_blank" rel="noopener noreferrer">郵局轉帳授權書</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-3">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-3" aria-expanded="false" aria-controls="donate-other-collapse-3">
+                                    <span class="faq-question-label">郵政劃撥</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-3" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-3" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>至全國各地郵局填寫郵局空白劃撥單，直接以劃撥方式捐款，資料如下：<br>帳號：42275525 戶名：財團法人地球公民基金會</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-4">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-4" aria-expanded="false" aria-controls="donate-other-collapse-4">
+                                    <span class="faq-question-label">銀行匯款 / ATM 轉帳</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-4" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-4" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>請來電或來信詢問 ATM 轉帳的捐款方式。<br>我們不會透過私訊索取個資，也不會以私人帳戶收取捐款。<br>電話：07-2156809#14<br>email：<a href="mailto:donor@cet-taiwan.org">donor@cet-taiwan.org</a><br>完成匯款後，煩請填寫<a href="https://docs.google.com/forms/d/1zIS2lX5Z-qMsKqVCFvame2eQyxvnQeKhlAy_NPYJmDI/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">匯款通知單</a>，以利核對。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-5">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-5" aria-expanded="false" aria-controls="donate-other-collapse-5">
+                                    <span class="faq-question-label">現金、支票捐款</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-5" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-5" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>您可直接至本會辦公室現金捐款，或於本會舉辦之宣導活動會場捐款。<br>若不克前往，可以現金袋或開立抬頭為「財團法人地球公民基金會」，且註明<strong>「禁止背書轉讓」</strong>及<strong>劃線</strong>的支票，以掛號寄至高雄總會：801 高雄市前金區中華四路 282 號 5 樓會計收，並請簡單註明捐款收據抬頭開立方式。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="donate-other-heading-6">
+                                <button type="button" class="collapsed p" data-bs-toggle="collapse" data-bs-target="#donate-other-collapse-6" aria-expanded="false" aria-controls="donate-other-collapse-6">
+                                    <span class="faq-question-label">PayPal</span>
+                                </button>
+                            </h3>
+                            <div id="donate-other-collapse-6" class="accordion-collapse collapse" aria-labelledby="donate-other-heading-6" data-bs-parent="#donateOtherAccordion">
+                                <div class="accordion-body">
+                                    <p>Please use Donate Button below. 請點擊捐款按鈕，捐款後確認信會寄到您的 PayPal 信箱，如需收據請告知。（僅提供國外 PayPal 帳號使用。）</p>
+                                    <form class="donation-box__paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                        <input name="cmd" type="hidden" value="_s-xclick">
+                                        <input name="hosted_button_id" type="hidden" value="UMXNE5EMKJ49W">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input name="on0" type="hidden" value="Donation Amount">Donation Amount</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select name="os0">
+                                                            <option value="1.Donation Amount">NT$1,000 TWD</option>
+                                                            <option value="2.Donation Amount">NT$3,000 TWD</option>
+                                                            <option value="3.Donation Amount">NT$5,000 TWD</option>
+                                                            <option value="4.Donation Amount">NT$300 TWD</option>
+                                                            <option value="5.Donation Amount">NT$500 TWD</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <input name="currency_code" type="hidden" value="TWD">
+                                        <input alt="PayPal － 更安全、更簡單的線上付款方式！" border="0" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" type="image" width="146" height="47">
+                                        <img alt="" border="0" height="1" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-box__submit" id="donate-submit">
+                    <span class="btn-label">下一步</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container-fluid px-0" style="background-color: #fffbf4;">
+	<section class="container-fluid px-0 d-flex justify-content-center py-5" id="content-block">
+		<div class="container-readable">
+			<div class="row d-flex align-items-center pb-0 g-0">
+				<div class="content-block_img col-12 col-lg-6  mb-0  py-0 "><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251125-11縮小加壓.webp" type="image/webp" /> <img alt="飄進教室的教室的怪味讓小孩好不舒服，空氣品質指標卻顯示正常？" class="img-div img-fluid" src="/sites/cet-taiwan.org/files/u422/20251125-11縮小加壓.png" /> </picture></div>
+				<div class="col-12 col-lg-6 words py-lg-0 py-4 py-lg-5 content-block_text ">
+					<p class="px-lg-5 blue">在台灣，有些學校與工廠的距離，可能比你家巷口的早餐店還近。</p>
+					<p class="px-lg-5 mb-0">校園飄進了令人不適的怪味，這些異味可能來自工廠排放的「有害空氣污染物(HAPs)」。它們有導致癌症、影響生殖或造成其他嚴重的健康影響，但目前卻不包含在空氣品質指標(AQI)中。</p></div></div>
+			<div class="row d-flex align-items-center g-0">
+				<div class="col-12 col-lg-6 words py-lg-0 py-3  content-block_text ">
+					<p class="pl-lg-0 pr-lg-5 mb-0">以高雄臨海工業區為例，在周圍 3 公里內 就有超過 10,000 名國小學童。其中 <span class="font-500" style="color:red">4,600 </span>多位學童就讀的學校，距離工業區不到 <span class="font-500" style="color:red">500 </span>公尺，可能就和工廠相隔一條馬路的距離。</p></div>
+				<div class="content-block_img col-12 col-lg-6  mb-0 "><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251110-03.webp" type="image/webp" /> <img alt="臨海工業區 3 公里內國小分布" class="img-div img-fluid" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251110-03.jpg" /> </picture></div></div>
+			<div class="row d-flex align-items-center g-0">
+				<div class="content-block_img col-12 col-lg-6  mb-0  "><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251125-10縮小加壓.webp" type="image/webp" /> <img alt="被煙囪包圍的學校" class="img-div img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251125-10縮小加壓.png" /> </picture></div>
+				<div class="col-12 col-lg-6 words py-lg-0 pt-3 content-block_text mb-0">
+					<p class="px-lg-5">兒童的換氣頻率高、對有毒物質的代謝能力較低，受空污影響程度是大人的數倍。正在發育的呼吸系統，就算只是接觸到低濃度的空氣污染物，還是會影響肺部功能的表現。</p>
+					<p class="px-lg-5 blue mb-0">有能力的家庭可以選擇轉校、搬家，但更多無力選擇的家庭卻被迫留下來，是許多縣市面臨的問題。</p></div></div></div></section>
+	<div class="container-fluid section px-0 d-flex justify-content-center align-items-center" id="banner-middle"><picture> <source media="(max-width: 575.98px)" srcset="
+                /sites/cet-taiwan.org/files/u422/20260317-04.webp" type="image/webp" /> <source sizes="100vw" srcset="
+                    /sites/cet-taiwan.org/files/u422/20251130-01-1200.webp 1200w,
+                    /sites/cet-taiwan.org/files/u422/20251124-06-05_full-2-600k.webp 1920w
+                " type="image/webp" /> <img alt="" decoding="async" id="full-img-1" loading="lazy" sizes="100vw" src="/sites/cet-taiwan.org/files/u422/20251124-06-05_full-2-600k.jpg" srcset="
+                    /sites/cet-taiwan.org/files/u422/20251130-01-1200.png 1200w,
+                    /sites/cet-taiwan.org/files/u422/20251124-06-05_full-2-600k.jpg 1920w
+                " /> </picture>
+		<div class="container-readable">
+			<div class="px-2 " id="heading-1">
+				<h2 class="white mb-0 font-900">每口呼吸都該是乾淨的。</h2></div></div>
+		<div class="photo-credit " id="photo-credit-1">
+			<p>photo by mrtiger on unsplash</p></div></div>
+	<section class="py-4" id="ceo-story_desktop" style="position: relative;">
+		<div class="debug-black container-fluid px-0 py-1 d-flex justify-content-center" style="background-color: var(--light-blue);">
+			<div class="container-readable py-4">
+				<div class="row justify-content-center align-items-center">
+					<div class="debug-black col-12 col-lg-6 "><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251110-13.webp" type="image/webp" /> <img alt="地球公民2014年校園升空污染旗倡議行動" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251110-13.jpg" style=" position: relative;z-index: 3;" /> </picture></div>
+					<div class="col-12 col-lg-6">
+						<p class="blue font-700">「孩子是我們帶來這個世界的，我想給她一個健康、公平的環境。」—地球公民執行長王敏玲</p>
+						<p class="mb-0">女兒幼時因空污誘發氣喘，讓地球公民執行長王敏玲深刻體會父母的焦慮與無力，以及孩童受的苦。也因此踏上了守護孩童呼吸、改善空污的道路。</p></div></div></div></div><!-- 網格紙素材 -->
+		<div aria-hidden="true" id="grid-paper">
+			<div class="grid-paper-tiles">&nbsp;</div></div></section></div>
+<div class="container-fluid justify-content-center align-items-center" id="ceo-story_mobile_1">
+	<section class="py-4 d-flex justify-content-center align-items-center">
+		<div class="container-readable">
+			<div class="p-3 p-md-4" id="grid-paper_mobile">
+				<div aria-hidden="true" class="grid-paper-bg"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20260317-05.webp" type="image/webp" /> <img alt="" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251130-03-604.png" /> </picture></div>
+				<div class="grid-paper-content">
+					<div><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251110-07.webp" type="image/webp" /> <img alt="「孩子是我們帶來這個世界的，我想給她一個健康、公平的環境。」" class="img-fluid" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251110-07.png" style="box-shadow:  5px 9px -7px #606060" /> </picture></div>
+					<div><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251125-12縮小加壓.webp" type="image/webp" /> <img alt="地球公民2014年校園升空污染旗倡議行動" class="img-fluid" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251125-12縮小加壓.png" /> </picture></div></div></div></div></section></div>
+<div class="py-4" id="ceo-story_mobile_2" style="background-color: var(--light-blue);">
+	<div class="container-readable">
+		<p class="mb-0">女兒幼時因空污誘發氣喘，讓地球公民執行長王敏玲深刻體會父母的焦慮與無力，以及孩童受的苦。也因此踏上了守護孩童呼吸、改善空污的道路。</p></div></div>
+<div class="d-flex justify-content-center container-fluid px-0" id="child-run"><picture> <source media="(max-width: 575.98px)" srcset="
+            /sites/cet-taiwan.org/files/u422/20260317-06.webp" type="image/webp" /> <source sizes="100vw" srcset="
+                /sites/cet-taiwan.org/files/u422/20251130-02-1200.webp 1200w,
+                /sites/cet-taiwan.org/files/u422/20251124-05-08-版面視覺_full-3-600k.webp 1920w
+            " type="image/webp" /> <img alt="" decoding="async" id="full-img-2" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251124-05-08-版面視覺_full-3-600k.jpg" /> </picture> <!-- style="width:100%; height:100%; object-fit:cover;" -->
+	<div class="photo-credit" id="photo-credit-2">
+		<p>Photo by freepik</p></div>
+	<div class="container-readable">
+		<div class="px-3 d-xl-block d-none">
+			<h2 class="white font-900" style=" letter-spacing: 0.5rem;">乾淨空氣 讓孩子安心成長</h2>
+			<h4 class="white mb-0 font-700" style="letter-spacing: 0.3rem;">環境問題有時就像空氣一般，容易被忽視卻時刻影響著生活</h4></div>
+		<div class="px-3 d-block d-xl-none">
+			<h2 class="white font-900" style="letter-spacing: 0.1rem;line-height: 2.1rem;">乾淨空氣<span class="font-900" style="white-space: nowrap;">讓孩子安心成長</span></h2>
+			<p class="white px-0 mb-0">環境問題有時就像空氣一般，容易被忽視卻時刻影響著生活</p></div></div></div>
+<div class="pt-5 pb-3" id="lets-donate">
+	<div class="row justify-content-center">
+		<div class="container-readable">
+			<div class="d-flex  flex-column justify-content-center align-items-center">
+				<div class="rounded-title mobile-rounded-title">
+					<h3 class="white donate-invite " style="letter-spacing: 0.08rem;"><a class="font-900" href="#donation-box">捐款支持</a></h3></div>
+				<div class="donate-invite-heading-2 mb-0 ms-2" id="">
+					<p class="blue mb-0 mt-3 font-700 px-0" style="text-align: center;">推動空氣品質改善政策，<span class="font-700" style="white-space: nowrap;">讓好的改變發生</span></p></div></div></div></div></div>
+<div>
+	<div class="row justify-content-center" style="background-color: var(--beige);">
+		<div class="container-readable">
+			<div class="text-block">
+				<p class="mb-0">10 多年來，地球公民與友團持續推動空氣品質改善，經過持續不斷的努力，今年，終於讓政府看見<span class="blue font-700">校園有害空污監管不足的現況，並提出政策作為。</span>我們正在要求政府，盡快完善校園的空污預警系統、強化校園與社區的防護意識，給孩子一個安全呼吸、安心學習的環境。</p></div></div></div></div>
+<div class="d-flex justify-content-center pb-4 pb-sm-5" id="influence" style="background-color: var(--beige);">
+	<div class="container-readable">
+		<div class="row gx-3 d-none d-md-flex">
+			<div class="card col-12 col-md-4">
+				<div class="card-img"><picture> <source media="(min-width: 768px)" srcset="/sites/cet-taiwan.org/files/u422/20251119-02.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" id="flag-img-desktop" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-02.png" /> </picture></div>
+				<div class="card-body">
+					<p class="card-text mb-0">2014 年 我們發起了校園升空污旗行動，讓空污對健康的危害進入社會大眾的視野。</p></div></div>
+			<div class="card col-12 col-md-4">
+				<div class="card-img"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-03.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-03.png" /> </picture></div>
+				<div class="card-body">
+					<p class="card-text mb-0">2017 年 我們促成高雄市政府加嚴水泥業的空污排放標準，透過強化空污管制，大幅改善高雄文府國小及左營地區的空污問題。</p></div></div>
+			<div class="card col-12 col-md-4">
+				<div class="card-img pt-md-5"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-04.webp" type="image/webp" /> <img alt="" class="card-img-top " decoding="async" id="cash-icon" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-04.png" /> </picture></div>
+				<div class="card-body">
+					<p class="card-text mb-0">2023 年 我們成功讓空污大戶的空污費被大幅調高，提高大工廠排放空污的成本，並減少每年9000公噸的空污排放。</p></div></div></div>
+		<div class="carousel slide d-md-none d-flex justify-content-center" data-bs-ride="carousel" id="influenceCarousel">
+			<div class="carousel-indicators mx-auto"><button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button><button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button><button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button></div>
+			<div class="carousel-inner">
+				<div class="carousel-item active" data-bs-interval="false">
+					<div class="card" id="flag-card" style="position:relative;">
+						<div class="card-img " id="flag-img-mobile"><picture> <source media="max-width: 767.98px" srcset="/sites/cet-taiwan.org/files/u422/20251119-02.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-02.png" /> </picture></div>
+						<div class="card-body">
+							<p class="card-text pt-0 mb-0">2014 年 我們發起了校園升空污旗行動，讓空污對健康的危害進入社會大眾的視野。</p></div></div></div>
+				<div class="carousel-item" data-bs-interval="false">
+					<div class="card">
+						<div class="card-img"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-03.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-03.png" /> </picture></div>
+						<div class="card-body">
+							<p class="card-text pt-0 mb-0">2017 年 我們促成高雄市政府加嚴水泥業的空污排放標準，透過強化空污管制，大幅改善高雄文府國小及左營地區的空污問題。</p></div></div></div>
+				<div class="carousel-item" data-bs-interval="flase">
+					<div class="card">
+						<div class="card-img pt-md-5"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-04.webp" type="image/webp" /> <img alt="" class="card-img-top" decoding="async" id="cash-icon-mobile" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-04.png" /> </picture></div>
+						<div class="card-body">
+							<p class="card-text pt-0 mb-0">2023 年 我們成功讓空污大戶的空污費被大幅調高，提高大工廠排放空污的成本，並減少每年9000公噸的空污排放。</p></div></div></div></div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#influenceCarousel" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button><button class="carousel-control-next" data-bs-slide="next" data-bs-target="#influenceCarousel" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button></div></div></div>
+<div style="background-color: #ffffff;height: 16px;">&nbsp;</div>
+<div class="d-flex justify-content-center py-5" id="influence-of-years" style="background-color: var(--light-blue);">
+	<div class="container-readable px-3">
+		<div class="text-center mb-3">
+			<div class="section-header">
+				<h2 class="mb-0 font-900 font-900 blue">歷年成果里程碑</h2></div></div>
+		<div class="d-flex justify-content-center">
+			<div class="text-block">
+				<div class="year h3 mt-0">2025</div>
+				<div class="result">
+					<p class="mb-0">促成環境部體檢 22 處工業區 列管「校園通報」警示</p>
+					<p class="mb-3">促使環境部積極建構跨部會「兒少校園空品防護網」</p></div>
+				<div class="year h3">2024</div>
+				<div class="result">
+					<p class="mb-0">促成加嚴空氣污染防制區的劃定，各縣市的空品測站均需達標才能晉級為合格區。</p>
+					<p class="mb-3">促使環境部加嚴空氣品質標準，讓民眾對空污更提高警覺。</p></div>
+				<div class="year h3">2023</div>
+				<div class="result">
+					<p class="mb-3">促成大幅調高空污大戶的空污費，減少每年 9000 公噸的空污排放</p></div><button class="mt-3" data-close-text="▼ 展開閱讀 2021 - 2014 年成果" data-open-text="▲ 收合" id="toggle-years"><span class="px-0 blue toggle-years-label font-500">▼ 展開閱讀 2021 - 2014 年成果</span></button>
+				<div class="years-more" id="more-years">
+					<div class="year h3">2021</div>
+					<div class="result">
+						<p class="mb-3">促成加嚴管制固定污染源有害空氣污染物</p></div>
+					<div class="year h3">2020</div>
+					<div class="result">
+						<p class="mb-3">成功阻擋環保署預備調降夏季空污費率的計劃</p></div>
+					<div class="year h3">2019</div>
+					<div class="result">
+						<p class="mb-0">促成興達電廠減煤，並提前除役</p>
+						<p class="mb-3">促成緊鄰文府國小的老舊水泥廠不再燒煤</p></div>
+					<div class="year h3">2018</div>
+					<div class="result">
+						<p class="mb-3">監督高屏空污總量管制實施，3 年減少高屏列管工廠約一萬噸空污</p></div>
+					<div class="year h3">2017</div>
+					<div class="result">
+						<p class="mb-0">促成高雄市政府加嚴訂定高雄市水泥業空氣污染物排放標準</p>
+						<p class="mb-3">促成環保署訂定有害空氣污染物之排放標準</p></div>
+					<div class="year h3">2016</div>
+					<div class="result">
+						<p class="mb-3">促成空品指標改革，PM 2.5 納入空品指標</p></div>
+					<div class="year h3">2014</div>
+					<div class="result">
+						<p class="mb-0">發起台灣校園升空污旗行動</p></div></div></div></div></div></div>
+<div class="py-4 py-sm-3" id="lets-donate-bottom">
+	<div class="row justify-content-center">
+		<div class="container-readable">
+			<div class="d-flex  flex-column justify-content-center align-items-center">
+				<div class="rounded-title mobile-rounded-title">
+					<h3 class="white donate-invite " style="letter-spacing: 0.08rem;"><a class="font-900" href="#donation-box">立即捐款</a></h3></div>
+				<div class="donate-invite-heading-2 mb-0 ms-2" id="">
+					<p class="white mb-0 mt-3 font-700 px-0" style="text-align: center;">推動空氣品質改善政策，<span class="font-700" style="white-space: nowrap;">讓好的改變發生</span></p></div></div></div></div></div>
+<div class="d-flex justify-content-center py-5" id="qa" style="background-color: var(--beige);">
+	<div class="container-readable">
+		<div class="text-center mb-4">
+			<div class="section-header">
+				<h2 class="mb-0 font-900" style="color: #3f3f3f;">常見問題</h2></div></div>
+		<div class="text-block">
+			<div class="accordion mb-0" id="accordionExample">
+				<div class="accordion-item" style="background-color: var(--beige);">
+					<h3 class="accordion-header"><button aria-controls="collapse-1" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-1" data-bs-toggle="collapse" type="button">▼ 地球公民將捐款用於哪些環境專案？</button></h3>
+					<div aria-labelledby="heading-1" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-1">
+						<div class="accordion-body">
+							<p class="faq-w">我們投入的環保工作範疇為山林國土、環境污染、能源轉型、永續花東、環境民主。藉由調查研究、揭露環境問題，提出解決方案，並據以進行政策施壓、國會遊說、教育推廣等，促成改變。</p></div></div></div>
+				<div class="accordion-item">
+					<h3 class="h4 accordion-header" id="heading-2"><button aria-controls="collapse-2" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-2" data-bs-toggle="collapse" type="button">▼ 我如何知道地球公民基金會年度捐款使用明細？</button></h3>
+					<div aria-labelledby="heading-2" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-2">
+						<div class="accordion-body">
+							<p class="faq-w">每年財務報告待主管機關環境部審查後公告於官方網站<a class="green-a" href="/node/3155" target="_blank">「財報 &amp; 徵信」</a>，再以電子信件提供捐款會員參考，以了解地球公民各項經費支出。 <a class="green-a" href="/annual_report" target="_blank">線上年度報告</a>在隔年出刊，同時以紙本和電子報將摘要及連結寄予每位捐款會員。」</p></div></div></div>
+				<div class="accordion-item">
+					<h3 class="h4 accordion-header" id="heading-3"><button aria-controls="collapse-3" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-3" data-bs-toggle="collapse" type="button">▼ 地球公民的財務報告受到哪些單位的審核？</button></h3>
+					<div aria-labelledby="heading-3" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-3">
+						<div class="accordion-body">
+							<p class="faq-w">依我國法令設立之財團法人地球公民基金會（以下簡稱本會），受董事會監督，董事會設董事 7 名，監事 2 名董監事成員均為義務性質，成員涵蓋各領域專業之人士，並具備獨立性。本會年度財務報表，皆先經由董監事會審核，並送主管機關環境部備查。據衛生福利部規定，公益勸募需每年申請募款字號，申請流程包括遞交勸募計畫書、由衛福部審核後核發募款字號。募款字號年度結束時，也需遞交報告。</p></div></div></div>
+				<div class="accordion-item">
+					<h3 class="h4 accordion-header" id="heading-4"><button aria-controls="collapse-4" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-4" data-bs-toggle="collapse" type="button">▼ 捐款是否會有收據？</button></h3>
+					<div aria-labelledby="heading-4" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-4">
+						<div class="accordion-body">
+							<p class="faq-w">您在進行捐款時請填寫正確地址，將會收到本會正式收據。可利用捐款收據作為抵扣所得稅額之用。</p></div></div></div>
+				<div class="accordion-item">
+					<h3 class="h4 accordion-header" id="heading-5"><button aria-controls="collapse-5" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-5" data-bs-toggle="collapse" type="button">▼ 何時會收到捐款收據？</button></h3>
+					<div aria-labelledby="heading-5" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-5">
+						<div class="accordion-body">
+							<p class="faq-w">單次捐款人會在捐款成功後，可以選擇捐款隔月收到捐款收據與相關資料或年度收到捐款收據。每月定期定額捐款人則於每年報稅月前，寄發上一年度全年的捐款總額證明，收據可作為抵扣稅額使用，亦明列個人全年度捐款紀錄。</p></div></div></div>
+				<div class="accordion-item mb-0" style="margin-bottom:35px;">
+					<h3 class="h4 accordion-header" id="heading-6"><button aria-controls="collapse-6" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-6" data-bs-toggle="collapse" type="button">▼ 捐款會員如何了解會務與環境行動成果？</button></h3>
+					<div aria-labelledby="heading-6" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-6">
+						<div class="accordion-body">
+							<p class="faq-w">地球公民有義務向捐款會員回報環境行動的進度、成果與財務報告，形式包括電子報、期刊或出版品等。</p>
+							<p class="faq-w">．每年發表「<a class="green-a" href="/annual_report" target="_blank">年度報告</a>」，彙整當年度重大工作成果。</p>
+							<p class="faq-w">．不定期寄發「會員電子報」，報告最新的環境行動進度與參加管道，讓您掌握第一手消息。</p>
+							<p class="faq-w">．不定期發行電子期刊「地球公民通訊」專文解析環境專題，讓您深度了解環境議題。</p>
+							<p class="faq-w">．不定期舉辦「會員活動」，將以電子郵件、簡訊等管道與您聯繫。</p><!-- <a class="green-a" href="https://www.facebook.com/CitizenoftheEarth" target="_blank"> -->
+							<p class="faq-w">．您也可以追蹤本會的FB、<a class="green-a" href="https://www.instagram.com/cettw/" target="_blank">IG </a>粉絲專頁，即時更新地球公民最新的倡議進度。</p></div></div></div></div></div></div></div>
+<div class="py-3 d-flex justify-content-center align-items-center" style="background-color: white;">
+	<div class="container-readable ">
+		<p class="cet-info d-block d-xl-none mb-0 text-center">立案字號 環署綜字第 0990100475 號<br />
+			勸募許可文號 衛部救字第 1151362736 號<br />
+			官方信箱 cet@cet-taiwan.org</p>
+		<p class="cet-info d-none d-xl-block mb-0 text-center">立案字號 環署綜字第 0990100475 號｜勸募許可文號 衛部救字第 1151362736 號｜官方信箱 cet@cet-taiwan.org</p></div></div>
+<footer class="container-fluid " style="background-color:var(--beige)">
+	<div class="row justify-content-center  py-4">
+		<div class="d-flex flex-column align-self-center col-10 col-sm-2 order-2 order-sm-1">
+			<h4 class="cet-keyword text-center" id="heading_1">本土專業</h4>
+			<p class="px-0" id="paragraph_1" style="text-align:center;">理性堅定，<span style="white-space:nowrap ;">促進社會對話</span></p></div>
+		<div class="d-flex flex-column align-self-center  col-10 col-sm-2 order-3 order-sm-2">
+			<h4 class="cet-keyword text-center" id="heading_2">動身護土</h4>
+			<p class="px-0" id="paragraph_2" style="text-align:center;">行動有力，<span style="white-space:nowrap ;">帶來正面改變</span></p></div>
+		<div class="col-10 col-sm-2 order-1 order-sm-2 px-0 py-3 py-md-0"><a href="/"><img alt="" class="d-block mx-auto" decoding="async" id="footer-cet-icon" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251114-01.svg" style="max-width: 60%;fill:var(--blue)" /> </a></div>
+		<div class="d-flex flex-column  col-10 col-sm-2 order-4 order-sm-4 align-self-center">
+			<h4 class="cet-keyword text-center " id="heading_3">公正獨立</h4>
+			<p class="px-0" id="paragraph_3" style="text-align:center;">財務自主，經費來自大眾捐款，<span style="white-space:nowrap ;">不接受政府補助</span></p></div>
+		<div class="d-flex flex-column align-self-center col-10 col-sm-2 order-5 order-sm-5">
+			<h4 class="cet-keyword text-center" id="heading_4">深化民主</h4>
+			<p class="px-0" id="paragraph_4" style="text-align:center;">堅持環境與世代正義<span style="white-space:nowrap ;"> 壯大公民社會</span></p></div></div></footer><!-- container-fluid px-0 結束--><!--  --><script type="text/javascript" defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.innerWidth >= 576) {
+                setEqualHeight_2();
+            }
+        });
+        
+        function setEqualHeight_2() {
+            var div1 = document.getElementById('paragraph_1');
+            var div2 = document.getElementById('paragraph_2');
+            var div3 = document.getElementById('paragraph_3');
+            var div4 = document.getElementById('paragraph_4');
+        
+        
+            var maxHeight = Math.max(div1.offsetHeight, div2.offsetHeight);
+            div1.style.height = maxHeight + 'px';
+            div2.style.height = maxHeight + 'px';
+            div3.style.height = maxHeight + 'px';
+            div4.style.height = maxHeight + 'px';
+        
+        }
+        </script><script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggle = document.getElementById('toggle-years');
+      var more = document.getElementById('more-years');
+      if (!toggle || !more) {
+        console.error('無法找到 toggle-years 或 more-years 元素');
+        return;
+      }
+    
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        var isOpen = more.classList.toggle('is-open');
+        // 更新按鈕內的 <p> 標籤文字，而不是整個按鈕
+        var label = toggle.querySelector('.toggle-years-label');
+        if (label) {
+          label.textContent = isOpen
+            ? toggle.dataset.openText
+            : toggle.dataset.closeText;
+        } else {
+          // 如果沒有 <p> 標籤，則更新按鈕文字
+          toggle.textContent = isOpen
+            ? toggle.dataset.openText
+            : toggle.dataset.closeText;
+        }
+      });
+    });
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
+<script>
+window.DONATION_BOX_AMOUNT_DATA = {
+    monthly: [
+        { desc: '' },
+        { desc: '' },
+        { desc: '' }
+    ],
+    once: [
+        { desc: '' },
+        { desc: '' },
+        { desc: '' }
+    ]
+};
+</script>
+<script src="../../share-js/donation-box.js" defer></script>
+</body>
+</html>
