@@ -145,8 +145,12 @@ html {
 }
 
 .kp-quote .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
   padding-top: 40px;
-  padding-bottom: 24px;
+  padding-bottom: 40px;
 }
 
 .kp-quote__text {
@@ -155,6 +159,8 @@ html {
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.6;
+  text-align: center;
+  width: 100%;
 }
 
 .kp-section--cream {
@@ -173,7 +179,7 @@ html {
 .kp-heading {
   margin: 0 0 16px;
   color: #79a51e;
-  font-size: 1.75rem;
+  font-size: 38px;
   font-weight: 700;
   line-height: 1.4;
   scroll-margin-top: 16px;
@@ -182,15 +188,20 @@ html {
 .kp-subheading {
   margin: 0 0 16px;
   color: #666666;
-  font-size: 1.25rem;
+  font-size: 29px;
   font-weight: 700;
   line-height: 1.4;
 }
 
 .kp-avatar {
+  width: 80px;
+  max-width: 80px;
+  margin-bottom: 12px;
+}
+
+.kp-avatar--lg {
   width: 25%;
   max-width: 120px;
-  margin-bottom: 12px;
 }
 
 .kp-photo {
@@ -330,6 +341,10 @@ html {
   font-weight: 700;
 }
 
+.kp-footer__body {
+  text-align: left;
+}
+
 .kp-footer__donate {
   display: inline-block;
   margin: 24px auto;
@@ -425,11 +440,7 @@ html {
 
   <section class="kp-quote">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-8 offset-md-2">
-          <p class="kp-quote__text">今年，台灣經歷著超過百年未有的大旱，是1911年有紀錄以來最少的降雨。<br>兩位南台灣的大叔，決定帶領更多人，走讀從水源頭到水龍頭之間，關於高屏溪的故事。</p>
-        </div>
-      </div>
+      <p class="kp-quote__text">今年，台灣經歷著超過百年未有的大旱，是1911年有紀錄以來最少的降雨。<br>兩位南台灣的大叔，決定帶領更多人，走讀從水源頭到水龍頭之間，關於高屏溪的故事。</p>
     </div>
   </section>
 
@@ -438,11 +449,11 @@ html {
       <h2 class="kp-heading">李根政 ✕ 傅志男</h2>
       <div class="row g-4">
         <div class="col-12 col-md-6">
-          <img class="kp-avatar" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20210608-43.png?fid=20044" alt="李根政" width="120" height="120" loading="lazy" decoding="async">
+          <img class="kp-avatar kp-avatar--lg" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20210608-43.png?fid=20044" alt="李根政" width="120" height="120" loading="lazy" decoding="async">
           <p>我是李根政，從小在金門長大，九零年代移居南台灣，喜歡和一群人努力改變社會，也喜歡寫書法、逛傳統市場煮飯。因為要專心投入環境運動，2007年辭去教職，和一群朋友創辦了地球公民，轉眼間已成為資深的環境運動大叔。</p>
         </div>
         <div class="col-12 col-md-6">
-          <img class="kp-avatar" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20210618-5.png?fid=20181" alt="傅志男" width="120" height="120" loading="lazy" decoding="async">
+          <img class="kp-avatar kp-avatar--lg" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20210618-5.png?fid=20181" alt="傅志男" width="120" height="120" loading="lazy" decoding="async">
           <p>我是傅志男，在高雄楠梓仙溪旁的客家小聚落長大，專長是帶教師們學生實地走到自然生態現場做環境教育，走讀現場和解說是最好認識環境的方式。這幾年著迷於空拍，下面要show給你們看的空拍景象都是我拍的喔！</p>
         </div>
       </div>
@@ -497,7 +508,7 @@ html {
 
   <section class="kp-quote">
     <div class="container">
-      <p class="kp-quote__text text-center">這是我們家的水費單</p>
+      <p class="kp-quote__text">這是我們家的水費單</p>
     </div>
   </section>
 
@@ -604,11 +615,7 @@ html {
 
   <section class="kp-quote">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-8 offset-md-4">
-          <p class="kp-quote__text">水價便宜，人們和企業會節水嗎？</p>
-        </div>
-      </div>
+      <p class="kp-quote__text">水價便宜，人們和企業會節水嗎？</p>
     </div>
   </section>
 
@@ -657,8 +664,10 @@ html {
       <div class="row">
         <div class="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3">
           <h2 class="kp-footer__title">用行動支持地球公民基金會</h2>
-          <p>環境生態是人類生存的基礎，在氣候緊急時代，需要知識、信念和有力的行動。 地球公民是台灣第一個透過大眾募款成立的環保基金會，公正獨立，經費來自大眾捐款，不接受政府資助。</p>
-          <p>我們是一群專業的環境工作團隊，透過調查研究、提出解決方案，理性堅定的促進社會對話，集結公民力量，採取有力的行動。20年來，我們守護了台灣多項環境個案與法令政策的改變，需要您共同行動。</p>
+          <div class="kp-footer__body">
+            <p>環境生態是人類生存的基礎，在氣候緊急時代，需要知識、信念和有力的行動。 地球公民是台灣第一個透過大眾募款成立的環保基金會，公正獨立，經費來自大眾捐款，不接受政府資助。</p>
+            <p>我們是一群專業的環境工作團隊，透過調查研究、提出解決方案，理性堅定的促進社會對話，集結公民力量，採取有力的行動。20年來，我們守護了台灣多項環境個案與法令政策的改變，需要您共同行動。</p>
+          </div>
           <a class="kp-footer__donate" href="https://www.cet-taiwan.org/donate?utm_source=web&amp;utm_medium=topicpage&amp;utm_campaign=water" target="_blank" rel="noopener noreferrer">
             <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20200505-7.png?fid=17716" alt="立即捐款" width="180" height="60" loading="lazy" decoding="async">
           </a>
