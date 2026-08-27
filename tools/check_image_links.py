@@ -6,12 +6,14 @@ CET Taiwan - HTML / CSS 圖檔連結檢查工具
 功能：
   - 選擇資料夾與一張以上 HTML / CSS 檔案
   - 擷取 img / source / srcset / CSS url() 的圖檔連結
-  - 本機相對路徑檢查檔案是否存在
+  - 本機相對路徑（../img/...）檢查檔案是否存在
+  - 根路徑相對網址（/sites/...）接上 --base-url 後以 GET 檢查
   - 遠端 http(s) 連結以 GET（stream）檢查 HTTP 狀態碼（含 404；不依賴不可靠的 HEAD）
 """
 
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 import tkinter as tk
@@ -56,6 +58,8 @@ USER_AGENT = (
 )
 REQUEST_TIMEOUT = 12
 MAX_WORKERS = 8
+DEFAULT_SITE_BASE = "https://dev.cet-taiwan.org"
+WWW_SITE_BASE = "https://www.cet-taiwan.org"
 
 
 @dataclass(frozen=True)
@@ -113,13 +117,54 @@ def select_folder_and_files() -> tuple[Path, list[Path]]:
     return Path(folder), selected
 
 
+def is_root_relative(url: str) -> bool:
+    """以 / 開頭、但不是 //host 的相對網址。"""
+    u = url.strip()
+    return u.startswith("/") and not u.startswith("//")
+
+
+def normalize_site_base(url: str) -> str:
+    url = url.strip().rstrip("/")
+    if not url:
+        return DEFAULT_SITE_BASE
+    if url.startswith("//"):
+        url = "https:" + url
+    elif "://" not in url:
+        url = "https://" + url
+    return url.rstrip("/")
+
+
 def ask_site_base_url() -> str:
-    print(
-        "\n若檔案內有以 / 開頭的根路徑圖檔（例如 /sites/.../a.webp），"
-        "請輸入網站根網址以便檢查；直接 Enter 則略過根路徑。"
+    print("\n檔案內有以 / 開頭的相對網址（例如 /sites/.../a.webp）。")
+    print("請選擇用來檢查的網站根網址：")
+    print(f"  [1] {DEFAULT_SITE_BASE}  （預設，直接 Enter）")
+    print(f"  [2] {WWW_SITE_BASE}")
+    print("  [3] 自行輸入")
+    choice = input("> ").strip()
+    if choice in {"", "1"}:
+        return DEFAULT_SITE_BASE
+    if choice == "2":
+        return WWW_SITE_BASE
+    if choice == "3":
+        custom = input("請輸入網址：").strip()
+        if not custom:
+            print(f"未輸入，改用預設：{DEFAULT_SITE_BASE}")
+            return DEFAULT_SITE_BASE
+        return normalize_site_base(custom)
+    if choice.startswith(("http://", "https://", "//")):
+        return normalize_site_base(choice)
+    print(f"無法辨識，改用預設：{DEFAULT_SITE_BASE}")
+    return DEFAULT_SITE_BASE
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="CET Taiwan 圖檔連結檢查")
+    parser.add_argument(
+        "--base-url",
+        default=None,
+        help="相對路徑（/sites/...）要接上的網站根網址",
     )
-    print("範例：https://www.cet-taiwan.org")
-    return input("> ").strip().rstrip("/")
+    return parser.parse_args()
 
 
 def should_skip_url(url: str) -> bool:
@@ -254,8 +299,12 @@ def resolve_target(
     if parsed.scheme and parsed.scheme not in {"", "file"}:
         return "skip", None
 
-    # 根路徑 /foo/bar.webp
-    if raw.startswith("/"):
+    # 協定相對 //cdn.example.com/a.webp
+    if raw.startswith("//"):
+        return "remote", "https:" + raw
+
+    # 根路徑 /foo/bar.webp → 接上使用者選擇的 base 網址
+    if is_root_relative(raw):
         if site_base:
             return "remote", site_base + raw
         return "skip", None
@@ -302,7 +351,7 @@ def check_link(
     kind, target = resolve_target(link, site_base)
 
     if kind == "skip":
-        if link.raw.startswith("/") and not site_base:
+        if is_root_relative(link.raw) and not site_base:
             return CheckResult(
                 link=link,
                 status="skip",
@@ -322,6 +371,8 @@ def check_link(
 
     assert isinstance(target, str)
     status, detail, code = check_remote(target, session)
+    if target != link.raw:
+        detail = f"{detail}（{target}）"
     return CheckResult(link=link, status=status, detail=detail, http_code=code)
 
 
@@ -386,6 +437,7 @@ def print_report(report: Report) -> None:
 
 
 def main() -> None:
+    args = parse_args()
     print("CET Taiwan - HTML / CSS 圖檔連結檢查工具")
     print("-" * 40)
 
@@ -417,8 +469,18 @@ def main() -> None:
         print("\n未找到任何圖檔連結。")
         sys.exit(0)
 
-    need_base = any(lnk.raw.startswith("/") for lnk in all_links)
-    site_base = ask_site_base_url() if need_base else ""
+    need_base = any(is_root_relative(lnk.raw) for lnk in all_links)
+    if args.base_url is not None:
+        site_base = normalize_site_base(args.base_url)
+    elif need_base:
+        site_base = ask_site_base_url()
+    else:
+        site_base = ""
+
+    if site_base and need_base:
+        print(f"\n相對路徑將以 {site_base} 檢查")
+    elif need_base and not site_base:
+        print("\n未提供 base 網址，以 / 開頭的相對路徑將略過")
 
     print(f"\n開始檢查 {len(all_links)} 個連結…")
     session = requests.Session()
