@@ -1,0 +1,42 @@
+#main .views-exposed-form .views-exposed-widget {
+  float: left; /* LTR */
+  padding: .5em 1em 0 0; /* LTR */
+}
+
+#main .views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 1.6em;
+}
+
+#main .views-exposed-form .form-item,
+#main .views-exposed-form .form-submit {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#main .views-exposed-form label {
+  font-weight: bold;
+}
+
+#main .views-exposed-widgets {
+  margin-bottom: .5em;
+}
+
+/* table style column align */
+#main .views-align-left {
+  text-align: left;
+}
+#main .views-align-right {
+  text-align: right;
+}
+#main .views-align-center {
+  text-align: center;
+}
+
+/* Remove the border on tbody that system puts in */
+#main .views-view-grid tbody {
+  border-top: none;
+}
+
+#main .view .progress-disabled {
+  float: none;
+}

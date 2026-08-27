@@ -1,0 +1,270 @@
+
+/**
+ * @file
+ * Generic theme-independent base styles.
+ */
+
+/**
+ * Autocomplete.
+ *
+ * @see autocomplete.js
+ */
+/* Suggestion list */
+#main #autocomplete {
+  border: 1px solid;
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+}
+#main #autocomplete ul {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+#main #autocomplete li {
+  background: #fff;
+  color: #000;
+  cursor: default;
+  white-space: pre;
+  zoom: 1; /* IE7 */
+}
+/* Animated throbber */
+#main html.js input.form-autocomplete {
+  background-image: url(../../misc/throbber-inactive.png);
+  background-position: 100% center; /* LTR */
+  background-repeat: no-repeat;
+}
+#main html.js input.throbbing {
+  background-image: url(../../misc/throbber-active.gif);
+  background-position: 100% center; /* LTR */
+}
+
+/**
+ * Collapsible fieldsets.
+ *
+ * @see collapse.js
+ */
+#main html.js fieldset.collapsed {
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  height: 1em;
+}
+#main html.js fieldset.collapsed .fieldset-wrapper {
+  display: none;
+}
+#main fieldset.collapsible {
+  position: relative;
+}
+#main fieldset.collapsible .fieldset-legend {
+  display: block;
+}
+
+/**
+ * Resizable textareas.
+ *
+ * @see textarea.js
+ */
+#main .form-textarea-wrapper textarea {
+  display: block;
+  margin: 0;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#main .resizable-textarea .grippie {
+  background: #eee url(../../misc/grippie.png) no-repeat center 2px;
+  border: 1px solid #ddd;
+  border-top-width: 0;
+  cursor: s-resize;
+  height: 9px;
+  overflow: hidden;
+}
+
+/**
+ * TableDrag behavior.
+ *
+ * @see tabledrag.js
+ */
+#main body.drag {
+  cursor: move;
+}
+#main .draggable a.tabledrag-handle {
+  cursor: move;
+  float: left; /* LTR */
+  height: 1.7em;
+  margin-left: -1em; /* LTR */
+  overflow: hidden;
+  text-decoration: none;
+}
+#main a.tabledrag-handle:hover {
+  text-decoration: none;
+}
+#main a.tabledrag-handle .handle {
+  background: url(../../misc/draggable.png) no-repeat 6px 9px;
+  height: 13px;
+  margin: -0.4em 0.5em; /* LTR */
+  padding: 0.42em 0.5em; /* LTR */
+  width: 13px;
+}
+#main a.tabledrag-handle-hover .handle {
+  background-position: 6px -11px;
+}
+#main div.indentation {
+  float: left; /* LTR */
+  height: 1.7em;
+  margin: -0.4em 0.2em -0.4em -0.4em; /* LTR */
+  padding: 0.42em 0 0.42em 0.6em; /* LTR */
+  width: 20px;
+}
+#main div.tree-child {
+  background: url(../../misc/tree.png) no-repeat 11px center; /* LTR */
+}
+#main div.tree-child-last {
+  background: url(../../misc/tree-bottom.png) no-repeat 11px center; /* LTR */
+}
+#main div.tree-child-horizontal {
+  background: url(../../misc/tree.png) no-repeat -11px center;
+}
+#main .tabledrag-toggle-weight-wrapper {
+  text-align: right; /* LTR */
+}
+
+/**
+ * TableHeader behavior.
+ *
+ * @see tableheader.js
+ */
+#main table.sticky-header {
+  background-color: #fff;
+  margin-top: 0;
+}
+
+/**
+ * Progress behavior.
+ *
+ * @see progress.js
+ */
+/* Bar */
+#main .progress .bar {
+  background-color: #fff;
+  border: 1px solid;
+}
+#main .progress .filled {
+  background-color: #000;
+  height: 1.5em;
+  width: 5px;
+}
+#main .progress .percentage {
+  float: right; /* LTR */
+}
+/* Throbber */
+#main .ajax-progress {
+  display: inline-block;
+}
+#main .ajax-progress .throbber {
+  background: transparent url(../../misc/throbber-active.gif) no-repeat 0px center;
+  float: left; /* LTR */
+  height: 15px;
+  margin: 2px;
+  width: 15px;
+}
+#main .ajax-progress .message {
+  padding-left: 20px;
+}
+#main tr .ajax-progress .throbber {
+  margin: 0 2px;
+}
+#main .ajax-progress-bar {
+  width: 16em;
+}
+
+/**
+ * Inline items.
+ */
+#main .container-inline div,
+#main .container-inline label {
+  display: inline;
+}
+/* Fieldset contents always need to be rendered as block. */
+#main .container-inline .fieldset-wrapper {
+  display: block;
+}
+
+/**
+ * Prevent text wrapping.
+ */
+#main .nowrap {
+  white-space: nowrap;
+}
+
+/**
+ * For anything you want to hide on page load when JS is enabled, so
+ * that you can use the JS to control visibility and avoid flicker.
+ */
+#main html.js .js-hide {
+  display: none;
+}
+
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be a collapsible fieldset that will be expanded with a click
+ * from a user. The effect of this class can be toggled with the jQuery show()
+ * and hide() functions.
+ */
+#main .element-hidden {
+  display: none;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen-readers.
+ *
+ * Used for information required for screen-reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+#main .element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+}
+
+/**
+ * The .element-focusable class extends the .element-invisible class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+#main .element-invisible.element-focusable:active,
+#main .element-invisible.element-focusable:focus {
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
+}
+
+/**
+ * Markup free clearing.
+ *
+ * @see http://perishablepress.com/press/2009/12/06/new-clearfix-hack
+ */
+#main .clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* IE6 */
+#main * html .clearfix {
+  height: 1%;
+}
+/* IE7 */
+#main *:first-child + html .clearfix {
+  min-height: 1%;
+}

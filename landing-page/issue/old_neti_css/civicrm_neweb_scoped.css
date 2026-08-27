@@ -1,0 +1,54 @@
+#main .newweb-error{
+  border: 1px solid #FF3F3F;
+  background: #FFEFEF;
+  padding: 10px;
+}
+#main #recurring-nw  {
+  border: 1px solid #777;
+}
+#main #recurring-nw th {
+  text-align: center;
+  font-size: 10px;
+  background: #555;
+  color: #FFF;
+}
+#main #recurring-nw td {
+  padding: 2px;
+  text-align: right;
+  font-size: 10px;
+}
+#main #recurring-nw td table {
+  margin: 0;
+}
+#main #recurring-nw td fieldset{
+  margin: 0;
+  border: 0px solid #FFF;
+  padding: 3px;
+}
+#main #recurring-nw td.active {
+  background: none;
+}
+#main #recurring-nw td.recurring-id {
+  border-bottom: 1px solid #777;
+}
+#main #recurring-nw td.recurring-detail {
+  text-align: left;
+  border-bottom: 1px solid #777;
+}
+#main #recurring-nw tr {
+  background: none;
+  border: 0;
+}
+#main #recurring-nw .recurring-table {
+  margin: 0 auto;
+  width: 70%;
+  background: #EEE;
+  border: 1px solid #CCC;
+  border-collapse: separate;
+}
+#main #recurring-nw .recurring-table th{
+  background-color: #999;
+}
+#main #recurring-nw .recurring-table td{
+  background: #EFEFEF;
+}

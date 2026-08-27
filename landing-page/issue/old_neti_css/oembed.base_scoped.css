@@ -1,0 +1,11 @@
+#main .oembed .oembed-title {
+  display: block;
+}
+#main .oembed .oembed-content {
+  display: block;
+}
+#main .oembed .oembed-content .node {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

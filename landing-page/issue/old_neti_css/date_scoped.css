@@ -1,0 +1,188 @@
+/**
+ * @file
+ * Main stylesheet for Date module.
+ */
+
+/* Force start/end dates to float using inline-block, where it works, otherwise inline. */
+#main .container-inline-date {
+  clear: both;
+}
+#main .container-inline-date .form-item {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+#main .container-inline-date > .form-item {
+  display: inline-block;
+  margin-right: 0.5em; /* LTR */
+  margin-bottom: 10px;
+  vertical-align: top;
+}
+#main .container-inline-date .form-item .form-item {
+  float: left; /* LTR */
+}
+#main .container-inline-date .form-item,
+#main .container-inline-date .form-item input {
+  width: auto;
+}
+#main .container-inline-date .description {
+  clear: both;
+}
+
+#main .container-inline-date .form-item input,
+#main .container-inline-date .form-item select,
+#main .container-inline-date .form-item option {
+  margin-right: 5px; /* LTR */
+}
+
+#main .container-inline-date .date-spacer {
+  margin-left: -5px; /* LTR */
+}
+
+#main .views-right-60 .container-inline-date div {
+  margin: 0;
+  padding: 0;
+}
+
+#main .container-inline-date .date-timezone .form-item {
+  clear: both;
+  float: none;
+  width: auto;
+}
+
+/* The exposed Views form doesn't need some of these styles */
+#main .container-inline-date .date-padding {
+  padding: 10px;
+  float: left;
+}
+#main .views-exposed-form .container-inline-date .date-padding {
+  padding: 0;
+}
+
+/* Fixes for date popup css so it will behave in Drupal */
+#main #calendar_div,
+#main #calendar_div td,
+#main #calendar_div th {
+  margin: 0;
+  padding: 0;
+}
+#main #calendar_div,
+#main .calendar_control,
+#main .calendar_links,
+#main .calendar_header,
+#main .calendar {
+  border-collapse: separate;
+  margin: 0;
+  width: 185px;
+}
+
+#main .calendar td {
+  padding: 0;
+}
+
+/* formatting for start/end dates in nodes and views */
+#main span.date-display-single {
+}
+#main span.date-display-start {
+}
+#main span.date-display-end {
+}
+
+#main .date-prefix-inline {
+  display: inline-block;
+}
+
+#main .date-clear {
+  clear: both;
+  display: block;
+  float: none;
+}
+
+#main .date-no-float {
+  clear: both;
+  float: none;
+  width: 98%;
+}
+
+#main .date-float {
+  clear: none;
+  float: left;
+  width: auto;
+}
+
+/* Add space between date option checkboxes ('All day' & 'Collect End Date') */
+#main .date-float .form-type-checkbox{
+  padding-right: 1em;
+}
+
+/* Add space between the date and time portions of the date_select widget. */
+#main .form-type-date-select .form-type-select[class$=hour] {
+  margin-left: .75em; /* LTR */
+}
+
+#main .date-container .date-format-delete {
+  float: left;
+  margin-top: 1.8em;
+  margin-left: 1.5em;
+}
+#main .date-container .date-format-name {
+  float: left;
+}
+#main .date-container .date-format-type {
+  float: left;
+  padding-left: 10px;
+}
+
+#main .date-container .select-container {
+  clear: left;
+  float: left;
+}
+
+/* Calendar day css */
+#main div.date-calendar-day {
+  background: #F3F3F3;
+  border-top: 1px solid #EEE;
+  border-left: 1px solid #EEE;
+  border-right: 1px solid #BBB;
+  border-bottom: 1px solid #BBB;
+  color: #999;
+  float: left;
+  line-height: 1;
+  margin: 6px 10px 0 0;
+  text-align: center;
+  width: 40px;
+}
+
+#main div.date-calendar-day span {
+  display: block;
+  text-align: center;
+}
+#main div.date-calendar-day span.month {
+  background-color: #B5BEBE;
+  color: white;
+  font-size: .9em;
+  padding: 2px;
+  text-transform: uppercase;
+}
+#main div.date-calendar-day span.day {
+  font-size: 2em;
+  font-weight: bold;
+}
+#main div.date-calendar-day span.year {
+  font-size: .9em;
+  padding: 2px;
+}
+
+/* Admin styling */
+#main .form-item.form-item-instance-widget-settings-input-format-custom,
+#main .form-item.form-item-field-settings-enddate-required {
+  margin-left: 1.3em;
+}
+
+#main #edit-field-settings-granularity .form-type-checkbox {
+  margin-right: .6em; /* LTR */
+}
+
+#main .date-year-range-select {
+  margin-right: 1em;
+}

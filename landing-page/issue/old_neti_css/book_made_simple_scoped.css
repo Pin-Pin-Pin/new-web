@@ -1,0 +1,26 @@
+#main fieldset.allowed-child div.form-item, #main fieldset.auto-main div.form-item {
+	float:left;
+	width:300px;
+}
+
+#main fieldset.bms-fieldset-child {
+	float:left;
+	width:49%;
+}
+
+#main fieldset.bms-fieldset-parent {
+	float:right;
+	width:49%;
+}
+
+#main fieldset.bms-other-settings {
+	float:none;
+	clear:both;
+}
+
+#main div.vertical-tabs .vertical-tabs-panes fieldset.allowed-childwithlegend legend {
+	display:block;
+}
+#main div.vertical-tabs .vertical-tabs-panes fieldset.allowed-childwithoutlegend legend {
+	display:none;
+}

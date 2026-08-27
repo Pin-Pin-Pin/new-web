@@ -1,0 +1,53 @@
+/* $Id: ie6nomore.css,v 1.1.2.2 2010/06/06 02:31:28 jonathanhunt Exp $ */
+#main #ienomore {
+  border: 1px solid #F7941D;
+  background: #FEEFDA;
+  text-align: center;
+  min-height: 110px;
+  position: relative;
+  display: none;
+}
+
+#main #ienomore-wrapper {
+  width: 715px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0;
+  overflow: hidden;
+  color: black;
+}
+
+#main #ienomore-warning {
+  width: 75px; 
+  float: left;
+  margin-top: 15px;
+}
+
+#main #ienomore-message {
+  width: 265px;
+  float: left;
+  font-family: Arial, sans-serif;
+  margin-right: 40px;
+}
+
+#main #ienomore-title {
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+#main #ienomore-description {
+  font-size: 12px;
+  /*margin-top: 6px;*/
+  line-height: 1.5em;
+}
+
+#main .ienomore-browser-wrapper {
+  width: 75px;
+  float: left;
+  margin-top: 15px;
+}
+
+#main .ienomore-browser-wrapper img {
+  border: none;
+}

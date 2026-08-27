@@ -1,0 +1,116 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700,900");
+#main html { font-size: 16px; }
+@media (min-width: 1600px) { #main html { font-size: 24px; } }
+
+#main body, #main button, #main input, #main a, #main p, #main h1, #main h2, #main h3, #main h4, #main h5, #main span, #main label { font-family: "Noto Sans TC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", sans-serif; }
+
+#main .btn { font-size: 0.9375rem; }
+
+:root { --active-color: #4b9d95; --marked-color: #d79142; }
+
+/** Styles for the glazed_subtheme theme. */
+#main .admin-menu .simplemenu-block { height: 25px; }
+#main .admin-menu .simplemenu-block #simplemenu { margin-top: 23px; }
+#main .admin-menu .glazed-header { background-color: unset; }
+
+/*----*/
+#main .error-msg-bg { z-index: 50; position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0, 0, 0, 0.5); cursor: pointer; }
+
+#main .error-msg { position: absolute; background: white; padding: 50px; border-radius: 0.625rem; z-index: 100; cursor: default; }
+#main .error-msg a.button { display: inline-block; cursor: pointer; margin: .5em 1em .5em 0; padding: 0.375rem 0.625rem; font-size: .9375rem; line-height: 1.2; color: #fff; border: none; border-radius: 0; background-color: #333; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; }
+#main .error-msg a.button:hover { background-color: #555; text-decoration: none; }
+@media (min-width: 992px) { #main .error-msg { left: 20%; right: 20%; transform: translateY(-50%); top: 50%; } }
+
+#main .page-petition .nav-tabs { background-color: #ddd; }
+#main .page-petition .node-wrapper { background-position: center; background-attachment: fixed; background-repeat: no-repeat; -moz-background-size: cover; -o-background-size: cover; -webkit-background-size: cover; background-size: cover; }
+#main .page-petition .node-wrapper .container { max-width: 1140px; }
+@media (min-width: 1600px) { #main .page-petition .node-wrapper .container { max-width: 1600px; } }
+
+/*-連署頁用的--*/
+#main .node-petition.view-mode-full { padding-top: 2.375rem; padding-bottom: 2.5rem; font-size: 1.125rem; /*--副標--*/ /*--小標--*/ /*--進度條--*/ /** webform */ /** 感謝訊息 */ /**---intro text---*/ }
+@media (min-width: 992px) { #main .node-petition.view-mode-full { padding-top: 10.9375rem; } }
+@media (min-width: 1600px) { #main .node-petition.view-mode-full { padding-top: 4rem; } }
+#main .node-petition.view-mode-full span, #main .node-petition.view-mode-full a, #main .node-petition.view-mode-full p, #main .node-petition.view-mode-full h1, #main .node-petition.view-mode-full h2, #main .node-petition.view-mode-full h3, #main .node-petition.view-mode-full h4, #main .node-petition.view-mode-full h5, #main .node-petition.view-mode-full input { font-family: "Noto Sans TC", "Hiragino Sans GB", "STHeiti","Microsoft YaHei", sans-serif; }
+#main .node-petition.view-mode-full .content { display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; -webkit-align-items: center; align-items: center; }
+@media (min-width: 992px) { #main .node-petition.view-mode-full .content { display: block; } }
+#main .node-petition.view-mode-full .petition-section.section-logo { order: -2; }
+#main .node-petition.view-mode-full .petition-section.section-form { order: -1; margin-bottom: 3.125rem; max-width: 31.25rem; }
+#main .node-petition.view-mode-full .petition-section.section-title { margin-bottom: 2rem; }
+#main .node-petition.view-mode-full .petition-section.section-intro { margin-bottom: 1.5625rem; }
+#main .node-petition.view-mode-full .petition-section.section-logo { margin-bottom: 2.75rem; }
+@media (min-width: 992px) { #main .node-petition.view-mode-full .petition-section { width: 60%; }
+  #main .node-petition.view-mode-full .petition-section.section-form { float: right; width: 40%; display: -webkit-flex; display: flex; -webkit-justify-content: center; justify-content: center; } }
+#main .node-petition.view-mode-full #petition_title, #main .node-petition.view-mode-full #petition_title h1 { margin: 0; color: #fff; font-weight: 900; line-height: 1.3; text-shadow: 3px 3px 6px #333; font-size: 3.25rem; text-align: justify; }
+@media (min-width: 768px) { #main .node-petition.view-mode-full #petition_title, #main .node-petition.view-mode-full #petition_title h1 { max-width: 31.25rem; text-align: justify; } }
+#main .node-petition.view-mode-full #petition_logo img { width: 100%; max-width: 18.75rem; }
+#main .node-petition.view-mode-full #intro_text { color: white; background-color: rgba(0, 0, 0, 0.5); padding: 0.625rem; box-sizing: border-box; font-size: 0.9375rem; line-height: 1.59; }
+@media (min-width: 768px) { #main .node-petition.view-mode-full #intro_text { max-width: 31.25rem; } }
+#main .node-petition.view-mode-full #petition_form { background: #fff; border-radius: 5px; padding: 0.9375rem 0.9375rem 1.25rem; box-sizing: border-box; }
+@media (min-width: 992px) { #main .node-petition.view-mode-full #petition_form { padding: 2.3125rem 1.5625rem 1.5625rem; max-width: 25.75rem; } }
+#main .node-petition.view-mode-full .field-name-field-summary { margin-bottom: 1.9375rem; }
+#main .node-petition.view-mode-full .field-name-field-summary, #main .node-petition.view-mode-full .field-name-field-summary h1, #main .node-petition.view-mode-full .field-name-field-summary p { line-height: 1.33; font-weight: 900; font-size: 2.375rem; text-align: center; color: var(--marked-color); }
+#main .node-petition.view-mode-full .field-name-field-subtitle { color: var(--active-color); text-align: right; font-weight: 500; line-height: 1.29; font-size: 0.9375rem; margin: 0.5rem 0 1.25rem; }
+#main .node-petition.view-mode-full .process-wrapper, #main .node-petition.view-mode-full .process-bar { display: block; border-radius: 0.9375rem; height: 1.875rem; font-size: 1.125rem; }
+#main .node-petition.view-mode-full .process-wrapper { width: 100%; background: #d8d8d8; height: 1.875rem; overflow: hidden; }
+#main .node-petition.view-mode-full .process-bar { background: var(--marked-color); color: white; text-align: center; }
+#main .node-petition.view-mode-full .webform-client-form input { font-size: 0.875rem; }
+#main .node-petition.view-mode-full .webform-client-form > div { grid-template-columns: 50%; grid-column-gap: 0.625rem; display: grid; grid-row-gap: 0.625rem; }
+#main .node-petition.view-mode-full .webform-client-form .form-item, #main .node-petition.view-mode-full .webform-client-form .form-actions { grid-column: 1/3; margin: 0; padding: 0; }
+#main .node-petition.view-mode-full .webform-client-form .form-item.custom-half-size { grid-column: 1; }
+#main .node-petition.view-mode-full .webform-client-form .form-item.custom-half-size + .form-item.custom-half-size { grid-column: 2; }
+#main .node-petition.view-mode-full .webform-client-form .form-item { position: relative; }
+#main .node-petition.view-mode-full .webform-client-form .form-item > input[type="text"], #main .node-petition.view-mode-full .webform-client-form .form-item > input[type="email"] { border: 1px solid var(--marked-color); border-radius: 0; color: var(--active-color); height: 2.3125rem; padding: 0 0.625rem; background: none; width: 100%; font-weight: bolder; }
+#main .node-petition.view-mode-full .webform-client-form .form-item > input[type="text"]:-moz-placeholder, #main .node-petition.view-mode-full .webform-client-form .form-item > input[type="email"]:-moz-placeholder { color: var(--active-color); opacity: 1; }
+#main .node-petition.view-mode-full .webform-client-form .form-item > input[type="text"]::-moz-placeholder, #main .node-petition.view-mode-full .webform-client-form .form-item > input[type="email"]::-moz-placeholder { color: var(--active-color); opacity: 1; }
+#main .node-petition.view-mode-full .webform-client-form .form-item > input[type="text"]:-ms-input-placeholder, #main .node-petition.view-mode-full .webform-client-form .form-item > input[type="email"]:-ms-input-placeholder { color: var(--active-color); opacity: 1; }
+#main .node-petition.view-mode-full .webform-client-form .form-item > input[type="text"]::-webkit-input-placeholder, #main .node-petition.view-mode-full .webform-client-form .form-item > input[type="email"]::-webkit-input-placeholder { color: var(--active-color); opacity: 1; }
+#main .node-petition.view-mode-full .webform-client-form select { border: 1px solid var(--marked-color); }
+#main .node-petition.view-mode-full .webform-client-form .form-submit { background-color: var(--active-color); color: white; display: block; width: 100%; height: 2.5rem; -webkit-transition: all ease-in-out .2s; -o-transition: all ease-in-out .2s; transition: all ease-in-out .2s; text-align: center; grid-column: 1/3; border: 0; }
+#main .node-petition.view-mode-full .webform-client-form .form-submit:hover { background-color: #333; color: #fff; }
+#main .node-petition.view-mode-full .webform-client-form .form-type-checkbox { display: grid; grid-template-columns: 2.5rem auto; }
+/*for MSie10 , MSie11*/
+@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none){
+  #main .node-petition.view-mode-full .webform-client-form .form-type-checkbox {
+      padding-left: 2.5rem;
+  }
+  #main .node-petition.view-mode-full .webform-client-form .form-item, 
+  #main .node-petition.view-mode-full .webform-client-form .form-actions {
+    padding-bottom: 0.625rem;
+    height: 2.94rem;
+  }
+}
+#main .node-petition.view-mode-full .webform-client-form input[type="checkbox"] { opacity: 0; position: initial; }
+#main .node-petition.view-mode-full .webform-client-form input[type="checkbox"] + label:after { left: 0; transform: translateY(-50%); top: 1.125rem; border-radius: 50%; background-clip: padding-box; position: absolute; content: ""; width: 0.875rem; height: 0.875rem; cursor: pointer; background-color: transparent; border: 2px solid var(--active-color); -webkit-border-radius: 50%; border-radius: 50%; box-sizing: content-box; background-clip: padding-box; -webkit-transition: all 0.15s ease-in-out; -o-transition: all 0.15s ease-in-out; transition: all 0.15s ease-in-out; }
+#main .node-petition.view-mode-full .webform-client-form input[type="checkbox"]:checked + label:after { border: 2px solid var(--active-color); background: var(--active-color); }
+#main .node-petition.view-mode-full .webform-client-form input[type="checkbox"] + label:before { position: absolute; content: ""; width: 0.5625rem; height: 0.25rem; top: 1.025rem; left: 1.3125rem; z-index: 1; opacity: 0; margin-left: -1.125rem; border: 3px solid white; border-top: none; border-right: none; background: transparent; -moz-transform: translateY(-50%) rotate(-45deg); -o-transform: translateY(-50%) rotate(-45deg); -ms-transform: translateY(-50%) rotate(-45deg); -webkit-transform: translateY(-50%) rotate(-45deg); transform: translateY(-50%) rotate(-45deg); -moz-transition: all 0.15s ease-in-out; -o-transition: all 0.15s ease-in-out; -webkit-transition: all 0.15s ease-in-out; transition: all 0.15s ease-in-out; box-sizing: content-box; }
+#main .node-petition.view-mode-full .webform-client-form input[type="checkbox"]:checked + label:before { opacity: 1; }
+#main .node-petition.view-mode-full .webform-client-form input[type="checkbox"] + label[for] { cursor: pointer; padding-left: 0; font-size: 0.9375rem; }
+#main .node-petition.view-mode-full .thankyou-cta { border-radius: 0.25rem; }
+#main .node-petition.view-mode-full .chosen-container { width: 100% !important; }
+#main .node-petition.view-mode-full .chosen-container-single a.chosen-single { height: 2.3125rem; line-height: 2.1875rem; background: none; border-radius: 0; border-color: var(--marked-color); color: var(--active-color); font-size: 0.875rem; font-weight: bold; box-shadow: none; padding: 0 0.625rem; }
+#main .node-petition.view-mode-full .chosen-container-single .chosen-single div b, #main .node-petition.view-mode-full .chosen-container-active.chosen-with-drop .chosen-single div b { background-position-y: 7px; }
+@media (min-width: 1600px) { #main .node-petition.view-mode-full .chosen-container-single .chosen-single div b, #main .node-petition.view-mode-full .chosen-container-active.chosen-with-drop .chosen-single div b { background-position-y: 20px; } }
+#main .node-petition.view-mode-full a.chosen-single:hover { text-decoration: none; }
+#main .node-petition.view-mode-full body.frontend select.form-select { border-color: var(--marked-color); color: var(--active-color); }
+#main .node-petition.view-mode-full .webform-component--birth-year- { height: 2.3125rem; }
+#main .node-petition.view-mode-full #edit-submitted-birth-year- { display: block !important; position: absolute; height: 2.3125rem; width: 100%; font-weight: bolder; box-shadow: none; color: var(--active-color); padding: 0 0.625rem; }
+@media (min-width: 768px) { #main .node-petition.view-mode-full #edit-submitted-birth-year- { border: 0; } }
+#main .node-petition.view-mode-full #edit_submitted_birth_year__chosen { background: #fff; padding: 0; border: 0; height: 2.3125rem; }
+#main .node-petition.view-mode-full .cta-btn { line-height: 2em; color: white; display: block; width: 100%; height: 2.5rem; -webkit-transition: all ease-in-out .2s; -o-transition: all ease-in-out .2s; transition: all ease-in-out .2s; text-align: center; text-decoration: none; margin: 1em 0; box-shadow: none; }
+#main .node-petition.view-mode-full .cta-btn:hover { background-color: #333; color: white; }
+#main .node-petition.view-mode-full .body-cta { border: 1px solid var(--marked-color); }
+#main .node-petition.view-mode-full .body-cta:hover { background-color: var(--marked-color); color: white; }
+#main .node-petition.view-mode-full .thankyou-cta { background-color: var(--marked-color); }
+
+#main .full-width-video .container-fluid { padding-left: 0; padding-right: 0; }
+
+#main .az-video.embed-responsive { position: relative; padding-top: 61.8034%; height: 0; width: 100%; }
+#main .az-video.embed-responsive iframe { position: absolute; height: 100%; width: 100%; top: 0; left: 0; }
+
+/** for IE */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #main .node-petition.view-mode-full .webform-client-form .form-item.webform-component--agree-receive- {
+    height: 140px;
+  }
+}

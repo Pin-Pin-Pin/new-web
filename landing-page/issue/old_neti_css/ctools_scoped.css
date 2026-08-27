@@ -1,0 +1,25 @@
+#main .ctools-locked {
+  color: red;
+  border: 1px solid red;
+  padding: 1em;
+}
+
+#main .ctools-owns-lock {
+  background: #FFFFDD none repeat scroll 0 0;
+  border: 1px solid #F0C020;
+  padding: 1em;
+}
+
+#main a.ctools-ajaxing,
+#main input.ctools-ajaxing,
+#main button.ctools-ajaxing,
+#main select.ctools-ajaxing {
+  padding-right: 18px !important;
+  background: url(../images/status-active.gif) right center no-repeat;
+}
+
+#main div.ctools-ajaxing {
+  float: left;
+  width: 18px;
+  background: url(../images/status-active.gif) center center no-repeat;
+}

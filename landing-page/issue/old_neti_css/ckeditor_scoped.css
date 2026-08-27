@@ -1,0 +1,32 @@
+/* General indentation & positioning classes */
+
+#main .rteindent1 {
+    margin-left: 40px;
+}
+#main .rteindent2 {
+    margin-left: 80px;
+}
+#main .rteindent3 {
+    margin-left: 120px;
+}
+#main .rteindent4 {
+    margin-left: 160px;
+}
+#main .rteleft {
+    text-align: left;
+}
+#main .rteright {
+    text-align: right;
+}
+#main .rtecenter {
+    text-align: center;
+}
+#main .rtejustify {
+    text-align: justify;
+}
+#main .ibimage_left {
+    float: left;
+}
+#main .ibimage_right {
+    float: right;
+}
