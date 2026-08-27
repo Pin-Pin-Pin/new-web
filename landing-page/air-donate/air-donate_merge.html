@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="zh-TW">
 <head>
-<title>通用捐款頁｜地球公民基金會</title>
+<title>改善空污捐款頁｜地球公民基金會</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="捐款支持地球公民基金會，匯聚更多守護環境的公民力量。你的定期定額，讓專業倡議得以持續監督政府與企業。">
-    <meta property="og:title" content="捐款支持｜匯聚守護環境的公民力量">
-    <meta property="og:description" content="捐款支持地球公民基金會，匯聚更多守護環境的公民力量。你的定期定額，讓專業倡議得以持續監督政府與企業。">
-    <meta property="og:image" content="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-donate-hero-1920.jpg">
+    <meta name="description" content="改善空污，守護孩子的每一口呼吸。捐款支持地球公民持續推動空氣品質改善政策，完善校園空污預警與防護。">
+    <meta property="og:title" content="改善空污｜守護孩子的每一口呼吸">
+    <meta property="og:description" content="改善空污，守護孩子的每一口呼吸。捐款支持地球公民持續推動空氣品質改善政策，完善校園空污預警與防護。">
+    <meta property="og:image" content="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1920.jpg">
     <meta property="og:site_name" content="地球公民基金會">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1477,151 +1477,788 @@ footer{
 
 
 
-/* landing-page/general-donate/general-donate.css */
-#navbar {
-    display: none;
-}
-a {
-    text-decoration: none !important;
-    /* color: inherit !important; */
-}
-
-a:hover,
-a:visited,
-a:link,
-a:active {
-    text-decoration: none !important;
-    /* color: inherit !important; */
-}
+/* landing-page/air-donate/air-donate.css */
 /* ========================================
-   Section: about
+   Brand override for air donate form
 ======================================== */
-.about{
-    background-color: var(--brand-white);
+:root {
+    --brand-primary: #46A0D2;
+    --brand-dark-primary: #003e82;
 }
-.about .container{
-    padding-left: 0;
-    padding-right: 0;
-    display: grid;
-    gap: 40px;
-    align-items: center; 
-    grid-template-columns: 1fr
 
-}
-.about .img-box {
-    width: 100%;
-    
-}
-.about img {
-    width: 100%;
-    height: auto;
+img {
     display: block;
-    object-fit: cover;
-    object-position: top right;
-    border-radius: 8px;
-}
-.about h2{
-    color: var(--brand-dark-primary);
-    margin-bottom: 40px;
-}
-@media (min-width: 768px){
-    .about .container{
-        align-items: start;
-    }
-}
-@media (min-width: 768px)  {
-    .about .container {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media (min-width: 992px) {
-    .about .container {
-        grid-template-columns: 1fr 596px; 
-    }
-}
-/* ========================================
-   Section: achievements
-======================================== */
-.achievements img{
-    width: 100%;
     max-width: 100%;
-}
-/* ========================================
-   Section: core-values
-======================================== */
-.core-values{
-    background-color: var(--brand-dark-primary);
-}
-.core-values p{
-    color: var(--white);
-}
-.core-values .container{
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-     
-}
-.slogan-box{
-    width: 100%;
-    max-width: 100%; 
-}
-.signature-box{
-    width: 218px;
     height: auto;
 }
-.slogan-box img,.signature-box img{
+
+/* Text slogan in donate-hero */
+.donate-hero .img-box {
+    gap: 16px;
+}
+
+#top-slogan {
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
     text-align: center;
-    width: 100%;
+    font-family: SweiGothicCJKtc-Bold, "Noto Sans TC", sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1.4;
+    letter-spacing: 0.08rem;
+}
+#donateOtherAccordion{
+    background-color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
-    .slogan-box{
-        width: 720px; /* 768–991 */
+    #top-slogan {
+        width: auto;
+        max-width: 450px;
+        font-size: 2.25rem;
+        letter-spacing: 0.12rem;
     }
 }
+
 @media screen and (min-width: 992px) {
-    .slogan-box{
-        width: 960px; /* 992–1199 */
+    #top-slogan {
+        font-size: 2.5rem;
     }
 }
-@media screen and (min-width: 1200px) {
-    .slogan-box{
-        width: 984px; /* ≥1200 */
+
+/* H 900 */
+     @font-face {
+        font-family: SweiGothicCJKtc-Bold;
+        src: url('https://cdn.jsdelivr.net/gh/hsuan8524/woff2-subset@v0.0.9/air/SweiGothicCJKtc-Bold-subset.woff2') format("woff2");
+        font-display: swap;
     }
-}
-/* ========================================
-   Section: 捐款方案
-======================================== */
-.donation-plan .card{
-    border-radius: 8px;
-    overflow: hidden;
+   
+    .font-900{
+        font-family: SweiGothicCJKtc-Bold;
+        
+        /* font-weight: 900; */
+    }
+    .font-700{
+        font-family: SweiGothicCJKtc-Bold;
+        /* font-weight: 700; */
+    }
+    .font-500{
+        font-family: "Noto Sans TC";
+        /* font-weight: 500; */
+    }
+    .container-readable{
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        /* border: solid red 1px; */
+        margin-left: auto;
+        margin-right: auto;
+        /* padding-left: 1rem;
+        padding-right: 1rem; */
+    }
 
-}
-.donation-plan .card-body p{
-    color: var(--black);
-}
-.donation-plan{
-    background-color: var(--brand-background-green);
-}
-.donation-plan h3{
-    color: var(--brand-primary);
-}
-.donation-plan img{
-    width: 100%;
-}
-/* ========================================
-   Section: faq
-======================================== */
-.faq {
-    background-color: var(--brand-white ); 
-}
-.footer-text p{
-    color: var(--black);
+    :root {
+        
 
-}
+        /* Desktop (1200px and up) */
+        --font-base-size: 16px;
+        font-size: calc(var(--font-base-size) * 1);
+        --navbar-height: 70px; /* 預設 fallback 避免閃爍 */
+        --blue:#46A0D2;
+        --light-blue:#CDEDF9;
+        --white:#ffffff;
+        --beige:#F5F5EB;
+    
+    }
+    .blue{ color:var(--blue)}
+    .light-blue{ color:var(--light-blue)}
+    .white{ color:var(--white)}
+    .beige{ color:var(--beige)}
+    body {
+        background-color: var(--beige);
+    }
+    p {
+        padding: 0 1rem 0rem 1rem;
+        text-align: justify;
+        font-weight: 500;
+        /* M */
+        color: #3f3f3f;
+        font-size: 1rem;
+    }
+    #qa h3{
+        font-size: 1rem;
+    }
+    footer p {
+        font-weight: 400;
+    }
+    .content-block_text{
+        font-family: "Noto Sans TC";
+        margin-bottom: 0;
+    }
+    @media (max-width: 575px) {
+        p,
+        .p,
+        #qa h3 {
+            font-size: 1.1rem;/*  18px    */
+        }
 
+    }
+    /* 寬度 */
+    @media(min-width:1024px) {
+        .container-readable{
+            width: 1024px;
+        }
+        #ceo-story_mobile_1,#ceo-story_mobile_2{display: none;}
+    }
+    @media(max-width:1023px) {
+        .container-readable{
+            max-width: 480px;
 
+        }
+        #ceo-story_desktop{display: none;}
+        #ceo-story_mobile_2{display: flex;justify-content: center;}
+    }
+    @media (min-width:768px) and (max-width:1023px){
+        #influence .container-readable{
+            max-width: 100%;
+            /* padding 已在基础样式中统一设置 */
+        }
+    }
+    @media(max-width:428px) {
+        .content-block_img{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+    /* 特定區塊 */
+    #ceo-story_desktop{
+        position: relative;
+    }
+    #ceo-story_mobile_1{
+        background-size:500px,auto;
+
+    }
+    #grid-paper{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 1rem;
+        bottom: 1rem;
+        width: calc(50% - 30px);
+        transform: none;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    /* 用 <picture> tiles 取代 background-repeat */
+    #grid-paper .grid-paper-tiles{
+        position: absolute;
+        inset: 0;
+    }
+    /* #grid-paper_mobile{
+        background-image: url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
+        background-repeat: repeat;
+    }
+    @supports (background-image: image-set(url("/sites/cet-taiwan.org/files/u422/20260317-05.webp") 1x)) {
+        #grid-paper_mobile{
+            background-image: image-set(
+                url('/sites/cet-taiwan.org/files/u422/20260317-05.webp') type('image/webp'), 
+                url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png') type('image/png'));
+            background-repeat: repeat;
+        }
+
+    } */
+    /* CEO 區與手機版網格紙區：picture 區塊化並置中 */
+    #ceo-story_desktop picture,
+    #grid-paper_mobile picture {
+        display: block;
+        width: 100%;
+    }
+    #grid-paper_mobile picture {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #grid-paper_mobile{
+        position: relative;
+        overflow: hidden;
+    }
+    #grid-paper_mobile .grid-paper-bg{
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+    }
+    #grid-paper_mobile .grid-paper-content{
+        position: relative;
+        z-index: 1;
+    }
+    #grid-paper_mobile .grid-paper-bg picture{
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    #grid-paper_mobile .grid-paper-bg img{
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+    .grid-paper-tile{
+        position: absolute;
+        display: block;
+        pointer-events: none;
+    }
+    .grid-paper-tile-img{
+        width: 550px; /* 對齊原本 background-size: 550px auto */
+        height: auto;
+        display: block;
+    }
+    #banner-middle,#child-run{
+        position: relative;
+        height: 45rem;
+        overflow: hidden;
+    }
+    /* 全幅橫幅圖：picture 需填滿容器，內部的 img 才能正確 absolute 定位 */
+    #banner-middle > picture,
+    #child-run > picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    #full-img-1,#full-img-2{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    #banner-middle .container-readable {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1; /* 讓文字在圖片上 */
+        /* 明确设置宽度，确保与其他 container-readable 对齐 */
+        width: 100%;
+        max-width: 480px;
+    }
+    #child-run .container-readable {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        /* transform: translateX(-50%); */
+        z-index: 1; /* 讓文字在圖片上 */
+        /* 明确设置宽度，确保与其他 container-readable 对齐 */
+        width: 100%;
+        max-width: 480px;
+    }
+    @media(min-width:1024px) {
+        #banner-middle .container-readable,#child-run .container-readable {
+            max-width: 1024px;
+            width: 1024px;
+        }
+    }
+    #heading-1 h2{letter-spacing: 0.4rem;}
+    @media (max-width:320px) {
+        #heading-1 h2{letter-spacing: 0.13rem;}
+    }
+    @media (max-width:575px) {
+        #heading-1{
+            text-align: center;
+        }
+        
+    }
+    #child-run{
+     
+        overflow: hidden;
+        position: relative;
+        height: 45rem;
+    }
+    #full-img-2{
+        object-fit: cover;
+        object-position: 25% 25%;
+
+    }
+    @media  (min-width: 768px)  and  (max-width: 1199px){
+        #child-run,#banner-middle{
+            
+            height: 30rem;
+        }
+        #full-img-1{
+            object-position: 25% top;
+        }
+        #full-img-2{
+            object-position: 25% top;
+        }
+    }
+    @media (min-width: 768px) {
+        #child-run{
+            min-height: 45rem;
+            /* min-height: 60vh; */
+        }
+    }
+    #child-run::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 15%;
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            rgba(245, 245, 235, 0.15) 20%,
+            rgba(245, 245, 235, 0.15) 25%,
+            /* var(--beige) 95%, */
+            var(--beige) 100%
+        );
+        mix-blend-mode: normal;
+        pointer-events: none;
+        z-index: 1;
+    }
+    #child-run .container-readable {
+        position: relative;
+        z-index: 2;
+        padding-top: 3rem; 
+        padding-bottom: 0;
+    }
+ 
+    @media (max-width: 767px) {
+        #banner-middle,#child-run{
+            height: 30rem;
+        }
+        #full-img-1{
+            object-position: 70% top;
+        }
+        #full-img-2{
+            object-position: 25% top;
+        }
+        /* 移動端：調整文字位置，確保不遮蓋人物 */
+        #child-run .container-readable {
+            padding-top: 1.5rem; /* 移動端可以稍微減少頂部間距 */
+        }
+    }
+    @media (min-width: 1200px) {
+        #child-run,#banner-middle{
+            height: 45rem;
+        }
+        #full-img-1{
+            object-position: center right;
+        }
+    }
+    .donate-invite h3{
+        letter-spacing: 0.2rem;
+        
+    }
+    #lets-donate{
+        background-color: var(--beige);
+    }
+      #lets-donate-bottom{background-color:var(--blue)}
+      .donate-invite-heading-2{
+        display: flex;
+        align-items:center;
+    }
+    #lets-donate-bottom .rounded-title{
+        background-color: var(--beige);
+    }
+    .photo-credit{
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+    }
+    .photo-credit p{
+        color: #ffffff;
+        font-weight: 300;
+    }
+    #photo-credit-2{
+        z-index: 2;
+    }
+    #photo-credit-2 p{
+        color:gray;
+    }
+    .section-header{
+        font-weight:900;
+        font-family: "SweiGothicCJKtc-Bold";
+    }
+    .rounded-title{
+        background-color: var(--blue);
+        border-radius: 999px;
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        width: fit-content;
+        font-family: "SweiGothicCJKtc-Bold";
+        color:var(--white);
+        font-weight:900;  
+    }
+    #lets-donate .rounded-title,
+    #lets-donate-bottom .rounded-title{
+        /* 新增：讓外觀看起來可按 */
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        transition: all 0.2s ease;
+
+    }
+    /* 讓整塊都可以點，避免只有文字可點擊 */
+    .rounded-title a {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+    }
+    /* Hover 效果 */
+    #lets-donate .rounded-title:hover,
+    #lets-donate-bottom .rounded-title:hover {
+    background-color: #003e82; /* 略深的藍 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.22);
+    transform: translateY(-2px);
+    }
+    /* 點下去時的效果 */
+    #lets-donate .rounded-title:active,
+    #lets-donate-bottom .rounded-title:active
+     {
+    background-color: #002f63;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    transform: translateY(0);
+    }
+    #lets-donate-bottom .rounded-title:active a,
+    #lets-donate-bottom .rounded-title:hover a
+    {
+        color: white;
+    }
+    /* @media (max-width:767px) {
+        .rounded-title{
+            font-family: "Noto Sans TC";
+        }
+        
+    } */
+    #lets-donate-bottom .rounded-title h2,
+    #lets-donate-bottom .rounded-title h3,
+    #lets-donate-bottom .rounded-title h4,
+    #lets-donate-bottom .rounded-title a{
+        margin: 0;
+        color: var(--blue);
+        font-weight:900;
+        /* line-height: 1.3 !important; */
+    }
+    .rounded-title h2,
+    .rounded-title h3,
+    .rounded-title h4,
+    .rounded-title a{
+        margin: 0;
+        color: var(--white);
+        font-weight:900;
+        /* line-height: 1.3 !important; */
+    }
+    .text-block{
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+    .years-toggle-btn{
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        background: none;
+        border: none;
+        color: var(--blue);
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 0;
+    }
+    .years-more{
+        display: none;
+        margin-top: 0.5rem;
+    }
+    .years-more.is-open{
+        display: block;
+    }
+    #qa .accordion-item h4,
+    #qa .accordion-item p{
+        text-align: left;
+    }
+    #qa .accordion-header button{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        text-align: left;
+        font-weight: 500;
+        font-family: "Noto Sans TC";
+        border: none;
+        color:#3f3f3f;
+    }
+    .accordion,.accordion-header button,.accordion-body{
+        background-color: var(--beige);
+    }
+    #qa .accordion-item{
+        border: none;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    #qa .accordion-item h3{
+        font-weight: 500;
+    }
+    #qa .accordion-body{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .faq-w{
+        margin-bottom: 0;
+    }
+    p.faq-w {
+        font-weight: 400;
+        font-family: Noto Sans TC;
+    }
+    #toggle-years{
+        border: none;
+        background-color: transparent;
+        color: var(--blue);
+    }
+    #content-block{
+        background-color: var(--beige);
+    }
+    @media (max-width:992px) {
+        #content-block{
+            padding-bottom: 2rem;
+        }
+    }
+    .cet-info{
+        font-size: 0.88rem;
+    }
+    .photo-credit p{
+        font-size: 0.625rem;
+        font-weight: 300;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        opacity: 80%;
+
+    }
+    .cet-keyword{
+        color: var(--blue);
+        font-family: SweiGothicCJKtc-Bold;
+        font-weight: 700;
+    }
+    @media (min-width:1200px) {
+        .cet-info{
+            font-size: 0.94rem;
+        }
+        .photo-credit p{font-size: 0.75rem;}
+    }
+    /* footer logo：picture 置中（原先 img 用 d-block mx-auto） */
+    footer picture {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #footer-cet-icon{
+        filter: invert(51%) sepia(100%) saturate(264%) hue-rotate(157deg) brightness(91%) contrast(100%);
+
+    }
+    /* 內容區圖片：picture 填滿欄寬，內部 img-fluid 才能正確縮放 */
+    .content-block_img picture {
+        display: block;
+        width: 100%;
+    }
+    .img-div{
+        object-fit: cover;
+        border-radius: 23px;
+    }
+    /* navbar */
+    #navbar {
+        display: none;
+    }
+    #influence .card,#influenceCarousel .card{
+        background-color: var(--beige);
+        border: none;
+    }
+    #influence .card-img{
+        height: 200px;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    /* 歷年成果 card 內 picture 填滿 .card-img 並置中內部 img */
+    #influence .card-img picture,
+    #influenceCarousel .card-img picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #flag-img-desktop{
+        position: absolute;
+        left: 62%;
+        transform: translateX(-50%);
+    }
+    #flag-img-mobile{
+        left: 60%; 
+        transform: translateX(-50%);
+    }
+    .carousel-indicators{
+        bottom: -1.5rem;
+    }
+    .carousel-indicators [data-bs-target]{
+        background-color:    var(--blue); }
+    /* .card{border: solid red 1px;} */
+    .card h3,.card li,.card a{
+        text-align: left;
+        color:#3f3f3f;
+    }
+    .card-body a{
+        color:#3f3f3f !important
+    }
+    
+    /* 讓三個card高度對齊 */
+    #influence .row {
+        align-items: stretch;
+    }
+    #cash-icon,
+    #cash-icon-mobile {
+        width: 55%; 
+        height: auto;
+    }
+   
+    @media (max-width:768px) {
+        #cash-icon{width: 30%; }
+        #cash-icon-mobile{width: 60%; }
+       
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon{
+        position: relative;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: var(--blue);
+        background-image: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .carousel-control-prev-icon::after,
+    .carousel-control-next-icon::after{
+        font-size: 1.3rem;
+        color: #ffffff;
+        font-weight: 400;
+    }
+    .carousel-control-prev-icon::after{
+        content: '<';
+    }
+    .carousel-control-next-icon::after{
+        content: '>';
+    }
+    .card-img-top {
+        max-height: 160px;
+        width: auto;
+        object-fit: contain;
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    .card-text {
+        flex-grow: 1;
+    }
+
+    /* 歷年成果 */
+    .year{
+        font-weight: 700;
+        font-family: SweiGothicCJKtc-Bold;
+        color: var(--blue);
+
+    }
+    .result p{
+        font-weight: 400;
+        font-family: Noto Sans TC;
+    }
+    
+
+    /* 左右圖文 */
+    .words {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* 垂直居中 */
+    
+    }
+
+    @media (max-width: 991px) {
+        .content-block_text {
+            order: 2;
+        }
+        .content-block_img {
+            order: 1;
+        }
+    
+    }
+    
+    /*d-xl-block d-none*/
+    @media (max-width: 1199px) {
+        .desktop {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .mobile {
+            display: none;
+        }
+    
+    }
+    /* 其他設定 */
+    .rounded-title a,
+    .rounded-title a:hover,
+    .rounded-title a:visited,
+    .rounded-title a:link,
+    .rounded-title a:active {
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    a,a:hover,
+    a:visited,
+    a:link,
+    a:active {
+        text-decoration: none;
+        color: var(--blue);
+    }
+    
+    #navbar {
+        display: none;
+    }
+    div {
+        padding: 0;
+        margin: 0;
+    }
+    .container {
+        /* background-color: #e4ebef; */
+        padding: 0;
+    }
+    
+    .row {
+        margin: 0rem;
+        /*只有這樣手機板空格太多*/
+        padding: 0rem;
+        /*同上不變*/
+    }
 
 
 /* share-css/fix.css */
@@ -1660,35 +2297,29 @@ a:active {
 }
 </style>
 <section class="donate-hero">
-    <h1 class="h1 d-none">捐款支持────匯聚更多守護環境的公民力量</h1>
     <picture class="donate-hero__bg">
         <source
             media="(min-width: 768px)"
             type="image/webp"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260728-donate-hero-1400.webp 1400w,
-                /sites/cet-taiwan.org/files/u422/20260728-donate-hero-1920.webp 1920w
+                /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1400.webp 1400w,
+                /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1920.webp 1920w
             "
             sizes="100vw"
         >
-    
         <source
             type="image/webp"
             srcset="
-                /sites/cet-taiwan.org/files/u422/donate-hero-mb-768.webp 768w
+                /sites/cet-taiwan.org/files/u422/20260826-air-hero-mb-768.webp 768w
             "
             sizes="100vw"
         >
-    
-    
-
-    
         <img
-            src="/sites/cet-taiwan.org/files/u422/donate-hero-mb-768.jpg"
+            src="/sites/cet-taiwan.org/files/u422/20260826-air-hero-mb-768.jpg"
             srcset="
-                /sites/cet-taiwan.org/files/u422/donate-hero-mb-768.jpg 768w,
-                /sites/cet-taiwan.org/files/u422/20260728-donate-hero-1400.jpg 1400w,
-                /sites/cet-taiwan.org/files/u422/20260728-donate-hero-1920.jpg 1920w
+                /sites/cet-taiwan.org/files/u422/20260826-air-hero-mb-768.jpg 768w,
+                /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1400.jpg 1400w,
+                /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1920.jpg 1920w
             "
             sizes="100vw"
             width="750"
@@ -1701,39 +2332,10 @@ a:active {
 
     <div class="donate-hero__inner container">
         <div class="img-box">
+            <h1 id="top-slogan">改善空污<br />守護孩子的每一口呼吸</h1>
             <picture>
-                <source
-                    media="(min-width: 768px)"
-                    type="image/webp"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-tbl-top-slogan-450.webp 450w,
-                        /sites/cet-taiwan.org/files/u422/20260728-tbl-top-slogan-705.webp 705w
-                    "
-                    sizes="
-                        (min-width: 992px) 450px,
-                        (min-width: 768px) 330px
-                    "
-                >
-                <source
-                    type="image/webp"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-mb-top-slogan-300.webp 300w
-                    "
-                >
-            
-                <img id="top-slogan"
-                    src="/sites/cet-taiwan.org/files/u422/20260728-mb-top-slogan-300.png"
-                    width="433"
-                    height="132"
-                    alt="你的支持匯聚更多守護環境的公民力量"
-                    decoding="async"
-                >
+                <img id="cet-top-logo" decoding="async" alt="地球公民基金會" src="/sites/cet-taiwan.org/files/u422/cet-logo-12.png" width="539" height="159" />
             </picture>
-            <picture>
-                <source srcset="/sites/cet-taiwan.org/files/u422/cet-logo-12.svg" type="image/svg+xml" />
-                <img id="cet-top-logo" decoding="async" alt="地球公民基金會" src="/sites/cet-taiwan.org/files/u422/cet-logo-12.png" width="539" height="159"/>
-            </picture>
-
         </div>
         <div class="table-box">
             <div class="donation-box" id="donation-box">
@@ -1755,7 +2357,7 @@ a:active {
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">500</span>
                                 </span>
-                                <span class="donation-box__amount-desc">用行動擺脫無力感，把不可能化為可能。</span>
+                                <span class="donation-box__amount-desc"></span>
                             </button>
                         </li>
                         <li>
@@ -1764,7 +2366,7 @@ a:active {
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">1000</span>
                                 </span>
-                                <span class="donation-box__amount-desc">成為守護環境的穩定社會力。</span>
+                                <span class="donation-box__amount-desc"></span>
                             </button>
                         </li>
                         <li>
@@ -1773,7 +2375,7 @@ a:active {
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">1500</span>
                                 </span>
-                                <span class="donation-box__amount-desc">從關注個案到監督制度，打造專業的環境倡議團隊。</span>
+                                <span class="donation-box__amount-desc"></span>
                             </button>
                         </li>
                     </ul>
@@ -1898,287 +2500,296 @@ a:active {
         </div>
     </div>
 </section>
-<section class="about">    
-    <div class="container">
-        <div class="text-box">
-            <h2 class="h3">許多環境問題，<br>需要聚集公民力量才能改變</h2>                     
-            <p>流失的農地、挖掉的山頭、工廠排放的污染跟難以處理的萬年核廢，這些現場缺乏良好的環境政策，造成食安、空污……生活在其中令人憂慮。</p>
-            <p class="mb-0">
-            18 年來地球公民透過調查研究與行動，集結公民力量，促成環境個案與法令政策的改變，例如礦業法、水污法、毒物管理法……。我們深信每個人都可以為環境付出一份心力，只要提升環境意識並積極參與，這座島嶼將邁上永續之路。</p>
-        </div>
-        <div class="img-box">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-donate-page-top-750.webp 750w,
-                        /sites/cet-taiwan.org/files/u422/20260728-donate-page-top-1200.webp 1200w
-                    "
-                    sizes="
-                        (min-width: 992px) 596px,
-                        (min-width: 768px) 360px,
-                        calc(100vw - 48px)
-                    "
-                >
-            
-                <img
-                    src="/sites/cet-taiwan.org/files/u422/20260728-donate-page-top-750.jpg"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-donate-page-top-750.jpg 750w,
-                        /sites/cet-taiwan.org/files/u422/20260728-donate-page-top-1200.jpg 1200w
-                    "
-                    sizes="
-                        (min-width: 992px) 596px,
-                        (min-width: 768px) 360px,
-                        calc(100vw - 48px)
-                    "
-                    width="342"
-                    height="240"
-                    alt="山頭被挖去作為礦場"
-                    loading="lazy" 
-                    decoding="async"
-                >
-            </picture>
-        </div>
+
+<div class="container-fluid px-0" style="background-color: #fffbf4;">
+	<section class="container-fluid px-0 d-flex justify-content-center py-5" id="content-block">
+		<div class="container-readable">
+			<div class="row d-flex align-items-center pb-0 g-0">
+				<div class="content-block_img col-12 col-lg-6  mb-0  py-0 "><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251125-11縮小加壓.webp" type="image/webp" /> <img alt="飄進教室的教室的怪味讓小孩好不舒服，空氣品質指標卻顯示正常？" class="img-div img-fluid" src="/sites/cet-taiwan.org/files/u422/20251125-11縮小加壓.png" /> </picture></div>
+				<div class="col-12 col-lg-6 words py-lg-0 py-4 py-lg-5 content-block_text ">
+					<p class="px-lg-5 blue">在台灣，有些學校與工廠的距離，可能比你家巷口的早餐店還近。</p>
+					<p class="px-lg-5 mb-0">校園飄進了令人不適的怪味，這些異味可能來自工廠排放的「有害空氣污染物(HAPs)」。它們有導致癌症、影響生殖或造成其他嚴重的健康影響，但目前卻不包含在空氣品質指標(AQI)中。</p></div></div>
+			<div class="row d-flex align-items-center g-0">
+				<div class="col-12 col-lg-6 words py-lg-0 py-3  content-block_text ">
+					<p class="pl-lg-0 pr-lg-5 mb-0">以高雄臨海工業區為例，在周圍 3 公里內 就有超過 10,000 名國小學童。其中 <span class="font-500" style="color:red">4,600 </span>多位學童就讀的學校，距離工業區不到 <span class="font-500" style="color:red">500 </span>公尺，可能就和工廠相隔一條馬路的距離。</p></div>
+				<div class="content-block_img col-12 col-lg-6  mb-0 "><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251110-03.webp" type="image/webp" /> <img alt="臨海工業區 3 公里內國小分布" class="img-div img-fluid" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251110-03.jpg" /> </picture></div></div>
+			<div class="row d-flex align-items-center g-0">
+				<div class="content-block_img col-12 col-lg-6  mb-0  "><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251125-10縮小加壓.webp" type="image/webp" /> <img alt="被煙囪包圍的學校" class="img-div img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251125-10縮小加壓.png" /> </picture></div>
+				<div class="col-12 col-lg-6 words py-lg-0 pt-3 content-block_text mb-0">
+					<p class="px-lg-5">兒童的換氣頻率高、對有毒物質的代謝能力較低，受空污影響程度是大人的數倍。正在發育的呼吸系統，就算只是接觸到低濃度的空氣污染物，還是會影響肺部功能的表現。</p>
+					<p class="px-lg-5 blue mb-0">有能力的家庭可以選擇轉校、搬家，但更多無力選擇的家庭卻被迫留下來，是許多縣市面臨的問題。</p></div></div></div></section>
+	<div class="container-fluid section px-0 d-flex justify-content-center align-items-center" id="banner-middle"><picture> <source media="(max-width: 575.98px)" srcset="
+                /sites/cet-taiwan.org/files/u422/20260317-04.webp" type="image/webp" /> <source sizes="100vw" srcset="
+                    /sites/cet-taiwan.org/files/u422/20251130-01-1200.webp 1200w,
+                    /sites/cet-taiwan.org/files/u422/20251124-06-05_full-2-600k.webp 1920w
+                " type="image/webp" /> <img alt="" decoding="async" id="full-img-1" loading="lazy" sizes="100vw" src="/sites/cet-taiwan.org/files/u422/20251124-06-05_full-2-600k.jpg" srcset="
+                    /sites/cet-taiwan.org/files/u422/20251130-01-1200.png 1200w,
+                    /sites/cet-taiwan.org/files/u422/20251124-06-05_full-2-600k.jpg 1920w
+                " /> </picture>
+		<div class="container-readable">
+			<div class="px-2 " id="heading-1">
+				<h2 class="white mb-0 font-900">每口呼吸都該是乾淨的。</h2></div></div>
+		<div class="photo-credit " id="photo-credit-1">
+			<p>photo by mrtiger on unsplash</p></div></div>
+	<section class="py-4" id="ceo-story_desktop" style="position: relative;">
+		<div class="debug-black container-fluid px-0 py-1 d-flex justify-content-center" style="background-color: var(--light-blue);">
+			<div class="container-readable py-4">
+				<div class="row justify-content-center align-items-center">
+					<div class="debug-black col-12 col-lg-6 "><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251110-13.webp" type="image/webp" /> <img alt="地球公民2014年校園升空污染旗倡議行動" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251110-13.jpg" style=" position: relative;z-index: 3;" /> </picture></div>
+					<div class="col-12 col-lg-6">
+						<p class="blue font-700">「孩子是我們帶來這個世界的，我想給她一個健康、公平的環境。」—地球公民執行長王敏玲</p>
+						<p class="mb-0">女兒幼時因空污誘發氣喘，讓地球公民執行長王敏玲深刻體會父母的焦慮與無力，以及孩童受的苦。也因此踏上了守護孩童呼吸、改善空污的道路。</p></div></div></div></div><!-- 網格紙素材 -->
+		<div aria-hidden="true" id="grid-paper">
+			<div class="grid-paper-tiles">&nbsp;</div></div></section></div>
+<div class="container-fluid justify-content-center align-items-center" id="ceo-story_mobile_1">
+	<section class="py-4 d-flex justify-content-center align-items-center">
+		<div class="container-readable">
+			<div class="p-3 p-md-4" id="grid-paper_mobile">
+				<div aria-hidden="true" class="grid-paper-bg"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20260317-05.webp" type="image/webp" /> <img alt="" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251130-03-604.png" /> </picture></div>
+				<div class="grid-paper-content">
+					<div><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251110-07.webp" type="image/webp" /> <img alt="「孩子是我們帶來這個世界的，我想給她一個健康、公平的環境。」" class="img-fluid" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251110-07.png" style="box-shadow:  5px 9px -7px #606060" /> </picture></div>
+					<div><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251125-12縮小加壓.webp" type="image/webp" /> <img alt="地球公民2014年校園升空污染旗倡議行動" class="img-fluid" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251125-12縮小加壓.png" /> </picture></div></div></div></div></section></div>
+<div class="py-4" id="ceo-story_mobile_2" style="background-color: var(--light-blue);">
+	<div class="container-readable">
+		<p class="mb-0">女兒幼時因空污誘發氣喘，讓地球公民執行長王敏玲深刻體會父母的焦慮與無力，以及孩童受的苦。也因此踏上了守護孩童呼吸、改善空污的道路。</p></div></div>
+<div class="d-flex justify-content-center container-fluid px-0" id="child-run"><picture> <source media="(max-width: 575.98px)" srcset="
+            /sites/cet-taiwan.org/files/u422/20260317-06.webp" type="image/webp" /> <source sizes="100vw" srcset="
+                /sites/cet-taiwan.org/files/u422/20251130-02-1200.webp 1200w,
+                /sites/cet-taiwan.org/files/u422/20251124-05-08-版面視覺_full-3-600k.webp 1920w
+            " type="image/webp" /> <img alt="" decoding="async" id="full-img-2" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251124-05-08-版面視覺_full-3-600k.jpg" /> </picture> <!-- style="width:100%; height:100%; object-fit:cover;" -->
+	<div class="photo-credit" id="photo-credit-2">
+		<p>Photo by freepik</p></div>
+	<div class="container-readable">
+		<div class="px-3 d-xl-block d-none">
+			<h2 class="white font-900" style=" letter-spacing: 0.5rem;">乾淨空氣 讓孩子安心成長</h2>
+			<h4 class="white mb-0 font-700" style="letter-spacing: 0.3rem;">環境問題有時就像空氣一般，容易被忽視卻時刻影響著生活</h4></div>
+		<div class="px-3 d-block d-xl-none">
+			<h2 class="white font-900" style="letter-spacing: 0.1rem;line-height: 2.1rem;">乾淨空氣<span class="font-900" style="white-space: nowrap;">讓孩子安心成長</span></h2>
+			<p class="white px-0 mb-0">環境問題有時就像空氣一般，容易被忽視卻時刻影響著生活</p></div></div></div>
+<div class="pt-5 pb-3" id="lets-donate">
+	<div class="row justify-content-center">
+		<div class="container-readable">
+			<div class="d-flex  flex-column justify-content-center align-items-center">
+				<div class="rounded-title mobile-rounded-title">
+					<h3 class="white donate-invite " style="letter-spacing: 0.08rem;"><a class="font-900" href="#donation-box">捐款支持</a></h3></div>
+				<div class="donate-invite-heading-2 mb-0 ms-2" id="">
+					<p class="blue mb-0 mt-3 font-700 px-0" style="text-align: center;">推動空氣品質改善政策，<span class="font-700" style="white-space: nowrap;">讓好的改變發生</span></p></div></div></div></div></div>
+<div>
+	<div class="row justify-content-center" style="background-color: var(--beige);">
+		<div class="container-readable">
+			<div class="text-block">
+				<p class="mb-0">10 多年來，地球公民與友團持續推動空氣品質改善，經過持續不斷的努力，今年，終於讓政府看見<span class="blue font-700">校園有害空污監管不足的現況，並提出政策作為。</span>我們正在要求政府，盡快完善校園的空污預警系統、強化校園與社區的防護意識，給孩子一個安全呼吸、安心學習的環境。</p></div></div></div></div>
+<div class="d-flex justify-content-center pb-4 pb-sm-5" id="influence" style="background-color: var(--beige);">
+	<div class="container-readable">
+		<div class="row gx-3 d-none d-md-flex">
+			<div class="card col-12 col-md-4">
+				<div class="card-img"><picture> <source media="(min-width: 768px)" srcset="/sites/cet-taiwan.org/files/u422/20251119-02.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" id="flag-img-desktop" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-02.png" /> </picture></div>
+				<div class="card-body">
+					<p class="card-text mb-0">2014 年 我們發起了校園升空污旗行動，讓空污對健康的危害進入社會大眾的視野。</p></div></div>
+			<div class="card col-12 col-md-4">
+				<div class="card-img"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-03.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-03.png" /> </picture></div>
+				<div class="card-body">
+					<p class="card-text mb-0">2017 年 我們促成高雄市政府加嚴水泥業的空污排放標準，透過強化空污管制，大幅改善高雄文府國小及左營地區的空污問題。</p></div></div>
+			<div class="card col-12 col-md-4">
+				<div class="card-img pt-md-5"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-04.webp" type="image/webp" /> <img alt="" class="card-img-top " decoding="async" id="cash-icon" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-04.png" /> </picture></div>
+				<div class="card-body">
+					<p class="card-text mb-0">2023 年 我們成功讓空污大戶的空污費被大幅調高，提高大工廠排放空污的成本，並減少每年9000公噸的空污排放。</p></div></div></div>
+		<div class="carousel slide d-md-none d-flex justify-content-center" data-bs-ride="carousel" id="influenceCarousel">
+			<div class="carousel-indicators mx-auto"><button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button><button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button><button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button></div>
+			<div class="carousel-inner">
+				<div class="carousel-item active" data-bs-interval="false">
+					<div class="card" id="flag-card" style="position:relative;">
+						<div class="card-img " id="flag-img-mobile"><picture> <source media="max-width: 767.98px" srcset="/sites/cet-taiwan.org/files/u422/20251119-02.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-02.png" /> </picture></div>
+						<div class="card-body">
+							<p class="card-text pt-0 mb-0">2014 年 我們發起了校園升空污旗行動，讓空污對健康的危害進入社會大眾的視野。</p></div></div></div>
+				<div class="carousel-item" data-bs-interval="false">
+					<div class="card">
+						<div class="card-img"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-03.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-03.png" /> </picture></div>
+						<div class="card-body">
+							<p class="card-text pt-0 mb-0">2017 年 我們促成高雄市政府加嚴水泥業的空污排放標準，透過強化空污管制，大幅改善高雄文府國小及左營地區的空污問題。</p></div></div></div>
+				<div class="carousel-item" data-bs-interval="flase">
+					<div class="card">
+						<div class="card-img pt-md-5"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-04.webp" type="image/webp" /> <img alt="" class="card-img-top" decoding="async" id="cash-icon-mobile" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-04.png" /> </picture></div>
+						<div class="card-body">
+							<p class="card-text pt-0 mb-0">2023 年 我們成功讓空污大戶的空污費被大幅調高，提高大工廠排放空污的成本，並減少每年9000公噸的空污排放。</p></div></div></div></div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#influenceCarousel" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button><button class="carousel-control-next" data-bs-slide="next" data-bs-target="#influenceCarousel" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button></div></div></div>
+<div style="background-color: #ffffff;height: 16px;">&nbsp;</div>
+<div class="d-flex justify-content-center py-5" id="influence-of-years" style="background-color: var(--light-blue);">
+	<div class="container-readable px-3">
+		<div class="text-center mb-3">
+			<div class="section-header">
+				<h2 class="mb-0 font-900 font-900 blue">歷年成果里程碑</h2></div></div>
+		<div class="d-flex justify-content-center">
+			<div class="text-block">
+				<div class="year h3 mt-0">2025</div>
+				<div class="result">
+					<p class="mb-0">促成環境部體檢 22 處工業區 列管「校園通報」警示</p>
+					<p class="mb-3">促使環境部積極建構跨部會「兒少校園空品防護網」</p></div>
+				<div class="year h3">2024</div>
+				<div class="result">
+					<p class="mb-0">促成加嚴空氣污染防制區的劃定，各縣市的空品測站均需達標才能晉級為合格區。</p>
+					<p class="mb-3">促使環境部加嚴空氣品質標準，讓民眾對空污更提高警覺。</p></div>
+				<div class="year h3">2023</div>
+				<div class="result">
+					<p class="mb-3">促成大幅調高空污大戶的空污費，減少每年 9000 公噸的空污排放</p></div><button class="mt-3" data-close-text="▼ 展開閱讀 2021 - 2014 年成果" data-open-text="▲ 收合" id="toggle-years"><span class="px-0 blue toggle-years-label font-500">▼ 展開閱讀 2021 - 2014 年成果</span></button>
+				<div class="years-more" id="more-years">
+					<div class="year h3">2021</div>
+					<div class="result">
+						<p class="mb-3">促成加嚴管制固定污染源有害空氣污染物</p></div>
+					<div class="year h3">2020</div>
+					<div class="result">
+						<p class="mb-3">成功阻擋環保署預備調降夏季空污費率的計劃</p></div>
+					<div class="year h3">2019</div>
+					<div class="result">
+						<p class="mb-0">促成興達電廠減煤，並提前除役</p>
+						<p class="mb-3">促成緊鄰文府國小的老舊水泥廠不再燒煤</p></div>
+					<div class="year h3">2018</div>
+					<div class="result">
+						<p class="mb-3">監督高屏空污總量管制實施，3 年減少高屏列管工廠約一萬噸空污</p></div>
+					<div class="year h3">2017</div>
+					<div class="result">
+						<p class="mb-0">促成高雄市政府加嚴訂定高雄市水泥業空氣污染物排放標準</p>
+						<p class="mb-3">促成環保署訂定有害空氣污染物之排放標準</p></div>
+					<div class="year h3">2016</div>
+					<div class="result">
+						<p class="mb-3">促成空品指標改革，PM 2.5 納入空品指標</p></div>
+					<div class="year h3">2014</div>
+					<div class="result">
+						<p class="mb-0">發起台灣校園升空污旗行動</p></div></div></div></div></div></div>
+<div class="py-4 py-sm-3" id="lets-donate-bottom">
+	<div class="row justify-content-center">
+		<div class="container-readable">
+			<div class="d-flex  flex-column justify-content-center align-items-center">
+				<div class="rounded-title mobile-rounded-title">
+					<h3 class="white donate-invite " style="letter-spacing: 0.08rem;"><a class="font-900" href="#donation-box">立即捐款</a></h3></div>
+				<div class="donate-invite-heading-2 mb-0 ms-2" id="">
+					<p class="white mb-0 mt-3 font-700 px-0" style="text-align: center;">推動空氣品質改善政策，<span class="font-700" style="white-space: nowrap;">讓好的改變發生</span></p></div></div></div></div></div>
+<div class="d-flex justify-content-center py-5" id="qa" style="background-color: var(--beige);">
+	<div class="container-readable">
+		<div class="text-center mb-4">
+			<div class="section-header">
+				<h2 class="mb-0 font-900" style="color: #3f3f3f;">常見問題</h2></div></div>
+		<div class="text-block">
+			<div class="accordion mb-0" id="accordionExample">
+				<div class="accordion-item" style="background-color: var(--beige);">
+					<h3 class="accordion-header"><button aria-controls="collapse-1" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-1" data-bs-toggle="collapse" type="button">▼ 地球公民將捐款用於哪些環境專案？</button></h3>
+					<div aria-labelledby="heading-1" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-1">
+						<div class="accordion-body">
+							<p class="faq-w">我們投入的環保工作範疇為山林國土、環境污染、能源轉型、永續花東、環境民主。藉由調查研究、揭露環境問題，提出解決方案，並據以進行政策施壓、國會遊說、教育推廣等，促成改變。</p></div></div></div>
+				<div class="accordion-item">
+					<h3 class="h4 accordion-header" id="heading-2"><button aria-controls="collapse-2" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-2" data-bs-toggle="collapse" type="button">▼ 我如何知道地球公民基金會年度捐款使用明細？</button></h3>
+					<div aria-labelledby="heading-2" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-2">
+						<div class="accordion-body">
+							<p class="faq-w">每年財務報告待主管機關環境部審查後公告於官方網站<a class="green-a" href="/node/3155" target="_blank">「財報 &amp; 徵信」</a>，再以電子信件提供捐款會員參考，以了解地球公民各項經費支出。 <a class="green-a" href="/annual_report" target="_blank">線上年度報告</a>在隔年出刊，同時以紙本和電子報將摘要及連結寄予每位捐款會員。」</p></div></div></div>
+				<div class="accordion-item">
+					<h3 class="h4 accordion-header" id="heading-3"><button aria-controls="collapse-3" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-3" data-bs-toggle="collapse" type="button">▼ 地球公民的財務報告受到哪些單位的審核？</button></h3>
+					<div aria-labelledby="heading-3" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-3">
+						<div class="accordion-body">
+							<p class="faq-w">依我國法令設立之財團法人地球公民基金會（以下簡稱本會），受董事會監督，董事會設董事 7 名，監事 2 名董監事成員均為義務性質，成員涵蓋各領域專業之人士，並具備獨立性。本會年度財務報表，皆先經由董監事會審核，並送主管機關環境部備查。據衛生福利部規定，公益勸募需每年申請募款字號，申請流程包括遞交勸募計畫書、由衛福部審核後核發募款字號。募款字號年度結束時，也需遞交報告。</p></div></div></div>
+				<div class="accordion-item">
+					<h3 class="h4 accordion-header" id="heading-4"><button aria-controls="collapse-4" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-4" data-bs-toggle="collapse" type="button">▼ 捐款是否會有收據？</button></h3>
+					<div aria-labelledby="heading-4" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-4">
+						<div class="accordion-body">
+							<p class="faq-w">您在進行捐款時請填寫正確地址，將會收到本會正式收據。可利用捐款收據作為抵扣所得稅額之用。</p></div></div></div>
+				<div class="accordion-item">
+					<h3 class="h4 accordion-header" id="heading-5"><button aria-controls="collapse-5" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-5" data-bs-toggle="collapse" type="button">▼ 何時會收到捐款收據？</button></h3>
+					<div aria-labelledby="heading-5" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-5">
+						<div class="accordion-body">
+							<p class="faq-w">單次捐款人會在捐款成功後，可以選擇捐款隔月收到捐款收據與相關資料或年度收到捐款收據。每月定期定額捐款人則於每年報稅月前，寄發上一年度全年的捐款總額證明，收據可作為抵扣稅額使用，亦明列個人全年度捐款紀錄。</p></div></div></div>
+				<div class="accordion-item mb-0" style="margin-bottom:35px;">
+					<h3 class="h4 accordion-header" id="heading-6"><button aria-controls="collapse-6" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-6" data-bs-toggle="collapse" type="button">▼ 捐款會員如何了解會務與環境行動成果？</button></h3>
+					<div aria-labelledby="heading-6" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-6">
+						<div class="accordion-body">
+							<p class="faq-w">地球公民有義務向捐款會員回報環境行動的進度、成果與財務報告，形式包括電子報、期刊或出版品等。</p>
+							<p class="faq-w">．每年發表「<a class="green-a" href="/annual_report" target="_blank">年度報告</a>」，彙整當年度重大工作成果。</p>
+							<p class="faq-w">．不定期寄發「會員電子報」，報告最新的環境行動進度與參加管道，讓您掌握第一手消息。</p>
+							<p class="faq-w">．不定期發行電子期刊「地球公民通訊」專文解析環境專題，讓您深度了解環境議題。</p>
+							<p class="faq-w">．不定期舉辦「會員活動」，將以電子郵件、簡訊等管道與您聯繫。</p><!-- <a class="green-a" href="https://www.facebook.com/CitizenoftheEarth" target="_blank"> -->
+							<p class="faq-w">．您也可以追蹤本會的FB、<a class="green-a" href="https://www.instagram.com/cettw/" target="_blank">IG </a>粉絲專頁，即時更新地球公民最新的倡議進度。</p></div></div></div></div></div></div></div>
+<div class="py-3 d-flex justify-content-center align-items-center" style="background-color: white;">
+	<div class="container-readable ">
+		<p class="cet-info d-block d-xl-none mb-0 text-center">立案字號 環署綜字第 0990100475 號<br />
+			勸募許可文號 衛部救字第 1151362736 號<br />
+			官方信箱 cet@cet-taiwan.org</p>
+		<p class="cet-info d-none d-xl-block mb-0 text-center">立案字號 環署綜字第 0990100475 號｜勸募許可文號 衛部救字第 1151362736 號｜官方信箱 cet@cet-taiwan.org</p></div></div>
+<footer class="container-fluid " style="background-color:var(--beige)">
+	<div class="row justify-content-center  py-4">
+		<div class="d-flex flex-column align-self-center col-10 col-sm-2 order-2 order-sm-1">
+			<h4 class="cet-keyword text-center" id="heading_1">本土專業</h4>
+			<p class="px-0" id="paragraph_1" style="text-align:center;">理性堅定，<span style="white-space:nowrap ;">促進社會對話</span></p></div>
+		<div class="d-flex flex-column align-self-center  col-10 col-sm-2 order-3 order-sm-2">
+			<h4 class="cet-keyword text-center" id="heading_2">動身護土</h4>
+			<p class="px-0" id="paragraph_2" style="text-align:center;">行動有力，<span style="white-space:nowrap ;">帶來正面改變</span></p></div>
+		<div class="col-10 col-sm-2 order-1 order-sm-2 px-0 py-3 py-md-0"><a href="/"><img alt="" class="d-block mx-auto" decoding="async" id="footer-cet-icon" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251114-01.svg" style="max-width: 60%;fill:var(--blue)" /> </a></div>
+		<div class="d-flex flex-column  col-10 col-sm-2 order-4 order-sm-4 align-self-center">
+			<h4 class="cet-keyword text-center " id="heading_3">公正獨立</h4>
+			<p class="px-0" id="paragraph_3" style="text-align:center;">財務自主，經費來自大眾捐款，<span style="white-space:nowrap ;">不接受政府補助</span></p></div>
+		<div class="d-flex flex-column align-self-center col-10 col-sm-2 order-5 order-sm-5">
+			<h4 class="cet-keyword text-center" id="heading_4">深化民主</h4>
+			<p class="px-0" id="paragraph_4" style="text-align:center;">堅持環境與世代正義<span style="white-space:nowrap ;"> 壯大公民社會</span></p></div></div></footer><!-- container-fluid px-0 結束--><!--  -->
+<script type="text/javascript" defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.innerWidth >= 576) {
+                setEqualHeight_2();
+            }
+        });
         
-    </div>
-</section>
-<section class="achievements p-0">
-    <div class="row g-0">
-        <div class="col-md-6 col-12">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-left-750.webp 750w,
-                        /sites/cet-taiwan.org/files/u422/20260728-left-960.webp 960w,
-                        /sites/cet-taiwan.org/files/u422/20260728-left-1440.webp 1440w
-                    "
-                    sizes="
-                        (min-width: 768px) 50vw,
-                        100vw
-                    "
-                >
-            
-                <img
-                    src="/sites/cet-taiwan.org/files/u422/20260728-left-750.jpg"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-left-750.jpg 750w,
-                        /sites/cet-taiwan.org/files/u422/20260728-left-960.jpg 960w,
-                        /sites/cet-taiwan.org/files/u422/20260728-left-1440.jpg 1440w
-                    "
-                    sizes="
-                        (min-width: 768px) 50vw,
-                        100vw
-                    "
-                    width="375"
-                    height="293"
-                    alt="多個地球公民參與集會遊行倡議的現場"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
-
-        </div>
-        <div class="col-md-6 col-12">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-new-right-750.webp 750w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-right-950.webp 950w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-right-1200.webp 1200w
-                    "
-                    sizes="
-                        (min-width: 768px) 50vw,
-                        100vw
-                    "
-                >
-            
-                <img
-                    src="/sites/cet-taiwan.org/files/u422/20260728-new-right-750.jpg"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-new-right-750.jpg 750w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-right-950.jpg 950w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-right-1200.jpg 1200w
-                    "
-                    sizes="
-                        (min-width: 768px) 50vw,
-                        100vw
-                    "
-                    width="375"
-                    height="293"
-                    alt="多個地球公民參與集會遊行倡議的現場"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
-
-        </div>
-    </div>
-</section>
-<section class="core-values">
-    <div class="container">
-        <p class="mb-0">為了維持公正獨立，地球公民堅持不接受政府與被監督企業的資助，不分黨派監督，只說對得起環境的真話。</p>
-        <div class="slogan-box">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-slogan-700.webp 700w,
-                        /sites/cet-taiwan.org/files/u422/20260728-slogan-960.webp 960w
-                    "
-                    sizes="
-                        (min-width: 1200px) 984px, (min-width: 992px) 960px, (min-width: 768px) 720px, 
-                        calc(100vw - 48px)
-                    "
-                >
-            
-                <img
-                    src="/sites/cet-taiwan.org/files/u422/20260728-slogan-700.png"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-slogan-700.png 700w,
-                        /sites/cet-taiwan.org/files/u422/20260728-slogan-960.png 960w
-                    "
-                    sizes="
-                        (min-width: 1200px) 984px, (min-width: 992px) 960px, (min-width: 768px) 720px, 
-                        calc(100vw - 48px)
-                    "
-                    width="335"
-                    height="68"
-                    alt="環境友善的政策不會從天而降，需要你的支持才會發生"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
-        </div>
-        <div class="signature-box">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-new-sign-360.webp 360w
-                    "
-                    sizes="218px"
-                >
-            
-                <img
-                    src="/sites/cet-taiwan.org/files/u422/20260728-new-sign-360.png"
-                    width="218"
-                    height="81"
-                    alt="地球公民基金會董事長李根政敬上"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
-        </div>
+        function setEqualHeight_2() {
+            var div1 = document.getElementById('paragraph_1');
+            var div2 = document.getElementById('paragraph_2');
+            var div3 = document.getElementById('paragraph_3');
+            var div4 = document.getElementById('paragraph_4');
         
         
-    </div>
-</section>
-<section class="donation-plan">
-    <div class="container">
-
-        <div class="card">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-1-450.webp 450w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-1-700.webp 700w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-1-900.webp 900w
-                    "
-                >
-            
-                <img
-                    src="/sites/cet-taiwan.org/files/u422/20260728-new-donate-1-700.jpg"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-1-450.jpg 450w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-1-700.jpg 700w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-1-900.jpg 900w
-                    "
-                    sizes="
-                        (min-width: 992px) 440px,
-                        (min-width: 768px) 364px,
-                        calc(100vw - 48px)
-                    "
-                    width="342"
-                    height="228"
-                    alt="一群人伸出雙手為彼此打氣 "
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
-            <div class="card-body d-flex flex-column">
-                <h3 class="card-title mb-0">定期支持方案</h3>
-                <p>$500/$1000/$1500</p>
-                <p class="card-text"><span style="white-space: nowrap;">我們不是因為看見希望才堅持，</span><span style="white-space: nowrap;">而是因為堅持了，所以看見希望</span></p>
-                <button type="button" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-plan__cta" data-donate-tab="monthly"><span class="btn-label">訂閱美好環境</span></button>
-            </div>
-        </div>
- 
-        <div class="card">
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-2-450.webp 450w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-2-700.webp 700w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-2-900.webp 900w
-                    "
-                >
-            
-                <img
-                    src="/sites/cet-taiwan.org/files/u422/20260728-new-donate-2-700.jpg"
-                    srcset="
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-2-450.jpg 450w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-2-700.jpg 700w,
-                        /sites/cet-taiwan.org/files/u422/20260728-new-donate-2-900.jpg 900w
-                    "
-                    sizes="
-                        (min-width: 992px) 440px,
-                        (min-width: 768px) 364px,
-                        calc(100vw - 48px)
-                    "
-                    width="342"
-                    height="228"
-                    alt="地球公民的研究員參與政府會議"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </picture>
-
-            <div class="card-body d-flex flex-column">
-                <h3 class="card-title mb-0">單筆支持方案</h3>
-                <p>$1200/$3000/$5000</p>
-                <p class="card-text">在關鍵時刻做出的關鍵決定<br>重磅出擊，創造影響力！</p>
-                <button type="button" class="btn btn-primary btn-icon btn-icon-arrow-right-mini donation-plan__cta" data-donate-tab="once"><span class="btn-label">打造永續家園</span></button>
-            </div>
-        </div>
-
-   
-    </div>
-</section> 
-<section class="faq">
-    <div class="container">
-        <h2 class="h3 section-title">常見問答</h2>
-        <div class="accordion" id="accordionExample" style="color:var(--black);"></div>
-    </div>
-</section>
-<footer>
-    <div class="logo-container">
-        <picture>
-            <source srcset="/sites/cet-taiwan.org/files/u422/logo-8.webp" type="image/webp" />
-            <img decoding="async" loading="lazy" alt="地球公民基金會"  src="/sites/cet-taiwan.org/files/u422/logo-8.png" width="330" height="97"/>
-        </picture>
-    </div>
-    <div class="footer-text">
-        <p>立案字號｜環署綜字第 0990100475 號</p>
-        <p>勸募許可文號｜衛部救字第 1151362736 號</p>
-    </div>
-     
-</footer>
+            var maxHeight = Math.max(div1.offsetHeight, div2.offsetHeight);
+            div1.style.height = maxHeight + 'px';
+            div2.style.height = maxHeight + 'px';
+            div3.style.height = maxHeight + 'px';
+            div4.style.height = maxHeight + 'px';
+        
+        }
+        </script>
+<script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggle = document.getElementById('toggle-years');
+      var more = document.getElementById('more-years');
+      if (!toggle || !more) {
+        console.error('無法找到 toggle-years 或 more-years 元素');
+        return;
+      }
+    
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        var isOpen = more.classList.toggle('is-open');
+        // 更新按鈕內的 <p> 標籤文字，而不是整個按鈕
+        var label = toggle.querySelector('.toggle-years-label');
+        if (label) {
+          label.textContent = isOpen
+            ? toggle.dataset.openText
+            : toggle.dataset.closeText;
+        } else {
+          // 如果沒有 <p> 標籤，則更新按鈕文字
+          toggle.textContent = isOpen
+            ? toggle.dataset.openText
+            : toggle.dataset.closeText;
+        }
+      });
+    });
+    </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
+<script>
+window.DONATION_BOX_AMOUNT_DATA = {
+    monthly: [
+        { desc: '' },
+        { desc: '' },
+        { desc: '' }
+    ],
+    once: [
+        { desc: '' },
+        { desc: '' },
+        { desc: '' }
+    ]
+};
+</script>
 <script>
 (function () {
     var DEFAULT_AMOUNT_DATA = {
@@ -2410,76 +3021,6 @@ a:active {
     setActiveTab('monthly');
 })();
 
-</script>
-<script type="text/javascript">
-var faqData = [
-    {
-        question: '地球公民將捐款用於哪些環境專案？',
-        content: [
-            '我們投入的環保工作範疇為山林國土、環境污染、能源轉型、永續花東、環境民主。藉由調查研究、揭露環境問題，提出解決方案，並據以進行政策施壓、國會遊說、教育推廣等，促成改變。'
-        ]
-    },
-    {
-        question: '我如何知道地球公民基金會年度捐款使用明細？',
-        content: [
-            '每年度的帳目皆送環境部備查後公開，可以在地球公民官網閱讀線上版財報 & 徵信，了解地球公民各項經費支出。線上年度報告在隔年出刊，同時以紙本和電子報將摘要及連結寄予每位捐款會員。'
-        ]
-    },
-    {
-        question: '地球公民的財務報告受到哪些單位的審核？',
-        content: [
-            '依我國法令設立之財團法人地球公民基金會（以下簡稱本會），受董事會監督，董事會設董事 7 名，監事 2 名董監事成員均為義務性質，成員涵蓋各領域專業之人士，並具備獨立性。本會年度財務報表，皆先經由董監事會審核，並送主管機關環境部備查。據衛生福利部規定，公益勸募需每年申請募款字號，申請流程包括遞交勸募計畫書、由衛福部審核後核發募款字號。募款字號年度結束時，也需遞交報告。'
-        ]
-    },
-    {
-        question: '捐款是否會有收據？',
-        content: [
-            '您在進行捐款時請填寫正確地址，將會收到本會正式收據。可利用捐款收據作為抵扣所得稅額之用。'
-        ]
-    },
-    {
-        question: '何時會收到捐款收據？',
-        content: [
-            '單次捐款人會在捐款成功後，可以選擇捐款隔月收到捐款收據與相關資料或年度收到捐款收據。每月定期定額捐款人則於每年報稅月前，寄發上一年度全年的捐款總額證明，收據可作為抵扣稅額使用，亦明列個人全年度捐款紀錄。'
-        ]
-    },
-    {
-        question: '捐款會員如何了解會務與環境行動成果？',
-        content: [
-            '地球公民有義務向捐款會員回報環境行動的進度、成果與財務報告，形式包括電子報、期刊或出版品等。',
-            '．每年發表「年度報告」，彙整當年度重大工作成果。',
-            '．不定期寄發「會員電子報」，報告最新的環境行動進度與參加管道，讓您掌握第一手消息。',
-            '．不定期發行電子期刊「地球公民通訊」專文解析環境專題，讓您深度了解環境議題。',
-            '．不定期舉辦「會員活動」，將以電子郵件、簡訊等管道與您聯繫。',
-            '．您也可以追蹤本會的 FB、IG 粉絲專頁，即時更新地球公民最新的倡議進度。'
-        ]
-    }
-];
-
-function renderFaq() {
-    var accordion = document.getElementById('accordionExample');
-    if (!accordion) return;
-
-    accordion.innerHTML = faqData.map(function (item, index) {
-        var id = index + 1;
-        var bodyHtml = item.content.map(function (text) {
-            return '<p>' + text + '</p>';
-        }).join('');
-
-        return (
-            '<div class="accordion-item">' +
-                '<h3 class="accordion-header" id="heading-' + id + '">' +
-                    '<button aria-controls="collapse-' + id + '" aria-expanded="false" class="collapsed p " data-bs-target="#collapse-' + id + '" data-bs-toggle="collapse" type="button"><span class="faq-question-label">' + item.question + '</span></button>' +
-                '</h3>' +
-                '<div aria-labelledby="heading-' + id + '" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-' + id + '">' +
-                    '<div class="accordion-body">' + bodyHtml + '</div>' +
-                '</div>' +
-            '</div>'
-        );
-    }).join('');
-}
-
-renderFaq();
 </script>
 </body>
 </html>

@@ -1,0 +1,781 @@
+/* ========================================
+   Brand override for air donate form
+======================================== */
+:root {
+    --brand-primary: #46A0D2;
+    --brand-dark-primary: #003e82;
+}
+
+#main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Text slogan in donate-hero */
+#main .donate-hero .img-box {
+    gap: 16px;
+}
+
+#main #top-slogan {
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    text-align: center;
+    font-family: SweiGothicCJKtc-Bold, "Noto Sans TC", sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1.4;
+    letter-spacing: 0.08rem;
+}
+#main #donateOtherAccordion{
+    background-color: var(--white);
+}
+
+@media screen and (min-width: 768px) {
+    #main #top-slogan {
+        width: auto;
+        max-width: 450px;
+        font-size: 2.25rem;
+        letter-spacing: 0.12rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #main #top-slogan {
+        font-size: 2.5rem;
+    }
+}
+
+/* H 900 */
+     @font-face {
+        font-family: SweiGothicCJKtc-Bold;
+        src: url('https://cdn.jsdelivr.net/gh/hsuan8524/woff2-subset@v0.0.9/air/SweiGothicCJKtc-Bold-subset.woff2') format("woff2");
+        font-display: swap;
+    }
+   
+    #main .font-900{
+        font-family: SweiGothicCJKtc-Bold;
+        
+        /* font-weight: 900; */
+    }
+    #main .font-700{
+        font-family: SweiGothicCJKtc-Bold;
+        /* font-weight: 700; */
+    }
+    #main .font-500{
+        font-family: "Noto Sans TC";
+        /* font-weight: 500; */
+    }
+    #main .container-readable{
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        /* border: solid red 1px; */
+        margin-left: auto;
+        margin-right: auto;
+        /* padding-left: 1rem;
+        padding-right: 1rem; */
+    }
+
+    :root {
+        
+
+        /* Desktop (1200px and up) */
+        --font-base-size: 16px;
+        font-size: calc(var(--font-base-size) * 1);
+        --navbar-height: 70px; /* 預設 fallback 避免閃爍 */
+        --blue:#46A0D2;
+        --light-blue:#CDEDF9;
+        --white:#ffffff;
+        --beige:#F5F5EB;
+    
+    }
+    #main .blue{ color:var(--blue)}
+    #main .light-blue{ color:var(--light-blue)}
+    #main .white{ color:var(--white)}
+    #main .beige{ color:var(--beige)}
+    #main body {
+        background-color: var(--beige);
+    }
+    #main p {
+        padding: 0 1rem 0rem 1rem;
+        text-align: justify;
+        font-weight: 500;
+        /* M */
+        color: #3f3f3f;
+        font-size: 1rem;
+    }
+    #main #qa h3{
+        font-size: 1rem;
+    }
+    #main footer p {
+        font-weight: 400;
+    }
+    #main .content-block_text{
+        font-family: "Noto Sans TC";
+        margin-bottom: 0;
+    }
+    @media (max-width: 575px) {
+        #main p,
+        #main .p,
+        #main #qa h3 {
+            font-size: 1.1rem;/*  18px    */
+        }
+
+    }
+    /* 寬度 */
+    @media(min-width:1024px) {
+        #main .container-readable{
+            width: 1024px;
+        }
+        #main #ceo-story_mobile_1,#main #ceo-story_mobile_2{display: none;}
+    }
+    @media(max-width:1023px) {
+        #main .container-readable{
+            max-width: 480px;
+
+        }
+        #main #ceo-story_desktop{display: none;}
+        #main #ceo-story_mobile_2{display: flex;justify-content: center;}
+    }
+    @media (min-width:768px) and (max-width:1023px){
+        #main #influence .container-readable{
+            max-width: 100%;
+            /* padding 已在基础样式中统一设置 */
+        }
+    }
+    @media(max-width:428px) {
+        #main .content-block_img{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+    /* 特定區塊 */
+    #main #ceo-story_desktop{
+        position: relative;
+    }
+    #main #ceo-story_mobile_1{
+        background-size:500px,auto;
+
+    }
+    #main #grid-paper{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 1rem;
+        bottom: 1rem;
+        width: calc(50% - 30px);
+        transform: none;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    /* 用 <picture> tiles 取代 background-repeat */
+    #main #grid-paper .grid-paper-tiles{
+        position: absolute;
+        inset: 0;
+    }
+    /* #grid-paper_mobile{
+        background-image: url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
+        background-repeat: repeat;
+    }
+    @supports (background-image: image-set(url("/sites/cet-taiwan.org/files/u422/20260317-05.webp") 1x)) {
+        #grid-paper_mobile{
+            background-image: image-set(
+                url('/sites/cet-taiwan.org/files/u422/20260317-05.webp') type('image/webp'), 
+                url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png') type('image/png'));
+            background-repeat: repeat;
+        }
+
+    } */
+    /* CEO 區與手機版網格紙區：picture 區塊化並置中 */
+    #main #ceo-story_desktop picture,
+    #main #grid-paper_mobile picture {
+        display: block;
+        width: 100%;
+    }
+    #main #grid-paper_mobile picture {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #main #grid-paper_mobile{
+        position: relative;
+        overflow: hidden;
+    }
+    #main #grid-paper_mobile .grid-paper-bg{
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+    }
+    #main #grid-paper_mobile .grid-paper-content{
+        position: relative;
+        z-index: 1;
+    }
+    #main #grid-paper_mobile .grid-paper-bg picture{
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    #main #grid-paper_mobile .grid-paper-bg img{
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+    #main .grid-paper-tile{
+        position: absolute;
+        display: block;
+        pointer-events: none;
+    }
+    #main .grid-paper-tile-img{
+        width: 550px; /* 對齊原本 background-size: 550px auto */
+        height: auto;
+        display: block;
+    }
+    #main #banner-middle,#main #child-run{
+        position: relative;
+        height: 45rem;
+        overflow: hidden;
+    }
+    /* 全幅橫幅圖：picture 需填滿容器，內部的 img 才能正確 absolute 定位 */
+    #main #banner-middle > picture,
+    #main #child-run > picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    #main #full-img-1,#main #full-img-2{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    #main #banner-middle .container-readable {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1; /* 讓文字在圖片上 */
+        /* 明确设置宽度，确保与其他 container-readable 对齐 */
+        width: 100%;
+        max-width: 480px;
+    }
+    #main #child-run .container-readable {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        /* transform: translateX(-50%); */
+        z-index: 1; /* 讓文字在圖片上 */
+        /* 明确设置宽度，确保与其他 container-readable 对齐 */
+        width: 100%;
+        max-width: 480px;
+    }
+    @media(min-width:1024px) {
+        #main #banner-middle .container-readable,#main #child-run .container-readable {
+            max-width: 1024px;
+            width: 1024px;
+        }
+    }
+    #main #heading-1 h2{letter-spacing: 0.4rem;}
+    @media (max-width:320px) {
+        #main #heading-1 h2{letter-spacing: 0.13rem;}
+    }
+    @media (max-width:575px) {
+        #main #heading-1{
+            text-align: center;
+        }
+        
+    }
+    #main #child-run{
+     
+        overflow: hidden;
+        position: relative;
+        height: 45rem;
+    }
+    #main #full-img-2{
+        object-fit: cover;
+        object-position: 25% 25%;
+
+    }
+    @media  (min-width: 768px)  and  (max-width: 1199px){
+        #main #child-run,#main #banner-middle{
+            
+            height: 30rem;
+        }
+        #main #full-img-1{
+            object-position: 25% top;
+        }
+        #main #full-img-2{
+            object-position: 25% top;
+        }
+    }
+    @media (min-width: 768px) {
+        #main #child-run{
+            min-height: 45rem;
+            /* min-height: 60vh; */
+        }
+    }
+    #main #child-run::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 15%;
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            rgba(245, 245, 235, 0.15) 20%,
+            rgba(245, 245, 235, 0.15) 25%,
+            /* var(--beige) 95%, */
+            var(--beige) 100%
+        );
+        mix-blend-mode: normal;
+        pointer-events: none;
+        z-index: 1;
+    }
+    #main #child-run .container-readable {
+        position: relative;
+        z-index: 2;
+        padding-top: 3rem; 
+        padding-bottom: 0;
+    }
+ 
+    @media (max-width: 767px) {
+        #main #banner-middle,#main #child-run{
+            height: 30rem;
+        }
+        #main #full-img-1{
+            object-position: 70% top;
+        }
+        #main #full-img-2{
+            object-position: 25% top;
+        }
+        /* 移動端：調整文字位置，確保不遮蓋人物 */
+        #main #child-run .container-readable {
+            padding-top: 1.5rem; /* 移動端可以稍微減少頂部間距 */
+        }
+    }
+    @media (min-width: 1200px) {
+        #main #child-run,#main #banner-middle{
+            height: 45rem;
+        }
+        #main #full-img-1{
+            object-position: center right;
+        }
+    }
+    #main .donate-invite h3{
+        letter-spacing: 0.2rem;
+        
+    }
+    #main #lets-donate{
+        background-color: var(--beige);
+    }
+      #main #lets-donate-bottom{background-color:var(--blue)}
+      #main .donate-invite-heading-2{
+        display: flex;
+        align-items:center;
+    }
+    #main #lets-donate-bottom .rounded-title{
+        background-color: var(--beige);
+    }
+    #main .photo-credit{
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+    }
+    #main .photo-credit p{
+        color: #ffffff;
+        font-weight: 300;
+    }
+    #main #photo-credit-2{
+        z-index: 2;
+    }
+    #main #photo-credit-2 p{
+        color:gray;
+    }
+    #main .section-header{
+        font-weight:900;
+        font-family: "SweiGothicCJKtc-Bold";
+    }
+    #main .rounded-title{
+        background-color: var(--blue);
+        border-radius: 999px;
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        width: fit-content;
+        font-family: "SweiGothicCJKtc-Bold";
+        color:var(--white);
+        font-weight:900;  
+    }
+    #main #lets-donate .rounded-title,
+    #main #lets-donate-bottom .rounded-title{
+        /* 新增：讓外觀看起來可按 */
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        transition: all 0.2s ease;
+
+    }
+    /* 讓整塊都可以點，避免只有文字可點擊 */
+    #main .rounded-title a {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+    }
+    /* Hover 效果 */
+    #main #lets-donate .rounded-title:hover,
+    #main #lets-donate-bottom .rounded-title:hover {
+    background-color: #003e82; /* 略深的藍 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.22);
+    transform: translateY(-2px);
+    }
+    /* 點下去時的效果 */
+    #main #lets-donate .rounded-title:active,
+    #main #lets-donate-bottom .rounded-title:active
+     {
+    background-color: #002f63;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    transform: translateY(0);
+    }
+    #main #lets-donate-bottom .rounded-title:active a,
+    #main #lets-donate-bottom .rounded-title:hover a
+    {
+        color: white;
+    }
+    /* @media (max-width:767px) {
+        .rounded-title{
+            font-family: "Noto Sans TC";
+        }
+        
+    } */
+    #main #lets-donate-bottom .rounded-title h2,
+    #main #lets-donate-bottom .rounded-title h3,
+    #main #lets-donate-bottom .rounded-title h4,
+    #main #lets-donate-bottom .rounded-title a{
+        margin: 0;
+        color: var(--blue);
+        font-weight:900;
+        /* line-height: 1.3 !important; */
+    }
+    #main .rounded-title h2,
+    #main .rounded-title h3,
+    #main .rounded-title h4,
+    #main .rounded-title a{
+        margin: 0;
+        color: var(--white);
+        font-weight:900;
+        /* line-height: 1.3 !important; */
+    }
+    #main .text-block{
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+    #main .years-toggle-btn{
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        background: none;
+        border: none;
+        color: var(--blue);
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 0;
+    }
+    #main .years-more{
+        display: none;
+        margin-top: 0.5rem;
+    }
+    #main .years-more.is-open{
+        display: block;
+    }
+    #main #qa .accordion-item h4,
+    #main #qa .accordion-item p{
+        text-align: left;
+    }
+    #main #qa .accordion-header button{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        text-align: left;
+        font-weight: 500;
+        font-family: "Noto Sans TC";
+        border: none;
+        color:#3f3f3f;
+    }
+    #main .accordion,#main .accordion-header button,#main .accordion-body{
+        background-color: var(--beige);
+    }
+    #main #qa .accordion-item{
+        border: none;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    #main #qa .accordion-item h3{
+        font-weight: 500;
+    }
+    #main #qa .accordion-body{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #main .faq-w{
+        margin-bottom: 0;
+    }
+    #main p.faq-w {
+        font-weight: 400;
+        font-family: Noto Sans TC;
+    }
+    #main #toggle-years{
+        border: none;
+        background-color: transparent;
+        color: var(--blue);
+    }
+    #main #content-block{
+        background-color: var(--beige);
+    }
+    @media (max-width:992px) {
+        #main #content-block{
+            padding-bottom: 2rem;
+        }
+    }
+    #main .cet-info{
+        font-size: 0.88rem;
+    }
+    #main .photo-credit p{
+        font-size: 0.625rem;
+        font-weight: 300;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        opacity: 80%;
+
+    }
+    #main .cet-keyword{
+        color: var(--blue);
+        font-family: SweiGothicCJKtc-Bold;
+        font-weight: 700;
+    }
+    @media (min-width:1200px) {
+        #main .cet-info{
+            font-size: 0.94rem;
+        }
+        #main .photo-credit p{font-size: 0.75rem;}
+    }
+    /* footer logo：picture 置中（原先 img 用 d-block mx-auto） */
+    #main footer picture {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #main #footer-cet-icon{
+        filter: invert(51%) sepia(100%) saturate(264%) hue-rotate(157deg) brightness(91%) contrast(100%);
+
+    }
+    /* 內容區圖片：picture 填滿欄寬，內部 img-fluid 才能正確縮放 */
+    #main .content-block_img picture {
+        display: block;
+        width: 100%;
+    }
+    #main .img-div{
+        object-fit: cover;
+        border-radius: 23px;
+    }
+    /* navbar */
+    #main #navbar {
+        display: none;
+    }
+    #main #influence .card,#main #influenceCarousel .card{
+        background-color: var(--beige);
+        border: none;
+    }
+    #main #influence .card-img{
+        height: 200px;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    /* 歷年成果 card 內 picture 填滿 .card-img 並置中內部 img */
+    #main #influence .card-img picture,
+    #main #influenceCarousel .card-img picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #main #flag-img-desktop{
+        position: absolute;
+        left: 62%;
+        transform: translateX(-50%);
+    }
+    #main #flag-img-mobile{
+        left: 60%; 
+        transform: translateX(-50%);
+    }
+    #main .carousel-indicators{
+        bottom: -1.5rem;
+    }
+    #main .carousel-indicators [data-bs-target]{
+        background-color:    var(--blue); }
+    /* .card{border: solid red 1px;} */
+    #main .card h3,#main .card li,#main .card a{
+        text-align: left;
+        color:#3f3f3f;
+    }
+    #main .card-body a{
+        color:#3f3f3f !important
+    }
+    
+    /* 讓三個card高度對齊 */
+    #main #influence .row {
+        align-items: stretch;
+    }
+    #main #cash-icon,
+    #main #cash-icon-mobile {
+        width: 55%; 
+        height: auto;
+    }
+   
+    @media (max-width:768px) {
+        #main #cash-icon{width: 30%; }
+        #main #cash-icon-mobile{width: 60%; }
+       
+    }
+    #main .carousel-control-prev-icon,
+    #main .carousel-control-next-icon{
+        position: relative;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: var(--blue);
+        background-image: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #main .carousel-control-prev-icon::after,
+    #main .carousel-control-next-icon::after{
+        font-size: 1.3rem;
+        color: #ffffff;
+        font-weight: 400;
+    }
+    #main .carousel-control-prev-icon::after{
+        content: '<';
+    }
+    #main .carousel-control-next-icon::after{
+        content: '>';
+    }
+    #main .card-img-top {
+        max-height: 160px;
+        width: auto;
+        object-fit: contain;
+    }
+    #main .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    #main .card-text {
+        flex-grow: 1;
+    }
+
+    /* 歷年成果 */
+    #main .year{
+        font-weight: 700;
+        font-family: SweiGothicCJKtc-Bold;
+        color: var(--blue);
+
+    }
+    #main .result p{
+        font-weight: 400;
+        font-family: Noto Sans TC;
+    }
+    
+
+    /* 左右圖文 */
+    #main .words {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* 垂直居中 */
+    
+    }
+
+    @media (max-width: 991px) {
+        #main .content-block_text {
+            order: 2;
+        }
+        #main .content-block_img {
+            order: 1;
+        }
+    
+    }
+    
+    /*d-xl-block d-none*/
+    @media (max-width: 1199px) {
+        #main .desktop {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        #main .mobile {
+            display: none;
+        }
+    
+    }
+    /* 其他設定 */
+    #main .rounded-title a,
+    #main .rounded-title a:hover,
+    #main .rounded-title a:visited,
+    #main .rounded-title a:link,
+    #main .rounded-title a:active {
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    #main a,#main a:hover,
+    #main a:visited,
+    #main a:link,
+    #main a:active {
+        text-decoration: none;
+        color: var(--blue);
+    }
+    
+    #main #navbar {
+        display: none;
+    }
+    #main div {
+        padding: 0;
+        margin: 0;
+    }
+    #main .container {
+        /* background-color: #e4ebef; */
+        padding: 0;
+    }
+    
+    #main .row {
+        margin: 0rem;
+        /*只有這樣手機板空格太多*/
+        padding: 0rem;
+        /*同上不變*/
+    }

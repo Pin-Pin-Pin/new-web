@@ -134,7 +134,7 @@
    Section: faq
 ======================================== */
 #main .faq {
-    background-color: var(--white );
+    background-color: var(--brand-white ); 
 }
 #main .footer-text p{
     color: var(--black);
