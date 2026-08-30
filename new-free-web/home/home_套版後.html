@@ -30,8 +30,8 @@
         max-width: calc(100vw - var(--sbw, 0px));
         margin-left: calc((100% - 100vw + var(--sbw, 0px)) / 2);
         margin-right: calc((100% - 100vw + var(--sbw, 0px)) / 2);
-        /* 左右 24px 對齊 #main.container（<768）內距，白卡寬度＝最新文章 .block-inner */
-        padding: 48px 24px;
+        /* 左右 24px＝#issue > .container 的 padding-inline，白卡外緣＝.grid--2-columns 內容寬 */
+        padding: 0 24px;
         background-color: var(--brand-background-green);
         color: var(--brand-black);
         font-family: "Noto Sans TC", sans-serif;
@@ -55,12 +55,14 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: none;
+        /* 1008 − 24×2：官網 .layout > .container 內容寬（.grid--2-columns 無自己的 padding） */
+        max-width: 960px;
         margin-left: auto;
         margin-right: auto;
         padding: 24px 34px;
         gap: 24px;
         background-color: var(--brand-white);
+        border-radius:8px
     }
     
     .result h2 {
@@ -123,45 +125,20 @@
         line-height: 1.5;
     }
     
-    /* 以下 max-width 對齊 #main.container 內容寬（＝最新文章 .block-inner） */
     @media (min-width: 576px) {
         .result .result__inner {
-            max-width: 492px; /* 540 − 24×2 */
             padding: 24px 40px;
         }
     }
     
     @media (min-width: 768px) {
-        .result {
-            padding-left: 0;
-            padding-right: 0;
-        }
-    
-        .result .result__inner {
-            max-width: 720px;
-        }
-    
         .result .result__content {
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 24px;
         }
     }
     
-    @media (min-width: 992px) {
-        .result .result__inner {
-            max-width: 960px;
-        }
-    }
-    
     @media (min-width: 1200px) {
-        .result {
-            padding: 48px 0;
-        }
-    
-        .result .result__inner {
-            max-width: 984px;
-        }
-    
         .result .result__content {
             grid-template-columns: repeat(4, max-content);
             justify-content: space-between;
