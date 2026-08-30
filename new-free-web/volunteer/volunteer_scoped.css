@@ -39,6 +39,7 @@
     gap: 16px;
     width: 100%;
     border: none;
+    background-color: var(--brand-white);
 }
 #main .volunteer-card .card-body {
     padding: 0;
