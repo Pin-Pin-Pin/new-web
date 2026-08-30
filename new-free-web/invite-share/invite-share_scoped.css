@@ -36,7 +36,7 @@
     border: 1px solid var(--brand-dark-primary);
     overflow: hidden;
 }
-/* flex item 預設 min-height:auto 會擋住 Bootstrap 收合到 height:0 */
+/* 高度變化的面板不當捲動錨點；標題維持可錨定，避免上方收合時整塊上移 */
 #main .share-topics-accordion .accordion-collapse {
     min-height: 0;
     overflow-anchor: none;
@@ -46,6 +46,7 @@
     margin-bottom: 0;
     padding: 8px 16px;
     background-color: var(--brand-white);
+    overflow-anchor: auto;
     transition: background-color 0.35s ease, color 0.35s ease;
 }
 

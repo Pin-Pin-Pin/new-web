@@ -263,9 +263,49 @@
             }).join('');
         }
 
+        function initShareTopicsAccordionBehavior(rootId) {
+            var root = document.getElementById(rootId);
+            if (!root || root.getAttribute('data-acc-behavior') === '1') return;
+            root.setAttribute('data-acc-behavior', '1');
+
+            var pending = 0;
+            var openedItem = null;
+
+            root.addEventListener('click', function (event) {
+                var btn = event.target.closest('[data-bs-toggle="collapse"]');
+                if (!btn || !root.contains(btn)) return;
+                btn.focus({ preventScroll: true });
+            }, true);
+
+            function onStart() {
+                pending += 1;
+            }
+
+            function onEnd() {
+                pending = Math.max(0, pending - 1);
+                if (pending !== 0 || !openedItem) return;
+                var item = openedItem;
+                openedItem = null;
+                var header = item.querySelector('.accordion-header') || item;
+                window.requestAnimationFrame(function () {
+                    var y = header.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0);
+                    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                });
+            }
+
+            root.addEventListener('show.bs.collapse', function (event) {
+                openedItem = event.target.closest('.accordion-item');
+                onStart();
+            });
+            root.addEventListener('hide.bs.collapse', onStart);
+            root.addEventListener('shown.bs.collapse', onEnd);
+            root.addEventListener('hidden.bs.collapse', onEnd);
+        }
+
         function renderShareTopicsAccordion() {
             var accordion = document.getElementById('shareTopicsAccordion');
             if (!accordion) return;
+            initShareTopicsAccordionBehavior('shareTopicsAccordion');
 
             accordion.innerHTML = shareTopicData.map(function (item, index) {
                 var id = index + 1;
