@@ -132,7 +132,12 @@
 
 @media (min-width: 768px) {
     #main #shareTab {
-        justify-content: center;
+        /* safe：內容溢位時改靠左，避免最左 tab 被裁切且無法捲回 */
+        justify-content: safe center;
+    }
+
+    #main #shareTab.is-overflowing {
+        justify-content: flex-start;
     }
 }
 

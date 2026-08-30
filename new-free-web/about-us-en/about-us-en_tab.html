@@ -340,6 +340,8 @@
 
             function updateArrows() {
                 var max = nav.scrollWidth - nav.clientWidth;
+                nav.classList.toggle('is-overflowing', max > 4);
+                max = nav.scrollWidth - nav.clientWidth;
                 wrap.classList.toggle('is-scrollable-left', nav.scrollLeft > 4);
                 wrap.classList.toggle('is-scrollable-right', max > 4 && nav.scrollLeft < max - 4);
             }
@@ -366,7 +368,9 @@
 
                 var navBox = nav.getBoundingClientRect();
                 var tabBox = active.getBoundingClientRect();
-                if (tabBox.left < navBox.left + ZONE) {
+                if (index === 0) {
+                    nav.scrollLeft = 0;
+                } else if (tabBox.left < navBox.left + ZONE) {
                     nav.scrollLeft -= navBox.left + ZONE - tabBox.left;
                 } else if (tabBox.right > navBox.right - ZONE) {
                     nav.scrollLeft += tabBox.right - (navBox.right - ZONE);
