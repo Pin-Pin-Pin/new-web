@@ -1,8 +1,1114 @@
 <body>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.2.3/share-css/share_scoped.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.2.3/new-free-web/about-us-ch/about-us-ch_scoped.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@v2.2.3/share-css/fix.css">
+<style type="text/css">
+/* share-css/share_scoped.css */
+/* :root */
+#main
+ {
+    --brand-primary: #35A97C;
+    --brand-dark-primary:  #55716C;
+    --brand-background-green: #E5EAE3;
+    --brand-background-yellow: #F3EEE6;
+    --black:#000000;
+    --brand-black:#2D2D2D;
+    --brand-white: #FAFAFA;
+    --white:#FFFFFF;
+    --gray-900:#2B2B2B;
+    --gray-800:#454545;
+    --gray-700:#5D5D5D;
+    --gray-600:#838383;
+    --gray-500:#C0C0C0;
+    --gray-400:#E1E1E1;
+    --gray-300:#E5E5E5;
+    --gray-200:#EFEFEF;
+    --gray-100:#F8F9FA;
+    --icon-arrow-right-mini: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 9.99989C3 9.80097 3.07902 9.61021 3.21967 9.46956C3.36032 9.3289 3.55109 9.24989 3.75 9.24989H14.388L10.23 5.28989C10.1557 5.22245 10.0956 5.14077 10.0534 5.0497C10.0112 4.95863 9.98771 4.86002 9.98432 4.7597C9.98093 4.65939 9.99771 4.55941 10.0337 4.4657C10.0696 4.37199 10.124 4.28644 10.1937 4.21414C10.2633 4.14184 10.3467 4.08425 10.439 4.04479C10.5313 4.00532 10.6306 3.98478 10.7309 3.98438C10.8313 3.98398 10.9307 4.00374 11.0233 4.04247C11.1159 4.08121 11.1998 4.13814 11.27 4.20989L16.77 9.45989C16.8426 9.52985 16.9003 9.61373 16.9398 9.70651C16.9792 9.79929 16.9995 9.89907 16.9995 9.99989C16.9995 10.1007 16.9792 10.2005 16.9398 10.2933C16.9003 10.386 16.8426 10.4699 16.77 10.5399L11.27 15.7899C11.1998 15.8616 11.1159 15.9186 11.0233 15.9573C10.9307 15.996 10.8313 16.0158 10.7309 16.0154C10.6306 16.015 10.5313 15.9945 10.439 15.955C10.3467 15.9155 10.2633 15.8579 10.1937 15.7856C10.124 15.7133 10.0696 15.6278 10.0337 15.5341C9.99771 15.4404 9.98093 15.3404 9.98432 15.2401C9.98771 15.1398 10.0112 15.0411 10.0534 14.9501C10.0956 14.859 10.1557 14.7773 10.23 14.7099L14.388 10.7499H3.75C3.55109 10.7499 3.36032 10.6709 3.21967 10.5302C3.07902 10.3896 3 10.1988 3 9.99989Z' fill='%23FAFAFA'/%3E%3C/svg%3E");
+    --icon-arrow-top-right-mini: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.22032 14.78C5.36094 14.9205 5.55157 14.9993 5.75032 14.9993C5.94907 14.9993 6.13969 14.9205 6.28032 14.78L13.5003 7.56V13.25C13.5003 13.4489 13.5793 13.6397 13.72 13.7803C13.8606 13.921 14.0514 14 14.2503 14C14.4492 14 14.64 13.921 14.7806 13.7803C14.9213 13.6397 15.0003 13.4489 15.0003 13.25V5.75C15.0003 5.55109 14.9213 5.36032 14.7806 5.21967C14.64 5.07902 14.4492 5 14.2503 5H6.75032C6.5514 5 6.36064 5.07902 6.21999 5.21967C6.07933 5.36032 6.00032 5.55109 6.00032 5.75C6.00032 5.94891 6.07933 6.13968 6.21999 6.28033C6.36064 6.42098 6.5514 6.5 6.75032 6.5H12.4403L5.22032 13.72C5.07987 13.8606 5.00098 14.0512 5.00098 14.25C5.00098 14.4488 5.07987 14.6394 5.22032 14.78Z' fill='%2355716C'/%3E%3C/svg%3E");
+    --icon-chevron-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.47 7.72007C11.6106 7.57962 11.8012 7.50073 12 7.50073C12.1987 7.50073 12.3894 7.57962 12.53 7.72007L20.03 15.2201C20.1037 15.2887 20.1628 15.3715 20.2038 15.4635C20.2448 15.5555 20.2668 15.6548 20.2686 15.7556C20.2704 15.8563 20.2518 15.9563 20.2141 16.0497C20.1764 16.1431 20.1203 16.2279 20.049 16.2991C19.9778 16.3703 19.893 16.4265 19.7996 16.4642C19.7062 16.5019 19.6062 16.5204 19.5055 16.5187C19.4048 16.5169 19.3055 16.4948 19.2135 16.4539C19.1215 16.4129 19.0387 16.3538 18.97 16.2801L12 9.31007L5.03 16.2801C4.88782 16.4126 4.69978 16.4847 4.50548 16.4812C4.31118 16.4778 4.12579 16.3991 3.98838 16.2617C3.85096 16.1243 3.77225 15.9389 3.76882 15.7446C3.7654 15.5503 3.83752 15.3622 3.97 15.2201L11.47 7.72007Z' fill='white'/%3E%3C/svg%3E");
+    --icon-chevron-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.53 16.2799C12.3894 16.4204 12.1987 16.4992 12 16.4992C11.8012 16.4992 11.6106 16.4204 11.47 16.2799L3.97 8.77991C3.83752 8.63773 3.7654 8.44969 3.76882 8.25539C3.77225 8.06109 3.85096 7.8757 3.98838 7.73829C4.12579 7.60087 4.31118 7.52216 4.50548 7.51873C4.69978 7.51531 4.88782 7.58743 5.03 7.71991L12 14.6899L18.97 7.71991C19.0387 7.64622 19.1215 7.58712 19.2135 7.54613C19.3055 7.50514 19.4048 7.48309 19.5055 7.48132C19.6062 7.47954 19.7062 7.49807 19.7996 7.53579C19.893 7.57351 19.9778 7.62965 20.049 7.70087C20.1203 7.77209 20.1764 7.85692 20.2141 7.95031C20.2518 8.0437 20.2704 8.14373 20.2686 8.24443C20.2668 8.34513 20.2448 8.44445 20.2038 8.53645C20.1628 8.62845 20.1037 8.71125 20.03 8.77991L12.53 16.2799Z' fill='%2355716C'/%3E%3C/svg%3E");
+    --icon-home-mini: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.29279 0.292786C7.48031 0.105315 7.73462 0 7.99979 0C8.26495 0 8.51926 0.105315 8.70679 0.292786L15.7068 7.29279C15.8466 7.43264 15.9418 7.6108 15.9804 7.80476C16.0189 7.99871 15.9991 8.19974 15.9235 8.38244C15.8478 8.56514 15.7197 8.7213 15.5552 8.83119C15.3908 8.94107 15.1975 8.99974 14.9998 8.99979H13.9998V14.9998C13.9998 15.265 13.8944 15.5194 13.7069 15.7069C13.5194 15.8944 13.265 15.9998 12.9998 15.9998H10.9998C10.7346 15.9998 10.4802 15.8944 10.2927 15.7069C10.1051 15.5194 9.99979 15.265 9.99979 14.9998V11.9998C9.99979 11.7346 9.89443 11.4802 9.70689 11.2927C9.51936 11.1051 9.265 10.9998 8.99979 10.9998H6.99979C6.73457 10.9998 6.48022 11.1051 6.29268 11.2927C6.10514 11.4802 5.99979 11.7346 5.99979 11.9998V14.9998C5.99979 15.265 5.89443 15.5194 5.70689 15.7069C5.51936 15.8944 5.265 15.9998 4.99979 15.9998H2.99979C2.73457 15.9998 2.48022 15.8944 2.29268 15.7069C2.10514 15.5194 1.99979 15.265 1.99979 14.9998V8.99979H0.999787C0.802037 8.99974 0.608738 8.94107 0.444328 8.83119C0.279918 8.7213 0.151779 8.56514 0.076109 8.38244C0.000438951 8.19974 -0.0193641 7.99871 0.0192035 7.80476C0.057771 7.6108 0.152977 7.43264 0.292787 7.29279L7.29279 0.292786Z' fill='black'/%3E%3C/svg%3E");
+    
+    /* 主網對齊：邊緣距固定 24；內容寬對齊 Bootstrap／neti */
+    --section-pad-x: 24px; /* 左右最小邊緣距 */
+    --content-max: 100%; /* <576：滿寬（同 BS）*/
+    --page-top-text-width: 400px;
+    --page-top-img-max: 800px;
+}
+@media (min-width: 576px) {
+    /* :root */
+    #main
+    {
+        --content-max: 540px; /* 576–767：BS sm */
+    }
+}
+@media (min-width: 768px) {
+    /* :root */
+    #main
+    {
+        --content-max: 720px; /* 768–991 */
+    }
+}
+@media (min-width: 992px) {
+    /* :root */
+    #main
+    {
+        --content-max: 960px; /* 992–1199 */
+    }
+}
+@media (min-width: 1200px) {
+    /* :root */
+    #main
+    {
+        --content-max: 984px; /* ≥1200 */
+    }
+}
+#main .brand-dark-primary{
+    color: var(--brand-dark-primary);
+}
+/* body */
+#main
+{
+    color: var(--brand-black);
+    font-family: "Noto Sans TC";
+    background-color: var(--brand-white);
+}
+#main section,#main .section {
+    padding: 64px var(--section-pad-x);
+}
+
+#main .container {
+    display: flex;
+    width: 100%;
+    max-width: var(--content-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0 ;
+    padding-right: 0;
+}
+/* 文字 */
+#main h1{
+    font-family: "Noto Sans TC";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+#main h2,#main .h2{
+    font-family: "Noto Sans TC";
+    font-size: 1.75rem;
+    /* 28px */
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+#main h3,#main .h3{
+    font-family: "Noto Sans TC";
+    font-size: 1.25rem;
+    /* 20px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+#main h4,#main .h4{
+    font-family: "Noto Sans TC";
+    font-size: 0.875rem; 
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+#main p,#main .p,#main li{
+    font-family: "Noto Sans TC";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5; 
+}
+#main ul li::marker{font-size: 0.625rem;}
+#main p:last-child,#main li:last-child,#main ol:last-child,#main ul:last-child{
+    margin-bottom: 0;
+}
+#main a{
+    color: var(--brand-dark-primary);
+    font-family: "Noto Sans TC";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75;
+}
+#main .description{
+    font-family: "Noto Sans TC";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.66667; 
+}
+#main .section-title {
+    font-weight: 700;
+    display: inline-block; 
+    width: fit-content;
+    padding: 16px 0 4px 0;
+    border-top: 2px solid var(--brand-dark-primary);
+    gap: 10px;
+    color: var(--brand-dark-primary);
+    margin-bottom: 0;
+}
+#main .sections-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+#main .sections-container .container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+/* 圖片 */
+#main picture{
+    display: block;
+    max-width: 100%;
+}
+#main img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+#main .bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    pointer-events: none;
+}
+#main .bg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* max-width: none; */
+    object-fit: cover;
+    object-position: center top;
+}
+
+#main section:has(.bg) {
+    position: relative;
+    overflow: hidden;
+}
+
+#main section:has(.bg) > .bg-uplayer {
+    position: relative;
+    z-index: 1;
+}
+/* 組件 */
+#main .btn{
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 8px 8px 12px;
+    gap: 4px;
+    border-radius: 4px;
+
+}
+/* 讓按鈕／手風琴 header 文字視覺上垂直置中（勿加在 button 本身，transform 易造成展開時頁面跳動） */
+#main .btn-label,
+#main .faq-question-label{
+    display: inline-block;
+    transform: translateY(-1px);
+}
+#main .btn-primary{
+    background-color: var(--brand-primary);
+    color: var(--white);
+    border: none;
+
+}
+#main .btn-primary:hover,#main .btn-primary:active,#main .btn-primary:focus{
+    background-color: var(--brand-dark-primary);
+}
+#main .btn-primary.btn-icon::after{
+    background-color: var(--white);
+}
+#main .btn-secondary{
+    border: 1px solid var(--brand-primary);
+    background-color: var(--white);
+    color: var(--brand-black);
+}
+#main .btn-secondary:hover,#main .btn-secondary:active,#main .btn-secondary:focus{
+    border: 1px solid var(--Brand-Primary, #35A97C);
+    background-color: var(--gray-200);
+    color: var(--brand-black);
+}
+
+/* Heroicons: arrow-top-right-on-square (outline) */
+#main .btn-icon{
+    line-height: 1;
+}
+#main .btn-icon::after {
+    align-self: center;
+    content: "";
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    padding: 5px;
+    flex-shrink: 0;
+    background-color: var(--brand-dark-primary);
+}
+#main .btn-icon-arrow-right-mini::after {
+    -webkit-mask: var(--icon-arrow-right-mini) no-repeat center / contain;
+    mask: var(--icon-arrow-right-mini) no-repeat center / contain;
+    padding: 0;
+}
+
+#main .btn-icon-arrow-top-right-mini::after {
+    -webkit-mask: var(--icon-arrow-top-right-mini) no-repeat center / contain;
+    mask: var(--icon-arrow-top-right-mini) no-repeat center / contain;
+}
+/* 捐款方案卡片 */
+
+
+/* faq */
+#main .accordion{
+    width: 100%;
+}
+#main .faq .accordion-item{
+    border-radius: 8px;
+    border: 1px solid var(--brand-dark-primary);
+    overflow: hidden;
+}
+#main .accordion-item,#main .accordion-body,#main .accordion-header{
+    background-color: var(--brand-white);
+}
+/* 手風琴共用：避免 flex min-height 擋收合、展開時 scroll anchoring 造成下滑 */
+#main .accordion .accordion-collapse{
+    min-height: 0;
+    overflow-anchor: none;
+}
+#main .accordion-item:first-of-type {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+#main .faq .accordion-item:not(:first-of-type) {
+    border-top: 1px solid var(--brand-dark-primary);
+}
+#main .faq .accordion-header {
+    margin-bottom: 0;
+    padding: 8px 16px;
+    background-color: var(--brand-white);
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+#main .faq .accordion-body{
+    padding: 8px 16px;
+    background-color: var(--brand-white);
+    color: var(--black);
+    transition: opacity 0.3s ease;
+}
+
+#main .faq .accordion-header button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    transition: color 0.35s ease;
+}
+
+/* 展開前／後：箭頭底色透明，圖示來自 SVG */
+#main .accordion-header button.collapsed::after,
+#main .accordion-header button:not(.collapsed)::after {
+    content: "";
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-mask: none;
+    mask: none;
+}
+#main .accordion-header button.collapsed::after {
+    background-image: var(--icon-chevron-down);
+}
+#main .accordion-header button:not(.collapsed)::after {
+    background-image: var(--icon-chevron-up);
+}
+#main .faq .accordion-header button.collapsed {
+    color: var(--black);
+}
+#main .faq .accordion-header:has(button:not(.collapsed)) {
+    background-color: var(--brand-dark-primary);
+    color: var(--white);
+}
+
+#main .faq .accordion-header:has(button:not(.collapsed)) button {
+    color: var(--white);
+}
+
+#main .faq .accordion-collapse.collapsing {
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#main .faq .accordion-collapse:not(.show):not(.collapsing) .accordion-body {
+    opacity: 0;
+}
+#main .faq .container{
+    display: flex;
+    flex-direction: column;
+    gap:24px ;
+    align-items: flex-start;
+}
+#main .faq .accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+#main .faq p{
+    margin-bottom: 0;
+}
+#main .faq button{
+    padding: 0;
+    align-items: center;
+}
+/* ========================================
+   breadcrumb
+======================================== */
+#main .breadcrumb{
+    line-height: 1;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+}
+#main .breadcrumb p,
+#main .breadcrumb .breadcrumb-separator,
+#main .breadcrumb .breadcrumb-current {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+    font-weight: 400;
+    line-height: 1.25rem; 
+    margin: 0;
+}
+#main .breadcrumb-home{
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+#main .breadcrumb-home:focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+#main .breadcrumb-home:focus:not(:focus-visible) {
+    outline: none;
+}
+#main .breadcrumb-home::before {
+    content: "";
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    flex-shrink: 0;
+    -webkit-mask: var(--icon-home-mini) no-repeat center / contain;
+    mask: var(--icon-home-mini) no-repeat center / contain;
+    background-color: var(--brand-dark-primary);
+}
+#main .breadcrumb-home:hover::before{
+    background-color: var(--brand-primary);
+}
+/* ========================================
+   Section: page-top-container　有麵包屑和標題的頁面
+   共用內容欄 grid：文字左緣對齊其他 section 的 .container；
+   圖片可向右出血。左右 gutter 由 grid 第一／末欄承擔。
+======================================== */
+#main section:has(.page-top-container){
+    padding-left: 0;
+    padding-right: 0;
+}
+#main .container.page-top-container{
+    display: grid;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    column-gap: 0;
+    row-gap: 40px;
+    min-width: 0;
+    /*
+      1: 左 spacer = 置中 content 欄起點
+      2: 主網內容寬（與 .container 相同）
+      3: 右側剩餘（圖片出血）
+    */
+    grid-template-columns:
+        max(var(--section-pad-x), calc((100% - var(--content-max)) / 2))
+        min(var(--content-max), calc(100% - 2 * var(--section-pad-x)))
+        minmax(0, 1fr);
+}
+#main .page-top-text-container{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    min-width: 0;
+}
+#main .page-top-text-group-2 h1{
+    margin-bottom: 0;
+}
+#main .page-top-text-group-2 h2,
+#main .page-top-text-group-2 > .h3{
+    margin-bottom: 0;
+    color: var(--brand-dark-primary);
+}
+#main .page-top-text-group-2{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#main .page-top-img-container{
+    grid-column: 2 / -1;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    border-radius:8px 0 0 8px ;
+    overflow: hidden;
+}
+#main .page-top-img-container img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; 
+    object-fit: cover;
+}
+@media (min-width: 992px) {
+    #main .container.page-top-container{
+        align-items: start;
+        container-type: inline-size;
+        container-name: page-top;
+        /*
+          1: 左 spacer（對齊主網）
+          2: 文字欄
+          3: 文／圖間距
+          4: 圖片（上限 --page-top-img-max）
+          5: 右側剩餘
+        */
+        grid-template-columns:
+            max(var(--section-pad-x), calc((100% - var(--content-max)) / 2))
+            var(--page-top-text-width)
+            40px
+            minmax(0, var(--page-top-img-max))
+            minmax(0, 1fr);
+    }
+    #main .page-top-text-container{
+        grid-column: 2;
+    }
+    #main .page-top-img-container{
+        grid-column: 4;
+    }
+}
+@media (max-width: 991.98px) {
+    #main section:has(.page-top-container){
+        padding-left: var(--section-pad-x);
+        padding-right: var(--section-pad-x);
+    }
+    #main .container.page-top-container{
+        width: 100%;
+        max-width: var(--content-max);
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+    #main .page-top-text-container{
+        grid-column: 1;
+    }
+    #main .page-top-img-container{
+        grid-column: 1;
+        border-radius: 8px;
+    }
+}
+@container page-top (min-width: 1497px) {
+    #main .page-top-img-container{
+        border-radius: 8px;
+    }
+}
+/* ========================================
+   Component: cta-img-container
+   圖片容器，圖片比例為 16:9
+======================================== */
+#main .cta-img-container{
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+#main .cta-img-container img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+/* ========================================
+   Component: content-tabs
+   Bootstrap Tab + 水平捲動導覽 + 下方內容面板
+======================================== */
+#main .content-tabs-wrap {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Overflow arrows (PyMdown/Material alternate tabs pattern):
+   show ‹ on the left / › on the right only when that side can still scroll. */
+#main .content-tabs-wrap::before,
+#main .content-tabs-wrap::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 2;
+    color: var(--brand-primary);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+#main .content-tabs-wrap::before {
+    content: "‹";
+    left: 0;
+    justify-content: flex-start;
+    padding-left: 2px;
+    background: linear-gradient(to right, var(--brand-white) 55%, transparent);
+}
+
+#main .content-tabs-wrap::after {
+    content: "›";
+    right: 0;
+    justify-content: flex-end;
+    padding-right: 2px;
+    background: linear-gradient(to left, var(--brand-white) 55%, transparent);
+}
+
+#main .content-tabs-wrap.is-scrollable-left::before,
+#main .content-tabs-wrap.is-scrollable-right::after {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Backward-compatible class names used by older pages */
+#main .content-tabs-wrap.is-scrollable.is-scrolled-left::before {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#main .content-tabs-wrap.is-scrollable:not(.is-scrolled-end)::after {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#main .content-tabs-wrap.is-scrollable.is-scrolled-end::after {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#main .content-tabs-nav {
+    gap: 16px;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    padding: 0;
+    border-bottom: 1px solid var(--gray-400);
+}
+
+#main .content-tabs-nav::-webkit-scrollbar {
+    display: none;
+}
+
+#main .content-tabs-nav .nav-item {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    margin-bottom: 0;
+}
+
+#main .content-tabs-nav .nav-link {
+    margin: 0 0 -1px;
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: none;
+    color: var(--gray-700);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    white-space: nowrap;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+#main .content-tabs-nav .nav-link:hover,
+#main .content-tabs-nav .nav-link:focus {
+    color: var(--gray-700);
+    background: none;
+    border-bottom-color: var(--brand-primary);
+    isolation: auto;
+}
+
+#main .content-tabs-nav .nav-link.active {
+    color: var(--brand-black);
+    background: none;
+    border-bottom-color: var(--brand-primary);
+}
+
+/* Neutralize Bootstrap .nav-tabs defaults when combined with content-tabs-nav */
+#main .content-tabs-nav.nav-tabs {
+    border-bottom-color: var(--gray-400);
+}
+
+#main .content-tabs-nav.nav-tabs .nav-link {
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+}
+
+#main .content-tabs-nav.nav-tabs .nav-link:hover,
+#main .content-tabs-nav.nav-tabs .nav-link:focus,
+#main .content-tabs-nav.nav-tabs .nav-link.active {
+    background: none;
+    border-color: transparent transparent var(--brand-primary);
+}
+
+#main .content-tabs-panels {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* ========================================
+   Section: landing page 外連
+======================================== */
+#main .landing-page-container{
+    display: grid;
+    grid-template-columns: 1fr ; 
+    gap: 40px;
+}
+@media (min-width: 768px) {
+    #main .landing-page-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+#main .landing-page-title{
+    font-weight: 700;
+}
+#main .landing-page-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#main .landing-page-text-container h2{
+    margin-bottom: 16px;
+}
+#main .landing-page-text-container p{
+    margin-bottom: 24px;
+}
+#main .landing-page-container .btn{
+    width: fit-content;
+}
+/* ========================================
+   Component: 其他元件
+======================================== */
+#main .impact{
+    padding: 24px;
+    border-radius: 8px;
+}
+#main .impact-title{
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--brand-dark-primary);
+}
+/* ========================================
+   Component:  
+======================================== */
+#main .action-container{
+    display: grid;
+     
+}
+
+/* ========================================
+   Component: donation-box（捐款表單）
+======================================== */
+#main .donation-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 24px;
+    background-color: var(--white);
+    border-radius: 4px;
+}
+#main .donation-box__title{
+    color: var(--brand-black);
+    margin-bottom: 8px !important;
+}
+#main .donation-box__tabs{
+    display: flex;
+    width: 100%;
+    margin-bottom: 24px;
+    border: 1px solid var(--brand-primary);
+    border-radius: 4px;
+    overflow: hidden;
+}
+#main .donation-box__tab{
+    flex: 1 1 0;
+    /* min-height: 44px; */
+    padding: 8px 12px;
+    border: none;
+    border-right: 1px solid var(--brand-primary);
+    background-color: var(--white);
+    color: var(--brand-primary);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+#main .donation-box__tab:last-child{
+    border-right: none;
+}
+#main .donation-box__tab.is-active{
+    background-color: var(--brand-primary);
+    color: var(--white);
+}
+#main .donation-box__tab:focus-visible{
+    outline: 2px solid var(--brand-dark-primary);
+    outline-offset: -2px;
+    z-index: 1;
+}
+#main .donation-box__tab:focus:not(:focus-visible){
+    outline: none;
+}
+#main .donation-box__panel{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 24px;
+}
+#main .donation-box__subtitle{
+    color: var(--brand-dark-primary);
+    margin-bottom: 8px !important;
+}
+#main .donation-box__amount-list{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+#main .donation-box__amount-list > li:not(:last-child){
+    border-bottom: 1px solid var(--gray-400);
+}
+#main .donation-box__amount-option{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+}
+#main .donation-box__amount-option:focus-visible{
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+#main .donation-box__amount-option:focus:not(:focus-visible){
+    outline: none;
+}
+#main .donation-box__amount-value{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 72px;
+}
+#main .donation-box__currency{
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--gray-600);
+}
+#main .donation-box__number{
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--brand-black);
+    transition: color 0.2s ease;
+}
+#main .donation-box__amount-option.is-active .donation-box__number{
+    color: var(--brand-primary);
+}
+#main .donation-box__amount-desc{
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--brand-black);
+}
+#main .donation-box__custom{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#main .donation-box__custom-label{
+    flex-shrink: 0;
+    margin-bottom: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--brand-dark-primary);
+}
+#main .donation-box__custom-input{
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid var(--gray-400);
+    border-radius: 4px;
+    background-color: var(--white);
+    color: var(--brand-black);
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+#main .donation-box__custom-input::placeholder{
+    color: var(--gray-600);
+}
+#main .donation-box__custom-input:focus{
+    outline: none;
+    border-color: var(--brand-primary);
+}
+#main .donation-box__submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 16px;
+    border-radius: 4px;
+}
+#main .donation-box__submit.btn-primary.btn-icon::after{
+    background-color: var(--white);
+}
+
+
+
+/* new-free-web/about-us-ch/about-us-ch_scoped.css */
+#main #about-us-ch .impact{
+    background-color: var(--brand-background-green);
+
+}
+@media (min-width: 992px) {
+    #main #about-us-ch .page-top-img-container {
+      position: sticky;
+      top: 24px;           /* 距視窗頂部的留白，依設計調整 */
+      align-self: flex-start; /* 雙重保險，避免被 flex 撐高 */
+    }
+  }
+/* ========================================
+   Section: 工作業務
+======================================== */
+#main #our-works{
+    background-color: var(--brand-background-green);
+}
+#main #our-works .container{
+    flex-direction: column;
+}
+#main #our-works .content-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+#main #our-works .content-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+@media (min-width: 768px) {
+    #main #our-works .content-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+#main #our-works .content-item-icon{
+    align-self: start;
+}
+/* ========================================
+   Section: 成立背景
+======================================== */
+#main #org-bg{
+    background-color: var(--brand-background-yellow);
+}
+#main #org-bg .container{
+    flex-direction: column;
+    gap: 24px;
+}
+#main #org-bg .action-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+#main #org-bg .action-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#main #org-bg .action-item-icon{
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+#main #org-bg .action-item-icon img{
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#main #org-bg .action-item-body{
+    width: 100%;
+    padding: 24px;
+    background-color: var(--brand-white);
+}
+@media (min-width: 768px) {
+    #main #org-bg .action-container{
+        gap: 24px;
+    }
+    #main #org-bg .action-item{
+        flex-direction: row;
+        align-items: stretch;
+    }
+    #main #org-bg .action-item:nth-child(even){
+        flex-direction: row-reverse;
+    }
+    #main #org-bg .action-item-icon {
+        flex: 0 0 379px;
+        width: 379px;
+        aspect-ratio: auto;
+        align-self: stretch;
+    }
+    #main #org-bg .action-item-icon img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #main #org-bg .action-item-body {
+        flex: 1;
+        min-width: 0;
+    }
+}
+/* ========================================
+   Section: 董監事成員
+======================================== */
+#main #d-and-s .container{
+    flex-direction: column;
+}
+#main #d-and-s .section-title{
+    margin-bottom: 40px;
+}
+#main .person-card-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+}
+@media (min-width: 768px) {
+    #main .person-card-container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 64px;
+    }
+}
+#main .person-card{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+#main .person-card-img-container{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#main .person-card-img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#main .person-title .name{
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+#main .person-title .description{
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.66667;
+    color: var(--gray-700);
+}
+
+/* share-css/fix.css */
+.path-node:not(.node--type-landing) #main.container {
+    max-width: none;
+    padding: 0;
+}
+
+/* 取消 Bootstrap .row 預設 */
+#main > .row {
+    margin-left: 0;
+    margin-right: 0;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+
+/* 一併取消 #content 上 .col 的左右 padding */
+#content.col {
+    padding-left: 0;
+    padding-right: 0;
+}
+#main section.content-inner.section{
+    padding: 0;
+}
+
+#main h3, #main h2 {
+    width: 100%;
+    border: none;
+}
+#main .node__content{
+    margin-top: 0;
+}
+.text-formatted h2, .text-formatted h3, .ck.ck-content h2, .ck.ck-content h3 {
+    width: fit-content;
+    margin-block: 0;
+}
+        
+</style>
 <section id="about-us-ch">
         <div class="container page-top-container">
             <div class="page-top-text-container">
@@ -237,7 +1343,7 @@
                 {
                     name: '李根政董事長',
                     description: '跨環境生態、政治等運動領域的資深組織與倡議工作者；擅長書法與繪畫的藝術家；《台灣山林百年紀》、《此岸與彼岸：一個社會運動的身心之旅》作者。',
-                    imageSlug: '20260803-temp',
+                    imageSlug: '20260827-about-p1',
                     paragraphs: [
                         '我深信：以台灣的經濟實力、創造力和努力，一定可以維護這個群島國家的生機盎然，滿足當代基本需求，保留未來世代的生存發展。',
                         '我們需要體認到自身責任，採取有自覺有智慧的公民行動；面對衝突透過對話共尋解方，同步達成深化民主與環境永續。'
@@ -246,7 +1352,7 @@
                 {
                     name: '林子琳董事',
                     description: '律師，之前曾在環境法律人協會擔任秘書長，在律師執業的生涯中都跟 NGO 有各種關連。喜歡跟人有關的案件，所以心力大多放在處理性別、家事案件。',
-                    imageSlug: '20260803-temp',
+                    imageSlug: '20260827-about-p2',
                     paragraphs: [
                         '臺灣雖小，卻充滿強韌的生命力。',
                         '相信臺灣人的民主素養與智慧，能以理性的公民行動深化治理，守護寶貴的環境資源。讓這座島嶼的永續轉型，成為我們跟世界一起前進的力量。'
@@ -255,7 +1361,7 @@
                 {
                     name: '潘怡庭董事',
                     description: '在都市裡長大，心裡卻渴望連結土地。回鄉生活後，努力把母語講回來，想在這片土地上深深扎根。是個練習溫柔對待環境，溫柔對待他人，也溫柔對待自己的人。',
-                    imageSlug: '20260803-temp',
+                    imageSlug: '20260827-about-p3',
                     paragraphs: [
                         '希望有緣能一同身為台灣人的大家，能體認到我們只是地球上短短的過客，感謝祖先們辛勤耕耘留下來有形無形的財富、奮不顧身爭取來的民主自由。',
                         '期許我們心執善念，踏踏實實地過活，成為後代台灣人驕傲的祖先。'
@@ -264,7 +1370,7 @@
                 {
                     name: '戴興盛董事',
                     description: '在學術界服務的環境治理研究者，也期許自己是能和眾多志同道合公民一起合作、解決環境永續問題的行動者。',
-                    imageSlug: '20260803-temp',
+                    imageSlug: '20260827-about-p4',
                     paragraphs: [
                         '我們有幸生活在物質充沛的工業化民主社會中，這並非大部分地球上的人們所能享受到的生活，因此我們也對地球的現狀與永續未來，應負擔對等的責任。',
                         '讓我們盡最大努力降低對台灣、以及其他國家的環境生態壓力。作為公民，我們在思考環境議題時，也要同時兼顧台灣與地球上其他國家社會生態系統的整體福祉。'
@@ -273,7 +1379,7 @@
                 {
                     name: '潘致遠董事',
                     description: '因賞鳥而開始關心臺灣自然生態的家庭醫學科醫師。擔心在經濟快速發展下，生態遭受過多破壞，因而開始實地參與環境生態保護運動。',
-                    imageSlug: '20260803-temp',
+                    imageSlug: '20260827-about-p5',
                     paragraphs: [
                         '讓我們在各種議題上，能夠傾聽不同角度的聲音，明白不同選擇帶來的優缺點後，再下判斷。以對地球能永續發展為最重要的考量，不要單純以特定立場來做判斷。',
                         '讓我們對理性優質的公民團體，有更多的包容與實際的捐款支持。畢竟沒有十全十美的人，也沒有十全十美的公民團體。'
@@ -282,7 +1388,7 @@
                 {
                     name: '傅志男董事',
                     description: '資深環境教育工作者、高雄市國教輔導團環境教育議題榮譽輔導員、玉山國家公園解說志工。',
-                    imageSlug: '20260803-temp',
+                    imageSlug: '20260827-about-p6',
                     paragraphs: [
                         '台灣生態特殊，有「生物界諾亞方舟」之稱，人文也是多樣而美好。我們應該多學習認識台灣的美好，才會更有動力保護環境。',
                         '讓我們認清自己的責任，不只是選舉時投票，而是平常就多關心公共事務，若能支持和加入 NGO 行動，越多的一群人，就更可能推動更好的政策來保護我們的環境和民主。'
@@ -290,10 +1396,11 @@
                 },
                 {
                     name: '邱花妹董事',
-                    description: '真的有存在的董事',
-                    imageSlug: '20260803-temp',
+                    description: '解嚴後投身反核等環境社運，後任獲獎媒體人為環境發聲。進入學界後倡議環境正義與公正轉型，並參與創辦地球公民協會與南方修理聯盟的環境社會學者。',
+                    imageSlug: '20260827-about-p7',
                     paragraphs: [
-                        '只是一直沒有時間繳交資料和照片'
+                        '理解環境風險與惡果，常沿著既有社會不平等分配，在思考如何落實環境解方時，能納入環境正義、氣候正義與世代正義的價值原則與規範性關懷。',
+                        '面對島國台灣與地球超限的現況，反思人類、科技與發展的有限性，積極共思永續解方、探找轉型路徑，以行動修復人與人、人與自然的關係。'
                     ]
                 }
             ];
