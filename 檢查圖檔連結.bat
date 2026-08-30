@@ -8,6 +8,13 @@ cd /d "%~dp0tools"
 
 echo 使用 Python：%PYTHON%
 echo.
+echo 將檢查 HTML / CSS / JS 內的所有連結（含 script 字串中的網址）。
+echo 接著會跳出視窗，請選擇資料夾；會自動檢查其中（含子資料夾）所有 HTML / CSS / JS。
+echo 會略過檔名為 *_merge.html、*_scoped.css 的檔案。
+echo cet-taiwan.org 會以 guest / cet 驗證，並略過過期的 HTTPS 憑證。
+echo 官網連結會逐筆檢查，每 10 筆隨機暫停約 1–4 秒，降低被封鎖的機會。
+echo 不需要手動輸入路徑或逐一選檔。
+echo.
 
 echo ========================================
 echo   相對路徑的網站根網址
