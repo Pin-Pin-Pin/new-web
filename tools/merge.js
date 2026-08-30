@@ -22,20 +22,22 @@
  *   · prod：
  *       - target=html：本地 CSS／JS 內嵌進輸出
  *         CSS → <style type="text/css">；JS → <script> 內嵌
- *       - target=body：本地 CSS 仍以 <link> 保留（改指向 *_scoped.css 相對路徑）；
- *         本地 JS 仍內嵌
+ *       - target=body：本地 CSS／JS 內嵌（貼 CMS）
+ *         CSS 依 <link> 原順序插入 <style type="text/css">（*_scoped.css；不存在則報錯）；
+ *         本地 JS 內嵌進 <script>（不用 *_scoped）
  *   · dev：將本地相對路徑改寫為 jsDelivr：
  *       https://cdn.jsdelivr.net/gh/Pin-Pin-Pin/new-web@{使用者輸入的tag}/{repo相對路徑}
  *     tag 由 CLI 第 3 參數或 merge.bat 提示輸入；不可省略。
  *   · 不論 mode／target，一律再附上 share-css/fix.css（若頁面尚未引用）：
- *       - html+prod → 併入 <style> 末尾
- *       - 其餘 → 追加 <link rel="stylesheet">（body：接在本地 CSS 後；html+dev：接在 head 末）
+ *       - html+prod、body+prod → 併入 <style> 末尾
+ *       - body+dev → 追加 <link>（接在本地 CSS 後）
+ *       - html+dev → 追加 <link>（接在 head 末）
  *   · 本地 CSS 自動改用 scoped 版本（若不存在則報錯）：
- *       - share-css/share.css → share-css/share_scoped.css
- *       - share-css/donate.css → share-css/donate_scoped.css
- *       - {資料夾名}.css → {資料夾名}_scoped.css
- *       - 已是 *_scoped.css 或其他 CSS 則不改
+ *       - foo.css → foo_scoped.css
+ *       - 已是 *_scoped.css 則不改
  *       - 例外：頁面位於 landing-page/ 底下時，一律使用原 CSS（不用 *_scoped.css）
+ *       - 例外：merge 自動追加的 share-css/fix.css 維持原檔（無 scoped）
+ *       - 本地 JS 不使用 *_scoped
  *
  * 【輸出範圍 target】
  *   · body：只輸出 <body>…</body>（批次 new-free-web）
@@ -44,12 +46,13 @@
  *       - Google Fonts Noto Sans TC：CMS 已有 300／400／500，body 輸出只保留其餘字重
  *         （例如原 300;400;500;700 → 只輸出 700，並保留 display=swap；
  *          若無額外字重則整段 <link>／@import 略過）
- *       - 本地 CSS 一律保留為 <link>（不內嵌），並改用 *_scoped.css：
- *         prod → 相對路徑；dev → jsDelivr CDN
+ *       - 本地 CSS：
+ *         prod → 依序內嵌進 <style>（*_scoped.css；不存在則報錯）
+ *         dev → 保留為 <link>（*_scoped.css 的 jsDelivr CDN）
  *       - body 開頭依 head 原順序放入：
  *         1) 第三方 stylesheet <link>（如 Google Fonts；不含 Bootstrap）
- *         2) 本地 CSS <link>（*_scoped）
- *         3) fix.css <link>
+ *         2) 本地 CSS：prod 為 <style> 內嵌；dev 為 <link>（*_scoped）
+ *         3) fix.css：prod 併入同一個 <style> 末尾；dev 為 <link>
  *       - 腳本集中到 body 末尾：
  *         先 head 內的 script，再原 body 內 script，順序不變
  *         （第三方 script 以外連保留，但 Bootstrap JS 略過；
@@ -339,9 +342,6 @@ function removeLocalStylesheetLinks(headContent, htmlDir) {
   });
 }
 
-/** merge 時要改指向 *_scoped.css 的共用 CSS 檔名（小寫） */
-const SCOPED_SHARED_CSS = new Set(['share.css', 'donate.css']);
-
 /** 頁面資料夾是否在 landing-page/ 底下（此區不用 scoped CSS） */
 function isLandingPageFolder(absFolder, repoRoot) {
   const rel = toPosix(path.relative(repoRoot, absFolder));
@@ -350,23 +350,16 @@ function isLandingPageFolder(absFolder, repoRoot) {
 }
 
 /**
- * share.css / donate.css → *_scoped.css；{pageBasename}.css → {pageBasename}_scoped.css
- * 已是 *_scoped.css、其他檔名、或 useScoped=false（landing-page）則原樣回傳。
+ * 本地 CSS → *_scoped.css。
+ * 已是 *_scoped.css、或 useScoped=false（landing-page）則原樣回傳；找不到則報錯。
  */
-function resolveMergeCssPath(absCssPath, pageBasename, useScoped = true) {
-  if (!useScoped) return absCssPath;
-
+function resolveMergeCssPath(absCssPath, _pageBasename, useScoped = true) {
   const ext = path.extname(absCssPath);
-  if (ext.toLowerCase() !== '.css') return absCssPath;
+  if (ext.toLowerCase() !== '.css' || !useScoped) return absCssPath;
 
   const dir = path.dirname(absCssPath);
   const base = path.basename(absCssPath, ext);
   if (/_scoped$/i.test(base)) return absCssPath;
-
-  const fileName = path.basename(absCssPath).toLowerCase();
-  const isSharedCss = SCOPED_SHARED_CSS.has(fileName);
-  const isPageCss = fileName === `${String(pageBasename || '').toLowerCase()}.css`;
-  if (!isSharedCss && !isPageCss) return absCssPath;
 
   const scopedAbs = path.join(dir, `${base}_scoped${ext}`);
   if (!fs.existsSync(scopedAbs) || !fs.statSync(scopedAbs).isFile()) {
@@ -602,7 +595,8 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
 
   const htmlDir = absFolder;
   const useScoped = !isLandingPageFolder(absFolder, repoRoot);
-  const keepCssAsLinks = target === 'body';
+  // body+dev：本地 CSS 仍用 <link>（CDN）；body+prod／html+prod：內嵌進 <style>
+  const keepCssAsLinks = target === 'body' && mode === 'dev';
   const links = extractStylesheetLinks(headContent);
   const { styleParts, cssLinks } = collectLocalCss({
     links,
@@ -623,7 +617,7 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
     htmlDir,
     asLink: keepCssAsLinks,
   });
-  // body：CSS 一律用 <link>；html+prod：fix 併入 style；html+dev：fix 追加 link
+  // body+dev：CSS／fix 用 <link>；body+prod／html+prod：fix 併入 style；html+dev：fix 追加 link
   if (target === 'body' || mode === 'prod') {
     if (fixCss.stylePart) styleParts.push(fixCss.stylePart);
     if (fixCss.linkHtml) cssLinks.push(fixCss.linkHtml);
@@ -654,11 +648,18 @@ function mergeFile({ folderPath, mode, target, tag: tagInput }) {
   let output;
 
   if (target === 'body') {
-    // body：頁內 CSS 的 Noto @import 也只保留額外字重（本地 CSS 已改為 <link>）
+    // body：頁內／內嵌 CSS 的 Noto @import 也只保留額外字重
     bodyWithoutScripts = rewriteNotoSansTcImportsInCssForBody(bodyWithoutScripts);
+    const inlinedStyleParts = styleParts.map(rewriteNotoSansTcImportsInCssForBody);
 
     const vendorLinks = extractHeadLinksForBody(headContent);
-    const headPrefix = [...vendorLinks, ...cssLinks].filter(Boolean).join('\n');
+    const headPrefix = [
+      ...vendorLinks,
+      inlinedStyleParts.length ? buildStyleBlock(inlinedStyleParts) : '',
+      ...cssLinks,
+    ]
+      .filter(Boolean)
+      .join('\n');
 
     output = buildBodyHtml({
       bodyAttrs: body.attrs,
