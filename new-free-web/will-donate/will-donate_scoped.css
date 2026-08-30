@@ -1,0 +1,296 @@
+/* ========================================
+   Section: share-content
+======================================== */
+#main .share-content {
+    padding-bottom: 80px;
+}
+
+#main .section-title {
+    border-top: 2px solid var(--brand-dark-primary);
+    margin-bottom: 24px;
+}
+
+#main .share-content .share-content-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Mobile (<768): accordion only / Desktop (≥768): tabs only */
+#main .share-topics-tabs {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#main .share-topics-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    color: var(--black);
+}
+
+#main .share-topics-accordion .accordion-item {
+    border-radius: 8px;
+    border: 1px solid var(--brand-dark-primary);
+    overflow: hidden;
+}
+/* flex item 預設 min-height:auto 會擋住 Bootstrap 收合到 height:0 */
+#main .share-topics-accordion .accordion-collapse {
+    min-height: 0;
+    overflow-anchor: none;
+}
+
+#main .share-topics-accordion .accordion-header {
+    margin-bottom: 0;
+    padding: 8px 16px;
+    background-color: var(--brand-white);
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+#main .share-topics-accordion .accordion-header button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: left;
+    color: var(--black);
+    transition: color 0.35s ease;
+    cursor: pointer;
+}
+
+#main .share-topics-accordion .accordion-header:has(button:not(.collapsed)) {
+    background-color: var(--brand-dark-primary);
+    color: var(--white);
+}
+
+#main .share-topics-accordion .accordion-header:has(button:not(.collapsed)) button {
+    color: var(--white);
+}
+
+#main .share-topics-accordion .accordion-body {
+    padding: 0;
+    background-color: var(--brand-white);
+    color: var(--black);
+}
+
+#main .share-topics-accordion .accordion-collapse.collapsing {
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#main #shareTab {
+    justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+    #main .share-topics-accordion {
+        display: none;
+    }
+
+    #main .share-topics-tabs {
+        display: flex;
+    }
+
+    #main #shareTab {
+        justify-content: center;
+    }
+
+    /* Equal-height panels: stack all panes in one grid cell.
+       Note: no Bootstrap .tab-content class — that rule uses display:none and would
+       remove inactive panes from height calculation. */
+    #main .share-content #shareTabContent.content-tabs-panels {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+    }
+
+    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    #main .share-content #shareTabContent.content-tabs-panels > .tab-pane.active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 1;
+    }
+
+    #main .share-content #shareTabContent .content-tab-card {
+        height: 100%;
+    }
+}
+
+#main .content-tab-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    background-color: var(--brand-background-green);
+}
+
+#main .content-tab-text {
+    padding: 24px 16px;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    background-color: var(--brand-background-green);
+}
+
+#main .content-tab-block + .content-tab-block {
+    margin-top: 24px;
+}
+
+#main .content-tab-text h3 {
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+#main .content-tab-text p {
+    margin-bottom: 0;
+}
+
+#main .content-tab-text p + p {
+    margin-top: 16px;
+}
+
+#main .content-tab-img {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+#main .content-tab-img picture {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+#main .content-tab-img img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+/* topic-2 */
+#main .content-tab-img--topic-2 img {
+    object-position: top center;
+}
+/* topic-4 */
+#main .content-tab-img--topic-4 img {
+    object-position: top;
+}
+
+@media (max-width: 991.98px) {
+    #main .content-tab-img img {
+        aspect-ratio: 4/3;
+    }
+}
+
+@media (min-width: 768px) {
+    #main .content-tab-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #main .content-tab-img {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding:40px 40px 0 40px;
+    }
+
+    #main .content-tab-img picture {
+        height: 100%;
+    }
+
+    #main .content-tab-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #main .content-tab-text {
+        padding: 40px;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    #main .content-tab-card {
+        flex-direction: row;
+    }
+
+    #main .content-tab-img {
+        aspect-ratio: 379 / 284;
+        flex: 0 0 379px;
+        width: 379px;
+        max-width: 379px;
+        padding: 0;
+        border-radius: 8px 0 0 8px;
+    }
+
+    #main .content-tab-text {
+        border-radius: 0 8px 8px 0;
+    }
+}
+
+/* ========================================
+   Section: donate-way
+======================================== */
+#main .donate-way {
+    /* padding-top: 0; */
+    padding-bottom: 80px;
+    background-color: var(--brand-background-green);
+}
+
+#main .donate-way .container {
+    display: block;
+}
+
+#main .donate-way ol {
+    margin-bottom: 0;
+    padding-left: 1rem;
+}
+#main .donate-way-label {
+    font-weight: 700;
+    color: var(--brand-dark-primary);
+    margin-bottom: 0;
+}
+/* ========================================
+   Section: cet-info & contact-us
+======================================== */
+#main .cet-info .container, #main .contact-us .container {
+    flex-direction: column;
+}
+#main .contact-us {
+    background-color: var(--brand-background-green);
+}
+
+
+/* ========================================
+   Section: faq
+======================================== */
+#main .faq {
+    /* padding-top: 0; */
+}
+
+#main .faq .accordion {
+    color: var(--black);
+}
