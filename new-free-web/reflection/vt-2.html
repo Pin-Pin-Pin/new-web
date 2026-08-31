@@ -2,24 +2,84 @@
     #main{
         padding-bottom: 64px;
         padding-top: 64px;
+        --brand-primary: #35A97C;
+        --brand-dark-primary: #55716C;
+        --white: #FFFFFF;
+        --icon-arrow-top-right-mini: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.22032 14.78C5.36094 14.9205 5.55157 14.9993 5.75032 14.9993C5.94907 14.9993 6.13969 14.9205 6.28032 14.78L13.5003 7.56V13.25C13.5003 13.4489 13.5793 13.6397 13.72 13.7803C13.8606 13.921 14.0514 14 14.2503 14C14.4492 14 14.64 13.921 14.7806 13.7803C14.9213 13.6397 15.0003 13.4489 15.0003 13.25V5.75C15.0003 5.55109 14.9213 5.36032 14.7806 5.21967C14.64 5.07902 14.4492 5 14.2503 5H6.75032C6.5514 5 6.36064 5.07902 6.21999 5.21967C6.07933 5.36032 6.00032 5.55109 6.00032 5.75C6.00032 5.94891 6.07933 6.13968 6.21999 6.28033C6.36064 6.42098 6.5514 6.5 6.75032 6.5H12.4403L5.22032 13.72C5.07987 13.8606 5.00098 14.0512 5.00098 14.25C5.00098 14.4488 5.07987 14.6394 5.22032 14.78Z' fill='%2355716C'/%3E%3C/svg%3E");
     }
-    .reflection-container{
+    #main .reflection-container{
         display: flex;
         flex-direction: column;
         gap: 40px;
     }
-    .reflection-image{
+    #main .reflection-quote{
+        display: flex;
+        padding: 16px;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+        background-color:#F3EEE6;
+        padding: 16px;
+    }
+    #main .reflection-image{
         width: 100%;
         height: 360px;
     }
-    .reflection-image img{
+    #main .reflection-image img{
         width: 100%;
         height: 100%;
         display: block;
         object-fit: cover;
     }
+    #main .quote-icon{
+        width: 28px;
+        height: 27px;
+        flex-shrink: 0;
+    }
     .node__content{
         margin-top: 0;
+    }
+    #main .btn{
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 8px 8px 12px;
+        gap: 4px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    #main .btn-label{
+        display: inline-block;
+        transform: translateY(-1px);
+    }
+    #main .btn-primary{
+        background-color: var(--brand-primary);
+        color: var(--white);
+        border: none;
+    }
+    #main .btn-primary:hover,.btn-primary:active,.btn-primary:focus{
+        background-color: var(--brand-dark-primary);
+        color: var(--white);
+    }
+    #main .btn-primary.btn-icon::after{
+        background-color: var(--white);
+    }
+    #main .btn-icon{
+        line-height: 1;
+    }
+    #main .btn-icon::after {
+        align-self: center;
+        content: "";
+        display: inline-block;
+        width: 1.25rem;
+        height: 1.25rem;
+        padding: 5px;
+        flex-shrink: 0;
+        background-color: var(--brand-dark-primary);
+    }
+    #main .btn-icon-arrow-top-right-mini::after {
+        -webkit-mask: var(--icon-arrow-top-right-mini) no-repeat center / contain;
+        mask: var(--icon-arrow-top-right-mini) no-repeat center / contain;
     }
 </style>
 <div class="reflection-container">
@@ -47,6 +107,9 @@
         <p>環保運動往往是一場無限的賽局，所以我們常常笑稱自己是「環保蟑螂」。因為我們常常跟廠商們鬥智鬥勇，都是在「比氣長」，比賽「誰能活到最後」。儘管廠商們如殭屍一般會不斷地復活，但我們也是會不斷的星火傳承，持續戰鬥下去。</p>
         <p>我們這些地公志工就像是打不死的蟑螂們，一棒接一棒地持續戰鬥。儘管制度對我們不利，但在有限的操作底下，還是能透過「階段性的成功」，來製造開發單位的運作成本與障礙，甚至讓廠商因為資金流動與工程維護問題，選擇放棄整體的開發。</p>
         <p>謝謝地球公民基金會，讓我一次次看見，微小的力量如何慢慢改變這個社會，也讓我相信，真正的改變往往來自長時間與草根群眾並肩同行的「堅持」。</p>
-    </div>   
+    </div>
+    <div>
+        <a href="/civicrm/profile/create?gid=11&reset=1" class="btn btn-primary btn-icon btn-icon-arrow-top-right-mini" style="text-decoration: none; " target="_blank"><span class="btn-label">馬上報名志工</span></a>
+    </div>
 
 </div> 
