@@ -102,7 +102,6 @@ h3,
 
 p,
 li {
-    padding: 0 1rem 0rem 1rem;
     text-align: justify;
     font-family: 'Noto Sans TC' !important;
     font-weight: 400;
@@ -178,11 +177,9 @@ footer p {
 }
 
 .full-width-banner {
-    width: 100vw;
-    /* 滿整個 viewport */
-    margin-left: calc(-50vw + 50%);
-    /* 從 container 向左補齊 */
-    padding: 1rem;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 #info {
@@ -330,13 +327,20 @@ nav-link:focus,
     }
 }
 
-/* 左右圖文 */
+/* 左右圖文：標題與內文共用同一組左右 padding */
 .words {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* 垂直居中 */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
 
+@media (min-width: 992px) {
+    .words {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
 
 @media (max-width: 991px) {
@@ -426,8 +430,28 @@ div {
     /*同上不變*/
 }
 
+.navbar .container-md {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* 圖文列貼齊 container 邊緣，左右 gutter 改由 .words / banner / Q&A 統一 */
+#info > .container-md {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .custom-container {
     max-width: 720px;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+#qa .dash p,
+#qa .dash li {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* 滾動問題 */
@@ -463,76 +487,76 @@ html {
 			<div class="navbar-nav"><a class="nav-link" href="#info">核三公投資訊</a> <a class="nav-link" href="#qa">核電 Q&amp;A</a> <a class="nav-link" href="https://linktr.ee/nonukeactiontw" target="_blank">分享文宣</a> <a class="nav-link" href="https://gcaa.neticrm.tw/civicrm/contribute/transact?reset=1&amp;id=65&amp;utm_campaign=823vote&amp;utm_source=web&amp;utm_medium=button&amp;utm_term=cet" target="_blank">捐款支持</a></div></div></div></nav><!-- 區塊內容 -->
 <div class="container-fluid px-0" id="father" style="background-color: #fffbf4;">
 	<div class="container-fluid px-0 section" id="info">
-		<div class="container-fluid full-width-banner py-4 px-4" style="background-color: #f7d440;">
-			<h1 class="text-center  mb-0" style="color:#3f3f3f">核三重啟公投投票前，你一定要知道的 6 件事</h1></div>
+		<div class="container-fluid full-width-banner py-4" style="background-color: #f7d440;">
+			<h1 class="text-center mb-0" style="color:#3f3f3f">核三重啟公投投票前，你一定要知道的 6 件事</h1></div>
 		<div class="container-md">
-			<div class="row d-flex align-items-center pb-0">
-				<div class="col-12 col-lg-6 words ptext py-lg-0 py-3 order-lg-2">
-					<h3 class="h4 px-lg-4 text-center">不用核三，台灣遠離核災</h3>
-					<p class="px-lg-5">核三已使用超過 40 年，部分關鍵設備老舊無法汰換。如反應爐裡的「壓力容器」，長期使用會裂隙、脆化，一旦破裂就可能直接爐心融毀。</p>
-					<p class="px-lg-5">因為當初選址評估粗糙，更導致核三就蓋在恆春活動斷層上。台大地質專家陳文山指出，由於斷層、地質構造就在核三廠房下方，如果大地震將直接造成廠房破裂、反應爐被頂起，核災事故風險之高，不是補強耐震就可以解決。</p>
-					<p class="further-read px-lg-5"><a href="https://cet.ngo/hBhd" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 了解地質專家怎麼說</a></p><!-- <p class="further-read px-lg-5"><b><a href="https://cet.ngo/gr4i" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 了解地質專家怎麼說</b></a></p> --></div>
-				<div class="col-12 col-lg-6  px-0  mb-0 d-flex justify-content-center img-div img-fluid " style="background-image: url('/sites/cet-taiwan.org/files/u422/20250709-06.png');background-position: center;"><!-- py-sm-5 -->
-					<div class="row   justify-content-center align-items-center py-5 g-0">
+			<div class="row d-flex align-items-center g-0">
+				<div class="col-12 col-lg-6 words ptext py-3 py-lg-4 order-lg-2">
+					<h3 class="h4 text-center">不用核三，台灣遠離核災</h3>
+					<p>核三已使用超過 40 年，部分關鍵設備老舊無法汰換。如反應爐裡的「壓力容器」，長期使用會裂隙、脆化，一旦破裂就可能直接爐心融毀。</p>
+					<p>因為當初選址評估粗糙，更導致核三就蓋在恆春活動斷層上。台大地質專家陳文山指出，由於斷層、地質構造就在核三廠房下方，如果大地震將直接造成廠房破裂、反應爐被頂起，核災事故風險之高，不是補強耐震就可以解決。</p>
+					<p class="further-read"><a href="https://cet.ngo/hBhd" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 了解地質專家怎麼說</a></p></div>
+				<div class="col-12 col-lg-6 px-0 mb-0 d-flex justify-content-center img-div img-fluid" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250709-06.png');background-position: center;">
+					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-10 py-4 py-sm-5 img_text">
 								<h2 class="mb-0">1.核三老舊、<span style="white-space: nowrap;">蓋在斷層上</span></h2></div></div></div></div></div>
 			<div class="row d-flex align-items-center g-0">
-				<div class="col-12 col-lg-6 words py-lg-0 py-3  ptext ">
-					<h3 class="h4 px-lg-4 text-center">不用核三，告別無底錢坑</h3>
-					<p class="px-lg-5 ">重啟核電廠不是按個按鍵就可以，安全評估、採購零件、補強等措施，就算都順利也要 5-10 年。如果參考美國同一間公司蓋的機組延役費用，核三重啟可能上看 3,900 億台幣。更何況，核三就算重啟也只能用 5 年，因爲核廢料至今無法找到地方放，只能放在廠內，如果繼續運轉產生更多難解核廢料，未來處理成本更高。</p>
-					<p class="further-read px-lg-5 "><a href="https://cet.ngo/gr4p" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 了解至今無解的核廢料問題</a></p></div>
-				<div class="col-12 col-lg-6  px-0  mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-02.jpg');background-position: center;background-size: cover">
-					<div class="row   justify-content-center align-items-center py-5">
+				<div class="col-12 col-lg-6 words py-3 py-lg-4 ptext">
+					<h3 class="h4 text-center">不用核三，告別無底錢坑</h3>
+					<p>重啟核電廠不是按個按鍵就可以，安全評估、採購零件、補強等措施，就算都順利也要 5-10 年。如果參考美國同一間公司蓋的機組延役費用，核三重啟可能上看 3,900 億台幣。更何況，核三就算重啟也只能用 5 年，因爲核廢料至今無法找到地方放，只能放在廠內，如果繼續運轉產生更多難解核廢料，未來處理成本更高。</p>
+					<p class="further-read"><a href="https://cet.ngo/gr4p" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 了解至今無解的核廢料問題</a></p></div>
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-02.jpg');background-position: center;background-size: cover">
+					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
 								<h2 class="mb-0">2.核三重啟<span style="white-space: nowrap;">又貴又慢</span></h2></div></div></div></div></div>
 			<div class="row d-flex align-items-center g-0">
-				<div class="col-12 col-lg-6 words py-lg-0 py-3 ptext order-lg-2">
-					<h3 class="h4 px-lg-4 text-center d-sm-block d-none">發展綠電，讓台灣走向世界</h3>
-					<h3 class="h4 px-lg-4 text-center d-block d-sm-none">發展綠電，讓台灣走向世界</h3>
-					<p class="px-lg-5">從核電歸零到現在，90%的日子裡面，台灣都有超過 10%的發電機組隨時可以支撐用電，證明就算沒有核電，台灣也不會缺電。蘋果、台積電等大廠，要的都是綠電、不是核電。</p>
-					<p class="further-read px-lg-5"><a href="https://cet.ngo/gr4v" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 台灣的核能是綠電嗎？閱讀貼文破除迷思</a></p></div>
-				<div class="col-12 col-lg-6  px-0  mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-03.jpg');background-position: center;">
-					<div class="row   justify-content-center align-items-center py-5">
+				<div class="col-12 col-lg-6 words py-3 py-lg-4 ptext order-lg-2">
+					<h3 class="h4 text-center">發展綠電，讓台灣走向世界</h3>
+					<p>從核電歸零到現在，90%的日子裡面，台灣都有超過 10%的發電機組隨時可以支撐用電，證明就算沒有核電，台灣也不會缺電。蘋果、台積電等大廠，要的都是綠電、不是核電。</p>
+					<p class="further-read"><a href="https://cet.ngo/gr4v" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 台灣的核能是綠電嗎？閱讀貼文破除迷思</a></p></div>
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-03.jpg');background-position: center;">
+					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
 								<h2 class="mb-0">3.沒核電，<span style="white-space: nowrap;">台灣也不缺電</span></h2></div></div></div></div></div>
 			<div class="row d-flex align-items-center g-0">
-				<div class="col-12 col-lg-6 words py-lg-0 py-3  ptext  ">
-					<h3 class="h4 px-lg-4 text-center">不用核三，也能爭取好空氣</h3>
-					<p class="px-lg-5">這十年來，核電從 14%到 0%，全國 PM2.5 年平均值卻降低了 35%，火力發電廠的空污排放也大幅減少了 7 成。事實證明只要發展綠電跟污染防治，不用核電也能提升空氣品質。</p><!-- <p class="px-lg-5 text-center"><img class="" style="max-width: 60%; height: auto;" src="/sites/cet-taiwan.org/files/u422/20250805-01.jpg" alt=""></p> --></div>
-				<div class="col-12 col-lg-6  px-0  mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-04.jpg');background-position: center;">
-					<div class="row   justify-content-center align-items-center py-5">
+				<div class="col-12 col-lg-6 words py-3 py-lg-4 ptext">
+					<h3 class="h4 text-center">不用核三，也能爭取好空氣</h3>
+					<p>這十年來，核電從 14%到 0%，全國 PM2.5 年平均值卻降低了 35%，火力發電廠的空污排放也大幅減少了 7 成。事實證明只要發展綠電跟污染防治，不用核電也能提升空氣品質。</p></div>
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-04.jpg');background-position: center;">
+					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
 								<h2 class="mb-0">4.沒核電，<span style="white-space: nowrap;">也能減空污</span></h2></div></div></div></div></div>
 			<div class="row d-flex align-items-center g-0">
-				<div class="col-12 col-lg-6 words py-lg-0 py-3 ptext order-lg-2">
-					<h3 class="h4 px-lg-4 text-center">不用核三，減少戰爭風險</h3>
-					<p class="px-lg-5">俄烏、中東戰爭的經驗告訴我們，飛彈與無人機攻擊從不理性，核電廠很容易成為敵軍攻擊或威脅的籌碼。運轉中的核電廠也容易受戰爭波及而喪失電力，導致反應爐無法冷卻，恐變成車諾比、福島式的大災難。</p>
-					<p class="further-read px-lg-5"><a href="https://cet.ngo/gr51" target="_blank"><i class="bi bi-box-arrow-up-right"></i>了解更多核電廠在戰爭中的風險</a></p></div>
-				<div class="col-12 col-lg-6  px-0  mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-05.jpg');background-position: center;">
-					<div class="row   justify-content-center align-items-center py-5">
+				<div class="col-12 col-lg-6 words py-3 py-lg-4 ptext order-lg-2">
+					<h3 class="h4 text-center">不用核三，減少戰爭風險</h3>
+					<p>俄烏、中東戰爭的經驗告訴我們，飛彈與無人機攻擊從不理性，核電廠很容易成為敵軍攻擊或威脅的籌碼。運轉中的核電廠也容易受戰爭波及而喪失電力，導致反應爐無法冷卻，恐變成車諾比、福島式的大災難。</p>
+					<p class="further-read"><a href="https://cet.ngo/gr51" target="_blank"><i class="bi bi-box-arrow-up-right"></i>了解更多核電廠在戰爭中的風險</a></p></div>
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-05.jpg');background-position: center;">
+					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
 								<h2 class="mb-0">5.核電廠是<span style="white-space: nowrap;">國安漏洞</span></h2></div></div></div></div></div>
 			<div class="row d-flex align-items-center g-0">
-				<div class="col-12 col-lg-6 words py-lg-0 py-3 ptext  ">
-					<p class="px-lg-5 ">靠立法院多數強行提出公投，就要全民直接投票，<strong>要求屏東人繼續忍受危險、老舊的核三廠。</strong>這不是民主，而是對屏東人的霸凌。而且過去車諾比、福島福災的經驗已告訴我們，世上沒有「無安全疑慮」的核電廠，只有風險高低的問題。目前的公投主文投票後，到底有何效力？</p>
-					<p class="px-lg-5 "><i>公投主文：您是否同意，第三核能發電廠經主管機關同意確認無安全疑慮後，繼續運轉？</i></p></div>
-				<div class="col-12 col-lg-6  px-0  mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-06.jpg');background-position: center;">
-					<div class="row   justify-content-center align-items-center py-5">
+				<div class="col-12 col-lg-6 words py-3 py-lg-4 ptext">
+					<p>靠立法院多數強行提出公投，就要全民直接投票，<strong>要求屏東人繼續忍受危險、老舊的核三廠。</strong>這不是民主，而是對屏東人的霸凌。而且過去車諾比、福島福災的經驗已告訴我們，世上沒有「無安全疑慮」的核電廠，只有風險高低的問題。目前的公投主文投票後，到底有何效力？</p>
+					<p><i>公投主文：您是否同意，第三核能發電廠經主管機關同意確認無安全疑慮後，繼續運轉？</i></p></div>
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-06.jpg');background-position: center;">
+					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
 								<h2 class="mb-0">6.有些問題，<span style="white-space: nowrap;">公投無法解決</span></h2></div></div></div></div></div></div>
-		<div class="container-fluid full-width-banner py-5 px-4" style="background-color: #3f3f3f;">
+		<div class="container-fluid full-width-banner py-5" style="background-color: #3f3f3f;">
 			<h2 class="h1 text-center" style="color:white;">8/23核三重啟<span style="color:red;white-space: nowrap;">投不同意</span></h2>
-			<h2 class="text-center mb-0" style="font-weight: 700;">守護台灣免於核災威脅，迎向新未來</h2></div></div></div><!-- info 區塊結束 -->
+			<h2 class="text-center mb-0" style="font-weight: 700;">守護台灣免於核災威脅，迎向新未來</h2></div></div></div>
+            <!-- info 區塊結束 -->
 <div class="section container-fluid px-0   " id="qa" style="background-color: #fffbf4;">
 	<div class="d-flex justify-content-center ">
 		<div class="custom-container pb-4 ">
-			<div class="dash  py-5 px-md-5 px-4" style="color:var(--gray);">
+			<div class="dash py-5" style="color:var(--gray);">
 				<h2 class="text-center" style="color:#3f3f3f">常見核電迷思 Q&amp;A</h2>
 				<p>我們整理了一些與核三重啟常見的疑問，如果你覺得以下的回答有幫助到你，也很歡迎幫我們把正確的資訊分享出去！</p>
 				<h3 class="h4"><button aria-controls="collapseExample" aria-expanded="false" class="emph d-block" data-bs-target="#collapse1" data-bs-toggle="collapse" type="button">▾ Q：把核電廠零件舊換新，不就可以繼續用了？</button></h3>
@@ -596,8 +620,18 @@ html {
 				<div class="collapse" id="collapse7">
 					<p>A：<strong>就算國際條約規定不能攻擊核電廠，但砲彈是不長眼的。</strong>歐洲最大核電廠——烏克蘭的扎波羅熱核電廠的輔助設施就在 2025/8/2 再度遭軍事攻擊，距離核電廠僅約 1200 公尺！</p>
 					<p>而在俄羅斯軍隊的控制下，扎波羅熱核電廠至今也驚險地至少八度失去外部電力。</p>
-					<p><a href="https://www.iaea.org/topics/response/nuclear-safety-security-and-safeguards-in-ukraine" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 資料來源：國際原子能總署</a></p></div></div></div></div></div>
-<p><a href="https://www.iaea.org/topics/response/nuclear-safety-security-and-safeguards-in-ukraine" target="_blank"><!-- container-fluid px-0 結束--> <script>
+					<p><a href="https://www.iaea.org/topics/response/nuclear-safety-security-and-safeguards-in-ukraine" target="_blank">
+                        <i class="bi bi-box-arrow-up-right"></i> 資料來源：國際原子能總署
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- <p><a href="https://www.iaea.org/topics/response/nuclear-safety-security-and-safeguards-in-ukraine" target="_blank"> -->
+    <!-- container-fluid px-0 結束-->
+     <script>
         let lastViewTime = Date.now();
         let currentHash = location.hash || "#info";
 
@@ -700,6 +734,6 @@ html {
             });
         });
         </script><!-- Bootstrap JS --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-        </script> </a></p>
+        </script>
 </body>
 </html>
