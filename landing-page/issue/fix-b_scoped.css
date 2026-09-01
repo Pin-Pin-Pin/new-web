@@ -40,3 +40,69 @@
     font-size: 24px;
   }
 } */
+
+/* section 上下一律 64px；內部百分比 padding-y 改 px，避免隨欄寬撐高或過扁。 */
+#main .issue-page > .az-section[style*="padding-top:10%"],
+#main .issue-page > .az-section[style*="padding-top:5%"] {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+}
+
+#main .issue-page .az-row[style*="padding-left:10%"],
+#main .issue-page .az-text[style*="padding-left:10%"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#main .issue-page .az-text[style*="padding-bottom:1%"] {
+  padding-bottom: 16px !important;
+}
+
+#main .issue-page .az-row[style*="padding-top:1%"] {
+  padding-top: 16px !important;
+}
+
+#main .issue-page .az-row[style*="padding-top:5%"] {
+  padding-top: 24px !important;
+}
+
+#main .issue-page .az-row[style*="padding-bottom:1%"] {
+  padding-bottom: 16px !important;
+}
+
+#main .issue-page .az-row[style*="padding-bottom:3%"] {
+  padding-bottom: 24px !important;
+}
+
+#main .issue-page .az-row[style*="padding-bottom:10%"] {
+  padding-bottom: 32px !important;
+}
+
+#main .issue-page [class*="col-"][style*="margin-top:1%"] {
+  margin-top: 0 !important;
+}
+
+#main .issue-page [class*="col-"][style*="margin-bottom:5%"] {
+  margin-bottom: 24px !important;
+}
+
+#main .issue-page [class*="col-"][style*="padding-top:3%"] {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+#main .issue-page .az-text[style*="padding-top:5%"] {
+  padding-top: 24px !important;
+}
+
+#main .issue-page .az-text[style*="padding-bottom:5%"] {
+  padding-bottom: 24px !important;
+}
+
+#main .issue-page .az-image[style*="padding-top:5%"] {
+  padding-top: 16px !important;
+}
+
+#main .issue-page .az-html[style*="padding-top:6%"] {
+  padding-top: 24px !important;
+}

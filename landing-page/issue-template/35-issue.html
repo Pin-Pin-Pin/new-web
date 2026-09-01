@@ -14,6 +14,92 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <style>
+/* section 上下一律 64px；內部百分比 padding-y 改 px，避免隨欄寬撐高或過扁。 */
+.issue-page > .az-section[style*="padding-top:10%"],
+.issue-page > .az-section[style*="padding-top:5%"] {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+}
+
+.issue-page .az-row[style*="padding-left:10%"],
+.issue-page .az-text[style*="padding-left:10%"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.issue-page .az-text[style*="padding-bottom:1%"] {
+  padding-bottom: 16px !important;
+}
+
+.issue-page .az-row[style*="padding-top:1%"] {
+  padding-top: 16px !important;
+}
+
+.issue-page .az-row[style*="padding-top:5%"] {
+  padding-top: 24px !important;
+}
+
+.issue-page .az-row[style*="padding-bottom:1%"] {
+  padding-bottom: 16px !important;
+}
+
+.issue-page .az-row[style*="padding-bottom:3%"] {
+  padding-bottom: 24px !important;
+}
+
+.issue-page .az-row[style*="padding-bottom:10%"] {
+  padding-bottom: 32px !important;
+}
+
+.issue-page [class*="col-"][style*="margin-top:1%"] {
+  margin-top: 0 !important;
+}
+
+.issue-page [class*="col-"][style*="margin-bottom:5%"] {
+  margin-bottom: 24px !important;
+}
+
+.issue-page [class*="col-"][style*="padding-top:3%"] {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+.issue-page .az-text[style*="padding-top:5%"] {
+  padding-top: 24px !important;
+}
+
+.issue-page .az-text[style*="padding-bottom:5%"] {
+  padding-bottom: 24px !important;
+}
+
+.issue-page .az-image[style*="padding-top:5%"] {
+  padding-top: 16px !important;
+}
+
+.issue-page .az-html[style*="padding-top:6%"] {
+  padding-top: 24px !important;
+}
+
+/* 舊站 Glazed .container max-width:1600px；白框區塊改回限制內容寬，不要吃滿欄。 */
+.issue-page .az-section:has([style*="border-style:solid"]) > .az-ctnr {
+  max-width: 1600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* 舊站僅首屏 data-azat-fullheight=yes 會撐滿視窗；標題橫幅約 10%+10% 視窗寬。 */
+.issue-page .az-section[data-azat-fullheight="yes"] {
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto !important;
+}
+
+.issue-page > .az-section.az-util-vertical-centering:not([data-azat-fullheight="yes"]):not(:has([style*="border-style:solid"])) {
+  min-height: 320px;
+}
 
 #navbar {
   display: none;
@@ -119,8 +205,88 @@ body {
 
 .issue-page .container-fluid {
   max-width: none;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* section 上下一律 64px；內部百分比 padding-y 改 px，避免隨欄寬撐高或過扁。 */
+.issue-page > .az-section[style*="padding-top:10%"],
+.issue-page > .az-section[style*="padding-top:5%"] {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+}
+
+.issue-page .az-row[style*="padding-left:10%"],
+.issue-page .az-text[style*="padding-left:10%"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.issue-page .az-text[style*="padding-bottom:1%"] {
+  padding-bottom: 16px !important;
+}
+
+.issue-page .az-row[style*="padding-top:1%"] {
+  padding-top: 16px !important;
+}
+
+.issue-page .az-row[style*="padding-top:5%"] {
+  padding-top: 24px !important;
+}
+
+.issue-page .az-row[style*="padding-bottom:1%"] {
+  padding-bottom: 16px !important;
+}
+
+.issue-page .az-row[style*="padding-bottom:3%"] {
+  padding-bottom: 24px !important;
+}
+
+.issue-page .az-row[style*="padding-bottom:10%"] {
+  padding-bottom: 32px !important;
+}
+
+.issue-page [class*="col-"][style*="margin-top:1%"] {
+  margin-top: 0 !important;
+}
+
+.issue-page [class*="col-"][style*="margin-bottom:5%"] {
+  margin-bottom: 24px !important;
+}
+
+.issue-page [class*="col-"][style*="padding-top:3%"] {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+.issue-page .az-text[style*="padding-top:5%"] {
+  padding-top: 24px !important;
+}
+
+.issue-page .az-text[style*="padding-bottom:5%"] {
+  padding-bottom: 24px !important;
+}
+
+.issue-page .az-image[style*="padding-top:5%"] {
+  padding-top: 16px !important;
+}
+
+.issue-page .az-html[style*="padding-top:6%"] {
+  padding-top: 24px !important;
+}
+
+/* 舊站 Glazed .container max-width:1600px；白框區塊改回限制內容寬，不要吃滿欄。 */
+.issue-page .az-section:has([style*="border-style:solid"]) > .az-ctnr {
+  max-width: 1600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.issue-page > .az-section.az-util-vertical-centering:not([data-azat-fullheight="yes"]):not(:has([style*="border-style:solid"])) {
+  min-height: 320px;
 }
 
 .issue-page .row {
@@ -140,8 +306,8 @@ body {
   }
 
   .issue-page .container-fluid {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .issue-page .row {
@@ -167,6 +333,7 @@ body {
 
 .issue-page .az-section[data-azat-fullheight="yes"] {
   min-height: 100vh;
+  min-height: 100dvh;
   height: auto !important;
 }
 
@@ -237,13 +404,13 @@ body {
 
 .parent_water {
   margin: 0 10%;
-  padding: 5%;
+  padding: 24px 0;
 }
 
 @media (max-width: 768px) {
   .parent_water {
     margin: 0;
-    padding: 5%;
+    padding: 24px 0;
   }
 
   .issue-page p {
@@ -298,12 +465,18 @@ body {
 #gbpmktxzp2 {
   padding-top: 64px !important;
   padding-bottom: 64px !important;
-  min-height: 0 !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
   height: auto !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #gbpmktxzp2.az-section[data-azat-fullheight="yes"] {
-  min-height: 0 !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
 }
 
 #issue-hero h3,
@@ -504,13 +677,13 @@ body {
 				<div class="az-element az-text" data-az-id="gbocpxpr86" data-azat-style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;" data-azb="az_text" data-azcnt="true" style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;">
 					<h3 style="color:#ffffff;text-shadow: 1px 1px #111;"><strong>地球公民基金會的主張：減碳的關鍵行動</strong></h3>
 					<p style="color:#ffffff;text-shadow: 1px 1px #111;">面對極端氣候，我們可以做什麼減碳行動？省電、節水、多搭乘大眾運輸，都是該做的事情。不過，我們還需要有國家層級的氣候政策，引導大多數人們改變生活和生產模式。</p>
-					<p><strong><a href="/publication/issue/content/3981" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p>
+					<p><strong><a href="/node/3981" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p>
 					<p>&nbsp;</p></div></div>
 			<div class="az-element az-ctnr az-column    col-sm-6 hover-style-gb8bnsh6uw" data-az-id="gb8bnsh6uw" data-azat-hover_style="border-color:#ffffff      !important;" data-azat-style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;" data-azat-width=" 1/2" data-azb="az_column" data-azcnt="true" style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;">
 				<div class="az-element az-text" data-az-id="gbril59en8" data-azat-style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;" data-azb="az_text" data-azcnt="true" style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;">
 					<h3 style="color:#ffffff;text-shadow: 1px 1px #111;"><strong>製造、住商、交通、能源部門的減碳責任</strong></h3>
 					<p style="color:#ffffff;text-shadow: 1px 1px #111;">地球公民基金會檢討過去台灣減碳失敗的原因，提出四大關鍵行動指標；並進一步分析台灣的製造、住商、交通、能源等四大部門，在減碳上應該做的事，與社會共同商討氣候緊急下的減碳行動。</p>
-					<p><strong><a href="/publication/issue/content/3982" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
+					<p><strong><a href="/node/3982" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
 <div class="az-element az-section hidden-xs   az-util-vertical-centering" data-az-id="gboemedpni" data-azat-an_in="floatLarge" data-azat-effect="fixed" data-azat-el_class="hidden-xs" data-azat-fluid="yes" data-azat-parallax_mode="scroll" data-azat-parallax_speed="10" data-azat-style="padding-top:10%;padding-bottom:10%;background-image: url(/sites/cet-taiwan.org/files/glazed-builder/20210710-003.jpg?fid=20357);background-repeat: no-repeat;background-size: cover;background-position:center bottom;" data-azat-vertical_centering="yes" data-azb="az_section" id="gboemedpni" style="padding-top: 10%; padding-bottom: 10%; background-image: url(&quot;/sites/cet-taiwan.org/files/glazed-builder/20210710-003.jpg?fid=20357&quot;); background-repeat: no-repeat; background-size: cover; background-position: center bottom; background-attachment: fixed;">
 	<div class="az-ctnr container-fluid" data-azcnt="true">
 		<div class="az-element az-text" data-az-id="gblw2xcheu" data-azat-style="border-top-width:3%;padding-bottom:1%;padding-left:10%;padding-right:10%;" data-azb="az_text" data-azcnt="true" style="border-top-width:3%;padding-bottom:1%;padding-left:10%;padding-right:10%;">
@@ -520,13 +693,13 @@ body {
 				<div class="az-element az-text" data-az-id="gbm3rm4jhn" data-azat-style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;" data-azb="az_text" data-azcnt="true" style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;">
 					<h3 style="color:#ffffff;text-shadow: 1px 1px #111;"><strong>地球公民基金會的主張：減碳的關鍵行動</strong></h3>
 					<p style="color:#ffffff;text-shadow: 1px 1px #111;">面對極端氣候，我們可以做什麼減碳行動？省電、節水、多搭乘大眾運輸，都是該做的事情。不過，我們還需要有國家層級的氣候政策，引導大多數人們改變生活和生產模式。</p>
-					<p><strong><a href="/publication/issue/content/3981" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p>
+					<p><strong><a href="/node/3981" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p>
 					<p>&nbsp;</p></div></div>
 			<div class="az-element az-ctnr az-column    col-sm-6 hover-style-gblo7ros92" data-az-id="gblo7ros92" data-azat-hover_style="border-color:#ffffff      !important;" data-azat-style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;" data-azat-width=" 1/2" data-azb="az_column" data-azcnt="true" style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;">
 				<div class="az-element az-text" data-az-id="gb2462qnoy" data-azat-style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;" data-azb="az_text" data-azcnt="true" style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;">
 					<h3 style="color:#ffffff;text-shadow: 1px 1px #111;"><strong>製造、住商、交通、能源部門的減碳責任</strong></h3>
 					<p style="color:#ffffff;text-shadow: 1px 1px #111;">地球公民基金會檢討過去台灣減碳失敗的原因，提出四大關鍵行動指標；並進一步分析台灣的製造、住商、交通、能源等四大部門，在減碳上應該做的事，與社會共同商討氣候緊急下的減碳行動。</p>
-					<p><strong><a href="/publication/issue/content/3982" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
+					<p><strong><a href="/node/3982" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
 <div class="az-element az-section    az-util-vertical-centering" data-az-id="gbf5ga5pfp" data-azat-fluid="yes" data-azat-parallax_mode="scroll" data-azat-parallax_speed="10" data-azat-style="padding-top:10%;padding-bottom:10%;background-image: url(/sites/cet-taiwan.org/files/glazed-builder/20210710-005.jpg?fid=20358);background-repeat: no-repeat;background-size: cover;background-position:center center;" data-azat-vertical_centering="yes" data-azb="az_section" id="gbf5ga5pfp" style="padding-top:10%;padding-bottom:10%;background-image: url(/sites/cet-taiwan.org/files/glazed-builder/20210710-005.jpg?fid=20358);background-repeat: no-repeat;background-size: cover;background-position:center center;">
 	<div class="az-ctnr container-fluid" data-azcnt="true">
 		<div class="az-element az-text" data-az-id="gb582339kk" data-azat-style="border-top-width:3%;padding-bottom:1%;padding-left:10%;padding-right:10%;" data-azb="az_text" data-azcnt="true" style="border-top-width:3%;padding-bottom:1%;padding-left:10%;padding-right:10%;">
@@ -539,20 +712,20 @@ body {
 						<p><span style="color:#e99951;"><span style="text-shadow: rgb(17, 17, 17) 1px 1px;">李根政╱地球公民基金會執行長</span></span></p>
 						<p><span style="color:#ffffff;text-shadow: 1px 1px #111;">疫情緊張，宅在家避免群聚，「水」是最基本的需求，面對大旱，也考驗著我們的節水能力。</span></p>
 						<p><span style="color:#ffffff;text-shadow: 1px 1px #111;">但是，您是否知道家中用了多少水？繳多少水費？歡迎拿出您的水費單，先從知道自家的用水量，制定節水目標開始。</span></p>
-						<p><strong><a href="/publication/issue/content/3961" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div>
+						<p><strong><a href="/node/3961" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div>
 			<div class="az-element az-ctnr az-column    col-sm-4 hover-style-gbk84krien" data-az-id="gbk84krien" data-azat-hover_style="border-color:#ffffff      !important;" data-azat-style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;" data-azat-width=" 1/3 " data-azb="az_column" data-azcnt="true" style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;">
 				<div class="az-element az-text" data-az-id="gbbb7dinlg" data-azat-style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;" data-azb="az_text" data-azcnt="true" style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;">
 					<h3><span style="color:#ffffff;text-shadow: 1px 1px #111;"><strong>該討論水價合理化了</strong></span></h3>
 					<p><span style="color:#e99951;"><span style="text-shadow: rgb(17, 17, 17) 1px 1px;">李根政╱地球公民基金會執行長</span></span></p>
 					<p><span style="color:#ffffff;text-shadow: 1px 1px #111;">一度自來水是1000公升，可以裝上1,667瓶600CC的瓶裝水，價格同樣約10元，可見自來水之廉價，瓶裝水之昂貴。</span></p>
 					<p><span style="color:#ffffff;text-shadow: 1px 1px #111;">自來水供應了住宅、商業、工業用戶，用水量有大有小，水價合理化，可以增加節水、使用再生水誘因，提昇節水產業和技術的發展，以減少缺水風險。</span></p>
-					<p><strong><a href="/publication/issue/content/3968" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div>
+					<p><strong><a href="/node/3968" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div>
 			<div class="az-element az-ctnr az-column    col-sm-4" data-az-id="gbmf4eeoqz" data-azat-style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;" data-azat-width=" 1/3" data-azb="az_column" data-azcnt="true" style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;">
 				<div class="az-element az-text" data-az-id="gbc6506bc6" data-azat-style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;" data-azb="az_text" data-azcnt="true" style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;">
 					<h3><span style="color:#ffffff;text-shadow: 1px 1px #111;"><strong>水資源深度改革</strong></span></h3>
 					<p><span style="color:#e99951;"><span style="text-shadow: rgb(17, 17, 17) 1px 1px;">李根政╱地球公民基金會執行長</span></span></p>
 					<p><span style="color:#ffffff;text-shadow: 1px 1px #111;">百年大旱，水庫和河川都快見底了，第一場雨水卻不知道何時來，萬一像去年颱風不來，該怎麼辦？水資源有限、極端氣候難以預測，缺水風險只增不減，無可迴避的答案是：台灣要轉型為節水社會，不能再浪費水了。我們該如何開啟水資源深度改革？</span></p>
-					<p><strong><a href="/publication/issue/content/3937" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
+					<p><strong><a href="/node/3937" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
 <div class="az-element az-section" data-az-id="gbpwq1rswe" data-azat-fluid="yes" data-azat-style="background-image: url(/sites/cet-taiwan.org/files/glazed-builder/20210608-01.jpg?fid=20038);background-repeat: no-repeat;background-size: cover;background-position:center bottom;" data-azb="az_section" id="gbpwq1rswe" style="background-image: url(/sites/cet-taiwan.org/files/glazed-builder/20210608-01.jpg?fid=20038);background-repeat: no-repeat;background-size: cover;background-position:center bottom;">
 	<div class="az-ctnr container-fluid" data-azcnt="true">
 		<div class="az-element az-section" data-az-id="gbklhd1ug6" data-azb="az_section" id="gbklhd1ug6" style="">
@@ -614,14 +787,14 @@ align-items: center;margin-top:10px;">
 						<p><span style="color:#e67e22;">蔡卉荀╱地球公民基金會主任</span></p>
 						<p>2016年啟動的電力能源轉型，使得台灣再生能源持續增加中，白天用電尖峰時，太陽光電的發電量已可占全台9%以上。</p>
 						<p>然而，今年五月的兩次分區輪流限電，使「綠能供電不穩定」的擔憂也再次浮現。當台灣的綠能供電比例越高，有什麼方法能夠穩定供電呢？</p>
-						<p><strong><a href="/publication/issue/content/3984" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div>
+						<p><strong><a href="/node/3984" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div>
 			<div class="az-element az-ctnr az-column    col-sm-6" data-az-id="gbzg2plc5k" data-azat-style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#444444;border-style:solid;" data-azat-width=" 1/2" data-azb="az_column" data-azcnt="true" style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#444444;border-style:solid;">
 				<div class="az-element az-text" data-az-id="gbqrlt7o28" data-azat-style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;" data-azb="az_text" data-azcnt="true" style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;">
 					<h3><span style="color:#000000;"><strong>不要再有下一次停電，我們該做什麼？</strong></span></h3>
 					<p><span style="color:#e67e22;">蔡中岳╱地球公民基金會副執行長</span></p>
 					<p>五月的兩次分區限電，確實造成台灣部分的人需要電的時候沒電，「台灣是不是缺電了？」這個疑問句似乎變成了肯定句，而政府說電網不穩、調度問題等，讓民眾霧裡看花。</p>
 					<p>台灣到底有沒有缺電？若缺電燈號亮綠燈，到底是什麼因素造成停電？若不要再有下一次停電，台灣的當務之急是什麼？用核電能解決問題嗎？</p>
-					<p><strong><a href="/publication/issue/content/3959" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
+					<p><strong><a href="/node/3959" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
 <div class="az-element az-section    az-util-vertical-centering" data-az-id="gbg56d960f" data-azat-fluid="yes" data-azat-parallax_mode="scroll" data-azat-parallax_speed="10" data-azat-style="padding-top:10%;padding-bottom:10%;background-image: url(/sites/cet-taiwan.org/files/glazed-builder/20210710-004.jpg?fid=20359);background-repeat: no-repeat;background-size: cover;" data-azat-vertical_centering="yes" data-azb="az_section" id="gbg56d960f" style="padding-top:10%;padding-bottom:10%;background-image: url(/sites/cet-taiwan.org/files/glazed-builder/20210710-004.jpg?fid=20359);background-repeat: no-repeat;background-size: cover;">
 	<div class="az-ctnr container-fluid" data-azcnt="true">
 		<div class="az-element az-text" data-az-id="gb33b1ld90" data-azat-style="border-top-width:3%;padding-bottom:1%;padding-left:10%;padding-right:10%;" data-azb="az_text" data-azcnt="true" style="border-top-width:3%;padding-bottom:1%;padding-left:10%;padding-right:10%;">
@@ -633,13 +806,13 @@ align-items: center;margin-top:10px;">
 					<p><span style="color:#e99951;"><span style="text-shadow: rgb(17, 17, 17) 1px 1px;">李根政╱地球公民基金會執行長</span></span></p>
 					<p><span style="color:#ffffff;text-shadow: 1px 1px #111;">「種樹造林」似乎是很振奮人心的環保工作。</span></p>
 					<p><span style="color:#ffffff;text-shadow: 1px 1px #111;">不幸的是，如果欠缺國土規畫、環境背景的調查、合理的目標定位、經營管理的專業配套，很可能不是想像中的美好，而是一連串資源的錯置，留給後人難以收拾的殘局。</span></p>
-					<p><strong><a href="/publication/issue/content/3615" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div>
+					<p><strong><a href="/node/3615" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div>
 			<div class="az-element az-ctnr az-column    col-sm-6 hover-style-gby2tztmrp" data-az-id="gby2tztmrp" data-azat-hover_style="border-color:#ffffff      !important;" data-azat-style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;" data-azat-width=" 1/2" data-azb="az_column" data-azcnt="true" style="margin-top:1%;margin-bottom:5%;margin-left:1%;margin-right:1%;border-color:#ffffff;border-style:solid;">
 				<div class="az-element az-text" data-az-id="gbj4nlpm69" data-azat-style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;" data-azb="az_text" data-azcnt="true" style="padding-top:5%;padding-bottom:5%;padding-left:5%;padding-right:5%;border-color:#ffffff;border-style:none;">
 					<h3><span style="color:#ffffff;text-shadow: 1px 1px #111;"><strong>造林是達成臺灣碳中和的有效方法嗎？</strong></span></h3>
 					<p><span style="color:#e99951;"><span style="text-shadow: rgb(17, 17, 17) 1px 1px;">戴興盛╱東華大學自然資源與環境學系教授</span></span></p>
 					<p><span style="color:#ffffff;text-shadow: 1px 1px #111;">本文從「造林以抵銷活動所產生的碳排放量」出發，討論造林在臺灣是否為達成碳中和的有效方法。 </span></p>
-					<p><strong><a href="/publication/issue/content/3985" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
+					<p><strong><a href="/node/3985" style="color:#e67e22;" target="_blank">繼續閱讀</a></strong></p></div></div></div></div></div>
 <div class="az-element az-section    az-util-vertical-centering" data-az-id="gba5nke5ew" data-azat-parallax_mode="scroll" data-azat-parallax_speed="18" data-azat-style="padding-top:10%;padding-bottom:10%;background-image: url(/sites/cet-taiwan.org/files/glazed-builder/20200910-004.png?fid=18650);background-repeat: no-repeat;background-size: cover;background-position:center center;" data-azat-vertical_centering="yes" data-azb="az_section" id="gba5nke5ew" style="padding-top:10%;padding-bottom:10%;background-image: url(/sites/cet-taiwan.org/files/glazed-builder/20200910-004.png?fid=18650);background-repeat: no-repeat;background-size: cover;background-position:center center;">
 	<div class="az-ctnr container" data-azcnt="true">
 		<div class="az-element az-text" data-az-id="gbc0oz8a8p" data-azb="az_text" data-azcnt="true" style="">
@@ -677,9 +850,9 @@ align-items: center;margin-top:10px;">
 					<p>2011年311日本福島核災，再度警醒世人非核家園的重要性。地球公民在此之後，開始投入反核運動，在2025非核家園政策確定之後，仍持續關注核電除役、核能安全與核廢料處理的問題。<br />
 						同時，我們積極倡議邁向安全潔淨、公平民主的能源轉型，工業、商業、住宅、交通節能與轉向低碳能源；推動再生能源，要求考量台灣的生態環境與農漁產業發展，找到適當的土地與發展模式。期待和國人的共同努力下，強化台灣面對氣候變遷的韌性，同時達成減碳目標。</p></div></div></div>
 		<div class="az-element az-html hidden-xs" data-az-id="gb2p38oojw" data-azat-el_class="hidden-xs" data-azb="az_html" data-azcnt="true" style="">
-			<div style="text-align: center;"><a href="https://cet-taiwan.org/donate" target="_blank"><img src="/sites/cet-taiwan.org/files/glazed-builder/20200505-7.png?fid=17716" style="max-width: 300px" /></a></div></div>
+			<div style="text-align: center;"><a href="/donate" target="_blank"><img src="/sites/cet-taiwan.org/files/glazed-builder/20200505-7.png?fid=17716" style="max-width: 300px" /></a></div></div>
 		<div class="az-element az-html hidden-lg hidden-md hidden-sm" data-az-id="gb7w9e06rv" data-azat-el_class="hidden-lg hidden-md hidden-sm" data-azb="az_html" data-azcnt="true" style="">
-			<div style="text-align: center;"><a href="https://cet-taiwan.org/donate?utm_source=web&amp;utm_medium=landingpage&amp;utm_campaign=publication&amp;utm_term=climate&amp;utm_content=20210712" target="_blank"><img src="/sites/cet-taiwan.org/files/glazed-builder/20200505-7.png?fid=17716" style="max-width: 300px" /></a></div></div></div></div>
+			<div style="text-align: center;"><a href="/donate" target="_blank"><img src="/sites/cet-taiwan.org/files/glazed-builder/20200505-7.png?fid=17716" style="max-width: 300px" /></a></div></div></div></div>
 <style type="text/css"><!-- .hover-style-gb8bnsh6uw:hover  { border-color:#ffffff      !important;} -->
 </style>
 <style type="text/css"><!-- .hover-style-gblo7ros92:hover  { border-color:#ffffff      !important;} -->
