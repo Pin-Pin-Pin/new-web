@@ -62,9 +62,20 @@ a:active {
 /* ========================================
    Section: achievements
 ======================================== */
+.achievements .row > [class*="col-"]{
+    display: flex;
+}
+.achievements picture{
+    width: 100%;
+    aspect-ratio: 375 / 293;
+    overflow: hidden;
+}
 .achievements img{
     width: 100%;
+    height: 100%;
     max-width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 /* ========================================
    Section: core-values
