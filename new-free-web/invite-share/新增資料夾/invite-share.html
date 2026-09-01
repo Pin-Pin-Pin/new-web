@@ -269,19 +269,12 @@
             root.setAttribute('data-acc-behavior', '1');
 
             var pending = 0;
-            // targetItem 只在「這次點擊確定是要展開某個項目」時才會被設定，
-            // 若使用者是點擊已展開的項目將其收合，則維持 null，不會觸發捲動。
-            var targetItem = null;
+            var openedItem = null;
 
             root.addEventListener('click', function (event) {
                 var btn = event.target.closest('[data-bs-toggle="collapse"]');
                 if (!btn || !root.contains(btn)) return;
                 btn.focus({ preventScroll: true });
-                // 此為 capture 階段，Bootstrap 尚未切換 class，
-                // 'collapsed' 仍反映點擊前的狀態：有這個 class 代表目前是關閉的，
-                // 也就是這次點擊會將它「展開」。
-                var willOpen = btn.classList.contains('collapsed');
-                targetItem = willOpen ? btn.closest('.accordion-item') : null;
             }, true);
 
             function onStart() {
@@ -290,25 +283,20 @@
 
             function onEnd() {
                 pending = Math.max(0, pending - 1);
-                // 等同一個手風琴內「展開新項目」與「收合舊項目」的動畫都結束後，
-                // 才用最終、穩定的版面位置捲動一次。
-                if (pending !== 0 || !targetItem) return;
-                var item = targetItem;
-                targetItem = null;
+                if (pending !== 0 || !openedItem) return;
+                var item = openedItem;
+                openedItem = null;
                 var header = item.querySelector('.accordion-header') || item;
-                // hidden/shown 事件觸發的當下，畫面有時還沒真正繪製完最終高度
-                // （尤其是上方項目收合動畫的最後一幀），這時量測位置會偏低，
-                // 導致捲動距離不夠、動畫收尾又把內容往上推，使標題滑出畫面。
-                // 多等兩個畫面重繪週期，確保版面已經定格，再交給瀏覽器原生的
-                // scrollIntoView 定位，會比手動計算座標更準確、更穩定。
                 window.requestAnimationFrame(function () {
-                    window.requestAnimationFrame(function () {
-                        header.scrollIntoView({ block: 'start', behavior: 'smooth' });
-                    });
+                    var y = header.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0);
+                    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
                 });
             }
 
-            root.addEventListener('show.bs.collapse', onStart);
+            root.addEventListener('show.bs.collapse', function (event) {
+                openedItem = event.target.closest('.accordion-item');
+                onStart();
+            });
             root.addEventListener('hide.bs.collapse', onStart);
             root.addEventListener('shown.bs.collapse', onEnd);
             root.addEventListener('hidden.bs.collapse', onEnd);
