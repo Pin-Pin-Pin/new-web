@@ -1,3 +1,10 @@
+
+
 {
-    "liveServer.settings.port": 5501
-}
+    "liveServer.settings.port": 5501,
+    "liveServer.settings.proxy": {
+      "enable": true,
+      "baseUri": "/sites",
+      "proxyUri": "https://www.cet-taiwan.org/sites"
+    }
+  }
