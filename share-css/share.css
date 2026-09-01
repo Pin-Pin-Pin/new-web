@@ -1,5 +1,5 @@
-/* :root */
-#main
+:root
+/* #main */
  {
     --brand-primary: #35A97C;
     --brand-dark-primary:  #55716C;
@@ -31,29 +31,29 @@
     --page-top-img-max: 800px;
 }
 @media (min-width: 576px) {
-    /* :root */
-    #main
+    :root
+    /* #main */
     {
         --content-max: 540px; /* 576–767：BS sm */
     }
 }
 @media (min-width: 768px) {
-    /* :root */
-    #main
+    :root
+    /* #main */
     {
         --content-max: 720px; /* 768–991 */
     }
 }
 @media (min-width: 992px) {
-    /* :root */
-    #main
+    :root
+    /* #main */
     {
         --content-max: 960px; /* 992–1199 */
     }
 }
 @media (min-width: 1200px) {
-    /* :root */
-    #main
+    :root
+    /* #main */
     {
         --content-max: 984px; /* ≥1200 */
     }
@@ -61,8 +61,8 @@
 .brand-dark-primary{
     color: var(--brand-dark-primary);
 }
-/* body */
-#main
+body
+/* #main */
 {
     color: var(--brand-black);
     font-family: "Noto Sans TC";
