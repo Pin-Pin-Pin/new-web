@@ -12,9 +12,14 @@ img {
     height: auto;
 }
 
+.donate-hero__bg img {
+    object-position: left top;
+}
+
 /* Text slogan in donate-hero */
 .donate-hero .img-box {
     gap: 16px;
+    max-width: min(100%, 450px);
 }
 
 #top-slogan {
@@ -26,9 +31,17 @@ img {
     text-align: center;
     font-family: SweiGothicCJKtc-Bold, "Noto Sans TC", sans-serif;
     font-weight: 700;
-    font-size: 1.75rem;
+    font-size: clamp(1.375rem, 7.5vw, 1.75rem);
     line-height: 1.4;
-    letter-spacing: 0.08rem;
+    letter-spacing: 0.04rem;
+    text-shadow:2px 2px 4px black;
+}
+#top-slogan .top-slogan__line {
+    white-space: nowrap;
+}
+#cet-top-logo{
+    text-shadow:2px 2px 4px black;
+    
 }
 #donateOtherAccordion{
     background-color: var(--white);
@@ -108,11 +121,12 @@ img {
         color: #3f3f3f;
         font-size: 1rem;
     }
-    #qa h3{
-        font-size: 1rem;
-    }
     footer p {
         font-weight: 400;
+        
+    }
+    footer p:last-child{
+        margin-bottom: 16px;
     }
     .content-block_text{
         font-family: "Noto Sans TC";
@@ -120,9 +134,12 @@ img {
     }
     @media (max-width: 575px) {
         p,
-        .p,
-        #qa h3 {
+        .p {
             font-size: 1.1rem;/*  18px    */
+        }
+        #qa.faq .p,
+        #qa.faq p {
+            font-size: 1rem;
         }
 
     }
@@ -433,6 +450,10 @@ img {
         color: inherit;
         text-decoration: none;
         display: block;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
     }
     /* Hover 效果 */
     #lets-donate .rounded-title:hover,
@@ -503,41 +524,44 @@ img {
     .years-more.is-open{
         display: block;
     }
-    #qa .accordion-item h4,
-    #qa .accordion-item p{
-        text-align: left;
-    }
-    #qa .accordion-header button{
-        display: flex;
-        width: 100%;
-        justify-content: flex-start;
-        text-align: left;
-        font-weight: 500;
-        font-family: "Noto Sans TC";
-        border: none;
-        color:#3f3f3f;
-    }
-    .accordion,.accordion-header button,.accordion-body{
+    #qa.faq {
         background-color: var(--beige);
-    }
-    #qa .accordion-item{
-        border: none;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
-    #qa .accordion-item h3{
-        font-weight: 500;
-    }
-    #qa .accordion-body{
         padding-left: 0;
         padding-right: 0;
+        --icon-chevron-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.53 16.2799C12.3894 16.4204 12.1987 16.4992 12 16.4992C11.8012 16.4992 11.6106 16.4204 11.47 16.2799L3.97 8.77991C3.83752 8.63773 3.7654 8.44969 3.76882 8.25539C3.77225 8.06109 3.85096 7.8757 3.98838 7.73829C4.12579 7.60087 4.31118 7.52216 4.50548 7.51873C4.69978 7.51531 4.88782 7.58743 5.03 7.71991L12 14.6899L18.97 7.71991C19.0387 7.64622 19.1215 7.58712 19.2135 7.54613C19.3055 7.50514 19.4048 7.48309 19.5055 7.48132C19.6062 7.47954 19.7062 7.49807 19.7996 7.53579C19.893 7.57351 19.9778 7.62965 20.049 7.70087C20.1203 7.77209 20.1764 7.85692 20.2141 7.95031C20.2518 8.0437 20.2704 8.14373 20.2686 8.24443C20.2668 8.34513 20.2448 8.44445 20.2038 8.53645C20.1628 8.62845 20.1037 8.71125 20.03 8.77991L12.53 16.2799Z' fill='%2346A0D2'/%3E%3C/svg%3E");
     }
-    .faq-w{
-        margin-bottom: 0;
+    #qa.faq h2 {
+        border: none;
+        padding: 0;
+        color: #3f3f3f;
+        font-size: calc(1.325rem + 0.9vw);
     }
-    p.faq-w {
+    @media (min-width: 1200px) {
+        #qa.faq h2 {
+            font-size: 2rem;
+        }
+    }
+    #qa.faq .accordion-item,
+    #qa.faq .accordion-item:not(:first-of-type) {
+        border-color: var(--blue);
+    }
+    #qa.faq .accordion-header:has(button:not(.collapsed)) {
+        background-color: var(--blue);
+    }
+    #qa.faq .accordion-header button {
+        cursor: pointer;
+    }
+    #qa.faq p {
+        padding: 0;
+        text-align: left;
         font-weight: 400;
-        font-family: Noto Sans TC;
+    }
+    #qa.faq a,
+    #qa.faq a:hover,
+    #qa.faq a:focus,
+    #qa.faq a:visited {
+        color: var(--blue);
+        text-decoration: underline;
     }
     #toggle-years{
         border: none;
@@ -568,8 +592,12 @@ img {
         color: var(--blue);
         font-family: SweiGothicCJKtc-Bold;
         font-weight: 700;
+        font-size: calc(1.275rem + 0.3vw);
     }
     @media (min-width:1200px) {
+        .cet-keyword{
+            font-size: 1.5rem;
+        }
         .cet-info{
             font-size: 0.94rem;
         }

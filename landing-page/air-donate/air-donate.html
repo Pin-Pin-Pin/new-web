@@ -1,11 +1,14 @@
+<!-- 
+ logo大小、小孩大小
+ faq內容寬度 -->
 <!doctype html>
 <html lang="zh-TW">
 <head>
-    <title>改善空污捐款頁｜地球公民基金會</title>
+    <title>捐款改善空污，守護孩子健康｜地球公民基金會</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="改善空污，守護孩子的每一口呼吸。捐款支持地球公民持續推動空氣品質改善政策，完善校園空污預警與防護。">
-    <meta property="og:title" content="改善空污｜守護孩子的每一口呼吸">
+    <meta property="og:title" content="捐款改善空污，守護孩子健康">
     <meta property="og:description" content="改善空污，守護孩子的每一口呼吸。捐款支持地球公民持續推動空氣品質改善政策，完善校園空污預警與防護。">
     <meta property="og:image" content="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1920.jpg">
     <meta property="og:site_name" content="地球公民基金會">
@@ -18,6 +21,18 @@
     <link rel="stylesheet" href="air-donate.css">
 </head>
 <body>
+<style type="text/css">
+    h3.donate-invite,
+    h3.donate-invite a {
+        font-size: calc(1.3rem + .6vw);
+    }
+    @media (min-width: 1200px) {
+        h3.donate-invite,
+        h3.donate-invite a {
+            font-size: 1.75rem;
+        }
+    }
+</style>
 <section class="donate-hero">
     <picture class="donate-hero__bg">
         <source
@@ -32,11 +47,11 @@
         <source
             type="image/webp"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260826-air-hero-mb-768.webp 768w
+            /sites/cet-taiwan.org/files/u422/20260902-01-800.webp 800w
             "
             sizes="100vw"
         >
-        <img
+        <!-- <img
             src="/sites/cet-taiwan.org/files/u422/20260826-air-hero-mb-768.jpg"
             srcset="
                 /sites/cet-taiwan.org/files/u422/20260826-air-hero-mb-768.jpg 768w,
@@ -49,12 +64,27 @@
             alt=""
             fetchpriority="high"
             decoding="async"
-        >
+        > -->
+
+        <img
+        src="/sites/cet-taiwan.org/files/u422/20260902-01-800.jpg"
+        srcset="
+        /sites/cet-taiwan.org/files/u422/20260902-01-800.jpg 800w,
+            /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1400.jpg 1400w,
+            /sites/cet-taiwan.org/files/u422/20260826-air-donate-hero-tbl-1920.jpg 1920w
+        "
+        sizes="100vw"
+        width="750"
+        height="581"
+        alt=""
+        fetchpriority="high"
+        decoding="async"
+    >
     </picture>
 
     <div class="donate-hero__inner container">
         <div class="img-box">
-            <h1 id="top-slogan">改善空污<br />守護孩子的每一口呼吸</h1>
+            <h1 id="top-slogan"><span class="top-slogan__line">改善空污</span><br /><span class="top-slogan__line">守護孩子的每一口呼吸</span></h1>
             <picture>
                 <img id="cet-top-logo" decoding="async" alt="地球公民基金會" src="/sites/cet-taiwan.org/files/u422/cet-logo-12.png" width="539" height="159" />
             </picture>
@@ -253,7 +283,7 @@
 				<h2 class="white mb-0 font-900">每口呼吸都該是乾淨的。</h2></div></div>
 		<div class="photo-credit " id="photo-credit-1">
 			<p>photo by mrtiger on unsplash</p></div></div>
-	<section class="py-4" id="ceo-story_desktop" style="position: relative;">
+	<section class="py-4 px-0" id="ceo-story_desktop" style="position: relative;">
 		<div class="debug-black container-fluid px-0 py-1 d-flex justify-content-center" style="background-color: var(--light-blue);">
 			<div class="container-readable py-4">
 				<div class="row justify-content-center align-items-center">
@@ -385,48 +415,82 @@
 					<h3 class="white donate-invite " style="letter-spacing: 0.08rem;"><a class="font-900" href="#donation-box">立即捐款</a></h3></div>
 				<div class="donate-invite-heading-2 mb-0 ms-2" id="">
 					<p class="white mb-0 mt-3 font-700 px-0" style="text-align: center;">推動空氣品質改善政策，<span class="font-700" style="white-space: nowrap;">讓好的改變發生</span></p></div></div></div></div></div>
-<div class="d-flex justify-content-center py-5" id="qa" style="background-color: var(--beige);">
+<section class="faq" id="qa">
 	<div class="container-readable">
 		<div class="text-center mb-4">
 			<div class="section-header">
-				<h2 class="mb-0 font-900" style="color: #3f3f3f;">常見問題</h2></div></div>
-		<div class="text-block">
-			<div class="accordion mb-0" id="accordionExample">
-				<div class="accordion-item" style="background-color: var(--beige);">
-					<h3 class="accordion-header"><button aria-controls="collapse-1" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-1" data-bs-toggle="collapse" type="button">▼ 地球公民將捐款用於哪些環境專案？</button></h3>
-					<div aria-labelledby="heading-1" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-1">
-						<div class="accordion-body">
-							<p class="faq-w">我們投入的環保工作範疇為山林國土、環境污染、能源轉型、永續花東、環境民主。藉由調查研究、揭露環境問題，提出解決方案，並據以進行政策施壓、國會遊說、教育推廣等，促成改變。</p></div></div></div>
-				<div class="accordion-item">
-					<h3 class="h4 accordion-header" id="heading-2"><button aria-controls="collapse-2" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-2" data-bs-toggle="collapse" type="button">▼ 我如何知道地球公民基金會年度捐款使用明細？</button></h3>
-					<div aria-labelledby="heading-2" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-2">
-						<div class="accordion-body">
-							<p class="faq-w">每年財務報告待主管機關環境部審查後公告於官方網站<a class="green-a" href="/node/3155" target="_blank">「財報 &amp; 徵信」</a>，再以電子信件提供捐款會員參考，以了解地球公民各項經費支出。 <a class="green-a" href="/annual_report" target="_blank">線上年度報告</a>在隔年出刊，同時以紙本和電子報將摘要及連結寄予每位捐款會員。」</p></div></div></div>
-				<div class="accordion-item">
-					<h3 class="h4 accordion-header" id="heading-3"><button aria-controls="collapse-3" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-3" data-bs-toggle="collapse" type="button">▼ 地球公民的財務報告受到哪些單位的審核？</button></h3>
-					<div aria-labelledby="heading-3" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-3">
-						<div class="accordion-body">
-							<p class="faq-w">依我國法令設立之財團法人地球公民基金會（以下簡稱本會），受董事會監督，董事會設董事 7 名，監事 2 名董監事成員均為義務性質，成員涵蓋各領域專業之人士，並具備獨立性。本會年度財務報表，皆先經由董監事會審核，並送主管機關環境部備查。據衛生福利部規定，公益勸募需每年申請募款字號，申請流程包括遞交勸募計畫書、由衛福部審核後核發募款字號。募款字號年度結束時，也需遞交報告。</p></div></div></div>
-				<div class="accordion-item">
-					<h3 class="h4 accordion-header" id="heading-4"><button aria-controls="collapse-4" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-4" data-bs-toggle="collapse" type="button">▼ 捐款是否會有收據？</button></h3>
-					<div aria-labelledby="heading-4" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-4">
-						<div class="accordion-body">
-							<p class="faq-w">您在進行捐款時請填寫正確地址，將會收到本會正式收據。可利用捐款收據作為抵扣所得稅額之用。</p></div></div></div>
-				<div class="accordion-item">
-					<h3 class="h4 accordion-header" id="heading-5"><button aria-controls="collapse-5" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-5" data-bs-toggle="collapse" type="button">▼ 何時會收到捐款收據？</button></h3>
-					<div aria-labelledby="heading-5" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-5">
-						<div class="accordion-body">
-							<p class="faq-w">單次捐款人會在捐款成功後，可以選擇捐款隔月收到捐款收據與相關資料或年度收到捐款收據。每月定期定額捐款人則於每年報稅月前，寄發上一年度全年的捐款總額證明，收據可作為抵扣稅額使用，亦明列個人全年度捐款紀錄。</p></div></div></div>
-				<div class="accordion-item mb-0" style="margin-bottom:35px;">
-					<h3 class="h4 accordion-header" id="heading-6"><button aria-controls="collapse-6" aria-expanded="false" class="collapsed p faq-w" data-bs-target="#collapse-6" data-bs-toggle="collapse" type="button">▼ 捐款會員如何了解會務與環境行動成果？</button></h3>
-					<div aria-labelledby="heading-6" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse-6">
-						<div class="accordion-body">
-							<p class="faq-w">地球公民有義務向捐款會員回報環境行動的進度、成果與財務報告，形式包括電子報、期刊或出版品等。</p>
-							<p class="faq-w">．每年發表「<a class="green-a" href="/annual_report" target="_blank">年度報告</a>」，彙整當年度重大工作成果。</p>
-							<p class="faq-w">．不定期寄發「會員電子報」，報告最新的環境行動進度與參加管道，讓您掌握第一手消息。</p>
-							<p class="faq-w">．不定期發行電子期刊「地球公民通訊」專文解析環境專題，讓您深度了解環境議題。</p>
-							<p class="faq-w">．不定期舉辦「會員活動」，將以電子郵件、簡訊等管道與您聯繫。</p><!-- <a class="green-a" href="https://www.facebook.com/CitizenoftheEarth" target="_blank"> -->
-							<p class="faq-w">．您也可以追蹤本會的FB、<a class="green-a" href="https://www.instagram.com/cettw/" target="_blank">IG </a>粉絲專頁，即時更新地球公民最新的倡議進度。</p></div></div></div></div></div></div></div>
+				<h2 class="mb-0 font-900" style="color: #3f3f3f;">常見問題</h2>
+			</div>
+		</div>
+		<div class="accordion" id="accordionExample">
+			<div class="accordion-item">
+				<h3 class="accordion-header" id="qa-heading-1">
+					<button aria-controls="qa-collapse-1" aria-expanded="false" class="collapsed p" data-bs-target="#qa-collapse-1" data-bs-toggle="collapse" type="button"><span class="faq-question-label">地球公民將捐款用於哪些環境專案？</span></button>
+				</h3>
+				<div aria-labelledby="qa-heading-1" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="qa-collapse-1">
+					<div class="accordion-body">
+						<p>我們投入的環保工作範疇為山林國土、環境污染、能源轉型、永續花東、環境民主。藉由調查研究、揭露環境問題，提出解決方案，並據以進行政策施壓、國會遊說、教育推廣等，促成改變。</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h3 class="accordion-header" id="qa-heading-2">
+					<button aria-controls="qa-collapse-2" aria-expanded="false" class="collapsed p" data-bs-target="#qa-collapse-2" data-bs-toggle="collapse" type="button"><span class="faq-question-label">我如何知道地球公民基金會年度捐款使用明細？</span></button>
+				</h3>
+				<div aria-labelledby="qa-heading-2" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="qa-collapse-2">
+					<div class="accordion-body">
+						<p>每年財務報告待主管機關環境部審查後公告於官方網站「財報 &amp; 徵信」，再以電子信件提供捐款會員參考，以了解地球公民各項經費支出。 線上年度報告在隔年出刊，同時以紙本和電子報將摘要及連結寄予每位捐款會員。」</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h3 class="accordion-header" id="qa-heading-3">
+					<button aria-controls="qa-collapse-3" aria-expanded="false" class="collapsed p" data-bs-target="#qa-collapse-3" data-bs-toggle="collapse" type="button"><span class="faq-question-label">地球公民的財務報告受到哪些單位的審核？</span></button>
+				</h3>
+				<div aria-labelledby="qa-heading-3" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="qa-collapse-3">
+					<div class="accordion-body">
+						<p>依我國法令設立之財團法人地球公民基金會（以下簡稱本會），受董事會監督，董事會設董事 7 名，監事 2 名董監事成員均為義務性質，成員涵蓋各領域專業之人士，並具備獨立性。本會年度財務報表，皆先經由董監事會審核，並送主管機關環境部備查。據衛生福利部規定，公益勸募需每年申請募款字號，申請流程包括遞交勸募計畫書、由衛福部審核後核發募款字號。募款字號年度結束時，也需遞交報告。</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h3 class="accordion-header" id="qa-heading-4">
+					<button aria-controls="qa-collapse-4" aria-expanded="false" class="collapsed p" data-bs-target="#qa-collapse-4" data-bs-toggle="collapse" type="button"><span class="faq-question-label">捐款是否會有收據？</span></button>
+				</h3>
+				<div aria-labelledby="qa-heading-4" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="qa-collapse-4">
+					<div class="accordion-body">
+						<p>您在進行捐款時請填寫正確地址，將會收到本會正式收據。可利用捐款收據作為抵扣所得稅額之用。</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h3 class="accordion-header" id="qa-heading-5">
+					<button aria-controls="qa-collapse-5" aria-expanded="false" class="collapsed p" data-bs-target="#qa-collapse-5" data-bs-toggle="collapse" type="button"><span class="faq-question-label">何時會收到捐款收據？</span></button>
+				</h3>
+				<div aria-labelledby="qa-heading-5" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="qa-collapse-5">
+					<div class="accordion-body">
+						<p>單次捐款人會在捐款成功後，可以選擇捐款隔月收到捐款收據與相關資料或年度收到捐款收據。每月定期定額捐款人則於每年報稅月前，寄發上一年度全年的捐款總額證明，收據可作為抵扣所得稅額使用，亦明列個人全年度捐款紀錄。</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h3 class="accordion-header" id="qa-heading-6">
+					<button aria-controls="qa-collapse-6" aria-expanded="false" class="collapsed p" data-bs-target="#qa-collapse-6" data-bs-toggle="collapse" type="button"><span class="faq-question-label">捐款會員如何了解會務與環境行動成果？</span></button>
+				</h3>
+				<div aria-labelledby="qa-heading-6" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="qa-collapse-6">
+					<div class="accordion-body">
+						<p>地球公民有義務向捐款會員回報環境行動的進度、成果與財務報告，形式包括電子報、期刊或出版品等。</p>
+						<p>．每年發表「年度報告」，彙整當年度重大工作成果。</p>
+						<p>．不定期寄發「會員電子報」，報告最新的環境行動進度與參加管道，讓您掌握第一手消息。</p>
+						<p>．不定期發行電子期刊「地球公民通訊」專文解析環境專題，讓您深度了解環境議題。</p>
+						<p>．不定期舉辦「會員活動」，將以電子郵件、簡訊等管道與您聯繫。</p>
+						<p>．您也可以追蹤本會的 FB、IG 粉絲專頁，即時更新地球公民最新的倡議進度。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 <div class="py-3 d-flex justify-content-center align-items-center" style="background-color: white;">
 	<div class="container-readable ">
 		<p class="cet-info d-block d-xl-none mb-0 text-center">立案字號 環署綜字第 0990100475 號<br />
