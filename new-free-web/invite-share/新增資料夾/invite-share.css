@@ -36,8 +36,7 @@
     border: 1px solid var(--brand-dark-primary);
     overflow: hidden;
 }
-/* 捲動位置改由 JS 統一控制（見 initShareTopicsAccordionBehavior），
-   標題與面板都關閉瀏覽器原生的捲動錨定，避免與 JS 的平滑捲動互相干擾、造成多次滑動 */
+/* 高度變化的面板不當捲動錨點；標題維持可錨定，避免上方收合時整塊上移 */
 .share-topics-accordion .accordion-collapse {
     min-height: 0;
     overflow-anchor: none;
@@ -47,8 +46,7 @@
     margin-bottom: 0;
     padding: 8px 16px;
     background-color: var(--brand-white);
-    overflow-anchor: none;
-    scroll-margin-top: 12px;
+    overflow-anchor: auto;
     transition: background-color 0.35s ease, color 0.35s ease;
 }
 

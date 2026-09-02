@@ -1,3 +1,6 @@
 # *.png
 # *.jpg
 todo.md
+*_scoped.*
+*_scoped
+*_merge.html

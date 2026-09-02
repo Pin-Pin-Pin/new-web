@@ -272,7 +272,7 @@
                     ]
                 },
                 {
-                    name: '戴興盛董事',
+                    name: '戴興盛監事',
                     description: '在學術界服務的環境治理研究者，也期許自己是能和眾多志同道合公民一起合作、解決環境永續問題的行動者。',
                     imageSlug: '20260827-about-p4',
                     paragraphs: [
@@ -290,7 +290,7 @@
                     ]
                 },
                 {
-                    name: '傅志男董事',
+                    name: '傅志男監事',
                     description: '資深環境教育工作者、高雄市國教輔導團環境教育議題榮譽輔導員、玉山國家公園解說志工。',
                     imageSlug: '20260827-about-p6',
                     paragraphs: [
@@ -356,11 +356,11 @@
                         '</div>' +
                         '<div class="person-title">' +
                             '<p class="name">' + escapeHtml(member.name) + '</p>' +
-                            '<p class="description">' + escapeHtml(member.description) + '</p>' +
                         '</div>' +
                         '<div class="paragraph">' +
                             buildParagraphsHtml(member.paragraphs) +
                         '</div>' +
+                        '<p class="description">' + escapeHtml(member.description) + '</p>' +
                     '</div>'
                 );
             }

@@ -240,6 +240,92 @@ p {
         font-size: 1.125rem;/*18px	*/
     }
 }
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.series-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 8px 16px 24px;
+}
+
+@media (min-width: 768px) {
+    .series-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+.series-card {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px 12px;
+    min-height: 56px;
+}
+
+.series-card a {
+    color: #003459;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: "Noto Sans TC", sans-serif;
+    display: block;
+    width: 100%;
+}
+
+.series-card a:hover,
+.series-card a:focus-visible {
+    text-decoration: underline;
+}
+
+.series-card a:focus-visible {
+    outline: 2px solid #f4b23e;
+    outline-offset: 3px;
+}
+
+.series-card__meta {
+    color: #8b9aab;
+}
+
+.btn-see-gas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-width: 44px;
+    min-height: 44px;
+    margin: 16px auto;
+    padding: 8px 24px;
+    background-color: #f4b23e;
+    border-radius: 10pt;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.25rem;
+    font-family: "Noto Sans TC", sans-serif;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-see-gas:hover,
+.btn-see-gas:focus-visible {
+    color: #fff !important;
+    background-color: #e0a12e;
+}
+
+.btn-see-gas:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
 </style>
 </head>
 <body>
@@ -314,21 +400,22 @@ p {
 						<div style="background-color:#000;position: absolute; top: 20px; right: 20px; max-width: 100px;padding: 5px;"><img alt="Additional Image" src="/sites/cet-taiwan.org/files/u355/20240715-020.png" style="width:100%;filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(11deg) brightness(104%) contrast(104%)" /></div><img src="/sites/cet-taiwan.org/files/u355/20240715-022.jpg" style="width:100%;" /> <img src="/sites/cet-taiwan.org/files/u355/20240808-003.jpg" style="width:100%;padding-top: 10px;" /></div></div></div></div></div>
 	<div class="container-fluid" style="background-color:#003459;">
 		<div class="mx-auto row justify-content-center align-items-center pb-3" style="">
-			<div class="col-12 row justify-content-center align-items-center pt-3">
+			<div class="col-12 pt-3">
 				<h3 class="text-center h3-white">系列活動</h3></div>
-			<div class="col-12 row justify-content-center align-items-center pt-3">
-				<div id="eqh_div_1" style="background-color:#FFF;position: relative;">
-					<p class="p-2 m-0 text-center" style="background-color:#fff;color: #003459;font-weight: 700;font-size: 1rem;"><a class="col-10 col-md-3 m-2" href="#theme_1">7/31-8/31｜「看見」高雄石化氣爆十週年展</a></p></div>
-				<div id="eqh_div_2" style="background-color:#FFF;position: relative;">
-					<p class="p-2 m-0 text-center" style="background-color:#fff;color: #003459;font-weight: 700;font-size: 1rem;"><a class="col-10 col-md-3 m-2" href="#theme_4">7/31｜【看見南方－環境與藝術跨界對話】講座</a></p></div>
-				<div id="eqh_div_3" style="background-color:#FFF;position: relative;">
-					<p class="p-2 m-0 text-center" style="background-color:#fff;color: #003459;font-weight: 700;font-size: 1rem;"><a class="col-10 col-md-3 m-2" href="#theme_3">8/10｜親子繪本分享－好大好大的垃圾島</a></p></div>
-				<div id="eqh_div_4" style="background-color:#FFF;position: relative;">
-					<p class="p-2 m-0 text-center" style="background-color:#fff;color: #003459;font-weight: 700;font-size: 1rem;"><a class="col-10 col-md-3 m-2" href="#theme_2">7/1-8/31｜高雄氣爆科普影片線上觀影</a></p></div>
-				<div id="eqh_div_5" style="background-color:#FFF;position: relative;">
-					<p class="p-2 m-0 text-center" style="background-color:#fff;color: #003459;font-weight: 700;font-size: 1rem;"><a class="col-10 col-md-3 m-2" href="#theme_5">7/20｜暗黑工業小旅行</a></p></div>
-				<div id="eqh_div_6" style="background-color:#FFF;position: relative;">
-					<p class="p-2 m-0 text-center" style="background-color:#fff;color: #003459;font-weight: 700;font-size: 1rem;"><a class="col-10 col-md-3 m-2" href="#theme_6">7/13｜【地表下的風險「管」理】論壇</a></p></div></div>
+			<div class="col-12">
+				<div class="series-grid">
+					<div class="series-card">
+						<a href="#theme_1"><span class="series-card__meta">7/31-8/31 | </span>「看見」高雄石化氣爆十週年展</a></div>
+					<div class="series-card">
+						<a href="#theme_4"><span class="series-card__meta">7/31 | </span>【看見南方—環境與藝術跨界對話】講座</a></div>
+					<div class="series-card">
+						<a href="#theme_3"><span class="series-card__meta">8/10 | </span>親子繪本分享—好大好大的垃圾島</a></div>
+					<div class="series-card">
+						<a href="#theme_2"><span class="series-card__meta">7/1-8/31 | </span>高雄氣爆科普影片線上觀影</a></div>
+					<div class="series-card">
+						<a href="#theme_5"><span class="series-card__meta">7/20 | </span>暗黑工業小旅行</a></div>
+					<div class="series-card">
+						<a href="#theme_6"><span class="series-card__meta">7/13 | </span>【地表下的風險「管」理】論壇</a></div></div></div>
 			<hr class="col-8 mt-4" style="border-color:white;" />
 			<div class="col-12 row py-3 px-4 my-3" id="theme_2" style="">
 				<h3 class="text-center h3-white">7/1-8/31 高雄氣爆科普影片線上觀影</h3></div>
@@ -337,8 +424,8 @@ p {
 				<p style="color:white;">2014年7月31日，午夜倒數前幾分鐘大規模爆炸的轟天巨響，震撼著高雄市前鎮區。太平時代的居民在這一夜，感到宛如面對戰爭的巨大恐懼。</p>
 				<p style="color:white;"><b>《打開社會事件S檔案》—「從地底引爆-高雄氣爆」科普影片</b>以高雄氣爆事件出發，透過科學觀點與技術管理層面，探索在產業城市建築安全家園的挑戰，希望從不當科技管理、治理的創傷中找到建立未來平安城市的核心。</p>
 				<p style="color:white;">本片由台灣科技與社會研究學會、東臺傳播股份有限公司提供授權，登記者可以在7/1-8/31於線上自由觀看本片，影片將於到期時下架。</p></div>
-			<div class="p-2 mx-auto my-3" style="background-color: #f4b23e;border-radius: 10pt;">
-				<h4 class="text-center p-0 m-0" style="color:#fff"><a class="col-10 col-md-3" href="https://docs.google.com/forms/d/e/1FAIpQLSebS9jTu6Uh2KANmUhnrZtO7PIqC7mlELXh_jcY-fkfMfl97A/viewform?fbclid=IwZXh0bgNhZW0CMTAAAR1Za69uBWtCnfsrLXVntcnAmaPRVJOf4dHLgumnMPL_FxCBylJNzP9gS6s_aem_G5327ZLF2b6jIkNclaDcOg" style="color:#fff">登記觀看</a></h4></div></div></div>
+			<div class="col-12 d-flex justify-content-center">
+				<a class="btn-see-gas" href="https://docs.google.com/forms/d/e/1FAIpQLSebS9jTu6Uh2KANmUhnrZtO7PIqC7mlELXh_jcY-fkfMfl97A/viewform?fbclid=IwZXh0bgNhZW0CMTAAAR1Za69uBWtCnfsrLXVntcnAmaPRVJOf4dHLgumnMPL_FxCBylJNzP9gS6s_aem_G5327ZLF2b6jIkNclaDcOg">登記觀看</a></div></div></div>
 	<div class="container-fluid" id="theme_3" style="background-color:#fff;">
 		<div class="mx-auto row justify-content-center align-items-center pb-3" style="">
 			<div class="col-12 row py-3 px-4 my-3" style="">
@@ -352,8 +439,8 @@ p {
 				<p class="info">2024/8/10（六） 14:00-15:30<br />
 					小樹的家繪本咖啡館（高雄市苓雅區林南街16號）<br />
 					講者：曾靜慧 Vicky／《蝴蝶朵朵》繪本講師、萬巒有機書店店長</p></div>
-			<div class="p-2 mx-auto my-3" style="background-color: #f4b23e;border-radius: 10pt;">
-				<h4 class="text-center p-0 m-0" style="color:#fff"><a class="col-10 col-md-3 order-3" href="/node/4518" style="color:#fff">活動資訊</a></h4></div></div></div>
+			<div class="col-12 d-flex justify-content-center">
+				<a class="btn-see-gas" href="/node/4518">活動資訊</a></div></div></div>
 	<div class="container-fluid" id="theme_4" style="background-color:#003459;">
 		<div class="mx-auto row justify-content-center align-items-center pb-3" style="">
 			<div class="col-12 row py-3 px-4 my-3" style="">
@@ -371,8 +458,8 @@ p {
 					蔡佩桂／國立高雄師範大學跨領域藝術研究所副教授兼所長<br />
 					李根政／地球公民基金會董事長<br />
 					傅志男／看見氣爆十週年攝影展攝影者</p></div>
-			<div class="p-2 mx-auto my-3" style="background-color: #f4b23e;border-radius: 10pt;">
-				<h4 class="text-center p-0 m-0" style="color:#fff"><a class="col-10 col-md-3 " href="/node/4519" style="color:#fff">活動資訊</a></h4></div></div></div>
+			<div class="col-12 d-flex justify-content-center">
+				<a class="btn-see-gas" href="/node/4519">活動資訊</a></div></div></div>
 	<div class="container-fluid" id="theme_5" style="background-color:#fff;">
 		<div class="mx-auto row justify-content-center align-items-center pb-3" style="">
 			<div class="col-12 row py-3 px-4 my-3" style="">
@@ -389,8 +476,8 @@ p {
 					傅志男／地球公民基金會董事、氣爆展攝影師<br />
 					許順良／大林蒲在地居民<br />
 					湯正祺／等閑書房</p></div>
-			<div class="p-2 mx-auto my-3" style="background-color: #f4b23e;border-radius: 10pt;">
-				<h4 class="text-center p-0 m-0" style="color:#fff"><a class="col-10 col-md-3 order-3" href="/node/4516" style="color:#fff">活動資訊</a></h4></div></div></div>
+			<div class="col-12 d-flex justify-content-center">
+				<a class="btn-see-gas" href="/node/4516">活動資訊</a></div></div></div>
 	<div class="container-fluid" id="theme_6" style="background-color:#003459;">
 		<div class="mx-auto row justify-content-center align-items-center pb-3" style="">
 			<div class="col-12 row py-3 px-4 my-3" style="">
@@ -402,8 +489,8 @@ p {
 				<h4 class="h4-white">活動資訊</h4>
 				<p class="info" style="color: white;">2024/7/13(六) 13:30 ~ 17:00<br />
 					地球公民高雄總部（高雄市前金區中華四路282號5樓）</p></div>
-			<div class="p-2 mx-auto my-3" style="background-color: #f4b23e;border-radius: 10pt;">
-				<h4 class="text-center p-0 m-0" style="color:#fff"><a class="col-10 col-md-3" href="/node/4509" style="color:#fff">活動資訊</a></h4></div></div></div><!--footer-->
+			<div class="col-12 d-flex justify-content-center">
+				<a class="btn-see-gas" href="/node/4509">活動資訊</a></div></div></div><!--footer-->
 	<div class="container-fluid" style="background-color:#fff;">
 		<div class="row">
 			<div class="col-10 col-md-10 py-4 mx-auto" style="color:;">
@@ -419,35 +506,13 @@ p {
 			<div class="col-10 col-sm-2 order-3 order-sm-2">
 				<h4 style="text-align:center;color:#f4b23e;font-weight: 500;">動身護土</h4>
 				<p style="color:#fff;text-align:center;">行動有力，帶來正面改變</p></div>
-			<div class="col-10 col-sm-2 order-1 order-sm-3 px-0 py-3 py-md-0"><a href="/donate"><img alt="" class="d-block mx-auto" src="/sites/cet-taiwan.org/files/glazed-builder/20230313-3.png" style="max-width: 60%;filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(11deg) brightness(104%) contrast(104%)
+			<div class="col-10 col-sm-2 order-1 order-sm-3 px-0 py-3 py-md-0"><a href="/donate"><img alt="地球公民基金會" class="d-block mx-auto" src="/sites/cet-taiwan.org/files/glazed-builder/20230313-3.png" style="max-width: 60%;filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(11deg) brightness(104%) contrast(104%)
 " /></a></div>
 			<div class="col-10 col-sm-2 order-4 order-sm-4">
 				<h4 style="text-align:center;color:#f4b23e;font-weight: 500;">公正獨立</h4>
 				<p style="color:#fff;text-align:center;">財務自主，經費來自大眾捐款，不接受政府補助</p></div>
 			<div class="col-10 col-sm-2 order-5 order-sm-5">
 				<h4 style="text-align:center;color:#f4b23e;font-weight: 500;">深化民主</h4>
-				<p style="color:#fff;text-align:center;">堅持環境與世代正義，壯大公民社會</p></div></div></div><script>
-    window.onload = function() {
-        setEqualHeight_1();
-    }
-
-    function setEqualHeight_1() {
-        var div1 = document.getElementById('eqh_div_1');
-        var div2 = document.getElementById('eqh_div_2');
-        var div3 = document.getElementById('eqh_div_3');
-        var div4 = document.getElementById('eqh_div_4');
-        var div5 = document.getElementById('eqh_div_5');
-        var div6 = document.getElementById('eqh_div_6');
-
-        var maxHeight = Math.max(div1.offsetHeight, div2.offsetHeight, div3.offsetHeight, div4.offsetHeight, div5.offsetHeight, div6.offsetHeight);
-
-        div1.style.height = maxHeight + 'px';
-        div2.style.height = maxHeight + 'px';
-        div3.style.height = maxHeight + 'px';
-        div4.style.height = maxHeight + 'px';
-        div5.style.height = maxHeight + 'px';
-        div6.style.height = maxHeight + 'px';
-    }
-</script></div>
+				<p style="color:#fff;text-align:center;">堅持環境與世代正義，壯大公民社會</p></div></div></div></div>
 </body>
 </html>

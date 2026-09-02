@@ -189,10 +189,21 @@ img {
         overflow: hidden;
         pointer-events: none;
     }
-    /* 用 <picture> tiles 取代 background-repeat */
+    /* 裝飾網格紙：repeat 填滿桌機 CEO 左側 */
     #grid-paper .grid-paper-tiles{
         position: absolute;
         inset: 0;
+        background-image: url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
+        background-repeat: repeat;
+        background-size: 550px auto;
+    }
+    @supports (background-image: image-set(url("/sites/cet-taiwan.org/files/u422/20260317-05.webp") 1x)) {
+        #grid-paper .grid-paper-tiles{
+            background-image: image-set(
+                url('/sites/cet-taiwan.org/files/u422/20260317-05.webp') type('image/webp'),
+                url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png') type('image/png')
+            );
+        }
     }
     /* #grid-paper_mobile{
         background-image: url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
