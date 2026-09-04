@@ -1,4 +1,6 @@
-
+<!-- 
+ logo大小、小孩大小
+ faq內容寬度 -->
 <!doctype html>
 <html lang="zh-TW">
 <head>
@@ -1028,10 +1030,11 @@ section.donate-hero{
     section.donate-hero{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         position: relative;
         width: 100%;
-        min-height: 70vh;
+        min-height: 100vh;
+        min-height: 100dvh;
         max-width: none;
         padding: 0 24px;
     }
@@ -1044,29 +1047,43 @@ section.donate-hero{
     }
     .donate-hero__inner.container{
         width: 100%;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 0;
+        padding-bottom: 0;
         display: grid;
         grid-template-columns: minmax(0, 1fr) 390px;
-        grid-template-rows: 1fr;
+        grid-template-rows: minmax(100vh, auto);
+        grid-template-rows: minmax(100dvh, auto);
         gap: 40px;
         position: relative;
         z-index: 1;
-        align-items: center;
+        align-items: start;
         box-sizing: border-box;
     }
     .donate-hero .img-box{
         grid-area: auto;
-        min-height: 400px;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        max-height: 100vh;
+        max-height: 100dvh;
         padding: 0;
+        align-self: start;
+        position: sticky;
+        top: 0;
     }
     .donate-hero .table-box{
         grid-area: auto;
         width: 390px;
         max-width: 390px;
-        padding: 0;
+        padding: 40px 0;
         justify-self: stretch;
-        align-self: center;
+        align-self: start;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
     }
 }
 @media (min-width: 992px) {
@@ -1507,6 +1524,7 @@ img {
     font-size: clamp(1.375rem, 7.5vw, 1.75rem);
     line-height: 1.4;
     letter-spacing: 0.04rem;
+    text-shadow:2px 2px 4px black;
 }
 #top-slogan .top-slogan__line {
     white-space: nowrap;
@@ -1595,6 +1613,9 @@ img {
     }
     footer p {
         font-weight: 400;
+        
+    }
+    footer p:last-child{
         margin-bottom: 16px;
     }
     .content-block_text{
@@ -1658,10 +1679,21 @@ img {
         overflow: hidden;
         pointer-events: none;
     }
-    /* 用 <picture> tiles 取代 background-repeat */
+    /* 裝飾網格紙：repeat 填滿桌機 CEO 左側 */
     #grid-paper .grid-paper-tiles{
         position: absolute;
         inset: 0;
+        background-image: url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
+        background-repeat: repeat;
+        background-size: 550px auto;
+    }
+    @supports (background-image: image-set(url("/sites/cet-taiwan.org/files/u422/20260317-05.webp") 1x)) {
+        #grid-paper .grid-paper-tiles{
+            background-image: image-set(
+                url('/sites/cet-taiwan.org/files/u422/20260317-05.webp') type('image/webp'),
+                url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png') type('image/png')
+            );
+        }
     }
     /* #grid-paper_mobile{
         background-image: url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
@@ -2397,7 +2429,16 @@ img {
 
                     <ul class="donation-box__amount-list list-unstyled mb-0" id="donate-amount-list">
                         <li>
-                            <button type="button" class="donation-box__amount-option" data-amount="500" aria-pressed="false">
+                            <button type="button" class="donation-box__amount-option" data-amount="300" aria-pressed="false">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">300</span>
+                                </span>
+                                <span class="donation-box__amount-desc"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="donation-box__amount-option is-active" data-amount="500" aria-pressed="true">
                                 <span class="donation-box__amount-value">
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">500</span>
@@ -2406,19 +2447,10 @@ img {
                             </button>
                         </li>
                         <li>
-                            <button type="button" class="donation-box__amount-option is-active" data-amount="1000" aria-pressed="true">
+                            <button type="button" class="donation-box__amount-option" data-amount="1000" aria-pressed="false">
                                 <span class="donation-box__amount-value">
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">1000</span>
-                                </span>
-                                <span class="donation-box__amount-desc"></span>
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="donation-box__amount-option" data-amount="1500" aria-pressed="false">
-                                <span class="donation-box__amount-value">
-                                    <span class="donation-box__currency">NTD</span>
-                                    <span class="donation-box__number">1500</span>
                                 </span>
                                 <span class="donation-box__amount-desc"></span>
                             </button>
@@ -2640,11 +2672,11 @@ img {
 				<div class="card-body">
 					<p class="card-text mb-0">2023 年 我們成功讓空污大戶的空污費被大幅調高，提高大工廠排放空污的成本，並減少每年9000公噸的空污排放。</p></div></div></div>
 		<div class="carousel slide d-md-none d-flex justify-content-center" data-bs-ride="carousel" id="influenceCarousel">
-			<div class="carousel-indicators mx-auto"><button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button><button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button><button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button></div>
+			<div class="carousel-indicators mx-auto"><button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#influenceCarousel" type="button"></button><button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#influenceCarousel" type="button"></button><button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#influenceCarousel" type="button"></button></div>
 			<div class="carousel-inner">
 				<div class="carousel-item active" data-bs-interval="false">
 					<div class="card" id="flag-card" style="position:relative;">
-						<div class="card-img " id="flag-img-mobile"><picture> <source media="max-width: 767.98px" srcset="/sites/cet-taiwan.org/files/u422/20251119-02.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-02.png" /> </picture></div>
+						<div class="card-img " id="flag-img-mobile"><picture> <source media="(max-width: 767.98px)" srcset="/sites/cet-taiwan.org/files/u422/20251119-02.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-02.png" /> </picture></div>
 						<div class="card-body">
 							<p class="card-text pt-0 mb-0">2014 年 我們發起了校園升空污旗行動，讓空污對健康的危害進入社會大眾的視野。</p></div></div></div>
 				<div class="carousel-item" data-bs-interval="false">
@@ -2652,7 +2684,7 @@ img {
 						<div class="card-img"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-03.webp" type="image/webp" /> <img alt="" class="card-img-top img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-03.png" /> </picture></div>
 						<div class="card-body">
 							<p class="card-text pt-0 mb-0">2017 年 我們促成高雄市政府加嚴水泥業的空污排放標準，透過強化空污管制，大幅改善高雄文府國小及左營地區的空污問題。</p></div></div></div>
-				<div class="carousel-item" data-bs-interval="flase">
+				<div class="carousel-item" data-bs-interval="false">
 					<div class="card">
 						<div class="card-img pt-md-5"><picture> <source srcset="/sites/cet-taiwan.org/files/u422/20251119-04.webp" type="image/webp" /> <img alt="" class="card-img-top" decoding="async" id="cash-icon-mobile" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20251119-04.png" /> </picture></div>
 						<div class="card-body">
@@ -2784,6 +2816,7 @@ img {
 		</div>
 	</div>
 </section>
+
 <div class="py-3 d-flex justify-content-center align-items-center" style="background-color: white;">
 	<div class="container-readable ">
 		<p class="cet-info d-block d-xl-none mb-0 text-center">立案字號 環署綜字第 0990100475 號<br />
@@ -2858,14 +2891,14 @@ img {
 <script>
 window.DONATION_BOX_AMOUNT_DATA = {
     monthly: [
-        { desc: '' },
-        { desc: '' },
-        { desc: '' }
+        { amount: '300', desc: '' },
+        { amount: '500', desc: '' },
+        { amount: '1000', desc: '' }
     ],
     once: [
-        { desc: '' },
-        { desc: '' },
-        { desc: '' }
+        { amount: '500', desc: '' },
+        { amount: '1000', desc: '' },
+        { amount: '2500', desc: '' }
     ]
 };
 </script>
@@ -3020,7 +3053,7 @@ window.DONATION_BOX_AMOUNT_DATA = {
     // &_grouping=recurring | non-recurring
     function getDonatePageBaseUrl() {
         var link = document.querySelector('link[rel="canonical"]');
-        return (link && link.href) || 'https://dev.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=43';
+        return (link && link.href) || '/civicrm/contribute/transact?reset=1&id=44';
     }
 
     function buildDonateUrl(amount, grouping) {

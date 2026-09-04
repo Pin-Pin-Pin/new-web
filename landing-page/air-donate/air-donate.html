@@ -104,7 +104,16 @@
 
                     <ul class="donation-box__amount-list list-unstyled mb-0" id="donate-amount-list">
                         <li>
-                            <button type="button" class="donation-box__amount-option" data-amount="500" aria-pressed="false">
+                            <button type="button" class="donation-box__amount-option" data-amount="300" aria-pressed="false">
+                                <span class="donation-box__amount-value">
+                                    <span class="donation-box__currency">NTD</span>
+                                    <span class="donation-box__number">300</span>
+                                </span>
+                                <span class="donation-box__amount-desc"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="donation-box__amount-option is-active" data-amount="500" aria-pressed="true">
                                 <span class="donation-box__amount-value">
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">500</span>
@@ -113,19 +122,10 @@
                             </button>
                         </li>
                         <li>
-                            <button type="button" class="donation-box__amount-option is-active" data-amount="1000" aria-pressed="true">
+                            <button type="button" class="donation-box__amount-option" data-amount="1000" aria-pressed="false">
                                 <span class="donation-box__amount-value">
                                     <span class="donation-box__currency">NTD</span>
                                     <span class="donation-box__number">1000</span>
-                                </span>
-                                <span class="donation-box__amount-desc"></span>
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="donation-box__amount-option" data-amount="1500" aria-pressed="false">
-                                <span class="donation-box__amount-value">
-                                    <span class="donation-box__currency">NTD</span>
-                                    <span class="donation-box__number">1500</span>
                                 </span>
                                 <span class="donation-box__amount-desc"></span>
                             </button>
@@ -565,14 +565,14 @@
 <script>
 window.DONATION_BOX_AMOUNT_DATA = {
     monthly: [
-        { desc: '' },
-        { desc: '' },
-        { desc: '' }
+        { amount: '300', desc: '' },
+        { amount: '500', desc: '' },
+        { amount: '1000', desc: '' }
     ],
     once: [
-        { desc: '' },
-        { desc: '' },
-        { desc: '' }
+        { amount: '500', desc: '' },
+        { amount: '1000', desc: '' },
+        { amount: '2500', desc: '' }
     ]
 };
 </script>
