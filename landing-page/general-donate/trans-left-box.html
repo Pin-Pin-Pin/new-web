@@ -1,0 +1,86 @@
+<style type="text/css">
+.logo-img {
+    display: none;
+}
+#main #intro_text .trans-left-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 450px;
+    margin-inline: auto;
+    box-sizing: border-box;
+}
+#main #intro_text .trans-left-box picture {
+    display: block;
+    max-width: 100%;
+}
+#main #intro_text .trans-left-box img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+#main #intro_text #top-slogan {
+    width: 300px;
+    max-width: 100%;
+}
+#main #intro_text #cet-top-logo {
+    width: 160px;
+    max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+    #main #intro_text #top-slogan {
+        width: 330px;
+    }
+}
+@media screen and (min-width: 992px) {
+    #main #intro_text #top-slogan {
+        width: 450px;
+    }
+}
+</style>
+<div class="trans-left-box">
+    <picture>
+        <source
+            media="(min-width: 768px)"
+            type="image/webp"
+            srcset="
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-tbl-top-slogan-450.webp 450w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-tbl-top-slogan-705.webp 705w
+            "
+            sizes="(min-width: 992px) 450px, 330px"
+        >
+        <source
+            type="image/webp"
+            srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-mb-top-slogan-300.webp 300w"
+        >
+        <img
+            id="top-slogan"
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260728-mb-top-slogan-300.png"
+            width="433"
+            height="132"
+            alt="你的支持匯聚更多守護環境的公民力量"
+            decoding="async"
+        >
+    </picture>
+    <picture>
+        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/cet-logo-12.svg" type="image/svg+xml">
+        <img
+            id="cet-top-logo"
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/cet-logo-12.png"
+            width="539"
+            height="159"
+            alt="地球公民基金會"
+            decoding="async"
+        >
+    </picture>
+</div>
+<!-- <script type="text/javascript">
+var metaTag = document.createElement('meta');
+metaTag.setAttribute('name', 'description');
+metaTag.setAttribute('content', '捐款支持地球公民基金會，匯聚更多守護環境的公民力量。你的定期定額，讓專業倡議得以持續監督政府與企業。');
+var headElement = document.querySelector('head');
+headElement.appendChild(metaTag);
+</script> -->

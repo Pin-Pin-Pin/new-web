@@ -257,6 +257,7 @@ section.donate-hero{
     font-weight: 400;
     line-height: 1.5;
     color: var(--gray-600);
+    transition: color 0.2s ease;
 }
 .donation-box__number{
     font-family: "Noto Sans TC", sans-serif;
@@ -275,6 +276,15 @@ section.donate-hero{
     font-weight: 400;
     line-height: 1.5;
     color: var(--brand-black);
+    transition: color 0.2s ease;
+}
+.donation-box__amount-option:hover .donation-box__currency,
+.donation-box__amount-option:hover .donation-box__number,
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    color: var(--brand-primary);
+}
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    font-weight: 400;
 }
 .donation-box__custom{
     display: flex;

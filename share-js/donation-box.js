@@ -146,9 +146,40 @@
     // netiCRM 金額預填：https://neticrm.tw/resources/2423#5
     // &_amt=金額（不在選項中則視為自訂金額）
     // &_grouping=recurring | non-recurring
+    var TRANSACT_BASE = 'https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=';
+    var PAGE_TRANSACT_IDS = {
+        'general-donate': '50',
+        'air-donate': '44',
+        'farm-donate': '27'
+    };
+
     function getDonatePageBaseUrl() {
+        if (window.DONATION_BOX_TRANSACT_URL) {
+            return window.DONATION_BOX_TRANSACT_URL;
+        }
+
+        var configuredUrl = box.getAttribute('data-transact-url');
+        if (configuredUrl) {
+            return configuredUrl;
+        }
+
+        var configuredId = String(
+            window.DONATION_BOX_TRANSACT_ID || box.getAttribute('data-transact-id') || ''
+        ).trim();
+        if (configuredId) {
+            return TRANSACT_BASE + configuredId;
+        }
+
+        var path = (window.location.pathname || '').toLowerCase();
+        var pageKeys = Object.keys(PAGE_TRANSACT_IDS);
+        for (var i = 0; i < pageKeys.length; i++) {
+            if (path.indexOf(pageKeys[i]) !== -1) {
+                return TRANSACT_BASE + PAGE_TRANSACT_IDS[pageKeys[i]];
+            }
+        }
+
         var link = document.querySelector('link[rel="canonical"]');
-        return (link && link.href) || 'https://dev.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=43';
+        return (link && link.href) || TRANSACT_BASE + '50';
     }
 
     function buildDonateUrl(amount, grouping) {

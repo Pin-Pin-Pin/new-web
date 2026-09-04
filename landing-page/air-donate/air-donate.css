@@ -193,27 +193,27 @@ img {
     #grid-paper .grid-paper-tiles{
         position: absolute;
         inset: 0;
-        background-image: url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
+        background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
         background-repeat: repeat;
         background-size: 550px auto;
     }
-    @supports (background-image: image-set(url("/sites/cet-taiwan.org/files/u422/20260317-05.webp") 1x)) {
+    @supports (background-image: image-set(url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260317-05.webp") 1x)) {
         #grid-paper .grid-paper-tiles{
             background-image: image-set(
-                url('/sites/cet-taiwan.org/files/u422/20260317-05.webp') type('image/webp'),
-                url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png') type('image/png')
+                url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260317-05.webp') type('image/webp'),
+                url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20251130-03-604.png') type('image/png')
             );
         }
     }
     /* #grid-paper_mobile{
-        background-image: url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
+        background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20251130-03-604.png');
         background-repeat: repeat;
     }
-    @supports (background-image: image-set(url("/sites/cet-taiwan.org/files/u422/20260317-05.webp") 1x)) {
+    @supports (background-image: image-set(url("https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260317-05.webp") 1x)) {
         #grid-paper_mobile{
             background-image: image-set(
-                url('/sites/cet-taiwan.org/files/u422/20260317-05.webp') type('image/webp'), 
-                url('/sites/cet-taiwan.org/files/u422/20251130-03-604.png') type('image/png'));
+                url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260317-05.webp') type('image/webp'), 
+                url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20251130-03-604.png') type('image/png'));
             background-repeat: repeat;
         }
 
