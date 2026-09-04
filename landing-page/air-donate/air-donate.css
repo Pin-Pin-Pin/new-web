@@ -39,6 +39,11 @@ img {
 #top-slogan .top-slogan__line {
     white-space: nowrap;
 }
+@media (max-width: 359px) {
+    #top-slogan .top-slogan__line {
+        white-space: normal;
+    }
+}
 #cet-top-logo{
     text-shadow:2px 2px 4px black;
     
@@ -146,7 +151,8 @@ img {
     /* 寬度 */
     @media(min-width:1024px) {
         .container-readable{
-            width: 1024px;
+            width: 100%;
+            max-width: 1024px;
         }
         #ceo-story_mobile_1,#ceo-story_mobile_2{display: none;}
     }
@@ -314,7 +320,13 @@ img {
     @media(min-width:1024px) {
         #banner-middle .container-readable,#child-run .container-readable {
             max-width: 1024px;
-            width: 1024px;
+            width: 100%;
+        }
+    }
+    @media (max-width: 374px) {
+        [style*="white-space: nowrap"],
+        [style*="white-space:nowrap"] {
+            white-space: normal !important;
         }
     }
     #heading-1 h2{letter-spacing: 0.4rem;}

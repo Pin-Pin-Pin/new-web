@@ -471,9 +471,13 @@ span.ext {
 
 
 
+.desktop-layout {
+    position: relative;
+    overflow-x: clip;
+}
+
 .desktop-layout .container-md {
     position: relative;
-    overflow: visible;
 }
 
 /* 共用樣式 */
@@ -483,6 +487,7 @@ span.ext {
     top: 50%;
     transform: translateY(-50%);
     height: 70px;
+    width: 100%;
     background-repeat: repeat-x;
     background-position: center;
     background-size: contain;
@@ -492,19 +497,16 @@ span.ext {
 }
 
 .big-deco-left {
-    left: calc(-50vw + 50%);
-    /* 從container-md左側延伸到container-fluid左側 */
+    left: auto;
     right: calc(100% + 30px);
-    /* 貼齊container-md左側，並保持10px間距 */
-    background-image: url('/sites/cet-taiwan.org/files/u422/20250529-00-0-2_L.gif');
+    /* 貼齊 container-md 左側，並保持間距；多餘寬度由 .desktop-layout 裁切 */
+    background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-0-2_L.gif');
 }
 
 .big-deco-right {
     left: calc(100% + 30px);
-    /* 貼齊container-md右側，並保持10px間距 */
-    right: calc(-50vw + 50%);
-    /* 從container-md右側延伸到container-fluid右側 */
-    background-image: url('/sites/cet-taiwan.org/files/u422/20250529-00-0-2_R.gif');
+    right: auto;
+    background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-0-2_R.gif');
 }
 
 
@@ -514,14 +516,14 @@ span.ext {
 .small-deco-right {
     height: 50px;
     /* 基本高度 */
-    background-image: url('/sites/cet-taiwan.org/files/u422/20250529-00-0-2_L.gif');
+    background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-0-2_L.gif');
     background-repeat: repeat-x;
     background-size: contain;
     background-position: center;
 }
 
 .small-deco-right {
-    background-image: url('/sites/cet-taiwan.org/files/u422/20250529-00-0-2_R.gif');
+    background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-0-2_R.gif');
 }
 
 .mobile-image-row {
@@ -587,23 +589,23 @@ iframe.crm-container-embed {
 <script crossorigin="anonymous" src="https://kit.fontawesome.com/2360de9dbf.js"></script><script crossorigin="anonymous" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <div style="overflow-x: hidden;"><!-- hero-->
 	<section class="d-flex container-fluid justify-content-center" style="background-color:var(--gray-green);">
-		<div class="p-0 d-none d-md-block" style="position: relative;"><picture> <source media="(min-width: 768px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-0-0.webp" type="image/webp" /> <img alt="電腦版插畫封面底圖" class="img-fluid" decoding="async" fetchpriority="high" src="/sites/cet-taiwan.org/files/u422/20250529-00-0-0.gif" /> </picture> <picture><source media="(max-width:575.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250522-04-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="/sites/cet-taiwan.org/files/u422/20250522-04.webp" type="image/webp" /> <img class="col-6" decoding="async" fetchpriority="high" src="/sites/cet-taiwan.org/files/u422/20250522-04.png" style="width:40%;background-repeat: no-repeat;background-size: 100%;background-position:center;position: absolute;top: 30%;right: 30%;" /> </picture></div>
-		<div class="p-0 d-block d-md-none" style="position: relative;"><picture> <source media="(max-width: 767.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250604-02.webp" type="image/webp" /> <img alt="手機版插畫封面底圖" class="img-fluid" decoding="async" fetchpriority="high" src="/sites/cet-taiwan.org/files/u422/20250604-02.png" /> </picture> <picture><source media="(max-width:575.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250522-04-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250522-04.webp" type="image/webp" /> <img class="col-6" decoding="async" fetchpriority="high" src="/sites/cet-taiwan.org/files/u422/20250522-04.png" style="width:70%;background-repeat: no-repeat;background-size: 100%;background-position:center;position: absolute;top: 35%;right: 15%;" /> </picture></div></section><!-- intro -->
+		<div class="p-0 d-none d-md-block" style="position: relative;"><picture> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-0-0.webp" type="image/webp" /> <img alt="電腦版插畫封面底圖" class="img-fluid" decoding="async" fetchpriority="high" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-0-0.gif" /> </picture> <picture><source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-04-s.webp" type="image/webp" /> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-04.webp" type="image/webp" /> <img class="col-6" decoding="async" fetchpriority="high" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-04.png" style="width:40%;background-repeat: no-repeat;background-size: 100%;background-position:center;position: absolute;top: 30%;right: 30%;" /> </picture></div>
+		<div class="p-0 d-block d-md-none" style="position: relative;"><picture> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250604-02.webp" type="image/webp" /> <img alt="手機版插畫封面底圖" class="img-fluid" decoding="async" fetchpriority="high" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250604-02.png" /> </picture> <picture><source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-04-s.webp" type="image/webp" /> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-04.webp" type="image/webp" /> <img class="col-6" decoding="async" fetchpriority="high" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-04.png" style="width:70%;background-repeat: no-repeat;background-size: 100%;background-position:center;position: absolute;top: 35%;right: 15%;" /> </picture></div></section><!-- intro -->
 	<section class="container-fluid pb-5" style="background-color:var(--gray-green);">
 		<div class="container-md">
 			<div class="dash py-5 px-md-5 px-4">
 				<p>「國土計畫」是一個希望讓全國土地「先想好再使用」的制度，如果你關心國家發展、土地開發，一定會直接或間接的遇到「國土計畫」。</p>
 				<p class="mb-0">以下將會為你說明，國土計畫作為新制度，改變了哪些土地使用邏輯；會對土地的使用造成什麼影響；實際上又是怎麼執行。</p></div></div>
-		<div class="container-md pb-4"><picture><source media="(max-width:575.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250522-05-s.webp" type="image/webp" /><source srcset="/sites/cet-taiwan.org/files/u422/20250522-05.webp" type="image/webp" /><img alt="" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250522-05.png" /></picture>
+		<div class="container-md pb-4"><picture><source media="(max-width:575.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-05-s.webp" type="image/webp" /><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-05.webp" type="image/webp" /><img alt="" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-05.png" /></picture>
 			<div class="dash py-5 px-md-5 px-4">
-				<p>上次我們跟著<a href="/freepageb/100053" target="_blank"><b><u>狗兔雞花一家人搬新家的故事</u></b></a>，讓大家了解「國土計畫」就像搬家搬進二手屋，要在既有的情況下做調整，哪些空間可以作為廚房、廁所、房間，會受到水管、插座、瓦斯在哪裡影響，就像現實土地的使用。</p>
+				<p>上次我們跟著<a href="https://www.cet-taiwan.org/freepageb/100053" target="_blank"><b><u>狗兔雞花一家人搬新家的故事</u></b></a>，讓大家了解「國土計畫」就像搬家搬進二手屋，要在既有的情況下做調整，哪些空間可以作為廚房、廁所、房間，會受到水管、插座、瓦斯在哪裡影響，就像現實土地的使用。</p>
 				<p class="mb-0">而使用空間的人，也會有不同的需求，這些需求也會跟著時間有所轉變，國土計畫的核心概念就是這麼簡單。</p></div></div></section><!-- 簡介計畫史 -->
 	<section class="container-fluid" style="background-color:var(--gray-orange); "><!-- 大螢幕版 -->
 		<div class="container-fluid desktop-layout justify-content-center align-items-center d-xl-flex d-none">
 			<div class="container-md py-3">
 				<div class="decorative-img big-deco-left">&nbsp;</div>
 				<div class="row align-items-center speech-container">
-					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-1.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-1.png" /> </picture></div>
+					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-1.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-1.png" /> </picture></div>
 					<div class="col">
 						<div class="speech-bubble d-flex align-items-center">
 							<h2 class="mb-0" style="color:var(--brick)">土地什麼時候開始<span>被管理？</span></h2></div></div></div>
@@ -611,7 +613,7 @@ iframe.crm-container-embed {
 		<div class="container-fluid mobile-layout d-block d-xl-none pt-4 pb-3">
 			<div class="mobile-image-row mb-3">
 				<div class="small-deco-left">&nbsp;</div>
-				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-1.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-1.png" style="max-height: 100px;" /> </picture></div>
+				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-1.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-1.png" style="max-height: 100px;" /> </picture></div>
 				<div class="small-deco-right">&nbsp;</div></div>
 			<div class="container-md">
 				<div class="speech-bubble-small d-flex align-items-center justify-content-center">
@@ -622,7 +624,7 @@ iframe.crm-container-embed {
 				<div class="solid-border py-5 px-md-5 px-4" style="color:var(--gray);">
 					<p>在有土地管理法規之前，土地就已經被使用，因為沒有預先計畫導致各地發展分散，不同使用混在一起。</p>
 					<p class="mb-0">都市地區在日治時期開始有「都市計畫」，而其餘國土直到 1974 年才有「區域計畫」，當時期待透過管理規劃，翻轉很多地方發展各自零星分散、農地大量破碎、流失的情況。</p>
-					<div class="my-5"><picture> <source media="(min-width: 768px)" srcset="/sites/cet-taiwan.org/files/u422/20250509-05-01.webp" type="image/webp" /> <img alt="電腦-法規演進時間軸" class="img-fluid d-none d-md-block" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-05-01.png" /> </picture> <picture> <source media="(max-width: 767.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250509-05-02.webp" type="image/webp" /> <img alt="手機-法規演進時間軸" class="img-fluid d-block d-md-none" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-05-02.png" /></picture></div>
+					<div class="my-5"><picture> <source media="(min-width: 768px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-05-01.webp" type="image/webp" /> <img alt="電腦-法規演進時間軸" class="img-fluid d-none d-md-block" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-05-01.png" /> </picture> <picture> <source media="(max-width: 767.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-05-02.webp" type="image/webp" /> <img alt="手機-法規演進時間軸" class="img-fluid d-block d-md-none" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-05-02.png" /></picture></div>
 					<p class="mb-0">但實際執行時卻只是照著當時現況記錄下來，沒有「先規劃再管理」，原本想改善的問題，因此難以改善。</p></div></div></div></section>
 	<section class="container-fluid" style="background-color:var(--gray-orange); "><!-- 大螢幕版 -->
 		<div class="container-fluid desktop-layout justify-content-center align-items-center d-xl-flex d-none">
@@ -632,12 +634,12 @@ iframe.crm-container-embed {
 					<div class="col">
 						<div class="speech-bubble left d-flex align-items-center">
 							<h2 class="mb-0" style="color:var(--brick)">國土計畫比較好？國土計畫改變<span class="wsnw">了什麼</span></h2></div></div>
-					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-2.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-2.png" /> </picture></div></div>
+					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-2.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-2.png" /> </picture></div></div>
 				<div class="decorative-img big-deco-right">&nbsp;</div></div></div><!-- 小螢幕版 -->
 		<div class="container-fluid mobile-layout d-block d-xl-none pt-4 pb-3">
 			<div class="mobile-image-row mb-3">
 				<div class="small-deco-left">&nbsp;</div>
-				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-2.webp" type="image/webp" /> <img alt="狗和雞" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-2.png" style="max-height: 100px;" /> </picture></div>
+				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-2.webp" type="image/webp" /> <img alt="狗和雞" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-2.png" style="max-height: 100px;" /> </picture></div>
 				<div class="small-deco-right">&nbsp;</div></div>
 			<div class="container-md">
 				<div class="speech-bubble-small d-flex align-items-center justify-content-center">
@@ -650,14 +652,14 @@ iframe.crm-container-embed {
 					<div class="col-12 col-md-6 col-lg-5 square">
 						<div class="h-100" style="background-color:var(--gray);">
 							<div class="py-5 custom-card">
-								<div class="px-md-5 px-4"><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-07.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-07.png" /></picture></div>
+								<div class="px-md-5 px-4"><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-07.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-07.png" /></picture></div>
 								<div class="px-md-5 px-4">
 									<h3 style="color:var(--yellow)">適合的土地<span class="wsnw">做適合的事情</span></h3>
 									<p class="mb-0" style=" color:var(--white); margin-top: auto;">每一塊土地因為先天地理條件或區位條件，都會有相對適合與不適合的使用方式，像是無污染、農水路配置完善的地方適合農業發展，農業發展也只能在農地上，工業發展適合發生在具有生產與交通區位的地方。一但錯置，可能讓土地價值無法發揮、甚至造成污染或公安等危險。</p></div></div></div></div>
 					<div class="col-12 col-md-6 col-lg-5 square">
 						<div class="h-100" style="background-color:var(--gray);">
 							<div class="py-5 custom-card">
-								<div class="px-md-5 px-4"><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-08.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-08.png" /></picture></div>
+								<div class="px-md-5 px-4"><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-08.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-08.png" /></picture></div>
 								<div class="px-md-5 px-4">
 									<h3 style="color:var(--yellow)">有風險的地方<span class="wsnw">避免開發</span></h3>
 									<p class="mb-0" style=" color:var(--white); margin-top: auto;">台灣是一個容易發生天災的地方，不論是風災還是地震，我們的國土上都有許多容易造成災害的土地，這些土地在國土計畫的脈絡下能識別出來避免開發，或對可能的災害風險做好預警及準備，就能減少天災造成的損失。</p></div></div></div></div></div>
@@ -666,14 +668,14 @@ iframe.crm-container-embed {
 					<div class="col-12 col-md-6 col-lg-5 square">
 						<div class="h-100" style="background-color:var(--gray);">
 							<div class="py-5 custom-card">
-								<div class="px-md-5 px-4"><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-09.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-09.png" /></picture></div>
+								<div class="px-md-5 px-4"><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-09.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-09.png" /></picture></div>
 								<div class="px-md-5 px-4">
 									<h3 style="color:var(--yellow)">持續建立共識</h3>
 									<p class="mb-0" style=" color:var(--white); margin-top: auto;">有別於過去區域計畫的擬定，完全沒有民眾參與的程序，研擬國土計畫規範有邀集學者、專家、民間團體等舉辦座談會或以其他適當方法廣詢意見，作為擬訂計畫參考，以及審議前、核定後的公開展覽及公聽會。</p></div></div></div></div>
 					<div class="col-12 col-md-6 col-lg-5 square">
 						<div class="h-100" style="background-color:var(--gray);">
 							<div class="py-5 custom-card">
-								<div class="px-md-5 px-4"><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-10.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-10.png" /></picture></div>
+								<div class="px-md-5 px-4"><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-10.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-10.png" /></picture></div>
 								<div class="px-md-5 px-4">
 									<h3 style="color:var(--yellow)">規劃的權力下放</h3>
 									<p class="mb-0" style=" color:var(--white); margin-top: auto;">過去的建設規劃，常常是離地方遙遠的中央政府直接決定就進行，像是十大建設，這樣的規劃方式很有可能不顧地方脈絡與需求。而國土計畫的設計，讓地方政府作為主要的規劃者，讓規劃能更貼近地方的需求。</p></div></div></div></div></div></div></div></section><!-- 聚餐都會訂位 -->
@@ -682,7 +684,7 @@ iframe.crm-container-embed {
 			<div class="container-md py-3">
 				<div class="decorative-img big-deco-left">&nbsp;</div>
 				<div class="row align-items-center speech-container">
-					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-3.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-3.png" /> </picture></div>
+					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-3.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-3.png" /> </picture></div>
 					<div class="col">
 						<div class="speech-bubble d-flex align-items-center">
 							<h2 class="mb-0" style="color:var(--brick)">聚餐都會訂位，旅遊會排行程，國家發展更要<span class="wsnw">有計劃</span></h2></div></div></div>
@@ -690,7 +692,7 @@ iframe.crm-container-embed {
 		<div class="container-fluid mobile-layout d-block d-xl-none pt-4 pb-3">
 			<div class="mobile-image-row mb-3">
 				<div class="small-deco-left">&nbsp;</div>
-				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-3.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-3.png" style="max-height: 100px;" /> </picture></div>
+				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-3.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-3.png" style="max-height: 100px;" /> </picture></div>
 				<div class="small-deco-right">&nbsp;</div></div>
 			<div class="container-md">
 				<div class="speech-bubble-small d-flex align-items-center justify-content-center">
@@ -699,7 +701,7 @@ iframe.crm-container-embed {
             <div class="container px-0">
                 <div class="container-md pt-5 pb-3">
                     <div class="row align-items-center speech-container">
-                        <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="兔子" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-3.png" /></div>
+                        <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="兔子" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-3.png" /></div>
                         <div class="col">
                             <div class="speech-bubble d-flex align-items-center">
                                 <h2 class="mb-0 w-100 " style="color:var(--brick);margin: 0 auto;">聚餐都會訂位，旅遊會排行程，國家發展更要<span class="wsnw">有計劃</span></h2>
@@ -722,25 +724,25 @@ iframe.crm-container-embed {
 					<div class="col-12 col-md-6 col-xl-3 square">
 						<div class="h-100" style="background-color:var(--gray);">
 							<div class="py-4 px-4 custom-card">
-								<div class="px-4"><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-11.webp" type="image/webp" /><img alt="" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-11.png" /></picture></div>
+								<div class="px-4"><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-11.webp" type="image/webp" /><img alt="" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-11.png" /></picture></div>
 								<h3 class="pt-2" style="color:var(--yellow)">公共建設被插隊</h3>
 								<p class="mb-0" style="color:var(--white)">因為超級企業在山坡上蓋了大型樂園，政府開了一條馬路，雖然附近居民也能受惠，但資源分配應考量全區發展優先順序，避免公共建設因企業開發被迫提前，影響其他地區需求。</p></div></div></div>
 					<div class="col-12 col-md-6 col-xl-3 square">
 						<div class="h-100" style="background-color:var(--gray);">
 							<div class="py-4 px-4 custom-card">
-								<div class="px-4"><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-12.webp" type="image/webp" /><img alt="" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-12.png" /></picture></div>
+								<div class="px-4"><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-12.webp" type="image/webp" /><img alt="" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-12.png" /></picture></div>
 								<h3 class="pt-2" style="color:var(--yellow)">浪費稅金收爛攤子</h3>
 								<p class="mb-0" style="color:var(--white)">違章工廠在農地上，除了污染、噪音等，農地也無法提供發生火災的合理救災條件，增加的防救災成本，以及公安災害發生時的補救，都是花費全民的納稅錢，幫違法工廠擦屁股。</p></div></div></div>
 					<div class="col-12 col-md-6 col-xl-3 square">
 						<div class="h-100" style="background-color:var(--gray);">
 							<div class="py-4 px-4 custom-card">
-								<div class="px-4"><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-13.webp" type="image/webp" /><img alt="" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-13.png" /></picture></div>
+								<div class="px-4"><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-13.webp" type="image/webp" /><img alt="" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-13.png" /></picture></div>
 								<h3 class="pt-2" style="color:var(--yellow)">人定勝天已經過時</h3>
 								<p class="mb-0" style="color:var(--white)">有些土地位在天災發生的高風險區，如果不避開這些區域，也要有足夠的預警機制，才能減少災害發生時的損失，否則等於是和老天爺對賭。</p></div></div></div>
 					<div class="col-12 col-md-6 col-xl-3 square">
 						<div class="h-100" style="background-color:var(--gray);">
 							<div class="py-4 px-4 custom-card">
-								<div class="px-4"><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-14.webp" type="image/webp" /><img alt="" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-14.png" /></picture></div>
+								<div class="px-4"><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-14.webp" type="image/webp" /><img alt="" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-14.png" /></picture></div>
 								<h3 class="pt-2" style="color:var(--yellow)">石化管線穿越城市</h3>
 								<p class="mb-0" style="color:var(--white)">高雄市區被石化產業包圍，為了將石化原料從南高雄輸送至北高雄的工業區，管線穿越城市與社區，暴露在公安風險中。預先規劃，就有機會將管線繞開城市與社區，或做更多措施降低風險。</p></div></div></div></div></div></div></section><!-- 國土計畫沒有偉大到想要憑一部法律改變世界 -->
 	<section class="container-fluid" style="background-color:var(--gray-green); "><!-- 大螢幕版 -->
@@ -751,12 +753,12 @@ iframe.crm-container-embed {
 					<div class="col">
 						<div class="speech-bubble yellow-triangle left d-flex align-items-center" style="background-color: var(--yellow);">
 							<h2 class="mb-0" style="color:var(--green)">國土計畫沒有偉大到想要憑一部法律改<span class="wsnw">變世界</span></h2></div></div>
-					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-4.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-4.png" /> </picture></div></div>
+					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-4.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-4.png" /> </picture></div></div>
 				<div class="decorative-img big-deco-right">&nbsp;</div></div></div><!-- 小螢幕版 -->
 		<div class="container-fluid mobile-layout d-block d-xl-none pt-4 pb-3">
 			<div class="mobile-image-row mb-3">
 				<div class="small-deco-left">&nbsp;</div>
-				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-4.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-4.png" style="max-height: 100px;" /> </picture></div>
+				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-4.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-4.png" style="max-height: 100px;" /> </picture></div>
 				<div class="small-deco-right">&nbsp;</div></div>
 			<div class="container-md">
 				<div class="speech-bubble-small yellow-triangle d-flex align-items-center justify-content-center" style="background-color: var(--yellow);">
@@ -767,7 +769,7 @@ iframe.crm-container-embed {
                     <div class="col">
                         <div class="speech-bubble left d-flex align-items-center" style="background: var(--yellow);">
                             <h2 class="mb-0 w-100 " style="color:var(--brick)">國土計畫沒有偉大到想要憑一部法律改<span class="wsnw">變世界</span></h2></div></div>
-                    <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="狗和雞" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-4.png" style="transform: scaleX(-1);" />
+                    <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="狗和雞" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-4.png" style="transform: scaleX(-1);" />
                     </div>
                 </div>
             </div>
@@ -783,7 +785,7 @@ iframe.crm-container-embed {
 			<div class="container-md py-3">
 				<div class="decorative-img big-deco-left">&nbsp;</div>
 				<div class="row align-items-center speech-container">
-					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-5.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-5.png" /> </picture></div>
+					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-5.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-5.png" /> </picture></div>
 					<div class="col">
 						<div class="speech-bubble yellow-triangle d-flex align-items-center" style="background-color: var(--yellow);">
 							<h2 class="mb-0" style="color:var(--green)">功能分區不是地目</h2></div></div></div>
@@ -791,7 +793,7 @@ iframe.crm-container-embed {
 		<div class="container-fluid mobile-layout d-block d-xl-none pt-4 pb-3">
 			<div class="mobile-image-row mb-3">
 				<div class="small-deco-left">&nbsp;</div>
-				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-5.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-5.png" style="max-height: 100px;" /> </picture></div>
+				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-5.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-5.png" style="max-height: 100px;" /> </picture></div>
 				<div class="small-deco-right">&nbsp;</div></div>
 			<div class="container-md">
 				<div class="speech-bubble-small yellow-triangle d-flex align-items-center justify-content-center" style="background-color: var(--yellow);">
@@ -800,7 +802,7 @@ iframe.crm-container-embed {
             <div class="container px-0">
                 <div class="container-md pt-5 pb-3 px-0">
                     <div class="row align-items-center speech-container">
-                        <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="兔子" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-5.png" /></div>
+                        <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="兔子" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-5.png" /></div>
                         <div class="col ms-auto">
                             <div class="speech-bubble d-flex align-items-center" style="background: var(--yellow);">
                                 <h2 class="mb-0 w-100 " style="color:var(--green)">功能分區不是地目</h2>
@@ -824,7 +826,7 @@ iframe.crm-container-embed {
 								<div class="py-5 custom-card">
 									<div class="px-md-5 px-4">
 										<h3 style="color:var(--yellow)">「區域計畫」<br />
-											每塊土地分開規定</h3><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-15.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-15.png" /></picture></div>
+											每塊土地分開規定</h3><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-15.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-15.png" /></picture></div>
 									<div class="px-md-5 px-4">
 										<p class="mb-0" style=" color:var(--white); margin-top: auto;">「地目」是先定義每一塊土地的名字，能做的事都仰賴於這塊土地被劃定的名字，不管附近是什麼，也不管和整個區域之間的關係，例如：建地只能蓋房子，農地只能種田。</p></div></div></div></div>
 						<div class="col-12 col-md-6 col-lg-5 square">
@@ -832,7 +834,7 @@ iframe.crm-container-embed {
 								<div class="py-5 custom-card">
 									<div class="px-md-5 px-4">
 										<h3 style="color:var(--yellow)">「國土計畫」<br />
-											整個區域一起管理</h3><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-16.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-16.png" /></picture></div>
+											整個區域一起管理</h3><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-16.webp" type="image/webp" /><img alt="" class="img-fluid px-md-4 px-lg-5" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-16.png" /></picture></div>
 									<div class="px-md-5 px-4">
 										<p class="mb-0" style=" color:var(--white); margin-top: auto;">「功能分區」是依照整個區域的土地特性，區分出最適合用途方向，區域中每一塊土地，只要符合這個區域容許的使用（參見<a href="https://www.nlma.gov.tw/filesys/file/EMMA/d1130924-1.pdf" id="custom-a" target="_blank">圈叉表</a>），都可以經過申請或不申請直接使用，例如：整區都是農業發展區，可以種田也可以蓋農舍。</p></div></div></div></div></div></div></div></div></section><!-- 這邊 -->
 	<section class="container-fluid" style="background-color:var(--gray-orange); "><!-- 大螢幕版 -->
@@ -843,12 +845,12 @@ iframe.crm-container-embed {
 					<div class="col">
 						<div class="speech-bubble left d-flex align-items-center">
 							<h2 class="mb-0" style="color:var(--brick)">現在就可以做的事都不受影響！調整的方式<span class="wsnw">也超多</span></h2></div></div>
-					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-6.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-6.png" /> </picture></div></div>
+					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-6.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-6.png" /> </picture></div></div>
 				<div class="decorative-img big-deco-right">&nbsp;</div></div></div><!-- 小螢幕版 -->
 		<div class="container-fluid mobile-layout d-block d-xl-none pt-4 pb-3">
 			<div class="mobile-image-row mb-3">
 				<div class="small-deco-left">&nbsp;</div>
-				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-6.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-6.png" style="max-height: 100px;" /> </picture></div>
+				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-6.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-6.png" style="max-height: 100px;" /> </picture></div>
 				<div class="small-deco-right">&nbsp;</div></div>
 			<div class="container-md">
 				<div class="speech-bubble-small d-flex align-items-center justify-content-center">
@@ -860,7 +862,7 @@ iframe.crm-container-embed {
                         <div class="col">
                             <div class="speech-bubble left d-flex align-items-center">
                                 <h2 class="mb-0 w-100 " style="color:var(--brick)">現在就可以做的事都不受影響！調整的方式<span class="wsnw">也超多</span></h2></div></div>
-                        <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="雞" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-6.png" style="transform: scaleX(-1);" />
+                        <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="雞" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-6.png" style="transform: scaleX(-1);" />
                         </div>
                     </div>
                 </div>
@@ -914,7 +916,7 @@ iframe.crm-container-embed {
 			<div class="container-md py-3">
 				<div class="decorative-img big-deco-left">&nbsp;</div>
 				<div class="row align-items-center speech-container">
-					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-7.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-7.png" /> </picture></div>
+					<div class="col-auto speech-image"><picture> <source media="(min-width: 1200px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-7.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-7.png" /> </picture></div>
 					<div class="col">
 						<div class="speech-bubble d-flex align-items-center">
 							<h2 class="mb-0" style="color:var(--brick)">如果不打算守法也不相信政府，制度怎麼改<span class="wsnw">都徒勞</span></h2></div></div></div>
@@ -922,7 +924,7 @@ iframe.crm-container-embed {
 		<div class="container-fluid mobile-layout d-block d-xl-none pt-4 pb-3">
 			<div class="mobile-image-row mb-3">
 				<div class="small-deco-left">&nbsp;</div>
-				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="/sites/cet-taiwan.org/files/u422/20250529-00-1-7.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-7.png" style="max-height: 100px;" /> </picture></div>
+				<div class="speech-image"><picture> <source media="(max-width: 1199.98px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-7.webp" type="image/webp" /> <img alt="兔子" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-7.png" style="max-height: 100px;" /> </picture></div>
 				<div class="small-deco-right">&nbsp;</div></div>
 			<div class="container-md">
 				<div class="speech-bubble-small d-flex align-items-center justify-content-center">
@@ -930,7 +932,7 @@ iframe.crm-container-embed {
 	<section class="container-fluid py-2 pt-xl-4" style="background-color:var(--gray-orange);"><!-- <div class="container-fluid">
             <div class="container-md pt-5 pb-3">
                 <div class="row align-items-center speech-container">
-                    <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="兔子" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250529-00-1-7.png" /></div>
+                    <div class="col-auto speech-image"><img decoding="async" loading="lazy" alt="兔子" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250529-00-1-7.png" /></div>
                     <div class="col">
                         <div class="speech-bubble d-flex align-items-center">
                             <h2 class="mb-0 w-100 " style="color:var(--green)">如果不打算守法也不相信政府，制度怎麼改<span class="wsnw">都徒勞</span></h2>
@@ -1016,7 +1018,7 @@ iframe.crm-container-embed {
 							<p class="mb-0 text-center">您好，請填寫以下欄位資料，以完成電子報的訂閱：<br />
 								請以 gmail 優先（學校信箱、hotmail、yahoo、hinet 會擋信）</p></div></div></div>
 				<div class="mx-auto row justify-content-center">
-					<div class="col-12 mx-auto py-3 px-0" style="max-width: 420px;"><iframe class="crm-container-embed" frameborder="0" scrolling="no" src="/civicrm/profile/create?reset=1&embed=1&gid=62" style="min-height:280px;width:100%;border:none;background-color:var(--gray-green);"></iframe><script src="https://www.cet-taiwan.org/sites/all/modules/civicrm/js/iframeresizer.js"></script><script type="text/javascript">
+					<div class="col-12 mx-auto py-3 px-0" style="max-width: 420px;"><iframe class="crm-container-embed" frameborder="0" scrolling="no" src="https://www.cet-taiwan.org/civicrm/profile/create?reset=1&embed=1&gid=62" style="min-height:280px;width:100%;border:none;background-color:var(--gray-green);"></iframe><script src="https://www.cet-taiwan.org/sites/all/modules/civicrm/js/iframeresizer.js"></script><script type="text/javascript">
                         setTimeout(function () {
                             iFrameResize({ heightCalculationMethod: 'lowestElement' }, '.crm-container-embed');
                         }, 300);
@@ -1040,7 +1042,7 @@ iframe.crm-container-embed {
 			<div class="col-10 col-sm-2 order-3 order-sm-2">
 				<h3 id="h_2" style="text-align:center;font-weight: 500;color:var(--gray);">動身護土</h3>
 				<p id="p_2" style="text-align:center;color:#767d85">行動有力，帶來正面改變</p></div>
-			<div class="col-10 col-sm-2 order-1 order-sm-3 px-0 py-3 py-md-0"><a href="/"><picture><source srcset="/sites/cet-taiwan.org/files/u422/20250509-17.webp" type="image/webp" /><img alt="img-fluid" class="d-block mx-auto" decoding="async" loading="lazy" src="/sites/cet-taiwan.org/files/u422/20250509-17.png" style="max-width: 60%;" /></picture></a></div>
+			<div class="col-10 col-sm-2 order-1 order-sm-3 px-0 py-3 py-md-0"><a href="https://www.cet-taiwan.org/"><picture><source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-17.webp" type="image/webp" /><img alt="img-fluid" class="d-block mx-auto" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250509-17.png" style="max-width: 60%;" /></picture></a></div>
 			<div class="col-10 col-sm-2 order-4 order-sm-4">
 				<h3 id="h_3" style="text-align:center;font-weight: 500;color:var(--gray);">公正獨立</h3>
 				<p id="p_3" style="text-align:center;color:#767d85">財務自主，經費來自大眾捐款，不接受政府補助</p></div>

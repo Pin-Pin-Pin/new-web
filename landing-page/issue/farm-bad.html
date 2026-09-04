@@ -122,6 +122,15 @@
     footer p {
         font-weight: 400;
     }
+
+    @media (max-width: 575px) {
+        h2 [style*="white-space: nowrap"],
+        h2 [style*="white-space:nowrap"],
+        .h2-subtitle [style*="white-space: nowrap"],
+        .h2-subtitle [style*="white-space:nowrap"] {
+            white-space: normal;
+        }
+    }
     
     #hero,
     #section1,
@@ -278,7 +287,7 @@
     }
     
     #section3 {
-        background-image: url('/sites/cet-taiwan.org/files/u422/20250428-06.jpg');
+        background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250428-06.jpg');
         background-position: left;
     
     }
@@ -301,7 +310,7 @@
         }
     
         #section3 {
-            background-image: url('/sites/cet-taiwan.org/files/u422/20250521-16.jpg');
+            background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-16.jpg');
             background-position: center;
     
     
@@ -572,12 +581,12 @@
     }
     
     #section4 {
-        background-image: url('/sites/cet-taiwan.org/files/u422/20250507-04.jpg');
+        background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250507-04.jpg');
     }
     
     @media(max-width:576px) {
         #section4 {
-            background-image: url('/sites/cet-taiwan.org/files/u422/20250522-01.jpg');
+            background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250522-01.jpg');
         }
     }
     
@@ -628,10 +637,9 @@
     .modal-backdrop.show {
         display: block !important;
         position: fixed !important;
-        top: 0;
-        left: 0;
-        width: 100vw !important;
-        height: 100vh !important;
+        inset: 0 !important;
+        width: auto !important;
+        height: auto !important;
         z-index: 1040 !important;
         opacity: 0.75 !important;
     }
@@ -754,8 +762,8 @@
 </style>
 </head>
 <body>
-<section class="container-fluid d-flex align-items-center justify-content-center" id="hero" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250519-01.jpg');background-repeat: no-repeat;background-size: cover;background-position:bottom right;position: relative; ">
-        <div class="d-flex justify-content-center align-items-center  text-center " id="logo-container" style="position: absolute; top: 8%;left: 0;right: 0; z-index: 10;"><img alt="地球公民基金會logo" class="logo-img" src="/sites/cet-taiwan.org/files/u422/20250521-18.svg" style="opacity: 0.9;" /></div>
+<section class="container-fluid d-flex align-items-center justify-content-center" id="hero" style="background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250519-01.jpg');background-repeat: no-repeat;background-size: cover;background-position:bottom right;position: relative; ">
+        <div class="d-flex justify-content-center align-items-center  text-center " id="logo-container" style="position: absolute; top: 8%;left: 0;right: 0; z-index: 10;"><img alt="地球公民基金會logo" class="logo-img" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-18.svg" style="opacity: 0.9;" /></div>
         <div class="row justify-content-center align-items-center w-100" id="change">
             <div class="col-lg-6 col-sm-10 col-12  ">
                 <div class="words">
@@ -798,16 +806,16 @@
         <div class="carousel-item active" data-bs-interval="3000">
             <div class="row g-3 g-md-4 g-xxl-5 justify-content-center">
                 <div class="col-md-6 col-lg-3">
-                    <div class="achievement-image"><img alt="BBC報導" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-02.png"></div>
+                    <div class="achievement-image"><img alt="BBC報導" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-02.png"></div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="achievement-image"><img alt="檢舉帶來壓力讓廠商自拆" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-03.png"></div>
+                    <div class="achievement-image"><img alt="檢舉帶來壓力讓廠商自拆" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-03.png"></div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="achievement-image"><img alt="系統累計回報與檢舉數量" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-04.png"></div>
+                    <div class="achievement-image"><img alt="系統累計回報與檢舉數量" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-04.png"></div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="achievement-image"><img alt="與開源社群開發遊戲，邀請民眾參與" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-05.png"></div>
+                    <div class="achievement-image"><img alt="與開源社群開發遊戲，邀請民眾參與" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-05.png"></div>
                 </div>
             </div>
         </div>
@@ -816,18 +824,18 @@
         <div class="carousel-item" data-bs-interval="4000">
             <div class="row g-3 g-md-4 g-xxl-5 justify-content-center">
                 <div class="col-md-6 col-lg-3">
-                    <div class="achievement-image"><img alt="集結民意與政府對話，參與會議促成制度改革" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250428-04.png"></div>
+                    <div class="achievement-image"><img alt="集結民意與政府對話，參與會議促成制度改革" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250428-04.png"></div>
                 </div>
 
             
                 <div class="col-md-6 col-lg-3">
-                    <div class="achievement-image"><img alt="未納管工廠名單公開，優先查處名單已查4成" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250428-05.png"></div>
+                    <div class="achievement-image"><img alt="未納管工廠名單公開，優先查處名單已查4成" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250428-05.png"></div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="achievement-image"><img alt="丟稻草行動" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-06.jpg"></div>
+                    <div class="achievement-image"><img alt="丟稻草行動" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-06.jpg"></div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="achievement-image"><img alt="擺攤分享環境知識" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-07.png"></div>
+                    <div class="achievement-image"><img alt="擺攤分享環境知識" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-07.png"></div>
                 </div>
             </div>
         </div>
@@ -848,31 +856,31 @@
         <div class="carousel slide d-md-none" data-bs-ride="carousel" id="achievementsCarousel">
             <div class="carousel-inner">
                 <div class="carousel-item" data-bs-interval="1500">
-                    <div class="achievement-image"><img alt="BBC報導" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-02.png"></div>
+                    <div class="achievement-image"><img alt="BBC報導" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-02.png"></div>
                 </div>
 
                 <div class="carousel-item active" data-bs-interval="1500">
-                    <div class="achievement-image"><img alt="檢舉帶來壓力讓廠商自拆" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-03.png"></div>
+                    <div class="achievement-image"><img alt="檢舉帶來壓力讓廠商自拆" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-03.png"></div>
                 </div>
 
                 <div class="carousel-item" data-bs-interval="1500">
-                    <div class="achievement-image"><img alt="系統累計回報與檢舉數量" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-04.png"></div>
+                    <div class="achievement-image"><img alt="系統累計回報與檢舉數量" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-04.png"></div>
                 </div>
 
                 <div class="carousel-item" data-bs-interval="1500">
-                    <div class="achievement-image"><img alt="與開源社群開發遊戲，邀請民眾參與" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-05.png"></div>
+                    <div class="achievement-image"><img alt="與開源社群開發遊戲，邀請民眾參與" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-05.png"></div>
                 </div>
 
                 <div class="carousel-item" data-bs-interval="1500">
-                    <div class="achievement-image"><img alt="集結民意與政府對話，參與會議促成制度改革" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250428-04.png"></div>
+                    <div class="achievement-image"><img alt="集結民意與政府對話，參與會議促成制度改革" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250428-04.png"></div>
                 </div>
 
                 <div class="carousel-item" data-bs-interval="1500">
-                    <div class="achievement-image"><img alt="未納管工廠名單公開，優先查處名單已查4成" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250428-05.png"></div>
+                    <div class="achievement-image"><img alt="未納管工廠名單公開，優先查處名單已查4成" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250428-05.png"></div>
                 </div>
 
                 <div class="carousel-item" data-bs-interval="1500">
-                    <div class="achievement-image"><img alt="擺攤分享環境知識" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250515-07.png"></div>
+                    <div class="achievement-image"><img alt="擺攤分享環境知識" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250515-07.png"></div>
                 </div>
 
             </div>
@@ -886,7 +894,7 @@
     </div>
 </section>
 
-<section id="section2" class="container-fluid d-flex align-items-center justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250423-01.jpg');background-repeat: no-repeat;background-size: cover;background-position:center;  ">
+<section id="section2" class="container-fluid d-flex align-items-center justify-content-center" style="background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250423-01.jpg');background-repeat: no-repeat;background-size: cover;background-position:center;  ">
     <div class="container pt-5 pb-4">
         <div class="row">
            
@@ -991,13 +999,13 @@
 
 <section class="container-fluid py-5 d-flex align-items-center justify-content-center" id="section4">
     <!-- <div class="floating-wrapper">
-        <img id="floating-svg" class="" src="/sites/cet-taiwan.org/files/u422/20250507-01.svg" alt="&#36949;&#31456;&#24037;&#24288;&#24618;&#29560;"
+        <img id="floating-svg" class="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250507-01.svg" alt="&#36949;&#31456;&#24037;&#24288;&#24618;&#29560;"
         >
     </div> -->
     <div class="container ">
         <div id="svg-relative" class="row">
             <div class="floating-wrapper">
-            <img id="floating-svg" class="" src="/sites/cet-taiwan.org/files/u422/20250507-01.svg" alt="違章工廠怪獸">
+            <img id="floating-svg" class="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250507-01.svg" alt="違章工廠怪獸">
             </div>
             <div class="col-12 px-0 text-center my-4 my-md-5">
                 <h2 class="">懸崖邊的<span style="white-space: nowrap;">求生日記</span></h2>
@@ -1067,7 +1075,7 @@
 </section>
 
 
-    <section class="card-bg-transparent section container-fluid d-flex align-items-center justify-content-center" id="section5" style="filter:saturate(80%);background-image: url('/sites/cet-taiwan.org/files/u422/20250423-04.jpg');background-repeat: no-repeat;background-size: cover;background-position:center;position: relative; ">
+    <section class="card-bg-transparent section container-fluid d-flex align-items-center justify-content-center" id="section5" style="filter:saturate(80%);background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250423-04.jpg');background-repeat: no-repeat;background-size: cover;background-position:center;position: relative; ">
         <div class="container pt-5 pb-4 ">
             <div class="row d-flex justify-content-center">
                 <div class="col-12 px-0 text-center my-4 mt-md-5 mb-md-4">
@@ -1163,11 +1171,11 @@
                 <p class="pb-3" style="color: black;font-weight:400">這些改變的發生，來自無數支持者的信任與投入。漫長的農地守護之路，我們需要更多人同行。地球公民基金會仰賴群眾捐款運作，您的支持，將轉化為每一份政策建議、每一次資訊揭露、每一場與政府的對話。我們誠摯邀請您捐款支持，和我們一起守護台灣農地與農業的未來。因為真正的改變，需要你我一起完成。
                 </p>
                 <div class="text-center ">
-                    <a class="donate  btn align-middle h3 mb-0" href="/donate" target="_blank" style="white-space: nowrap; margin-bottom: 35px;">捐款支持</a>
+                    <a class="donate  btn align-middle h3 mb-0" href="https://www.cet-taiwan.org/donate" target="_blank" style="white-space: nowrap; margin-bottom: 35px;">捐款支持</a>
                 </div>
             </div> 
         </div>
-        <img src="/sites/cet-taiwan.org/files/u422/20250516-01.png" class="angled-image d-none d-xl-block" alt="斜放圖片">
+        <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250516-01.png" class="angled-image d-none d-xl-block" alt="斜放圖片">
     </div>
 </section>
 
@@ -1195,7 +1203,7 @@
             <div class="modal-body ">
                 <div class="article-full-content">  
                     <p>   
-                        <img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-01.jpg">
+                        <img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-01.jpg">
                     </p>
                     <p class="author">地球公民基金會議題部專員 賴沛蓮</p>
                     <p>台灣農地違章工廠問題是一個長期未解的環境與社會隱憂，對農業、生態和居民生活構成了重大威脅。這個問題的起源可以追溯至 1940 年代，當時政府為了促進農產品加工業發展，允許部分工廠在農地上設置。然而，隨著產業結構轉型，這些工廠的功能逐漸從農業加工擴展到各種其他領域，特別是中高污染產業。由於農地管理政策不夠完善，加上政府在執法和管控上的不足，這些違章工廠如雨後春筍般出現，逐漸侵蝕農地並加劇了環境污染問題。</p>
@@ -1217,7 +1225,7 @@
             </div>
             <div class="modal-body">
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-02.png"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-02.png"></p>
                     <p class="author">地球公民基金會議題部專員 賴沛蓮</p>
                     <p>「農地工廠回報系統」，就是在這樣的背景下誕生。地球公民與開源社群 g0v 零時政府合作開發。這是一個讓民眾能夠快速、方便地舉報農地違章工廠的平台。透過該系統，民眾可以直接拍攝照片並標註工廠的地點，地球公民基金會則根據收集到的資料進行調查和核實，並將證據提交給政府。這一過程極大簡化了舉報流程，降低了參與的技術門檻，讓更多人能隨時隨地參與到揭露違章工廠的行動中。</p>
                     <p>然而，在實際運行中，這套系統也遇到了一些挑戰。許多住在工廠附近的農民由於擔心舉報後遭到報復，或是缺乏足夠的法律和技術支持，對參與檢舉存在顧慮。基於此，地球公民基金會和 g0v 零時政府意識到，單純的檢舉工具並不足以解決所有問題，他們需要更多創新來激勵不同群體的參與。</p>
@@ -1241,7 +1249,7 @@
             </div>
             <div class="modal-body ">
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-03.jpg"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-03.jpg"></p>
                     <p class="author">地球公民基金會議題部專員 賴沛蓮</p>
                     <p>數位工具的開發並非僅僅關注技術本身，更重要的是解決實際需求。在跨領域的數位開發過程中，非營利組織應注重了解群眾在哪裡，並確保工具符合參與者的需求。舉例來說，農地工廠回報系統的使用者多為農民，許多農民對數位工具並不熟悉，因此地球公民基金會在設計時特意簡化了操作流程，放大字體以方便使用者上手。同時，考量到檢舉者可能面臨的報復風險，系統設計成匿名報告形式，進一步保障了參與者的安全感。</p>
                     <p>與此同時，數位工具的開發需要明確目標，並與公共倡議緊密結合。地球公民基金會與 g0v 零時政府的合作，並非僅為創造一個功能強大的檢舉系統，而是旨在動員公眾參與，促進政策改變，最終減少農地違章工廠對環境的破壞。這種合作方式使得非營利組織能夠在資源有限的情況下，利用開源技術實現公益目標，從而產生實質性的社會影響。</p>
@@ -1263,7 +1271,7 @@
             </div>
             <div class="modal-body">
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-04.jpg"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-04.jpg"></p>
                     <p class="author">地球公民基金會山林國土組研究專員 吳沅諭</p>
                     <p>2019 年 5 月，工輔法修惡，激烈抗爭一觸即發。</p>
                     <p><i>環保團體不滿政府修法內容圖利農地違章工廠，上午集結多位學者、農民到立法院大門口前喊「工輔法毀農滅國」，並將大把的丟稻草，氣氛一度緊張，環團怒說，要是該法通過，將到立院燒稻草。</i></p>
@@ -1291,7 +1299,7 @@
             </div>
             <div class="modal-body">
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-05.jpg"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-05.jpg"></p>
                     <p class="author">地球公民基金會山林國土組研究專員 吳沅諭</p>
                     <p>地球公民自 2020 年「農地違章工廠回報系統」上線，蒐集到來自各地居民 2,257 回報案件，經過我們資料比對、篩選出有效檢舉案件，共檢舉了 771 多件農地違章工廠。我們運用公文檢舉、打電話向公務員追蹤查處進度與現勘調查經驗，透過上段描述立委召集的跨部會平台會議，和各機關透過對話理解公部門的執行限制與機會。奠基這些資料與倡議經驗，讓我們能更進一步端視政府的運作過程。</p>
                     <p>這些檢舉，攪動了產發署與國土署對全台農地違章工廠的查處效能，近三年共查處 6,427 間疑似違章工廠，查處率達 88%，並且在產發署網站上逐月公佈查處資訊。我們看見相比過去四十年，政府展現了前所未有的執法進步。然而，談到拆除，771 家檢舉案裡，僅有 16 件有拆，其中僅有 7 家是政府強制拆除，剩餘的 9 家是自行拆除。</p>
@@ -1314,14 +1322,14 @@
             </div>
             <div class="modal-body">
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-06.jpg"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-06.jpg"></p>
                     <p class="author">地球公民基金會山林國土組研究專員 吳沅諭</p>
                     <p>我們試圖釐清地方政府面臨連續裁罰和裁處的卡關困境有什麼？該如何解決。綜合以上資料，地球公民出版了一份查處報告。報告中探討台灣各地方政府局處間的授權與的分工狀態，以及地方政府的人力與經費限制。我們想促成的是如何讓地方政府積極墊高農地工廠的違法成本，藉此嚇止新增。另外，又該如何讓地方政府各局處間與中央政府主管機關，進行合作執法。</p>
                     <p>礙於文章篇幅，查處報告內容在此不詳述，可於文末點擊連結閱讀。然而在運用上述各種資料進行研究與分析後，我們發現關鍵路徑在於六大面向，包括「土管的裁罰速度慢的」「違規查處案件的裁罰後限期改善複查工作漏接」「拆除違建數量有限」「地方政府查處人力不足」「查處分工缺乏督導角色」「檢舉人協助維護國土秩序，卻處於資訊弱勢」。</p>
                     <p>找到相對精準的問題所在，倡議行動才能聚焦鬆動結構。查處報告的產出奠基於地球公民針對農地工廠議題深耕的經驗，但這份報告真正的目的卻是將倡議的能力與方法釋出，讓更多關注農地與違規使用土地的公民團體，掌握地方政府在此議題上運作的狀態，進而選擇自己適合監督與溝通的位置。</p>
                     <p>從抗爭到陪伴，我們見證了公民社會與政府間的轉變。當我們將目光從單一事件轉向系統性問題，並透過數據分析、跨部門合作，就能更有效地影響政策。環境運動不只是場戰役，更是一場馬拉松，掌握方法就能更精準地擊中問題核心。這篇文章與這份查處報告，是我們分享給大家的工具，希望能夠激發更多人在環境守護的路上，從對立走向對話，看見問題的本質，找到更有效的解決方案。</p>
                     <p>&nbsp;</p>
-                    <p style="text-align: center;"><a href="/node/4560" target="_blank" style="color:#009d7e">查處報告連結</a></p>
+                    <p style="text-align: center;"><a href="https://www.cet-taiwan.org/node/4560" target="_blank" style="color:#009d7e">查處報告連結</a></p>
                 </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">回到主頁</button>
@@ -1338,7 +1346,7 @@
             </div>
             <div class="modal-body">
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-07.png"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-07.png"></p>
                     <p class="author">地球公民基金會社群編輯 李宇恩</p>
                     <p>關注「農地違章工廠」人，通常對於土地有著素樸的環保想像：稻田應該青翠、農地應該農用。因此對於他們來說，農地鐵皮為何產生、是不是違建、是不是工廠、又該由誰負責、有哪些解決方法......不一定在思考中。尤其是會向我們回報檢舉農地違建的人，其實只在乎一件事──工廠（他檢舉的鐵皮）要消失！</p>
                     <p>如果看見可疑鐵皮，就一定是工廠，檢舉了卻沒有拆掉！那就是違章治理「沒有成果」。就算查處過程，其實有著無數需要判斷的條件。經過無數公文來回，政府各科工作交接，再加上一些現實困境。這些細瑣的行政過程，NGO 及公務員都投入大量精力。然而只要結果是沒有拆除，就像是什麼都沒有做，「沒有成果」。</p>
@@ -1364,7 +1372,7 @@
             <div class="modal-body">
 
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-08.jpg"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-08.jpg"></p>
                     <p class="author">地球公民基金會社群編輯 李宇恩</p>
                     <p>在違章工廠的議題上我們要達成「工廠拆除」這個「倡議成果」，實際上需要面對許多細瑣且複雜的現實。</p>
                     <p>所謂「政府」並不是一個整體，而是有很多小單位構成的團隊。各自彼此都有專門負責的業務，擁有與業務相關的法律，以及這些法律而賦予的權力。以「違建」為例，就有可能有不同層次的違規，分別是「沒有建築執照或使用執照」、「違反土地使用法規」、「違反目的事業法規」。</p>
@@ -1392,7 +1400,7 @@
             </div>
             <div class="modal-body">
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-09.png"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-09.png"></p>
                     <p class="author">地球公民基金會社群編輯 李宇恩</p>
                     <p>回到小編的身份，面對「那這樣是不是沒有用？」的提問時，除了苦笑之外，其實還可以給關心議題的人更多對於「有用」的想像。</p>
                     <p>身為環境倡議組織的工作者，我們經常問自己對這個社會有什麼具體貢獻？成功修了一部法令、成功阻擋了某個不當開發的個案、成功募到一筆捐款支付我和同事的薪水？</p>
@@ -1419,7 +1427,7 @@
             </div>
             <div class="modal-body">
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-10.jpg"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-10.jpg"></p>
                     <p class="author">地球公民基金會社群編輯 李宇恩</p>
                     <p>「大家好我懸崖編...」，有長期關注地球公民社群（Facebook、Instagram）的朋友，可能都看過這樣的文章開頭。沒錯，我就是懸崖編，在地球公民基金會中，負責違章工廠專案社群行銷的小編。</p>
                     <p>小編作為負責與社群追蹤者報告的角色，必須擔任處理議題的「研究員」，以及關心議題的「追蹤者」，兩者之間的橋樑。對於研究員而言，小編就是群眾的代言人；而對於關心議題的追蹤者來說，小編就是負責幫助說明議題研究員工作成果的翻譯蒟蒻。</p>
@@ -1442,7 +1450,7 @@
             </div>
             <div class="modal-body">
                 <div class="article-full-content">
-                    <p><img class="img-fluid" alt="" src="/sites/cet-taiwan.org/files/u422/20250521-11.png"></p>
+                    <p><img class="img-fluid" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-11.png"></p>
                     <p class="author">地球公民基金會社群編輯 李宇恩</p>
                     <p>這些成果與違章工廠倡議之間的關係，反映了違法成本持續被墊高。只要能墊高廠商違法的成本，賺不到錢，就能減少廠商違法投機的僥倖心態。我們必須讓所有關心這個議題的人明白，這些都是「議題成果」。</p>
                     <p>除了具體可見的改變之外，很多時候「倡議成果」是倡議過程對時代留下的痕跡，就像318運動帶出了一波公民覺醒，這並不在運動本身的訴求與目標當中，當然也就難以在確認目標是否達成的時候被檢核。</p>
@@ -1466,7 +1474,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="article-full-content">
-                        <p><img alt="" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250521-12.jpg" /></p>
+                        <p><img alt="" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-12.jpg" /></p>
                         <p class="author">地球公民基金會副執行長 黃靖庭</p>
                         <p>違章工廠是長在農地上的違法建築統稱，實際上有很多樣態，造成的問題也很多元。最容易遭人詬病的，是有在營運的工廠。它們多半會有噪音、污水排放、氣味等外顯的環境問題。倘若只是一個鐵皮建物尚未成為工廠，通常作為倉儲使用，則會有景觀、遮陰影響到鄰地作物生長的問題。</p>
                         <p>這些在農地上突兀的鐵皮建物，在西部平原多如牛毛。在 2019 年《工廠管理輔導法》（簡稱工輔法）修惡的情境下，新增建如雨後春筍不斷冒出無法遏止。即便中央和地方政府採用多元手段抑制，也無法降低新增建的增加速度。這讓身處重災區縣市的居民，認為違章工廠議題倡議並未發生實質效果，等同於無效。</p>
@@ -1488,7 +1496,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="article-full-content">
-                        <p><img alt="" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250521-13.jpg" /></p>
+                        <p><img alt="" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-13.jpg" /></p>
                         <p class="author">地球公民基金會副執行長 黃靖庭</p>
                         <p>另外還有兩個創舉，是違章議題獨有的。一個是 2019 年地球公民和 g0v 零時政府開源社群共同發起「農地違章工廠回報」系統（簡稱回報系統），另一個是 2022 年持續與開源貢獻者打造出「空拍圖比對計畫－大家來找廠」（簡稱大家來找廠），這兩個系統讓違章工廠成為更多民眾參與管道的環境議題。</p>
                         <p>回報系統服務著有檢舉需求的民眾，這些民眾通常與違章工廠有共同生活圈，並且受制於台灣鄉里以和為貴的氛圍，無法承擔吹哨者角色。但是有了回報系統的匿名功能，民眾舉報意願提升，成為維持土地秩序在各個村莊角落的公權力延伸。截至 2023 年 7 月底，回報系統進站人數達 54,830，回報案件數達 2,965 (+125)，且此系統也在志工夥伴的努力下，進入中小學教材中。</p>
@@ -1509,7 +1517,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="article-full-content">
-                        <p><img alt="" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250521-14.jpg" /></p>
+                        <p><img alt="" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-14.jpg" /></p>
                         <p class="author">地球公民基金會副執行長 黃靖庭</p>
                         <p>違章工廠議題橫跨了不同中央和地方的單位，整個要拆除、查處、輔導合法化等等的制度，也就非常的複雜，地球公民花費非常多力氣複雜梳理清楚，再從中找出可以監督、倡議的著力點。也因此，這個倡議主題到了後期，會進入非常瑣碎、難懂、不易傳播的環節。</p>
                         <p>舉例來說，當一個違章工廠發生了火災，造成進火場救災的消防員喪生，這時候以倡議面來說，就是一個適合談論違章工廠應該立即拆除的政治時機，很殘酷也很現實。但光是要釐清這個工廠建築物是哪個時期蓋起來的、什麼時候開始有水有電及生產事實、執法漏洞是出現在哪個環節、哪個單位瀆職、工廠內部的消防設備與防災措施是否有缺乏稽查或者沒有落實的問題，這些問題背後都牽涉到超級多的法令、法規，相關的部門和可以有責任的公務員也逐繁不及備載。</p>
@@ -1529,7 +1537,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="article-full-content">
-                        <p><img alt="" class="img-fluid" src="/sites/cet-taiwan.org/files/u422/20250521-15.png" /></p>
+                        <p><img alt="" class="img-fluid" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250521-15.png" /></p>
                         <p class="author">地球公民基金會副執行長 黃靖庭</p>
                         <p>倡議者的心理素質，一直都是倡議工作的關鍵。</p>
                         <p>從倡議目標的設定開始，就必須不間斷的省思哪裡我們可以著力。有時一些非常細微的改變會非常耗力，例如：違章工廠到底有多少？要回答這個問題，就必須去爬梳經濟部的工廠登記、農業部的農地流失數據、內政部的衛星變異點資料。然後我們會發現這些政府資料常常沒有公開，就算有公開，每個單位啟動資料累積的年度也不相同，非常難以比對。</p>
@@ -1552,7 +1560,7 @@
                 <h4 class="custom-h text-center" id="heading_2" style="color:#26895A;">動身護土</h4>
                 <p id="paragraph_2" style="color:#333;text-align:center;">行動有力，帶來正面改變</p>
             </div>
-            <div class="col-10 col-sm-2 order-1 order-sm-2 px-0 py-3 py-md-0"><a href="/"><img alt="" class="d-block mx-auto" src="/sites/cet-taiwan.org/files/u422/20250122-20.png" style="max-width: 60%;
+            <div class="col-10 col-sm-2 order-1 order-sm-2 px-0 py-3 py-md-0"><a href="https://www.cet-taiwan.org/"><img alt="" class="d-block mx-auto" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250122-20.png" style="max-width: 60%;
         " /></a></div>
             <div class="d-flex flex-column  col-10 col-sm-2 order-4 order-sm-4 align-self-center">
                 <h4 class="custom-h text-center " id="heading_3" style="color:#26895A;">公正獨立</h4>

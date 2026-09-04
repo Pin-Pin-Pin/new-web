@@ -435,11 +435,18 @@ html {
 .section.active {
     display: block !important;
 }
+
+@media (max-width: 575px) {
+    [style*="white-space: nowrap"],
+    [style*="white-space:nowrap"] {
+        white-space: normal;
+    }
+}
 </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-md sticky-top py-3 py-sm-2 py-md-1">
-	<div class="container-md"><a class="navbar-brand" href="#"><img src="/sites/cet-taiwan.org/files/u422/20250724-01.png" style="height: 20px;" /> </a> <!-- 漢堡按鈕 --><button aria-controls="mainNavbar" aria-expanded="false" aria-label="切換導覽" class="navbar-toggler" data-bs-target="#mainNavbar" data-bs-toggle="collapse" type="button"><span class="material-symbols-outlined">menu</span></button> <!-- 收合內容 -->
+	<div class="container-md"><a class="navbar-brand" href="#"><img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250724-01.png" style="height: 20px;" /> </a> <!-- 漢堡按鈕 --><button aria-controls="mainNavbar" aria-expanded="false" aria-label="切換導覽" class="navbar-toggler" data-bs-target="#mainNavbar" data-bs-toggle="collapse" type="button"><span class="material-symbols-outlined">menu</span></button> <!-- 收合內容 -->
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
 			<div class="navbar-nav"><a class="nav-link" href="#info">核三公投資訊</a> <a class="nav-link" href="#qa">核電 Q&amp;A</a> <a class="nav-link" href="https://linktr.ee/nonukeactiontw" target="_blank">分享文宣</a> <a class="nav-link" href="https://gcaa.neticrm.tw/civicrm/contribute/transact?reset=1&amp;id=65&amp;utm_campaign=823vote&amp;utm_source=web&amp;utm_medium=button&amp;utm_term=cet" target="_blank">捐款支持</a></div></div></div></nav><!-- 區塊內容 -->
 <div class="container-fluid px-0" id="father" style="background-color: #fffbf4;">
@@ -453,7 +460,7 @@ html {
 					<p>核三已使用超過 40 年，部分關鍵設備老舊無法汰換。如反應爐裡的「壓力容器」，長期使用會裂隙、脆化，一旦破裂就可能直接爐心融毀。</p>
 					<p>因為當初選址評估粗糙，更導致核三就蓋在恆春活動斷層上。台大地質專家陳文山指出，由於斷層、地質構造就在核三廠房下方，如果大地震將直接造成廠房破裂、反應爐被頂起，核災事故風險之高，不是補強耐震就可以解決。</p>
 					<p class="further-read"><a href="https://cet.ngo/hBhd" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 了解地質專家怎麼說</a></p></div>
-				<div class="col-12 col-lg-6 px-0 mb-0 d-flex justify-content-center img-div img-fluid" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250709-06.png');background-position: center;">
+				<div class="col-12 col-lg-6 px-0 mb-0 d-flex justify-content-center img-div img-fluid" style="background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250709-06.png');background-position: center;">
 					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-10 py-4 py-sm-5 img_text">
@@ -463,7 +470,7 @@ html {
 					<h3 class="h4 text-center">不用核三，告別無底錢坑</h3>
 					<p>重啟核電廠不是按個按鍵就可以，安全評估、採購零件、補強等措施，就算都順利也要 5-10 年。如果參考美國同一間公司蓋的機組延役費用，核三重啟可能上看 3,900 億台幣。更何況，核三就算重啟也只能用 5 年，因爲核廢料至今無法找到地方放，只能放在廠內，如果繼續運轉產生更多難解核廢料，未來處理成本更高。</p>
 					<p class="further-read"><a href="https://cet.ngo/gr4p" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 了解至今無解的核廢料問題</a></p></div>
-				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-02.jpg');background-position: center;background-size: cover">
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250708-02.jpg');background-position: center;background-size: cover">
 					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
@@ -473,7 +480,7 @@ html {
 					<h3 class="h4 text-center">發展綠電，讓台灣走向世界</h3>
 					<p>從核電歸零到現在，90%的日子裡面，台灣都有超過 10%的發電機組隨時可以支撐用電，證明就算沒有核電，台灣也不會缺電。蘋果、台積電等大廠，要的都是綠電、不是核電。</p>
 					<p class="further-read"><a href="https://cet.ngo/gr4v" target="_blank"><i class="bi bi-box-arrow-up-right"></i> 台灣的核能是綠電嗎？閱讀貼文破除迷思</a></p></div>
-				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-03.jpg');background-position: center;">
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250708-03.jpg');background-position: center;">
 					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
@@ -482,7 +489,7 @@ html {
 				<div class="col-12 col-lg-6 words py-3 py-lg-4 ptext">
 					<h3 class="h4 text-center">不用核三，也能爭取好空氣</h3>
 					<p>這十年來，核電從 14%到 0%，全國 PM2.5 年平均值卻降低了 35%，火力發電廠的空污排放也大幅減少了 7 成。事實證明只要發展綠電跟污染防治，不用核電也能提升空氣品質。</p></div>
-				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-04.jpg');background-position: center;">
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250708-04.jpg');background-position: center;">
 					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
@@ -492,7 +499,7 @@ html {
 					<h3 class="h4 text-center">不用核三，減少戰爭風險</h3>
 					<p>俄烏、中東戰爭的經驗告訴我們，飛彈與無人機攻擊從不理性，核電廠很容易成為敵軍攻擊或威脅的籌碼。運轉中的核電廠也容易受戰爭波及而喪失電力，導致反應爐無法冷卻，恐變成車諾比、福島式的大災難。</p>
 					<p class="further-read"><a href="https://cet.ngo/gr51" target="_blank"><i class="bi bi-box-arrow-up-right"></i>了解更多核電廠在戰爭中的風險</a></p></div>
-				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-05.jpg');background-position: center;">
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250708-05.jpg');background-position: center;">
 					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
@@ -501,7 +508,7 @@ html {
 				<div class="col-12 col-lg-6 words py-3 py-lg-4 ptext">
 					<p>靠立法院多數強行提出公投，就要全民直接投票，<strong>要求屏東人繼續忍受危險、老舊的核三廠。</strong>這不是民主，而是對屏東人的霸凌。而且過去車諾比、福島福災的經驗已告訴我們，世上沒有「無安全疑慮」的核電廠，只有風險高低的問題。目前的公投主文投票後，到底有何效力？</p>
 					<p><i>公投主文：您是否同意，第三核能發電廠經主管機關同意確認無安全疑慮後，繼續運轉？</i></p></div>
-				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('/sites/cet-taiwan.org/files/u422/20250708-06.jpg');background-position: center;">
+				<div class="col-12 col-lg-6 px-0 mb-0 img-div img-fluid d-flex justify-content-center" style="background-image: url('https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20250708-06.jpg');background-position: center;">
 					<div class="row justify-content-center align-items-center py-5 g-0">
 						<div class="d-flex justify-content-center col-12 col-sm-9 col-xl-10 col-xxl-9  py-sm-5 px-sm-0 px-4 mb-0">
 							<div class="text-center col-12 col-sm-9 col-xl-11 py-4 py-sm-5 img_text">
