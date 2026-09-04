@@ -1,4 +1,5 @@
-#main{
+
+#main .node a,  #main .node p, #main .node div {
     word-break: normal;
     overflow-wrap: break-word;
     hyphens: auto;
