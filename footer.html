@@ -1,14 +1,75 @@
-<div class="sub-footer-offices">
-<div class="office">
-<div class="office__name">高雄總部</div>
-<div class="office__info"><span class="office__addr">高雄市前金區中華四路282號5樓</span><span class="office__sep" aria-hidden="true">｜</span><a class="office__tel" href="tel:072156809">07-2156809</a></div>
+<style>
+    .sub-footer-offices {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: clip;
+        font-size: clamp(10px, 3.75vw, 12px);
+    }
+    .sub-footer-offices .office {
+        min-width: 0;
+        max-width: 100%;
+    }
+    .sub-footer-offices .office__info {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        white-space: nowrap;
+    }
+    .sub-footer-offices .office__addr,
+    .sub-footer-offices .office__tel,
+    .sub-footer-offices .extlink-nobreak {
+        white-space: nowrap;
+    }
+    .sub-footer-offices svg[data-extlink-placement],
+    .sub-footer-offices svg.ext,
+    .sub-footer-offices svg.tel {
+        display: none;
+    }
+</style>
+<div class="contact-email" style="text-align: center;padding-top: 24px;">
+    <p style="font-family: 'Noto Sans TC', sans-serif;">cet@cet-taiwan.org</p>
 </div>
-<div class="office">
-<div class="office__name">台北辦公室</div>
-<div class="office__info"><span class="office__addr">台北市中正區北平東路28號9樓之2</span><span class="office__sep" aria-hidden="true">｜</span><a class="office__tel" href="tel:0223920371">02-2392-0371</a></div>
+<div class="sub-footer-offices" style="padding-top: 8px;">
+    <div class="office">
+        <div class="office__name">高雄總部</div>
+        <div class="office__info">
+            <a href="https://maps.app.goo.gl/aLWKEH9kCHhuFqUS7" target="_blank" style="text-decoration: none;">
+                <span class="office__addr">高雄市前金區中華四路282號5樓</span>
+            </a>
+            <span class="office__contact">
+                <span class="office__sep" aria-hidden="true">｜</span>
+                <a class="office__tel" href="tel:072156809">07-2156809</a>
+            </span>
+        </div>
+    </div>
+    <div class="office">
+        <div class="office__name">台北辦公室</div>
+        <div class="office__info">
+            <a href="https://maps.app.goo.gl/ehCbqhxVfBQSahqY8" target="_blank" style="text-decoration: none;">
+                <span class="office__addr">台北市中正區北平東路28號9樓之2</span>
+            </a>
+            <span class="office__contact">
+                <span class="office__sep" aria-hidden="true">｜</span>
+                <a class="office__tel" href="tel:0223920371">02-2392-0371</a>
+            </span>
+        </div>
+    </div>
+    <div class="office">
+        <div class="office__name">花東辦公室</div>
+        <div class="office__info">
+            <a href="https://maps.app.goo.gl/QYL55tFSgTMFDZXA8" target="_blank" style="text-decoration: none;">
+                <span class="office__addr">花蓮縣花蓮市自由街150號6樓之3</span>
+            </a>
+            <span class="office__contact">
+                <span class="office__sep" aria-hidden="true">｜</span>
+                <a class="office__tel" href="tel:038310916">03-8310916</a>
+            </span>
+        </div>
+
+    </div>
 </div>
-<div class="office">
-<div class="office__name">花東辦公室</div>
-<div class="office__info"><span class="office__addr">花蓮縣花蓮市自由街150號6樓之3</span><span class="office__sep" aria-hidden="true">｜</span><a class="office__tel" href="tel:038310916">03-8310916</a></div>
-</div>
-</div>
+
+<!-- 地圖超連結
+-email最常被問，希望維持顯示信箱純文字 -->
