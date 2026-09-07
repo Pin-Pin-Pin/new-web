@@ -1,17 +1,44 @@
 <style>
+    /* 蓋過官網 custom.css：992 三欄 1fr、1200 整塊 nowrap、字級 16px，以及 Drupal extlink */
     .sub-footer-offices {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
         box-sizing: border-box;
         width: 100%;
-        max-width: 100%;
+        max-width: 960px;
         min-width: 0;
-        overflow-x: clip;
+        margin-inline: auto;
+        padding: 16px 15px;
+        font-family: "Noto Sans TC", sans-serif;
         font-size: clamp(10px, 3.75vw, 12px);
+        line-height: 20px;
+        overflow-x: clip;
+        white-space: normal;
+    }
+    @media (min-width: 992px) {
+        .sub-footer-offices {
+            grid-template-columns: repeat(3, auto);
+            justify-content: center;
+            column-gap: 40px;
+            white-space: normal;
+        }
+    }
+    @media (min-width: 1200px) {
+        .sub-footer-offices {
+            grid-template-columns: repeat(3, auto);
+            white-space: normal;
+        }
     }
     .sub-footer-offices .office {
         min-width: 0;
         max-width: 100%;
     }
-    .sub-footer-offices .office__info {
+    .sub-footer-offices .office__name {
+        font-weight: 700;
+    }
+    .sub-footer-offices .office__info,
+    .sub-footer-offices .office__contact {
         display: flex;
         flex-wrap: nowrap;
         align-items: baseline;
@@ -19,8 +46,12 @@
     }
     .sub-footer-offices .office__addr,
     .sub-footer-offices .office__tel,
+    .sub-footer-offices .office__sep,
     .sub-footer-offices .extlink-nobreak {
         white-space: nowrap;
+    }
+    .sub-footer-offices .office__sep {
+        margin-inline: 4px;
     }
     .sub-footer-offices svg[data-extlink-placement],
     .sub-footer-offices svg.ext,

@@ -625,53 +625,22 @@ body.cet-search-open { overflow: hidden; }
 
 .sub-footer-offices {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);              /* 窄屏：三間辦公室一起直向堆疊 */
-  gap: 24px 24px;
-  box-sizing: border-box;
-  width: 100%;
+  grid-template-columns: 1fr;                         /* 手機～平板：直疊（.fig Tablet 840 仍直疊）*/
+  gap: 24px 40px;                                     /* 直疊間距 24／欄間距 40（.fig）*/
   max-width: 960px;
-  min-width: 0;
   margin-inline: auto;
   padding: 16px 15px;
-  font-size: clamp(10px, 3.75vw, 12px);               /* 12px 為設計字級；極窄屏略縮，讓最長「地址｜電話」仍同一行 */
+  font-size: 12px;                                    /* .fig 量測 12px（「高雄總部」4 字 48px），非 body 16——16px 時地址+電話行 ~360px 超出欄寬折行 */
   line-height: 20px;
-  overflow-x: clip;
+  white-space: nowrap;                                /* 地址＋電話一行到底（12px 下最寬台北行 270px，各斷點都放得下）*/
 
-  /* 寬屏：三間一起橫排；用 auto 欄寬（勿 1fr），避免最長的台北欄先把地址／電話拆成上下排 */
   @media (min-width: 992px) {
-    grid-template-columns: repeat(3, auto);
-    justify-content: center;
-    column-gap: 40px;
-  }
-
-  & .office {
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  /* 每間辦公室的地址｜電話永遠同一行；版面只隨整排辦公室一起改（直疊／橫排） */
-  & .office__info {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: baseline;
-    white-space: nowrap;
-  }
-
-  & .office__addr,
-  & .office__tel,
-  & .office__contact,
-  & .extlink-nobreak {
-    white-space: nowrap;
-  }
-
-  & svg[data-extlink-placement],
-  & svg.ext,
-  & svg.tel {
-    display: none;
+    grid-template-columns: repeat(3, auto);           /* 桌機：三辦公室一排、欄寬隨內容（.fig 247/270/254＋gap 40 靠左；1fr 均分每欄 278px 塞不下）*/
+    justify-content: start;
   }
 
   & .office__name {
-    font-weight: 700;
+    font-weight: 700;                                 /* 粗體（設計）；字級/行距繼承 12/20 連續兩行 */
   }
 
   & .office__sep {
