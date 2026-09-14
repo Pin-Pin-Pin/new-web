@@ -182,10 +182,29 @@
         return (link && link.href) || TRANSACT_BASE + '50';
     }
 
+    function appendCurrentUtmParams(url) {
+        var search = '';
+        try {
+            search = (window.top && window.top.location && window.top.location.search)
+                || window.location.search
+                || '';
+        } catch (e) {
+            search = window.location.search || '';
+        }
+
+        var currentParams = new URLSearchParams(search);
+        currentParams.forEach(function (value, key) {
+            if (key.toLowerCase().indexOf('utm_') === 0 && value) {
+                url.searchParams.set(key, value);
+            }
+        });
+    }
+
     function buildDonateUrl(amount, grouping) {
         var url = new URL(getDonatePageBaseUrl(), window.location.href);
         url.searchParams.set('_amt', String(amount));
         url.searchParams.set('_grouping', grouping);
+        appendCurrentUtmParams(url);
         return url.toString();
     }
 
