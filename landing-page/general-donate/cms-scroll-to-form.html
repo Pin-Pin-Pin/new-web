@@ -1,0 +1,49 @@
+<!--
+  貼到 CiviCRM #intro_text（可接在 trans-left-box.html 後面）。
+  1024px 以上：左欄垂直置中。
+  1023px 以下：不隱藏 intro，載入後自動捲到表單上方 64px。
+-->
+<style type="text/css">
+@media screen and (min-width: 1024px) {
+    #main-wrapper {
+        display: flex;
+        align-items: center;
+    }
+}
+</style>
+<script type="text/javascript">
+(function () {
+    var OFFSET = 64;
+    function isMobile() {
+        return window.matchMedia('(max-width: 1023px)').matches;
+    }
+    function formEl() {
+        return document.querySelector('#main .custom-step-info')
+            || document.querySelector('#main .row-offcanvas')
+            || document.getElementById('Main');
+    }
+    function scrollToForm() {
+        if (!isMobile()) return;
+        var el = formEl();
+        if (!el) return;
+        var top = el.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+        window.scrollTo(0, Math.max(0, Math.round(top - OFFSET)));
+    }
+    function start() {
+        var n = 0;
+        var timer = setInterval(function () {
+            n += 1;
+            if ((document.body && document.body.classList.contains('special-page-finish')) || n > 30) {
+                clearInterval(timer);
+                scrollToForm();
+            }
+        }, 80);
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+    } else {
+        start();
+    }
+    window.addEventListener('load', scrollToForm);
+})();
+</script>

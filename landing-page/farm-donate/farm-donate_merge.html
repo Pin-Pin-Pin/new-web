@@ -863,6 +863,7 @@ section:has(.page-top-container){
     font-weight: 400;
     line-height: 1.5;
     color: var(--gray-600);
+    transition: color 0.2s ease;
 }
 .donation-box__number{
     font-family: "Noto Sans TC", sans-serif;
@@ -881,6 +882,15 @@ section:has(.page-top-container){
     font-weight: 400;
     line-height: 1.5;
     color: var(--brand-black);
+    transition: color 0.2s ease;
+}
+.donation-box__amount-option:hover .donation-box__currency,
+.donation-box__amount-option:hover .donation-box__number,
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    color: var(--brand-primary);
+}
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    font-weight: 400;
 }
 .donation-box__custom{
     display: flex;
@@ -958,6 +968,7 @@ section:has(.page-top-container){
 @media screen and (min-width: 768px) {
     #top-slogan{
         width: 450px;
+        max-width: 100%;
     }
 }
 section.donate-hero{
@@ -1191,12 +1202,13 @@ section.donate-hero{
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--gray-600);
+    color: var(--brand-black);
+    transition: color 0.2s ease;
 }
 .donation-box__number{
     font-family: "Noto Sans TC", sans-serif;
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.2;
     color: var(--brand-black);
     transition: color 0.2s ease;
@@ -1210,6 +1222,15 @@ section.donate-hero{
     font-weight: 400;
     line-height: 1.5;
     color: var(--brand-black);
+    transition: color 0.2s ease;
+}
+.donation-box__amount-option:hover .donation-box__currency,
+.donation-box__amount-option:hover .donation-box__number,
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    color: var(--brand-primary);
+}
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    font-weight: 400;
 }
 .donation-box__custom{
     display: flex;
@@ -1271,7 +1292,7 @@ section.donate-hero{
     align-items: center;
     width: 100%;
     min-height: 44px;
-    padding: 12px 16px;
+    padding: 7px 16px;
     border: none;
     border-radius: 4px;
 }
@@ -1704,22 +1725,22 @@ footer {
             media="(min-width: 768px)"
             type="image/webp"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-1400.webp 1400w,
-                /sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-1920.webp 1920w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-1400.webp 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-1920.webp 1920w
             "
             sizes="100vw"
         >
     
         <source
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-mb-596.webp
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-mb-596.webp
             "
             sizes="100vw"
         >
         <img
-            src="/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-mb-596.jpg"
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-mb-596.jpg"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-mb-596.jpg
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-hero-mb-596.jpg
             "
             width="596"
             height="596"
@@ -1736,12 +1757,12 @@ footer {
                 <source
                     type="image/webp"
                     srcset="
-                        /sites/cet-taiwan.org/files/u422/20260729-farm-top-slogan-507.webp 507w
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-slogan-507.webp 507w
                     "
                 >
             
                 <img id="top-slogan"
-                    src="/sites/cet-taiwan.org/files/u422/20260729-farm-top-slogan-507.png"
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-farm-top-slogan-507.png"
                     width="507"
                     height="236"
                     alt="監督違章工廠不讓憾事發生"
@@ -1749,14 +1770,14 @@ footer {
                 >
             </picture>
             <picture>
-                <source srcset="/sites/cet-taiwan.org/files/u422/cet-logo-12.svg" type="image/svg+xml" />
-                <img id="cet-top-logo" decoding="async" alt="地球公民基金會" class="" src="/sites/cet-taiwan.org/files/u422/cet-logo-12.png"
+                <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/cet-logo-12.svg" type="image/svg+xml" />
+                <img id="cet-top-logo" decoding="async" alt="地球公民基金會" class="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/cet-logo-12.png"
                 width="160" height="47" />
             </picture>
 
         </div>
         <div class="table-box">
-            <div class="donation-box" id="donation-box">
+            <div class="donation-box" id="donation-box" data-transact-id="27">
                 <h2 class="donation-box__title h4">選擇捐款方式</h2>
 
                 <div class="donation-box__tabs" role="tablist" aria-label="捐款方式">
@@ -1925,22 +1946,22 @@ footer {
             media="(min-width: 768px)"
             type="image/webp"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-hero-768.webp 768w,
-                /sites/cet-taiwan.org/files/u422/20260729-hero-1400.webp 1400w,
-                /sites/cet-taiwan.org/files/u422/20260729-hero-1920.webp 1920w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-hero-768.webp 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-hero-1400.webp 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-hero-1920.webp 1920w
             "
             sizes="100vw"
         >
         <source
             type="image/webp"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260623-farm-high.webp 750w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260623-farm-high.webp 750w
             "
             sizes="100vw"
         >
     
         <img
-            src="/sites/cet-taiwan.org/files/u422/20260623-farm-high_0.jpg"
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260623-farm-high_0.jpg"
             width="750"
             height="1000"
             alt="金黃色稻田的照片"
@@ -1954,23 +1975,23 @@ footer {
                 <source 
                 type="image/webp"
                 srcset="
-                    /sites/cet-taiwan.org/files/u422/20260729-slogan-1-600.webp 600w,
-                    /sites/cet-taiwan.org/files/u422/20260729-slogan-1-960.webp 960w"
+                    https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-1-600.webp 600w,
+                    https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-1-960.webp 960w"
                     sizes="
                     (min-width: 992px) 850px,
                     (min-width: 768px) 520px,
                     290px"
                      />
                 
-                <img class="w-100 mb-0" alt="這片金黃不該是人民的噩夢" src="/sites/cet-taiwan.org/files/u422/20260729-slogan-1-600.png" width="290" height="42.8" />
+                <img class="w-100 mb-0" alt="這片金黃不該是人民的噩夢" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-1-600.png" width="290" height="42.8" />
             </picture>
 
             <picture>
                 <source 
                 type="image/webp"
                 srcset="
-                    /sites/cet-taiwan.org/files/u422/20260729-slogan-2-600.webp 600w,
-                    /sites/cet-taiwan.org/files/u422/20260729-slogan-2-960.webp 960w"
+                    https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-2-600.webp 600w,
+                    https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-2-960.webp 960w"
                     sizes="
                     (min-width: 992px) 850px,
                     (min-width: 768px) 520px,
@@ -1978,7 +1999,7 @@ footer {
 
                      />
                 <img class="w-100" alt="而是農業的美夢" src="
-                /sites/cet-taiwan.org/files/u422/20260729-slogan-2-600.png" width="290" height="42.8" />
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-slogan-2-600.png" width="290" height="42.8" />
             </picture>
         </div>
     </div>
@@ -1991,8 +2012,8 @@ footer {
             <div class="col-md-4 col-12 people-quotes__card">
                 <div class="people-quotes__top">
                     <picture> 
-                        <source srcset="/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.webp" type="image/webp" />
-                        <img class="people-quotes__quote" alt="" src="/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.png" 
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.webp" type="image/webp" />
+                        <img class="people-quotes__quote" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.png" 
                         width="144" height="74"/>
                     </picture>
 
@@ -2001,15 +2022,15 @@ footer {
             
                 <div class="people-quotes__bottom">
                     <picture>
-                        <source srcset="/sites/cet-taiwan.org/files/u422/20260729-person-1-250.webp" type="image/webp" />
-                        <img class="people-quotes__signature" alt="" src="/sites/cet-taiwan.org/files/u422/20260729-person-1-250.png" 
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-1-250.webp" type="image/webp" />
+                        <img class="people-quotes__signature" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-1-250.png" 
                         width="273" height="273"/>
                     </picture>
                  
                     <p class="people-quotes__attribution mb-0"><strong>農地違章工廠旁居民</strong></p>
                     <picture>
-                        <source srcset="/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.webp" type="image/webp" />
-                        <img class="people-quotes__line" alt="" src="/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.png" 
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.webp" type="image/webp" />
+                        <img class="people-quotes__line" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.png" 
                         width="144" height="74"/>
                     </picture>
                 </div>
@@ -2017,8 +2038,8 @@ footer {
             <div class="col-md-4 col-12 people-quotes__card">
                 <div class="people-quotes__top">
                     <picture> 
-                        <source srcset="/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.webp" type="image/webp" />
-                        <img class="people-quotes__quote" alt="" src="/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.png"
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.webp" type="image/webp" />
+                        <img class="people-quotes__quote" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.png"
                         width="144" height="74" />
                     </picture>
 
@@ -2027,15 +2048,15 @@ footer {
             
                 <div class="people-quotes__bottom">
                     <picture>
-                        <source srcset="/sites/cet-taiwan.org/files/u422/20260729-person-2-250.webp" type="image/webp" />
-                        <img class="people-quotes__signature" alt="" src="/sites/cet-taiwan.org/files/u422/20260729-person-2-250.png" 
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-2-250.webp" type="image/webp" />
+                        <img class="people-quotes__signature" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-2-250.png" 
                         width="273" height="273"/>
                     </picture>
                  
                     <p class="people-quotes__attribution mb-0"><strong>彰化縣農業工作者</strong></p>
                     <picture>
-                        <source srcset="/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.webp" type="image/webp" />
-                        <img class="people-quotes__line" alt="" src="/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.png"
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.webp" type="image/webp" />
+                        <img class="people-quotes__line" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.png"
                         width="144" height="74" />
                     </picture>
                 </div>
@@ -2043,8 +2064,8 @@ footer {
             <div class="col-md-4 col-12 people-quotes__card">
                 <div class="people-quotes__top">
                     <picture> 
-                        <source srcset="/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.webp" type="image/webp" />
-                        <img class="people-quotes__quote" alt="" src="/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.png" 
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.webp" type="image/webp" />
+                        <img class="people-quotes__quote" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-up-200.png" 
                         width="144" height="74"/>
                     </picture>
 
@@ -2053,15 +2074,15 @@ footer {
             
                 <div class="people-quotes__bottom">
                     <picture>
-                        <source srcset="/sites/cet-taiwan.org/files/u422/20260729-person-3-250.webp" type="image/webp" />
-                        <img class="people-quotes__signature" alt="" src="/sites/cet-taiwan.org/files/u422/20260729-person-3.png" 
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-3-250.webp" type="image/webp" />
+                        <img class="people-quotes__signature" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-person-3.png" 
                         width="273" height="273"/>
                     </picture>
                  
                     <p class="people-quotes__attribution mb-0"><strong>一線執法公務員</strong></p>
                     <picture>
-                        <source srcset="/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.webp" type="image/webp" />
-                        <img class="people-quotes__line" alt="" src="/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.png"
+                        <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.webp" type="image/webp" />
+                        <img class="people-quotes__line" alt="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-quote-down-200.png"
                         width="144" height="74" />
                     </picture>
                 </div>
@@ -2080,9 +2101,9 @@ footer {
             media="(min-width: 768px)"
             type="image/webp"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-about-bg-768.webp 768w,
-                /sites/cet-taiwan.org/files/u422/20260729-about-bg-1400.webp 1400w,
-                /sites/cet-taiwan.org/files/u422/20260729-about-bg-1920.webp 1920w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-768.webp 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-1400.webp 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-1920.webp 1920w
             "
             sizes="100vw"
         >
@@ -2091,9 +2112,9 @@ footer {
             media="(min-width: 768px)"
             type="image/jpeg"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-about-bg-768.jpg 768w,
-                /sites/cet-taiwan.org/files/u422/20260729-about-bg-1400.jpg 1400w,
-                /sites/cet-taiwan.org/files/u422/20260729-about-bg-1920.jpg 1920w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-768.jpg 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-1400.jpg 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-1920.jpg 1920w
             "
             sizes="100vw"
         >
@@ -2102,13 +2123,13 @@ footer {
         <source
             type="image/webp"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-about-bg-mb-542.webp 542w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-mb-542.webp 542w
             "
         >
         <img
-            src="/sites/cet-taiwan.org/files/u422/20260729-about-bg-mb-542.jpg"
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-mb-542.jpg"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-about-bg-mb-542.jpg
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-about-bg-mb-542.jpg
             "
             sizes="100vw"
             width="542"
@@ -2136,11 +2157,11 @@ footer {
                 <source
                     type="image/webp"
                     srcset="
-                        /sites/cet-taiwan.org/files/u422/20260729-donate-header-700.webp"
+                        https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-header-700.webp"
                 >
             
                 <img
-                    src="/sites/cet-taiwan.org/files/u422/20260729-donate-header-700.png"
+                    src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-header-700.png"
                    
                     width="700"
                     height="97"
@@ -2157,8 +2178,8 @@ footer {
                 <h3 class="card-title mb-0 h2">定期支持方案</h3>
                 <p class="h3 amount">$500/$1000/$1500</p>
                 <picture class="card-image">
-                    <source srcset="/sites/cet-taiwan.org/files/u422/20260729-donate-1-560.webp" type="image/webp" />
-                    <img class="card-img" decoding="async" loading="lazy" alt="地球公民的員工在辦公室裡工作" src="/sites/cet-taiwan.org/files/u422/20260729-donate-1-560.jpg"
+                    <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-1-560.webp" type="image/webp" />
+                    <img class="card-img" decoding="async" loading="lazy" alt="地球公民的員工在辦公室裡工作" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-1-560.jpg"
                     width="314" height="210" />
                 </picture>
                 <p class="card-text">持續監督即報即插即拆<br>遏止新增建工廠</p>
@@ -2167,8 +2188,8 @@ footer {
                         <source
                             type="image/webp"
                             srcset="
-                                /sites/cet-taiwan.org/files/u422/20260729-cta-390.webp 390w,
-                                /sites/cet-taiwan.org/files/u422/20260729-cta-560.webp 560w
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-390.webp 390w,
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.webp 560w
                             "
                             sizes="
                                 (min-width: 1200px) calc(984px - 80px - 96px), (min-width: 992px) calc(960px - 80px - 96px), (min-width: 768px) calc(720px - 80px - 96px),
@@ -2177,10 +2198,10 @@ footer {
                         >
                     
                         <img
-                            src="/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg"
+                            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg"
                             srcset="
-                                /sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg 560w,
-                                /sites/cet-taiwan.org/files/u422/20260729-cta-390.jpg 390w
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg 560w,
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-390.jpg 390w
                             "
                             sizes="
                                 (min-width: 1200px) calc(984px - 80px - 96px), (min-width: 992px) calc(960px - 80px - 96px), (min-width: 768px) calc(720px - 80px - 96px),
@@ -2202,8 +2223,8 @@ footer {
                 <h3 class="card-title mb-0 h2">單筆支持方案</h3>
                 <p class="h3 amount">$1200/$3000/$5000</p>
                 <picture class="card-image">
-                    <source srcset="/sites/cet-taiwan.org/files/u422/20260729-donate-2-400.webp" type="image/webp" />
-                    <img class="card-img" decoding="async" loading="lazy" alt="地球公民的員工在記者會舉起手舉版，上面寫著「違章工廠該拆就拆，污染該退就退」" src="/sites/cet-taiwan.org/files/u422/20260729-donate-2-400.jpg"
+                    <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-2-400.webp" type="image/webp" />
+                    <img class="card-img" decoding="async" loading="lazy" alt="地球公民的員工在記者會舉起手舉版，上面寫著「違章工廠該拆就拆，污染該退就退」" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-donate-2-400.jpg"
                     width="314" height="210" />
                 </picture>
 
@@ -2213,8 +2234,8 @@ footer {
                         <source
                             type="image/webp"
                             srcset="
-                                /sites/cet-taiwan.org/files/u422/20260729-cta-390.webp 390w,
-                                /sites/cet-taiwan.org/files/u422/20260729-cta-560.webp 560w
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-390.webp 390w,
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.webp 560w
                             "
                             sizes="
                                 (min-width: 1200px) calc(984px - 80px - 96px), (min-width: 992px) calc(960px - 80px - 96px), (min-width: 768px) calc(720px - 80px - 96px),
@@ -2223,10 +2244,10 @@ footer {
                         >
                     
                         <img
-                            src="/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg"
+                            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg"
                             srcset="
-                                /sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg 560w,
-                                /sites/cet-taiwan.org/files/u422/20260729-cta-390.jpg 390w
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-560.jpg 560w,
+                                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-cta-390.jpg 390w
                             "
                             sizes="
                                 (min-width: 1200px) calc(984px - 80px - 96px), (min-width: 992px) calc(960px - 80px - 96px), (min-width: 768px) calc(720px - 80px - 96px),
@@ -2252,9 +2273,9 @@ footer {
         <source
             type="image/webp"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-footer-768.webp 768w,
-                /sites/cet-taiwan.org/files/u422/20260729-footer-1400.webp 1400w,
-                /sites/cet-taiwan.org/files/u422/20260729-footer-1920.webp 1920w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-768.webp 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-1400.webp 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-1920.webp 1920w
             "
             sizes="
                 100vw
@@ -2262,11 +2283,11 @@ footer {
         >
     
         <img
-            src="/sites/cet-taiwan.org/files/u422/20260729-footer-768.jpg"
+            src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-768.jpg"
             srcset="
-                /sites/cet-taiwan.org/files/u422/20260729-footer-768.jpg 768w,
-                /sites/cet-taiwan.org/files/u422/20260729-footer-1400.jpg 1400w,
-                /sites/cet-taiwan.org/files/u422/20260729-footer-1920.jpg 1920w
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-768.jpg 768w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-1400.jpg 1400w,
+                https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20260729-footer-1920.jpg 1920w
             "
             sizes="
                 100vw
@@ -2283,8 +2304,8 @@ footer {
 <footer>
     <div class="logo-container">
         <picture>
-            <source srcset="/sites/cet-taiwan.org/files/u422/logo-8.webp" type="image/webp" />
-            <img decoding="async" loading="lazy" alt="地球公民基金會" class="" src="/sites/cet-taiwan.org/files/u422/logo-8.png"
+            <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/logo-8.webp" type="image/webp" />
+            <img decoding="async" loading="lazy" alt="地球公民基金會" class="" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/logo-8.png"
             width="165" height="48.5" />
         </picture>
     </div>
@@ -2458,15 +2479,70 @@ window.DONATION_BOX_AMOUNT_DATA = {
     // netiCRM 金額預填：https://neticrm.tw/resources/2423#5
     // &_amt=金額（不在選項中則視為自訂金額）
     // &_grouping=recurring | non-recurring
+    // &_ppid=金流機制 id、&_instrument=付款工具 id（預填後可進入填寫資料步驟）
+    var DEFAULT_PPID = '11';
+    var DEFAULT_INSTRUMENT = '1';
+    var TRANSACT_BASE = 'https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=';
+    var PAGE_TRANSACT_IDS = {
+        'general-donate': '50',
+        'air-donate': '44',
+        'farm-donate': '27'
+    };
+
     function getDonatePageBaseUrl() {
+        if (window.DONATION_BOX_TRANSACT_URL) {
+            return window.DONATION_BOX_TRANSACT_URL;
+        }
+
+        var configuredUrl = box.getAttribute('data-transact-url');
+        if (configuredUrl) {
+            return configuredUrl;
+        }
+
+        var configuredId = String(
+            window.DONATION_BOX_TRANSACT_ID || box.getAttribute('data-transact-id') || ''
+        ).trim();
+        if (configuredId) {
+            return TRANSACT_BASE + configuredId;
+        }
+
+        var path = (window.location.pathname || '').toLowerCase();
+        var pageKeys = Object.keys(PAGE_TRANSACT_IDS);
+        for (var i = 0; i < pageKeys.length; i++) {
+            if (path.indexOf(pageKeys[i]) !== -1) {
+                return TRANSACT_BASE + PAGE_TRANSACT_IDS[pageKeys[i]];
+            }
+        }
+
         var link = document.querySelector('link[rel="canonical"]');
-        return (link && link.href) || 'https://dev.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=43';
+        return (link && link.href) || TRANSACT_BASE + '50';
+    }
+
+    function appendCurrentUtmParams(url) {
+        var search = '';
+        try {
+            search = (window.top && window.top.location && window.top.location.search)
+                || window.location.search
+                || '';
+        } catch (e) {
+            search = window.location.search || '';
+        }
+
+        var currentParams = new URLSearchParams(search);
+        currentParams.forEach(function (value, key) {
+            if (key.toLowerCase().indexOf('utm_') === 0 && value) {
+                url.searchParams.set(key, value);
+            }
+        });
     }
 
     function buildDonateUrl(amount, grouping) {
         var url = new URL(getDonatePageBaseUrl(), window.location.href);
         url.searchParams.set('_amt', String(amount));
         url.searchParams.set('_grouping', grouping);
+        url.searchParams.set('_ppid', DEFAULT_PPID);
+        url.searchParams.set('_instrument', DEFAULT_INSTRUMENT);
+        appendCurrentUtmParams(url);
         return url.toString();
     }
 

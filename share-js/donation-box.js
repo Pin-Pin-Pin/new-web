@@ -146,6 +146,9 @@
     // netiCRM 金額預填：https://neticrm.tw/resources/2423#5
     // &_amt=金額（不在選項中則視為自訂金額）
     // &_grouping=recurring | non-recurring
+    // &_ppid=金流機制 id、&_instrument=付款工具 id（預填後可進入填寫資料步驟）
+    var DEFAULT_PPID = '11';
+    var DEFAULT_INSTRUMENT = '1';
     var TRANSACT_BASE = 'https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=';
     var PAGE_TRANSACT_IDS = {
         'general-donate': '50',
@@ -204,6 +207,8 @@
         var url = new URL(getDonatePageBaseUrl(), window.location.href);
         url.searchParams.set('_amt', String(amount));
         url.searchParams.set('_grouping', grouping);
+        url.searchParams.set('_ppid', DEFAULT_PPID);
+        url.searchParams.set('_instrument', DEFAULT_INSTRUMENT);
         appendCurrentUtmParams(url);
         return url.toString();
     }

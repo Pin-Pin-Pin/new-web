@@ -1,0 +1,66 @@
+/* 比照官網 https://www.cet-taiwan.org/ 頁首：淺綠底、底線、高 64px；本頁僅保留靠左 logo */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background: var(--brand-background-green);
+    border-bottom: 1px solid #d6d3d1;
+}
+
+/* 對齊官網 .header-inner.container：置中、padding-inline 24px、斷點 max-width 與 live 站相同 */
+#header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    min-height: 64px;
+    margin-inline: auto;
+    padding-block: 0;
+    padding-inline: 24px;
+    box-sizing: border-box;
+}
+@media (min-width: 576px) {
+    #header .header-inner {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    #header .header-inner {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    #header .header-inner {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    #header .header-inner {
+        max-width: 1008px;
+    }
+}
+
+#header .site-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 64px;
+    min-width: 44px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#header .site-logo:focus {
+    outline: 2px solid var(--brand-dark-primary);
+    outline-offset: 2px;
+}
+
+#header .site-logo-img {
+    display: block;
+    width: 105px;
+    height: 31px;
+    max-width: 100%;
+    object-fit: contain;
+}

@@ -8,7 +8,7 @@
     align-items: center;
     gap: 10px;
     width: 100%;
-    max-width: 450px;
+    max-width: 100%;
     margin-inline: auto;
     box-sizing: border-box;
 }
@@ -23,8 +23,9 @@
     object-fit: contain;
 }
 #main #intro_text #top-slogan {
-    width: 300px;
+    width: 132px;
     max-width: 100%;
+    /* display: none; */
 }
 #main #intro_text #cet-top-logo {
     width: 160px;
@@ -32,12 +33,25 @@
 }
 @media screen and (min-width: 768px) {
     #main #intro_text #top-slogan {
+        display: block;
         width: 330px;
+        max-width: 100%;
     }
+    #main #intro_text #cet-top-logo{
+        width: 267px;
+        max-width: 100%;
+
+    }
+    /* neti 要加 */
+    /* #main-wrapper{
+        display:flex;
+        align-items:center;
+    } */
 }
 @media screen and (min-width: 992px) {
     #main #intro_text #top-slogan {
         width: 450px;
+        max-width: 100%;
     }
 }
 </style>
@@ -77,10 +91,3 @@
         >
     </picture>
 </div>
-<!-- <script type="text/javascript">
-var metaTag = document.createElement('meta');
-metaTag.setAttribute('name', 'description');
-metaTag.setAttribute('content', '捐款支持地球公民基金會，匯聚更多守護環境的公民力量。你的定期定額，讓專業倡議得以持續監督政府與企業。');
-var headElement = document.querySelector('head');
-headElement.appendChild(metaTag);
-</script> -->

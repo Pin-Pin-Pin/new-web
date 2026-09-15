@@ -866,6 +866,7 @@ section:has(.page-top-container){
     font-weight: 400;
     line-height: 1.5;
     color: var(--gray-600);
+    transition: color 0.2s ease;
 }
 .donation-box__number{
     font-family: "Noto Sans TC", sans-serif;
@@ -884,6 +885,15 @@ section:has(.page-top-container){
     font-weight: 400;
     line-height: 1.5;
     color: var(--brand-black);
+    transition: color 0.2s ease;
+}
+.donation-box__amount-option:hover .donation-box__currency,
+.donation-box__amount-option:hover .donation-box__number,
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    color: var(--brand-primary);
+}
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    font-weight: 400;
 }
 .donation-box__custom{
     display: flex;
@@ -961,6 +971,7 @@ section:has(.page-top-container){
 @media screen and (min-width: 768px) {
     #top-slogan{
         width: 450px;
+        max-width: 100%;
     }
 }
 section.donate-hero{
@@ -1194,12 +1205,13 @@ section.donate-hero{
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--gray-600);
+    color: var(--brand-black);
+    transition: color 0.2s ease;
 }
 .donation-box__number{
     font-family: "Noto Sans TC", sans-serif;
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.2;
     color: var(--brand-black);
     transition: color 0.2s ease;
@@ -1213,6 +1225,15 @@ section.donate-hero{
     font-weight: 400;
     line-height: 1.5;
     color: var(--brand-black);
+    transition: color 0.2s ease;
+}
+.donation-box__amount-option:hover .donation-box__currency,
+.donation-box__amount-option:hover .donation-box__number,
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    color: var(--brand-primary);
+}
+.donation-box__amount-option:hover .donation-box__amount-desc{
+    font-weight: 400;
 }
 .donation-box__custom{
     display: flex;
@@ -1274,7 +1295,7 @@ section.donate-hero{
     align-items: center;
     width: 100%;
     min-height: 44px;
-    padding: 12px 16px;
+    padding: 7px 16px;
     border: none;
     border-radius: 4px;
 }
@@ -2427,7 +2448,7 @@ img {
             </picture>
         </div>
         <div class="table-box">
-            <div class="donation-box" id="donation-box">
+            <div class="donation-box" id="donation-box" data-transact-id="44">
                 <h2 class="donation-box__title h4">選擇捐款方式</h2>
 
                 <div class="donation-box__tabs" role="tablist" aria-label="捐款方式">
@@ -2626,7 +2647,7 @@ img {
 				<div class="row justify-content-center align-items-center">
 					<div class="debug-black col-12 col-lg-6 "><picture> <source srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20251110-13.webp" type="image/webp" /> <img alt="地球公民2014年校園升空污染旗倡議行動" class="img-fluid" decoding="async" loading="lazy" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20251110-13.jpg" style=" position: relative;z-index: 3;" /> </picture></div>
 					<div class="col-12 col-lg-6">
-						<p class="blue font-700">「孩子是我們帶來這個世界的，我想給她一個健康、公平的環境。」—地球公民執行長王敏玲</p>
+						<p class="blue font-500">「孩子是我們帶來這個世界的，我想給她一個健康、公平的環境。」—地球公民執行長王敏玲</p>
 						<p class="mb-0">女兒幼時因空污誘發氣喘，讓地球公民執行長王敏玲深刻體會父母的焦慮與無力，以及孩童受的苦。也因此踏上了守護孩童呼吸、改善空污的道路。</p></div></div></div></div><!-- 網格紙素材 -->
 		<div aria-hidden="true" id="grid-paper">
 			<div class="grid-paper-tiles">&nbsp;</div></div></section></div>
@@ -3063,15 +3084,70 @@ window.DONATION_BOX_AMOUNT_DATA = {
     // netiCRM 金額預填：https://neticrm.tw/resources/2423#5
     // &_amt=金額（不在選項中則視為自訂金額）
     // &_grouping=recurring | non-recurring
+    // &_ppid=金流機制 id、&_instrument=付款工具 id（預填後可進入填寫資料步驟）
+    var DEFAULT_PPID = '11';
+    var DEFAULT_INSTRUMENT = '1';
+    var TRANSACT_BASE = 'https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&id=';
+    var PAGE_TRANSACT_IDS = {
+        'general-donate': '50',
+        'air-donate': '44',
+        'farm-donate': '27'
+    };
+
     function getDonatePageBaseUrl() {
+        if (window.DONATION_BOX_TRANSACT_URL) {
+            return window.DONATION_BOX_TRANSACT_URL;
+        }
+
+        var configuredUrl = box.getAttribute('data-transact-url');
+        if (configuredUrl) {
+            return configuredUrl;
+        }
+
+        var configuredId = String(
+            window.DONATION_BOX_TRANSACT_ID || box.getAttribute('data-transact-id') || ''
+        ).trim();
+        if (configuredId) {
+            return TRANSACT_BASE + configuredId;
+        }
+
+        var path = (window.location.pathname || '').toLowerCase();
+        var pageKeys = Object.keys(PAGE_TRANSACT_IDS);
+        for (var i = 0; i < pageKeys.length; i++) {
+            if (path.indexOf(pageKeys[i]) !== -1) {
+                return TRANSACT_BASE + PAGE_TRANSACT_IDS[pageKeys[i]];
+            }
+        }
+
         var link = document.querySelector('link[rel="canonical"]');
-        return (link && link.href) || '/civicrm/contribute/transact?reset=1&id=44';
+        return (link && link.href) || TRANSACT_BASE + '50';
+    }
+
+    function appendCurrentUtmParams(url) {
+        var search = '';
+        try {
+            search = (window.top && window.top.location && window.top.location.search)
+                || window.location.search
+                || '';
+        } catch (e) {
+            search = window.location.search || '';
+        }
+
+        var currentParams = new URLSearchParams(search);
+        currentParams.forEach(function (value, key) {
+            if (key.toLowerCase().indexOf('utm_') === 0 && value) {
+                url.searchParams.set(key, value);
+            }
+        });
     }
 
     function buildDonateUrl(amount, grouping) {
         var url = new URL(getDonatePageBaseUrl(), window.location.href);
         url.searchParams.set('_amt', String(amount));
         url.searchParams.set('_grouping', grouping);
+        url.searchParams.set('_ppid', DEFAULT_PPID);
+        url.searchParams.set('_instrument', DEFAULT_INSTRUMENT);
+        appendCurrentUtmParams(url);
         return url.toString();
     }
 

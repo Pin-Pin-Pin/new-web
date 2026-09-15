@@ -1,62 +1,173 @@
 [
   {
-    "file": "new-free-web/home/home.html",
+    "files": [
+      "home/home.html",
+      "home/home_merge.html"
+    ],
     "title": "首頁自由欄位",
+    "lang": "zh-TW",
     "description": "地球公民與台灣社會一起創造改變：推動逾二十萬公民關注礦業修法、號召監測農地工廠、凝聚非核家園民意，並守護國家預算資源，創造人本交通規劃空間。",
     "length": 70
   },
   {
-    "file": "new-free-web/volunteer/volunteer.html",
+    "files": [
+      "volunteer/volunteer.html",
+      "volunteer/volunteer_merge.html"
+    ],
     "title": "成為志工",
-    "description": "要讓環境議題被更多人看見、理解並產生認同，需要龐大的公民力量支持。地球公民透過持續倡議與行動促成改變，邀請你加入志工，一起為台灣環境尋找解答。",
+    "lang": "zh-TW",
+    "description": "邀請你加入地球公民志工，根據興趣與專長，自由選擇街頭行動、活動支援、行政後勤等任務，一起推動台灣環境的改變！",
     "length": 71
   },
   {
-    "file": "new-free-web/intern/intern.html",
+    "files": [
+      "intern/intern.html",
+      "intern/intern_merge.html"
+    ],
     "title": "成為實習生",
-    "description": "地球公民歡迎對公共事務有熱忱的年輕世代加入實習。你將走進倡議型 NGO 的日常，參與議題研究、組織推廣與媒體行銷，為環境行動打下最堅實的基礎。",
+    "lang": "zh-TW",
+    "description": "歡迎對公共事務有熱忱的年輕世代加入地球公民實習。你將走進倡議型 NGO 的日常，參與議題研究、組織推廣與媒體行銷，為環境行動打下最堅實的基礎。",
     "length": 71
   },
   {
-    "file": "new-free-web/staff/staff.html",
+    "files": [
+      "staff/staff.html",
+      "staff/staff_merge.html"
+    ],
     "title": "成為員工",
+    "lang": "zh-TW",
     "description": "讓環境倡議成為你的日常。地球公民穿梭於議題現場、街頭市集與國會殿堂，監督政府與企業的環境作為；歡迎加入熱情友善的團隊，一起成就想看見的改變。",
     "length": 70
   },
   {
-    "file": "new-free-web/about-us-ch/about-us-ch.html",
+    "files": [
+      "about-us-ch/about-us-ch.html",
+      "about-us-ch/about-us-ch_merge.html"
+    ],
     "title": "關於我們",
-    "description": "地球公民是由市井小民支撐起的專業環保平台。我們不接受政府專案委辦，仰賴公民涓滴捐款獨立發聲，以專業投入與集體行動為未來世代守護永續的台灣社會。",
+    "lang": "zh-TW",
+    "description": "地球公民是臺灣的環境保護團體，以專業投入與集體行動，為未來世代創造永續的台灣環境。我們不接受政府專案委辦與監督企業的捐款，仰賴公民捐款獨立發聲。",
     "length": 71
   },
   {
-    "file": "new-free-web/about-us-en/about-us-en.html",
+    "files": [
+      "about-us-en/about-us-en.html",
+      "about-us-en/about-us-en_merge.html",
+      "about-us-en/about-us-en_tab.html"
+    ],
     "title": "About Us",
-    "description": "CET is a Taiwan environmental NGO with 20+ years of land and community advocacy.",
-    "length": 80
+    "lang": "en",
+    "description": "Citizen of the Earth, Taiwan (CET) is a local environmental protection foundation in Taiwan. Our team consists of environmental practitioners with more than twenty years of experience in Taiwan. ",
+    "length": 147
   },
   {
-    "file": "new-free-web/about-us-en/about-us-en_tab.html",
-    "title": "About Us",
-    "description": "CET is a Taiwan environmental NGO with 20+ years of land and community advocacy.",
-    "length": 80
-  },
-  {
-    "file": "new-free-web/invite-share/invite-share.html",
+    "files": [
+      "invite-share/invite-share.html",
+      "invite-share/invite-share_merge.html"
+    ],
     "title": "邀請分享",
+    "lang": "zh-TW",
     "description": "地球公民超過二十年站在台灣環境倡議第一線。歡迎高中與大學社團、教育工作者、企業與社區來邀約講座分享，用講座與對話把環境現場帶入日常、開啟改變。",
     "length": 71
   },
   {
-    "file": "new-free-web/invite-share/invite-share_tab.html",
-    "title": "邀請分享",
-    "description": "地球公民超過二十年站在台灣環境倡議第一線。歡迎高中與大學社團、教育工作者、企業與社區來邀約講座分享，用講座與對話把環境現場帶入日常、開啟改變。",
-    "length": 71
-  },
-  {
-    "file": "new-free-web/will-donate/will-donate.html",
+    "files": [
+      "will-donate/will-donate.html",
+      "will-donate/will-donate_merge.html"
+    ],
     "title": "遺產捐贈",
+    "lang": "zh-TW",
     "description": "捍衛環境正義需要跨世代接力。歡迎透過遺產捐贈，讓對土地的情感化為影響力，支持地球公民推動環境法案、守護山林與防制污染，為下一代延續這份關懷。",
     "length": 70
+  },
+  {
+    "files": [
+      "reflection/wanted.html"
+    ],
+    "title": "徵求社群溝通夥伴",
+    "lang": "zh-TW",
+    "description": "地球公民徵求社群溝通夥伴，將環境知識轉成大眾好懂的圖文與短影音。歡迎具備數位能力、關心環境社會議題的你加入，讓好點子帶動真實改變。",
+    "length": 65
+  },
+  {
+    "files": [
+      "reflection/worker-1.html"
+    ],
+    "title": "員工分享：鄧宇佑",
+    "lang": "zh-TW",
+    "description": "地球公民媒體行銷部主任鄧宇佑分享：把艱深環境議題轉譯成大眾看得懂的貼文，在彈性空間裡試錯與創意發想，成為彼此的神隊友。",
+    "length": 59
+  },
+  {
+    "files": [
+      "reflection/worker-2.html"
+    ],
+    "title": "員工分享：娜娜",
+    "lang": "zh-TW",
+    "description": "地球公民教育推廣專員娜娜分享：教育推廣像一座橋，連接複雜環境議題與原本無關的人。從講座、文案到專案協作，讓更多人願意踏上這座橋。",
+    "length": 64
+  },
+  {
+    "files": [
+      "reflection/worker-3.html"
+    ],
+    "title": "員工分享：梁聖岳",
+    "lang": "zh-TW",
+    "description": "地球公民花東辦公室議題專員梁聖岳分享：從海岸開發、溪流築壩到山區礦場，組織培力韌性、也給予任性空間，讓不同觀點在花東山海間找出改變路徑。",
+    "length": 68
+  },
+  {
+    "files": [
+      "reflection/vt-1.html"
+    ],
+    "title": "志工分享：陳亭文",
+    "lang": "zh-TW",
+    "description": "志工陳亭文分享參與地球公民多年的感受：以溫柔務實的風格連結土地與政策，在森林講座、里山活動與春聯包裝中，培養守護土地的日常態度。",
+    "length": 64
+  },
+  {
+    "files": [
+      "reflection/vt-2.html"
+    ],
+    "title": "志工分享：王堉嘉",
+    "lang": "zh-TW",
+    "description": "志工王堉嘉分享在花蓮擔任志工逾五年的經驗：參與反亞泥、世豐水力等行動，看見環境運動不只是對抗，更是跨越科學、制度與情感的社會正義過程。",
+    "length": 67
+  },
+  {
+    "files": [
+      "reflection/vt-3.html"
+    ],
+    "title": "志工分享：韋翰",
+    "lang": "zh-TW",
+    "description": "志工韋翰從2021年核四公投加入地球公民。他寫下第一次上街發文宣的緊張，以及夥伴陪練之後，堅持如何可能帶來改變。",
+    "length": 56
+  },
+  {
+    "files": [
+      "reflection/intern-1.html"
+    ],
+    "title": "實習生分享：李芸",
+    "lang": "zh-TW",
+    "description": "實習生李芸分享台北辦公室實習：從看台衝進搖滾區，參與記者會、公聽會與花東踏查，看見倡議除了理想，更需要科學數據與現場理解。",
+    "length": 61
+  },
+  {
+    "files": [
+      "reflection/intern-2.html"
+    ],
+    "title": "實習生分享：張穗風",
+    "lang": "zh-TW",
+    "description": "實習生張穗風分享2020年暑假實習：為高雄市長補選撰寫投書，討論產業轉型與空污改善，練習以準確資料發揮社論影響力。",
+    "length": 57
+  },
+  {
+    "files": [
+      "reflection/intern-3.html"
+    ],
+    "title": "實習生分享：瑪樂芬樂芬·戴拉灣",
+    "lang": "zh-TW",
+    "description": "實習生瑪樂芬樂芬·戴拉灣分享北辦實習：從公衛視角走進氣候與土地議題，走訪崙山部落與花蓮辦公室，把所學化為深入研究與發表。",
+    "length": 60
   }
 ]

@@ -1,0 +1,85 @@
+/* 貼到 CMS 自訂 CSS。覆蓋特殊募款頁隱藏 #header，只留 logo。
+   樣式對齊 share-css/site-header.css */
+body.civicrm-contribute-sp #header,
+body:has(script[data-contribution-page-type="special"]) #header {
+    display: block !important;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background: var(--brand-background-green, var(--cet-bg, #E5EAE3));
+    border-bottom: 1px solid #d6d3d1;
+}
+body.civicrm-contribute-sp #header .header-inner,
+body:has(script[data-contribution-page-type="special"]) #header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    min-height: 64px;
+    margin-inline: auto;
+    padding-block: 0;
+    padding-inline: 24px;
+    box-sizing: border-box;
+}
+@media (min-width: 576px) {
+    body.civicrm-contribute-sp #header .header-inner,
+    body:has(script[data-contribution-page-type="special"]) #header .header-inner {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    body.civicrm-contribute-sp #header .header-inner,
+    body:has(script[data-contribution-page-type="special"]) #header .header-inner {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    body.civicrm-contribute-sp #header .header-inner,
+    body:has(script[data-contribution-page-type="special"]) #header .header-inner {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    body.civicrm-contribute-sp #header .header-inner,
+    body:has(script[data-contribution-page-type="special"]) #header .header-inner {
+        max-width: 1008px;
+    }
+}
+body.civicrm-contribute-sp #header #navbar-main,
+body:has(script[data-contribution-page-type="special"]) #header #navbar-main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 64px;
+    padding: 0;
+    width: 100%;
+}
+body.civicrm-contribute-sp #header #navbar-main > :not(#site-logo),
+body:has(script[data-contribution-page-type="special"]) #header #navbar-main > :not(#site-logo) {
+    display: none !important;
+}
+body.civicrm-contribute-sp #header .site-logo,
+body:has(script[data-contribution-page-type="special"]) #header .site-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 64px;
+    min-width: 44px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+body.civicrm-contribute-sp #header .site-logo:focus,
+body:has(script[data-contribution-page-type="special"]) #header .site-logo:focus {
+    outline: 2px solid var(--brand-dark-primary, var(--cet-primary-dark, #55716C));
+    outline-offset: 2px;
+}
+body.civicrm-contribute-sp #header .site-logo-img,
+body:has(script[data-contribution-page-type="special"]) #header .site-logo-img {
+    display: block;
+    width: 105px;
+    height: 31px;
+    max-width: 100%;
+    object-fit: contain;
+}
