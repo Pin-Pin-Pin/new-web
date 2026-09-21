@@ -4,3 +4,6 @@ todo.md
 *_scoped.*
 *_scoped
 *_merge.html
+.env
+tools/old/geckodriver.log
+tools/old/.last_target_folder

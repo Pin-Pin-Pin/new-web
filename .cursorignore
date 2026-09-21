@@ -1,3 +1,32 @@
 img/
 *_scoped.*
 *_scoped
+*_merged
+
+
+# 套件 / 建置產物
+node_modules/
+dist/
+build/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 暫存 / 備份
+*.tmp
+*.bak
+*.log
+
+# 敏感資訊
+.env
+.env.*
+*.key
+*.pem
+
+# 作業系統
+.DS_Store
+Thumbs.db
