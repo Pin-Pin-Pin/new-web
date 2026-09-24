@@ -7,3 +7,6 @@ todo.md
 .env
 tools/old/geckodriver.log
 tools/old/.last_target_folder
+articles/
+edm-stats/
+story-style-guide/
