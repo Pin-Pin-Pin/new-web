@@ -42,11 +42,27 @@
         max-width: 100%;
 
     }
-    /* neti 要加 */
-    /* #main-wrapper{
-        display:flex;
-        align-items:center;
-    } */
+    /* 左側對第一屏置中，表單變高時不要跟著往下 */
+    body.civicrm-contribute-sp #page #main-wrapper {
+        align-items: flex-start;
+    }
+    body.civicrm-contribute-sp #page #main {
+        align-items: flex-start;
+    }
+    body.civicrm-contribute-sp #main #main-inner {
+        align-self: flex-start;
+        height: auto;
+    }
+    #main #intro_text {
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        box-sizing: border-box;
+        height: 100dvh;
+        margin-top: -38.5px;
+        padding-top: 0;
+        justify-content: center;
+    }
 }
 @media screen and (min-width: 992px) {
     #main #intro_text #top-slogan {
