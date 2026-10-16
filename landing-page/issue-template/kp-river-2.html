@@ -46,6 +46,11 @@ html {
   color: #5e8614;
 }
 
+.kp-page .container {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 .kp-page .container-fluid {
   padding-left: 0;
   padding-right: 0;
@@ -250,13 +255,16 @@ html {
   display: flex;
   align-items: center;
   min-height: 420px;
-  padding: 48px 0;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .kp-photo-stage--poem .bg-uplayer {
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 480px;
-  padding-top: 80px;
+  padding-top: 48px;
   padding-bottom: 48px;
 }
 
@@ -280,8 +288,10 @@ html {
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.8;
-  text-align: center;
+  text-align: left;
   text-shadow: 1px 1px #111;
+  width: fit-content;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -316,12 +326,15 @@ html {
 }
 
 .kp-closing {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
 }
 
 .kp-closing__deco {
   max-width: 180px;
-  margin: 24px 0 0 auto;
+  margin: 24px 0 0;
 }
 
 .kp-footer {
@@ -683,17 +696,13 @@ html {
       <img src="/sites/cet-taiwan.org/files/glazed-builder/20210616-5.jpg?fid=20155" alt="" width="1920" height="1080" loading="lazy" decoding="async">
     </picture>
     <div class="container bg-uplayer">
-      <div class="row">
-        <div class="col-12 col-md-8 offset-md-2">
-          <p class="kp-poem">我們喝著來自中央山脈、玉山、阿里山山脈的水。<br><br>
-            路途遙遠，在山林裡滲出，在大河裡流動，默默沉潛入地，<br><br>
-            在攔河堰、水庫、水井裡被匯集，進入自來水廠，<br><br>
-            在老舊的PVC管或新式的不鏽管送到了家裡的水塔，<br><br>
-            在扭開水龍頭那一刻，給我們生活和生命。<br><br><br>
-            逢百年大旱，提醒我們珍惜每一滴水。</p>
-        </div>
-      </div>
-      <div class="kp-closing mt-4">
+      <p class="kp-poem">我們喝著來自中央山脈、玉山、阿里山山脈的水。<br>
+        路途遙遠，在山林裡滲出，在大河裡流動，默默沉潛入地，<br>
+        在攔河堰、水庫、水井裡被匯集，進入自來水廠，<br>
+        在老舊的PVC管或新式的不鏽管送到了家裡的水塔，<br>
+        在扭開水龍頭那一刻，給我們生活和生命。<br>
+        逢百年大旱，提醒我們珍惜每一滴水。</p>
+      <div class="kp-closing">
         <a class="kp-btn" href="/node/3960">大叔帶你走讀高屏溪（上）</a>
         <img class="kp-closing__deco" src="/sites/cet-taiwan.org/files/glazed-builder/20210616-6.png?fid=20156" alt="" width="180" height="120" loading="lazy" decoding="async">
       </div>

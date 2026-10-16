@@ -62,12 +62,6 @@ html {
   padding-bottom: 64px !important;
 }
 
-.issue-page .az-row[style*="padding-left:10%"],
-.issue-page .az-text[style*="padding-left:10%"] {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
 .issue-page .az-text[style*="padding-bottom:1%"] {
   padding-bottom: 16px !important;
 }
@@ -121,7 +115,7 @@ html {
   padding-top: 24px !important;
 }
 
-/* 舊站 Glazed .container max-width:1600px；白框區塊改回限制內容寬，不要吃滿欄。 */
+/* 白框容器上限 1600px，列左右保留 10% 內距（比照官網，不要貼齊視窗邊）。 */
 .issue-page .az-section:has([style*="border-style:solid"]) > .az-ctnr {
   max-width: 1600px;
   width: 100%;
@@ -258,12 +252,6 @@ body {
   padding-bottom: 64px !important;
 }
 
-.issue-page .az-row[style*="padding-left:10%"],
-.issue-page .az-text[style*="padding-left:10%"] {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
 .issue-page .az-text[style*="padding-bottom:1%"] {
   padding-bottom: 16px !important;
 }
@@ -317,7 +305,7 @@ body {
   padding-top: 24px !important;
 }
 
-/* 舊站 Glazed .container max-width:1600px；白框區塊改回限制內容寬，不要吃滿欄。 */
+/* 白框容器上限 1600px，列左右保留 10% 內距（比照官網，不要貼齊視窗邊）。 */
 .issue-page .az-section:has([style*="border-style:solid"]) > .az-ctnr {
   max-width: 1600px;
   width: 100%;
@@ -565,9 +553,11 @@ body {
 }
 
 #issue-hero-table {
+  display: inline-table;
+  width: max-content;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 100%;
 }
 
 .issue-page center picture {
