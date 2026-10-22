@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>地球公民基金會官網效能優化需求</title>
+  <meta name="description" content="地球公民基金會官網 header／footer 頁面 PageSpeed Insights 診斷與優化需求，供網站維護廠商執行。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #5c5c5c;
+      --line: #d9d9d9;
+      --bg: #fff;
+      --fill: #f4f4f4;
+      --good: #0d7a3f;
+      --warn: #9a6700;
+      --bad: #b42318;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: "Noto Sans TC", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 80px;
+    }
+    h1 { font-size: 1.75rem; line-height: 1.3; margin: 0 0 8px; font-weight: 700; }
+    h2 { font-size: 1.25rem; margin: 40px 0 12px; font-weight: 700; }
+    h3 { font-size: 1.05rem; margin: 24px 0 8px; font-weight: 700; }
+    p { margin: 0 0 12px; }
+    .meta, .note { color: var(--muted); font-size: 0.875rem; }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .kpi {
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+    }
+    .kpi strong { display: block; font-size: 1.35rem; line-height: 1.3; }
+    .kpi span { display: block; color: var(--muted); font-size: 0.8rem; margin-top: 4px; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--bad); }
+    .callout {
+      border: 1px solid var(--line);
+      background: var(--fill);
+      padding: 14px 16px;
+      margin: 16px 0 24px;
+    }
+    .callout strong { display: block; margin-bottom: 6px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 0 0 12px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--fill); font-weight: 500; }
+    td.num { text-align: right; white-space: nowrap; }
+    td.metric {
+      text-align: right;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    td.metric .bar {
+      display: block;
+      height: 4px;
+      width: 40px;
+      margin: 4px 0 0 auto;
+    }
+    td.metric.good { color: var(--good); }
+    td.metric.good .bar { background: var(--good); }
+    td.metric.warn { color: #e67e22; }
+    td.metric.warn .bar { background: #e67e22; }
+    td.metric.bad { color: var(--bad); }
+    td.metric.bad .bar { background: var(--bad); }
+    a { color: #0b57d0; }
+    ol { margin: 0; padding-left: 1.2rem; }
+    ol li { margin: 0 0 8px; }
+    .stage {
+      border: 1px solid var(--line);
+      padding: 16px;
+      margin: 0 0 12px;
+    }
+    .stage .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid var(--line);
+      padding: 2px 8px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 767.98px) {
+      .kpis { grid-template-columns: 1fr 1fr; }
+      .wrap { width: min(920px, calc(100% - 24px)); padding-top: 24px; }
+      table { display: block; overflow-x: auto; }
+    }
+    @media print {
+      a { color: inherit; text-decoration: none; }
+      .wrap { width: auto; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>地球公民基金會官網效能優化需求</h1>
+    <p class="meta">致網站維護廠商　｜　網站：<a href="https://www.cet-taiwan.org/">https://www.cet-taiwan.org/</a>　｜　測試日期：2026-09-18</p>
+    <p>範圍為 header 與 footer 出現的官網頁面。資料來自 PageSpeed Insights 實驗室（Lighthouse 13.4.1）與 Chrome UX Report 近 28 日實測。主報告請先看 <a href="https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org/bxnpora6ty">首頁 PSI</a>。</p>
+
+    <div class="kpis">
+      <div class="kpi"><strong class="good">Passed</strong><span>實測 Core Web Vitals</span></div>
+      <div class="kpi"><strong class="warn">198 ms</strong><span>手機 INP（良好上限 200）</span></div>
+      <div class="kpi"><strong class="warn">1.1 s</strong><span>手機 TTFB（需改善）</span></div>
+      <div class="kpi"><strong class="bad">29</strong><span>首頁手機實驗室分數</span></div>
+    </div>
+
+    <div class="callout">
+      <strong>驗收請對齊 Google 準則，不要用實驗室分數 90 當 KPI</strong>
+      Google 搜尋看的是真實使用者 Core Web Vitals（LCP、INP、CLS 第 75 百分位），不是 PSI 0–100 分。目前實測已過關。實驗室分數偏低，是 Drupal 全站 CSS 與第三方腳本在低階手機＋慢速 4G 下被放大。請優先處理會影響 LCP、INP、TTFB 的共用主題，勿承諾把每頁手機分數做到 90。
+    </div>
+
+    <h2>一、真實使用者表現（決定搜尋與體感）</h2>
+    <p>但因為才剛上線，應該很多流量是來自我們的辦公室，我覺得參考價值不大。首頁與整個網站來源（origin）數值相同。多數內頁沒有足夠的 URL 層級樣本，PSI 顯示的是來源層級資料。門檻：LCP ≤ 2.5s、INP ≤ 200ms、CLS ≤ 0.1 為良好；TTFB ≤ 0.8s 為良好。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>指標</th>
+          <th>手機 p75</th>
+          <th>判定</th>
+          <th>電腦 p75</th>
+          <th>判定</th>
+          <th>是否列入本次需求</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>LCP</td>
+          <td class="num">1.9 s</td>
+          <td>良好</td>
+          <td class="num">1.5 s</td>
+          <td>良好</td>
+          <td>要，守住並加快首屏</td>
+        </tr>
+        <tr>
+          <td>INP</td>
+          <td class="num">198 ms</td>
+          <td>良好但貼線</td>
+          <td class="num">79 ms</td>
+          <td>良好</td>
+          <td>要，這是最高風險</td>
+        </tr>
+        <tr>
+          <td>CLS</td>
+          <td class="num">0</td>
+          <td>良好</td>
+          <td class="num">0.03</td>
+          <td>良好</td>
+          <td>低優先，首頁實驗室仍不穩</td>
+        </tr>
+        <tr>
+          <td>FCP</td>
+          <td class="num">1.8 s</td>
+          <td>剛好壓線</td>
+          <td class="num">1.3 s</td>
+          <td>良好</td>
+          <td>隨 CSS／字體一併處理</td>
+        </tr>
+        <tr>
+          <td>TTFB</td>
+          <td class="num">1.1 s</td>
+          <td>需改善</td>
+          <td class="num">0.9 s</td>
+          <td>需改善</td>
+          <td>要，與快取／CDN 有關</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">來源：PageSpeed Insights · Chrome UX Report · 2026-09-18 近 28 日。手機 INP 198ms 距「需改善」只差 2ms。</p>
+
+    <h2>二、實驗室分數（用來找原因，不拿來驗收）</h2>
+    <p>手機普遍落在 29–54，電腦 37–82。問題集中在共用 Drupal 主題，不是單一內容頁寫壞。活動頁手機另一次重測為 34，實驗室分數會波動。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>頁面</th>
+          <th>手機分數</th>
+          <th>電腦分數</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>首頁</td><td class="num">29</td><td class="num">37</td></tr>
+        <tr><td>捐款支持</td><td class="num">54</td><td class="num">82</td></tr>
+        <tr><td>議題觀點庫</td><td class="num">48</td><td class="num">59</td></tr>
+        <tr><td>活動</td><td class="num">41</td><td class="num">63</td></tr>
+        <tr><td>關於我們</td><td class="num">53</td><td class="num">60</td></tr>
+        <tr><td>聲明／新聞稿</td><td class="num">47</td><td class="num">68</td></tr>
+        <tr><td>翻轉污染的日常</td><td class="num">49</td><td class="num">73</td></tr>
+        <tr><td>年度報告</td><td class="num">53</td><td class="num">66</td></tr>
+      </tbody>
+    </table>
+    <p class="note">環境：Emulated Moto G Power、Slow 4G；Desktop custom throttling。PSI 從 Google 機房測試，台灣使用者 TTFB 通常優於實驗室，但 CrUX 實測 TTFB 仍需改善，因此快取仍要做。</p>
+
+    <h3>手機實驗室指標</h3>
+    <p class="note">數字下方色條依 Lighthouse 門檻：綠色為良好、橘色為需改善、紅色為差。分數 90／50；FCP 1.8s／3.0s；LCP 2.5s／4.0s；TBT 200ms／600ms；CLS 0.1／0.25。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>頁面</th>
+          <th>分數</th>
+          <th>FCP</th>
+          <th>LCP</th>
+          <th>TBT</th>
+          <th>CLS</th>
+          <th>重點</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>首頁</td>
+          <td class="metric bad">29<i class="bar"></i></td>
+          <td class="metric bad">9.7s<i class="bar"></i></td>
+          <td class="metric bad">14.1s<i class="bar"></i></td>
+          <td class="metric warn">280ms<i class="bar"></i></td>
+          <td class="metric bad">0.537<i class="bar"></i></td>
+          <td>最差：主視覺 slider + 字體位移</td>
+        </tr>
+        <tr>
+          <td>捐款支持</td>
+          <td class="metric warn">54<i class="bar"></i></td>
+          <td class="metric bad">8.6s<i class="bar"></i></td>
+          <td class="metric bad">13.0s<i class="bar"></i></td>
+          <td class="metric good">0ms<i class="bar"></i></td>
+          <td class="metric warn">0.104<i class="bar"></i></td>
+          <td>圖片可省 994 KiB</td>
+        </tr>
+        <tr>
+          <td>議題觀點庫</td>
+          <td class="metric bad">48<i class="bar"></i></td>
+          <td class="metric bad">10.9s<i class="bar"></i></td>
+          <td class="metric bad">12.7s<i class="bar"></i></td>
+          <td class="metric warn">320ms<i class="bar"></i></td>
+          <td class="metric good">0.001<i class="bar"></i></td>
+          <td>渲染阻塞 CSS 約 12.6s</td>
+        </tr>
+        <tr>
+          <td>活動</td>
+          <td class="metric bad">41<i class="bar"></i></td>
+          <td class="metric bad">8.3s<i class="bar"></i></td>
+          <td class="metric bad">10.1s<i class="bar"></i></td>
+          <td class="metric bad">630ms<i class="bar"></i></td>
+          <td class="metric good">0<i class="bar"></i></td>
+          <td>主執行緒阻塞偏高</td>
+        </tr>
+        <tr>
+          <td>關於我們</td>
+          <td class="metric warn">53<i class="bar"></i></td>
+          <td class="metric bad">13.5s<i class="bar"></i></td>
+          <td class="metric bad">22.1s<i class="bar"></i></td>
+          <td class="metric good">190ms<i class="bar"></i></td>
+          <td class="metric good">0<i class="bar"></i></td>
+          <td>LCP 最慢，應查大圖</td>
+        </tr>
+        <tr>
+          <td>聲明／新聞稿</td>
+          <td class="metric bad">47<i class="bar"></i></td>
+          <td class="metric bad">10.3s<i class="bar"></i></td>
+          <td class="metric bad">10.6s<i class="bar"></i></td>
+          <td class="metric warn">380ms<i class="bar"></i></td>
+          <td class="metric good">0.002<i class="bar"></i></td>
+          <td>與列表頁相同的 CSS 瓶頸</td>
+        </tr>
+        <tr>
+          <td>污染議題頁</td>
+          <td class="metric bad">49<i class="bar"></i></td>
+          <td class="metric bad">9.7s<i class="bar"></i></td>
+          <td class="metric bad">11.2s<i class="bar"></i></td>
+          <td class="metric warn">320ms<i class="bar"></i></td>
+          <td class="metric good">0.002<i class="bar"></i></td>
+          <td>四個議題分類共用此模板</td>
+        </tr>
+        <tr>
+          <td>年度報告</td>
+          <td class="metric warn">53<i class="bar"></i></td>
+          <td class="metric bad">5.5s<i class="bar"></i></td>
+          <td class="metric bad">5.8s<i class="bar"></i></td>
+          <td class="metric warn">490ms<i class="bar"></i></td>
+          <td class="metric good">0.001<i class="bar"></i></td>
+          <td>相對較輕，仍被全站 CSS 拖住</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>電腦實驗室指標</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>頁面</th>
+          <th>分數</th>
+          <th>FCP</th>
+          <th>LCP</th>
+          <th>TBT</th>
+          <th>CLS</th>
+          <th>重點</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>首頁</td>
+          <td class="metric bad">37<i class="bar"></i></td>
+          <td class="metric good">1.6s<i class="bar"></i></td>
+          <td class="metric warn">3.1s<i class="bar"></i></td>
+          <td class="metric bad">670ms<i class="bar"></i></td>
+          <td class="metric warn">0.162<i class="bar"></i></td>
+          <td>圖片可省 1,167 KiB；LCP 需改善</td>
+        </tr>
+        <tr>
+          <td>捐款支持</td>
+          <td class="metric warn">82<i class="bar"></i></td>
+          <td class="metric good">1.7s<i class="bar"></i></td>
+          <td class="metric good">2.1s<i class="bar"></i></td>
+          <td class="metric good">0ms<i class="bar"></i></td>
+          <td class="metric good">0.001<i class="bar"></i></td>
+          <td>分數最好，但仍有 805 KiB 圖片浪費</td>
+        </tr>
+        <tr>
+          <td>議題觀點庫</td>
+          <td class="metric warn">59<i class="bar"></i></td>
+          <td class="metric warn">2.0s<i class="bar"></i></td>
+          <td class="metric good">2.3s<i class="bar"></i></td>
+          <td class="metric warn">410ms<i class="bar"></i></td>
+          <td class="metric good">0<i class="bar"></i></td>
+          <td>渲染阻塞約 2.3s</td>
+        </tr>
+        <tr>
+          <td>活動</td>
+          <td class="metric warn">63<i class="bar"></i></td>
+          <td class="metric good">1.6s<i class="bar"></i></td>
+          <td class="metric good">1.8s<i class="bar"></i></td>
+          <td class="metric warn">540ms<i class="bar"></i></td>
+          <td class="metric good">0<i class="bar"></i></td>
+          <td>主執行緒 2.2s</td>
+        </tr>
+        <tr>
+          <td>關於我們</td>
+          <td class="metric warn">60<i class="bar"></i></td>
+          <td class="metric warn">2.4s<i class="bar"></i></td>
+          <td class="metric warn">2.7s<i class="bar"></i></td>
+          <td class="metric warn">290ms<i class="bar"></i></td>
+          <td class="metric good">0<i class="bar"></i></td>
+          <td>桌機 LCP 仍超過 2.5s</td>
+        </tr>
+        <tr>
+          <td>聲明／新聞稿</td>
+          <td class="metric warn">68<i class="bar"></i></td>
+          <td class="metric warn">1.9s<i class="bar"></i></td>
+          <td class="metric good">2.0s<i class="bar"></i></td>
+          <td class="metric warn">300ms<i class="bar"></i></td>
+          <td class="metric good">0.001<i class="bar"></i></td>
+          <td>渲染阻塞約 2.2s</td>
+        </tr>
+        <tr>
+          <td>污染議題頁</td>
+          <td class="metric warn">73<i class="bar"></i></td>
+          <td class="metric good">1.8s<i class="bar"></i></td>
+          <td class="metric good">1.9s<i class="bar"></i></td>
+          <td class="metric warn">250ms<i class="bar"></i></td>
+          <td class="metric good">0.006<i class="bar"></i></td>
+          <td>與其他列表頁相同</td>
+        </tr>
+        <tr>
+          <td>年度報告</td>
+          <td class="metric warn">66<i class="bar"></i></td>
+          <td class="metric good">1.2s<i class="bar"></i></td>
+          <td class="metric good">1.3s<i class="bar"></i></td>
+          <td class="metric bad">850ms<i class="bar"></i></td>
+          <td class="metric good">0<i class="bar"></i></td>
+          <td>LCP 已佳，TBT 偏高</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">重整失序的國土、重新思考能源、世代正義與公平發展與污染議題頁同模板。成為志工／實習生／邀請議題分享／工作機會／財報與徵信／性平公開資訊／About Us EN 共用同一套 Drupal header／footer 資源，診斷結論可直接沿用。</p>
+
+    <h2>三、診斷面板：列入需求與不列入需求</h2>
+    <p>判斷原則：會拉高 LCP／INP／TTFB、且全站重複出現的才請列入本次開發。PSI 預估節省時間實際會低於字面數字，但排序仍可靠。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>PSI 項目</th>
+          <th>典型數字</th>
+          <th>實務判斷</th>
+          <th>請貴公司處理方式</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Render-blocking requests</td><td>手機 6–12.6s；電腦 1.3–2.3s</td><td>必須處理</td><td>合併並延後 Drupal／Barrio 全站 CSS。首屏不該載入 book、toolbar、webform、tablesort 等後台元件樣式。</td></tr>
+        <tr><td>Improve image delivery</td><td>首頁桌機 1,167 KiB；捐款手機 994 KiB</td><td>必須處理</td><td>主視覺與捐款圖用 picture／srcset、正確尺寸、preload LCP，slider 不要一次載入全部投影片。</td></tr>
+        <tr><td>LCP request discovery / breakdown</td><td>首頁與列表頁皆出現</td><td>必須處理</td><td>LCP 圖不要 lazy；加 fetchpriority=high；減少 LCP 前的 CSS／字體依賴鏈。</td></tr>
+        <tr><td>3rd parties + unused JavaScript</td><td>未使用 JS 約 232–255 KiB</td><td>必須處理</td><td>GTM、兩組 gtag、Facebook Pixel、Matomo、LINE 標籤改延遲載入並整併。這直接關係 INP 198ms 的安全邊際。</td></tr>
+        <tr><td>Network dependency tree</td><td>關鍵路徑上數十個 CSS</td><td>必須處理</td><td>與 CSS 合併同一案。現況是 Drupal 10 + Bootstrap Barrio 把元件 CSS 逐一掛在 head。</td></tr>
+        <tr><td>TTFB（實測）</td><td>手機 1.1s／電腦 0.9s</td><td>必須處理</td><td>匿名頁快取、CDN、HTML 壓縮。這是實測裡唯一明確「需改善」的指標。</td></tr>
+        <tr><td>Noto Sans TC 字體</td><td>4 個字重、20+ 個 woff2</td><td>應該處理</td><td>自架並 subset；正式頁面通常 400／700 即可；preload 主要檔，減少檔案數。</td></tr>
+        <tr><td>Forced reflow</td><td>jquery.min.js、drupal.init.js</td><td>應該處理</td><td>非首屏 jQuery 延後；避免文件載入階段讀 layout。</td></tr>
+        <tr><td>Layout shift culprits（實驗室）</td><td>首頁手機 CLS 0.537</td><td>應該處理</td><td>實測 CLS 已是 0。優先修字體與 slider 高度，logo.svg 補寬高。不要為實驗室 CLS 大改版型。</td></tr>
+        <tr><td>Avoid enormous network payloads</td><td>約 2–4.7 MB</td><td>應該處理</td><td>隨圖片、字體、第三方腳本下降。不必單獨當專案。</td></tr>
+        <tr><td>Long main-thread tasks / TBT</td><td>7–15 個長任務</td><td>應該處理</td><td>第三方與 Drupal JS 延後即可帶動。活動頁與年度報告桌機 TBT 偏高。</td></tr>
+        <tr><td>Unused CSS</td><td>約 154–192 KiB</td><td>可隨 CSS 合併處理</td><td>不要重寫 Bootstrap。用 Drupal library 依賴拿掉未用元件即可。</td></tr>
+        <tr><td>Minify CSS / JS</td><td>17–36 KiB / 3–34 KiB</td><td>不必當需求</td><td>節省太小。aggregation 開了會自然縮小。</td></tr>
+        <tr><td>Legacy JavaScript 21 KiB</td><td>全部來自 fbevents.js</td><td>不必處理</td><td>Facebook 官方腳本。應延後或評估是否還要 Pixel，而不是改寫。</td></tr>
+        <tr><td>Efficient cache lifetimes 176 KiB</td><td>fbevents、matomo、lt.js</td><td>不必強求</td><td>第三方快取期限無法完全控制。自有靜態資源確認長期快取即可。</td></tr>
+        <tr><td>Optimize DOM size</td><td>多數頁有出現</td><td>低優先</td><td>除非節點數極端，對 CWV 影響小於 CSS 與第三方。</td></tr>
+      </tbody>
+    </table>
+
+    <h2>四、請依此三個階段交付</h2>
+    <p>下列為工作範圍。通過與否請用下一節「驗收標準」，不要用 PSI 總分 90。</p>
+
+    <div class="stage">
+      <div class="tag">P0 全站主題</div>
+      <h3>第一階段：拿掉首屏阻塞</h3>
+      <p>這是所有 header／footer 頁面分數差的共同原因，做一次全站受益。</p>
+      <ol>
+        <li>Drupal 10 主題 CSS aggregation：只在需要的路由載入 library。前台移除 book、toolbar、contextual、webform、tablesort、system-status、shortcut 等後台 CSS。</li>
+        <li>首屏關鍵 CSS 內聯或單一合併檔；其餘 CSS 延後。gtm.js、drupalSettings 不要擋首次繪製。</li>
+        <li>第三方改載入策略：GTM／gtag／Facebook／Matomo／LINE 在 window.load 後再注入，或只留一套分析。捐款頁可例外保留轉換像素，但仍應延遲。</li>
+      </ol>
+    </div>
+    <div class="stage">
+      <div class="tag">P0 頁面資產</div>
+      <h3>第二階段：LCP 圖片與字體</h3>
+      <ol>
+        <li>首頁 slider：只 preload 第一張；其餘 lazy。提供手機／桌機不同尺寸，避免桌機下載超過 1MB 的圖。</li>
+        <li>捐款頁壓縮與裁切主視覺（手機可省約 994 KiB）。關於我們查清 22.1s 的 LCP 元素並改成適當解析度。</li>
+        <li>Noto Sans TC 自架 subset，正式站建議只留實際使用的字重（通常 400、700）。不要用 Google Fonts CSS 一次拉 300／400／500／700 與大量拆檔。</li>
+        <li>所有 img（含 logo.svg）補 width／height 或 aspect-ratio。</li>
+      </ol>
+    </div>
+    <div class="stage">
+      <div class="tag">P1 伺服器</div>
+      <h3>第三階段：TTFB 與主執行緒</h3>
+      <ol>
+        <li>匿名使用者 HTML 快取（Drupal Internal Page Cache / Dynamic Page Cache）與 CDN。捐款等動態表單頁可排除強制全頁快取，但靜態列表與內容頁必須快取。</li>
+        <li>非首屏 JS（Slick、extlink、Google CSE、jQuery 相關）defer。活動、年度報告的 TBT 偏高，應一併檢查。</li>
+        <li>回測頁面：首頁、捐款、議題觀點庫、活動、關於我們。這五頁涵蓋主視覺、表單、列表、內容四種模板。</li>
+      </ol>
+    </div>
+
+    <h2>五、驗收標準（建議寫進工單）</h2>
+    <div class="callout">
+      <strong>為什麼要分成兩關</strong>
+      Chrome UX Report 是近 28 日滾動平均，上線當天無法用實測 INP／TTFB 驗收。上線當週只驗「做了沒」與實驗室對照；實測等到滿 28 天再看。PSI 0–100 分不列入通過與否，單次實驗室分數允許波動。
+    </div>
+
+    <h3>關卡 A：上線當週（可立即驗）</h3>
+    <p>回測範圍：首頁、捐款、議題觀點庫、活動、關於我們；手機與電腦各跑一次 PSI。若單次明顯異常，可再跑一次取較穩結果。基線為本報告 2026-09-18 數據。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>類型</th>
+          <th>項目</th>
+          <th>合格（必須）</th>
+          <th>加分（非必須）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>工程清單</td>
+          <td>CSS／第三方／快取</td>
+          <td>前台不再載入未使用的後台 CSS；CSS 已合併或按頁載入；GTM／Pixel／Matomo／LINE 於 load 後載入（捐款轉換像素可保留但須延遲）；匿名靜態頁已開 HTML 快取或 CDN。</td>
+          <td>分析工具整併為一套</td>
+        </tr>
+        <tr>
+          <td>工程清單</td>
+          <td>LCP 圖片與字體</td>
+          <td>首頁第一張 slider 有 preload、未套 lazy、有手機／桌機尺寸；捐款主視覺已壓縮；img 含 logo 有寬高或 aspect-ratio；Noto Sans TC 字重已精簡。</td>
+          <td>字體自架 subset</td>
+        </tr>
+        <tr>
+          <td>實驗室 LCP</td>
+          <td>手機（Slow 4G）</td>
+          <td>五個回測頁皆脫離 Poor：LCP &lt; 4.0s（現況首頁 14.1s、關於我們 22.1s）。</td>
+          <td>接近良好：LCP ≤ 2.5s</td>
+        </tr>
+        <tr>
+          <td>實驗室 LCP</td>
+          <td>電腦</td>
+          <td>首頁與關於我們 LCP ≤ 2.5s（現況 3.1s、2.7s）；其餘頁維持 ≤ 2.5s、不回歸。</td>
+          <td>首頁 LCP ≤ 2.0s</td>
+        </tr>
+        <tr>
+          <td>實驗室 TBT</td>
+          <td>互動阻塞</td>
+          <td>活動頁手機 TBT &lt; 600ms（現況 630ms）；年度報告電腦 TBT &lt; 600ms（現況 850ms）。TBT 是 INP 的實驗室代理指標。</td>
+          <td>各回測頁 TBT ≤ 200ms</td>
+        </tr>
+        <tr>
+          <td>實驗室 TTFB</td>
+          <td>文件回應</td>
+          <td>首頁、議題觀點庫、活動、關於我們的 PSI 實驗室「伺服器回應時間」&lt; 800ms。捐款等動態頁可寬鬆，但須說明原因。</td>
+          <td>&lt; 600ms</td>
+        </tr>
+        <tr>
+          <td>不列入</td>
+          <td>PSI 總分</td>
+          <td>不以 90 分、也不以總分進步幾分為通過條件。</td>
+          <td>總分上升僅作參考</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>關卡 B：上線滿 28 天（實測 CrUX／Search Console）</h3>
+    <p>以網站來源（origin）手機為準，與本報告基線比較。因樣本是 28 日平均，這關最早在上線後第 28 天驗，建議第 28–42 天再看一次。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>指標</th>
+          <th>目前基線</th>
+          <th>合格（必須）</th>
+          <th>理想（加分）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Core Web Vitals 總評</td>
+          <td class="num">Passed</td>
+          <td>維持 Passed，且 LCP／INP／CLS 皆留在「良好」</td>
+          <td>三項都離門檻有明顯緩衝</td>
+        </tr>
+        <tr>
+          <td>手機 INP p75</td>
+          <td class="num">198 ms</td>
+          <td>維持 &lt; 200ms，且不得劣於基線（例如升到 200ms 以上）</td>
+          <td>≤ 180ms（拉開與門檻的距離）</td>
+        </tr>
+        <tr>
+          <td>手機 TTFB p75</td>
+          <td class="num">1.1 s</td>
+          <td>降到 ≤ 1.0s（先改善「需改善」的幅度）</td>
+          <td>≤ 0.8s（進入 Google 良好）</td>
+        </tr>
+        <tr>
+          <td>手機 LCP p75</td>
+          <td class="num">1.9 s</td>
+          <td>維持 ≤ 2.5s，且不得明顯惡化（例如超過 2.2s）</td>
+          <td>≤ 1.8s</td>
+        </tr>
+        <tr>
+          <td>手機 CLS p75</td>
+          <td class="num">0</td>
+          <td>維持 ≤ 0.1</td>
+          <td>維持約 0</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">INP 150ms、TTFB 0.8s 適合當內部努力目標，不適合當上線即不合格的硬門檻：前者目前只差 2ms 就過關，後者含動態頁與第三方，28 日平均不一定能一次進良好。若關卡 B 未達「理想」但已達「合格」，應視為本階段通過，可另開優化單。</p>
+
+    <h3>視為不合格</h3>
+    <table>
+      <thead>
+        <tr><th>情況</th><th>說明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>關卡 A 工程清單未完成</td><td>P0 項目有缺漏，即使分數偶爾變好也不算交付。</td></tr>
+        <tr><td>回測頁手機實驗室 LCP 仍 ≥ 4.0s</td><td>代表首屏阻塞或 LCP 圖未處理，使用者在慢速網路上仍是 Poor。</td></tr>
+        <tr><td>關卡 B 實測 INP 或 LCP 掉出良好</td><td>Google 搜尋看的就是這項，優化後不應比現在差。</td></tr>
+        <tr><td>未告知就拿掉必要轉換追蹤</td><td>捐款轉換像素可延遲，不可擅自移除。</td></tr>
+      </tbody>
+    </table>
+
+    <h2>六、不建議寫進工單的項目</h2>
+    <table>
+      <thead>
+        <tr><th>項目</th><th>原因</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>把每頁手機 PSI 分數做到 90+</td><td>在 Drupal + GTM 架構下不務實，也不是 Google 排名條件。總分不列入驗收。</td></tr>
+        <tr><td>上線當天用實測 INP／TTFB 驗收</td><td>CrUX 是 28 日平均，當天數字幾乎不會變。</td></tr>
+        <tr><td>INP 必須 ≤150ms、TTFB 必須 ≤800ms 才算過</td><td>可當加分目標；硬性合格見上一節關卡 A／B。</td></tr>
+        <tr><td>Minify CSS／JS 當獨立工項</td><td>節省只有數十 KiB，aggregation 做好就會附帶處理。</td></tr>
+        <tr><td>修復 Facebook fbevents 的 Legacy JavaScript</td><td>第三方程式碼，應延後或移除 Pixel，而不是改寫。</td></tr>
+        <tr><td>為實驗室 CLS 0.537 重做首頁版型</td><td>真實使用者 CLS 已是 0；修字體與圖片尺寸即可。</td></tr>
+        <tr><td>Agentic Browsing 0/2</td><td>實驗性類別，與搜尋排名與使用者體驗無關。</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>需求摘要</strong>
+      全站被 Drupal 主題在 head 載入數十個 CSS、Google Fonts 多字重，以及 GTM、gtag、Facebook、Matomo 同時載入拖慢。請先做 CSS 合併／按頁載入、LCP 圖片、第三方延遲與 HTML 快取。上線當週：回測頁手機 LCP 降到 4 秒以內、工程清單完成。滿 28 天：實測維持 Passed，INP 不掉出良好，TTFB 至少降到 1.0s 以內。
+    </div>
+
+    <h2>七、PageSpeed Insights 報告連結</h2>
+    <table>
+      <thead>
+        <tr><th>頁面</th><th>連結</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>首頁（主報告）</td><td><a href="https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org/bxnpora6ty">https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org/bxnpora6ty</a></td></tr>
+        <tr><td>捐款支持</td><td><a href="https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-donate/jewemqogpj">https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-donate/jewemqogpj</a></td></tr>
+        <tr><td>議題觀點庫</td><td><a href="https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-story/n2n0mrjqr2">https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-story/n2n0mrjqr2</a></td></tr>
+        <tr><td>活動</td><td><a href="https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-events/vei1gltbmd">https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-events/vei1gltbmd</a></td></tr>
+        <tr><td>關於我們</td><td><a href="https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-about/m0sswlwf6l">https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-about/m0sswlwf6l</a></td></tr>
+        <tr><td>聲明／新聞稿</td><td><a href="https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-news/ny9w5z7bv7">https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-news/ny9w5z7bv7</a></td></tr>
+        <tr><td>翻轉污染的日常</td><td><a href="https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-category-pollution/gsvhzx51g9">https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-category-pollution/gsvhzx51g9</a></td></tr>
+        <tr><td>年度報告</td><td><a href="https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-annual_report/wahx70mk5m">https://pagespeed.web.dev/analysis/https-www-cet-taiwan-org-annual_report/wahx70mk5m</a></td></tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
