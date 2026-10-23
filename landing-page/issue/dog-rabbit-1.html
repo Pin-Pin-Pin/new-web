@@ -220,20 +220,71 @@ p {
     display: flex;
     flex-direction: column;
 }
+.newsletter-section {
+  padding: 48px 16px 40px;
+}
+.newsletter-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 32px 20px 32px;
+  border-radius: 10pt;
+  text-align: center;
+  background: #f7f7ee;
+  border: 3px dashed #90b09a;
+}
+.newsletter-card__title {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35;
+  margin: 0 0 8px;
+  color: #5f8a78;
+}
+.newsletter-card__lead {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif !important;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center !important;
+  margin: 0 0 4px;
+  padding: 0 !important;
+  color: #5f8a78;
+}
+.newsletter-card__hint {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif !important;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center !important;
+  margin: 0 0 16px;
+  padding: 0 !important;
+  color: #767d85;
+}
 .newsletter-embed {
   box-sizing: border-box;
   width: 100%;
-  max-width: 360px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 304px;
+  margin: 0 auto;
   overflow: visible;
 }
 .newsletter-embed iframe.crm-container-embed {
   display: block;
   width: 100%;
-  min-height: 480px;
+  min-height: 0;
   border: 0 !important;
   background: transparent;
+}
+@media (max-width: 360px) {
+  .newsletter-section {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .newsletter-card {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }
 </style>
 </head>
@@ -440,23 +491,14 @@ p {
 					<div class="row">
 						<div class="p-2 col-10 col-md-3 mx-auto mb-3" style="background-color: #dfaa43;border-radius: 10pt;">
 							<h4 class="text-center p-0 m-0" style="color:#fff"><a href="https://forms.gle/X31wxHiiZsF2btbN6" style="color:#fff">歡迎提問</a></h4></div></div></div></div></div></div><!--訂閱電子報-->
-	<div class="container-fluid py-2 px-0" style="background-color:#ddddcc;width:100% ;">
-		<div class="mx-auto row justify-content-center pt-5"><!--
-            <div class="col-10 col-md-4 align-self-center align-items-center py-3 px-4 my-3" style="background-color:#90b09a;border-radius: 10pt;">
-                <h4 class="mb-0 text-center" style="color:#fff;">訂閱電子報追蹤更多環境議題</h4>
-            </div>
-            -->
-			<div class="mx-auto row justify-content-center">
-				<h3 class="col-12 col-md-8 col-lg-6 text-center">訂閱電子報追蹤更多環境議題</h3></div></div>
-		<div class="mx-auto row justify-content-center pb-5 px-1 px-sm-2">
-			<div class="col-12 col-md-8 col-lg-6 align-self-center align-items-center my-3 px-1 px-md-3" style="border:5pt dashed #90b09a;border-radius: 10pt;">
-				<div class="py-3 px-2 px-md-4 my-3">
-					<p class="mb-0 text-center" style="color:#90b09a;">您好，請填寫以下欄位資料，以完成電子報的訂閱：<br />
-						請以 gmail 優先（學校信箱、hotmail、yahoo、hinet 會擋信）</p></div>
-				<div class="mx-auto row justify-content-center">
-					<div class="newsletter-embed">
-						<iframe class="crm-container-embed" data-newsletter-theme="light" frameborder="0" scrolling="no" src="/civicrm/profile/create?reset=1&embed=1&gid=62" title="訂閱電子報"></iframe>
-					</div>
+	<div class="container-fluid newsletter-section" style="background-color:#ddddcc;width:100% ;">
+		<div class="newsletter-card">
+			<h2 class="newsletter-card__title">訂閱電子報</h2>
+			<p class="newsletter-card__lead">追蹤更多環境議題，新文章直接寄給你</p>
+			<p class="newsletter-card__hint">請以 gmail 優先（學校信箱、hotmail、yahoo、hinet 會擋信）</p>
+			<div class="newsletter-embed">
+				<iframe class="crm-container-embed" data-btn-color="#90b09a" data-btn-hover="#5f8a78" frameborder="0" scrolling="no" src="/civicrm/profile/create?reset=1&embed=1&gid=62" title="訂閱電子報"></iframe>
+			</div>
 					<script src="https://www.cet-taiwan.org/sites/all/modules/civicrm/js/iframeresizer.js"></script>
 <script>
 (function () {
@@ -464,27 +506,73 @@ p {
   window.cetNewsletterEmbedLoaded = true;
   var STYLE_ID = "cet-newsletter-embed-style";
   var FONT_ID = "cet-newsletter-embed-font";
+  var RECAPTCHA_W = 304;
+  var RECAPTCHA_H = 78;
 
   function cssText(iframe) {
-    var dark = iframe.getAttribute("data-newsletter-theme") === "dark";
     var hideGroup = iframe.getAttribute("data-hide-group") === "true";
-    var label = dark ? "#FAFAFA" : "#3E3E3E";
+    var btn = iframe.getAttribute("data-btn-color") || "#35A97C";
+    var hover = iframe.getAttribute("data-btn-hover") || "#55716C";
     return [
       "html,body{margin:0;padding:0;background:transparent!important;overflow:visible!important;font-family:\"Noto Sans TC\",\"PingFang TC\",\"Microsoft JhengHei\",sans-serif!important;}",
-      "#crm-container,.crm-container{margin:0 auto!important;padding:8px 0 16px!important;max-width:360px;width:100%;background:transparent!important;box-shadow:none!important;overflow:visible!important;text-align:center;}",
+      "#crm-container,.crm-container{margin:0 auto!important;padding:0!important;max-width:100%;width:100%;background:transparent!important;box-shadow:none!important;overflow:visible!important;text-align:center;}",
       ".crm-container>p{display:none!important;}",
-      "#editrow-last_name,#editrow-first_name,#editrow-email-1,#editrow-group{display:flex!important;flex-direction:column;align-items:stretch;float:none!important;clear:both!important;width:256px!important;max-width:100%!important;margin:0 auto 12px!important;padding:0!important;min-height:0!important;height:auto!important;overflow:visible!important;text-align:left!important;}",
+      "#editrow-last_name,#editrow-first_name,#editrow-email-1,#editrow-group{display:flex!important;flex-direction:column;align-items:stretch;float:none!important;clear:both!important;width:100%!important;max-width:100%!important;margin:0 0 12px!important;padding:0!important;min-height:0!important;height:auto!important;overflow:visible!important;text-align:left!important;}",
       hideGroup ? "#editrow-group{display:none!important;}" : "",
       ".label,.edit-value.content{float:none!important;width:100%!important;max-width:100%;margin:0 0 4px!important;padding:0!important;text-align:left!important;}",
-      ".crm-container label{display:block!important;width:100%!important;text-align:left!important;font-size:14px!important;line-height:1.5!important;color:" + label + "!important;font-family:\"Noto Sans TC\",sans-serif!important;}",
+      ".crm-container label{display:block!important;width:100%!important;text-align:left!important;font-size:14px!important;line-height:1.5!important;color:#3E3E3E!important;font-family:\"Noto Sans TC\",sans-serif!important;}",
       "input.form-text,input[type=text],input[type=email]{box-sizing:border-box!important;width:100%!important;max-width:100%!important;height:40px!important;padding:0 14px!important;border:1px solid #D0D0D0!important;border-radius:4px!important;background:#FAFAFA!important;color:#2B2B2B!important;font-size:16px!important;line-height:24px!important;font-family:\"Noto Sans TC\",sans-serif!important;}",
       "#editrow-group table,#crm-tagGroupTable{margin:0 auto!important;width:auto!important;max-width:100%!important;border:0!important;}",
-      ".crm-section.recaptcha-section{display:flex!important;justify-content:center;margin:16px 0!important;overflow:visible!important;float:none!important;width:100%!important;}",
-      ".crm-submit-buttons{display:flex!important;justify-content:center;gap:8px;margin:16px 0 0!important;float:none!important;width:100%!important;}",
-      "#_qf_Edit_next,input.form-submit.default{height:36px!important;min-height:36px!important;min-width:64px!important;padding:0 16px!important;border:0!important;border-radius:4px!important;background:#35A97C!important;color:#fff!important;font-size:16px!important;font-family:\"Noto Sans TC\",sans-serif!important;cursor:pointer;}",
-      "#_qf_Edit_next:hover,#_qf_Edit_next:focus,input.form-submit.default:hover,input.form-submit.default:focus{background:#55716C!important;color:#fff!important;}",
-      "#_qf_Edit_cancel,.crm-button-type-cancel .form-submit{height:36px!important;min-height:36px!important;padding:0 16px!important;border:1px solid #35A97C!important;border-radius:4px!important;background:#fff!important;color:#35A97C!important;font-size:16px!important;font-family:\"Noto Sans TC\",sans-serif!important;cursor:pointer;}"
+      ".crm-section.recaptcha-section{display:flex!important;justify-content:flex-start;align-items:flex-start;margin:8px 0 12px!important;overflow:visible!important;float:none!important;width:100%!important;}",
+      ".g-recaptcha{transform-origin:top left;}",
+      ".crm-submit-buttons{display:block!important;float:none!important;width:100%!important;margin:0!important;padding:0!important;overflow:visible!important;}",
+      ".crm-submit-buttons .crm-button{display:block!important;float:none!important;width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;height:auto!important;overflow:visible!important;background:none!important;border:0!important;}",
+      "#_qf_Edit_next,input.form-submit.default{display:block!important;box-sizing:border-box!important;width:100%!important;max-width:100%!important;height:40px!important;min-height:40px!important;padding:0 16px!important;border:0!important;border-radius:4px!important;background:" + btn + "!important;color:#fff!important;font-size:16px!important;line-height:40px!important;font-family:\"Noto Sans TC\",sans-serif!important;cursor:pointer;overflow:visible!important;}",
+      "#_qf_Edit_next:hover,#_qf_Edit_next:focus,input.form-submit.default:hover,input.form-submit.default:focus{background:" + hover + "!important;color:#fff!important;}",
+      "#_qf_Edit_cancel,.crm-button-type-cancel,.crm-button-type-cancel .form-submit{display:none!important;}"
     ].join("");
+  }
+
+  function polish(doc) {
+    var btn = doc.getElementById("_qf_Edit_next") || doc.querySelector("input.form-submit.default");
+    if (btn) btn.value = "訂閱";
+  }
+
+  function scaleRecaptcha(iframe, doc) {
+    var section = doc.querySelector(".crm-section.recaptcha-section");
+    var widget = doc.querySelector(".g-recaptcha") || (section && section.querySelector("div"));
+    if (!widget) return;
+    var avail = iframe.clientWidth || 0;
+    var scale = avail > 0 && avail < RECAPTCHA_W ? avail / RECAPTCHA_W : 1;
+    widget.style.transformOrigin = "top left";
+    widget.style.transform = scale < 0.999 ? "scale(" + scale + ")" : "none";
+    if (section) {
+      section.style.justifyContent = "flex-start";
+      section.style.overflow = "visible";
+      section.style.height = Math.ceil(RECAPTCHA_H * scale) + "px";
+      section.style.minHeight = Math.ceil(RECAPTCHA_H * scale) + "px";
+    }
+  }
+
+  function fitHeight(iframe) {
+    var doc;
+    try {
+      doc = iframe.contentDocument || iframe.contentWindow.document;
+    } catch (e) {
+      return;
+    }
+    if (!doc || !doc.body) return;
+    scaleRecaptcha(iframe, doc);
+    var btn = doc.getElementById("_qf_Edit_next") || doc.querySelector("input.form-submit.default");
+    var h = 0;
+    if (btn) {
+      var br = btn.getBoundingClientRect();
+      var y = (doc.defaultView && doc.defaultView.pageYOffset) || 0;
+      h = Math.ceil(br.bottom + y + 8);
+    } else {
+      h = Math.max(doc.documentElement.scrollHeight || 0, doc.body.scrollHeight || 0);
+    }
+    iframe.style.height = Math.max(h, 1) + "px";
   }
 
   function inject(iframe) {
@@ -511,10 +599,13 @@ p {
       doc.head.appendChild(style);
     }
     style.textContent = cssText(iframe);
+    polish(doc);
+    fitHeight(iframe);
     return true;
   }
 
   function resize(iframe) {
+    fitHeight(iframe);
     if (iframe.iFrameResizer) iframe.iFrameResizer.resize();
   }
 
@@ -522,16 +613,15 @@ p {
     var n = 0;
     var timer = setInterval(function () {
       n += 1;
-      if (inject(iframe) || n > 40) {
-        clearInterval(timer);
-        resize(iframe);
-      }
+      inject(iframe);
+      resize(iframe);
+      if (n > 40) clearInterval(timer);
     }, 200);
     iframe.addEventListener("load", function () {
       inject(iframe);
-      setTimeout(function () {
-        resize(iframe);
-      }, 400);
+      setTimeout(function () { resize(iframe); }, 400);
+      setTimeout(function () { resize(iframe); }, 1200);
+      setTimeout(function () { resize(iframe); }, 2500);
     });
   }
 
@@ -544,6 +634,10 @@ p {
         "iframe.crm-container-embed"
       );
     }
+    window.addEventListener("resize", function () {
+      var list = document.querySelectorAll("iframe.crm-container-embed");
+      for (var i = 0; i < list.length; i++) resize(list[i]);
+    });
   }
 
   if (document.readyState === "loading") {
@@ -554,7 +648,7 @@ p {
 })();
 
 </script>
-				</div></div></div>
+		</div>
 			<div class="lh-3 mt-3 row justify-content-center d-md-none">
 				<p class="col-10 col-md-3 text-center mx-auto" style="color: #767d85;">文字解說 │ 黃子芸、李宇恩</p>
 				<p class="col-10 col-md-3 text-center mx-auto" style="color: #767d85;">美術設計 │ 李宇恩</p>

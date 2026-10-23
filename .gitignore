@@ -1,5 +1,6 @@
-# *.png
-# *.jpg
+*.png
+*.jpg
+*.webp
 todo.md
 *_scoped.*
 *_scoped
@@ -9,4 +10,4 @@ tools/old/geckodriver.log
 tools/old/.last_target_folder
 articles/
 edm-stats/
-story-style-guide/
+comfirm-shots/

@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<!--
+貼到 Google Apps Script 時：
+1. 新增 HTML 檔，檔名 colleague-confirm，貼上本檔。
+2. 新增指令碼 Code.gs，貼上同資料夾的 Code.gs。
+3. 部署為網頁應用程式。執行身分選「我」，存取權給需要確認的同事。
+   第一次有人儲存時，會在部署者的雲端硬碟建立試算表「新官網文章樣式確認」。
+截圖網址為 https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/ ，檔名以 20261022- 開頭。請先把 confirm-shots 裡的圖上傳到該資料夾。
+-->
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新官網文章樣式確認</title>
+  <meta name="description" content="給同事確認地球公民基金會新官網文章樣式。先選姓名，再對建議樣式按同意或不同意，並為尚未決定的寫法投票。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cet: #1f7a4d;
+      --cet-dark: #145736;
+      --ink: #1c2822;
+      --muted: #5c6b63;
+      --line: #d7e2db;
+      --paper: #f4f7f5;
+      --amber: #8a5a12;
+      --amber-bg: #fff6e8;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.75;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: var(--cet-dark); }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -3rem;
+      background: #fff;
+      padding: .5rem 1rem;
+      z-index: 30;
+    }
+    .skip:focus { top: .5rem; }
+    .wrap { width: min(880px, calc(100% - 2rem)); margin: 0 auto; }
+    .gate {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1rem;
+    }
+    .gate-card {
+      width: min(520px, 100%);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      padding: 1.5rem;
+    }
+    .eyebrow { margin: 0 0 .5rem; color: var(--cet); font-weight: 700; }
+    h1 { font-size: 1.75rem; line-height: 1.35; margin: 0 0 .75rem; }
+    h2 { font-size: 1.375rem; line-height: 1.4; margin: 0 0 .75rem; }
+    h3 { margin: 0; font-size: 1.0625rem; line-height: 1.45; }
+    .name-label { display: block; font-weight: 700; margin: 1rem 0 .35rem; }
+    #name-input {
+      width: 100%;
+      min-height: 44px;
+      padding: .5rem .75rem;
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      font: inherit;
+    }
+    .name-picks { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .name-pick, .start, .btn, .see, .text-btn {
+      min-height: 44px;
+      border-radius: .5rem;
+      font: inherit;
+      cursor: pointer;
+    }
+    .name-pick, .text-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: .35rem .75rem;
+    }
+    .name-pick[aria-pressed="true"] { border-color: var(--cet); background: #e7f5ee; }
+    .start, .btn.agree[aria-pressed="true"] {
+      background: var(--cet);
+      color: #fff;
+      border: 1px solid var(--cet-dark);
+    }
+    .start { width: 100%; margin-top: 1rem; font-weight: 700; }
+    .name-error { color: #8a2a12; margin: .5rem 0 0; }
+    .progress-dock {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      padding: .75rem 0;
+    }
+    .progress-row, .who {
+      display: flex;
+      justify-content: space-between;
+      gap: .75rem;
+      align-items: center;
+    }
+    .progress-label { margin: 0; font-weight: 700; }
+    .save-state, .split { margin: .25rem 0 0; color: var(--muted); font-size: .875rem; }
+    .track {
+      height: .6rem;
+      margin-top: .5rem;
+      background: #e4eee8;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar {
+      height: 100%;
+      width: 0;
+      background: var(--cet);
+      border-radius: 999px;
+    }
+    header.top { padding: 1.25rem 0 0; }
+    .lede { margin: 0; }
+    .local-note {
+      margin: .75rem 0 0;
+      color: var(--muted);
+      font-size: .875rem;
+    }
+    main { padding: 1.5rem 0 3rem; }
+    section { margin-top: 1.5rem; }
+    .item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      margin: 0 0 .75rem;
+    }
+    .item.ask { border-color: #f0d7b0; }
+    .acc {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      min-height: 56px;
+      padding: .85rem 1rem;
+      border: 0;
+      border-radius: .75rem;
+      background: #fff;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+    .acc:hover { background: #f3faf6; }
+    .item.ask .acc:hover { background: #fffaf3; }
+    .chev {
+      flex: 0 0 auto;
+      width: .55rem;
+      height: .55rem;
+      margin-top: -.15rem;
+      border-right: 2px solid var(--cet-dark);
+      border-bottom: 2px solid var(--cet-dark);
+      transform: rotate(-45deg);
+    }
+    .acc[aria-expanded="true"] .chev { transform: rotate(45deg); margin-top: .15rem; }
+    .acc-title { flex: 1 1 auto; font-weight: 700; }
+    .acc-meta { display: flex; flex-direction: column; align-items: flex-end; gap: .15rem; }
+    .acc-hint { color: var(--cet-dark); font-size: .8125rem; font-weight: 700; }
+    .pill, .tag {
+      display: inline-block;
+      padding: .1rem .45rem;
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 700;
+      background: #eef2f0;
+      color: var(--muted);
+    }
+    .pill.done { background: #e7f5ee; color: var(--cet-dark); }
+    .pill.no { background: var(--amber-bg); color: var(--amber); }
+    .panel { padding: 0 1rem 1rem; }
+    .panel > p { margin: 0 0 .75rem; }
+    .where { margin: 0 0 .5rem; }
+    .tag-where { background: #eef2f0; color: var(--muted); }
+    .shot {
+      margin: .75rem 0;
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      overflow: hidden;
+      background: #fff;
+    }
+    .shot figcaption { margin: 0; padding: .5rem .75rem .75rem; color: var(--muted); font-size: .875rem; }
+    .yn, .see-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+    .btn, .see {
+      padding: .4rem 1rem;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-weight: 700;
+    }
+    .btn.agree { color: var(--cet-dark); }
+    .btn.disagree { color: var(--amber); }
+    .btn.disagree[aria-pressed="true"] { background: var(--amber); color: #fff; border-color: var(--amber); }
+    .comment { margin-top: .75rem; }
+    .comment textarea {
+      display: block;
+      width: 100%;
+      margin-top: .35rem;
+      min-height: 6rem;
+      padding: .6rem .75rem;
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      font: inherit;
+    }
+    .opinions { margin-top: .75rem; }
+    .opinion {
+      margin-top: .5rem;
+      padding: .75rem;
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      background: #fbfcfb;
+    }
+    .opinion p { margin: 0; }
+    .opinion-name { margin-bottom: .25rem; font-weight: 700; }
+    .opinion-text { white-space: pre-wrap; }
+    .choices { display: grid; gap: .75rem; }
+    .choice {
+      display: block;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      background: #fff;
+      cursor: pointer;
+    }
+    .choice input { margin-right: .5rem; accent-color: var(--cet); }
+    .choice:has(input:checked) { border-color: var(--cet); box-shadow: 0 0 0 2px #1f7a4d; }
+    .choice-head { font-weight: 700; }
+    .tech { margin-top: .75rem; }
+    .tech summary {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      min-height: 44px;
+      padding: 0 .85rem;
+      border: 1px dashed #b7c4bc;
+      border-radius: 999px;
+      background: #f7f8f7;
+      color: #6d7c74;
+      font-size: .8125rem;
+      cursor: pointer;
+      list-style: none;
+    }
+    .tech summary::-webkit-details-marker { display: none; }
+    .tech summary::before {
+      content: "";
+      width: .45rem;
+      height: .45rem;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(-45deg);
+    }
+    .tech[open] summary::before { transform: rotate(45deg); }
+    .tech summary::after { content: "點開"; }
+    .tech[open] summary::after { content: "收合"; }
+    .tech pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: .5rem 0 0;
+      padding: .75rem;
+      border-radius: .5rem;
+      background: #f3f5f4;
+      color: #66756d;
+      font-size: .8125rem;
+    }
+    .text-btn { color: var(--cet-dark); font-weight: 700; }
+    a:focus-visible, button:focus-visible, summary:focus-visible, .choice:focus-within, #name-input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #f0b429;
+      outline-offset: 2px;
+    }
+    @media (min-width: 720px) {
+      .choices.two { grid-template-columns: 1fr 1fr; }
+      .choices.three { grid-template-columns: 1fr 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#styles">跳到確認建議樣式</a>
+
+  <div id="gate" class="gate">
+    <form id="gate-form" class="gate-card">
+      <p class="eyebrow">地球公民基金會 · 新官網</p>
+      <h1>請先選擇你的姓名</h1>
+      <p>同意、不同意、意見和投票都會記在這個姓名底下。下次用同一個名字進來，會看到自己上次按過的內容，不會改到其他人的按鈕。</p>
+      <p id="known-label" hidden>這台電腦出現過的姓名：</p>
+      <div id="name-picks" class="name-picks"></div>
+      <label class="name-label" for="name-input">姓名</label>
+      <input id="name-input" name="name" autocomplete="name" maxlength="30" required>
+      <p id="name-error" class="name-error" hidden>請先填寫姓名。同一個人請每次都用同一個名字。</p>
+      <button class="start" type="submit">開始填答</button>
+    </form>
+  </div>
+
+  <div id="app" hidden>
+    <div class="progress-dock">
+      <div class="wrap">
+        <div class="progress-row">
+          <p class="who"><span id="who"></span> <button type="button" class="text-btn" id="switch-name">更換姓名</button></p>
+          <p class="save-state" id="save-state">進度會自動記住</p>
+        </div>
+        <p class="progress-label" id="progress-text">填答進度 0 / 12</p>
+        <div class="track" id="progress" role="progressbar" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" aria-labelledby="progress-text">
+          <div class="bar" id="progress-bar"></div>
+        </div>
+        <p class="split" id="progress-split">確認建議樣式 0 / 8，樣式投票 0 / 4</p>
+      </div>
+    </div>
+
+    <header class="top">
+      <div class="wrap">
+        <p class="eyebrow">地球公民基金會 · 新官網</p>
+        <h1>文章樣式確認</h1>
+        <p class="lede">畫面是官網文章裡實際用到該寫法的區域。三種文章相同的部分只列一次。</p>
+        <p class="local-note" id="local-note">這份若還是檔案預覽，看大家意見只會出現這台電腦填過的內容。部署到 Google Apps Script 之後，才看得到其他同事寫的意見。</p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section id="styles">
+        <h2>確認建議樣式</h2>
+        <p>這些是目前建議採用的寫法。同意或不同意都會記在你的姓名底下。不同意可以寫下意見。</p>
+
+        <!-- <article class="item" data-kind="style" data-item="para">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-para">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">一段就是一段</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-para" hidden>
+            <p>正文換段就分段。不要用空白行硬撐距離，也不要把很多句用換行擠在同一段。</p>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-para.jpg" width="696" height="203" alt="高雄 30 年城市轉型這篇文章裡，連續兩段分開的正文" loading="lazy" decoding="async">
+              <figcaption>實際畫面：<a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
+            </figure>
+          </div>
+        </article> -->
+
+        <article class="item" data-kind="style" data-item="list">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-list">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">1. 有好幾筆時，用清單</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-list" hidden>
+            <p>沒有先後順序，用圓點。有第 1、第 2 步，用編號。不要每一筆各寫成一段，也不要把好幾筆用換行串在同一段。</p>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-ul.jpg" width="696" height="208" alt="山林行動這場活動，時間、地點、形式用圓點分開" loading="lazy" decoding="async">
+              <figcaption>圓點清單：<a href="https://www.cet-taiwan.org/events/202609/100150" target="_blank" rel="noopener noreferrer">地球公民的山林行動如何轉變</a></figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-ol.jpg" width="696" height="246" alt="一篇文章裡用編號 1、2、3 列出的條件" loading="lazy" decoding="async">
+              <figcaption>編號清單：<a href="https://www.cet-taiwan.org/story/202212/4234" target="_blank" rel="noopener noreferrer">淨零12項關鍵戰略社會溝通會議--能源系統去碳化</a></figcaption>
+            </figure>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>沒有順序：ul
+有順序：ol
+不要用連續的 p，也不要在同一個 p 裡用 br 假裝清單</pre>
+            </details>
+          </div>
+        </article>
+
+        <article class="item" data-kind="style" data-item="heading">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-heading">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">2. 段落標題先使用標題二再用標題三</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-heading" hidden>
+            <p>第一層段落標題用標題二，不要一開始就用標題三。也盡量不要只把一句話加粗來當段落標題。</p>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-h2.jpg" width="720" height="219" alt="高雄 30 年城市轉型裡，第一層小標和下面的段落" loading="lazy" decoding="async">
+              <figcaption>(正確)從標題二開始使用下段落標：<a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-h3.jpg" width="720" height="159" alt="大林蒲這篇文章裡的第二層小標" loading="lazy" decoding="async">
+              <figcaption>(錯誤)直接從標題三而非標題二開始下段落標。<a href="https://www.cet-taiwan.org/story/202604/4831" target="_blank" rel="noopener noreferrer">新材料循環產業園區會讓大林蒲雪上加霜嗎？</a></figcaption>
+            </figure>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>第一層 h2，第二層才用 h3。不要用 p + strong 代替小標。</pre>
+            </details>
+          </div>
+        </article>
+
+        <article class="item" data-kind="style" data-item="image">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-image">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">3. 圖片寬度預設和內文寬度相同，圖說不寫「圖說」或「圖」</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-image" hidden>
+            <p>圖說直接寫說明，不要再加「圖說」或「圖」。圖片寬度預設和內文寬度相同，不要被壓扁或拉長。</p>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-沒有圖的圖說.png" width="696" height="518" alt="" loading="lazy" decoding="async">
+              <figcaption><a href="https://www.cet-taiwan.org/story/202406/4507" target="_blank" rel="noopener noreferrer">台灣的核廢料何處去？現在已經可以處理了嗎？</a></figcaption>
+            </figure>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>沒有圖說：p 包 img
+有圖說：figure 包 img 和 figcaption，figcaption 不要以「圖說」或「圖」開頭
+width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
+不是第一張圖時加 loading="lazy"</pre>
+            </details>
+          </div>
+        </article>
+
+        <article class="item" data-kind="style" data-item="table">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-table">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">4. 表格在設定時候要區分欄位表頭和內容。</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-table" hidden>
+            <!-- <p>表格在設定時候要區分欄位表頭和內容。</p> -->
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-table.jpg" width="696" height="276" alt="活動頁裡有欄位名稱的表格" loading="lazy" decoding="async">
+              <!-- <figcaption>實際畫面：<a href="https://www.cet-taiwan.org/events/202404/4478" target="_blank" rel="noopener noreferrer">高雄淨零城市治理論壇</a></figcaption> -->
+            </figure>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>表頭 th，內容 td</pre>
+            </details>
+          </div>
+        </article>
+
+        <article class="item ask" data-kind="vote" data-item="quote" data-pending="true">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-quote">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">5. 編按和引言都用框起來的格式，要不要寫「編按」、「引言」？</span>
+              <span class="acc-meta"><span class="pill">待確認</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-quote" hidden>
+            <p>兩種都使用左側有線的引言框，框後面不要再加橫線。這題還沒定案，請選框裡要不要保留「編按」、「引言」這類字眼。</p>
+            <div class="choices two">
+              <label class="choice">
+                <input type="radio" name="quote" value="with-label">
+                <span class="choice-head">使用「編按」、「引言」相關字眼</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-quote.jpg" width="720" height="304" alt="高雄 30 年城市轉型文首的引言框，框內仍有編按二字" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
+                </figure>
+              </label>
+              <label class="choice">
+                <input type="radio" name="quote" value="no-label">
+                <span class="choice-head">不使用「編按」、「引言」相關字眼</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-沒有編按.png" width="699" height="383" alt="引言框裡直接寫內容，沒有編按或引言字樣" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202608/4891" target="_blank" rel="noopener noreferrer">台灣如何從「與河爭地」走向「還地於河」？</a></figcaption>
+                </figure>
+              </label>
+            </div>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>兩種都是 blockquote，後面不要接 hr
+左邊框內保留「編按」或「引言」
+右邊框內直接寫內容，不要這些字眼</pre>
+            </details>
+          </div>
+        </article>
+
+        <!-- <article class="item" data-kind="style" data-item="subtitle">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-subtitle">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">議題觀點庫副標</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-subtitle" hidden>
+            <p class="where"><span class="tag tag-where">只有議題觀點庫</span></p>
+            <p>作者統一寫成「文/單位 姓名」。日期不要寫進副標，系統會另外顯示日期。</p>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-subtitle.jpg" width="640" height="185" alt="文章標題下方的副標寫著文/單位與姓名，再下面是日期" loading="lazy" decoding="async">
+              <figcaption>實際畫面：<a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
+            </figure>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>副標是純文字，使用半形斜線：文/單位 姓名</pre>
+            </details>
+          </div>
+        </article> -->
+
+        <article class="item" data-kind="style" data-item="joint">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-joint">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">6. 聲明團體前加分隔線</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-joint" hidden>
+            <p class="where"><span class="tag tag-where">只有聲明／新聞稿</span></p>
+            <p>正文結束後，和聲明團體之間使用分隔線。團體名稱寫在同一段，用頓號分開。</p>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-聲明團體分隔線.png" width="720" height="95" alt="新聞稿正文下方有一條橫線，線下是聯合聲明團體名單" loading="lazy" decoding="async">
+              <figcaption>實際畫面：<a href="https://www.cet-taiwan.org/news/202609/100173" target="_blank" rel="noopener noreferrer">沙崙科園用電直逼整個新北</a></figcaption>
+            </figure>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>正文與聲明團體之間一個 hr
+團體名單維持一個 p，名稱用頓號分開</pre>
+            </details>
+          </div>
+        </article>
+
+        <article class="item" data-kind="style" data-item="event-title">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-event-title">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">7. 活動標題不寫日期和城市</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-event-title" hidden>
+            <p class="where"><span class="tag tag-where">活動</span></p>
+            <p>卡片下方已經有日期和城市，標題只寫活動名稱。</p>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-title-plain.jpg" width="720" height="106" alt="活動標題只有名稱，日期另外顯示在標題下方" loading="lazy" decoding="async">
+              <figcaption>建議這樣寫：<a href="https://www.cet-taiwan.org/events/202609/100144" target="_blank" rel="noopener noreferrer">灰灰怪獸出沒中</a></figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-title-date.jpg" width="720" height="144" alt="活動標題開頭寫著日期和台北現場" loading="lazy" decoding="async">
+              <figcaption>不要把日期和城市寫進標題：<a href="https://www.cet-taiwan.org/events/202607/4872" target="_blank" rel="noopener noreferrer">8/19【台北現場】十字路口的抉擇</a></figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="item" data-kind="style" data-item="recap">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-recap">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">8. 側記連結放在後台活動側記欄位</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-recap" hidden>
+            <p class="where"><span class="tag tag-where">活動、議題觀點庫</span></p>
+            <p>側記網址填在後台活動側記欄位，不要在活動內文上方放超連結文字。</p>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-側記按鈕.png" width="700" height="528" alt="後台活動側記欄位的按鈕" loading="lazy" decoding="async">
+              <figcaption>建議填在後台側記欄位。公開頁面不會再出現內文連結。<a href="https://www.cet-taiwan.org/events/202605/4855" target="_blank" rel="noopener noreferrer">【講座紀錄】 高雄場－6/13《變更之地》Ｘ《複層之森》電影放映+映後座談</a></figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-側記內文連結.png" width="722" height="534" alt="活動內文裡有一則連到觀點庫側記的連結" loading="lazy" decoding="async">
+              <figcaption>不要在活動內文再放一次：<a href="https://www.cet-taiwan.org/events/202608/4890" target="_blank" rel="noopener noreferrer">溪谷深處的舊日足跡</a></figcaption>
+            </figure>
+          </div>
+        </article>
+      </section>
+
+      <section id="votes">
+        <h2>樣式投票</h2>
+        <p>下面每題選一個方向。投票記在你的姓名底下。</p>
+
+        <article class="item ask" data-kind="vote" data-item="q-info">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-q-info">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">1. 【活動資訊】、【注意事項】怎麼呈現？</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-q-info" hidden>
+            <p class="where"><span class="tag tag-where">活動</span></p>
+            <!-- <p>目前傾向：小標用和內文一樣的大標，文字保留【活動資訊】，裡面每一項用圓點。注意事項同樣處理。</p> -->
+            <div class="choices">
+              <label class="choice">
+                <input type="radio" name="q-info" value="h2-ul">
+                <span class="choice-head">大標＋圓點清單</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-活動側記大標圓點.png" width="696" height="437" alt="當碳匯走進原鄉的活動資訊小標是大標，項目仍寫在同一段" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/events/202609/100155" target="_blank" rel="noopener noreferrer">當碳匯走進原鄉</a></figcaption>
+                </figure>
+              </label>
+              <label class="choice">
+                <input type="radio" name="q-info" value="strong-ul">
+                <span class="choice-head">粗體一行，下面接圓點</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-info-strong.jpg" width="720" height="235" alt="活動資訊是粗體一行，下面用圓點列時間和地點" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/events/202607/4871" target="_blank" rel="noopener noreferrer">花東開發的海市蜃樓</a></figcaption>
+                </figure>
+              </label>
+              <!-- <label class="choice">
+                <input type="radio" name="q-info" value="br">
+                <span class="choice-head">全部擠在同一段，用換行分開</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-info-br.jpg" width="696" height="203" alt="灰灰怪獸活動把時間和地點用換行寫在同一段" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/events/202609/100144" target="_blank" rel="noopener noreferrer">灰灰怪獸出沒中</a></figcaption>
+                </figure>
+              </label> -->
+            </div>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>傾向：h2【活動資訊】，下面 ul
+現稿常見：p 裡只有 strong【活動資訊】，下面 ul
+同一段換行：一個 p 裡多個 br</pre>
+            </details>
+          </div>
+        </article>
+
+        <article class="item ask" data-kind="vote" data-item="q-speaker">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-q-speaker">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">2. 活動講者和議題觀點庫作者的姓名和單位怎麼隔開？</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-q-speaker" hidden>
+            <p class="where"><span class="tag tag-where">活動、議題觀點庫</span></p>
+            <!-- <p>目前傾向用斜線。同一篇請只用一種。</p> -->
+            <div class="choices three">
+              <label class="choice">
+                <input type="radio" name="q-speaker" value="slash">
+                <span class="choice-head">姓名／單位</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-slash.jpg" width="696" height="51" alt="講者姓名和單位中間是斜線" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/events/202609/100150" target="_blank" rel="noopener noreferrer">地球公民的山林行動如何轉變</a></figcaption>
+                </figure>
+              </label>
+              <label class="choice">
+                <input type="radio" name="q-speaker" value="pipe">
+                <span class="choice-head">姓名｜單位</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-pipe.jpg" width="672" height="59" alt="講者姓名和單位中間是直線" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/events/202607/4871" target="_blank" rel="noopener noreferrer">花東開發的海市蜃樓</a></figcaption>
+                </figure>
+              </label>
+              <label class="choice">
+                <input type="radio" name="q-speaker" value="paren">
+                <span class="choice-head">姓名（單位）</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-paren.jpg" width="672" height="59" alt="講者單位寫在姓名後面的括號裡" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/events/202602/4802" target="_blank" rel="noopener noreferrer">福島核災後 15 年</a></figcaption>
+                </figure>
+              </label>
+            </div>
+          </div>
+        </article>
+
+        <!-- <article class="item ask" data-kind="vote" data-item="q-story-title">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-q-story-title">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">類型和系列名要用【】還是其他符號</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-q-story-title" hidden>
+            <p class="where"><span class="tag tag-where">議題觀點庫</span></p>
+            <p>目前傾向都留在主標，而且都用【】。觀點庫卡片只顯示主標，放副標的話列表上看不到系列。</p>
+            <div class="choices">
+              <label class="choice">
+                <input type="radio" name="q-story-title" value="brackets">
+                <span class="choice-head">【類型】【系列名】文章名</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-story-type.jpg" width="640" height="185" alt="標題以【講座紀錄】開頭" loading="lazy" decoding="async">
+                  <figcaption>類型放在【】裡：<a href="https://www.cet-taiwan.org/story/202605/4854" target="_blank" rel="noopener noreferrer">《民主之眼》映後與談</a></figcaption>
+                </figure>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-story-series.jpg" width="640" height="112" alt="標題以【看懂馬太鞍溪】開頭" loading="lazy" decoding="async">
+                  <figcaption>系列名用｜分隔：<a href="https://www.cet-taiwan.org/story/202608/4892" target="_blank" rel="noopener noreferrer">復原沒有同一個時鐘</a>。目前還沒有一篇同時把類型和系列都放進【】。</figcaption>
+                </figure>
+              </label>
+              <label class="choice">
+                <input type="radio" name="q-story-title" value="current-mix">
+                <span class="choice-head">維持現在混用的寫法</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-story-plain.jpg" width="640" height="185" alt="標題沒有加上類型或系列名" loading="lazy" decoding="async">
+                  <figcaption>什麼都不加：<a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
+                </figure>
+              </label>
+            </div>
+          </div>
+        </article> -->
+
+        <article class="item ask" data-kind="vote" data-item="q-hr">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-q-hr">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">3. 註解、轉載出處前面要不要加橫線？</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-q-hr" hidden>
+            <p class="where"><span class="tag tag-where">三種文章都可能遇到</span></p>
+            <!-- <p>聲明團體前面的橫線已經另外決定。這題只問註解，以及「本文原刊登於……」這種出處。目前傾向不加線。</p> -->
+            <div class="choices two">
+              <label class="choice">
+                <input type="radio" name="q-hr" value="no-hr">
+                <span class="choice-head">出處和註解前面不加線</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-credit-plain.jpg" width="696" height="78" alt="文章結尾的轉載出處，上面沒有橫線" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202604/4831" target="_blank" rel="noopener noreferrer">新材料循環產業園區會讓大林蒲雪上加霜嗎？</a></figcaption>
+                </figure>
+              </label>
+              <label class="choice">
+                <input type="radio" name="q-hr" value="hr">
+                <span class="choice-head">出處前面加一條線</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-credit-hr.jpg" width="720" height="95" alt="文章結尾先有一條橫線，線下是轉載出處" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
+                </figure>
+              </label>
+            </div>
+          </div>
+        </article>
+
+        <article class="item ask" data-kind="vote" data-item="q-more">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-q-more">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">4. 「延伸閱讀」「參考資料」要不要加【】？</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-q-more" hidden>
+            <p class="where"><span class="tag tag-where">三種文章都可能遇到</span></p>
+            <!-- <p>目前傾向不加【】，直接當內文小標。</p> -->
+            <div class="choices two">
+              <label class="choice">
+                <input type="radio" name="q-more" value="h2">
+                <span class="choice-head">延伸閱讀</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-more-plain.jpg" width="696" height="109" alt="小標寫延伸閱讀，沒有方括號" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202305/4403" target="_blank" rel="noopener noreferrer">農地工廠收納術</a></figcaption>
+                </figure>
+              </label>
+              <label class="choice">
+                <input type="radio" name="q-more" value="bracket">
+                <span class="choice-head">維持【延伸閱讀】</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-more-bracket.jpg" width="696" height="105" alt="小標寫著【延伸閱讀】" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202608/4891" target="_blank" rel="noopener noreferrer">與河爭地到還地於河</a></figcaption>
+                </figure>
+              </label>
+            </div>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>傾向：h2，文字是「延伸閱讀」或「參考資料」，不要加【】</pre>
+            </details>
+          </div>
+        </article>
+
+      </section>
+    </main>
+  </div>
+
+  <script>
+    var storageKey = "cet-colleague-confirm-v2";
+    var people = {};
+    var currentName = "";
+    var hasGas = typeof google !== "undefined" && google.script && google.script.run;
+    var commentTimer = null;
+
+    function readStore() {
+      try {
+        var data = JSON.parse(localStorage.getItem(storageKey) || "{}");
+        people = data.people || {};
+        return data.currentName || "";
+      } catch (err) {
+        people = {};
+        return "";
+      }
+    }
+
+    function writeStore() {
+      localStorage.setItem(storageKey, JSON.stringify({ currentName: currentName, people: people }));
+    }
+
+    function ensure(name) {
+      if (!people[name]) people[name] = { styles: {}, votes: {} };
+      if (!people[name].styles) people[name].styles = {};
+      if (!people[name].votes) people[name].votes = {};
+      return people[name];
+    }
+
+    function setSaveState(text) {
+      document.getElementById("save-state").textContent = text;
+    }
+
+    function sectionArticles(id) {
+      return document.querySelectorAll("#" + id + " article[data-item]");
+    }
+
+    function sectionDone(id) {
+      var person = people[currentName] || { styles: {}, votes: {} };
+      var done = 0;
+      sectionArticles(id).forEach(function (article) {
+        if (article.dataset.kind === "style") {
+          var row = person.styles && person.styles[article.dataset.item];
+          if (row && row.choice) done += 1;
+        } else if (person.votes && person.votes[article.dataset.item]) {
+          done += 1;
+        }
+      });
+      return done;
+    }
+
+    function counts() {
+      return { styles: sectionDone("styles"), votes: sectionDone("votes") };
+    }
+
+    function updateProgress() {
+      var done = counts();
+      var styleMax = sectionArticles("styles").length;
+      var voteMax = sectionArticles("votes").length;
+      var sum = done.styles + done.votes;
+      var max = styleMax + voteMax;
+      document.getElementById("progress-text").textContent = "填答進度 " + sum + " / " + max;
+      document.getElementById("progress-split").textContent = "確認建議樣式 " + done.styles + " / " + styleMax + "，樣式投票 " + done.votes + " / " + voteMax;
+      document.getElementById("progress").setAttribute("aria-valuemax", String(max));
+      document.getElementById("progress").setAttribute("aria-valuenow", String(sum));
+      document.getElementById("progress-bar").style.width = (max ? (sum / max) * 100 : 0) + "%";
+    }
+
+    function pill(article, text, kind) {
+      var node = article.querySelector(".pill");
+      node.textContent = text;
+      node.classList.remove("done", "no");
+      if (kind) node.classList.add(kind);
+    }
+
+    function paintArticle(article) {
+      var person = people[currentName] || { styles: {}, votes: {} };
+      var item = article.dataset.item;
+      if (article.dataset.kind === "style") {
+        var row = (person.styles && person.styles[item]) || { choice: "", comment: "" };
+        article.querySelectorAll(".btn").forEach(function (button) {
+          button.setAttribute("aria-pressed", button.dataset.choice === row.choice ? "true" : "false");
+        });
+        var comment = article.querySelector(".comment");
+        if (comment) {
+          comment.hidden = row.choice !== "disagree";
+          comment.querySelector("textarea").value = row.comment || "";
+        }
+        if (row.choice === "agree") pill(article, "同意", "done");
+        else if (row.choice === "disagree") pill(article, "不同意", "no");
+        else pill(article, "未填", "");
+      } else {
+        var value = person.votes && person.votes[item];
+        article.querySelectorAll('input[type="radio"]').forEach(function (input) {
+          input.checked = input.value === value;
+        });
+        if (value) pill(article, "已投票", "done");
+        else if (article.dataset.pending === "true") pill(article, "待確認", "");
+        else pill(article, "未填", "");
+      }
+    }
+
+    function paintAll() {
+      document.querySelectorAll("article[data-item]").forEach(paintArticle);
+      updateProgress();
+    }
+
+    function saveRemote(item, kind, choice, comment) {
+      if (!hasGas) {
+        setSaveState("已存在這台電腦");
+        return;
+      }
+      setSaveState("正在儲存");
+      google.script.run
+        .withSuccessHandler(function () { setSaveState("已儲存"); })
+        .withFailureHandler(function () { setSaveState("這台電腦已記住，共用儲存沒成功"); })
+        .saveItem({ name: currentName, item: item, kind: kind, choice: choice, comment: comment || "" });
+    }
+
+    function saveStyle(article) {
+      var item = article.dataset.item;
+      var pressed = article.querySelector('.btn[aria-pressed="true"]');
+      var choice = pressed ? pressed.dataset.choice : "";
+      var comment = article.querySelector("textarea").value;
+      ensure(currentName).styles[item] = { choice: choice, comment: comment };
+      writeStore();
+      paintArticle(article);
+      updateProgress();
+      saveRemote(item, "style", choice, comment);
+      var box = article.querySelector(".opinions");
+      if (box && !box.hidden) renderOpinions(article);
+    }
+
+    function renderOpinions(article) {
+      var box = article.querySelector(".opinions");
+      box.replaceChildren();
+      var item = article.dataset.item;
+      var found = false;
+      Object.keys(people).forEach(function (name) {
+        var row = people[name].styles && people[name].styles[item];
+        if (!row || row.choice !== "disagree" || !(row.comment || "").trim()) return;
+        found = true;
+        var card = document.createElement("div");
+        card.className = "opinion";
+        var who = document.createElement("p");
+        who.className = "opinion-name";
+        who.textContent = name;
+        var text = document.createElement("p");
+        text.className = "opinion-text";
+        text.textContent = row.comment.trim();
+        card.append(who, text);
+        box.appendChild(card);
+      });
+      if (!found) {
+        var empty = document.createElement("p");
+        empty.textContent = "目前沒有人寫下不同意的意見。";
+        box.appendChild(empty);
+      }
+    }
+
+    function addStyleControls(article) {
+      var actions = document.createElement("div");
+      actions.className = "yn";
+      ["agree", "disagree"].forEach(function (choice) {
+        var button = document.createElement("button");
+        button.type = "button";
+        button.className = "btn " + choice;
+        button.dataset.choice = choice;
+        button.textContent = choice === "agree" ? "同意" : "不同意";
+        button.setAttribute("aria-pressed", "false");
+        button.addEventListener("click", function () {
+          article.querySelectorAll(".btn").forEach(function (other) {
+            other.setAttribute("aria-pressed", other === button ? "true" : "false");
+          });
+          saveStyle(article);
+          if (choice === "disagree") article.querySelector("textarea").focus();
+        });
+        actions.appendChild(button);
+      });
+      var label = document.createElement("label");
+      label.className = "comment";
+      label.hidden = true;
+      label.append("你的意見");
+      var area = document.createElement("textarea");
+      area.rows = 3;
+      area.addEventListener("input", function () {
+        clearTimeout(commentTimer);
+        commentTimer = setTimeout(function () { saveStyle(article); }, 400);
+      });
+      label.appendChild(area);
+      var see = document.createElement("button");
+      see.type = "button";
+      see.className = "see";
+      see.textContent = "看大家意見";
+      see.setAttribute("aria-expanded", "false");
+      var opinions = document.createElement("div");
+      opinions.className = "opinions";
+      opinions.hidden = true;
+      see.addEventListener("click", function () {
+        var open = opinions.hidden;
+        opinions.hidden = !open;
+        see.setAttribute("aria-expanded", open ? "true" : "false");
+        see.textContent = open ? "收合大家意見" : "看大家意見";
+        if (open) renderOpinions(article);
+      });
+      var panel = article.querySelector(".panel");
+      var tech = panel.querySelector(".tech");
+      if (tech) tech.before(actions, label, see, opinions);
+      else panel.append(actions, label, see, opinions);
+    }
+
+    function bindVotes() {
+      document.querySelectorAll('article[data-kind="vote"] input[type="radio"]').forEach(function (input) {
+        input.addEventListener("change", function () {
+          if (!input.checked) return;
+          ensure(currentName).votes[input.name] = input.value;
+          writeStore();
+          paintArticle(input.closest("article"));
+          updateProgress();
+          saveRemote(input.name, "vote", input.value, "");
+        });
+      });
+    }
+
+    function bindAccordions() {
+      document.querySelectorAll(".acc").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var open = button.getAttribute("aria-expanded") === "true";
+          var panel = document.getElementById(button.getAttribute("aria-controls"));
+          button.setAttribute("aria-expanded", open ? "false" : "true");
+          panel.hidden = open;
+          button.querySelector(".acc-hint").textContent = open ? "展開" : "收合";
+        });
+      });
+    }
+
+    function renderNamePicks() {
+      var box = document.getElementById("name-picks");
+      var label = document.getElementById("known-label");
+      box.replaceChildren();
+      var names = Object.keys(people);
+      label.hidden = names.length === 0;
+      names.forEach(function (name) {
+        var button = document.createElement("button");
+        button.type = "button";
+        button.className = "name-pick";
+        button.textContent = name;
+        button.setAttribute("aria-pressed", "false");
+        button.addEventListener("click", function () {
+          document.getElementById("name-input").value = name;
+          box.querySelectorAll(".name-pick").forEach(function (other) {
+            other.setAttribute("aria-pressed", other === button ? "true" : "false");
+          });
+        });
+        box.appendChild(button);
+      });
+    }
+
+    function enter(name) {
+      currentName = name;
+      ensure(name);
+      writeStore();
+      document.getElementById("who").textContent = "你正在以「" + name + "」填答";
+      document.getElementById("gate").hidden = true;
+      document.getElementById("app").hidden = false;
+      paintAll();
+    }
+
+    function showGate() {
+      document.getElementById("app").hidden = true;
+      document.getElementById("gate").hidden = false;
+      renderNamePicks();
+      document.getElementById("name-input").value = currentName || "";
+      document.getElementById("name-input").focus();
+    }
+
+    document.getElementById("gate-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var name = document.getElementById("name-input").value.trim();
+      var error = document.getElementById("name-error");
+      if (!name) {
+        error.hidden = false;
+        return;
+      }
+      error.hidden = true;
+      enter(name);
+    });
+
+    document.getElementById("switch-name").addEventListener("click", function () {
+      showGate();
+    });
+
+    document.querySelectorAll('#styles article[data-kind="style"]').forEach(addStyleControls);
+    bindVotes();
+    bindAccordions();
+    currentName = readStore();
+    renderNamePicks();
+    if (currentName) document.getElementById("name-input").value = currentName;
+    if (hasGas) {
+      document.getElementById("local-note").hidden = true;
+      google.script.run.withSuccessHandler(function (remote) {
+        people = remote || {};
+        if (currentName) ensure(currentName);
+        writeStore();
+        renderNamePicks();
+        if (!document.getElementById("app").hidden) paintAll();
+      }).loadAll();
+    }
+  </script>
+</body>
+</html>
