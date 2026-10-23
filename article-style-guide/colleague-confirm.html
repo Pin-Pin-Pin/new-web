@@ -4,7 +4,7 @@
 1. 新增 HTML 檔，檔名 colleague-confirm，貼上本檔。
 2. 新增指令碼 Code.gs，貼上同資料夾的 Code.gs。
 3. 部署為網頁應用程式。執行身分選「我」，存取權給需要確認的同事。
-   第一次有人儲存時，會在部署者的雲端硬碟建立試算表「新官網文章樣式確認」。
+   第一次有人開啟或送出填答時，會在部署者的雲端硬碟建立試算表「新官網文章樣式確認」。
 截圖網址為 https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/ ，檔名以 20261022- 開頭。請先把 confirm-shots 裡的圖上傳到該資料夾。
 -->
 <html lang="zh-Hant">
@@ -94,6 +94,8 @@
       border: 1px solid var(--cet-dark);
     }
     .start { width: 100%; margin-top: 1rem; font-weight: 700; }
+    .start:disabled { opacity: .65; cursor: wait; }
+    .clear-answer { display: block; margin-top: .75rem; }
     .name-error { color: #8a2a12; margin: .5rem 0 0; }
     .progress-dock {
       position: sticky;
@@ -138,6 +140,7 @@
       border: 1px solid var(--line);
       border-radius: .75rem;
       margin: 0 0 .75rem;
+      scroll-margin: 6.5rem 0;
     }
     .item.ask { border-color: #f0d7b0; }
     .acc {
@@ -279,9 +282,193 @@
       outline: 3px solid #f0b429;
       outline-offset: 2px;
     }
+    .tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 0; }
+    .tabs button {
+      min-height: 44px;
+      padding: .4rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .tabs button:hover { background: #f3faf6; }
+    .tabs button[aria-selected="true"],
+    .tabs button[aria-selected="true"]:hover {
+      background: var(--cet);
+      border-color: var(--cet-dark);
+      color: #fff;
+    }
+    .tabs button[aria-selected="true"]:hover { background: var(--cet-dark); }
+    .comment-label { margin: 0 0 .35rem; font-weight: 700; }
+    .comment-actions { display: flex; flex-direction: column; gap: .5rem; }
+    .comment-actions textarea { margin-top: 0; }
+    .ghost-btn {
+      min-height: 44px;
+      padding: .4rem 1rem;
+      border: 1px solid var(--cet-dark);
+      border-radius: .5rem;
+      background: #fff;
+      color: var(--cet-dark);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .ghost-btn:hover { background: #e7f5ee; }
+    .comment .ghost-btn { width: 100%; }
+    .comment-state { margin: .35rem 0 0; color: var(--muted); font-size: .875rem; }
+    .pill.wait { background: var(--amber-bg); color: var(--amber); }
+    .pill.miss { background: #fdecea; color: #8a2a12; }
+    .item.missing { background: #fdecea; border-color: #e39b93; }
+    .item.missing .acc { background: transparent; }
+    .item.missing .acc:hover { background: #f8e4e1; }
+    #form-view { padding-bottom: 8rem; }
+    .submit-dock {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 8;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      box-shadow: 0 -4px 16px rgba(28, 40, 34, .06);
+      padding: .75rem 0 calc(.75rem + env(safe-area-inset-bottom));
+    }
+    .submit-inner { display: flex; flex-direction: column; gap: .75rem; }
+    .submit-hint { margin: 0; }
+    #submit-all {
+      min-height: 44px;
+      padding: .5rem 1.25rem;
+      border: 1px solid var(--cet-dark);
+      border-radius: .5rem;
+      background: var(--cet);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    #submit-all:hover { background: var(--cet-dark); }
+    #submit-all:disabled { opacity: .65; cursor: wait; }
+    #results-view { padding-top: 1.5rem; padding-bottom: 3rem; }
+    .result-block { margin-top: 1.5rem; }
+    .result-block > p { margin: .5rem 0 0; }
+    .people-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+    .person-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      min-height: 44px;
+      padding: .25rem .75rem .25rem .25rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 700;
+    }
+    .person-chip.partial { font-weight: 500; color: var(--muted); }
+    .avatar {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--cet);
+      color: #fff;
+      font-size: .875rem;
+    }
+    .person-chip.partial .avatar { background: #8aa396; }
+    .result-card {
+      margin-top: .75rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      background: #fff;
+    }
+    .result-card h3 { margin-bottom: .75rem; }
+    .result-card > p { margin: .75rem 0 0; }
+    .winner-banner {
+      margin: 0 0 .75rem;
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      background: #e7f5ee;
+      color: var(--cet-dark);
+      font-weight: 700;
+    }
+    .winner-banner.tie { background: var(--amber-bg); color: var(--amber); }
+    .winner-banner.empty { background: #eef2f0; color: var(--muted); font-weight: 500; }
+    .stack {
+      display: flex;
+      height: .85rem;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e4eee8;
+    }
+    .stack span { display: block; height: 100%; min-width: 4px; }
+    .legend { display: grid; gap: .45rem; margin-top: .75rem; }
+    .legend-row { display: flex; justify-content: space-between; gap: .75rem; align-items: flex-start; }
+    .legend-name { display: inline-flex; align-items: center; gap: .4rem; min-width: 0; font-weight: 700; }
+    .legend-count { flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+    .swatch { width: .75rem; height: .75rem; border-radius: 999px; flex: 0 0 auto; }
+    .win-tag {
+      margin-left: .35rem;
+      padding: .05rem .4rem;
+      border-radius: 999px;
+      background: #e7f5ee;
+      color: var(--cet-dark);
+      font-size: .75rem;
+      white-space: nowrap;
+    }
+    .opinion-heading { margin: 1rem 0 .25rem; font-weight: 700; }
+    #back-to-form { margin-top: 1.5rem; }
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(28, 40, 34, .45);
+    }
+    .modal-card {
+      width: min(520px, 100%);
+      max-height: min(80vh, 640px);
+      overflow: auto;
+      padding: 1.25rem;
+      border-radius: .75rem;
+      background: #fff;
+    }
+    .modal-card ul { margin: .5rem 0 1rem; padding-left: 1.25rem; }
+    .modal-actions { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: flex-end; }
+    .modal-actions button {
+      min-height: 44px;
+      padding: .4rem 1rem;
+      border-radius: .5rem;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    #modal-back {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+    #modal-back:hover { background: #f3faf6; }
+    #modal-go {
+      border: 1px solid var(--cet-dark);
+      background: var(--cet);
+      color: #fff;
+    }
+    #modal-go:hover { background: var(--cet-dark); }
     @media (min-width: 720px) {
       .choices.two { grid-template-columns: 1fr 1fr; }
       .choices.three { grid-template-columns: 1fr 1fr 1fr; }
+      .comment-actions { flex-direction: row; align-items: flex-start; }
+      .comment .ghost-btn { width: auto; flex: 0 0 auto; }
+      .submit-inner { flex-direction: row; align-items: center; justify-content: space-between; }
+      #submit-all { flex: 0 0 auto; }
+      .modal { align-items: center; }
     }
   </style>
 </head>
@@ -292,11 +479,12 @@
     <form id="gate-form" class="gate-card">
       <p class="eyebrow">地球公民基金會 · 新官網</p>
       <h1>請先選擇你的姓名</h1>
-      <p>同意、不同意、意見和投票都會記在這個姓名底下。下次用同一個名字進來，會看到自己上次按過的內容，不會改到其他人的按鈕。</p>
+      <!-- <p>填答資料綁定 Google 帳號；讀不到帳號時，改綁這台瀏覽器。其他人不能覆寫你的填答。按「送出填答」之後才寫進共用結果。</p> -->
       <p id="known-label" hidden>這台電腦出現過的姓名：</p>
       <div id="name-picks" class="name-picks"></div>
       <label class="name-label" for="name-input">姓名</label>
       <input id="name-input" name="name" autocomplete="name" maxlength="30" required>
+      <p id="gate-status" class="local-note" hidden></p>
       <p id="name-error" class="name-error" hidden>請先填寫姓名。同一個人請每次都用同一個名字。</p>
       <button class="start" type="submit">開始填答</button>
     </form>
@@ -307,29 +495,35 @@
       <div class="wrap">
         <div class="progress-row">
           <p class="who"><span id="who"></span> <button type="button" class="text-btn" id="switch-name">更換姓名</button></p>
-          <p class="save-state" id="save-state">進度會自動記住</p>
+          <p class="save-state" id="save-state" aria-live="polite">尚未送出</p>
         </div>
         <p class="progress-label" id="progress-text">填答進度 0 / 12</p>
         <div class="track" id="progress" role="progressbar" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" aria-labelledby="progress-text">
           <div class="bar" id="progress-bar"></div>
         </div>
-        <p class="split" id="progress-split">確認建議樣式 0 / 8，樣式投票 0 / 4</p>
+        <p class="split" id="progress-split">確認建議樣式 0 / 7，樣式投票 0 / 5</p>
       </div>
     </div>
 
     <header class="top">
       <div class="wrap">
         <p class="eyebrow">地球公民基金會 · 新官網</p>
-        <h1>文章樣式確認</h1>
-        <p class="lede">畫面是官網文章裡實際用到該寫法的區域。三種文章相同的部分只列一次。</p>
-        <p class="local-note" id="local-note">這份若還是檔案預覽，看大家意見只會出現這台電腦填過的內容。部署到 Google Apps Script 之後，才看得到其他同事寫的意見。</p>
+        <p class="local-note" id="local-note">這份若還是檔案預覽，投票結果只含這台電腦送出的填答。部署到 Google Apps Script 之後，才會和其他同事的結果合在一起。</p>
       </div>
     </header>
 
+    <div class="wrap">
+      <div class="tabs" role="tablist" aria-label="填答和結果">
+        <button type="button" id="tab-form" role="tab" aria-selected="true" aria-controls="form-view">填答</button>
+        <button type="button" id="tab-results" role="tab" hidden aria-selected="false" aria-controls="results-view">投票結果</button>
+      </div>
+    </div>
+
+    <div id="form-view">
     <main class="wrap">
       <section id="styles">
         <h2>確認建議樣式</h2>
-        <p>這些是目前建議採用的寫法。同意或不同意都會記在你的姓名底下。不同意可以寫下意見。</p>
+        <p>這些是目前建議採用的寫法。每題按同意或不同意，也可以寫意見。大家的意見要等送出後，到投票結果才看得到。</p>
 
         <!-- <article class="item" data-kind="style" data-item="para">
           <h3>
@@ -445,43 +639,6 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
           </div>
         </article>
 
-        <article class="item ask" data-kind="vote" data-item="quote" data-pending="true">
-          <h3>
-            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-quote">
-              <span class="chev" aria-hidden="true"></span>
-              <span class="acc-title">5. 編按和引言都用框起來的格式，要不要寫「編按」、「引言」？</span>
-              <span class="acc-meta"><span class="pill">待確認</span><span class="acc-hint">展開</span></span>
-            </button>
-          </h3>
-          <div class="panel" id="panel-quote" hidden>
-            <p>兩種都使用左側有線的引言框，框後面不要再加橫線。這題還沒定案，請選框裡要不要保留「編按」、「引言」這類字眼。</p>
-            <div class="choices two">
-              <label class="choice">
-                <input type="radio" name="quote" value="with-label">
-                <span class="choice-head">使用「編按」、「引言」相關字眼</span>
-                <figure class="shot">
-                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-quote.jpg" width="720" height="304" alt="高雄 30 年城市轉型文首的引言框，框內仍有編按二字" loading="lazy" decoding="async">
-                  <figcaption><a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
-                </figure>
-              </label>
-              <label class="choice">
-                <input type="radio" name="quote" value="no-label">
-                <span class="choice-head">不使用「編按」、「引言」相關字眼</span>
-                <figure class="shot">
-                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-沒有編按.png" width="699" height="383" alt="引言框裡直接寫內容，沒有編按或引言字樣" loading="lazy" decoding="async">
-                  <figcaption><a href="https://www.cet-taiwan.org/story/202608/4891" target="_blank" rel="noopener noreferrer">台灣如何從「與河爭地」走向「還地於河」？</a></figcaption>
-                </figure>
-              </label>
-            </div>
-            <details class="tech">
-              <summary>網頁前端細節(可略)</summary>
-              <pre>兩種都是 blockquote，後面不要接 hr
-左邊框內保留「編按」或「引言」
-右邊框內直接寫內容，不要這些字眼</pre>
-            </details>
-          </div>
-        </article>
-
         <!-- <article class="item" data-kind="style" data-item="subtitle">
           <h3>
             <button type="button" class="acc" aria-expanded="false" aria-controls="panel-subtitle">
@@ -508,7 +665,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
           <h3>
             <button type="button" class="acc" aria-expanded="false" aria-controls="panel-joint">
               <span class="chev" aria-hidden="true"></span>
-              <span class="acc-title">6. 聲明團體前加分隔線</span>
+              <span class="acc-title">5. 聲明團體前加分隔線</span>
               <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
             </button>
           </h3>
@@ -531,7 +688,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
           <h3>
             <button type="button" class="acc" aria-expanded="false" aria-controls="panel-event-title">
               <span class="chev" aria-hidden="true"></span>
-              <span class="acc-title">7. 活動標題不寫日期和城市</span>
+              <span class="acc-title">6. 活動標題不寫日期和城市</span>
               <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
             </button>
           </h3>
@@ -553,7 +710,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
           <h3>
             <button type="button" class="acc" aria-expanded="false" aria-controls="panel-recap">
               <span class="chev" aria-hidden="true"></span>
-              <span class="acc-title">8. 側記連結放在後台活動側記欄位</span>
+              <span class="acc-title">7. 側記連結放在側記欄位，不放內文超連結</span>
               <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
             </button>
           </h3>
@@ -574,7 +731,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
 
       <section id="votes">
         <h2>樣式投票</h2>
-        <p>下面每題選一個方向。投票記在你的姓名底下。</p>
+        <p>每題選一個方向，也可以寫意見。</p>
 
         <article class="item ask" data-kind="vote" data-item="q-info">
           <h3>
@@ -766,168 +923,1025 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
           </div>
         </article>
 
+        <article class="item ask" data-kind="vote" data-item="quote" data-pending="true">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-quote">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">5. 編按和引言都用框起來的格式，要不要寫「編按」、「引言」？</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-quote" hidden>
+            <p>兩種都使用左側有線的引言框，框後面不要再加橫線。這題還沒定案，請選框裡要不要保留「編按」、「引言」這類字眼。</p>
+            <div class="choices two">
+              <label class="choice">
+                <input type="radio" name="quote" value="with-label">
+                <span class="choice-head">使用「編按」、「引言」相關字眼</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-quote.jpg" width="720" height="304" alt="高雄 30 年城市轉型文首的引言框，框內仍有編按二字" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
+                </figure>
+              </label>
+              <label class="choice">
+                <input type="radio" name="quote" value="no-label">
+                <span class="choice-head">不使用「編按」、「引言」相關字眼</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-沒有編按.png" width="699" height="383" alt="引言框裡直接寫內容，沒有編按或引言字樣" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202608/4891" target="_blank" rel="noopener noreferrer">台灣如何從「與河爭地」走向「還地於河」？</a></figcaption>
+                </figure>
+              </label>
+            </div>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>兩種都是 blockquote，後面不要接 hr
+左邊框內保留「編按」或「引言」
+右邊框內直接寫內容，不要這些字眼</pre>
+            </details>
+          </div>
+        </article>
+
       </section>
     </main>
+    <div class="submit-dock">
+      <div class="wrap submit-inner">
+        <p class="submit-hint" id="submit-hint">已填 0 / 12，已送出 0 / 12。沒填完也可以先送出。</p>
+        <button type="button" id="submit-all">送出填答</button>
+      </div>
+    </div>
+    </div>
+
+    <div id="results-view" class="wrap" hidden>
+      <h1 id="results-title" tabindex="-1">投票結果</h1>
+      <div id="results-body"></div>
+      <button type="button" class="ghost-btn" id="back-to-form">回到填答</button>
+    </div>
+  </div>
+
+  <div id="confirm-modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title">還有題目沒填</h2>
+      <p id="modal-text"></p>
+      <ul id="modal-list"></ul>
+      <div class="modal-actions">
+        <button type="button" id="modal-back">回去補完</button>
+        <button type="button" id="modal-go">先送出已填的</button>
+      </div>
+    </div>
   </div>
 
   <script>
-    var storageKey = "cet-colleague-confirm-v2";
-    var people = {};
+    var storageKey = "cet-colleague-confirm-v3";
+    var legacyKey = "cet-colleague-confirm-v2";
+    var tokenKey = "cet-colleague-confirm-token";
+    var people = Object.create(null);
+    var drafts = Object.create(null);
+    var owners = Object.create(null);
+    var flagged = {};
     var currentName = "";
+    var selfName = "";
+    var usedNames = [];
+    var sending = false;
+    var replacedNotice = "";
+    var resultsToken = 0;
+    var voteColors = ["#1f7a4d", "#c47b32", "#2f6f8f", "#6b5b95"];
     var hasGas = typeof google !== "undefined" && google.script && google.script.run;
-    var commentTimer = null;
+    var remoteState = hasGas ? "loading" : "local";
 
-    function readStore() {
+    function parseStore(key) {
       try {
-        var data = JSON.parse(localStorage.getItem(storageKey) || "{}");
-        people = data.people || {};
-        return data.currentName || "";
+        return JSON.parse(localStorage.getItem(key) || "null");
       } catch (err) {
-        people = {};
-        return "";
+        return null;
       }
     }
 
-    function writeStore() {
-      localStorage.setItem(storageKey, JSON.stringify({ currentName: currentName, people: people }));
+    function blankAnswer() {
+      return { choice: "", comment: "", updatedAt: 0 };
     }
 
-    function ensure(name) {
-      if (!people[name]) people[name] = { styles: {}, votes: {} };
-      if (!people[name].styles) people[name].styles = {};
-      if (!people[name].votes) people[name].votes = {};
-      return people[name];
+    function isSafeName(name) {
+      return !!name && name !== "__proto__" && name !== "constructor" && name !== "prototype";
+    }
+
+    function getDeviceToken() {
+      var existing = localStorage.getItem(tokenKey) || "";
+      if (/^[A-Za-z0-9._~-]{16,80}$/.test(existing)) return existing;
+      var token = window.crypto && crypto.randomUUID
+        ? crypto.randomUUID()
+        : "cet-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 12);
+      localStorage.setItem(tokenKey, token);
+      return token;
+    }
+
+    function readableError(err, fallback) {
+      var message = String((err && (err.message || err)) || "");
+      var known = [
+        "缺少姓名",
+        "這個姓名無法使用",
+        "姓名請在 30 字以內",
+        "這個姓名已經有人使用",
+        "意見請在 1000 字以內",
+        "題目數量不正確",
+        "題目或選項不正確",
+        "沒有可送出的填答",
+        "試算表欄位與程式不符，請聯絡部署者",
+        "缺少這台電腦的憑證"
+      ];
+      for (var i = 0; i < known.length; i++) {
+        if (message.indexOf(known[i]) !== -1) return known[i];
+      }
+      return fallback;
+    }
+
+    function normVote(value) {
+      if (!value) return blankAnswer();
+      if (typeof value === "string") return { choice: value, comment: "", updatedAt: 0 };
+      return {
+        choice: value.choice || "",
+        comment: value.comment || "",
+        updatedAt: Number(value.updatedAt) || 0
+      };
+    }
+
+    function styleRow(person, item) {
+      var row = person && person.styles && person.styles[item];
+      return {
+        choice: (row && row.choice) || "",
+        comment: (row && row.comment) || "",
+        updatedAt: Number(row && row.updatedAt) || 0
+      };
+    }
+
+    function voteRow(person, item) {
+      return normVote(person && person.votes && person.votes[item]);
+    }
+
+    function rowOfPerson(person, article) {
+      if (article.dataset.kind === "style") return styleRow(person, article.dataset.item);
+      return voteRow(person, article.dataset.item);
+    }
+
+    function clonePerson(person) {
+      var next = { styles: Object.create(null), votes: Object.create(null) };
+      if (!person) return next;
+      Object.keys(person.styles || {}).forEach(function (item) {
+        var row = styleRow(person, item);
+        if (!row.choice && !String(row.comment || "").trim()) return;
+        next.styles[item] = row;
+      });
+      Object.keys(person.votes || {}).forEach(function (item) {
+        var row = voteRow(person, item);
+        if (!row.choice && !String(row.comment || "").trim()) return;
+        next.votes[item] = row;
+      });
+      return next;
+    }
+
+    function mapPeople(source) {
+      var next = Object.create(null);
+      Object.keys(source || {}).forEach(function (name) {
+        if (!isSafeName(name)) return;
+        next[name] = clonePerson(source[name]);
+      });
+      return next;
+    }
+
+    function mapOwners(source) {
+      var next = Object.create(null);
+      Object.keys(source || {}).forEach(function (name) {
+        if (!isSafeName(name)) return;
+        next[name] = source[name];
+      });
+      return next;
+    }
+
+    function readStore() {
+      var data = parseStore(storageKey);
+      if (!data) {
+        var legacy = parseStore(legacyKey);
+        if (legacy && legacy.people) {
+          data = {
+            currentName: legacy.currentName || "",
+            submittedPeople: legacy.people,
+            drafts: legacy.people,
+            flagged: {}
+          };
+        }
+      }
+      data = data || {};
+      people = mapPeople(data.submittedPeople || data.people);
+      drafts = mapPeople(data.drafts || data.submittedPeople || data.people);
+      flagged = data.flagged || {};
+      usedNames = [];
+      if (Array.isArray(data.usedNames)) {
+        data.usedNames.forEach(function (name) {
+          if (isSafeName(name) && usedNames.indexOf(name) === -1) usedNames.push(name);
+        });
+      } else {
+        Object.keys(drafts).forEach(function (name) {
+          if (name === data.currentName || isDirtyName(name)) usedNames.push(name);
+        });
+      }
+      if (isSafeName(data.currentName) && usedNames.indexOf(data.currentName) === -1) usedNames.push(data.currentName);
+      return data.currentName || "";
+    }
+
+    function writeStore() {
+      localStorage.setItem(storageKey, JSON.stringify({
+        currentName: currentName,
+        submittedPeople: people,
+        drafts: drafts,
+        flagged: flagged,
+        usedNames: usedNames
+      }));
+    }
+
+    function ensureDraft() {
+      if (!drafts[currentName]) drafts[currentName] = clonePerson(people[currentName]);
+      return drafts[currentName];
+    }
+
+    function allArticles() {
+      return Array.prototype.slice.call(document.querySelectorAll("#form-view article[data-item]"));
+    }
+
+    function sectionArticles(id) {
+      return Array.prototype.slice.call(document.querySelectorAll("#" + id + " article[data-item]"));
+    }
+
+    function signature(person, filledOnly) {
+      var lines = [];
+      allArticles().forEach(function (article) {
+        var row = rowOfPerson(person, article);
+        var comment = String(row.comment || "").trim();
+        if (filledOnly) {
+          if (!row.choice) return;
+        } else if (!row.choice && !comment) {
+          return;
+        }
+        lines.push(JSON.stringify([article.dataset.item, row.choice, comment]));
+      });
+      return lines.join("\n");
+    }
+
+    function isDirtyName(name) {
+      return signature(drafts[name], false) !== signature(people[name], false);
+    }
+
+    function personHasSubmitted(name) {
+      return signature(people[name], true).length > 0;
+    }
+
+    function sameAnswer(a, b) {
+      return (a.choice || "") === (b.choice || "") && String(a.comment || "").trim() === String(b.comment || "").trim();
+    }
+
+    function putRow(person, article, row) {
+      var bucket = article.dataset.kind === "vote" ? "votes" : "styles";
+      if (!row.choice && !String(row.comment || "").trim()) {
+        delete person[bucket][article.dataset.item];
+        return;
+      }
+      person[bucket][article.dataset.item] = {
+        choice: row.choice || "",
+        comment: row.comment || "",
+        updatedAt: Number(row.updatedAt) || 0
+      };
+    }
+
+    function mergePerson(draftPerson, oldPerson, serverPerson) {
+      var merged = clonePerson(serverPerson);
+      var replaced = false;
+      allArticles().forEach(function (article) {
+        var draftRow = rowOfPerson(draftPerson, article);
+        var oldRow = rowOfPerson(oldPerson, article);
+        var serverRow = rowOfPerson(serverPerson, article);
+        if (sameAnswer(draftRow, oldRow) || sameAnswer(draftRow, serverRow)) return;
+        if (sameAnswer(serverRow, oldRow)) {
+          putRow(merged, article, draftRow);
+          return;
+        }
+        replaced = true;
+      });
+      return { person: merged, replaced: replaced };
+    }
+
+    function applyRemote(remote) {
+      var pack = remote && remote.people ? remote : { people: remote || {}, selfName: "", owners: {} };
+      var incoming = mapPeople(pack.people);
+      var previous = people;
+      var previousDrafts = drafts;
+      var nextDrafts = Object.create(null);
+      var replaced = Object.create(null);
+      Object.keys(previousDrafts).forEach(function (name) {
+        if (!isSafeName(name) || (pack.owners && pack.owners[name] === "other")) return;
+        var usedHere = name === currentName || name === (pack.selfName || "") || usedNames.indexOf(name) !== -1;
+        if (!usedHere && !isDirtyName(name)) return;
+        if (!incoming[name] && name !== currentName && !isDirtyName(name)) return;
+        var merged = mergePerson(previousDrafts[name], previous[name], incoming[name]);
+        nextDrafts[name] = merged.person;
+        if (merged.replaced) replaced[name] = true;
+      });
+      var nextSelf = pack.selfName || "";
+      if (isSafeName(nextSelf) && !nextDrafts[nextSelf]) nextDrafts[nextSelf] = clonePerson(incoming[nextSelf]);
+      people = incoming;
+      owners = mapOwners(pack.owners);
+      selfName = isSafeName(nextSelf) ? nextSelf : "";
+      drafts = nextDrafts;
+      replacedNotice = currentName && replaced[currentName]
+        ? "有題目剛剛被更新，已改成最新內容，請確認後再送出"
+        : "";
+      writeStore();
+    }
+
+    function setGateStatus(text) {
+      var node = document.getElementById("gate-status");
+      node.hidden = !text;
+      node.textContent = text || "";
+    }
+
+    function setGateWaiting(waiting) {
+      document.querySelector("#gate-form .start").disabled = waiting;
+      setGateStatus(waiting ? "正在讀取已送出的填答" : "");
     }
 
     function setSaveState(text) {
       document.getElementById("save-state").textContent = text;
     }
 
-    function sectionArticles(id) {
-      return document.querySelectorAll("#" + id + " article[data-item]");
+    function updateSaveState() {
+      if (sending || !currentName) return;
+      if (replacedNotice) {
+        setSaveState(replacedNotice);
+        return;
+      }
+      var choiceDirty = signature(drafts[currentName], true) !== signature(people[currentName], true);
+      var extra = isDirtyName(currentName);
+      if (choiceDirty) setSaveState("有修改，尚未送出");
+      else if (extra) setSaveState("已送出。還沒作答的題目不會送出意見");
+      else if (personHasSubmitted(currentName)) setSaveState("已送出");
+      else setSaveState("尚未送出");
     }
 
-    function sectionDone(id) {
-      var person = people[currentName] || { styles: {}, votes: {} };
-      var done = 0;
-      sectionArticles(id).forEach(function (article) {
-        if (article.dataset.kind === "style") {
-          var row = person.styles && person.styles[article.dataset.item];
-          if (row && row.choice) done += 1;
-        } else if (person.votes && person.votes[article.dataset.item]) {
-          done += 1;
-        }
+    function countChoices(person) {
+      var styles = 0;
+      var votes = 0;
+      sectionArticles("styles").forEach(function (article) {
+        if (rowOfPerson(person, article).choice) styles += 1;
       });
-      return done;
-    }
-
-    function counts() {
-      return { styles: sectionDone("styles"), votes: sectionDone("votes") };
+      sectionArticles("votes").forEach(function (article) {
+        if (rowOfPerson(person, article).choice) votes += 1;
+      });
+      return { styles: styles, votes: votes };
     }
 
     function updateProgress() {
-      var done = counts();
+      var draft = currentName ? drafts[currentName] : null;
+      var done = countChoices(draft);
+      var sent = countChoices(currentName ? people[currentName] : null);
       var styleMax = sectionArticles("styles").length;
       var voteMax = sectionArticles("votes").length;
       var sum = done.styles + done.votes;
+      var sentSum = sent.styles + sent.votes;
       var max = styleMax + voteMax;
       document.getElementById("progress-text").textContent = "填答進度 " + sum + " / " + max;
-      document.getElementById("progress-split").textContent = "確認建議樣式 " + done.styles + " / " + styleMax + "，樣式投票 " + done.votes + " / " + voteMax;
+      document.getElementById("progress-split").textContent = "確認建議樣式 " + done.styles + " / " + styleMax + "，樣式投票 " + done.votes + " / " + voteMax + "。已送出 " + sentSum + " / " + max;
       document.getElementById("progress").setAttribute("aria-valuemax", String(max));
       document.getElementById("progress").setAttribute("aria-valuenow", String(sum));
       document.getElementById("progress-bar").style.width = (max ? (sum / max) * 100 : 0) + "%";
+      document.getElementById("submit-hint").textContent = "已填 " + sum + " / " + max + "，已送出 " + sentSum + " / " + max + "。沒填完也可以先送出。";
     }
 
     function pill(article, text, kind) {
       var node = article.querySelector(".pill");
       node.textContent = text;
-      node.classList.remove("done", "no");
+      node.classList.remove("done", "no", "wait", "miss");
       if (kind) node.classList.add(kind);
     }
 
+    function showMissing(article) {
+      if (!currentName) return false;
+      if (rowOfPerson(drafts[currentName], article).choice) return false;
+      return !!(flagged[currentName] || personHasSubmitted(currentName));
+    }
+
+    function sameAsSent(article) {
+      var now = rowOfPerson(drafts[currentName], article);
+      var sent = rowOfPerson(people[currentName], article);
+      return !!now.choice && now.choice === sent.choice && String(now.comment || "").trim() === String(sent.comment || "").trim();
+    }
+
+    function paintCommentState(article) {
+      var state = article.querySelector(".comment-state");
+      if (!state) return;
+      var row = rowOfPerson(drafts[currentName], article);
+      var comment = String(row.comment || "").trim();
+      if (!comment) {
+        state.textContent = "";
+        return;
+      }
+      if (!row.choice) {
+        state.textContent = "請先選好這題，意見才會和選擇一起送出。";
+        return;
+      }
+      if (sameAsSent(article)) state.textContent = "這則意見已送出。";
+      else state.textContent = "";
+    }
+
     function paintArticle(article) {
-      var person = people[currentName] || { styles: {}, votes: {} };
-      var item = article.dataset.item;
+      ensureDraft();
+      var row = rowOfPerson(drafts[currentName], article);
       if (article.dataset.kind === "style") {
-        var row = (person.styles && person.styles[item]) || { choice: "", comment: "" };
-        article.querySelectorAll(".btn").forEach(function (button) {
+        article.querySelectorAll(".btn.agree, .btn.disagree").forEach(function (button) {
           button.setAttribute("aria-pressed", button.dataset.choice === row.choice ? "true" : "false");
         });
-        var comment = article.querySelector(".comment");
-        if (comment) {
-          comment.hidden = row.choice !== "disagree";
-          comment.querySelector("textarea").value = row.comment || "";
-        }
-        if (row.choice === "agree") pill(article, "同意", "done");
-        else if (row.choice === "disagree") pill(article, "不同意", "no");
-        else pill(article, "未填", "");
       } else {
-        var value = person.votes && person.votes[item];
         article.querySelectorAll('input[type="radio"]').forEach(function (input) {
-          input.checked = input.value === value;
+          input.checked = input.value === row.choice;
         });
-        if (value) pill(article, "已投票", "done");
-        else if (article.dataset.pending === "true") pill(article, "待確認", "");
-        else pill(article, "未填", "");
       }
+      var area = article.querySelector("textarea");
+      if (area && area.value !== row.comment) area.value = row.comment;
+      var missing = showMissing(article);
+      article.classList.toggle("missing", missing);
+      var clearButton = article.querySelector(".clear-answer");
+      if (clearButton) clearButton.hidden = !row.choice;
+      if (!row.choice) pill(article, "未填", missing ? "miss" : "");
+      else if (article.dataset.kind === "style") {
+        var word = row.choice === "agree" ? "同意" : (row.choice === "disagree" ? "不同意" : "已選");
+        pill(article, word + (sameAsSent(article) ? " · 已送出" : " · 未送出"), sameAsSent(article) ? "done" : "wait");
+      } else if (sameAsSent(article)) {
+        pill(article, "已送出", "done");
+      } else {
+        pill(article, "已選 · 未送出", "wait");
+      }
+      paintCommentState(article);
     }
 
     function paintAll() {
-      document.querySelectorAll("article[data-item]").forEach(paintArticle);
+      if (!currentName) return;
+      allArticles().forEach(paintArticle);
       updateProgress();
+      updateSaveState();
     }
 
-    function saveRemote(item, kind, choice, comment) {
-      if (!hasGas) {
-        setSaveState("已存在這台電腦");
-        return;
-      }
-      setSaveState("正在儲存");
-      google.script.run
-        .withSuccessHandler(function () { setSaveState("已儲存"); })
-        .withFailureHandler(function () { setSaveState("這台電腦已記住，共用儲存沒成功"); })
-        .saveItem({ name: currentName, item: item, kind: kind, choice: choice, comment: comment || "" });
-    }
-
-    function saveStyle(article) {
+    function rememberComment(article, value) {
+      replacedNotice = "";
+      var draft = ensureDraft();
       var item = article.dataset.item;
-      var pressed = article.querySelector('.btn[aria-pressed="true"]');
-      var choice = pressed ? pressed.dataset.choice : "";
-      var comment = article.querySelector("textarea").value;
-      ensure(currentName).styles[item] = { choice: choice, comment: comment };
+      if (article.dataset.kind === "style") {
+        var row = styleRow(draft, item);
+        row.comment = value;
+        if (row.choice || String(row.comment).trim()) draft.styles[item] = row;
+        else delete draft.styles[item];
+      } else {
+        var vote = voteRow(draft, item);
+        vote.comment = value;
+        if (vote.choice || String(vote.comment).trim()) draft.votes[item] = vote;
+        else delete draft.votes[item];
+      }
+      writeStore();
+    }
+
+    function chooseStyle(article, choice) {
+      replacedNotice = "";
+      var draft = ensureDraft();
+      var row = styleRow(draft, article.dataset.item);
+      row.choice = choice;
+      draft.styles[article.dataset.item] = row;
       writeStore();
       paintArticle(article);
       updateProgress();
-      saveRemote(item, "style", choice, comment);
-      var box = article.querySelector(".opinions");
-      if (box && !box.hidden) renderOpinions(article);
+      updateSaveState();
     }
 
-    function renderOpinions(article) {
-      var box = article.querySelector(".opinions");
-      box.replaceChildren();
-      var item = article.dataset.item;
-      var found = false;
-      Object.keys(people).forEach(function (name) {
-        var row = people[name].styles && people[name].styles[item];
-        if (!row || row.choice !== "disagree" || !(row.comment || "").trim()) return;
-        found = true;
-        var card = document.createElement("div");
-        card.className = "opinion";
-        var who = document.createElement("p");
-        who.className = "opinion-name";
-        who.textContent = name;
-        var text = document.createElement("p");
-        text.className = "opinion-text";
-        text.textContent = row.comment.trim();
-        card.append(who, text);
-        box.appendChild(card);
+    function chooseVote(article, choice) {
+      replacedNotice = "";
+      var draft = ensureDraft();
+      var row = voteRow(draft, article.dataset.item);
+      row.choice = choice;
+      draft.votes[article.dataset.item] = row;
+      writeStore();
+      paintArticle(article);
+      updateProgress();
+      updateSaveState();
+    }
+
+    function flushComments() {
+      var draft = ensureDraft();
+      allArticles().forEach(function (article) {
+        var area = article.querySelector("textarea");
+        if (!area) return;
+        var item = article.dataset.item;
+        if (article.dataset.kind === "style") {
+          var row = styleRow(draft, item);
+          row.comment = area.value;
+          if (row.choice || String(row.comment).trim()) draft.styles[item] = row;
+          else delete draft.styles[item];
+        } else {
+          var vote = voteRow(draft, item);
+          vote.comment = area.value;
+          if (vote.choice || String(vote.comment).trim()) draft.votes[item] = vote;
+          else delete draft.votes[item];
+        }
       });
-      if (!found) {
-        var empty = document.createElement("p");
-        empty.textContent = "目前沒有人寫下不同意的意見。";
-        box.appendChild(empty);
+      writeStore();
+    }
+
+    function clearAnswer(article) {
+      replacedNotice = "";
+      var draft = ensureDraft();
+      var item = article.dataset.item;
+      if (article.dataset.kind === "style") delete draft.styles[item];
+      else delete draft.votes[item];
+      var area = article.querySelector("textarea");
+      if (area) area.value = "";
+      writeStore();
+      paintArticle(article);
+      updateProgress();
+      updateSaveState();
+    }
+
+    function missingArticles() {
+      return allArticles().filter(function (article) {
+        return !rowOfPerson(drafts[currentName], article).choice;
+      });
+    }
+
+    function collectItems() {
+      flushComments();
+      var items = [];
+      allArticles().forEach(function (article) {
+        var row = rowOfPerson(drafts[currentName], article);
+        var sent = rowOfPerson(people[currentName], article);
+        if (row.choice) {
+          items.push({
+            item: article.dataset.item,
+            kind: article.dataset.kind,
+            choice: row.choice,
+            comment: String(row.comment || "").trim(),
+            baseUpdatedAt: sent.updatedAt || 0
+          });
+          return;
+        }
+        if (sent.choice) {
+          items.push({
+            item: article.dataset.item,
+            kind: article.dataset.kind,
+            clear: true,
+            baseUpdatedAt: sent.updatedAt || 0
+          });
+        }
+      });
+      return items;
+    }
+
+    function storeSent(items) {
+      if (!people[currentName]) people[currentName] = { styles: Object.create(null), votes: Object.create(null) };
+      var person = people[currentName];
+      var now = Date.now();
+      items.forEach(function (item) {
+        var bucket = item.kind === "vote" ? "votes" : "styles";
+        if (item.clear) {
+          delete person[bucket][item.item];
+          return;
+        }
+        person[bucket][item.item] = { choice: item.choice, comment: item.comment, updatedAt: now };
+      });
+      people[currentName] = clonePerson(person);
+    }
+
+    function setSending(active) {
+      sending = active;
+      var button = document.getElementById("submit-all");
+      button.disabled = active;
+      button.textContent = active ? "正在送出" : "送出填答";
+    }
+
+    function finishSend(items) {
+      replacedNotice = "";
+      storeSent(items);
+      if (!missingArticles().length) flagged[currentName] = false;
+      setSending(false);
+      writeStore();
+      paintAll();
+      updateResultsTab();
+      showResults();
+    }
+
+    function conflictText(ids) {
+      var titles = [];
+      allArticles().forEach(function (article) {
+        if (ids.indexOf(article.dataset.item) === -1) return;
+        titles.push(article.querySelector(".acc-title").textContent.trim());
+      });
+      if (!titles.length) return "有題目剛剛被更新，已改成最新內容，請確認後再送出";
+      return "已改成最新內容：" + titles.join("、") + "。請確認後再送出";
+    }
+
+    function sendItems(items) {
+      if (!items.length || sending) return;
+      if (hasGas && remoteState !== "ready") {
+        setSaveState(remoteState === "loading"
+          ? "正在讀取已送出的填答，請稍候再送出"
+          : "沒有讀到共用結果，請重新整理頁面後再送出");
+        return;
       }
+      setSending(true);
+      setSaveState("正在送出");
+      if (!hasGas) {
+        finishSend(items);
+        return;
+      }
+      google.script.run
+        .withSuccessHandler(function (result) {
+          if (result && result.ok === false) {
+            applyRemote(result);
+            replacedNotice = conflictText(result.conflicts || []);
+            setSending(false);
+            paintAll();
+            updateResultsTab();
+            return;
+          }
+          if (result && result.people) {
+            applyRemote(result);
+            if (!missingArticles().length) flagged[currentName] = false;
+            setSending(false);
+            writeStore();
+            paintAll();
+            updateResultsTab();
+            showResults();
+            return;
+          }
+          finishSend(items);
+        })
+        .withFailureHandler(function (err) {
+          setSending(false);
+          setSaveState(readableError(err, "送出沒成功，這台電腦還留著，請再按一次"));
+        })
+        .saveBatch({ name: currentName, token: getDeviceToken(), items: items });
+    }
+
+    function openArticle(article) {
+      var button = article.querySelector(".acc");
+      var panel = document.getElementById(button.getAttribute("aria-controls"));
+      button.setAttribute("aria-expanded", "true");
+      panel.hidden = false;
+      button.querySelector(".acc-hint").textContent = "收合";
+    }
+
+    function openModal(missing, canSend) {
+      var title = document.getElementById("modal-title");
+      var text = document.getElementById("modal-text");
+      var list = document.getElementById("modal-list");
+      var back = document.getElementById("modal-back");
+      var go = document.getElementById("modal-go");
+      list.replaceChildren();
+      missing.forEach(function (article) {
+        var li = document.createElement("li");
+        li.textContent = article.querySelector(".acc-title").textContent.trim();
+        list.appendChild(li);
+      });
+      if (!canSend) {
+        title.textContent = "還沒有可以送出的題目";
+        text.textContent = "請至少先填一題。紅底是還沒填的題目。";
+        back.textContent = "回去填答";
+        go.hidden = true;
+      } else {
+        title.textContent = "還有 " + missing.length + " 題沒填";
+        text.textContent = "紅底是還沒填的題目。已填的可以先送出。下次用同一個名字進來，沒填的題目仍是紅底。";
+        back.textContent = "回去補完";
+        go.hidden = false;
+      }
+      document.getElementById("confirm-modal").hidden = false;
+      back.focus();
+    }
+
+    function closeModal() {
+      document.getElementById("confirm-modal").hidden = true;
+    }
+
+    function requestSubmit() {
+      if (sending || !currentName) return;
+      if (hasGas && remoteState !== "ready") {
+        setSaveState(remoteState === "loading"
+          ? "正在讀取已送出的填答，請稍候再送出"
+          : "沒有讀到共用結果，請重新整理頁面後再送出");
+        return;
+      }
+      flushComments();
+      var missing = missingArticles();
+      var items = collectItems();
+      if (missing.length) {
+        flagged[currentName] = true;
+        writeStore();
+        paintAll();
+        openArticle(missing[0]);
+        missing[0].scrollIntoView({ behavior: "smooth", block: "center" });
+        openModal(missing, items.length > 0);
+        return;
+      }
+      sendItems(items);
+    }
+
+    function optionList(article) {
+      if (article.dataset.kind === "style") {
+        return [
+          { value: "agree", label: "同意", color: "#1f7a4d" },
+          { value: "disagree", label: "不同意", color: "#c47b32" }
+        ];
+      }
+      var options = [];
+      article.querySelectorAll(".choice").forEach(function (label, index) {
+        var input = label.querySelector("input");
+        var head = label.querySelector(".choice-head");
+        if (!input) return;
+        options.push({
+          value: input.value,
+          label: head ? head.textContent.trim() : input.value,
+          color: voteColors[index % voteColors.length]
+        });
+      });
+      return options;
+    }
+
+    function answersFor(article) {
+      var list = [];
+      Object.keys(people).forEach(function (name) {
+        var row = rowOfPerson(people[name], article);
+        if (!row.choice) return;
+        list.push({ name: name, choice: row.choice, comment: String(row.comment || "").trim() });
+      });
+      list.sort(function (a, b) { return a.name.localeCompare(b.name, "zh-Hant"); });
+      return list;
+    }
+
+    function chipRow(names, partial) {
+      var row = document.createElement("div");
+      row.className = "people-row";
+      names.forEach(function (name) {
+        var chip = document.createElement("div");
+        chip.className = "person-chip" + (partial ? " partial" : "");
+        var avatar = document.createElement("span");
+        avatar.className = "avatar";
+        avatar.setAttribute("aria-hidden", "true");
+        avatar.textContent = name.slice(0, 1);
+        var text = document.createElement("span");
+        text.textContent = partial ? name : name + " · 已填完";
+        chip.append(avatar, text);
+        row.appendChild(chip);
+      });
+      return row;
+    }
+
+    function renderResultCard(article) {
+      var card = document.createElement("div");
+      card.className = "result-card";
+      var title = document.createElement("h3");
+      title.textContent = article.querySelector(".acc-title").textContent.trim();
+      card.appendChild(title);
+      var options = optionList(article);
+      var answers = answersFor(article);
+      var counts = {};
+      options.forEach(function (opt) { counts[opt.value] = 0; });
+      answers.forEach(function (answer) {
+        if (!Object.prototype.hasOwnProperty.call(counts, answer.choice)) {
+          options.push({ value: answer.choice, label: answer.choice, color: "#5c6b63" });
+          counts[answer.choice] = 0;
+        }
+        counts[answer.choice] += 1;
+      });
+      var total = answers.length;
+      var max = 0;
+      options.forEach(function (opt) {
+        if (counts[opt.value] > max) max = counts[opt.value];
+      });
+      var leaders = options.filter(function (opt) { return max > 0 && counts[opt.value] === max; });
+      var banner = document.createElement("p");
+      banner.className = "winner-banner";
+      if (!total) {
+        banner.classList.add("empty");
+        banner.textContent = "這題還沒有人送出。";
+      } else if (leaders.length === 1) {
+        banner.textContent = "目前勝出：" + leaders[0].label + "（" + max + " 票，共 " + total + " 人送出這題）";
+      } else {
+        banner.classList.add("tie");
+        banner.textContent = "目前平手：" + leaders.map(function (opt) { return opt.label; }).join("、") + "，各 " + max + " 票";
+      }
+      card.appendChild(banner);
+      if (total) {
+        var stack = document.createElement("div");
+        stack.className = "stack";
+        stack.setAttribute("role", "img");
+        stack.setAttribute("aria-label", options.map(function (opt) {
+          return opt.label + " " + counts[opt.value] + " 票";
+        }).join("，"));
+        options.forEach(function (opt) {
+          if (!counts[opt.value]) return;
+          var seg = document.createElement("span");
+          seg.style.flex = counts[opt.value] + " 1 0";
+          seg.style.background = opt.color;
+          stack.appendChild(seg);
+        });
+        card.appendChild(stack);
+        var legend = document.createElement("div");
+        legend.className = "legend";
+        options.forEach(function (opt) {
+          var line = document.createElement("div");
+          line.className = "legend-row";
+          var name = document.createElement("span");
+          name.className = "legend-name";
+          var swatch = document.createElement("span");
+          swatch.className = "swatch";
+          swatch.style.background = opt.color;
+          swatch.setAttribute("aria-hidden", "true");
+          name.appendChild(swatch);
+          name.append(opt.label);
+          if (max > 0 && counts[opt.value] === max) {
+            var tag = document.createElement("span");
+            tag.className = "win-tag";
+            tag.textContent = leaders.length === 1 ? "勝出" : "平手";
+            name.appendChild(tag);
+          }
+          var count = document.createElement("span");
+          count.className = "legend-count";
+          count.textContent = counts[opt.value] + " 票";
+          line.append(name, count);
+          legend.appendChild(line);
+        });
+        card.appendChild(legend);
+      }
+      var mine = currentName ? rowOfPerson(people[currentName], article).choice : "";
+      if (!mine && total) {
+        var you = document.createElement("p");
+        you.className = "comment-state";
+        you.textContent = "你還沒送出這題。";
+        card.appendChild(you);
+      }
+      var commented = answers.filter(function (answer) { return answer.comment; });
+      if (total && !commented.length) {
+        var none = document.createElement("p");
+        none.className = "comment-state";
+        none.textContent = "這題目前沒有人寫意見。";
+        card.appendChild(none);
+      }
+      options.forEach(function (opt) {
+        var rows = commented.filter(function (answer) { return answer.choice === opt.value; });
+        if (!rows.length) return;
+        var heading = document.createElement("p");
+        heading.className = "opinion-heading";
+        heading.textContent = opt.label + "的意見";
+        card.appendChild(heading);
+        rows.forEach(function (answer) {
+          var opinion = document.createElement("div");
+          opinion.className = "opinion";
+          var who = document.createElement("p");
+          who.className = "opinion-name";
+          who.textContent = answer.name;
+          var text = document.createElement("p");
+          text.className = "opinion-text";
+          text.textContent = answer.comment;
+          opinion.append(who, text);
+          card.appendChild(opinion);
+        });
+      });
+      return card;
+    }
+
+    function renderGroup(title, articles) {
+      var section = document.createElement("section");
+      section.className = "result-block";
+      var heading = document.createElement("h2");
+      heading.textContent = title;
+      section.appendChild(heading);
+      articles.forEach(function (article) {
+        section.appendChild(renderResultCard(article));
+      });
+      return section;
+    }
+
+    function renderResults() {
+      var body = document.getElementById("results-body");
+      body.replaceChildren();
+      var articles = allArticles();
+      var complete = [];
+      var partial = [];
+      Object.keys(people).forEach(function (name) {
+        var count = countChoices(people[name]);
+        var sum = count.styles + count.votes;
+        if (sum === articles.length) complete.push(name);
+        else if (sum > 0) partial.push(name);
+      });
+      var sortName = function (a, b) { return a.localeCompare(b, "zh-Hant"); };
+      complete.sort(sortName);
+      partial.sort(sortName);
+      var hero = document.createElement("section");
+      hero.className = "result-block";
+      var heading = document.createElement("h2");
+      heading.textContent = "已完整填答";
+      var summary = document.createElement("p");
+      summary.textContent = complete.length
+        ? complete.length + " 人已填完所有 " + articles.length + " 題。"
+        : "還沒有人填完所有題目。";
+      hero.append(heading, summary);
+      if (complete.length) hero.appendChild(chipRow(complete, false));
+      if (partial.length) {
+        var partialText = document.createElement("p");
+        partialText.textContent = "已送出、但還沒填完的有 " + partial.length + " 人。他們有送出的題目仍會計入下面的勝出。";
+        hero.appendChild(partialText);
+        hero.appendChild(chipRow(partial, true));
+      }
+      var note = document.createElement("p");
+      note.textContent = "每一題的勝出，是照目前已送出的人計算。";
+      hero.appendChild(note);
+      var mineMissing = currentName ? missingArticles().length : 0;
+      if (mineMissing && personHasSubmitted(currentName)) {
+        var mine = document.createElement("p");
+        mine.textContent = "你還有 " + mineMissing + " 題沒填，那些題目在填答頁是紅底。";
+        hero.appendChild(mine);
+      }
+      body.appendChild(hero);
+      body.appendChild(renderGroup("確認建議樣式", sectionArticles("styles")));
+      body.appendChild(renderGroup("樣式投票", sectionArticles("votes")));
+    }
+
+    function refreshResults() {
+      resultsToken += 1;
+      var token = resultsToken;
+      renderResults();
+      if (!hasGas) return;
+      google.script.run
+        .withSuccessHandler(function (remote) {
+          if (token !== resultsToken) return;
+          applyRemote(remote);
+          renderResults();
+          paintAll();
+          updateResultsTab();
+        })
+        .withFailureHandler(function (err) {
+          if (token !== resultsToken) return;
+          var note = document.createElement("p");
+          note.textContent = readableError(err, "剛剛沒有讀到最新結果，下面是這台電腦上次看到的內容。");
+          document.getElementById("results-body").prepend(note);
+        })
+        .loadAll(getDeviceToken());
+    }
+
+    function updateResultsTab() {
+      var tab = document.getElementById("tab-results");
+      var show = !!(currentName && personHasSubmitted(currentName));
+      tab.hidden = !show;
+      if (!show && tab.getAttribute("aria-selected") === "true") showForm();
+    }
+
+    function showForm() {
+      document.getElementById("form-view").hidden = false;
+      document.getElementById("results-view").hidden = true;
+      document.getElementById("tab-form").setAttribute("aria-selected", "true");
+      document.getElementById("tab-results").setAttribute("aria-selected", "false");
+    }
+
+    function showResults() {
+      if (!personHasSubmitted(currentName)) return;
+      document.getElementById("form-view").hidden = true;
+      document.getElementById("results-view").hidden = false;
+      document.getElementById("tab-form").setAttribute("aria-selected", "false");
+      document.getElementById("tab-results").setAttribute("aria-selected", "true");
+      document.getElementById("results-title").focus();
+      refreshResults();
+    }
+
+    function placeBeforeTech(panel, node) {
+      var tech = panel.querySelector(".tech");
+      if (tech) tech.before(node);
+      else panel.appendChild(node);
+    }
+
+    function addOpinion(article) {
+      var box = document.createElement("div");
+      box.className = "comment";
+      var label = document.createElement("p");
+      label.className = "comment-label";
+      label.id = "opinion-label-" + article.dataset.item;
+      label.textContent = "你的意見";
+      var actions = document.createElement("div");
+      actions.className = "comment-actions";
+      var area = document.createElement("textarea");
+      area.rows = 3;
+      area.maxLength = 1000;
+      area.setAttribute("aria-labelledby", label.id);
+      area.placeholder = "可略，會和這題一起按下方「送出填答」。";
+      area.addEventListener("input", function () {
+        rememberComment(article, area.value);
+        paintCommentState(article);
+        updateSaveState();
+      });
+      var state = document.createElement("p");
+      state.className = "comment-state";
+      state.setAttribute("aria-live", "polite");
+      actions.appendChild(area);
+      box.append(label, actions, state);
+      placeBeforeTech(article.querySelector(".panel"), box);
     }
 
     function addStyleControls(article) {
@@ -941,56 +1955,38 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
         button.textContent = choice === "agree" ? "同意" : "不同意";
         button.setAttribute("aria-pressed", "false");
         button.addEventListener("click", function () {
-          article.querySelectorAll(".btn").forEach(function (other) {
-            other.setAttribute("aria-pressed", other === button ? "true" : "false");
-          });
-          saveStyle(article);
-          if (choice === "disagree") article.querySelector("textarea").focus();
+          chooseStyle(article, choice);
         });
         actions.appendChild(button);
       });
-      var label = document.createElement("label");
-      label.className = "comment";
-      label.hidden = true;
-      label.append("你的意見");
-      var area = document.createElement("textarea");
-      area.rows = 3;
-      area.addEventListener("input", function () {
-        clearTimeout(commentTimer);
-        commentTimer = setTimeout(function () { saveStyle(article); }, 400);
+      placeBeforeTech(article.querySelector(".panel"), actions);
+      addOpinion(article);
+      addClearControl(article);
+    }
+
+    function addClearControl(article) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "text-btn clear-answer";
+      button.textContent = "清除選擇";
+      button.hidden = true;
+      button.addEventListener("click", function () {
+        clearAnswer(article);
       });
-      label.appendChild(area);
-      var see = document.createElement("button");
-      see.type = "button";
-      see.className = "see";
-      see.textContent = "看大家意見";
-      see.setAttribute("aria-expanded", "false");
-      var opinions = document.createElement("div");
-      opinions.className = "opinions";
-      opinions.hidden = true;
-      see.addEventListener("click", function () {
-        var open = opinions.hidden;
-        opinions.hidden = !open;
-        see.setAttribute("aria-expanded", open ? "true" : "false");
-        see.textContent = open ? "收合大家意見" : "看大家意見";
-        if (open) renderOpinions(article);
-      });
-      var panel = article.querySelector(".panel");
-      var tech = panel.querySelector(".tech");
-      if (tech) tech.before(actions, label, see, opinions);
-      else panel.append(actions, label, see, opinions);
+      var anchor = article.querySelector(".yn") || article.querySelector(".choices");
+      if (anchor) anchor.after(button);
     }
 
     function bindVotes() {
-      document.querySelectorAll('article[data-kind="vote"] input[type="radio"]').forEach(function (input) {
-        input.addEventListener("change", function () {
-          if (!input.checked) return;
-          ensure(currentName).votes[input.name] = input.value;
-          writeStore();
-          paintArticle(input.closest("article"));
-          updateProgress();
-          saveRemote(input.name, "vote", input.value, "");
+      document.querySelectorAll('#votes article[data-kind="vote"]').forEach(function (article) {
+        article.querySelectorAll('input[type="radio"]').forEach(function (input) {
+          input.addEventListener("change", function () {
+            if (!input.checked) return;
+            chooseVote(article, input.value);
+          });
         });
+        addOpinion(article);
+        addClearControl(article);
       });
     }
 
@@ -1006,11 +2002,21 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
       });
     }
 
+    function knownNames() {
+      var seen = Object.create(null);
+      usedNames.forEach(function (name) {
+        if (!isSafeName(name) || owners[name] === "other") return;
+        seen[name] = true;
+      });
+      if (isSafeName(selfName) && owners[selfName] !== "other") seen[selfName] = true;
+      return Object.keys(seen).sort(function (a, b) { return a.localeCompare(b, "zh-Hant"); });
+    }
+
     function renderNamePicks() {
       var box = document.getElementById("name-picks");
       var label = document.getElementById("known-label");
       box.replaceChildren();
-      var names = Object.keys(people);
+      var names = knownNames();
       label.hidden = names.length === 0;
       names.forEach(function (name) {
         var button = document.createElement("button");
@@ -1030,17 +2036,21 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
 
     function enter(name) {
       currentName = name;
-      ensure(name);
+      if (usedNames.indexOf(name) === -1) usedNames.push(name);
+      if (!drafts[name]) drafts[name] = clonePerson(people[name]);
       writeStore();
       document.getElementById("who").textContent = "你正在以「" + name + "」填答";
       document.getElementById("gate").hidden = true;
       document.getElementById("app").hidden = false;
+      showForm();
       paintAll();
+      updateResultsTab();
     }
 
     function showGate() {
       document.getElementById("app").hidden = true;
       document.getElementById("gate").hidden = false;
+      closeModal();
       renderNamePicks();
       document.getElementById("name-input").value = currentName || "";
       document.getElementById("name-input").focus();
@@ -1050,7 +2060,28 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
       event.preventDefault();
       var name = document.getElementById("name-input").value.trim();
       var error = document.getElementById("name-error");
+      if (remoteState === "loading") {
+        error.textContent = "正在讀取已送出的填答，請稍候再開始。";
+        error.hidden = false;
+        return;
+      }
       if (!name) {
+        error.textContent = "請先填寫姓名。同一個人請每次都用同一個名字。";
+        error.hidden = false;
+        return;
+      }
+      if (name.length > 30) {
+        error.textContent = "姓名請在 30 字以內。";
+        error.hidden = false;
+        return;
+      }
+      if (!isSafeName(name)) {
+        error.textContent = "這個姓名無法使用。";
+        error.hidden = false;
+        return;
+      }
+      if (owners[name] === "other") {
+        error.textContent = "這個姓名已經有人使用。若是你自己的姓名，請用原來的 Google 帳號或原來的那台瀏覽器。";
         error.hidden = false;
         return;
       }
@@ -1058,8 +2089,27 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
       enter(name);
     });
 
-    document.getElementById("switch-name").addEventListener("click", function () {
-      showGate();
+    document.getElementById("switch-name").addEventListener("click", showGate);
+    document.getElementById("tab-form").addEventListener("click", showForm);
+    document.getElementById("tab-results").addEventListener("click", showResults);
+    document.getElementById("back-to-form").addEventListener("click", showForm);
+    document.getElementById("submit-all").addEventListener("click", requestSubmit);
+    document.getElementById("modal-back").addEventListener("click", function () {
+      closeModal();
+      var missing = currentName ? missingArticles() : [];
+      if (missing[0]) missing[0].scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+    document.getElementById("modal-go").addEventListener("click", function () {
+      closeModal();
+      sendItems(collectItems());
+    });
+    document.getElementById("confirm-modal").addEventListener("click", function (event) {
+      if (event.target === event.currentTarget) document.getElementById("modal-back").click();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      if (document.getElementById("confirm-modal").hidden) return;
+      document.getElementById("modal-back").click();
     });
 
     document.querySelectorAll('#styles article[data-kind="style"]').forEach(addStyleControls);
@@ -1069,14 +2119,28 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
     renderNamePicks();
     if (currentName) document.getElementById("name-input").value = currentName;
     if (hasGas) {
-      document.getElementById("local-note").hidden = true;
-      google.script.run.withSuccessHandler(function (remote) {
-        people = remote || {};
-        if (currentName) ensure(currentName);
-        writeStore();
-        renderNamePicks();
-        if (!document.getElementById("app").hidden) paintAll();
-      }).loadAll();
+      setGateWaiting(true);
+      google.script.run
+        .withSuccessHandler(function (remote) {
+          remoteState = "ready";
+          setGateWaiting(false);
+          document.getElementById("local-note").hidden = true;
+          applyRemote(remote);
+          renderNamePicks();
+          var input = document.getElementById("name-input");
+          if (selfName && !input.value.trim()) input.value = selfName;
+          if (!document.getElementById("app").hidden) {
+            paintAll();
+            updateResultsTab();
+          }
+        })
+        .withFailureHandler(function (err) {
+          remoteState = "error";
+          setGateWaiting(false);
+          document.getElementById("local-note").hidden = false;
+          document.getElementById("local-note").textContent = readableError(err, "沒有讀到共用結果，請重新整理頁面後再送出。這台電腦的填答還留著。");
+        })
+        .loadAll(getDeviceToken());
     }
   </script>
 </body>
