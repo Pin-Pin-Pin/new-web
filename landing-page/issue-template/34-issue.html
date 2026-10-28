@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<style>Microsoft Teams
+<style>
 
 
 
@@ -168,6 +168,8 @@ body {
 
 .issue-page {
   background: #efefef;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .issue-page img {
@@ -235,8 +237,8 @@ body {
 
 .issue-page .container {
   max-width: 1200px;
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .issue-page .container-fluid {
@@ -320,9 +322,10 @@ body {
 }
 
 .issue-page .row {
-  --bs-gutter-x: 20px;
+  --bs-gutter-x: 30px;
   --bs-gutter-y: 0;
   margin-bottom: 0;
+  max-width: 100%;
 }
 
 .issue-page [class*="col-"] {
@@ -419,6 +422,15 @@ body {
   .issue-page h3,
   .issue-page h4 {
     word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .issue-page .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    --bs-gutter-x: 16px;
   }
 
   .issue-page .row > [class*="col-"][style*="margin-left"] {
@@ -427,6 +439,35 @@ body {
     width: 100%;
     max-width: 100%;
     flex: 1 1 100%;
+  }
+
+  #gbaf8ucbtn {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  #issue-hero [style*="white-space: nowrap"],
+  #issue-hero [style*="white-space:nowrap"] {
+    white-space: normal;
+  }
+
+  #issue-hero h3,
+  #issue-hero h4,
+  .issue-page .az-text h2[style*="text-align: center"],
+  .issue-page .az-text h3[style*="text-align: center"],
+  .issue-page .az-text h4[style*="text-align: center"] {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .issue-page h3 [style*="font-size:48px"],
+  .issue-page h3 [style*="font-size: 48px"] {
+    font-size: 1.75rem !important;
+  }
+
+  .issue-page h3 [style*="font-size:36px"],
+  .issue-page h3 [style*="font-size: 36px"] {
+    font-size: 1.5rem !important;
   }
 }
 
@@ -592,6 +633,46 @@ body {
   word-break: break-word;
 }
 
+.issue-page .issue-events-wrap {
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.issue-page .issue-events-table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: auto;
+}
+
+.issue-page .issue-events-table td:first-child {
+  width: 1%;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  vertical-align: top;
+  padding-left: 0;
+  padding-right: 12px;
+}
+
+.issue-page .issue-events-table td:last-child {
+  width: 99%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 575px) {
+  .issue-page .issue-events-wrap {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .issue-page .issue-events-table td:first-child {
+    padding-right: 8px;
+  }
+}
+
 #issue-hero h3,
 #issue-hero h3 span {
   font-size: 2.5rem !important;
@@ -667,7 +748,7 @@ body {
 	<div class="az-ctnr container-fluid" data-azcnt="true">
 		<div class="az-element az-text" data-az-id="gbmwifrf11" data-azb="az_text" data-azcnt="true" style="">
 			<div id="issue-hero">
-				<h3><strong><span style="color:#7cac54;">農地裡的</span><span style="color:#d8d8d8;">違章工廠</span></strong></h3>
+				<h3 style="text-align:center"><strong><span style="color:#7cac54;">農地裡的</span><span style="color:#d8d8d8;white-space: nowrap;">違章工廠</span></strong></h3>
 				<h4><strong><span style="color:#7cac54;">借鏡日本　看見台灣</span></strong></h4>
 			</div>
 		</div>
@@ -840,8 +921,8 @@ body {
 			<h3 style="text-align: center;"><span style="font-size:48px;"><span style="color:#ffffff;text-shadow: 2px 2px #111;"><strong>〈台灣農地違章工廠〉重大事件</strong></span></span></h3></div></div></div>
 <div class="az-element az-section" data-az-id="gbumgtpcsc" data-azat-style="padding-top:5%;padding-bottom:5%;" data-azb="az_section" id="gbumgtpcsc" style="padding-top:5%;padding-bottom:5%;">
 	<div class="az-ctnr container" data-azcnt="true">
-		<div class="az-element az-text" data-az-id="gbo9l1xoyi" data-azat-style="padding-left:10%;padding-right:10%;" data-azb="az_text" data-azcnt="true" style="padding-left:10%;padding-right:10%;">
-			<table align="center" border="0" cellpadding="8" cellspacing="2" style="width:100%;">
+		<div class="az-element az-text issue-events-wrap" data-az-id="gbo9l1xoyi" data-azat-style="padding-left:10%;padding-right:10%;" data-azb="az_text" data-azcnt="true" style="padding-left:10%;padding-right:10%;">
+			<table class="issue-events-table" align="center" border="0" cellpadding="8" cellspacing="2" style="width:100%;">
 				<tbody>
 					<tr>
 						<td>1972年</td>
