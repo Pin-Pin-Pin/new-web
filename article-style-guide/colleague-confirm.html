@@ -292,12 +292,12 @@
     <form id="gate-form" class="gate-card">
       <p class="eyebrow">地球公民基金會 · 新官網</p>
       <h1>請先選擇你的姓名</h1>
-      <p>同意、不同意、意見和投票都會記在這個姓名底下。下次用同一個名字進來，會看到自己上次按過的內容，不會改到其他人的按鈕。</p>
+      <p>同意、不同意、意見和投票都會記在這個姓名底下。</p>
       <p id="known-label" hidden>這台電腦出現過的姓名：</p>
       <div id="name-picks" class="name-picks"></div>
       <label class="name-label" for="name-input">姓名</label>
       <input id="name-input" name="name" autocomplete="name" maxlength="30" required>
-      <p id="name-error" class="name-error" hidden>請先填寫姓名。同一個人請每次都用同一個名字。</p>
+      <p id="name-error" class="name-error" hidden>請填寫姓名。</p>
       <button class="start" type="submit">開始填答</button>
     </form>
   </div>
@@ -352,7 +352,7 @@
           <h3>
             <button type="button" class="acc" aria-expanded="false" aria-controls="panel-list">
               <span class="chev" aria-hidden="true"></span>
-              <span class="acc-title">1. 有好幾筆時，用清單</span>
+              <span class="acc-title">1. 條列式資料使用清單格式</span>
               <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
             </button>
           </h3>
@@ -445,39 +445,27 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
           </div>
         </article>
 
-        <article class="item ask" data-kind="vote" data-item="quote" data-pending="true">
+        <article class="item" data-kind="style" data-item="quote">
           <h3>
             <button type="button" class="acc" aria-expanded="false" aria-controls="panel-quote">
               <span class="chev" aria-hidden="true"></span>
-              <span class="acc-title">5. 編按和引言都用框起來的格式，要不要寫「編按」、「引言」？</span>
-              <span class="acc-meta"><span class="pill">待確認</span><span class="acc-hint">展開</span></span>
+              <span class="acc-title">5. 編按和引言使用引言格式</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
             </button>
           </h3>
           <div class="panel" id="panel-quote" hidden>
-            <p>兩種都使用左側有線的引言框，框後面不要再加橫線。這題還沒定案，請選框裡要不要保留「編按」、「引言」這類字眼。</p>
-            <div class="choices two">
-              <label class="choice">
-                <input type="radio" name="quote" value="with-label">
-                <span class="choice-head">使用「編按」、「引言」相關字眼</span>
-                <figure class="shot">
-                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-quote.jpg" width="720" height="304" alt="高雄 30 年城市轉型文首的引言框，框內仍有編按二字" loading="lazy" decoding="async">
-                  <figcaption><a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
-                </figure>
-              </label>
-              <label class="choice">
-                <input type="radio" name="quote" value="no-label">
-                <span class="choice-head">不使用「編按」、「引言」相關字眼</span>
-                <figure class="shot">
-                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-沒有編按.png" width="699" height="383" alt="引言框裡直接寫內容，沒有編按或引言字樣" loading="lazy" decoding="async">
-                  <figcaption><a href="https://www.cet-taiwan.org/story/202608/4891" target="_blank" rel="noopener noreferrer">台灣如何從「與河爭地」走向「還地於河」？</a></figcaption>
-                </figure>
-              </label>
-            </div>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-quote.jpg" width="720" height="304" alt="高雄 30 年城市轉型文首使用左側有線的引言框" loading="lazy" decoding="async">
+              <figcaption>使用引言格式：<a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261028-01.png" alt="編按寫成一般段落，沒有左側引言框" loading="lazy" decoding="async">
+              <figcaption>不使用引言格式：<a href="https://www.cet-taiwan.org/story/202309/4362" target="_blank" rel="noopener noreferrer">「綠能發展區」引發農地轉用疑慮，光電選址需兼顧國土計畫</a></figcaption>
+            </figure>
             <details class="tech">
               <summary>網頁前端細節(可略)</summary>
-              <pre>兩種都是 blockquote，後面不要接 hr
-左邊框內保留「編按」或「引言」
-右邊框內直接寫內容，不要這些字眼</pre>
+              <pre>使用引言格式：blockquote
+不使用：編按寫成一般段落或小標，不要包 blockquote</pre>
             </details>
           </div>
         </article>
@@ -730,7 +718,45 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
           </div>
         </article>
 
-        <article class="item ask" data-kind="vote" data-item="q-more">
+        <article class="item ask" data-kind="vote" data-item="q-quote-label">
+          <h3>
+            <button type="button" class="acc" aria-expanded="false" aria-controls="panel-q-quote-label">
+              <span class="chev" aria-hidden="true"></span>
+              <span class="acc-title">4. 編按和引言是否需要寫「編按」、「引言」二字</span>
+              <span class="acc-meta"><span class="pill">未填</span><span class="acc-hint">展開</span></span>
+            </button>
+          </h3>
+          <div class="panel" id="panel-q-quote-label" hidden>
+            <p class="where"><span class="tag tag-where">三種文章都可能遇到</span></p>
+            <p>兩種都是左側有線的引言框。這題只決定框裡要不要寫「編按」或「引言」。</p>
+            <div class="choices two">
+              <label class="choice">
+                <input type="radio" name="q-quote-label" value="with-label">
+                <span class="choice-head">使用「編按」、「引言」相關字眼</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-quote.jpg" width="720" height="304" alt="高雄 30 年城市轉型文首的引言框，框內仍有編按二字" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202609/100147" target="_blank" rel="noopener noreferrer">高雄 30 年城市轉型</a></figcaption>
+                </figure>
+              </label>
+              <label class="choice">
+                <input type="radio" name="q-quote-label" value="no-label">
+                <span class="choice-head">不使用「編按」、「引言」相關字眼</span>
+                <figure class="shot">
+                  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u422/20261022-沒有編按.png" width="699" height="383" alt="引言框裡直接寫內容，沒有編按或引言字樣" loading="lazy" decoding="async">
+                  <figcaption><a href="https://www.cet-taiwan.org/story/202608/4891" target="_blank" rel="noopener noreferrer">台灣如何從「與河爭地」走向「還地於河」？</a></figcaption>
+                </figure>
+              </label>
+            </div>
+            <details class="tech">
+              <summary>網頁前端細節(可略)</summary>
+              <pre>兩種都是 blockquote，後面不要接 hr
+左邊框內保留「編按」或「引言」
+右邊框內直接寫內容，不要這些字眼</pre>
+            </details>
+          </div>
+        </article>
+
+        <!-- <article class="item ask" data-kind="vote" data-item="q-more">
           <h3>
             <button type="button" class="acc" aria-expanded="false" aria-controls="panel-q-more">
               <span class="chev" aria-hidden="true"></span>
@@ -740,7 +766,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
           </h3>
           <div class="panel" id="panel-q-more" hidden>
             <p class="where"><span class="tag tag-where">三種文章都可能遇到</span></p>
-            <!-- <p>目前傾向不加【】，直接當內文小標。</p> -->
+            
             <div class="choices two">
               <label class="choice">
                 <input type="radio" name="q-more" value="h2">
@@ -764,7 +790,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
               <pre>傾向：h2，文字是「延伸閱讀」或「參考資料」，不要加【】</pre>
             </details>
           </div>
-        </article>
+        </article> -->
 
       </section>
     </main>
