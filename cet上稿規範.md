@@ -9,7 +9,7 @@
 - 圖片規格：將使用者提供的圖片轉換為webp格式，如果圖片寬度>750px，請調整圖片大小，將寬度調整為750px長寬比不變。
 - 內文段落：無序清單請使用 `<ul>`，有序清單請使用 `<ol>`，勿使用 `<p>`
 - 圖片與圖說：
-沒有圖說的圖片，請用`<p>`包`<img>`，html的width和height請幫我根據圖片寬長填入，並且如果並非第一張圖，設定`loading=lazy`；有圖說的圖片，請用`<figure>` 包`<img>` 和`<figcaption>`，圖說的文字前面不用再加上「圖說」兩個字。
+沒有圖說的圖片，請用`<p>`包`<img>`，html的width和height請幫我根據圖片寬長填入，並且如果並非第一張圖，設定`loading=lazy`；有圖說的圖片，請用`<figure>` 包`<img>` 和`<figcaption>`，圖說的文字前面不用再加上「圖說」、「圖」字樣。
 ```
 <figure role="group" class="caption caption-img">
 <img alt="看綠色的植物對眼睛有幫助噢！" height="300" src="https://demo.neticrm.tw/profiles/neticrmp/themes/neticrm/css/images/fullbg_default_leaf_w800.jpg" width="400" loading="lazy">
