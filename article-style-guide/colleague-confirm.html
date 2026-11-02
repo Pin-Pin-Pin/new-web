@@ -512,18 +512,20 @@
       </div>
     </header>
 
+    <!-- 填答／投票結果按鈕預計 11/10 公開結果時再取消註解
     <div class="wrap">
       <div class="tabs" role="tablist" aria-label="填答和結果">
         <button type="button" id="tab-form" role="tab" aria-selected="true" aria-controls="form-view">填答</button>
-        <button type="button" id="tab-results" role="tab" hidden aria-selected="false" aria-controls="results-view">投票結果</button>
+        <button type="button" id="tab-results" role="tab" hidden aria-selected="false" aria-controls="results-view">投票結果(預計11/10公開)</button>
       </div>
     </div>
+    -->
 
     <div id="form-view">
     <main class="wrap">
       <section id="styles">
         <h2>確認建議樣式</h2>
-        <p>這些是目前建議採用的寫法。每題按同意或不同意，也可以寫意見。大家的意見要等送出後，到投票結果才看得到。</p>
+        <p>這些是目前建議採用的寫法。每題按同意或不同意，也可以寫意見。大家的意見會先記下來，投票結果預計 11/10 公開。</p>
 
         <!-- <article class="item" data-kind="style" data-item="para">
           <h3>
@@ -996,11 +998,13 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
     </div>
     </div>
 
+    <!-- 投票結果頁預計 11/10 公開時再取消註解
     <div id="results-view" class="wrap" hidden>
       <h1 id="results-title" tabindex="-1">投票結果</h1>
       <div id="results-body"></div>
       <button type="button" class="ghost-btn" id="back-to-form">回到填答</button>
     </div>
+    -->
   </div>
 
   <div id="confirm-modal" class="modal" hidden>
@@ -1915,6 +1919,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
 
     function updateResultsTab() {
       var tab = document.getElementById("tab-results");
+      if (!tab) return;
       var show = !!(currentName && personHasSubmitted(currentName));
       tab.hidden = !show;
       if (!show && tab.getAttribute("aria-selected") === "true") showForm();
@@ -1922,17 +1927,22 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
 
     function showForm() {
       document.getElementById("form-view").hidden = false;
-      document.getElementById("results-view").hidden = true;
-      document.getElementById("tab-form").setAttribute("aria-selected", "true");
-      document.getElementById("tab-results").setAttribute("aria-selected", "false");
+      var results = document.getElementById("results-view");
+      if (results) results.hidden = true;
+      var tabForm = document.getElementById("tab-form");
+      var tabResults = document.getElementById("tab-results");
+      if (tabForm) tabForm.setAttribute("aria-selected", "true");
+      if (tabResults) tabResults.setAttribute("aria-selected", "false");
     }
 
     function showResults() {
-      if (!personHasSubmitted(currentName)) return;
+      var results = document.getElementById("results-view");
+      var tabResults = document.getElementById("tab-results");
+      if (!results || !tabResults || !personHasSubmitted(currentName)) return;
       document.getElementById("form-view").hidden = true;
-      document.getElementById("results-view").hidden = false;
+      results.hidden = false;
       document.getElementById("tab-form").setAttribute("aria-selected", "false");
-      document.getElementById("tab-results").setAttribute("aria-selected", "true");
+      tabResults.setAttribute("aria-selected", "true");
       document.getElementById("results-title").focus();
       refreshResults();
     }
@@ -2116,9 +2126,12 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
     });
 
     document.getElementById("switch-name").addEventListener("click", showGate);
-    document.getElementById("tab-form").addEventListener("click", showForm);
-    document.getElementById("tab-results").addEventListener("click", showResults);
-    document.getElementById("back-to-form").addEventListener("click", showForm);
+    var tabFormBtn = document.getElementById("tab-form");
+    var tabResultsBtn = document.getElementById("tab-results");
+    var backToFormBtn = document.getElementById("back-to-form");
+    if (tabFormBtn) tabFormBtn.addEventListener("click", showForm);
+    if (tabResultsBtn) tabResultsBtn.addEventListener("click", showResults);
+    if (backToFormBtn) backToFormBtn.addEventListener("click", showForm);
     document.getElementById("submit-all").addEventListener("click", requestSubmit);
     document.getElementById("modal-back").addEventListener("click", function () {
       closeModal();
