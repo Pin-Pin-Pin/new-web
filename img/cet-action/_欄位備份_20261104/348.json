@@ -1,0 +1,115 @@
+{
+  "captured_at": "2026-11-04T07:36:05.541Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>在 193 縣道拓寬案中，地球公民串連在地青年、學者與居民，參與十餘次環評與環差審查，以扎實法規與數據提出反駁，樹立地方環評參與的新里程碑；同時發起「幸福 193」走讀、音樂會與宣傳，邀民眾親近綠色景觀與文化資產，將工程爭議轉化為對生活品質的公共討論，促使大眾跳脫開路迷思，關注交通平權與防災韌性。</p><p>針對蘇花改工程，地球公民聯合考古學者與民間力量發起遺址搶救，揭露工程對環境與文化的衝擊，不僅促成修正不合理的拓寬範圍，更使珍貴的「漢本遺址」獲指定為國定遺址而得到法定保護。透過制度監督與草根行動，帶領花東公民以理性數據檢驗政客承諾，守護土地資產。</p><p>透過這一系列的體制參與與現場守護，花東社會開始跳脫「只要開路就是進步」的盲從思維，培養出思考顧及生態、文化為本的公民意識。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50637",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "用 193 拓寬、蘇花改等交通建設談地方發展自主權"
+        },
+        "files": [
+          {
+            "fids": "50637",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_20-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "用 193 拓寬、蘇花改等交通建設談地方發展自主權"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>在核廢料與垃圾處理的監督上，基金會堅定反對台電在秀林鄉等原鄉進行高階核廢料探測，透過聯合地方居民舉辦抗議與宣導活動來凝聚反對力量；針對台泥BOO代燒垃圾案，則持續追蹤環評承諾、要求資訊透明化，並嚴格監督戴奧辛等空污排放指標。在密集的公民監督下，成功迫使台電終止在花蓮秀林鄉進行高階核廢料掩埋計畫的評估與探測，另外也建立起民間與地方社群對代燒垃圾案的長期環境監督機制，確保企業與政府在環境監測數據上必須保持公開透明，無法輕易粉飾太平。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50638",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "用核廢料、燒垃圾等嫌避設施談公民知情權"
+        },
+        "files": [
+          {
+            "fids": "50638",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_20-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "用核廢料、燒垃圾等嫌避設施談公民知情權"
+      }
+    ],
+    "field_curation": [
+      {
+        "fields": {
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50257",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[field_comp_link][0][title]": "閱讀更多",
+          "[field_comp_link][0][uri]": "/node/100062",
+          "[field_comp_summary][0][value]": "花東生活要思考的問題有哪些？什麼建設會讓人願意留在花東生活呢？讓我一起思考和了解。",
+          "[title][0][value]": "在花東生活的真實需求是什麼？"
+        },
+        "files": [
+          {
+            "fids": "50257",
+            "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-036.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "在花東生活的真實需求是什麼？"
+      }
+    ]
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>花東因中央山脈阻隔與交通受限，地處國家政經邊陲。</p><p>這種地理孤立在體制演變中，轉化為深層的政治派系固化與資訊高度不對稱，使公共事務與資源分配長期遭少數政商網絡壟斷。加上因缺乏多元產業，地方經濟高度依賴公共工程、傳統觀光與砂石水泥等特許行業，導致政治與經濟利益緊密共生。</p><p>同時，地方媒體高度仰賴縣府採購與宣傳標案，監督批判功能衰退，加上重大開發與環評資訊封閉，使基層與部落難以獲取完整資訊。這種資訊黑箱賦予掌權者話語權優勢，將複雜發展簡化為「給一條安全回家的路」等民粹口號，甚至將不同意見扣上阻礙繁榮的罪名，製造社會對立。在缺乏多元審議與知情機制的結構下，公共決策走向由上而下與利益集中化，政府競相推出缺乏效益的巨型水泥硬體，更屢將核廢料鑽探、跨縣市垃圾焚化等高風險嫌避設施強加於偏鄉與部落，使在地居民無法自主參與家鄉願景，被迫承受土地、生態與健康受損的環境代價。</p><p>因此，地球公民基金會積極推動建構花東公民社會，致力打破由上而下的政商壟斷，透過培力在地主體與落實環境民主，奪回地方自主發展的詮釋權。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50151",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "327|世代正義與公平發展"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "建構花東公民社會",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/348",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "16"
+  },
+  "main_files": [
+    {
+      "fids": "50151",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-019.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "348",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/348/edit"
+}

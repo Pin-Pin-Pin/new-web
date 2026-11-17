@@ -1,0 +1,166 @@
+{
+  "captured_at": "2026-11-04T08:54:05.236Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>為了爭取乾淨空氣並保護學童健康，地球公民自2011年推出清淨天空行動，要求汰換舊的空污指標（PSI），2014年起與高雄學校（如港和國小、文府國小）合作，每日查詢空氣污染指標與PM2.5數值，當空氣品質不佳時於校園升起空污旗示警（紅旗），並倡議新聞媒體於氣象時間播報空氣品質現況，以提醒師生戴口罩防護，或減少戶外體育課及劇烈運動。</p><p>此舉成功喚起學童與社會大眾的空污意識，促使環保署加強對中南部空氣污染的各種管制，教育部推出全國性的「校園空品旗」，國人對空氣品質要求呼聲高，終於迫使環保署推出新的空品指標（AQI），新聞媒體也漸漸即時播報空氣品質現況。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50773",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成教育部推出校園空品旗，環保署推出新的空品指標"
+        },
+        "files": [
+          {
+            "fids": "50773",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_8-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "促成教育部推出校園空品旗，環保署推出新的空品指標"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>聯合醫界與環境團體，要求環境部依據公衛科學實證與國際趨勢，將PM2.5年均值與日均值標準下修，並同步AQI指標以強化民眾對污染的警覺。</p><p>同時，揭露政府過去將一個防制區中空氣極好的測站不符比例地與其它測站「平均」計算掩蓋污染真相（例如將國家公園等級的恆春測站與屏東測站平均）。</p><p>成功促使環境部修改空氣污染防制區判定法規，自2025年起取消平均值計算，改採「站站達標」**才能被判定為符合標準的二級防制區，以反映真實污染狀況，同時確保污染嚴重的區域必須維持較嚴格的管制強度。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50774",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "成功推動「站站達標」法規，終結高低污染區平均計算的數據盲點"
+        },
+        "files": [
+          {
+            "fids": "50774",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_8-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "成功推動「站站達標」法規，終結高低污染區平均計算的數據盲點"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>堅決反對環保署調降夏季空污費，並召開會議及記者會要求全面調高固定污染源空污費，特別是主張針對排放大戶以及排放量極大且有害健康的揮發性有機物（如甲苯、二甲苯）提高費率，以經濟誘因迫使企業將外部成本內部化，加裝防制設備或使用低污染的物質替代。</p><p>促成環境部修正「固定污染源空氣污染防制費收費費率」，增訂大戶費率級距並加嚴門檻（例如將氮氧化物季排放量大戶門檻由250公噸大幅調降至70公噸），並將凍漲十多年的甲苯、二甲苯加徵費率大幅調高。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50775",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成大戶費率門檻加嚴與凍漲十多年的甲苯、二甲苯空污費調高"
+        },
+        "files": [
+          {
+            "fids": "50775",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "5_8-3(650).png"
+          }
+        ],
+        "index": 2,
+        "list_text": "促成大戶費率門檻加嚴與凍漲十多年的甲苯、二甲苯空污費調高"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>自2013年起持續揭露工業區排放致癌性揮發性有機物及重金屬的問題，要求環保署擴大列管物種、制定嚴格的排放管道及周界標準；環保署於2021年2月正式發布「固定污染源有害空氣污染物排放標準」，納管22項物種（含7項重金屬及15項揮發性有機化合物），並加嚴排放標準，例如將一級致癌物苯從500ppb加嚴至40ppb，氯乙烯從200ppb加嚴到20ppb。</p><p>對於目前尚未納管之物種呼籲環保署盡速擴大管制，並滾動式檢討現有管制標準，出版有害空氣污染物年報 ，要求針對校園周邊建立有害空污超標的「預警機制」，保障學童健康及社區知情權。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50776",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成有害空氣污染物（HAPs）加嚴管制"
+        },
+        "files": [
+          {
+            "fids": "50776",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "5_8-4(650).png"
+          }
+        ],
+        "index": 3,
+        "list_text": "促成有害空氣污染物（HAPs）加嚴管制"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>要求中央與地方政府合作，推動南部空污總量管制計畫、下修空品嚴重惡化緊急防制辦法的啟動門檻，並主張在空污警報日（AQI達紅色）時，提供大眾運輸（如捷運、公車）免費搭乘，以減少民眾於高污染日通勤時的污染暴露，同時也減少私人運具的交通廢氣。</p><p>推動社會關注並促成《空氣污染防制法》的修訂與公聽參與，迫使行政院提出積極改善空氣污染的防制策略，並持續監督政府對高污染產業進行實質的污染削減與轉型管制。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50777",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成行政院提出空氣污染防制策略與《空污法》修訂"
+        },
+        "files": [
+          {
+            "fids": "50777",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-4-form-field-comp-image-wrapper",
+            "file": "5_8-5(650).png"
+          }
+        ],
+        "index": 4,
+        "list_text": "促成行政院提出空氣污染防制策略與《空污法》修訂"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>台灣中南部地區（特別是高雄）長期承受重工業（如石化業、鋼鐵業、燃煤電廠）發展帶來嚴重的空氣污染，懸浮微粒（PM10）、細懸浮微粒（PM2.5）與臭氧濃度經常超標且高於全台平均。這些空氣污染物包含多種有害、致癌物質，對民眾健康造成極大威脅，易引發心血管、呼吸道疾病、肺癌及過敏反應。此外，許多國中、小學鄰近高污染的工業區，學童在發育階段卻暴露於高健康風險中。然而，過去政府的空污監測不足，空氣品質標準過於寬鬆、空污費率偏低而缺乏減排誘因，且有害空氣污染物（HAPs）的管制落後，導致空污問題難以獲得實質改善。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_action_item[entities][4][delta]": [
+      "4|4"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50128",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "325|翻轉污染的日常"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "爭取乾淨空氣",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/335",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "13"
+  },
+  "main_files": [
+    {
+      "fids": "50128",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-008.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "335",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/335/edit"
+}

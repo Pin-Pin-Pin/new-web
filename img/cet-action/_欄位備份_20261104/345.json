@@ -1,0 +1,142 @@
+{
+  "captured_at": "2026-11-04T07:39:15.500Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>地球公民針對地面型光電，持續提出制度改革建議，要求能源用地必須有上位的空間規劃。我們積極監督與參與經濟部「能源用地白皮書」的撰擬，並要求政府應儘速提出「能源政策環評」，藉由整體空間佈局引導光電選址，確立「哪些地方不可以、哪些地方可以優先」的原則，以系統性規劃化解土地衝突，並銜接國土計畫體系進行落實。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50100",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "倡議國土空間規劃與能源用地白皮書"
+        },
+        "files": [
+          {
+            "fids": "50100",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-095.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "倡議國土空間規劃與能源用地白皮書"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>地球公民積極投入「能源轉型白皮書」的共同撰擬，透過網路徵詢、公民面對面等機制大規模收集公民意見，開啟了人民與政府協力寫作、重大會議資訊完全透明公開的能源民主首例，並成功催生出節能家電補助等實質行動方案。</p><p>地球公民也持續出席並號召大眾參與能源、淨零相關的公開會議，致力於為台灣建立起具社會信任與共識的綠能治理路徑。例如，面對政府推動的「2050淨零排放路徑及策略」，地球公民出席十二項關鍵戰略的「社會溝通會議」與延續會議，代表民間社會提出專業的政策意見。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50101",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促進社會對話，落實能源民主"
+        },
+        "files": [
+          {
+            "fids": "50101",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260827-096.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "促進社會對話，落實能源民主"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>透過深耕扎實的田野調查與法制研究，我們致力以實證數據完善國家能源制度。在光電領域，我們實地走訪苗栗、花蓮及台南等三縣市的農地光電案場，集結現地勘查成果，出版《共享日光：檢討地面光電與生態、森林、農漁業的共生對策》報告，從空間、生態、產業及公民參與等四大面向提出具體制度改革建議。</p><p>在新能源管理上，面對《再生能源發展條例》放寬小水力發電區位所衍生的生態隱憂，我們透過發布環評意見書並發起團體連署，要求環境部與能源署停止任意排除環評標準，並積極督促提出明確的開發指引，引導業者多利用人工圳路、避開自然河川並保障原河川生態基流量，成功以法制研究捍衛流域生態。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50102",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "透過研究調查，完善制度規劃"
+        },
+        "files": [
+          {
+            "fids": "50102",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260827-097.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "透過研究調查，完善制度規劃"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>為推動地方節能治理，地球公民與民間團體組成「能源轉型推動聯盟」，嚴謹規劃評比指標，對台灣本島19縣市的節能政策進行深度評比與訪談，成功促使部分地方政府提出政策亮點並正視長久節能機制的建立。</p><p>此外，地球公民也長及呼籲「電價合理化」，要求政府合理調漲工業電價與用電大戶，讓企業確實反映環境外部成本並強化節電，同時促成政府關注並正視能源貧窮問題，完善中央與地方協力之弱勢輔導機制。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50103",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "推動電價合理化與地方節能評比"
+        },
+        "files": [
+          {
+            "fids": "50103",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "20260827-098.webp"
+          }
+        ],
+        "index": 3,
+        "list_text": "推動電價合理化與地方節能評比"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>近年全球氣候危機加劇，各國紛紛提出減碳期程，台灣亦正式將2050年淨零碳排納入國家長遠發展目標。推動再生能源發展與進行深度的能源轉型，已成為國家邁向永續的關鍵。然而，在積極衝刺綠能與落實減碳的進程中，如何健全整體能源治理政策，並解決能源消費增長與環境土地承載力之間的失衡，是當前面臨的巨大考驗。</p><p>首先，能源設施的布建與在地生態、土地利用的衝突日益尖銳，而台灣地狹人稠，土地同時承載著糧食生產、生態保育與在地生計，兩種環境價值的內部對撞，成為環境運動前所未有的難題。除了地面型光電因缺乏上位空間規劃而引發與農爭地、排擠農漁民的問題外，在淘汰化石燃料的過渡期中，作為重要橋接基礎設施的「中油第三天然氣接收站」（三接），也因選址於大潭海岸，與藻礁生態保育產生了嚴重的路徑拉扯。</p><p>再者，低廉的能源價格未能反映環境外部成本，亦是扭曲能源政策的結構性因素。過於便宜的電價降低了產業投資高性能節能設備與製程改善的經濟誘因，導致電力消費持續增長，進而反向回逼發電端與基礎設施（如光電、三接）必須不斷擴建，加劇土地與生態的負擔。因此，若要深化能源轉型，除了改善「發電端」的政策引導，也需在「用電端」透過合理電價與深度節能進行用電總量的抑制。</p><p>完善能源政策，關乎環境正義、社會公平與公正轉型的落實。在電價合理化或綠能開發的推進過程中，環境與經濟的代價往往容易轉嫁給弱勢群體、選址在相對弱勢地區。例如低收入戶常因居住環境不佳、缺乏資金汰換高耗能的老舊家電，而在電價調漲時陷入支出佔比過高的「能源貧窮」困境；而無序的綠能專區劃設也容易犧牲第一線專業農漁民的工作權益。</p><p>地球公民基金會的立場是，綠能與轉型必須在守住生態底線與社會公義的前提下前進，建立公開透明的資訊溝通、地方能源治理與弱勢配套機制，確保轉型過程不遺漏任何人，讓再生能源發展與國家的永續未來能真正共存共榮。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50099",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "326|重新思考能源"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "<p>中油第三天然氣接收站（三接）</p><p>中油第三天然氣接收站（三接）選址於桃園大潭觀塘工業園區，是台灣在非核減煤能源轉型進程中，提供天然氣的橋接基礎設施。然而，該開發案因與當地的大潭藻礁生態保育產生重大價值拉扯，進而引發社會高度關注並走向公投對決。</p><p>地球公民基金會主張生態保育與三接工程並非零和關係，在主辦「對焦會議」釐清爭點後，公開聲明支持不需浚深航道、取消工業港填海的「三接外推方案」，力求在藻礁保育最大化的同時，將中南部減煤時程的衝擊降至最低，並呼籲政府應同步推動極大化節能計畫。</p>",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "完善能源政策",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/345",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "4"
+  },
+  "main_files": [
+    {
+      "fids": "50099",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-015.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "345",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/345/edit"
+}

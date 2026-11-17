@@ -1,0 +1,142 @@
+{
+  "captured_at": "2026-11-04T08:44:44.917Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>嘉義布袋鹽田在全面停止曬鹽後，因長期未使用，而自然演替為黑面琵鷺等冬候鳥仰賴的重要替代性棲地與生態敏感熱區。由於政府為衝刺地面型光電目標，將這些產業儲備用地開放大面積光電招商，導致再生能源發展與國際級水鳥棲地保育之間產生了衝突。</p><p>為了調和經濟與生態的競合，地球公民與特生中心、鳥會及生態學者合作，主辦「布袋鹽田濕地保育與光電開發論壇」，目的是為了實踐濕地「明智利用」與「三生共榮（生活、生態、生產）」的核心價值，要求光電必須迴避生態熱區，並邀請官員與業者進行公私協力對話。最後成功讓經濟部將原訂的高爭議開發規模大幅縮減，排除了生態熱區並僅選擇102公頃作為「光電示範區」，也爭取到業者承諾空出30%土地為保育區，促成了「布袋模式」協作平台，成為地面型光電發展的指標案例之一。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50729",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成布袋鹽田光電減緩對生態的影響"
+        },
+        "files": [
+          {
+            "fids": "50729",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_15-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "促成布袋鹽田光電減緩對生態的影響"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>政府為衝刺光電進度，在缺乏利害關係人參與的選址評估下推動七股漁電共生，引發了全區超量開發與案場緊鄰社區聚落的空間壓力，導致養殖面積縮水、產量缺乏實證以及弱勢承租漁民恐遭地主解約等資訊不對等問題，引發了光電侵農滅漁與衝擊候鳥生態的重重疑慮。</p><p>地球公民與友團及立委合作，透過媒體投書發聲並出席先行區政策說明與審查會議，堅守「公正轉型」與「以農為本」的民主價值以保障漁民工作權。經過兩年多的倡議，成功促使政府實行「環社檢核」機制，並推動經濟部修訂三方契約範本等配套，將生態與在地社會的評估實質納入國家政策中。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50730",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "監督七股漁電共生，落實制度保障漁民生計及當地生態"
+        },
+        "files": [
+          {
+            "fids": "50730",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_15-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "監督七股漁電共生，落實制度保障漁民生計及當地生態"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>該案最初由光電公司與地方政府選址於知本濕地及卑南族卡大地布部落的傳統領域上。由於該處是東台灣重要的候鳥棲息地之一，且前期的規劃程序未充分取得在地部落的諮商同意，隨即引發了排擠生態保育與侵害原住民族主權的爭議。</p><p>地球公民花東辦公室協助卡大地布部落及在地公民組織北上行政院陳情、募集萬人連署，倡議中央應尊重部落的主體性，並終止選址不當的知本光電審議。此行動捲動社會巨大關注，最終迫使台東縣政府終止開發契約。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50731",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "參與知本濕地光電案，終止不當光電開發"
+        },
+        "files": [
+          {
+            "fids": "50731",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "5_15-3(650).png"
+          }
+        ],
+        "index": 2,
+        "list_text": "參與知本濕地光電案，終止不當光電開發"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>地球公民自2022年起深入苗栗、花蓮及台南進行農地光電田野調查，透過現地勘查與利害關係人訪談、政策研究與梳理，集結出版《共享日光：檢討地面光電與生態、森林、農漁業的共生對策》報告，並深化反思過去推動「環社檢核」的歷程。</p><p>地面光電亂象根源於「空間計畫」的欠缺，導致選址流於土地管制防線的攻防，過去鬆綁土地管制卻缺乏規劃配套的「綠能發展區」便是典型爭議；而在生態層面，保育法規的缺失與具問題意識長期缺乏實證資料，亦嚴重削弱了主管機關把關衝擊的能力。</p><p>為此，地球公民從空間計畫、生態保育、農漁產業及公民參與四大面向提出具體建議，期盼透過現場勘查經驗引導跨視野的社會對話，尋求衝擊最小的選址路徑，為台灣各地的綠能協調提供務實的發展素材。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50732",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "發布《共享日光》報告，檢討地面光電對策"
+        },
+        "files": [
+          {
+            "fids": "50732",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "5_15-4(650).png"
+          }
+        ],
+        "index": 3,
+        "list_text": "發布《共享日光》報告，檢討地面光電對策"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>台灣在2016年啟動能源轉型後，訂定了在2025年要達成 20 GW 太陽光電裝置容量的目標。然而在政府積極推動太陽光電的裝設後，需要使用大面積土地的「地面型光電」開始出現土地資源競爭問題，譬如：預計在原住民族的傳統領域興建地面型光電案場，卻沒有進行諮商同意程序及妥適的社會溝通，引起部落反彈；漁電共生政策缺乏利害關係人參與，造成部分漁民的生計問題及生產受影響；生態豐富的廢棄鹽田未規劃補償機制，因光電裝設而造成部分鳥類利用空間受損；部分人造林擬砍伐裝設光電，使景觀及休憩空間受損，引起在地居民不滿。</p><p>面對地面型光電造成的社會爭議及環境衝擊，地球公民監督指標性的光電個案，將個案面臨的制度性問題持續反映給政府進行制度改革，成功催生環境與社會檢核機制（以下簡稱環社檢核）。地球公民認為，發展再生能源是台灣能源轉型要邁向低碳、減污、永續及能源韌性時，所不能迴避的重要策略，台灣社會需要集體思考如何讓再生能源的利益被更多人共享，而非重演過去大型發電設施必造成環境及地方社會的犧牲，此項變革也是台灣民主深化的重要轉型工程之一。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50163",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "326|重新思考能源"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "關注地面光電",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/344",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "19"
+  },
+  "main_files": [
+    {
+      "fids": "50163",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-014.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "344",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/344/edit"
+}

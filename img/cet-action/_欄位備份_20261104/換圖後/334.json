@@ -1,0 +1,162 @@
+{
+  "captured_at": "2026-11-04T08:53:40.427Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">過去小水力開發區為缺乏把關，因此我們揭露全台 47 處潛力點有超過八成位於環境敏感區位或原住民族傳統領域。據此強力遊說經濟部能源署，要求建立行政規範，引導開發個案迴避自然河川。</p><p dir=\"ltr\">我們成功促使能源署於 2024 年發布《小水力發電設施設置指引》。指引明確將小水力定位為「附屬設施」，要求優先利用既有圳路、自來水管路發電，透過制度建立引導個案以「友善環境」的方向發展。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50769",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "推動制度化管理，落實選址避讓"
+        },
+        "files": [
+          {
+            "fids": "50769",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_7-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "推動制度化管理，落實選址避讓"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>針對如「豐坪溪水力電廠案」等陳年環評舊案提起行政訴訟，要求重啟「環境現況差異分析（環現差）」。並在環評會議中以科學數據指出氣候變遷下的流量劇變影響發電效益與生態基流量不足對於迴游魚類的生存威脅。雖然世豐案訴訟艱辛，但行政法院的判決揭露《環評法》對於陳年舊案缺乏有效退場機制，這項行動為未來推動「環評法修法」提供關鍵法律實證。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50770",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "挑戰制度漏洞，爭取程序正義"
+        },
+        "files": [
+          {
+            "fids": "50770",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_7-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "挑戰制度漏洞，爭取程序正義"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">與遭遇開發議題的在地社群建立關係，透過揭露開發案資訊，讓在地居民理解開發的利弊得失與文化及環境衝擊，並與法律扶助基金會合作，支持部落行使《原基法》所保障之知情同意權。確立了開發單位不能僅以形式化宣導取代事前、自由、知情且同意的諮商程序，一起與部落捍衛傳統領域的自然主權</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50771",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "捍衛原民諮商同意權"
+        },
+        "files": [
+          {
+            "fids": "50771",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "5_7-3(650).png"
+          }
+        ],
+        "index": 2,
+        "list_text": "捍衛原民諮商同意權"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">我們對「萬里水力電廠」進行長達二十年的監督與社會倡議，論證該案發電效益與環境代價的不對稱性，加上氣候變遷與地質災害的環境脈絡，台電正式在2025年宣布「萬里水力發電計畫」撤案。而豐坪溪的世豐電廠也因為流量豐枯變異加劇與土砂災害，而始終無法完全動工，透過我們的參與，不只留下了自由奔流的河川，也把東部的激流、峽谷、沖積扇等精彩的面貌帶到大家的眼前。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50772",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "讓溪水自由奔流"
+        },
+        "files": [
+          {
+            "fids": "50772",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "5_7-4(650).png"
+          }
+        ],
+        "index": 3,
+        "list_text": "讓溪水自由奔流"
+      }
+    ],
+    "field_curation": [
+      {
+        "fields": {
+          "[field_comp_image][0][fids]": "",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[field_comp_link][0][title]": "閱讀更多",
+          "[field_comp_link][0][uri]": "/node/100060",
+          "[field_comp_summary][0][value]": "位於花蓮縣卓溪鄉的豐坪溪，是一條自中央山脈奔流而下的溪流，日日夜夜滋養著沿岸的部落。而在氣候危機急需減碳的能源轉型的狀況下，世豐水力電廠在豐坪溪攔水發電，這對在地族人來說，就如同神話裡的大蛇一樣，阻斷了部落賴以生存的溪流。",
+          "[title][0][value]": "氣候變遷在花蓮的故事"
+        },
+        "files": [
+          {
+            "fids": "",
+            "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": ""
+          }
+        ],
+        "index": 0,
+        "list_text": "氣候變遷在花蓮的故事"
+      }
+    ]
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>東部溪流山高水急、水量豐沛，同時具備極為脆弱的地質與獨特的生態水文系統，使得水力發電在東部的爭議橫跨近二十年，其關注脈絡更歷經了關鍵的典範轉變。</p><p>在 1990 年代，地球公民在東部倡議核心聚焦於水資源保育，反對將「興建水庫、攔河築壩」視為解決水資源問題的唯一手段；以萬里案前身的「西寶水力發電計畫」為例，台電原規劃在花蓮萬里溪與馬太鞍溪上游築壩攔水並越域引水發電，但該計畫不僅涉及高地熱、斷層及地質破碎帶的巨大安全隱憂，更將徹底摧毀花蓮僅存保有自然流態的珍貴野溪峽谷與迴游生態，在民間長期反對與立法院凍結預算下被迫停擺，成為守護天然溪流的重要里程碑。</p><p>然而，近年隨著國家能源轉型政策推進，水力發電被開發商包裝為「再生能源」，促使沉寂多年的老舊電廠開發案紛紛借殼重啟，引發嚴峻的「綠色衝突」。台電一度將西寶計畫縮減規模更名為「萬里水力發電計畫」重啟推動，而位於卓溪鄉豐坪溪的「世豐水力電廠案」，更是早在 1999 年即通過環評，卻因地質災害與資金問題停工超過十年，開發商在未重新進行環境現況差異分析、未充分落實布農族部落諮商同意的情況下強行復工，企圖於天然河道興建兩座攔河堰，嚴重威脅河川生態基流量、高身鏟頜魚等保育類生存以及下游部落的防洪安全。</p><p>面對這些披著綠能外衣的陳年老案，地球公民的行動轉向監督「綠色衝突」。主張真正的永續不應建立在犧牲自然生態與原民權益之上。因此反對將對環境破壞性大的「攔河築堰」，定義為受到政策支持的再生能源。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50118",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "324|重整失序的國土"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "東部水力電廠",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/334",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "10"
+  },
+  "main_files": [
+    {
+      "fids": "50118",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-007.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "334",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/334/edit"
+}

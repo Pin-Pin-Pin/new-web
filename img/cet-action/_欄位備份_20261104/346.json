@@ -1,0 +1,118 @@
+{
+  "captured_at": "2026-11-04T07:39:37.420Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>為了推動政府積極重視屋頂光電的發展，地球公民於2021年展開「屋頂光電」連署，號召約4500名關注者參與，並召開多場記者會，指出政府在公用設施屋頂光電的盤點不夠積極，例如交通部轄下的全國郵局營業據點共1299處中，該年僅盤點裝設12處屋頂光電；同時，我們也指出應要求工業區有更高的屋頂光電裝設規範，讓「工業用的電工業發」。</p><p>最終，行政院副院長沈榮津對外宣布，2025年屋頂光電的設置目標從6GW調升成8GW，而地面光電則從14GW調降成12GW，並促成政府規範工業區內新進駐的廠商，必須依比例設置屋頂光電，要求耗能產業負擔起再生能源的社會責任。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50110",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "千人連署倡議，促成政府上調屋頂光電目標"
+        },
+        "files": [
+          {
+            "fids": "50110",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-099.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "千人連署倡議，促成政府上調屋頂光電目標"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>為了從法規面確立屋頂光電的地位，地球公民積極拜會立法委員，並結合媒體行動，向中央部會（如經濟部、內政部）施加壓力，要求從制度面規範建物設置光電的義務。經過長期的遊說與媒體行動，我們成功促成《再生能源發展條例》修法，明訂未來全國新、增、改建的建築物皆必須負有設置光電的義務，進一步推動屋頂光電的普及。</p><p>在法規通過後，地球公民持續向內政部倡議，爭取子法中需將新建物必須設置光電的義務門檻，以及擴大適用的建物種類範圍，藉此最大化城市屋頂的發電潛力、減輕農漁村土地的開發壓力。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50111",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成「強制裝設屋頂光電」入法，並監督子法實施"
+        },
+        "files": [
+          {
+            "fids": "50111",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260827-100.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "促成「強制裝設屋頂光電」入法，並監督子法實施"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>為消弭民間對光電的疑慮並推廣實作，地球公民舉辦了多場「屋頂光電好厝邊」系列論壇與專題演講，讓政府單位、業者與社區居民等利害關係人直接對話，推廣屋頂光電的實作經驗與共尋解方。</p><p>除了全國性的社會對話，地球公民也深入地方，透過與官方的溝通及辦理地方講座，推動高雄後勁舊社區納入市政府的「淨零示範區」規劃，以社區為主體推動屋頂光電與淨零轉型。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50112",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "舉辦多場論壇及系列講座與社會對話"
+        },
+        "files": [
+          {
+            "fids": "50112",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260827-101.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "舉辦多場論壇及系列講座與社會對話"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>台灣在2016年啟動能源轉型後，訂定了在2025年要達成 20 GW 太陽光電裝置容量的目標。然而在政府積極推動太陽光電的裝設後，需要使用大面積土地的「地面型光電」開始出現土地資源競爭問題，引起社會疑慮。</p><p>面對地面型光電造成的社會爭議及環境衝擊，地球公民除監督指標性的光電個案之外，更持續推動「屋頂光電最大化」倡議，要求政府積極盤點及裝設對環境及生態影響最小的屋頂光電。</p><p>地球公民認為，發展再生能源是台灣能源轉型邁向低碳、減污、永續及能源韌性，所無法迴避的重要策略，但需要思考如何再生能源的利益讓社會共享。屋頂光電可以裝設在建築物屋頂、停車場遮雨棚、風雨球場等閒置空間，不僅能夠創造額外的遮風避雨、防曬等效果，更能透過公民電廠的推動，讓社區、集合式住宅共同討論綠電收益如何分配，讓再生能源走入每個人的日常生活。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50109",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "326|重新思考能源"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "推動屋頂光電最大化",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/346",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "7"
+  },
+  "main_files": [
+    {
+      "fids": "50109",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-016.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "346",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/346/edit"
+}

@@ -1,0 +1,162 @@
+{
+  "captured_at": "2026-11-04T07:37:35.727Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>為了將氣候意識轉化為草根行動，地球公民長期在南方深耕抗暖化運動。2007年12月，發起「1208響應全球抗暖化行動—高雄大遊行」，串連高高屏24個民間團體、吸引近千名公民上街，喊出「污染減半、綠地加倍、低碳新經濟」的訴求，並促成時任高雄市長簽署承諾，開創了高雄十多年來首次大規模的環境遊行。2009年12月哥本哈根氣候大會（COP15）召開之際，地球公民更在高雄哈瑪星碼頭舉辦「溫升2℃」模擬實境街頭行動劇，志工穿戴報紙游泳圈、將高雄地標85大樓模型放於海面象徵樓沉大海，向往來遊客宣導氣候危機，強力倡議「支持碳稅、拒當氣候難民」。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50418",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "籌辦高雄抗暖化遊行與街頭行動，啟蒙全民氣候意識"
+        },
+        "files": [
+          {
+            "fids": "50418",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260918-043.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "籌辦高雄抗暖化遊行與街頭行動，啟蒙全民氣候意識"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>面對高排碳重工業的盲目擴建，地球公民積極擋在第一線阻絕污染。2008至2009年間，串連民間團體全力監督台電大林電廠更新擴建案，最終成功促成擴建規模減半（由4座燃煤機組減為2座），每年直接減少約800萬噸二氧化碳排放，相當於高雄市全體住宅與商業活動一整年的碳排放總量。同時，地球公民也堅決反對國光石化、台塑大煉鋼廠等巨型高耗能開發案，防止台灣背負更沉重的碳排放罪名。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50419",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "擋下高碳排巨型開發案，扭轉錯誤減碳政策"
+        },
+        "files": [
+          {
+            "fids": "50419",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260918-044.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "擋下高碳排巨型開發案，扭轉錯誤減碳政策"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>為了帶入前瞻的國際觀點，地球公民曾代表前往波蘭波茲南參與聯合國氣候變遷大會（COP14），實地觀察國際談判並汲取「溫室發展權」（GDRs）與「氣候調適」等議題，回國後轉化為在地宣導與政策監督的養分。因應《巴黎協定》控制升溫1.5°C目標與全球淨零趨勢，地球公民於2020總統大選前夕，提出「台灣面對氣候變遷的五大減碳方案」：包含要求政府訂出2025至2050年除煤減氣的能源轉型路徑、推動課徵「能源稅或碳稅」並要求國營事業將減碳訂為KPI、強化中南部減煤降載與大戶減量、制訂交通運具全面電動化期程，以及導入能源民主與公正轉型價值。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50420",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "接軌國際氣候倡議，擘劃台灣五大減碳方案"
+        },
+        "files": [
+          {
+            "fids": "50420",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260918-045.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "接軌國際氣候倡議，擘劃台灣五大減碳方案"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>地球公民持續深耕體制內政策監督，長期關注《溫室氣體減量與管理法》（現《氣候變遷因應法》）的修法與落實，主張秉持「污染者付費」精神，取消化石燃料的不當補貼，促使高排碳產業結構加速轉型。在推動再生能源發展的過程中，針對地面型光電引發的生態與在地社會衝突，地球公民提出事前應建立整體的「環境與社會檢核機制」，輔導綠能優先於低爭議區域設置。透過落實資訊公開與公民參與，將「能源民主」與「公正轉型」價值融入氣候政策，確保在邁向低碳永續的過程中，兼顧生態保育、在地權益與勞工福祉。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50421",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "進入體制監督法制，導入能源民主與公正轉型"
+        },
+        "files": [
+          {
+            "fids": "50421",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "20260918-046.webp"
+          }
+        ],
+        "index": 3,
+        "list_text": "進入體制監督法制，導入能源民主與公正轉型"
+      }
+    ],
+    "field_curation": [
+      {
+        "fields": {
+          "[field_comp_image][0][fids]": "",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[field_comp_link][0][title]": "閱讀更多",
+          "[field_comp_link][0][uri]": "/node/100040",
+          "[field_comp_summary][0][value]": "2021，台灣在疫情下同時面臨著百年大旱，缺水導致農田停灌休耕，桃竹苗和中部民生用水受限。同一時間，高溫打破74年紀錄，導致用電創新高。氣候緊急時代不再是危言聳聽，而是真的來臨了。如何面對這樣的極端氣候？全世界主要國家紛紛提出了淨零排放期程。做為地球公民、台灣國民的一份子，我們特別撰寫和整理出系列文章，分別從上位的減碳政策，平地造林與光電減碳爭議，還有水資源的調適政策，提供給社會參考。\n\n面對氣候緊急時代，邀請您和我們一起展開行動。",
+          "[title][0][value]": "疫情下的氣候緊急時代"
+        },
+        "files": [
+          {
+            "fids": "",
+            "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": ""
+          }
+        ],
+        "index": 0,
+        "list_text": "疫情下的氣候緊急時代"
+      }
+    ]
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p dir=\"ltr\">地球越來越熱了，不是嗎？</p><p dir=\"ltr\">碳排帶來的全球暖化、氣候變遷，讓極端強降雨與乾旱成為台灣常態。2009年莫拉克風災夾帶暴雨引發土石流，導致高雄小林村不幸滅村，深刻揭示島國台灣面對極端氣候的脆弱性。</p><p dir=\"ltr\">台灣人均二氧化碳排放量長期高居全球前列，約為全球平均值的2至3倍。以重工業聚落為主的高雄市，過去更曾創下人均碳排放34.74公噸的惡名。然而，政府長期以「拼經濟」為名補貼低電價與化石燃料，任由中鋼、中油、台電及石化巨頭等排碳大戶擴張高耗能產業，造成產業轉型遲緩與極為不公的環境外部成本。</p><p dir=\"ltr\">科學研究指出，若全球升溫達2℃，海平面將上升50公分，高雄哈瑪星、凹仔底等低窪區域都將面臨淹水危機。地球公民主張，在氣候危機迫在眉睫的當下，台灣不能再依賴高碳排的傳統經濟模式；政府必須徹底調整產業結構、落實污染者付費的碳定價與能源稅，並將「公正轉型」與「能源民主」導入氣候政策，才能建立具有氣候韌性與世代正義的永續家園。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50123",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "327|世代正義與公平發展"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "氣候變遷與調適",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/351",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "12"
+  },
+  "main_files": [
+    {
+      "fids": "50123",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-022.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "351",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/351/edit"
+}

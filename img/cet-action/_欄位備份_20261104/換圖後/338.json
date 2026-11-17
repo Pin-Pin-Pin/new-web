@@ -1,0 +1,142 @@
+{
+  "captured_at": "2026-11-04T08:55:22.794Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>2014年高雄氣爆發生後，地球公民基金會大力倡議「社區知情權」入法（參考美國EPCRA法案），要求政府全面公開地下石化管線圖資、化學物質存放資訊，並呼籲建立社區防災與疏散演練機制。</p><p>在民間的強烈要求下，高雄市政府於氣爆隔年公布了既有工業管線資訊，建置「既有工業管線查詢系統」，並成立「管線安全辦公室」（OPS），讓民眾能上網查詢管線輸送與接送端及經過的地方與運輸物質，初步建立了管線監理與防災應變機制。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50782",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成石化管線圖資公開與監管機制"
+        },
+        "files": [
+          {
+            "fids": "50782",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_11-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "促成石化管線圖資公開與監管機制"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>多次號召居民包車北上，於內政部營建署、高雄市政府前舉辦記者會、靜坐與行動劇，並遞交陳情書或提起行政訴願。同時，推動「公正轉型」理念，訴求在保障勞工就業權益的前提下，加速老舊石化工業區的退場與產業轉型。</p><p>在持續施壓下，高雄市政府都市計畫委員會於2019年3月正式決議將大社工業區降編為乙種工業區（目前仍待內政部最終核定。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50783",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成大社降乙編決議"
+        },
+        "files": [
+          {
+            "fids": "50783",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_11-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "促成大社降乙編決議"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>積極出席各項開發案（如中油三輕擴產案、曄揚石化廠等）的環境影響評估審查會，提出專業意見書。強烈要求進行「政策環評」、實質減污減碳，並主張應將健康風險評估與地下水污染調查納入審查範圍。</p><p>成功透過輿論與專業審查的壓力，一度促使環評大會將中油三輕擴產案「關鍵逆轉」退回專案小組重審。最終迫使開發單位必須將健康風險評估及地下水污染專家會議結論納入審查，並承諾增加環境監測與空污減量條件。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50784",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "曄揚開發案終止、中油三輕增加環保承諾"
+        },
+        "files": [
+          {
+            "fids": "50784",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "5_11-3(650).png"
+          }
+        ],
+        "index": 2,
+        "list_text": "曄揚開發案終止、中油三輕增加環保承諾"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>根據學術研究，持續向社會揭露仁大工業區鄰近居民承受的致癌風險高於一般可接受範圍數十倍至數百倍（如甲醛、1,3-丁二烯等），並強烈要求建立平行監測機制及資訊公開。</p><p>經過多年爭取，2021年10月終於促使高雄市環保局在於大社工業區東側（近社區）與南側（近竹後國小）增設了OP-FTIR（開徑式傅立葉轉換紅外光）監測站。這項成果讓致癌物與有害空氣污染物的排放數據得以即時揭露，提供地方民眾及社會更準確的風險評估依據，也藉此監督大社工業區各大工廠排放的污染，促使其更嚴加管制空污。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50785",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "成功爭取增設空污與有害空污監測站"
+        },
+        "files": [
+          {
+            "fids": "50785",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "5_11-4(650).png"
+          }
+        ],
+        "index": 3,
+        "list_text": "成功爭取增設空污與有害空污監測站"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>高雄長期背負台灣石化工業發展的重擔，包含了大社、仁武、後勁、林園及小港等工業區，都有石化業，為當地帶來嚴重的空氣、水與土壤污染。根據工業局委託的健康風險評估顯示，仁武、大社、楠梓、左營等區居民的致癌風險遠高於一般可接受範圍，孩童等敏感族群的風險更是一般的百倍以上。</p><p>為改善污染，政府曾於1993年承諾大社工業區將與中油五輕一併遷廠，並於1998年都市計畫通盤檢討中明定於2018年將大社工業區從特種工業區降編為「乙種工業區」。然而，經濟部與石化業者卻在期限屆滿時反對降編，企圖改為「甲種工業區」（可從事石化業）以繼續營運甚至擴廠，導致政府承諾跳票。</p><p>此外，2014年7月31日的高雄氣爆事件，炸出了長期隱藏在市區地底下的石化管線危機，凸顯了工業管線穿越人口稠密區的高風險，以及政府與企業長期漠視「社區知情權」，居民對生活周遭的危險化學物質與地下石化管線一無所知。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50080",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "325|翻轉污染的日常"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "反對石化業擴張",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/338",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "0"
+  },
+  "main_files": [
+    {
+      "fids": "50080",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-010.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "338",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/338/edit"
+}

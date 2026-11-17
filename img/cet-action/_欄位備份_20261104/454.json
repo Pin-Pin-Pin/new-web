@@ -1,0 +1,118 @@
+{
+  "captured_at": "2026-11-04T07:49:45.598Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>發起具創意的街頭快閃行動（如：在中鋼總部前留下黑腳印抗議），並連續參與6次「高雄市鋼鐵業空氣污染物排放標準」公聽研商會，嚴格監督並要求加嚴法規修訂。</p><p>我們促使草案增訂「電弧爐戴奧辛檢測頻率增加為一年兩次」、「明定未達標設備的改善期限且不得展延」，以及「未落實改善者直接適用新標準」等嚴格機制，法案若通過預計每年至少可減少上千噸的空污排放，提升高雄市的空氣品質。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50086",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "終結鋼鐵業寬鬆標準與促成法規加嚴"
+        },
+        "files": [
+          {
+            "fids": "50086",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-079.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "終結鋼鐵業寬鬆標準與促成法規加嚴"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>針對林園石化工業區（如中油新三輕擴產案），在環評程序中極力要求進行健康風險評估，並成功爭取成立環評監督委員會。積極參與環評監督，並揭露當地超出可接受範圍的極高致癌風險，要求先降低健康風險，落實環評承諾，反對爭議未明前核准試車，以維護市民的健康。</p><p>針對污染負荷已超出極限的小港臨海工業區，於各項擴廠與新設開發案（如遊艇產業園區開發等）的環評程序中，嚴格把關並強力反對未經嚴謹評估的擴張。在多場環境相關會議中，地球公民要求開發單位必須將鄰近居民的「健康風險評估」納入審查範圍，揭露當地居民早已超標的健康風險數據。透過不間斷的公民監督，成功促使政府部門針對臨海工業區周邊居民啟動長期的流行病學調查，讓被忽視的居民健康數據得以浮出檯面，並以此作為要求工廠減污的科學依據。</p><p>在多年持續的倡議、抗議以及立委的協助下，也成功促使政府啟動「林園、臨海、大社工業區總體檢」計畫，將工廠煙道空污排放、工安、廢棄物處理及地下水監測等納入全面查察與公民監督。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50087",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "揭露石化業健康風險並推動工業區總體檢"
+        },
+        "files": [
+          {
+            "fids": "50087",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260827-080.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "揭露石化業健康風險並推動工業區總體檢"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>大林電廠與興達電廠是兩座位在高雄且規模巨大的火力發電廠，廠內均設有燃煤發電及燃氣發電，是長期供給台灣電力的重要能源設施，卻也為南部帶來不小的污染負擔及環境成本。</p><p>針對大林電廠於2007年提出的更新擴建案，地球公民展開長達兩年半的倡議，最終與在地友團成功讓台電大林廠的燃煤規模從 4 座縮減為 2 座發電機組，讓未來空污預估增量「攔腰砍半」，為南部守下減碳減空污的成果。</p><p>針對興達電廠，我們要求「冬季燃煤少一座」及「停下興達最老舊的燃煤一號機組 」長期積極參與環評專案小組會議、召開記者會並拜會政府官員，強力要求老舊燃煤機組提前除役及原廠址更新。這些倡議行動成功爭取到經濟部與台電在興達電廠更新的環評中承諾，於秋冬空污季停止運轉2部燃煤機組、另外2部削減30%用煤量，並讓最老舊的1、2號機提前於民國112年（2023年）底除役；同時也逼迫台電調整基地規劃，擴大保留永安濕地面積，並促成了「生態保育小組」的設立，讓發電廠與濕地共存。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50088",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成大林電廠及興達電廠大幅減煤與保留永安濕地"
+        },
+        "files": [
+          {
+            "fids": "50088",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260827-081.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "促成大林電廠及興達電廠大幅減煤與保留永安濕地"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>高雄長期作為台灣的重工業重鎮，聚集了密集的石化、鋼鐵、電力與塑膠產業，使市民面臨嚴峻的空氣污染與自然棲地破壞的雙重危機。這些高耗能、高污染的大污染源在碳排放量與空氣污染方面長期居高不下，主要污染源包含：仁武、大社、林園與臨海等工業區以及大林電廠與興達電廠等老舊燃煤機組等，再加上地理上處於下風處，致使中南部常陷入嚴重霾害，民眾長期暴露在PM2.5、臭氧及各種致癌物質的高健康風險中，承受著極大的環境負荷。</p><p>為了捍衛南部民眾的生存與呼吸權，地球公民基金會致力於從源頭要求污染減量、落實污染監測及執行健康風險評估，並強力監督政府落實產業轉型。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50085",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "325|翻轉污染的日常"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "監督高雄重大污染",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/454",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "0"
+  },
+  "main_files": [
+    {
+      "fids": "50085",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-011.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "454",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/454/edit"
+}

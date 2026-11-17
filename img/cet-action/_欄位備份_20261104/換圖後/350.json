@@ -1,0 +1,143 @@
+{
+  "captured_at": "2026-11-04T08:47:04.291Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>為了讓反核意識轉化為實質力量，地球公民長期籌辦大型集會。2011年福島核災後，地球公民組織了「南台灣廢核行動聯盟」，第一次辦理了「430廢核遊行」，成功吸引3,000人上街，成為當時南台灣有史以來最大規模的反核遊行。其後，參與「全國廢核行動平台」運作，擴大串連上百個民間團體，2013年與友團共同締造了全台22萬人上街廢核的歷史紀錄。</p><p>在後續的2014年至2019年間，地球公民仍持續在三月份籌辦南台灣與北台灣的廢核大遊行，吸引數萬名公民參與，為推動非核家園與能源改革奠定了厚實的草根基礎。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50744",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "籌辦近十年高雄反核遊行，促成公民行動"
+        },
+        "files": [
+          {
+            "fids": "50744",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_22-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "籌辦近十年高雄反核遊行，促成公民行動"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>2014年4月，林義雄先生的禁食行動，廢核行動結發起「停建核四，落實民主」系列活動，以長期佔領凱道、佔領忠孝西路、黃絲帶行動等，加乘多年來台灣社會累積的反核能量，成功迫使當時的馬英九政府宣布將核四停工封存。同時，更進一步促成了2016年蔡英文總統的核電如期除役的政策與承諾。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50745",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成政府承諾非核家園、封存核四"
+        },
+        "files": [
+          {
+            "fids": "50745",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_22-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "促成政府承諾非核家園、封存核四"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>然而廢核行動的成果，受到三次擁核公投的挑戰。對此，反核陣營皆積極推動能源對話，透過社群媒體、線下講座與對談、大型集會遊行活動，邀請社會共同思考台灣使用核電的代價，並在公投投下反對票。</p><p>2018年面對「廢除電業法第95條第1項」公投（非核家園實質入法），地球公民舉辦能源論壇，還引介日本攝影師豐田直巳來台展出福島核災攝影作品、撰寫系列文章，最終獲得4,014,215張反對票。</p><p>2021年迎戰「核四重啟」公投，擔任全國廢核行動平台核心團隊，共同進行破百場能源教育演講、出席電視說明會，成功催出4,262,451張不同意票，將其徹底否決。</p><p>2025年針對「核三重啟公投」，更深度串連屏東在地社群，與台南、高雄、屏東在地店家與團體合作舉辦《歸零—無人提起的真相》展覽、講座及晚會，深化地方反核行動的主體性，並在屏東開出全國最高的反對票。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50746",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "迎戰核電公投，促成社會溝通"
+        },
+        "files": [
+          {
+            "fids": "50746",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "5_22-3(650).png"
+          }
+        ],
+        "index": 2,
+        "list_text": "迎戰核電公投，促成社會溝通"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>地球公民長年擔任「屏東縣核安監督委員會委員」及「行政院非核家園推動小組諮詢委員」，在體制內推動核四除役、核後端基金改革與核廢料處理機制。</p><p>在監督核三廠除役方面，我們促成台電與屏東縣府投注資源強化除役的環境與社會評估，並要求屏東核安委員會增聘恆春在地代表，納入居民意見。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50747",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "進入體制內，進行政策監督與法制推動"
+        },
+        "files": [
+          {
+            "fids": "50747",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "5_22-4(650).png"
+          }
+        ],
+        "index": 3,
+        "list_text": "進入體制內，進行政策監督與法制推動"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>台灣共有三座曾實際運轉的核電廠，分別是位於新北金山的核一、萬里的核二以及屏東恆春核三。這三座核電廠都是威權時期下的產物，規劃、興建皆未曾取得在地居民的民主授權，因而都曾引起地方長期的抗爭。在福島核災發生後，新的地質調查也顯示，這些核電廠的廠址都位於活動斷層附近，對台灣核安形成巨大的挑戰。而台灣在核廢料的處置上，同樣面臨地址條件跟選址的難題，至今仍未有突破，只為了能發數十年的核電，卻留下需要數百萬年處置的核廢料給後代子孫。</p><p>311福島核災後，動工超過 10 年卻遲遲無法完工，屢屢發生人為疏失、施工不當事件的拼裝車核四，引起全台對核安的疑慮，促成公民團體組成「全國廢核行動平台」，號召22萬人上街訴求廢核。社會輿論的持續加溫，也迫使國民黨政府停建核四、承諾非核家園。</p><p>台灣順利在2025年邁入非核家園，然而部分政黨仍訴求台灣重啟核電，甚至以違反國會議事規則的方式，粗暴修改相關法律，為重啟核電鋪路。</p><p>核安仍有虞、核廢仍無解，社會對使用核電如何形成共識？地球公民主張在這些核電造成的社會及環境成本無法被解決前，都不應繼續使用核能發電，才能避免人民持續承擔核災風險、核廢料存放的難題及世代的不正義。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50070",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "327|世代正義與公平發展",
+      "326|重新思考能源"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "廢核",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/350",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "5"
+  },
+  "main_files": [
+    {
+      "fids": "50070",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-021_2.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "350",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/350/edit"
+}

@@ -1,0 +1,3276 @@
+{
+  "328": {
+    "captured_at": "2026-11-04T07:41:24.664Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>面對在地農民害怕報復而不敢檢舉的心理，我們與開源社群 g0v 零時政府合作開發「農地工廠回報系統」，簡化舉報流程並保護民眾隱私；隨後更推出「大家來找廠」空拍圖比對遊戲，動員鍵盤志工比對不同年份的航空照片。這項行動讓線上玩家在短短一年內成功辨識出超過1,000座違章工廠，直接取代了過去耗費人工兩年半的調查工作量，為民間團體提供了向政府施壓的具體證據。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50376",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "極大化群眾參與，以科技工具提升舉報與調查量能 "
+          },
+          "files": [
+            {
+              "fids": "50376",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260918-001.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "極大化群眾參與，以科技工具提升舉報與調查量能"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>除了前端檢舉，進一步向經濟部、內政部等單位索取一手行政資料進行數據分析，發表《六縣市農地違章工廠查處成效與體質診斷報告》，積極監督政府落實勒令停工與斷水斷電，並呼籲各縣市政府通過不須經議會審查的「違規者自行拆除執行原則」。此舉成功將執法不力具體化，揭露了農政、經發、地政與建管等跨局處的銜接斷點，逼使中央與地方政府面對裁罰率不到40%、實際拆除率僅15%的制度性失能。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50377",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "精準診斷行政體質，揭露跨局處漏洞並督促落實停工與裁罰"
+          },
+          "files": [
+            {
+              "fids": "50377",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260918-002.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "精準診斷行政體質，揭露跨局處漏洞並督促落實停工與裁罰"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為了讓中高污染工廠順利離開農地，團隊遠赴日本考察七〇年代違章工廠的遷廠歷史，並針對台灣金屬表面處理業（電鍍）、印染整理業等高污染產業進行深度研究與舉辦系列座談，嘗試草擬民間處理方案。這些努力成功促使社會與產業開始深入討論《工廠管理輔導法》修法後中高污染工廠的遷廠可行路徑，並讓「將高污染產業引入專業合法工業區」成為產官學界的共識，逐步推動環境與產業回歸正常體制。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50378",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "開展國際借鏡與產業研究，推進中高污染工廠的遷廠與轉型思維"
+          },
+          "files": [
+            {
+              "fids": "50378",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260918-003.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "開展國際借鏡與產業研究，推進中高污染工廠的遷廠與轉型思維"
+        }
+      ],
+      "field_curation": [
+        {
+          "fields": {
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50254",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[field_comp_link][0][title]": "閱讀更多",
+            "[field_comp_link][0][uri]": "/node/100058",
+            "[field_comp_summary][0][value]": "過去六年來，地球公民深度研究調查「農地違章工廠」的現況、背景，與中央、地方政府承辦人員訪談對話，聯合友團採取了直接行動，揭露多家上市公司以違章工廠謀利，關切《工廠管理輔導法》的修法，與行政、立法院展開遊說角力。\n\n我們的行動足跡不僅止於台灣，更自籌經費出國考察，了解日本在七零年代如何處理農地違章工廠，以他山之石尋求台灣解決之道。\n\n迄今，這些行動還沒有取得重大的成果，但我們認為：台灣社會需要有更多的人們理解「農地違章工廠」這個課題，捲起袖子，以積極的公民行動，讓政府做對的事。",
+            "[title][0][value]": "農地裡的違章工廠"
+          },
+          "files": [
+            {
+              "fids": "50254",
+              "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-030.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "農地裡的違章工廠"
+        }
+      ]
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p dir=\"ltr\">台灣農地違章工廠問題是一個歷史悠久且錯綜複雜的環境與社會隱憂。自1940年代起，政府為促進農產品加工業發展，允許部分工廠在農地上設置，隨著後續產業結構轉型，工廠功能擴展至各式領域，其中更包含許多涉及皮革加工、塑料製造、電鍍與五金鑄造等中高污染產業。由於農地管理政策未臻完善，加上政府執法與管控不足，導致全台估計出現超過4.5萬家農地違章工廠。這些工廠不僅在下雨時可能透過暗管非法偷排廢水，導致重金屬污染農田、嚴重威脅食物安全，也造成每年約有1,500公頃的農地流失。此外，非法建物未遵守建築技術規則的防火規範，一旦發生火災往往危及消防人員的生命安全。儘管2019年《工廠管理輔導法》修法承諾「新增違章工廠即報即拆」，但因拆除工作跨足農政、經發、地政、都發、建管等5個局處，各單位複查不力、未連續裁罰，加上人力與預算不足，導致全台實際拆除率極低，讓倡議團體必須針對此結構性漏洞展開長期的監督與改革行動。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50159",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "324|重整失序的國土"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "農地違章工廠",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/328",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "18"
+    },
+    "main_files": [
+      {
+        "fids": "50159",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-001.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "328",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/328/edit"
+  },
+  "329": {
+    "captured_at": "2026-11-04T07:42:35.378Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>地球公民基金會自2013年起發動「礦業改革」倡議。在歷時七年的立法遊說與政策攻防中，面對政院版草案大改、立法院屆期不連續等法案歸零困境，積極啟動大量跨黨派立委拜會，與經濟部礦務局（組改後為地質調查及礦業管理中心）、環保署（組改後為環境部）與原民會進行高密度的卡關條文協商。2025年5月，修法最終廢除了「採礦不需地主同意」與「申請展延原則核准」的惡法，未來展延必須取得地主與相關權利人的同意，且取消了政府依法駁回申請時需賠償業者的不合理規定。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50379",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "《礦業法》修法正式三讀通過，全面刪除霸王條款"
+          },
+          "files": [
+            {
+              "fids": "50379",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260918-004.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "《礦業法》修法正式三讀通過，全面刪除霸王條款"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">2017年3月經濟部快速核准亞泥展延20年，隨後6月電影《看見台灣》導演齊柏林不幸逝世，其生前拍下的亞泥空照圖引發全台憤怒。地球公民順勢發動連署，捲動高達25萬人支持，並發動「625看見台灣、拯救山林」萬人上街大遊行，迫使政府承諾修法。新法將礦業用地定義由單純的「面積」改為「體積」，明確訂定開採總量與最終開採高程的上限，一旦達到上限礦業用地即消滅，若想繼續開採必須重新面對嚴格審查，翻轉了過去無期限採礦的沈痾。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50384",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "捲動25萬人連署，修法重新定義礦業用地"
+          },
+          "files": [
+            {
+              "fids": "50384",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260918-005.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "捲動25萬人連署，修法重新定義礦業用地"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">在倡議早期（2013-2016年），地球公民與蠻野心足生態協會等民間團體合作，陸續揭露南投北原礦業（為於水源保護區）、萬達鑛業（鄰近台灣山毛櫸棲地）、金昌石礦大鑽法律漏洞等案，透過倡議行動、公民告知書與行政訴訟進行阻截。最終修法新增了環境保護與風險評估機制，針對過去從未做過環評且面積大於2公頃、年產量超5萬公噸且位於特定區位的既有礦場（如潤泰蘭崁石礦、亞泥新城山礦場），強制要求依法補辦環評或，產量較少的礦場則需提出環境影響調查分析並提出因應對策，同時建立環境部與地礦中心跨部會的聯合檢查監督機制。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50380",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "透過法律防線與個案揭露，強制既有大礦場補辦環評"
+          },
+          "files": [
+            {
+              "fids": "50380",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260918-006.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "透過法律防線與個案揭露，強制既有大礦場補辦環評"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>地球公民在推動改革的過程中舉辦許多倡議、教育推廣的活動，與礦場所在地的部落族人共同合作，讓歷史共業與土地轉型正義議題浮上檯面。新法最終規定，在原民土地上採礦的企業，若過去未曾辦理過諮商同意，修法後必須在一年內補辦諮商同意（涉及72個個礦場），未來若擴大開採也必須重新辦理。<br>&nbsp;</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50381",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "與原民部落結盟反抗，落實原住民族諮商同意權"
+          },
+          "files": [
+            {
+              "fids": "50381",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260918-007.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "與原民部落結盟反抗，落實原住民族諮商同意權"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">2016年底，地球公民串聯民間團體、律師、立委與法學教授撰寫「民間版礦業法修正條文」，並由立委提案送進立法院。最終修法促成不論是申請礦業權、礦業用地或是申請展延，程序中都必須強制辦理公開展覽並舉行說明會，且准駁結果、年度施工計畫、礦場關閉計畫等核心書件都必須公開於指定網站，全面接受公眾監督。<br><br>&nbsp;</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50382",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "串聯法律專家撰寫民間版草案，新增資訊公開與公民參與機制"
+          },
+          "files": [
+            {
+              "fids": "50382",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-4-form-field-comp-image-wrapper",
+              "file": "20260918-008.webp"
+            }
+          ],
+          "index": 4,
+          "list_text": "串聯法律專家撰寫民間版草案，新增資訊公開與公民參與機制"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>地球公民於2013年揭露潤泰公司在水源涵養保安林內採礦，促使林務局（組改後為林業及自然保育署）不再核准保安林內新設礦區。在民間團體長期的倡議推動下，後續促成了環境敏感地區、國家公園內原則禁止探採礦，並成功在2017年讓榮豐礦業因涉及天然林與保育類動物遭環評認定不應開發，確立了「礦場退出天然林」的歷史首例。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50383",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "成功推動林務局停核保安林，首開礦場退出天然林先例"
+          },
+          "files": [
+            {
+              "fids": "50383",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-5-form-field-comp-image-wrapper",
+              "file": "20260918-009.webp"
+            }
+          ],
+          "index": 5,
+          "list_text": "成功推動林務局停核保安林，首開礦場退出天然林先例"
+        }
+      ],
+      "field_curation": [
+        {
+          "fields": {
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50150",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[field_comp_link][0][title]": "大山挖一口",
+            "[field_comp_link][0][uri]": "/node/3690",
+            "[field_comp_summary][0][value]": "在你所不知道的遙遠深山中，挖山採礦一直都是「現在進行式」。\n礦產，作為全民共有的重要天然資源，開採過程卻伴隨侵佔土地、破壞環境、賤賣國土、圖利業者等問題。隨著個案觸目驚心的現場照片，礦業議題逐漸走進社會大眾眼裏。\n究竟《礦業法》如何成為礦業改革的重要關鍵？為什麼修，怎麼修？採礦業又該如何與土地和周遭居民共處，我們一起看下去吧！",
+            "[title][0][value]": "大山挖一口，礦業法修什麼？"
+          },
+          "files": [
+            {
+              "fids": "50150",
+              "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-028.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "大山挖一口，礦業法修什麼？"
+        }
+      ]
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p dir=\"ltr\">台灣推動礦業改革的根本原因，在於這是一部極度不合時宜、長期偏向礦權業者的老舊法規。</p><p dir=\"ltr\">這部舊《礦業法》立於1930年（民國19年），當年立法背景是基於幅員遼闊的亞洲大陸，而非現今台灣的國土情境與社會變遷。隨著我們逐步邁入已開發國家，早已不需要像過去十大建設時期那樣，為了扶植特權產業而大量開採、甚至外銷水泥。</p><p dir=\"ltr\">這部老舊惡法中，有著嚴重侵害人權與土地權的「霸王條款」，也就是舊法第47條，賦予業者極大權利，允許其「不需取得地主同意」便能在私人土地上挖礦，若地主不同意，業者只要將極低的租金放在法院「提存」即可先行使用、破壞土地。另外，舊法第31條更規定礦業權期滿申請展延時「原則上一律核准」，且若政府因劃設保護區等公共利益駁回展延，還必須編列預算賠償業者的損失。</p><p dir=\"ltr\">更嚴重的是，台灣現存的礦業權中，有超過八成是在《環境影響評估法》與《原住民族基本法》實施前就核准的，這導致全台多數的大型礦場（如亞泥新城山礦場）長期在未經環評把關、未取得鄰近原民部落諮商同意的情況下，在人民的家園上方進行侵略性的山體開採。環境與原民權益在此法規體制下長期失靈，進而引發了民間全面的改革呼聲。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_action_item[entities][4][delta]": [
+        "4|4"
+      ],
+      "field_action_item[entities][5][delta]": [
+        "5|5"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50135",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "324|重整失序的國土"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "礦業改革",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/329",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "15"
+    },
+    "main_files": [
+      {
+        "fids": "50135",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-002.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "329",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/329/edit"
+  },
+  "330": {
+    "captured_at": "2026-11-04T07:43:08.824Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">《國土計畫法》的重要改革方向之一，是希望改變過去土地使用容易透過個案變更、缺乏整體規劃的問題，以「計畫引導使用」取代零散的個案變更邏輯，並將全台土地劃分為國土保育、海洋資源、城鄉發展與農業發展四大功能分區。</p><p dir=\"ltr\">地球公民在制度推動過程中，持續監督全國國土計畫的內容與空間發展策略，也嘗試與地方政府及縣市規劃團隊互動，針對國土功能分區劃設提出建議，希望避免城鄉發展區無序或過度擴張，並促使地方政府負起更完整的空間規劃責任，朝向「適地適用」——讓適合的土地做適合的事情——的目標前進。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50624",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "從個案變更走向整體規劃，重建國土秩序"
+          },
+          "files": [
+            {
+              "fids": "50624",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "5_3-1(650).png"
+            }
+          ],
+          "index": 0,
+          "list_text": "從個案變更走向整體規劃，重建國土秩序"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>國土計畫牽涉功能分區、土地使用管制與人民權益，容易產生資訊落差與誤解。為了增加民眾對國土功能分區和土地使用管制的理解，地球公民推出【狗兔雞花搬新家】國土計畫專頁，將艱澀的制度轉化為生活化的圖文與 QA，說明國土計畫的核心概念與土地管理制度的變革。 同時，地球公民也持續追蹤各縣市國土功能分區的話設計頓，回應社會對農地使用、土地權益與開發限制的疑慮，降低錯誤資訊對公共討論的干擾。隨著多數直轄市、縣（市）陸續將「國土功能分區圖」函報中央審議，台灣也逐步朝向新的國土規劃制度轉軌。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50625",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "轉化專業知識，讓更多人參與國土規劃"
+          },
+          "files": [
+            {
+              "fids": "50625",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "5_3-2(650).png"
+            }
+          ],
+          "index": 1,
+          "list_text": "轉化專業知識，讓更多人參與國土規劃"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">面對部分地方政府及立法委員要求再次延後國土計畫全面實施，地球公民協同農業工作者、學術界及 30 多個民間團體發起聯合聲明與連署，針對「農地被判死刑」、「農民權益將受到限制」等爭議說法提出澄清，指出國土計畫的目的並非扼殺地方發展，而是透過事前的整體規劃，兼顧人民既有合法權益、環境風險與未來發展需求。儘管國土功能分區全面實施的時程最終仍遭延後，這場爭議也凸顯：從「個案變更」轉向「事前政體規劃」，不只是制度技術的改變，更涉及地方發展、土地利益與公共價值的重新協調，需要持續累積社會理解與公共對話。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50626",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "抗衡政治拖延，持續推動制度落實"
+          },
+          "files": [
+            {
+              "fids": "50626",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "5_3-3(650).png"
+            }
+          ],
+          "index": 2,
+          "list_text": "抗衡政治拖延，持續推動制度落實"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">《國土計畫法》強化國土規劃過程中的資訊公開與民眾參與機制，象徵台灣的國土空間規劃有機會從「為民規劃」進一步走向「與民規劃」。相較於區域計畫的體制，新制度提供有多民眾參與空間，包括計畫擬定前廣詢意見、公開展覽與公聽會等程序。雖然距離真正充分的公民參與仍有一段路，這仍是空間民主化的重要一步。</p><p dir=\"ltr\">當「參與」成為國土規劃的重要環節，下一步要面對的，是如何建立真正有效的對話平台，讓規劃專業者、不同需求的民眾、以及肩負不同任務的中央與地方政府部門，能夠互相理解、協調與折衝，共同面對土地使用所涉及的公共利益與價值衝突，形成未必完美、但社會可以共同承擔的政策與空間規劃方案。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50627",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "推動空間民主化，讓土地規劃成為公共討論"
+          },
+          "files": [
+            {
+              "fids": "50627",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "5_3-4(650).png"
+            }
+          ],
+          "index": 3,
+          "list_text": "推動空間民主化，讓土地規劃成為公共討論"
+        }
+      ],
+      "field_curation": [
+        {
+          "fields": {
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50170",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[field_comp_link][0][title]": "閱讀更多",
+            "[field_comp_link][0][uri]": "/node/100053",
+            "[field_comp_summary][0][value]": "規劃國土是像大家搬家後規劃新家的使用一樣，讓我們先撇開複雜的實際運作、政府分工，從核心上了解「國土計畫」的運作原理，一起藉著狗兔雞花小家庭搬新家的比喻，對應實際國土使用的情境，看看遇到了哪些問題。",
+            "[title][0][value]": "狗兔雞花搬新家（上）—國土計劃是什麼？"
+          },
+          "files": [
+            {
+              "fids": "50170",
+              "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-024.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "狗兔雞花搬新家（上）—國土計劃是什麼？"
+        },
+        {
+          "fields": {
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50171",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[field_comp_link][0][title]": "閱讀更多",
+            "[field_comp_link][0][uri]": "/freepageb/100054",
+            "[field_comp_summary][0][value]": "上集我們跟著狗兔雞花搬新家，讓大家了解「國土計畫」就像搬家搬進二手屋，要在既有的情況下做調整，哪些空間可以作為廚房、廁所、房間，會受到水管、插座、瓦斯在哪裡影響，就像現實土地的使用。而使用空間的人，也會有不同的需求，以下將會為你說明，國土計畫作為新制度，改變了哪些土地使用邏輯；會對土地的使用造成什麼影響；實際上又是怎麼執行。",
+            "[title][0][value]": "狗兔雞花搬新家（下）—有哪些土地管理大變革？"
+          },
+          "files": [
+            {
+              "fids": "50171",
+              "field": "edit-field-curation-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-025.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "狗兔雞花搬新家（下）—有哪些土地管理大變革？"
+        }
+      ]
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p dir=\"ltr\">《國土計畫法》的誕生，主要源自台灣過去數十年來面臨的重大自然災害，以及對既有土地管理與空間規劃制度問題的深刻反思。這項立法構想早在 1997 年就首次被提出，歷經多年討論， 2009 年莫拉克風災（八八水災）帶來重創後，國土安全、環境敏感地區的土地利用與氣候風險更加受到社會重視。《國土計畫法》第一條便明定其核心立法目標為「因應氣候變遷」、「確保國土安全」與「追求國家永續發展」。</p><p dir=\"ltr\">除了因應環境風險，既有體制下農地破碎與土地任意變更的問題，也是推動國土規劃制度改革的重要背景。在《區域計畫法》體制下，非都市土地可以透過分區或使用地變更進行開發，長期累積的個案變更，使得土地利用缺乏整體規劃，增加農地破碎、開發蔓延與土地炒作等問題。此外，在國土計畫全面上路前，各地也出現渡假村、產業園區等開發案趕在既有制度退場前「壓線申請」的現象。當土地開發缺乏整體空間規劃，不僅可能造成公共建設資源配置失衡，也可能讓環境敏感或高風險的地區持續承受不適當的開發壓力。。</p><p dir=\"ltr\">此外，民間社會對於「空間民主化」的需求也日益受到重視。，過去的土地規劃 主要由政府與規劃專業者主導，一班民眾參與空間相對有限。因此民間團體長期倡議國土規劃制度改革，除了期待建立「適性適地」的永續發展思維，更重要的是提升土地規劃的公共性、減少土地開發受到少數利益主導的可能，並透過資訊公開與公民參與， 逐步推動土地規劃的「空間民主化」。</p><p dir=\"ltr\">《國土計畫法》於 2015 年底成功在立法院完成三讀，並於 2016 年正式公告施行。未來，地球公民仍將持續參與、監督國土計畫制度的後續推動，包括全國國土計畫的通盤檢討、部門空間發展策略、中央與地方及跨部門間的協作，以及國土規劃過程中的公民參與。</p><p dir=\"ltr\">我們期待的國土計畫，不只是一張把土地分成不同顏色的分區圖，而是一套讓社會共同討論「土地該如何使用、風險如何承擔、未來如何發展」的民主治理機制。國土空間的民主化，需要制度，也需要公民持續參與，才能讓「適性適地、永續發展」真正落實在台灣的土地上。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50169",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_curation[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_curation[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_issue_category[]": [
+        "324|重整失序的國土"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "國土計畫",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/330",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "2"
+    },
+    "main_files": [
+      {
+        "fids": "50169",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-003.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "330",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/330/edit"
+  },
+  "331": {
+    "captured_at": "2026-11-04T07:43:37.750Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>我們長期監督國家造林政策，避免錯誤補貼產生毀林誘因，倡議保留天然次生林、爭取政府增加預算推動環境保育林營造，並主張針對環境敏感地區實施「限制伐木補償」，給予私有土地所有人合理補償。歷經十餘年倡議，2024 年「獎勵造林辦法 2.0」修訂，正式採納我們的建言，禁止為造林而砍伐天然次生林，並新增以生態維護與國土保安為目的之「非木材生產林」獎勵類別；同時，政府已實施「具生產性私有林限制採伐補償方案」與「生態服務給付」，確保山村居民因公益性獲得制度補償。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50389",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "推動林政改革，兼顧生態保育與在地生計"
+          },
+          "files": [
+            {
+              "fids": "50389",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260918-014.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "推動林政改革，兼顧生態保育與在地生計"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">為確保林業發展不以犧牲生態為代價，我們長年倡議政府應建立明確的林地分級制度，讓經濟林與保育林分流管理，並導入透明可問責的國際森林認證體系，減少林地超限利用。2016 年起 FSC（森林管理委員會）國際永續認證制度導入臺灣，作為最早受邀參與監督的非政府組織，我們積極為公私有林地的驗證過程把關——從正昌、永在等代表性林企業的案例參與，到 2018 年至 2024 年間國有林地的全區驗證。我們持續扮演監督與溝通的角色，在國產材振興的過程中，確保環境評估與社區知情權的落實。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50390",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "引導永續林業發展，參與 FSC 認證與林地分級"
+          },
+          "files": [
+            {
+              "fids": "50390",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260918-015.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "引導永續林業發展，參與 FSC 認證與林地分級"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">自2021年起，我們發起「森之旅」、「花東山海」系列講座，將臺灣山林現況及人山互動帶入社會大眾的日常視野。從森林生態保育、原住民族文化與權利，到自然資源利用與山林治理，邀請不同領域的行動者分享與對話。目的是讓台灣山林的面貌不只停留在艱澀的政策討論，藉此拉近社會大眾的距離。三年來歷經24場活動，吸引了將近萬人次的報名參與，成功推動議題在多元社群中的擴散，提升大眾對山林議題的認識與關注，也成為社會溝通的重要平台。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50391",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "深耕公眾教育，開展「森之旅」社會對話"
+          },
+          "files": [
+            {
+              "fids": "50391",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260918-016.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "深耕公眾教育，開展「森之旅」社會對話"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p dir=\"ltr\">臺灣六成國土由森林覆蓋。它是野生動植物與無數生命棲息的家園，更是原住民族與各個世代人們得以安身立命的基石。</p><p dir=\"ltr\">四百年來，不同族群的拓墾和殖民政權更迭在臺灣山林留下深切刻痕。日治時期大規模的森林事業計劃、部落「集團移住」政策，以及戰後國有林體制的確立，形塑了今日國家管理山林的基本空間格局，原住民族也因此喪失傳統領域上的權利。這段過程中，山林資源一直都在臺灣各個時代為經濟發展輸出養分，大規模伐林、高山農業、道路、水庫、水保工程等山區建設，長達一世紀的開發，為山川紋理帶來顯著改變，引發棲地破碎化與山坡地不當利用等課題。</p><p dir=\"ltr\">1990年代政府雖宣布全面禁伐天然林，隨後推動的「全民造林」卻因缺乏嚴謹評估與盲目補貼，反而引發新一波毀林誘因，未能引導臺灣林業走向獲得社會信任的永續之路。2009年莫拉克風災的重創，凸顯極端氣候在脆弱地質條件下造成的劇烈衝擊，更促使社會反思：面對過去的沉痾與當前的氣候風險，臺灣山林治理應如何健全體制，走出一條平衡水土、生態、產業、在地生計與歷史傷痕的新路？</p><p dir=\"ltr\">2016年起，臺灣山林治理迎來了關鍵的思維轉變。政府與民間逐漸形成共識，意識到山林政策必須兼顧產業永續、生態保育與社會正當性。一方面，政府帶頭推動林政轉型——面對人工林老化的現實，推動國產材政策與 FSC 國有林全區認證，在振興林產業同時兼顧環境評估與社區知情權；並引入「里山倡議」、「國土綠網」等政策，搭配「生態給付」與「限制伐木補償」，為山林保育注入新的制度誘因。</p><p dir=\"ltr\">同時，民間保育界也走向更包容的視野，理解合理的森林資源利用對山林永續的必要性。更重要的是，政府與保育方皆開始深刻反思：過往「國家單向管制」若無法納入原住民族權利與山村在地生計，不僅難以建立社會共識，更常引發保育與在地居民的對立。多方價值的交會，正逐步引領臺灣山林走向在地參與及協同治理的新局。</p><p dir=\"ltr\">如今，臺灣邁向 2050 淨零排放，將「自然碳匯」納入十二項關鍵戰略，森林再度成為各界焦點。然而，氣候行動不能以犧牲生物多樣性與在地權益為代價。在嶄新的時代，我們響應《昆明—蒙特婁全球生物多樣性框架》倡導的「人與自然和諧共生」，主張山林政策除了邁向「30×30」目標、推動OECM保育共生地與生態修復，更需將原住民族傳統知識與權利置於治理核心。結合社區力量，落實山林管護，打造兼顧在地生計與生態永續的「多元共管」模式。</p><p dir=\"ltr\">無論是過去四百年的開發歷史，或是當代氣候變遷下的嚴峻挑戰，山林治理始終面臨著複雜的考驗。地球公民基金會長年扎根於此，從揭露不當政策、推動林政改革，到走入山村參與社區保育、開啟社會對話，我們致力於帶著群眾轉變思維：不僅是重視保育，更要看見山村夾在理想與現實中的掙扎，所謂的人與自然共存，才有實踐的可能性。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50119",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "324|重整失序的國土"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "山林保育",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/331",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "11"
+    },
+    "main_files": [
+      {
+        "fids": "50119",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-004.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "331",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/331/edit"
+  },
+  "332": {
+    "captured_at": "2026-11-04T07:44:41.450Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>地球公民基金會等團體自2003年起積極在地方舉辦公共論壇與說明會，向居民揭露人工湖將切斷水文等環境危機，並與在地鄉親2005年成立「反吉洋人工湖自救會」共同協力，展開多次陳情與抗議，成功凝聚並喚醒了地方強大的公民意識。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50422",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "深耕基層並喚醒公民意識"
+          },
+          "files": [
+            {
+              "fids": "50422",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "5_5-1.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "深耕基層並喚醒公民意識"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>透過串連高屏地區的地方首長與跨黨派立法委員，民間團體成功發揮政治影響力，讓立法院在2005至2008年間連續四年全數刪除高屏大湖計畫預算；隨後更於2012年再度成功遊說立委，刪除了徵收台糖農地的46億元預算。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50423",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "國會遊說與阻擋開發預算"
+          },
+          "files": [
+            {
+              "fids": "50423",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "5_5-2.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "國會遊說與阻擋開發預算"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>民間團體積極提出替代方案，指出當時高雄自來水漏水率高達26%，強烈訴求將百億工程預算移轉用於改善漏水問題，並倡議污水回收再生、改善東港溪水質等更具效益的作法。同時，學者與環團長期倡議的「伏流水」取水工法逐漸受到政府重視，近年完工的高屏溪伏流水工程更在2021年百年大旱中發揮了救命水的關鍵作用，成功顛覆過去過度依賴大型水庫與攔河堰的傳統思維。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50424",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "倡議替代方案與帶動水資源政策轉型"
+          },
+          "files": [
+            {
+              "fids": "50424",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "5_5-3.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "倡議替代方案與帶動水資源政策轉型"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>當開發案藉特別預算重啟時，地球公民基金會數度結合毛豆農與鄉親北上至環保署抗議，並在專案小組審查會議中透過數據進行激烈辯論。最終，在2013年3月13日的環評大會上，環評委員以10比6的票數正式否決高屏大湖開發案，成功擋下這項爭議長達十多年的不當開發，保住了700公頃的珍貴良田與毛豆農的生產地。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50425",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "環評攻防與成功捍衛良田生計"
+          },
+          "files": [
+            {
+              "fids": "50425",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "5_5-4.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "環評攻防與成功捍衛良田生計"
+        }
+      ],
+      "field_curation": [
+        {
+          "fields": {
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50258",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[field_comp_link][0][title]": "閱讀更多",
+            "[field_comp_link][0][uri]": "/node/100078",
+            "[field_comp_summary][0][value]": "2024年，台灣經歷著超過百年未有的大旱，是1911年有紀錄以來最少的降雨。兩位南台灣的大叔，決定帶領更多人，走讀從水源頭到水龍頭之間，關於高屏溪的故事。",
+            "[title][0][value]": "大叔帶你走讀高屏溪（上）"
+          },
+          "files": [
+            {
+              "fids": "50258",
+              "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-032.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "大叔帶你走讀高屏溪（上）"
+        },
+        {
+          "fields": {
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50259",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[field_comp_link][0][title]": "閱讀更多",
+            "[field_comp_link][0][uri]": "/node/100081",
+            "[field_comp_summary][0][value]": "我們喝著來自中央山脈、玉山、阿里山山脈的水。路途遙遠，在山林裡滲出，在大河裡流動，默默沉潛入地，在攔河堰、水庫、水井裡被匯集，進入自來水廠，在老舊的PVC管或新式的不鏽管送到了家裡的水塔，在扭開水龍頭那一刻，給我們生活和生命。逢百年大旱，提醒我們珍惜每一滴水。",
+            "[title][0][value]": "大叔帶你走讀高屏溪（下）"
+          },
+          "files": [
+            {
+              "fids": "50259",
+              "field": "edit-field-curation-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-033.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "大叔帶你走讀高屏溪（下）"
+        }
+      ]
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>高屏大湖（原名吉洋人工湖），開發案預定地跨越高屏交界的高雄旗山、美濃與屏東里港，佔地高達700公頃。政府宣稱此開發案是為了「調豐濟枯」，解決南部缺水問題並帶動觀光。然而，地球公民基金會強烈關注並反對此案，指出其背後隱藏了嚴重的環境、農業、社會與財政危機。</p><p>首先，該區地質導致地下水位極高，豐水期時甚至會湧出地表，人工湖形同將地下水層挖開暴露蒸發；到了枯水期，將從荖濃溪大量引水，與農民搶奪灌溉用水。再者，該預定地是台灣最重要的毛豆外銷契作專區，開挖大湖將摧毀大面積優良農田，重創年產值突破20億元的「綠金」產業。計畫耗費鉅資且效益極差，第一期工程經費高達161.53億元，預期每日卻僅增加10萬噸供水量，僅是一口伏流水井的供水量。</p><p>民間團體指出，當時高雄自來水漏水率高達26%，若將百億預算移轉用於改善漏水問題，省下的水資源與經濟效益遠勝興建人工湖。最後，開挖人工湖更被質疑是變相的砂石開採利益，過去該區砂石坑甚至淪為傾倒有毒廢棄物的深潭；地球公民更揭露政府暗中在周遭規劃面積高達4349公頃的新市鎮計畫，強烈質疑開挖高屏大湖的真實目的是官商勾結、炒作周邊地皮。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50168",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_curation[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_curation[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_issue_category[]": [
+        "324|重整失序的國土"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "高屏大湖",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/332",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "20"
+    },
+    "main_files": [
+      {
+        "fids": "50168",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-005.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "332",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/332/edit"
+  },
+  "333": {
+    "captured_at": "2026-11-04T07:45:11.389Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>參與「美麗灣」、「杉原棕櫚」等違法開發案與陳年舊案的法定審查程序，在會議中針對地質風險、生態衝擊與公平發展提出專業質疑；並串連台東與台北的民間組織促成全國關注，最終使美麗灣案因環評無效定讞，確立指標性法律判例，同時也在環現差審查中成功退回「黃金海案」，讓延宕超過 20 年的計畫持續受到環評制度嚴格把關。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50392",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "參與「違法環評可撤銷」司法判例，阻擋陳年舊案輕易闖關 "
+          },
+          "files": [
+            {
+              "fids": "50392",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260918-017.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "參與「違法環評可撤銷」司法判例，阻擋陳年舊案輕易闖關"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>出席環評與海岸管理審議會，透過專業意見揭露開發案對史前文化遺址（如富山遺址）及海洋生態（如珊瑚礁、基翬海灣）的威脅，迫使開發單位必須面對文化資產與生態承載力的真實數據，有效防止老舊開發案以過時資料輕易蒙混過關。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50393",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "提升東海岸開發審查門檻，成功守護史前遺址與海洋生態"
+          },
+          "files": [
+            {
+              "fids": "50393",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260918-018.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "提升東海岸開發審查門檻，成功守護史前遺址與海洋生態"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>許多開發案位在原住民族部落的傳統領域內，我們嘗試將艱澀的開發案資訊，與環評程序轉譯為易懂圖資，為周遭部落族人說明。並支持部落依《原住民族基本法》行使諮商同意權對抗程序不正義。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50394",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "關注部落傳統領域自主守護意識"
+          },
+          "files": [
+            {
+              "fids": "50394",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260918-019.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "關注部落傳統領域自主守護意識"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>長期關注《海岸管理法》施行並協助「重要海岸景觀區」劃設，監督政府落實國土規劃。在新法公告實施後，成功建立制度防線，要求東海岸開發案必須進入中央層級的「海岸管理審議會」嚴格受檢，使滿地富、鬱金香等開發案全數納入新法規範與實質監督。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50395",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "協助促成《海岸管理法》立法落實，建立中央級審議機制"
+          },
+          "files": [
+            {
+              "fids": "50395",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260918-020.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "協助促成《海岸管理法》立法落實，建立中央級審議機制"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">透過發起「不要告別東海岸」等大型社會行動與深度媒體分析，持續向大眾傳遞「海岸是全民公共財」的核心觀念，堅決反對公有沙灘私有化，成功翻轉社會對東海岸開發的傳統認知，將其從單純的地方觀光發展議題，提升為全國高度關注的環境與世代正義課題。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50396",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "將東海岸守護升格為全國環境正義課題"
+          },
+          "files": [
+            {
+              "fids": "50396",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-4-form-field-comp-image-wrapper",
+              "file": "20260918-021.webp"
+            }
+          ],
+          "index": 4,
+          "list_text": "將東海岸守護升格為全國環境正義課題"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>東海岸的開發爭議，源自於 1990 年代末至 2000 年初席捲而來的觀光「土地淘金熱」。當時，從台東卑南到成功長達數十公里的海岸線，在缺乏完善國土規劃的情況下，被眾多財團視為獲利的標的。這些大型度假村與飯店計畫，如美麗灣、杉原棕櫚、黃金海、寶盛與滿地富等，往往利用數十年前過時且寬鬆的環評執照企圖強行復工，或是透過將開發面積切割至門檻以下的方式來規避環境影響評估。</p><p>這種開發模式的核心矛盾在於「公共財的私有化」，原本屬於全民共享的沙灘與海景，在飯店築起後，破壞景觀也改變地方文化。更嚴峻的是，東海岸脆弱的地質與珍貴珊瑚礁生態，難以承受大量廢水與地貌改變帶來的負荷；而許多開發案更直接坐落在原住民族的傳統領域及史前文化遺址上。在長達二十年的開發拉鋸中，這些案件不僅威脅著海洋生命力，更因長期忽視在地部落的知情同意權，讓東海岸成為台灣環境正義與原民權益衝突最激烈的戰場。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_action_item[entities][4][delta]": [
+        "4|4"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50172",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "324|重整失序的國土"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "<h3>關鍵個案</h3><p>位於台東杉原灣的美麗灣案，是台灣海岸守護運動的轉捩點。2004年起，開發商以BOT方式興建飯店，卻透過切割基地規避環評，並採取「先建後評」的違法程序。</p><p>地球公民與部落、友團發起長達十餘年的抗爭，終在2012年獲得撤銷環評定讞，確立「違法環評可撤銷」的重要判例。此案成功阻斷海岸私有化，更催生《海岸管理法》，成為守護海岸線的制度防線。</p>",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "東海岸開發案",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/333",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "9"
+    },
+    "main_files": [
+      {
+        "fids": "50172",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-006.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "333",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/333/edit"
+  },
+  "334": {
+    "captured_at": "2026-11-04T07:45:36.473Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">過去小水力開發區為缺乏把關，因此我們揭露全台 47 處潛力點有超過八成位於環境敏感區位或原住民族傳統領域。據此強力遊說經濟部能源署，要求建立行政規範，引導開發個案迴避自然河川。</p><p dir=\"ltr\">我們成功促使能源署於 2024 年發布《小水力發電設施設置指引》。指引明確將小水力定位為「附屬設施」，要求優先利用既有圳路、自來水管路發電，透過制度建立引導個案以「友善環境」的方向發展。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50397",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "推動制度化管理，落實選址避讓"
+          },
+          "files": [
+            {
+              "fids": "50397",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260918-022.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "推動制度化管理，落實選址避讓"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>針對如「豐坪溪水力電廠案」等陳年環評舊案提起行政訴訟，要求重啟「環境現況差異分析（環現差）」。並在環評會議中以科學數據指出氣候變遷下的流量劇變影響發電效益與生態基流量不足對於迴游魚類的生存威脅。雖然世豐案訴訟艱辛，但行政法院的判決揭露《環評法》對於陳年舊案缺乏有效退場機制，這項行動為未來推動「環評法修法」提供關鍵法律實證。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50398",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "挑戰制度漏洞，爭取程序正義"
+          },
+          "files": [
+            {
+              "fids": "50398",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260918-023.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "挑戰制度漏洞，爭取程序正義"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">與遭遇開發議題的在地社群建立關係，透過揭露開發案資訊，讓在地居民理解開發的利弊得失與文化及環境衝擊，並與法律扶助基金會合作，支持部落行使《原基法》所保障之知情同意權。確立了開發單位不能僅以形式化宣導取代事前、自由、知情且同意的諮商程序，一起與部落捍衛傳統領域的自然主權</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50399",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "捍衛原民諮商同意權"
+          },
+          "files": [
+            {
+              "fids": "50399",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260918-024.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "捍衛原民諮商同意權"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p dir=\"ltr\">我們對「萬里水力電廠」進行長達二十年的監督與社會倡議，論證該案發電效益與環境代價的不對稱性，加上氣候變遷與地質災害的環境脈絡，台電正式在2025年宣布「萬里水力發電計畫」撤案。而豐坪溪的世豐電廠也因為流量豐枯變異加劇與土砂災害，而始終無法完全動工，透過我們的參與，不只留下了自由奔流的河川，也把東部的激流、峽谷、沖積扇等精彩的面貌帶到大家的眼前。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50400",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "讓溪水自由奔流"
+          },
+          "files": [
+            {
+              "fids": "50400",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260918-025.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "讓溪水自由奔流"
+        }
+      ],
+      "field_curation": [
+        {
+          "fields": {
+            "[field_comp_image][0][fids]": "",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[field_comp_link][0][title]": "閱讀更多",
+            "[field_comp_link][0][uri]": "/node/100060",
+            "[field_comp_summary][0][value]": "位於花蓮縣卓溪鄉的豐坪溪，是一條自中央山脈奔流而下的溪流，日日夜夜滋養著沿岸的部落。而在氣候危機急需減碳的能源轉型的狀況下，世豐水力電廠在豐坪溪攔水發電，這對在地族人來說，就如同神話裡的大蛇一樣，阻斷了部落賴以生存的溪流。",
+            "[title][0][value]": "氣候變遷在花蓮的故事"
+          },
+          "files": [
+            {
+              "fids": "",
+              "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": ""
+            }
+          ],
+          "index": 0,
+          "list_text": "氣候變遷在花蓮的故事"
+        }
+      ]
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>東部溪流山高水急、水量豐沛，同時具備極為脆弱的地質與獨特的生態水文系統，使得水力發電在東部的爭議橫跨近二十年，其關注脈絡更歷經了關鍵的典範轉變。</p><p>在 1990 年代，地球公民在東部倡議核心聚焦於水資源保育，反對將「興建水庫、攔河築壩」視為解決水資源問題的唯一手段；以萬里案前身的「西寶水力發電計畫」為例，台電原規劃在花蓮萬里溪與馬太鞍溪上游築壩攔水並越域引水發電，但該計畫不僅涉及高地熱、斷層及地質破碎帶的巨大安全隱憂，更將徹底摧毀花蓮僅存保有自然流態的珍貴野溪峽谷與迴游生態，在民間長期反對與立法院凍結預算下被迫停擺，成為守護天然溪流的重要里程碑。</p><p>然而，近年隨著國家能源轉型政策推進，水力發電被開發商包裝為「再生能源」，促使沉寂多年的老舊電廠開發案紛紛借殼重啟，引發嚴峻的「綠色衝突」。台電一度將西寶計畫縮減規模更名為「萬里水力發電計畫」重啟推動，而位於卓溪鄉豐坪溪的「世豐水力電廠案」，更是早在 1999 年即通過環評，卻因地質災害與資金問題停工超過十年，開發商在未重新進行環境現況差異分析、未充分落實布農族部落諮商同意的情況下強行復工，企圖於天然河道興建兩座攔河堰，嚴重威脅河川生態基流量、高身鏟頜魚等保育類生存以及下游部落的防洪安全。</p><p>面對這些披著綠能外衣的陳年老案，地球公民的行動轉向監督「綠色衝突」。主張真正的永續不應建立在犧牲自然生態與原民權益之上。因此反對將對環境破壞性大的「攔河築堰」，定義為受到政策支持的再生能源。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50118",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "324|重整失序的國土"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "東部水力電廠",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/334",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "10"
+    },
+    "main_files": [
+      {
+        "fids": "50118",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-007.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "334",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/334/edit"
+  },
+  "335": {
+    "captured_at": "2026-11-04T07:46:48.792Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為了爭取乾淨空氣並保護學童健康，地球公民自2011年推出清淨天空行動，要求汰換舊的空污指標（PSI），2014年起與高雄學校（如港和國小、文府國小）合作，每日查詢空氣污染指標與PM2.5數值，當空氣品質不佳時於校園升起空污旗示警（紅旗），並倡議新聞媒體於氣象時間播報空氣品質現況，以提醒師生戴口罩防護，或減少戶外體育課及劇烈運動。</p><p>此舉成功喚起學童與社會大眾的空污意識，促使環保署加強對中南部空氣污染的各種管制，教育部推出全國性的「校園空品旗」，國人對空氣品質要求呼聲高，終於迫使環保署推出新的空品指標（AQI），新聞媒體也漸漸即時播報空氣品質現況。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50129",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成教育部推出校園空品旗，環保署推出新的空品指標"
+          },
+          "files": [
+            {
+              "fids": "50129",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-066.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "促成教育部推出校園空品旗，環保署推出新的空品指標"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>聯合醫界與環境團體，要求環境部依據公衛科學實證與國際趨勢，將PM2.5年均值與日均值標準下修，並同步AQI指標以強化民眾對污染的警覺。</p><p>同時，揭露政府過去將一個防制區中空氣極好的測站不符比例地與其它測站「平均」計算掩蓋污染真相（例如將國家公園等級的恆春測站與屏東測站平均）。</p><p>成功促使環境部修改空氣污染防制區判定法規，自2025年起取消平均值計算，改採「站站達標」**才能被判定為符合標準的二級防制區，以反映真實污染狀況，同時確保污染嚴重的區域必須維持較嚴格的管制強度。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50130",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "成功推動「站站達標」法規，終結高低污染區平均計算的數據盲點"
+          },
+          "files": [
+            {
+              "fids": "50130",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-067.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "成功推動「站站達標」法規，終結高低污染區平均計算的數據盲點"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>堅決反對環保署調降夏季空污費，並召開會議及記者會要求全面調高固定污染源空污費，特別是主張針對排放大戶以及排放量極大且有害健康的揮發性有機物（如甲苯、二甲苯）提高費率，以經濟誘因迫使企業將外部成本內部化，加裝防制設備或使用低污染的物質替代。</p><p>促成環境部修正「固定污染源空氣污染防制費收費費率」，增訂大戶費率級距並加嚴門檻（例如將氮氧化物季排放量大戶門檻由250公噸大幅調降至70公噸），並將凍漲十多年的甲苯、二甲苯加徵費率大幅調高。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50131",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成大戶費率門檻加嚴與凍漲十多年的甲苯、二甲苯空污費調高"
+          },
+          "files": [
+            {
+              "fids": "50131",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260827-068.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "促成大戶費率門檻加嚴與凍漲十多年的甲苯、二甲苯空污費調高"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>自2013年起持續揭露工業區排放致癌性揮發性有機物及重金屬的問題，要求環保署擴大列管物種、制定嚴格的排放管道及周界標準；環保署於2021年2月正式發布「固定污染源有害空氣污染物排放標準」，納管22項物種（含7項重金屬及15項揮發性有機化合物），並加嚴排放標準，例如將一級致癌物苯從500ppb加嚴至40ppb，氯乙烯從200ppb加嚴到20ppb。</p><p>對於目前尚未納管之物種呼籲環保署盡速擴大管制，並滾動式檢討現有管制標準，出版有害空氣污染物年報 ，要求針對校園周邊建立有害空污超標的「預警機制」，保障學童健康及社區知情權。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50133",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成有害空氣污染物（HAPs）加嚴管制"
+          },
+          "files": [
+            {
+              "fids": "50133",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260827-069.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "促成有害空氣污染物（HAPs）加嚴管制"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>要求中央與地方政府合作，推動南部空污總量管制計畫、下修空品嚴重惡化緊急防制辦法的啟動門檻，並主張在空污警報日（AQI達紅色）時，提供大眾運輸（如捷運、公車）免費搭乘，以減少民眾於高污染日通勤時的污染暴露，同時也減少私人運具的交通廢氣。</p><p>推動社會關注並促成《空氣污染防制法》的修訂與公聽參與，迫使行政院提出積極改善空氣污染的防制策略，並持續監督政府對高污染產業進行實質的污染削減與轉型管制。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50134",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成行政院提出空氣污染防制策略與《空污法》修訂"
+          },
+          "files": [
+            {
+              "fids": "50134",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-4-form-field-comp-image-wrapper",
+              "file": "20260827-070.webp"
+            }
+          ],
+          "index": 4,
+          "list_text": "促成行政院提出空氣污染防制策略與《空污法》修訂"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>台灣中南部地區（特別是高雄）長期承受重工業（如石化業、鋼鐵業、燃煤電廠）發展帶來嚴重的空氣污染，懸浮微粒（PM10）、細懸浮微粒（PM2.5）與臭氧濃度經常超標且高於全台平均。這些空氣污染物包含多種有害、致癌物質，對民眾健康造成極大威脅，易引發心血管、呼吸道疾病、肺癌及過敏反應。此外，許多國中、小學鄰近高污染的工業區，學童在發育階段卻暴露於高健康風險中。然而，過去政府的空污監測不足，空氣品質標準過於寬鬆、空污費率偏低而缺乏減排誘因，且有害空氣污染物（HAPs）的管制落後，導致空污問題難以獲得實質改善。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_action_item[entities][4][delta]": [
+        "4|4"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50128",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "325|翻轉污染的日常"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "爭取乾淨空氣",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/335",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "13"
+    },
+    "main_files": [
+      {
+        "fids": "50128",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-008.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "335",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/335/edit"
+  },
+  "336": {
+    "captured_at": "2026-11-04T07:47:13.862Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>2010年初，面對當時的中油工會與地方政要支持中油高雄廠於2015年後繼續運轉的「就地更新」言論，地球公民第一時間發表嚴正聲明反對，透過詳實的工安紀錄整理，指出該廠歷年工安事故頻繁，自1992年起至少發生過24次重大工安事故，且多起被列入行政院重大災害案例，證明其安全管理漏洞百出，根本不具備繼續營運的正當性。這場政策遊說與倡議行動，阻擋了政治力量企圖讓高廠原地踏步的盤算，為2015年的順利關廠奠定基礎。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50105",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "堅決反對就地更新，要求政府兌現遷廠承諾"
+          },
+          "files": [
+            {
+              "fids": "50105",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-071.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "堅決反對就地更新，要求政府兌現遷廠承諾"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為了讓污染場址能蛻變為具復育與教育意義的空間，後勁社區與地球公民，於2013年聯合主辦了台灣首次由民間發起的「後勁生態公園全國競圖比賽」。這項行動廣邀建築景觀、都市規劃與人文社會背景的跨科系團隊參與發想，並注入生態及工業轉型的概念，將原本被煙囪與污染盤據的187公頃褐地，重新想像為北高雄的綠色心臟。</p><p>後勁社區與地球公民將競圖比賽的成果帶到高雄市政府，與時任高雄市市長陳菊討論對於高雄煉油廠廠區的後續規劃，說明在地對於生態公園的期待。隨後，陳菊出席2014年反五輕24週年晚會，承諾高雄市政府將支持設立後勁生態公園。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50106",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "發起生態公園競圖比賽，描繪褐地轉型藍圖"
+          },
+          "files": [
+            {
+              "fids": "50106",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-072.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "發起生態公園競圖比賽，描繪褐地轉型藍圖"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為了不讓這段影響深遠的抗爭史被淹沒，後勁社區與地球公民攜手在2012年，於後勁國中打造了全台第一個以在地環境教育為主題的藝術空間「環境教育教室」，並於2015年合作出版專書《堅持：後勁反五輕的未竟之路》，為台灣留下寶貴的民主記憶。</p><p>2026年，地球公民更與後勁社區合作，在鳳屏宮規劃了「後勁反五輕常設展」，讓這場台灣歷史最悠久的環保抗爭，轉化為世代對話與民主實踐的環境教材。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50107",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "出版專書與常設展，留存草根民主記憶"
+          },
+          "files": [
+            {
+              "fids": "50107",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260827-073.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "出版專書與常設展，留存草根民主記憶"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>隨著五輕的正式退場與關廠，中油於後勁的舊廠區迎來了台積電先進製程廠的進駐。面對科技產業快速擴張所帶來的全新變局，地球公民積極參與「楠梓產業園區」等舊廠區上的環評案，指出歷史不該被遺忘，並督促高雄市政府承諾規劃生態綠廊，讓此地成為「生態綠廊內的科學園區」。地球公民持續嚴格監督廠區轉型，將後續的關注重點鎖定在「污染控制」、「生態公園的實踐」以及「再生能源用電」三大核心，確保這塊歷經血淚的土地轉型能真正與在地社區共好。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50108",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "監督台積電進駐，督促生態公園願景落實"
+          },
+          "files": [
+            {
+              "fids": "50108",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260827-074.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "監督台積電進駐，督促生態公園願景落實"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>過往數十年，石化產業在台灣經濟及產業發展中扮演了重要角色。然而，伴隨石化製造能力提升而來的，是日益龐大的資源消耗與無法逆轉的環境負擔。自1968年中油在半屏山腳下興建第一座輕油裂解廠（一輕）開始，楠梓後勁居民便被迫與重石化污染展開了漫長的糾纏。</p><p>煉油與石化製程所產生的環境污染極為驚人，直接衝擊了在地居民的生存與健康環境。石化煙囪沒日沒夜地吐納，讓空氣中揮之不去的臭油味成為後勁人的生活日常。周遭社區不僅面臨隨時可能發生爆炸的工安危險，更長期承受嚴重的空污、土污與地下水污染，甚至發生過地下水抽出來點火竟然會燃燒的離奇公害。隨後的學術研究更證實，當地居民的淋巴造血系統癌等罹癌率顯著高於對照區，使居民的生命健康權受損。</p><p>1987年政府正式公布設置五輕廠後，後勁居民扶老攜幼展開了堅決的自力救濟抗爭—後勁反五輕運動。面對強大的國家機器與上千名鎮暴警察壓制，居民們的不妥協最終迫使政府讓步，由時任行政院院長郝柏村承諾建廠25年後（即2015年）讓五輕遷廠。然而，隨著遷廠時限漸近，中油工會與部分政治人物企圖以經濟效益為由推動「就地更新」，試圖迴避當年的遷廠約定。</p><p>地球公民主張，國營事業在追求經濟發展之餘，必須信守對人民的承諾，不能讓高碳排、高耗能且不永續的石化工業繼續原地踏步、讓在地居民持續承受污染。因此，地球公民於2007年起加入抗爭行列，與後勁鄉親站在一起，力促五輕如期關廠退場，督促政府面對高達200多公頃污染場址的整治難題，還給高雄市民一個期盼數十年的乾淨家園。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50104",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "325|翻轉污染的日常"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "後勁反五輕",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/336",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "6"
+    },
+    "main_files": [
+      {
+        "fids": "50104",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-009.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "336",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/336/edit"
+  },
+  "338": {
+    "captured_at": "2026-11-04T07:47:36.041Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>2014年高雄氣爆發生後，地球公民基金會大力倡議「社區知情權」入法（參考美國EPCRA法案），要求政府全面公開地下石化管線圖資、化學物質存放資訊，並呼籲建立社區防災與疏散演練機制。</p><p>在民間的強烈要求下，高雄市政府於氣爆隔年公布了既有工業管線資訊，建置「既有工業管線查詢系統」，並成立「管線安全辦公室」（OPS），讓民眾能上網查詢管線輸送與接送端及經過的地方與運輸物質，初步建立了管線監理與防災應變機制。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50076",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成石化管線圖資公開與監管機制"
+          },
+          "files": [
+            {
+              "fids": "50076",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-075.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "促成石化管線圖資公開與監管機制"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>多次號召居民包車北上，於內政部營建署、高雄市政府前舉辦記者會、靜坐與行動劇，並遞交陳情書或提起行政訴願。同時，推動「公正轉型」理念，訴求在保障勞工就業權益的前提下，加速老舊石化工業區的退場與產業轉型。</p><p>在持續施壓下，高雄市政府都市計畫委員會於2019年3月正式決議將大社工業區降編為乙種工業區（目前仍待內政部最終核定。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50077",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成大社降乙編決議"
+          },
+          "files": [
+            {
+              "fids": "50077",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-076.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "促成大社降乙編決議"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>積極出席各項開發案（如中油三輕擴產案、曄揚石化廠等）的環境影響評估審查會，提出專業意見書。強烈要求進行「政策環評」、實質減污減碳，並主張應將健康風險評估與地下水污染調查納入審查範圍。</p><p>成功透過輿論與專業審查的壓力，一度促使環評大會將中油三輕擴產案「關鍵逆轉」退回專案小組重審。最終迫使開發單位必須將健康風險評估及地下水污染專家會議結論納入審查，並承諾增加環境監測與空污減量條件。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50078",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "曄揚開發案終止、中油三輕增加環保承諾"
+          },
+          "files": [
+            {
+              "fids": "50078",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260827-077.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "曄揚開發案終止、中油三輕增加環保承諾"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>根據學術研究，持續向社會揭露仁大工業區鄰近居民承受的致癌風險高於一般可接受範圍數十倍至數百倍（如甲醛、1,3-丁二烯等），並強烈要求建立平行監測機制及資訊公開。</p><p>經過多年爭取，2021年10月終於促使高雄市環保局在於大社工業區東側（近社區）與南側（近竹後國小）增設了OP-FTIR（開徑式傅立葉轉換紅外光）監測站。這項成果讓致癌物與有害空氣污染物的排放數據得以即時揭露，提供地方民眾及社會更準確的風險評估依據，也藉此監督大社工業區各大工廠排放的污染，促使其更嚴加管制空污。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50079",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "成功爭取增設空污與有害空污監測站"
+          },
+          "files": [
+            {
+              "fids": "50079",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260827-078.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "成功爭取增設空污與有害空污監測站"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>高雄長期背負台灣石化工業發展的重擔，包含了大社、仁武、後勁、林園及小港等工業區，都有石化業，為當地帶來嚴重的空氣、水與土壤污染。根據工業局委託的健康風險評估顯示，仁武、大社、楠梓、左營等區居民的致癌風險遠高於一般可接受範圍，孩童等敏感族群的風險更是一般的百倍以上。</p><p>為改善污染，政府曾於1993年承諾大社工業區將與中油五輕一併遷廠，並於1998年都市計畫通盤檢討中明定於2018年將大社工業區從特種工業區降編為「乙種工業區」。然而，經濟部與石化業者卻在期限屆滿時反對降編，企圖改為「甲種工業區」（可從事石化業）以繼續營運甚至擴廠，導致政府承諾跳票。</p><p>此外，2014年7月31日的高雄氣爆事件，炸出了長期隱藏在市區地底下的石化管線危機，凸顯了工業管線穿越人口稠密區的高風險，以及政府與企業長期漠視「社區知情權」，居民對生活周遭的危險化學物質與地下石化管線一無所知。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50080",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "325|翻轉污染的日常"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "反對石化業擴張",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/338",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "0"
+    },
+    "main_files": [
+      {
+        "fids": "50080",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-010.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "338",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/338/edit"
+  },
+  "340": {
+    "captured_at": "2026-11-04T07:48:58.603Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>民間籌組「霄裡溪工作隊」進行質化與量化的用水調查，追查光電廢水對居民生活的影響與化學物質累積在河川底泥的真相；在民間持續揭露資訊的壓力下，環保署於2009年底首度修法，將光電業特有的重金屬「銦」和「鉬」正式列入飲用水管制項目中。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50251",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成飲用水管制標準加嚴（正式列管銦、鉬） "
+          },
+          "files": [
+            {
+              "fids": "50251",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-084.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "促成飲用水管制標準加嚴（正式列管銦、鉬）"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>新埔居民與環保團體不斷前往環保署與立法院抗議、召開記者會要求撤銷違法的排放許可，同時向監察院陳情；監察院隨後針對行政院、經濟部、環保署與桃園縣政府在處理本案時的行政違失與怠惰，正式提出糾正案。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50250",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促使監察院對行政機關提出糾正案 "
+          },
+          "files": [
+            {
+              "fids": "50250",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-082_0.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "促使監察院對行政機關提出糾正案"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>環保團體發起國際連署行動，直指友達與華映分別為蘋果（iPad Mini）與 Google（Nexus 7）的面板供應商，將抗爭層級拉高至國際供應鏈，施壓跨國品牌落實企業社會責任與綠色採購，並將霄裡溪案例帶入國際會議，與全球的責任科技運動網路串聯。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50249",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "成功施壓跨國品牌並串聯國際責任科技運動 "
+          },
+          "files": [
+            {
+              "fids": "50249",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260827-083_0.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "成功施壓跨國品牌並串聯國際責任科技運動"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>在長期的抗爭與社會關注下，環保署環評大會於2013年確認友達與華映必須執行廢水全回收，兩廠區最終於2015年12月30日正式進行「污水排放口封管儀式」，終結長達16年的廢水排放，成為台灣高科技產業執行廢水零排放的全國首例。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50252",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "達成台灣高科技產業廢水零排放全國首例（正式封管） "
+          },
+          "files": [
+            {
+              "fids": "50252",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260827-085.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "達成台灣高科技產業廢水零排放全國首例（正式封管）"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>封管後，環團與當地自救會持續監督倡議，要求政府與廠商負起環境修復責任，出資進行當地的流行病學調查、健康風險評估，並展開霄裡溪水質與底泥的生態復育計畫。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50253",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "確立流行病學調查與生態復育的後續咎責方向"
+          },
+          "files": [
+            {
+              "fids": "50253",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-4-form-field-comp-image-wrapper",
+              "file": "20260827-086.webp"
+            }
+          ],
+          "index": 4,
+          "list_text": "確立流行病學調查與生態復育的後續咎責方向"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>霄裡溪原為水質極佳的「甲類水體」，兩百多年來供應新竹縣新埔鎮三萬五千多名居民的飲用水與下游1400公頃農田的灌溉所需。1999年，中華映管與友達光電於上游設廠，但在環評時隱瞞了下游設有自來水取水口的事實，開始將含有光電業特有有毒重金屬（如銦、鉬）的廢水排入溪中。隨後當地爆發溪流生物大量暴斃，居民陸續出現不明皮膚病、呼吸道疾病甚至罹癌過世，且家中的金屬設備極易遭腐蝕。面對嚴重的環境與健康危機，環保署與經濟部不僅未要求停工，經濟部更發出無法律依據的公文宣稱「霄裡溪將不再為飲用水水源」，環保署便據此認定廠商未違反環評結論，讓桃園縣政府得以違法展延排放許可，迫使居民持續面臨飲用毒水的風險。<br><br>政府這種聯手推諉卸責、讓民眾繼續承擔喝毒水風險的體制失靈，以及為了經濟發展放任珍貴水源被破壞的行徑，成為地球公民基金會強力介入的關鍵原因。<br><br>地球公民的介入，促成了台灣高科技產業執行廢水零排放的全國首例。更從本案延伸推動台灣化學品「源頭管理」的制度改革，促成《毒性化學物質管理法》納入歐盟REACH法案的「預警原則」，從源頭防範未知化學品對環境與人體的危害。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_action_item[entities][4][delta]": [
+        "4|4"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50098",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "325|翻轉污染的日常"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "守護霄裡溪",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/340",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "3"
+    },
+    "main_files": [
+      {
+        "fids": "50098",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-012.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "340",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/340/edit"
+  },
+  "341": {
+    "captured_at": "2026-11-04T07:49:23.747Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>結合「責任科技國際運動網」(ICRT) 等多國國際組織發起連署行動，呼籲蘋果 (Apple)、英特爾 (Intel) 等採購商負起供應鏈管理責任，並獲得 18 國、 50 個國際環境與勞工組織的聲援。知名品牌買家後續給予具體回覆，包括啟動對日月光的調查以確保其符合環保法規，部分大廠表明在第三方認證前不回單，並承諾持續監督日月光的改善進程。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50114",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "向國際品牌買家施壓與供應鏈檢討"
+          },
+          "files": [
+            {
+              "fids": "50114",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-087.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "向國際品牌買家施壓與供應鏈檢討"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>針對寬鬆的法規漏洞，我們聯合多個民間團體與律師組成「水污法修法聯盟」，草擬民間版修正草案並積極遊說立委。在強大的社會壓力與民間監督下，立法院於2015年三讀通過《水污染防治法》修正案，將最高罰鍰大幅提高至3000萬元，明訂禁止繞流排放與稀釋廢水，並納入追討不當利得、吹哨者保護及資訊公開制度。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50115",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "推動民間版《水污法》與法規修正"
+          },
+          "files": [
+            {
+              "fids": "50115",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-088.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "推動民間版《水污法》與法規修正"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>結合在地後勁溪巡守隊與學者持續監督，在日月光獲准試車期間，透過採集樣本揭發其排水道仍持續排放超標的有害重金屬廢水。環保署後續修正管理辦法，擴大要求特定排放量的企業必須設置自動監測設施並與地方環保局連線，逐步推動監測數據即時上網公開。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50116",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "全民稽核日月光與水污監測資訊公開"
+          },
+          "files": [
+            {
+              "fids": "50116",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260827-089.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "全民稽核日月光與水污監測資訊公開"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>日月光污染事件發生之後，資方操作將環境倡議與勞工權益對立，並不斷要求高雄市政府讓利害關係人參與復工審查。為了避免資方將停工的懲罰代價轉嫁至基層勞工身上，地球公民聯合勞工團體共同訴求「立即停工、薪水照給」，最後高雄市勞工局承諾將停工期間保障基層勞工權益納入復工審查項目 。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50117",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "環境組織結合勞工團體對日月光共同施壓"
+          },
+          "files": [
+            {
+              "fids": "50117",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260827-090.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "環境組織結合勞工團體對日月光共同施壓"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>2013年底，全球半導體封測大廠日月光公司被爆出高雄廠長期違規，惡意直接排放含有害重金屬「鎳」與pH3.02強酸的毒廢水至後勁溪，衝擊下游逾千公頃的農田灌溉水。</p><p>然而，當時台灣的《水污染防治法》對於此類違規，最高罰鍰上限僅有區區60萬元，面對年營收動輒數千億、享有巨大租稅減免的跨國企業，法規的懲罰與嚇阻效果極其微弱、不成比例。事件發生後，日月光起初並沒有正面落實環境責任，反而試圖透過每年捐助環境基金、補助學校研究等手段移轉社會焦點。</p><p>地球公民基金會認為，企業在追求利潤之餘，必須負起實質的企業社會責任，而政府也應補上「重罪輕罰」的法規體制漏洞，不能將污染成本轉嫁給全民。在此行動中，我們要求日月光應停下漂綠的公關手段，落實企業社會責任（CSR），提出具體且透明的污染零排放與河川復育承諾，主動賠償農漁損失並清理受損水體 ，並落實資訊公開與建立公眾監督機制。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50113",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "325|翻轉污染的日常"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "日月光案",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/341",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "8"
+    },
+    "main_files": [
+      {
+        "fids": "50113",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-013.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "341",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/341/edit"
+  },
+  "344": {
+    "captured_at": "2026-11-04T07:38:53.580Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>嘉義布袋鹽田在全面停止曬鹽後，因長期未使用，而自然演替為黑面琵鷺等冬候鳥仰賴的重要替代性棲地與生態敏感熱區。由於政府為衝刺地面型光電目標，將這些產業儲備用地開放大面積光電招商，導致再生能源發展與國際級水鳥棲地保育之間產生了衝突。</p><p>為了調和經濟與生態的競合，地球公民與特生中心、鳥會及生態學者合作，主辦「布袋鹽田濕地保育與光電開發論壇」，目的是為了實踐濕地「明智利用」與「三生共榮（生活、生態、生產）」的核心價值，要求光電必須迴避生態熱區，並邀請官員與業者進行公私協力對話。最後成功讓經濟部將原訂的高爭議開發規模大幅縮減，排除了生態熱區並僅選擇102公頃作為「光電示範區」，也爭取到業者承諾空出30%土地為保育區，促成了「布袋模式」協作平台，成為地面型光電發展的指標案例之一。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50164",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成布袋鹽田光電減緩對生態的影響"
+          },
+          "files": [
+            {
+              "fids": "50164",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-091.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "促成布袋鹽田光電減緩對生態的影響"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>政府為衝刺光電進度，在缺乏利害關係人參與的選址評估下推動七股漁電共生，引發了全區超量開發與案場緊鄰社區聚落的空間壓力，導致養殖面積縮水、產量缺乏實證以及弱勢承租漁民恐遭地主解約等資訊不對等問題，引發了光電侵農滅漁與衝擊候鳥生態的重重疑慮。</p><p>地球公民與友團及立委合作，透過媒體投書發聲並出席先行區政策說明與審查會議，堅守「公正轉型」與「以農為本」的民主價值以保障漁民工作權。經過兩年多的倡議，成功促使政府實行「環社檢核」機制，並推動經濟部修訂三方契約範本等配套，將生態與在地社會的評估實質納入國家政策中。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50165",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "監督七股漁電共生，落實制度保障漁民生計及當地生態"
+          },
+          "files": [
+            {
+              "fids": "50165",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-092.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "監督七股漁電共生，落實制度保障漁民生計及當地生態"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>該案最初由光電公司與地方政府選址於知本濕地及卑南族卡大地布部落的傳統領域上。由於該處是東台灣重要的候鳥棲息地之一，且前期的規劃程序未充分取得在地部落的諮商同意，隨即引發了排擠生態保育與侵害原住民族主權的爭議。</p><p>地球公民花東辦公室協助卡大地布部落及在地公民組織北上行政院陳情、募集萬人連署，倡議中央應尊重部落的主體性，並終止選址不當的知本光電審議。此行動捲動社會巨大關注，最終迫使台東縣政府終止開發契約。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50166",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "參與知本濕地光電案，終止不當光電開發"
+          },
+          "files": [
+            {
+              "fids": "50166",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260827-093.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "參與知本濕地光電案，終止不當光電開發"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>地球公民自2022年起深入苗栗、花蓮及台南進行農地光電田野調查，透過現地勘查與利害關係人訪談、政策研究與梳理，集結出版《共享日光：檢討地面光電與生態、森林、農漁業的共生對策》報告，並深化反思過去推動「環社檢核」的歷程。</p><p>地面光電亂象根源於「空間計畫」的欠缺，導致選址流於土地管制防線的攻防，過去鬆綁土地管制卻缺乏規劃配套的「綠能發展區」便是典型爭議；而在生態層面，保育法規的缺失與具問題意識長期缺乏實證資料，亦嚴重削弱了主管機關把關衝擊的能力。</p><p>為此，地球公民從空間計畫、生態保育、農漁產業及公民參與四大面向提出具體建議，期盼透過現場勘查經驗引導跨視野的社會對話，尋求衝擊最小的選址路徑，為台灣各地的綠能協調提供務實的發展素材。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50167",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "發布《共享日光》報告，檢討地面光電對策"
+          },
+          "files": [
+            {
+              "fids": "50167",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260827-094.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "發布《共享日光》報告，檢討地面光電對策"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>台灣在2016年啟動能源轉型後，訂定了在2025年要達成 20 GW 太陽光電裝置容量的目標。然而在政府積極推動太陽光電的裝設後，需要使用大面積土地的「地面型光電」開始出現土地資源競爭問題，譬如：預計在原住民族的傳統領域興建地面型光電案場，卻沒有進行諮商同意程序及妥適的社會溝通，引起部落反彈；漁電共生政策缺乏利害關係人參與，造成部分漁民的生計問題及生產受影響；生態豐富的廢棄鹽田未規劃補償機制，因光電裝設而造成部分鳥類利用空間受損；部分人造林擬砍伐裝設光電，使景觀及休憩空間受損，引起在地居民不滿。</p><p>面對地面型光電造成的社會爭議及環境衝擊，地球公民監督指標性的光電個案，將個案面臨的制度性問題持續反映給政府進行制度改革，成功催生環境與社會檢核機制（以下簡稱環社檢核）。地球公民認為，發展再生能源是台灣能源轉型要邁向低碳、減污、永續及能源韌性時，所不能迴避的重要策略，台灣社會需要集體思考如何讓再生能源的利益被更多人共享，而非重演過去大型發電設施必造成環境及地方社會的犧牲，此項變革也是台灣民主深化的重要轉型工程之一。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50163",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "326|重新思考能源"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "關注地面光電",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/344",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "19"
+    },
+    "main_files": [
+      {
+        "fids": "50163",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-014.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "344",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/344/edit"
+  },
+  "345": {
+    "captured_at": "2026-11-04T07:39:15.500Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>地球公民針對地面型光電，持續提出制度改革建議，要求能源用地必須有上位的空間規劃。我們積極監督與參與經濟部「能源用地白皮書」的撰擬，並要求政府應儘速提出「能源政策環評」，藉由整體空間佈局引導光電選址，確立「哪些地方不可以、哪些地方可以優先」的原則，以系統性規劃化解土地衝突，並銜接國土計畫體系進行落實。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50100",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "倡議國土空間規劃與能源用地白皮書"
+          },
+          "files": [
+            {
+              "fids": "50100",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-095.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "倡議國土空間規劃與能源用地白皮書"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>地球公民積極投入「能源轉型白皮書」的共同撰擬，透過網路徵詢、公民面對面等機制大規模收集公民意見，開啟了人民與政府協力寫作、重大會議資訊完全透明公開的能源民主首例，並成功催生出節能家電補助等實質行動方案。</p><p>地球公民也持續出席並號召大眾參與能源、淨零相關的公開會議，致力於為台灣建立起具社會信任與共識的綠能治理路徑。例如，面對政府推動的「2050淨零排放路徑及策略」，地球公民出席十二項關鍵戰略的「社會溝通會議」與延續會議，代表民間社會提出專業的政策意見。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50101",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促進社會對話，落實能源民主"
+          },
+          "files": [
+            {
+              "fids": "50101",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-096.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "促進社會對話，落實能源民主"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>透過深耕扎實的田野調查與法制研究，我們致力以實證數據完善國家能源制度。在光電領域，我們實地走訪苗栗、花蓮及台南等三縣市的農地光電案場，集結現地勘查成果，出版《共享日光：檢討地面光電與生態、森林、農漁業的共生對策》報告，從空間、生態、產業及公民參與等四大面向提出具體制度改革建議。</p><p>在新能源管理上，面對《再生能源發展條例》放寬小水力發電區位所衍生的生態隱憂，我們透過發布環評意見書並發起團體連署，要求環境部與能源署停止任意排除環評標準，並積極督促提出明確的開發指引，引導業者多利用人工圳路、避開自然河川並保障原河川生態基流量，成功以法制研究捍衛流域生態。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50102",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "透過研究調查，完善制度規劃"
+          },
+          "files": [
+            {
+              "fids": "50102",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260827-097.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "透過研究調查，完善制度規劃"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為推動地方節能治理，地球公民與民間團體組成「能源轉型推動聯盟」，嚴謹規劃評比指標，對台灣本島19縣市的節能政策進行深度評比與訪談，成功促使部分地方政府提出政策亮點並正視長久節能機制的建立。</p><p>此外，地球公民也長及呼籲「電價合理化」，要求政府合理調漲工業電價與用電大戶，讓企業確實反映環境外部成本並強化節電，同時促成政府關注並正視能源貧窮問題，完善中央與地方協力之弱勢輔導機制。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50103",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "推動電價合理化與地方節能評比"
+          },
+          "files": [
+            {
+              "fids": "50103",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260827-098.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "推動電價合理化與地方節能評比"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>近年全球氣候危機加劇，各國紛紛提出減碳期程，台灣亦正式將2050年淨零碳排納入國家長遠發展目標。推動再生能源發展與進行深度的能源轉型，已成為國家邁向永續的關鍵。然而，在積極衝刺綠能與落實減碳的進程中，如何健全整體能源治理政策，並解決能源消費增長與環境土地承載力之間的失衡，是當前面臨的巨大考驗。</p><p>首先，能源設施的布建與在地生態、土地利用的衝突日益尖銳，而台灣地狹人稠，土地同時承載著糧食生產、生態保育與在地生計，兩種環境價值的內部對撞，成為環境運動前所未有的難題。除了地面型光電因缺乏上位空間規劃而引發與農爭地、排擠農漁民的問題外，在淘汰化石燃料的過渡期中，作為重要橋接基礎設施的「中油第三天然氣接收站」（三接），也因選址於大潭海岸，與藻礁生態保育產生了嚴重的路徑拉扯。</p><p>再者，低廉的能源價格未能反映環境外部成本，亦是扭曲能源政策的結構性因素。過於便宜的電價降低了產業投資高性能節能設備與製程改善的經濟誘因，導致電力消費持續增長，進而反向回逼發電端與基礎設施（如光電、三接）必須不斷擴建，加劇土地與生態的負擔。因此，若要深化能源轉型，除了改善「發電端」的政策引導，也需在「用電端」透過合理電價與深度節能進行用電總量的抑制。</p><p>完善能源政策，關乎環境正義、社會公平與公正轉型的落實。在電價合理化或綠能開發的推進過程中，環境與經濟的代價往往容易轉嫁給弱勢群體、選址在相對弱勢地區。例如低收入戶常因居住環境不佳、缺乏資金汰換高耗能的老舊家電，而在電價調漲時陷入支出佔比過高的「能源貧窮」困境；而無序的綠能專區劃設也容易犧牲第一線專業農漁民的工作權益。</p><p>地球公民基金會的立場是，綠能與轉型必須在守住生態底線與社會公義的前提下前進，建立公開透明的資訊溝通、地方能源治理與弱勢配套機制，確保轉型過程不遺漏任何人，讓再生能源發展與國家的永續未來能真正共存共榮。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50099",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "326|重新思考能源"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "<p>中油第三天然氣接收站（三接）</p><p>中油第三天然氣接收站（三接）選址於桃園大潭觀塘工業園區，是台灣在非核減煤能源轉型進程中，提供天然氣的橋接基礎設施。然而，該開發案因與當地的大潭藻礁生態保育產生重大價值拉扯，進而引發社會高度關注並走向公投對決。</p><p>地球公民基金會主張生態保育與三接工程並非零和關係，在主辦「對焦會議」釐清爭點後，公開聲明支持不需浚深航道、取消工業港填海的「三接外推方案」，力求在藻礁保育最大化的同時，將中南部減煤時程的衝擊降至最低，並呼籲政府應同步推動極大化節能計畫。</p>",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "完善能源政策",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/345",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "4"
+    },
+    "main_files": [
+      {
+        "fids": "50099",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-015.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "345",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/345/edit"
+  },
+  "346": {
+    "captured_at": "2026-11-04T07:39:37.420Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為了推動政府積極重視屋頂光電的發展，地球公民於2021年展開「屋頂光電」連署，號召約4500名關注者參與，並召開多場記者會，指出政府在公用設施屋頂光電的盤點不夠積極，例如交通部轄下的全國郵局營業據點共1299處中，該年僅盤點裝設12處屋頂光電；同時，我們也指出應要求工業區有更高的屋頂光電裝設規範，讓「工業用的電工業發」。</p><p>最終，行政院副院長沈榮津對外宣布，2025年屋頂光電的設置目標從6GW調升成8GW，而地面光電則從14GW調降成12GW，並促成政府規範工業區內新進駐的廠商，必須依比例設置屋頂光電，要求耗能產業負擔起再生能源的社會責任。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50110",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "千人連署倡議，促成政府上調屋頂光電目標"
+          },
+          "files": [
+            {
+              "fids": "50110",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-099.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "千人連署倡議，促成政府上調屋頂光電目標"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為了從法規面確立屋頂光電的地位，地球公民積極拜會立法委員，並結合媒體行動，向中央部會（如經濟部、內政部）施加壓力，要求從制度面規範建物設置光電的義務。經過長期的遊說與媒體行動，我們成功促成《再生能源發展條例》修法，明訂未來全國新、增、改建的建築物皆必須負有設置光電的義務，進一步推動屋頂光電的普及。</p><p>在法規通過後，地球公民持續向內政部倡議，爭取子法中需將新建物必須設置光電的義務門檻，以及擴大適用的建物種類範圍，藉此最大化城市屋頂的發電潛力、減輕農漁村土地的開發壓力。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50111",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成「強制裝設屋頂光電」入法，並監督子法實施"
+          },
+          "files": [
+            {
+              "fids": "50111",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-100.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "促成「強制裝設屋頂光電」入法，並監督子法實施"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為消弭民間對光電的疑慮並推廣實作，地球公民舉辦了多場「屋頂光電好厝邊」系列論壇與專題演講，讓政府單位、業者與社區居民等利害關係人直接對話，推廣屋頂光電的實作經驗與共尋解方。</p><p>除了全國性的社會對話，地球公民也深入地方，透過與官方的溝通及辦理地方講座，推動高雄後勁舊社區納入市政府的「淨零示範區」規劃，以社區為主體推動屋頂光電與淨零轉型。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50112",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "舉辦多場論壇及系列講座與社會對話"
+          },
+          "files": [
+            {
+              "fids": "50112",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260827-101.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "舉辦多場論壇及系列講座與社會對話"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>台灣在2016年啟動能源轉型後，訂定了在2025年要達成 20 GW 太陽光電裝置容量的目標。然而在政府積極推動太陽光電的裝設後，需要使用大面積土地的「地面型光電」開始出現土地資源競爭問題，引起社會疑慮。</p><p>面對地面型光電造成的社會爭議及環境衝擊，地球公民除監督指標性的光電個案之外，更持續推動「屋頂光電最大化」倡議，要求政府積極盤點及裝設對環境及生態影響最小的屋頂光電。</p><p>地球公民認為，發展再生能源是台灣能源轉型邁向低碳、減污、永續及能源韌性，所無法迴避的重要策略，但需要思考如何再生能源的利益讓社會共享。屋頂光電可以裝設在建築物屋頂、停車場遮雨棚、風雨球場等閒置空間，不僅能夠創造額外的遮風避雨、防曬等效果，更能透過公民電廠的推動，讓社區、集合式住宅共同討論綠電收益如何分配，讓再生能源走入每個人的日常生活。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50109",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "326|重新思考能源"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "推動屋頂光電最大化",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/346",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "7"
+    },
+    "main_files": [
+      {
+        "fids": "50109",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-016.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "346",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/346/edit"
+  },
+  "347": {
+    "captured_at": "2026-11-04T07:40:40.498Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>面對台電與中央環保署強推擴建，地球公民協會從2007年起展開體制外與體制內的長期抗爭，共同串聯了高雄市醫師公會、律師公會、建築師公會等20多個在地專業與民間社團，並透過成功促成了高雄市政府及不分藍綠的市議員站在同一陣線捍衛地方利益及居民的環境健康，共同反對台電4座燃煤機組的更新擴建。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50401",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "多元串聯與地方大團結，促成不分黨派集體發聲"
+          },
+          "files": [
+            {
+              "fids": "50401",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260918-026.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "多元串聯與地方大團結，促成不分黨派集體發聲"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>在近三年的環評審查中，地球公民全程出席了5次環評專案小組初審會及多次環評大會。台電原本在說明書中宣稱「空污不增量」，地球公民與高雄市環保局密切合作，透過數據證實台電的說法有問題。隨後在環評大會組織專家小組釐清懸浮微粒爭議時，地球公民推薦周晉澄、徐光蓉等學術專業教授與會，實質推翻了台電提出「靠洗掃街來抵銷致癌 PM2.5 微粒」等不實的抵減方案。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50402",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "深入環評與專家會議，引進學術專業一同倡議"
+          },
+          "files": [
+            {
+              "fids": "50402",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260918-027.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "深入環評與專家會議，引進學術專業一同倡議"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>在多次環評大會的過程中，地球公民在環保署外發動靜坐抗議、召開記者會並演出「馬總統鼻子變長」行動劇，諷刺政府減碳跳票。2009年7月環評總決戰當天，地球公民發起「守護高雄藍天」街頭連署，並在各大主流媒體刊登半版廣告，將大林電廠案炒熱為全國性矚目焦點。環評前夜，更在高雄市政府前廣場舉辦「為幸福高雄祈福」燭光晚會，百餘名市民與官員排開燭光，向環保署傳達捍衛高雄天空的堅定決心。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50403",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "街頭抗爭、媒體行銷與祈福晚會，凝聚社會輿論壓力"
+          },
+          "files": [
+            {
+              "fids": "50403",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260918-028.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "街頭抗爭、媒體行銷與祈福晚會，凝聚社會輿論壓力"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>2009年7月29日的環評大會最終審查中，面對環保署高層試圖護航兩案併陳的壓力，最終不記名投票的表決結果以一票之差（7票對6票），正式否決了台電的4座機組計畫，做出僅通過「2座燃煤機組（160萬瓩）」的有條件通過決議。</p><p>這項歷史性成果成功讓台電大林廠的燃煤規模與未來空污預估增量「攔腰砍半」，為高雄爭取到了污染減量與守護環境權的重大成果，打破過去國營企業挾龐大資源、扭曲環評的隱性常態，創下了台灣環境運動史上難得一見，民間、地方政府與環評委員攜手挑戰中央政策並取得實質減量的典範。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50404",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成 4 座燃煤機組砍半，為南部減碳減空污"
+          },
+          "files": [
+            {
+              "fids": "50404",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260918-029.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "促成 4 座燃煤機組砍半，為南部減碳減空污"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>2000年初，隨著全球對抗氣候變遷與溫室氣體減量的呼聲日益高漲，各國開始推動節能減碳與能源轉型。然而，身為國營事業的台灣電力公司，卻在長期面臨空氣品質不合格的高雄地區，推動龐大的大林電廠更新擴建計畫。</p><p>台電原計畫將把大林電廠5座老舊機組，全數改建為4座單機容量高達80萬瓩的超臨界燃煤汽力機組，總裝置容量將擴增至320萬瓩。此舉將使大林電廠的年燃煤量從當時的160萬噸暴增5.25倍，導致每年增加1,079萬噸的二氧化碳排放量。此時，政府正在一邊大喊節能減碳，另一邊國營企業卻帶頭擴大排放，使台灣的溫室氣體減量支票註定跳票。</p><p>這項擴建計畫也對在地居民的健康權與空氣品質構成了嚴峻威脅。大林電廠位於已被公告為空污三級防制區的高雄小港、臨海工業區一帶，周邊已充斥中鋼、中油等重工業。台電若蓋滿4座燃煤機組，將使高雄每年新增340多噸的懸浮微粒，令長期忍受環境負荷、市民平均壽命已比台北人少4歲的高雄社會持續承擔污染的代價。</p><p>此案亦涉及區域環境正義問題。台電規劃擴建的理由是為了填補未來全台系統尖峰負載的電力缺口，但高雄本身的發電量早已大於需求，原計畫形同「把電力輸往他地，把污染留在高雄」，讓高雄蟬聯人均排碳量世界第一的惡名。</p><p>地球公民反對增加化石燃料、擴增環境污染的改建計畫。我們認為，面對極端氣候，應該落實「污染減半、二氧化碳不增量」的前提，敦促政府審慎檢討以低廉電價扶植工業、卻由在地居民承擔巨大環境與健康成本的失衡發展模式。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50089",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "326|重新思考能源"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "反對大林電廠",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/347",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "1"
+    },
+    "main_files": [
+      {
+        "fids": "50089",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-017.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "347",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/347/edit"
+  },
+  "348": {
+    "captured_at": "2026-11-04T07:36:05.541Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>在 193 縣道拓寬案中，地球公民串連在地青年、學者與居民，參與十餘次環評與環差審查，以扎實法規與數據提出反駁，樹立地方環評參與的新里程碑；同時發起「幸福 193」走讀、音樂會與宣傳，邀民眾親近綠色景觀與文化資產，將工程爭議轉化為對生活品質的公共討論，促使大眾跳脫開路迷思，關注交通平權與防災韌性。</p><p>針對蘇花改工程，地球公民聯合考古學者與民間力量發起遺址搶救，揭露工程對環境與文化的衝擊，不僅促成修正不合理的拓寬範圍，更使珍貴的「漢本遺址」獲指定為國定遺址而得到法定保護。透過制度監督與草根行動，帶領花東公民以理性數據檢驗政客承諾，守護土地資產。</p><p>透過這一系列的體制參與與現場守護，花東社會開始跳脫「只要開路就是進步」的盲從思維，培養出思考顧及生態、文化為本的公民意識。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50637",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "用 193 拓寬、蘇花改等交通建設談地方發展自主權"
+          },
+          "files": [
+            {
+              "fids": "50637",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "5_20-1(650).png"
+            }
+          ],
+          "index": 0,
+          "list_text": "用 193 拓寬、蘇花改等交通建設談地方發展自主權"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>在核廢料與垃圾處理的監督上，基金會堅定反對台電在秀林鄉等原鄉進行高階核廢料探測，透過聯合地方居民舉辦抗議與宣導活動來凝聚反對力量；針對台泥BOO代燒垃圾案，則持續追蹤環評承諾、要求資訊透明化，並嚴格監督戴奧辛等空污排放指標。在密集的公民監督下，成功迫使台電終止在花蓮秀林鄉進行高階核廢料掩埋計畫的評估與探測，另外也建立起民間與地方社群對代燒垃圾案的長期環境監督機制，確保企業與政府在環境監測數據上必須保持公開透明，無法輕易粉飾太平。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50638",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "用核廢料、燒垃圾等嫌避設施談公民知情權"
+          },
+          "files": [
+            {
+              "fids": "50638",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "5_20-2(650).png"
+            }
+          ],
+          "index": 1,
+          "list_text": "用核廢料、燒垃圾等嫌避設施談公民知情權"
+        }
+      ],
+      "field_curation": [
+        {
+          "fields": {
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50257",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[field_comp_link][0][title]": "閱讀更多",
+            "[field_comp_link][0][uri]": "/node/100062",
+            "[field_comp_summary][0][value]": "花東生活要思考的問題有哪些？什麼建設會讓人願意留在花東生活呢？讓我一起思考和了解。",
+            "[title][0][value]": "在花東生活的真實需求是什麼？"
+          },
+          "files": [
+            {
+              "fids": "50257",
+              "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-036.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "在花東生活的真實需求是什麼？"
+        }
+      ]
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>花東因中央山脈阻隔與交通受限，地處國家政經邊陲。</p><p>這種地理孤立在體制演變中，轉化為深層的政治派系固化與資訊高度不對稱，使公共事務與資源分配長期遭少數政商網絡壟斷。加上因缺乏多元產業，地方經濟高度依賴公共工程、傳統觀光與砂石水泥等特許行業，導致政治與經濟利益緊密共生。</p><p>同時，地方媒體高度仰賴縣府採購與宣傳標案，監督批判功能衰退，加上重大開發與環評資訊封閉，使基層與部落難以獲取完整資訊。這種資訊黑箱賦予掌權者話語權優勢，將複雜發展簡化為「給一條安全回家的路」等民粹口號，甚至將不同意見扣上阻礙繁榮的罪名，製造社會對立。在缺乏多元審議與知情機制的結構下，公共決策走向由上而下與利益集中化，政府競相推出缺乏效益的巨型水泥硬體，更屢將核廢料鑽探、跨縣市垃圾焚化等高風險嫌避設施強加於偏鄉與部落，使在地居民無法自主參與家鄉願景，被迫承受土地、生態與健康受損的環境代價。</p><p>因此，地球公民基金會積極推動建構花東公民社會，致力打破由上而下的政商壟斷，透過培力在地主體與落實環境民主，奪回地方自主發展的詮釋權。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50151",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "327|世代正義與公平發展"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "建構花東公民社會",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/348",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "16"
+    },
+    "main_files": [
+      {
+        "fids": "50151",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-019.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "348",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/348/edit"
+  },
+  "349": {
+    "captured_at": "2026-11-04T07:37:13.752Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>在《花東發展條例》審議時，串連民間阻擋公有地賤售條款；在「花東三法」倡議中，提出憲法預算權分立、環評法定程序不可架空的訴求，防止巨額特別預算掏空國家財政並排擠其他民生建設</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50616",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "阻擋粗暴立法，捍衛環境與憲政程序"
+          },
+          "files": [
+            {
+              "fids": "50616",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "5_21-1(650).webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "阻擋粗暴立法，捍衛環境與憲政程序"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>2012 年，與地方團體協力推動「花東願景公民論壇」，深入社區與部落，探討青年返鄉、多元就業、有機農業與在地文化照顧，將「發展」的詮釋權從官僚與財團手中收回。2024年，舉辦多場客廳座談會，了解民間交通需求與收集建議，倡導擺脫「單一公路/高鐵能解決一切」的迷思，主張以多運具聯運、鐵路提速與既有路網韌性補強，作為兼顧安全與日常通勤的交通解方。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50617",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "打破官方壟斷，建立公民對話空間"
+          },
+          "files": [
+            {
+              "fids": "50617",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "5_21-2(650).webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "打破官方壟斷，建立公民對話空間"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>要求政府打破「政府提標案、廠商來承包」的封閉循環，建立由非營利組織與在地社群直接發起計畫、申請基金挹注的常態管道。成功促使主管機關（國發會）採納民間訴求，啟動「推動合作事業，強化地方產業」等機制，讓在地社群能夠合法取得公共基金資源，支持在地創生與永續生計。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50618",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成常態機制，推動實質民間上路"
+          },
+          "files": [
+            {
+              "fids": "50618",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "5_21-3(650).webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "促成常態機制，推動實質民間上路"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>阻止太魯閣山海劇場、鳳林國際賽車場、環島高鐵、花東塊等盲目耗資的開發案。一方面守住花東脆弱的地質與珍貴生態，不讓不可逆的地貌破壞與高額債務留給下一代承擔，另一方面讓百億預算從短期水泥工程與少數財團利益，轉向投資於長期花東發展。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50619",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "阻止多項高爭議個案，轉為投入永續發展"
+          },
+          "files": [
+            {
+              "fids": "50619",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "5_21-4(650).webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "阻止多項高爭議個案，轉為投入永續發展"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>長年以來，花東地區因地理阻隔、天災頻仍與基礎設施不足，面臨顯著的城鄉差距。然而在資源配置上，政界往往將發展問題粗暴簡化為「偏鄉要建設」，深陷以龐大硬體預算包裝發展的單一邏輯。</p><p>從 2011 年《花東地區發展條例》的 400 億基金，到後續動輒上兆元的「花東三法」（花東快、國六東延、環島高鐵），皆展現出由上而下、迷信巨額特別預算的水泥思維，對花東造成了雙重衝擊。這類決策模式首先漠視了極端地質風險，加劇在地的環境脆弱度。花東位處板塊交界，地質破碎且密布活動斷層，早期花東條例草案曾企圖鬆綁公有地租售以推動賽車場與大型劇場，花東三法更企圖以立法權限期完工，強行穿越能高山與斷層帶，架空法定環評與可行性評估，將生態環境與龐大公帑置於高度不可逆的災難風險之中。同時，巨額預算鎖死於硬體工程，也嚴重排擠了民生資源，扭曲地方的真實需求。盲目複製西部的重開發模式，不僅無法解決青年外流與產業困境，更直接排擠了震災復原、鐵路安全雙軌化、醫療長照及在地農業等迫切投資，將沉重的環境與財政債務留給下一代承擔。</p><p>因此，地球公民監督花東重大預算的核心意義，正在於打破迷信工程的粗放循環，透過落實預算民主與法定程序，促使公共資源轉向在地人才、軟體機制與防災韌性，真正實踐兼顧生態承載力與世代正義的公平發展。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50154",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "327|世代正義與公平發展"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "監督花東重大預算",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/349",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "17"
+    },
+    "main_files": [
+      {
+        "fids": "50154",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-020.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "349",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/349/edit"
+  },
+  "350": {
+    "captured_at": "2026-11-04T07:41:02.650Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為了讓反核意識轉化為實質力量，地球公民長期籌辦大型集會。2011年福島核災後，地球公民組織了「南台灣廢核行動聯盟」，第一次辦理了「430廢核遊行」，成功吸引3,000人上街，成為當時南台灣有史以來最大規模的反核遊行。其後，參與「全國廢核行動平台」運作，擴大串連上百個民間團體，2013年與友團共同締造了全台22萬人上街廢核的歷史紀錄。</p><p>在後續的2014年至2019年間，地球公民仍持續在三月份籌辦南台灣與北台灣的廢核大遊行，吸引數萬名公民參與，為推動非核家園與能源改革奠定了厚實的草根基礎。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50414",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "籌辦近十年高雄反核遊行，促成公民行動"
+          },
+          "files": [
+            {
+              "fids": "50414",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260918-042.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "籌辦近十年高雄反核遊行，促成公民行動"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>2014年4月，林義雄先生的禁食行動，廢核行動結發起「停建核四，落實民主」系列活動，以長期佔領凱道、佔領忠孝西路、黃絲帶行動等，加乘多年來台灣社會累積的反核能量，成功迫使當時的馬英九政府宣布將核四停工封存。同時，更進一步促成了2016年蔡英文總統的核電如期除役的政策與承諾。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50415",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成政府承諾非核家園、封存核四"
+          },
+          "files": [
+            {
+              "fids": "50415",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260918-039.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "促成政府承諾非核家園、封存核四"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>然而廢核行動的成果，受到三次擁核公投的挑戰。對此，反核陣營皆積極推動能源對話，透過社群媒體、線下講座與對談、大型集會遊行活動，邀請社會共同思考台灣使用核電的代價，並在公投投下反對票。</p><p>2018年面對「廢除電業法第95條第1項」公投（非核家園實質入法），地球公民舉辦能源論壇，還引介日本攝影師豐田直巳來台展出福島核災攝影作品、撰寫系列文章，最終獲得4,014,215張反對票。</p><p>2021年迎戰「核四重啟」公投，擔任全國廢核行動平台核心團隊，共同進行破百場能源教育演講、出席電視說明會，成功催出4,262,451張不同意票，將其徹底否決。</p><p>2025年針對「核三重啟公投」，更深度串連屏東在地社群，與台南、高雄、屏東在地店家與團體合作舉辦《歸零—無人提起的真相》展覽、講座及晚會，深化地方反核行動的主體性，並在屏東開出全國最高的反對票。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50416",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "迎戰核電公投，促成社會溝通"
+          },
+          "files": [
+            {
+              "fids": "50416",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260918-040.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "迎戰核電公投，促成社會溝通"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>地球公民長年擔任「屏東縣核安監督委員會委員」及「行政院非核家園推動小組諮詢委員」，在體制內推動核四除役、核後端基金改革與核廢料處理機制。</p><p>在監督核三廠除役方面，我們促成台電與屏東縣府投注資源強化除役的環境與社會評估，並要求屏東核安委員會增聘恆春在地代表，納入居民意見。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50417",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "進入體制內，進行政策監督與法制推動"
+          },
+          "files": [
+            {
+              "fids": "50417",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260918-041.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "進入體制內，進行政策監督與法制推動"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>台灣共有三座曾實際運轉的核電廠，分別是位於新北金山的核一、萬里的核二以及屏東恆春核三。這三座核電廠都是威權時期下的產物，規劃、興建皆未曾取得在地居民的民主授權，因而都曾引起地方長期的抗爭。在福島核災發生後，新的地質調查也顯示，這些核電廠的廠址都位於活動斷層附近，對台灣核安形成巨大的挑戰。而台灣在核廢料的處置上，同樣面臨地址條件跟選址的難題，至今仍未有突破，只為了能發數十年的核電，卻留下需要數百萬年處置的核廢料給後代子孫。</p><p>311福島核災後，動工超過 10 年卻遲遲無法完工，屢屢發生人為疏失、施工不當事件的拼裝車核四，引起全台對核安的疑慮，促成公民團體組成「全國廢核行動平台」，號召22萬人上街訴求廢核。社會輿論的持續加溫，也迫使國民黨政府停建核四、承諾非核家園。</p><p>台灣順利在2025年邁入非核家園，然而部分政黨仍訴求台灣重啟核電，甚至以違反國會議事規則的方式，粗暴修改相關法律，為重啟核電鋪路。</p><p>核安仍有虞、核廢仍無解，社會對使用核電如何形成共識？地球公民主張在這些核電造成的社會及環境成本無法被解決前，都不應繼續使用核能發電，才能避免人民持續承擔核災風險、核廢料存放的難題及世代的不正義。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50070",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "327|世代正義與公平發展",
+        "326|重新思考能源"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "廢核",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/350",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "5"
+    },
+    "main_files": [
+      {
+        "fids": "50070",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-021_2.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "350",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/350/edit"
+  },
+  "351": {
+    "captured_at": "2026-11-04T07:37:35.727Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為了將氣候意識轉化為草根行動，地球公民長期在南方深耕抗暖化運動。2007年12月，發起「1208響應全球抗暖化行動—高雄大遊行」，串連高高屏24個民間團體、吸引近千名公民上街，喊出「污染減半、綠地加倍、低碳新經濟」的訴求，並促成時任高雄市長簽署承諾，開創了高雄十多年來首次大規模的環境遊行。2009年12月哥本哈根氣候大會（COP15）召開之際，地球公民更在高雄哈瑪星碼頭舉辦「溫升2℃」模擬實境街頭行動劇，志工穿戴報紙游泳圈、將高雄地標85大樓模型放於海面象徵樓沉大海，向往來遊客宣導氣候危機，強力倡議「支持碳稅、拒當氣候難民」。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50418",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "籌辦高雄抗暖化遊行與街頭行動，啟蒙全民氣候意識"
+          },
+          "files": [
+            {
+              "fids": "50418",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260918-043.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "籌辦高雄抗暖化遊行與街頭行動，啟蒙全民氣候意識"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>面對高排碳重工業的盲目擴建，地球公民積極擋在第一線阻絕污染。2008至2009年間，串連民間團體全力監督台電大林電廠更新擴建案，最終成功促成擴建規模減半（由4座燃煤機組減為2座），每年直接減少約800萬噸二氧化碳排放，相當於高雄市全體住宅與商業活動一整年的碳排放總量。同時，地球公民也堅決反對國光石化、台塑大煉鋼廠等巨型高耗能開發案，防止台灣背負更沉重的碳排放罪名。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50419",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "擋下高碳排巨型開發案，扭轉錯誤減碳政策"
+          },
+          "files": [
+            {
+              "fids": "50419",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260918-044.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "擋下高碳排巨型開發案，扭轉錯誤減碳政策"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>為了帶入前瞻的國際觀點，地球公民曾代表前往波蘭波茲南參與聯合國氣候變遷大會（COP14），實地觀察國際談判並汲取「溫室發展權」（GDRs）與「氣候調適」等議題，回國後轉化為在地宣導與政策監督的養分。因應《巴黎協定》控制升溫1.5°C目標與全球淨零趨勢，地球公民於2020總統大選前夕，提出「台灣面對氣候變遷的五大減碳方案」：包含要求政府訂出2025至2050年除煤減氣的能源轉型路徑、推動課徵「能源稅或碳稅」並要求國營事業將減碳訂為KPI、強化中南部減煤降載與大戶減量、制訂交通運具全面電動化期程，以及導入能源民主與公正轉型價值。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50420",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "接軌國際氣候倡議，擘劃台灣五大減碳方案"
+          },
+          "files": [
+            {
+              "fids": "50420",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260918-045.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "接軌國際氣候倡議，擘劃台灣五大減碳方案"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>地球公民持續深耕體制內政策監督，長期關注《溫室氣體減量與管理法》（現《氣候變遷因應法》）的修法與落實，主張秉持「污染者付費」精神，取消化石燃料的不當補貼，促使高排碳產業結構加速轉型。在推動再生能源發展的過程中，針對地面型光電引發的生態與在地社會衝突，地球公民提出事前應建立整體的「環境與社會檢核機制」，輔導綠能優先於低爭議區域設置。透過落實資訊公開與公民參與，將「能源民主」與「公正轉型」價值融入氣候政策，確保在邁向低碳永續的過程中，兼顧生態保育、在地權益與勞工福祉。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50421",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "進入體制監督法制，導入能源民主與公正轉型"
+          },
+          "files": [
+            {
+              "fids": "50421",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+              "file": "20260918-046.webp"
+            }
+          ],
+          "index": 3,
+          "list_text": "進入體制監督法制，導入能源民主與公正轉型"
+        }
+      ],
+      "field_curation": [
+        {
+          "fields": {
+            "[field_comp_image][0][fids]": "",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[field_comp_link][0][title]": "閱讀更多",
+            "[field_comp_link][0][uri]": "/node/100040",
+            "[field_comp_summary][0][value]": "2021，台灣在疫情下同時面臨著百年大旱，缺水導致農田停灌休耕，桃竹苗和中部民生用水受限。同一時間，高溫打破74年紀錄，導致用電創新高。氣候緊急時代不再是危言聳聽，而是真的來臨了。如何面對這樣的極端氣候？全世界主要國家紛紛提出了淨零排放期程。做為地球公民、台灣國民的一份子，我們特別撰寫和整理出系列文章，分別從上位的減碳政策，平地造林與光電減碳爭議，還有水資源的調適政策，提供給社會參考。\n\n面對氣候緊急時代，邀請您和我們一起展開行動。",
+            "[title][0][value]": "疫情下的氣候緊急時代"
+          },
+          "files": [
+            {
+              "fids": "",
+              "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": ""
+            }
+          ],
+          "index": 0,
+          "list_text": "疫情下的氣候緊急時代"
+        }
+      ]
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p dir=\"ltr\">地球越來越熱了，不是嗎？</p><p dir=\"ltr\">碳排帶來的全球暖化、氣候變遷，讓極端強降雨與乾旱成為台灣常態。2009年莫拉克風災夾帶暴雨引發土石流，導致高雄小林村不幸滅村，深刻揭示島國台灣面對極端氣候的脆弱性。</p><p dir=\"ltr\">台灣人均二氧化碳排放量長期高居全球前列，約為全球平均值的2至3倍。以重工業聚落為主的高雄市，過去更曾創下人均碳排放34.74公噸的惡名。然而，政府長期以「拼經濟」為名補貼低電價與化石燃料，任由中鋼、中油、台電及石化巨頭等排碳大戶擴張高耗能產業，造成產業轉型遲緩與極為不公的環境外部成本。</p><p dir=\"ltr\">科學研究指出，若全球升溫達2℃，海平面將上升50公分，高雄哈瑪星、凹仔底等低窪區域都將面臨淹水危機。地球公民主張，在氣候危機迫在眉睫的當下，台灣不能再依賴高碳排的傳統經濟模式；政府必須徹底調整產業結構、落實污染者付費的碳定價與能源稅，並將「公正轉型」與「能源民主」導入氣候政策，才能建立具有氣候韌性與世代正義的永續家園。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_action_item[entities][3][delta]": [
+        "3|3"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50123",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "327|世代正義與公平發展"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "氣候變遷與調適",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/351",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "12"
+    },
+    "main_files": [
+      {
+        "fids": "50123",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-022.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "351",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/351/edit"
+  },
+  "454": {
+    "captured_at": "2026-11-04T07:49:45.598Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>發起具創意的街頭快閃行動（如：在中鋼總部前留下黑腳印抗議），並連續參與6次「高雄市鋼鐵業空氣污染物排放標準」公聽研商會，嚴格監督並要求加嚴法規修訂。</p><p>我們促使草案增訂「電弧爐戴奧辛檢測頻率增加為一年兩次」、「明定未達標設備的改善期限且不得展延」，以及「未落實改善者直接適用新標準」等嚴格機制，法案若通過預計每年至少可減少上千噸的空污排放，提升高雄市的空氣品質。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50086",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "終結鋼鐵業寬鬆標準與促成法規加嚴"
+          },
+          "files": [
+            {
+              "fids": "50086",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260827-079.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "終結鋼鐵業寬鬆標準與促成法規加嚴"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>針對林園石化工業區（如中油新三輕擴產案），在環評程序中極力要求進行健康風險評估，並成功爭取成立環評監督委員會。積極參與環評監督，並揭露當地超出可接受範圍的極高致癌風險，要求先降低健康風險，落實環評承諾，反對爭議未明前核准試車，以維護市民的健康。</p><p>針對污染負荷已超出極限的小港臨海工業區，於各項擴廠與新設開發案（如遊艇產業園區開發等）的環評程序中，嚴格把關並強力反對未經嚴謹評估的擴張。在多場環境相關會議中，地球公民要求開發單位必須將鄰近居民的「健康風險評估」納入審查範圍，揭露當地居民早已超標的健康風險數據。透過不間斷的公民監督，成功促使政府部門針對臨海工業區周邊居民啟動長期的流行病學調查，讓被忽視的居民健康數據得以浮出檯面，並以此作為要求工廠減污的科學依據。</p><p>在多年持續的倡議、抗議以及立委的協助下，也成功促使政府啟動「林園、臨海、大社工業區總體檢」計畫，將工廠煙道空污排放、工安、廢棄物處理及地下水監測等納入全面查察與公民監督。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50087",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "揭露石化業健康風險並推動工業區總體檢"
+          },
+          "files": [
+            {
+              "fids": "50087",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260827-080.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "揭露石化業健康風險並推動工業區總體檢"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>大林電廠與興達電廠是兩座位在高雄且規模巨大的火力發電廠，廠內均設有燃煤發電及燃氣發電，是長期供給台灣電力的重要能源設施，卻也為南部帶來不小的污染負擔及環境成本。</p><p>針對大林電廠於2007年提出的更新擴建案，地球公民展開長達兩年半的倡議，最終與在地友團成功讓台電大林廠的燃煤規模從 4 座縮減為 2 座發電機組，讓未來空污預估增量「攔腰砍半」，為南部守下減碳減空污的成果。</p><p>針對興達電廠，我們要求「冬季燃煤少一座」及「停下興達最老舊的燃煤一號機組 」長期積極參與環評專案小組會議、召開記者會並拜會政府官員，強力要求老舊燃煤機組提前除役及原廠址更新。這些倡議行動成功爭取到經濟部與台電在興達電廠更新的環評中承諾，於秋冬空污季停止運轉2部燃煤機組、另外2部削減30%用煤量，並讓最老舊的1、2號機提前於民國112年（2023年）底除役；同時也逼迫台電調整基地規劃，擴大保留永安濕地面積，並促成了「生態保育小組」的設立，讓發電廠與濕地共存。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50088",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "促成大林電廠及興達電廠大幅減煤與保留永安濕地"
+          },
+          "files": [
+            {
+              "fids": "50088",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260827-081.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "促成大林電廠及興達電廠大幅減煤與保留永安濕地"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>高雄長期作為台灣的重工業重鎮，聚集了密集的石化、鋼鐵、電力與塑膠產業，使市民面臨嚴峻的空氣污染與自然棲地破壞的雙重危機。這些高耗能、高污染的大污染源在碳排放量與空氣污染方面長期居高不下，主要污染源包含：仁武、大社、林園與臨海等工業區以及大林電廠與興達電廠等老舊燃煤機組等，再加上地理上處於下風處，致使中南部常陷入嚴重霾害，民眾長期暴露在PM2.5、臭氧及各種致癌物質的高健康風險中，承受著極大的環境負荷。</p><p>為了捍衛南部民眾的生存與呼吸權，地球公民基金會致力於從源頭要求污染減量、落實污染監測及執行健康風險評估，並強力監督政府落實產業轉型。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50085",
+      "field_category_lead_pic[0][focal_point]": "50,50",
+      "field_issue_category[]": [
+        "325|翻轉污染的日常"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "監督高雄重大污染",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/454",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "0"
+    },
+    "main_files": [
+      {
+        "fids": "50085",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-011.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "454",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/454/edit"
+  },
+  "455": {
+    "captured_at": "2026-11-04T07:50:04.083Z",
+    "ief": {
+      "field_action_item": [
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>2018年台積電將於南科設置3奈米新世代半導體廠時，地球公民及友團便指出該開發案年用電高達77億度，將大幅加重南部空污與發電負擔。民團強烈要求台積電效法國際大廠加入RE100，承諾逐步達成100%使用再生能源並設定明確期程，期盼指標企業帶動台灣綠能發展，落實環境正義。台積電後續於公開受訪曾指出，環保團體當時的倡議，對企業內部決定公開承諾綠電目標、加入RE100的討論，起了關鍵性的作用。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50405",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "倡議半導體業需承諾綠電目標"
+          },
+          "files": [
+            {
+              "fids": "50405",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+              "file": "20260918-030.webp"
+            }
+          ],
+          "index": 0,
+          "list_text": "倡議半導體業需承諾綠電目標"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>由於先進製程的快速擴張，台積電於2018年起，陸續於南部科學園區臺南園區、高雄楠梓原中油高雄煉油廠（五輕所在地）以及沙崙科學園區等地設廠。地球公民藉由參與科學園區、產業園區的環境影響評估會議（環評），持續要求開發單位於環評承諾台積電需自帶綠電、一定用電需來自屋頂光電、使用100%再生能源及再生水的路徑、淨零排放路徑等訴求，讓環評委員關注開發所帶來的耗電問題、衍生的社會影響以及園區規劃等課題，最終促成開發單位針對用電、用水、污染監測、廢棄物等內容，做出更積極的環境承諾。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50406",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "積極參與環評會議，要求企業負起綠電責任"
+          },
+          "files": [
+            {
+              "fids": "50406",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+              "file": "20260918-031.webp"
+            }
+          ],
+          "index": 1,
+          "list_text": "積極參與環評會議，要求企業負起綠電責任"
+        },
+        {
+          "fields": {
+            "[field_comp_body][0][format]": [
+              "full_html|完整 HTML"
+            ],
+            "[field_comp_body][0][value]": "<p>面對半導體大廠設廠，地球公民致力於引導公眾討論：台灣科技業大廠在追求擴張之餘，如何負起相應的環境責任？在台積電宣布於高雄設廠時，地球公民舉辦「台積電要來了？高雄會發生什麼事？」系列論壇，後續亦舉辦「不識「神山」真面目：半導體護國群山的野望與惆悵」論壇，邀請公部門、媒體與學者專家對談，帶領公民社會一同思考半導體業的能源需求、環境負荷以及科學園區對在地居民的影響。</p>",
+            "[field_comp_image][0][alt]": "",
+            "[field_comp_image][0][fids]": "50407",
+            "[field_comp_image][0][focal_point]": "50,50",
+            "[title][0][value]": "舉辦公民論壇，促進社會對話"
+          },
+          "files": [
+            {
+              "fids": "50407",
+              "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+              "file": "20260918-032.webp"
+            }
+          ],
+          "index": 2,
+          "list_text": "舉辦公民論壇，促進社會對話"
+        }
+      ],
+      "field_curation": []
+    },
+    "main_fields": {
+      "advanced__active_tab": "edit-revision-information",
+      "description[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "description[0][value]": "<p>近年來，台灣的半導體產業在全球科技供應鏈中扮演舉足輕重的角色，先進製程技術為國家帶來了巨大的經濟效益與國際影響力。然而，伴隨晶片製造能力提升而來的，是日益龐大的資源消耗與環境負擔。</p><p>首先，半導體先進製程的用電規模極為驚人，直接衝擊台灣的減碳目標。隨著製程向3奈米、2奈米推進，耗電量呈現跳躍式成長。以近期的南部擴廠開發案為例，單一廠區的年預估用電量動輒高達上百億度，規模相當於整個縣市全年的住商用電總和。龐大的用電需求連帶推升了溫室氣體的間接排放，對台灣整體邁向2050年淨零碳排的承諾構成了極大的挑戰。</p><p>其次，監督的動機也源自於對環境正義與居民健康權的捍衛。台灣半導體的新建廠區近年來多集中於中南部，除了半導體廠本身的污染需要監督之外，新增的鉅額電力需求往往必須仰賴南部的燃氣發電廠來調度支應。高屏地區長期面臨空氣品質不佳的困境，雖然燃氣電廠的空污、碳排放相對燃煤電廠已有改善，但產業擴張的電力供應如依然高度依賴化石燃料，等同將經濟發展的環境成本轉嫁給在地居民承擔。</p><p>此外，督促企業落實國際綠能承諾並帶動本土能源轉型，也是監督行動的核心目的。面對國際供應鏈對100%使用再生能源（RE100）的嚴格要求，半導體大廠必須加速提高國內廠區的綠電使用率。</p><p>地球公民基金會的立場是，台灣科技產業在追求經濟成長之餘，必須負起相應的環境責任，確保台灣的空污、排碳不會因此惡化，更期待企業提出具體、有期程的再生能源目標，期望這些用電大戶能利用其龐大的採購力道，實質帶動台灣本土綠電市場與綠能基礎建設的發展，並落實資訊公開與建立社會溝通機制讓半導體產業的發展與台灣的永續未來能夠真正共存共榮。</p>",
+      "field_action_item[entities][0][delta]": [
+        "0|0"
+      ],
+      "field_action_item[entities][1][delta]": [
+        "1|1"
+      ],
+      "field_action_item[entities][2][delta]": [
+        "2|2"
+      ],
+      "field_category_lead_pic[0][alt]": "",
+      "field_category_lead_pic[0][fids]": "50081",
+      "field_category_lead_pic[0][focal_point]": "13,27",
+      "field_issue_category[]": [
+        "325|翻轉污染的日常"
+      ],
+      "field_key_case[0][format]": [
+        "full_html|完整 HTML"
+      ],
+      "field_key_case[0][value]": "",
+      "form_id": "taxonomy_term_action_category_form",
+      "name[0][value]": "監督半導體用電",
+      "parent[]": [
+        "0|<root>"
+      ],
+      "path[0][alias]": "/action/455",
+      "path[0][pathauto]": true,
+      "revision": false,
+      "revision_log_message[0][value]": "",
+      "status[value]": true,
+      "weight": "0"
+    },
+    "main_files": [
+      {
+        "fids": "50081",
+        "field": "edit-field-category-lead-pic-wrapper",
+        "file": "20260827-018.webp"
+      }
+    ],
+    "page_title": "編輯次分類 | 地球公民基金會",
+    "tid": "455",
+    "url": "https://www.cet-taiwan.org/taxonomy/term/455/edit"
+  }
+}

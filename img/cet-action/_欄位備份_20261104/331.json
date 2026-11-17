@@ -1,0 +1,118 @@
+{
+  "captured_at": "2026-11-04T07:43:37.750Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>我們長期監督國家造林政策，避免錯誤補貼產生毀林誘因，倡議保留天然次生林、爭取政府增加預算推動環境保育林營造，並主張針對環境敏感地區實施「限制伐木補償」，給予私有土地所有人合理補償。歷經十餘年倡議，2024 年「獎勵造林辦法 2.0」修訂，正式採納我們的建言，禁止為造林而砍伐天然次生林，並新增以生態維護與國土保安為目的之「非木材生產林」獎勵類別；同時，政府已實施「具生產性私有林限制採伐補償方案」與「生態服務給付」，確保山村居民因公益性獲得制度補償。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50389",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "推動林政改革，兼顧生態保育與在地生計"
+        },
+        "files": [
+          {
+            "fids": "50389",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260918-014.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "推動林政改革，兼顧生態保育與在地生計"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">為確保林業發展不以犧牲生態為代價，我們長年倡議政府應建立明確的林地分級制度，讓經濟林與保育林分流管理，並導入透明可問責的國際森林認證體系，減少林地超限利用。2016 年起 FSC（森林管理委員會）國際永續認證制度導入臺灣，作為最早受邀參與監督的非政府組織，我們積極為公私有林地的驗證過程把關——從正昌、永在等代表性林企業的案例參與，到 2018 年至 2024 年間國有林地的全區驗證。我們持續扮演監督與溝通的角色，在國產材振興的過程中，確保環境評估與社區知情權的落實。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50390",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "引導永續林業發展，參與 FSC 認證與林地分級"
+        },
+        "files": [
+          {
+            "fids": "50390",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260918-015.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "引導永續林業發展，參與 FSC 認證與林地分級"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">自2021年起，我們發起「森之旅」、「花東山海」系列講座，將臺灣山林現況及人山互動帶入社會大眾的日常視野。從森林生態保育、原住民族文化與權利，到自然資源利用與山林治理，邀請不同領域的行動者分享與對話。目的是讓台灣山林的面貌不只停留在艱澀的政策討論，藉此拉近社會大眾的距離。三年來歷經24場活動，吸引了將近萬人次的報名參與，成功推動議題在多元社群中的擴散，提升大眾對山林議題的認識與關注，也成為社會溝通的重要平台。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50391",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "深耕公眾教育，開展「森之旅」社會對話"
+        },
+        "files": [
+          {
+            "fids": "50391",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260918-016.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "深耕公眾教育，開展「森之旅」社會對話"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p dir=\"ltr\">臺灣六成國土由森林覆蓋。它是野生動植物與無數生命棲息的家園，更是原住民族與各個世代人們得以安身立命的基石。</p><p dir=\"ltr\">四百年來，不同族群的拓墾和殖民政權更迭在臺灣山林留下深切刻痕。日治時期大規模的森林事業計劃、部落「集團移住」政策，以及戰後國有林體制的確立，形塑了今日國家管理山林的基本空間格局，原住民族也因此喪失傳統領域上的權利。這段過程中，山林資源一直都在臺灣各個時代為經濟發展輸出養分，大規模伐林、高山農業、道路、水庫、水保工程等山區建設，長達一世紀的開發，為山川紋理帶來顯著改變，引發棲地破碎化與山坡地不當利用等課題。</p><p dir=\"ltr\">1990年代政府雖宣布全面禁伐天然林，隨後推動的「全民造林」卻因缺乏嚴謹評估與盲目補貼，反而引發新一波毀林誘因，未能引導臺灣林業走向獲得社會信任的永續之路。2009年莫拉克風災的重創，凸顯極端氣候在脆弱地質條件下造成的劇烈衝擊，更促使社會反思：面對過去的沉痾與當前的氣候風險，臺灣山林治理應如何健全體制，走出一條平衡水土、生態、產業、在地生計與歷史傷痕的新路？</p><p dir=\"ltr\">2016年起，臺灣山林治理迎來了關鍵的思維轉變。政府與民間逐漸形成共識，意識到山林政策必須兼顧產業永續、生態保育與社會正當性。一方面，政府帶頭推動林政轉型——面對人工林老化的現實，推動國產材政策與 FSC 國有林全區認證，在振興林產業同時兼顧環境評估與社區知情權；並引入「里山倡議」、「國土綠網」等政策，搭配「生態給付」與「限制伐木補償」，為山林保育注入新的制度誘因。</p><p dir=\"ltr\">同時，民間保育界也走向更包容的視野，理解合理的森林資源利用對山林永續的必要性。更重要的是，政府與保育方皆開始深刻反思：過往「國家單向管制」若無法納入原住民族權利與山村在地生計，不僅難以建立社會共識，更常引發保育與在地居民的對立。多方價值的交會，正逐步引領臺灣山林走向在地參與及協同治理的新局。</p><p dir=\"ltr\">如今，臺灣邁向 2050 淨零排放，將「自然碳匯」納入十二項關鍵戰略，森林再度成為各界焦點。然而，氣候行動不能以犧牲生物多樣性與在地權益為代價。在嶄新的時代，我們響應《昆明—蒙特婁全球生物多樣性框架》倡導的「人與自然和諧共生」，主張山林政策除了邁向「30×30」目標、推動OECM保育共生地與生態修復，更需將原住民族傳統知識與權利置於治理核心。結合社區力量，落實山林管護，打造兼顧在地生計與生態永續的「多元共管」模式。</p><p dir=\"ltr\">無論是過去四百年的開發歷史，或是當代氣候變遷下的嚴峻挑戰，山林治理始終面臨著複雜的考驗。地球公民基金會長年扎根於此，從揭露不當政策、推動林政改革，到走入山村參與社區保育、開啟社會對話，我們致力於帶著群眾轉變思維：不僅是重視保育，更要看見山村夾在理想與現實中的掙扎，所謂的人與自然共存，才有實踐的可能性。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50119",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "324|重整失序的國土"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "山林保育",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/331",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "11"
+  },
+  "main_files": [
+    {
+      "fids": "50119",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-004.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "331",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/331/edit"
+}

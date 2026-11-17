@@ -1,0 +1,166 @@
+{
+  "captured_at": "2026-11-04T07:48:58.603Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>民間籌組「霄裡溪工作隊」進行質化與量化的用水調查，追查光電廢水對居民生活的影響與化學物質累積在河川底泥的真相；在民間持續揭露資訊的壓力下，環保署於2009年底首度修法，將光電業特有的重金屬「銦」和「鉬」正式列入飲用水管制項目中。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50251",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成飲用水管制標準加嚴（正式列管銦、鉬） "
+        },
+        "files": [
+          {
+            "fids": "50251",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-084.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "促成飲用水管制標準加嚴（正式列管銦、鉬）"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>新埔居民與環保團體不斷前往環保署與立法院抗議、召開記者會要求撤銷違法的排放許可，同時向監察院陳情；監察院隨後針對行政院、經濟部、環保署與桃園縣政府在處理本案時的行政違失與怠惰，正式提出糾正案。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50250",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促使監察院對行政機關提出糾正案 "
+        },
+        "files": [
+          {
+            "fids": "50250",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260827-082_0.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "促使監察院對行政機關提出糾正案"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>環保團體發起國際連署行動，直指友達與華映分別為蘋果（iPad Mini）與 Google（Nexus 7）的面板供應商，將抗爭層級拉高至國際供應鏈，施壓跨國品牌落實企業社會責任與綠色採購，並將霄裡溪案例帶入國際會議，與全球的責任科技運動網路串聯。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50249",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "成功施壓跨國品牌並串聯國際責任科技運動 "
+        },
+        "files": [
+          {
+            "fids": "50249",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260827-083_0.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "成功施壓跨國品牌並串聯國際責任科技運動"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>在長期的抗爭與社會關注下，環保署環評大會於2013年確認友達與華映必須執行廢水全回收，兩廠區最終於2015年12月30日正式進行「污水排放口封管儀式」，終結長達16年的廢水排放，成為台灣高科技產業執行廢水零排放的全國首例。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50252",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "達成台灣高科技產業廢水零排放全國首例（正式封管） "
+        },
+        "files": [
+          {
+            "fids": "50252",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "20260827-085.webp"
+          }
+        ],
+        "index": 3,
+        "list_text": "達成台灣高科技產業廢水零排放全國首例（正式封管）"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>封管後，環團與當地自救會持續監督倡議，要求政府與廠商負起環境修復責任，出資進行當地的流行病學調查、健康風險評估，並展開霄裡溪水質與底泥的生態復育計畫。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50253",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "確立流行病學調查與生態復育的後續咎責方向"
+        },
+        "files": [
+          {
+            "fids": "50253",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-4-form-field-comp-image-wrapper",
+            "file": "20260827-086.webp"
+          }
+        ],
+        "index": 4,
+        "list_text": "確立流行病學調查與生態復育的後續咎責方向"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>霄裡溪原為水質極佳的「甲類水體」，兩百多年來供應新竹縣新埔鎮三萬五千多名居民的飲用水與下游1400公頃農田的灌溉所需。1999年，中華映管與友達光電於上游設廠，但在環評時隱瞞了下游設有自來水取水口的事實，開始將含有光電業特有有毒重金屬（如銦、鉬）的廢水排入溪中。隨後當地爆發溪流生物大量暴斃，居民陸續出現不明皮膚病、呼吸道疾病甚至罹癌過世，且家中的金屬設備極易遭腐蝕。面對嚴重的環境與健康危機，環保署與經濟部不僅未要求停工，經濟部更發出無法律依據的公文宣稱「霄裡溪將不再為飲用水水源」，環保署便據此認定廠商未違反環評結論，讓桃園縣政府得以違法展延排放許可，迫使居民持續面臨飲用毒水的風險。<br><br>政府這種聯手推諉卸責、讓民眾繼續承擔喝毒水風險的體制失靈，以及為了經濟發展放任珍貴水源被破壞的行徑，成為地球公民基金會強力介入的關鍵原因。<br><br>地球公民的介入，促成了台灣高科技產業執行廢水零排放的全國首例。更從本案延伸推動台灣化學品「源頭管理」的制度改革，促成《毒性化學物質管理法》納入歐盟REACH法案的「預警原則」，從源頭防範未知化學品對環境與人體的危害。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_action_item[entities][4][delta]": [
+      "4|4"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50098",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "325|翻轉污染的日常"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "守護霄裡溪",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/340",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "3"
+  },
+  "main_files": [
+    {
+      "fids": "50098",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-012.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "340",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/340/edit"
+}

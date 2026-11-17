@@ -1,0 +1,189 @@
+{
+  "captured_at": "2026-11-04T08:52:16.058Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>地球公民基金會等團體自2003年起積極在地方舉辦公共論壇與說明會，向居民揭露人工湖將切斷水文等環境危機，並與在地鄉親2005年成立「反吉洋人工湖自救會」共同協力，展開多次陳情與抗議，成功凝聚並喚醒了地方強大的公民意識。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50760",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "深耕基層並喚醒公民意識"
+        },
+        "files": [
+          {
+            "fids": "50760",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_5-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "深耕基層並喚醒公民意識"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>透過串連高屏地區的地方首長與跨黨派立法委員，民間團體成功發揮政治影響力，讓立法院在2005至2008年間連續四年全數刪除高屏大湖計畫預算；隨後更於2012年再度成功遊說立委，刪除了徵收台糖農地的46億元預算。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50761",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "國會遊說與阻擋開發預算"
+        },
+        "files": [
+          {
+            "fids": "50761",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_5-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "國會遊說與阻擋開發預算"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>民間團體積極提出替代方案，指出當時高雄自來水漏水率高達26%，強烈訴求將百億工程預算移轉用於改善漏水問題，並倡議污水回收再生、改善東港溪水質等更具效益的作法。同時，學者與環團長期倡議的「伏流水」取水工法逐漸受到政府重視，近年完工的高屏溪伏流水工程更在2021年百年大旱中發揮了救命水的關鍵作用，成功顛覆過去過度依賴大型水庫與攔河堰的傳統思維。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50762",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "倡議替代方案與帶動水資源政策轉型"
+        },
+        "files": [
+          {
+            "fids": "50762",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "5_5-3(650).png"
+          }
+        ],
+        "index": 2,
+        "list_text": "倡議替代方案與帶動水資源政策轉型"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>當開發案藉特別預算重啟時，地球公民基金會數度結合毛豆農與鄉親北上至環保署抗議，並在專案小組審查會議中透過數據進行激烈辯論。最終，在2013年3月13日的環評大會上，環評委員以10比6的票數正式否決高屏大湖開發案，成功擋下這項爭議長達十多年的不當開發，保住了700公頃的珍貴良田與毛豆農的生產地。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50763",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "環評攻防與成功捍衛良田生計"
+        },
+        "files": [
+          {
+            "fids": "50763",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "5_5-4(650).png"
+          }
+        ],
+        "index": 3,
+        "list_text": "環評攻防與成功捍衛良田生計"
+      }
+    ],
+    "field_curation": [
+      {
+        "fields": {
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50258",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[field_comp_link][0][title]": "閱讀更多",
+          "[field_comp_link][0][uri]": "/node/100078",
+          "[field_comp_summary][0][value]": "2024年，台灣經歷著超過百年未有的大旱，是1911年有紀錄以來最少的降雨。兩位南台灣的大叔，決定帶領更多人，走讀從水源頭到水龍頭之間，關於高屏溪的故事。",
+          "[title][0][value]": "大叔帶你走讀高屏溪（上）"
+        },
+        "files": [
+          {
+            "fids": "50258",
+            "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-032.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "大叔帶你走讀高屏溪（上）"
+      },
+      {
+        "fields": {
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50259",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[field_comp_link][0][title]": "閱讀更多",
+          "[field_comp_link][0][uri]": "/node/100081",
+          "[field_comp_summary][0][value]": "我們喝著來自中央山脈、玉山、阿里山山脈的水。路途遙遠，在山林裡滲出，在大河裡流動，默默沉潛入地，在攔河堰、水庫、水井裡被匯集，進入自來水廠，在老舊的PVC管或新式的不鏽管送到了家裡的水塔，在扭開水龍頭那一刻，給我們生活和生命。逢百年大旱，提醒我們珍惜每一滴水。",
+          "[title][0][value]": "大叔帶你走讀高屏溪（下）"
+        },
+        "files": [
+          {
+            "fids": "50259",
+            "field": "edit-field-curation-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260827-033.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "大叔帶你走讀高屏溪（下）"
+      }
+    ]
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>高屏大湖（原名吉洋人工湖），開發案預定地跨越高屏交界的高雄旗山、美濃與屏東里港，佔地高達700公頃。政府宣稱此開發案是為了「調豐濟枯」，解決南部缺水問題並帶動觀光。然而，地球公民基金會強烈關注並反對此案，指出其背後隱藏了嚴重的環境、農業、社會與財政危機。</p><p>首先，該區地質導致地下水位極高，豐水期時甚至會湧出地表，人工湖形同將地下水層挖開暴露蒸發；到了枯水期，將從荖濃溪大量引水，與農民搶奪灌溉用水。再者，該預定地是台灣最重要的毛豆外銷契作專區，開挖大湖將摧毀大面積優良農田，重創年產值突破20億元的「綠金」產業。計畫耗費鉅資且效益極差，第一期工程經費高達161.53億元，預期每日卻僅增加10萬噸供水量，僅是一口伏流水井的供水量。</p><p>民間團體指出，當時高雄自來水漏水率高達26%，若將百億預算移轉用於改善漏水問題，省下的水資源與經濟效益遠勝興建人工湖。最後，開挖人工湖更被質疑是變相的砂石開採利益，過去該區砂石坑甚至淪為傾倒有毒廢棄物的深潭；地球公民更揭露政府暗中在周遭規劃面積高達4349公頃的新市鎮計畫，強烈質疑開挖高屏大湖的真實目的是官商勾結、炒作周邊地皮。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50168",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_curation[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_curation[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_issue_category[]": [
+      "324|重整失序的國土"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "高屏大湖",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/332",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "20"
+  },
+  "main_files": [
+    {
+      "fids": "50168",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-005.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "332",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/332/edit"
+}

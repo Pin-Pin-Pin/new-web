@@ -1,0 +1,142 @@
+{
+  "captured_at": "2026-11-04T07:49:23.747Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>結合「責任科技國際運動網」(ICRT) 等多國國際組織發起連署行動，呼籲蘋果 (Apple)、英特爾 (Intel) 等採購商負起供應鏈管理責任，並獲得 18 國、 50 個國際環境與勞工組織的聲援。知名品牌買家後續給予具體回覆，包括啟動對日月光的調查以確保其符合環保法規，部分大廠表明在第三方認證前不回單，並承諾持續監督日月光的改善進程。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50114",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "向國際品牌買家施壓與供應鏈檢討"
+        },
+        "files": [
+          {
+            "fids": "50114",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-087.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "向國際品牌買家施壓與供應鏈檢討"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>針對寬鬆的法規漏洞，我們聯合多個民間團體與律師組成「水污法修法聯盟」，草擬民間版修正草案並積極遊說立委。在強大的社會壓力與民間監督下，立法院於2015年三讀通過《水污染防治法》修正案，將最高罰鍰大幅提高至3000萬元，明訂禁止繞流排放與稀釋廢水，並納入追討不當利得、吹哨者保護及資訊公開制度。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50115",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "推動民間版《水污法》與法規修正"
+        },
+        "files": [
+          {
+            "fids": "50115",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260827-088.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "推動民間版《水污法》與法規修正"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>結合在地後勁溪巡守隊與學者持續監督，在日月光獲准試車期間，透過採集樣本揭發其排水道仍持續排放超標的有害重金屬廢水。環保署後續修正管理辦法，擴大要求特定排放量的企業必須設置自動監測設施並與地方環保局連線，逐步推動監測數據即時上網公開。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50116",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "全民稽核日月光與水污監測資訊公開"
+        },
+        "files": [
+          {
+            "fids": "50116",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260827-089.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "全民稽核日月光與水污監測資訊公開"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>日月光污染事件發生之後，資方操作將環境倡議與勞工權益對立，並不斷要求高雄市政府讓利害關係人參與復工審查。為了避免資方將停工的懲罰代價轉嫁至基層勞工身上，地球公民聯合勞工團體共同訴求「立即停工、薪水照給」，最後高雄市勞工局承諾將停工期間保障基層勞工權益納入復工審查項目 。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50117",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "環境組織結合勞工團體對日月光共同施壓"
+        },
+        "files": [
+          {
+            "fids": "50117",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "20260827-090.webp"
+          }
+        ],
+        "index": 3,
+        "list_text": "環境組織結合勞工團體對日月光共同施壓"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>2013年底，全球半導體封測大廠日月光公司被爆出高雄廠長期違規，惡意直接排放含有害重金屬「鎳」與pH3.02強酸的毒廢水至後勁溪，衝擊下游逾千公頃的農田灌溉水。</p><p>然而，當時台灣的《水污染防治法》對於此類違規，最高罰鍰上限僅有區區60萬元，面對年營收動輒數千億、享有巨大租稅減免的跨國企業，法規的懲罰與嚇阻效果極其微弱、不成比例。事件發生後，日月光起初並沒有正面落實環境責任，反而試圖透過每年捐助環境基金、補助學校研究等手段移轉社會焦點。</p><p>地球公民基金會認為，企業在追求利潤之餘，必須負起實質的企業社會責任，而政府也應補上「重罪輕罰」的法規體制漏洞，不能將污染成本轉嫁給全民。在此行動中，我們要求日月光應停下漂綠的公關手段，落實企業社會責任（CSR），提出具體且透明的污染零排放與河川復育承諾，主動賠償農漁損失並清理受損水體 ，並落實資訊公開與建立公眾監督機制。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50113",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "325|翻轉污染的日常"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "日月光案",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/341",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "8"
+  },
+  "main_files": [
+    {
+      "fids": "50113",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-013.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "341",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/341/edit"
+}

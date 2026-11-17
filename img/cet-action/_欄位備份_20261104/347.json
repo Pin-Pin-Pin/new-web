@@ -1,0 +1,142 @@
+{
+  "captured_at": "2026-11-04T07:40:40.498Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>面對台電與中央環保署強推擴建，地球公民協會從2007年起展開體制外與體制內的長期抗爭，共同串聯了高雄市醫師公會、律師公會、建築師公會等20多個在地專業與民間社團，並透過成功促成了高雄市政府及不分藍綠的市議員站在同一陣線捍衛地方利益及居民的環境健康，共同反對台電4座燃煤機組的更新擴建。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50401",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "多元串聯與地方大團結，促成不分黨派集體發聲"
+        },
+        "files": [
+          {
+            "fids": "50401",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260918-026.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "多元串聯與地方大團結，促成不分黨派集體發聲"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>在近三年的環評審查中，地球公民全程出席了5次環評專案小組初審會及多次環評大會。台電原本在說明書中宣稱「空污不增量」，地球公民與高雄市環保局密切合作，透過數據證實台電的說法有問題。隨後在環評大會組織專家小組釐清懸浮微粒爭議時，地球公民推薦周晉澄、徐光蓉等學術專業教授與會，實質推翻了台電提出「靠洗掃街來抵銷致癌 PM2.5 微粒」等不實的抵減方案。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50402",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "深入環評與專家會議，引進學術專業一同倡議"
+        },
+        "files": [
+          {
+            "fids": "50402",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260918-027.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "深入環評與專家會議，引進學術專業一同倡議"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>在多次環評大會的過程中，地球公民在環保署外發動靜坐抗議、召開記者會並演出「馬總統鼻子變長」行動劇，諷刺政府減碳跳票。2009年7月環評總決戰當天，地球公民發起「守護高雄藍天」街頭連署，並在各大主流媒體刊登半版廣告，將大林電廠案炒熱為全國性矚目焦點。環評前夜，更在高雄市政府前廣場舉辦「為幸福高雄祈福」燭光晚會，百餘名市民與官員排開燭光，向環保署傳達捍衛高雄天空的堅定決心。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50403",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "街頭抗爭、媒體行銷與祈福晚會，凝聚社會輿論壓力"
+        },
+        "files": [
+          {
+            "fids": "50403",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260918-028.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "街頭抗爭、媒體行銷與祈福晚會，凝聚社會輿論壓力"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>2009年7月29日的環評大會最終審查中，面對環保署高層試圖護航兩案併陳的壓力，最終不記名投票的表決結果以一票之差（7票對6票），正式否決了台電的4座機組計畫，做出僅通過「2座燃煤機組（160萬瓩）」的有條件通過決議。</p><p>這項歷史性成果成功讓台電大林廠的燃煤規模與未來空污預估增量「攔腰砍半」，為高雄爭取到了污染減量與守護環境權的重大成果，打破過去國營企業挾龐大資源、扭曲環評的隱性常態，創下了台灣環境運動史上難得一見，民間、地方政府與環評委員攜手挑戰中央政策並取得實質減量的典範。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50404",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成 4 座燃煤機組砍半，為南部減碳減空污"
+        },
+        "files": [
+          {
+            "fids": "50404",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "20260918-029.webp"
+          }
+        ],
+        "index": 3,
+        "list_text": "促成 4 座燃煤機組砍半，為南部減碳減空污"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>2000年初，隨著全球對抗氣候變遷與溫室氣體減量的呼聲日益高漲，各國開始推動節能減碳與能源轉型。然而，身為國營事業的台灣電力公司，卻在長期面臨空氣品質不合格的高雄地區，推動龐大的大林電廠更新擴建計畫。</p><p>台電原計畫將把大林電廠5座老舊機組，全數改建為4座單機容量高達80萬瓩的超臨界燃煤汽力機組，總裝置容量將擴增至320萬瓩。此舉將使大林電廠的年燃煤量從當時的160萬噸暴增5.25倍，導致每年增加1,079萬噸的二氧化碳排放量。此時，政府正在一邊大喊節能減碳，另一邊國營企業卻帶頭擴大排放，使台灣的溫室氣體減量支票註定跳票。</p><p>這項擴建計畫也對在地居民的健康權與空氣品質構成了嚴峻威脅。大林電廠位於已被公告為空污三級防制區的高雄小港、臨海工業區一帶，周邊已充斥中鋼、中油等重工業。台電若蓋滿4座燃煤機組，將使高雄每年新增340多噸的懸浮微粒，令長期忍受環境負荷、市民平均壽命已比台北人少4歲的高雄社會持續承擔污染的代價。</p><p>此案亦涉及區域環境正義問題。台電規劃擴建的理由是為了填補未來全台系統尖峰負載的電力缺口，但高雄本身的發電量早已大於需求，原計畫形同「把電力輸往他地，把污染留在高雄」，讓高雄蟬聯人均排碳量世界第一的惡名。</p><p>地球公民反對增加化石燃料、擴增環境污染的改建計畫。我們認為，面對極端氣候，應該落實「污染減半、二氧化碳不增量」的前提，敦促政府審慎檢討以低廉電價扶植工業、卻由在地居民承擔巨大環境與健康成本的失衡發展模式。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50089",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "326|重新思考能源"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "反對大林電廠",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/347",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "1"
+  },
+  "main_files": [
+    {
+      "fids": "50089",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-017.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "347",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/347/edit"
+}

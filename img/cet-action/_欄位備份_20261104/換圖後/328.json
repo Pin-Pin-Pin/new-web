@@ -1,0 +1,139 @@
+{
+  "captured_at": "2026-11-04T08:47:22.946Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>面對在地農民害怕報復而不敢檢舉的心理，我們與開源社群 g0v 零時政府合作開發「農地工廠回報系統」，簡化舉報流程並保護民眾隱私；隨後更推出「大家來找廠」空拍圖比對遊戲，動員鍵盤志工比對不同年份的航空照片。這項行動讓線上玩家在短短一年內成功辨識出超過1,000座違章工廠，直接取代了過去耗費人工兩年半的調查工作量，為民間團體提供了向政府施壓的具體證據。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50748",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "極大化群眾參與，以科技工具提升舉報與調查量能 "
+        },
+        "files": [
+          {
+            "fids": "50748",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_1-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "極大化群眾參與，以科技工具提升舉報與調查量能"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>除了前端檢舉，進一步向經濟部、內政部等單位索取一手行政資料進行數據分析，發表《六縣市農地違章工廠查處成效與體質診斷報告》，積極監督政府落實勒令停工與斷水斷電，並呼籲各縣市政府通過不須經議會審查的「違規者自行拆除執行原則」。此舉成功將執法不力具體化，揭露了農政、經發、地政與建管等跨局處的銜接斷點，逼使中央與地方政府面對裁罰率不到40%、實際拆除率僅15%的制度性失能。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50749",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "精準診斷行政體質，揭露跨局處漏洞並督促落實停工與裁罰"
+        },
+        "files": [
+          {
+            "fids": "50749",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_1-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "精準診斷行政體質，揭露跨局處漏洞並督促落實停工與裁罰"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>為了讓中高污染工廠順利離開農地，團隊遠赴日本考察七〇年代違章工廠的遷廠歷史，並針對台灣金屬表面處理業（電鍍）、印染整理業等高污染產業進行深度研究與舉辦系列座談，嘗試草擬民間處理方案。這些努力成功促使社會與產業開始深入討論《工廠管理輔導法》修法後中高污染工廠的遷廠可行路徑，並讓「將高污染產業引入專業合法工業區」成為產官學界的共識，逐步推動環境與產業回歸正常體制。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50750",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "開展國際借鏡與產業研究，推進中高污染工廠的遷廠與轉型思維"
+        },
+        "files": [
+          {
+            "fids": "50750",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "5_1-3(650).png"
+          }
+        ],
+        "index": 2,
+        "list_text": "開展國際借鏡與產業研究，推進中高污染工廠的遷廠與轉型思維"
+      }
+    ],
+    "field_curation": [
+      {
+        "fields": {
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50254",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[field_comp_link][0][title]": "閱讀更多",
+          "[field_comp_link][0][uri]": "/node/100058",
+          "[field_comp_summary][0][value]": "過去六年來，地球公民深度研究調查「農地違章工廠」的現況、背景，與中央、地方政府承辦人員訪談對話，聯合友團採取了直接行動，揭露多家上市公司以違章工廠謀利，關切《工廠管理輔導法》的修法，與行政、立法院展開遊說角力。\n\n我們的行動足跡不僅止於台灣，更自籌經費出國考察，了解日本在七零年代如何處理農地違章工廠，以他山之石尋求台灣解決之道。\n\n迄今，這些行動還沒有取得重大的成果，但我們認為：台灣社會需要有更多的人們理解「農地違章工廠」這個課題，捲起袖子，以積極的公民行動，讓政府做對的事。",
+          "[title][0][value]": "農地裡的違章工廠"
+        },
+        "files": [
+          {
+            "fids": "50254",
+            "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-030.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "農地裡的違章工廠"
+      }
+    ]
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p dir=\"ltr\">台灣農地違章工廠問題是一個歷史悠久且錯綜複雜的環境與社會隱憂。自1940年代起，政府為促進農產品加工業發展，允許部分工廠在農地上設置，隨著後續產業結構轉型，工廠功能擴展至各式領域，其中更包含許多涉及皮革加工、塑料製造、電鍍與五金鑄造等中高污染產業。由於農地管理政策未臻完善，加上政府執法與管控不足，導致全台估計出現超過4.5萬家農地違章工廠。這些工廠不僅在下雨時可能透過暗管非法偷排廢水，導致重金屬污染農田、嚴重威脅食物安全，也造成每年約有1,500公頃的農地流失。此外，非法建物未遵守建築技術規則的防火規範，一旦發生火災往往危及消防人員的生命安全。儘管2019年《工廠管理輔導法》修法承諾「新增違章工廠即報即拆」，但因拆除工作跨足農政、經發、地政、都發、建管等5個局處，各單位複查不力、未連續裁罰，加上人力與預算不足，導致全台實際拆除率極低，讓倡議團體必須針對此結構性漏洞展開長期的監督與改革行動。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50159",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "324|重整失序的國土"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "農地違章工廠",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/328",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "18"
+  },
+  "main_files": [
+    {
+      "fids": "50159",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-001.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "328",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/328/edit"
+}

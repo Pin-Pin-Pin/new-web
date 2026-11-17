@@ -1,0 +1,142 @@
+{
+  "captured_at": "2026-11-04T08:02:09.143Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>在《花東發展條例》審議時，串連民間阻擋公有地賤售條款；在「花東三法」倡議中，提出憲法預算權分立、環評法定程序不可架空的訴求，防止巨額特別預算掏空國家財政並排擠其他民生建設</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50721",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "阻擋粗暴立法，捍衛環境與憲政程序"
+        },
+        "files": [
+          {
+            "fids": "50721",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_21-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "阻擋粗暴立法，捍衛環境與憲政程序"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>2012 年，與地方團體協力推動「花東願景公民論壇」，深入社區與部落，探討青年返鄉、多元就業、有機農業與在地文化照顧，將「發展」的詮釋權從官僚與財團手中收回。2024年，舉辦多場客廳座談會，了解民間交通需求與收集建議，倡導擺脫「單一公路/高鐵能解決一切」的迷思，主張以多運具聯運、鐵路提速與既有路網韌性補強，作為兼顧安全與日常通勤的交通解方。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50722",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "打破官方壟斷，建立公民對話空間"
+        },
+        "files": [
+          {
+            "fids": "50722",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_21-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "打破官方壟斷，建立公民對話空間"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>要求政府打破「政府提標案、廠商來承包」的封閉循環，建立由非營利組織與在地社群直接發起計畫、申請基金挹注的常態管道。成功促使主管機關（國發會）採納民間訴求，啟動「推動合作事業，強化地方產業」等機制，讓在地社群能夠合法取得公共基金資源，支持在地創生與永續生計。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50723",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "促成常態機制，推動實質民間上路"
+        },
+        "files": [
+          {
+            "fids": "50723",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "5_21-3(650).png"
+          }
+        ],
+        "index": 2,
+        "list_text": "促成常態機制，推動實質民間上路"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>阻止太魯閣山海劇場、鳳林國際賽車場、環島高鐵、花東塊等盲目耗資的開發案。一方面守住花東脆弱的地質與珍貴生態，不讓不可逆的地貌破壞與高額債務留給下一代承擔，另一方面讓百億預算從短期水泥工程與少數財團利益，轉向投資於長期花東發展。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50724",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "阻止多項高爭議個案，轉為投入永續發展"
+        },
+        "files": [
+          {
+            "fids": "50724",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "5_21-4(650).png"
+          }
+        ],
+        "index": 3,
+        "list_text": "阻止多項高爭議個案，轉為投入永續發展"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>長年以來，花東地區因地理阻隔、天災頻仍與基礎設施不足，面臨顯著的城鄉差距。然而在資源配置上，政界往往將發展問題粗暴簡化為「偏鄉要建設」，深陷以龐大硬體預算包裝發展的單一邏輯。</p><p>從 2011 年《花東地區發展條例》的 400 億基金，到後續動輒上兆元的「花東三法」（花東快、國六東延、環島高鐵），皆展現出由上而下、迷信巨額特別預算的水泥思維，對花東造成了雙重衝擊。這類決策模式首先漠視了極端地質風險，加劇在地的環境脆弱度。花東位處板塊交界，地質破碎且密布活動斷層，早期花東條例草案曾企圖鬆綁公有地租售以推動賽車場與大型劇場，花東三法更企圖以立法權限期完工，強行穿越能高山與斷層帶，架空法定環評與可行性評估，將生態環境與龐大公帑置於高度不可逆的災難風險之中。同時，巨額預算鎖死於硬體工程，也嚴重排擠了民生資源，扭曲地方的真實需求。盲目複製西部的重開發模式，不僅無法解決青年外流與產業困境，更直接排擠了震災復原、鐵路安全雙軌化、醫療長照及在地農業等迫切投資，將沉重的環境與財政債務留給下一代承擔。</p><p>因此，地球公民監督花東重大預算的核心意義，正在於打破迷信工程的粗放循環，透過落實預算民主與法定程序，促使公共資源轉向在地人才、軟體機制與防災韌性，真正實踐兼顧生態承載力與世代正義的公平發展。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50154",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "327|世代正義與公平發展"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "監督花東重大預算",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/349",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "17"
+  },
+  "main_files": [
+    {
+      "fids": "50154",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-020.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "349",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/349/edit"
+}

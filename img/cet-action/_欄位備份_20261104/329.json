@@ -1,0 +1,211 @@
+{
+  "captured_at": "2026-11-04T07:42:35.378Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>地球公民基金會自2013年起發動「礦業改革」倡議。在歷時七年的立法遊說與政策攻防中，面對政院版草案大改、立法院屆期不連續等法案歸零困境，積極啟動大量跨黨派立委拜會，與經濟部礦務局（組改後為地質調查及礦業管理中心）、環保署（組改後為環境部）與原民會進行高密度的卡關條文協商。2025年5月，修法最終廢除了「採礦不需地主同意」與「申請展延原則核准」的惡法，未來展延必須取得地主與相關權利人的同意，且取消了政府依法駁回申請時需賠償業者的不合理規定。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50379",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "《礦業法》修法正式三讀通過，全面刪除霸王條款"
+        },
+        "files": [
+          {
+            "fids": "50379",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260918-004.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "《礦業法》修法正式三讀通過，全面刪除霸王條款"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">2017年3月經濟部快速核准亞泥展延20年，隨後6月電影《看見台灣》導演齊柏林不幸逝世，其生前拍下的亞泥空照圖引發全台憤怒。地球公民順勢發動連署，捲動高達25萬人支持，並發動「625看見台灣、拯救山林」萬人上街大遊行，迫使政府承諾修法。新法將礦業用地定義由單純的「面積」改為「體積」，明確訂定開採總量與最終開採高程的上限，一旦達到上限礦業用地即消滅，若想繼續開採必須重新面對嚴格審查，翻轉了過去無期限採礦的沈痾。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50384",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "捲動25萬人連署，修法重新定義礦業用地"
+        },
+        "files": [
+          {
+            "fids": "50384",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260918-005.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "捲動25萬人連署，修法重新定義礦業用地"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">在倡議早期（2013-2016年），地球公民與蠻野心足生態協會等民間團體合作，陸續揭露南投北原礦業（為於水源保護區）、萬達鑛業（鄰近台灣山毛櫸棲地）、金昌石礦大鑽法律漏洞等案，透過倡議行動、公民告知書與行政訴訟進行阻截。最終修法新增了環境保護與風險評估機制，針對過去從未做過環評且面積大於2公頃、年產量超5萬公噸且位於特定區位的既有礦場（如潤泰蘭崁石礦、亞泥新城山礦場），強制要求依法補辦環評或，產量較少的礦場則需提出環境影響調查分析並提出因應對策，同時建立環境部與地礦中心跨部會的聯合檢查監督機制。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50380",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "透過法律防線與個案揭露，強制既有大礦場補辦環評"
+        },
+        "files": [
+          {
+            "fids": "50380",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260918-006.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "透過法律防線與個案揭露，強制既有大礦場補辦環評"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>地球公民在推動改革的過程中舉辦許多倡議、教育推廣的活動，與礦場所在地的部落族人共同合作，讓歷史共業與土地轉型正義議題浮上檯面。新法最終規定，在原民土地上採礦的企業，若過去未曾辦理過諮商同意，修法後必須在一年內補辦諮商同意（涉及72個個礦場），未來若擴大開採也必須重新辦理。<br>&nbsp;</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50381",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "與原民部落結盟反抗，落實原住民族諮商同意權"
+        },
+        "files": [
+          {
+            "fids": "50381",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "20260918-007.webp"
+          }
+        ],
+        "index": 3,
+        "list_text": "與原民部落結盟反抗，落實原住民族諮商同意權"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">2016年底，地球公民串聯民間團體、律師、立委與法學教授撰寫「民間版礦業法修正條文」，並由立委提案送進立法院。最終修法促成不論是申請礦業權、礦業用地或是申請展延，程序中都必須強制辦理公開展覽並舉行說明會，且准駁結果、年度施工計畫、礦場關閉計畫等核心書件都必須公開於指定網站，全面接受公眾監督。<br><br>&nbsp;</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50382",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "串聯法律專家撰寫民間版草案，新增資訊公開與公民參與機制"
+        },
+        "files": [
+          {
+            "fids": "50382",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-4-form-field-comp-image-wrapper",
+            "file": "20260918-008.webp"
+          }
+        ],
+        "index": 4,
+        "list_text": "串聯法律專家撰寫民間版草案，新增資訊公開與公民參與機制"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>地球公民於2013年揭露潤泰公司在水源涵養保安林內採礦，促使林務局（組改後為林業及自然保育署）不再核准保安林內新設礦區。在民間團體長期的倡議推動下，後續促成了環境敏感地區、國家公園內原則禁止探採礦，並成功在2017年讓榮豐礦業因涉及天然林與保育類動物遭環評認定不應開發，確立了「礦場退出天然林」的歷史首例。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50383",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "成功推動林務局停核保安林，首開礦場退出天然林先例"
+        },
+        "files": [
+          {
+            "fids": "50383",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-5-form-field-comp-image-wrapper",
+            "file": "20260918-009.webp"
+          }
+        ],
+        "index": 5,
+        "list_text": "成功推動林務局停核保安林，首開礦場退出天然林先例"
+      }
+    ],
+    "field_curation": [
+      {
+        "fields": {
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50150",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[field_comp_link][0][title]": "大山挖一口",
+          "[field_comp_link][0][uri]": "/node/3690",
+          "[field_comp_summary][0][value]": "在你所不知道的遙遠深山中，挖山採礦一直都是「現在進行式」。\n礦產，作為全民共有的重要天然資源，開採過程卻伴隨侵佔土地、破壞環境、賤賣國土、圖利業者等問題。隨著個案觸目驚心的現場照片，礦業議題逐漸走進社會大眾眼裏。\n究竟《礦業法》如何成為礦業改革的重要關鍵？為什麼修，怎麼修？採礦業又該如何與土地和周遭居民共處，我們一起看下去吧！",
+          "[title][0][value]": "大山挖一口，礦業法修什麼？"
+        },
+        "files": [
+          {
+            "fids": "50150",
+            "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-028.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "大山挖一口，礦業法修什麼？"
+      }
+    ]
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p dir=\"ltr\">台灣推動礦業改革的根本原因，在於這是一部極度不合時宜、長期偏向礦權業者的老舊法規。</p><p dir=\"ltr\">這部舊《礦業法》立於1930年（民國19年），當年立法背景是基於幅員遼闊的亞洲大陸，而非現今台灣的國土情境與社會變遷。隨著我們逐步邁入已開發國家，早已不需要像過去十大建設時期那樣，為了扶植特權產業而大量開採、甚至外銷水泥。</p><p dir=\"ltr\">這部老舊惡法中，有著嚴重侵害人權與土地權的「霸王條款」，也就是舊法第47條，賦予業者極大權利，允許其「不需取得地主同意」便能在私人土地上挖礦，若地主不同意，業者只要將極低的租金放在法院「提存」即可先行使用、破壞土地。另外，舊法第31條更規定礦業權期滿申請展延時「原則上一律核准」，且若政府因劃設保護區等公共利益駁回展延，還必須編列預算賠償業者的損失。</p><p dir=\"ltr\">更嚴重的是，台灣現存的礦業權中，有超過八成是在《環境影響評估法》與《原住民族基本法》實施前就核准的，這導致全台多數的大型礦場（如亞泥新城山礦場）長期在未經環評把關、未取得鄰近原民部落諮商同意的情況下，在人民的家園上方進行侵略性的山體開採。環境與原民權益在此法規體制下長期失靈，進而引發了民間全面的改革呼聲。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_action_item[entities][4][delta]": [
+      "4|4"
+    ],
+    "field_action_item[entities][5][delta]": [
+      "5|5"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50135",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_issue_category[]": [
+      "324|重整失序的國土"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "礦業改革",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/329",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "15"
+  },
+  "main_files": [
+    {
+      "fids": "50135",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-002.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "329",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/329/edit"
+}

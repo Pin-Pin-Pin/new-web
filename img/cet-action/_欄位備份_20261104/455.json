@@ -1,0 +1,118 @@
+{
+  "captured_at": "2026-11-04T07:50:04.083Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>2018年台積電將於南科設置3奈米新世代半導體廠時，地球公民及友團便指出該開發案年用電高達77億度，將大幅加重南部空污與發電負擔。民團強烈要求台積電效法國際大廠加入RE100，承諾逐步達成100%使用再生能源並設定明確期程，期盼指標企業帶動台灣綠能發展，落實環境正義。台積電後續於公開受訪曾指出，環保團體當時的倡議，對企業內部決定公開承諾綠電目標、加入RE100的討論，起了關鍵性的作用。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50405",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "倡議半導體業需承諾綠電目標"
+        },
+        "files": [
+          {
+            "fids": "50405",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260918-030.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "倡議半導體業需承諾綠電目標"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>由於先進製程的快速擴張，台積電於2018年起，陸續於南部科學園區臺南園區、高雄楠梓原中油高雄煉油廠（五輕所在地）以及沙崙科學園區等地設廠。地球公民藉由參與科學園區、產業園區的環境影響評估會議（環評），持續要求開發單位於環評承諾台積電需自帶綠電、一定用電需來自屋頂光電、使用100%再生能源及再生水的路徑、淨零排放路徑等訴求，讓環評委員關注開發所帶來的耗電問題、衍生的社會影響以及園區規劃等課題，最終促成開發單位針對用電、用水、污染監測、廢棄物等內容，做出更積極的環境承諾。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50406",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "積極參與環評會議，要求企業負起綠電責任"
+        },
+        "files": [
+          {
+            "fids": "50406",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260918-031.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "積極參與環評會議，要求企業負起綠電責任"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>面對半導體大廠設廠，地球公民致力於引導公眾討論：台灣科技業大廠在追求擴張之餘，如何負起相應的環境責任？在台積電宣布於高雄設廠時，地球公民舉辦「台積電要來了？高雄會發生什麼事？」系列論壇，後續亦舉辦「不識「神山」真面目：半導體護國群山的野望與惆悵」論壇，邀請公部門、媒體與學者專家對談，帶領公民社會一同思考半導體業的能源需求、環境負荷以及科學園區對在地居民的影響。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50407",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "舉辦公民論壇，促進社會對話"
+        },
+        "files": [
+          {
+            "fids": "50407",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "20260918-032.webp"
+          }
+        ],
+        "index": 2,
+        "list_text": "舉辦公民論壇，促進社會對話"
+      }
+    ],
+    "field_curation": []
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p>近年來，台灣的半導體產業在全球科技供應鏈中扮演舉足輕重的角色，先進製程技術為國家帶來了巨大的經濟效益與國際影響力。然而，伴隨晶片製造能力提升而來的，是日益龐大的資源消耗與環境負擔。</p><p>首先，半導體先進製程的用電規模極為驚人，直接衝擊台灣的減碳目標。隨著製程向3奈米、2奈米推進，耗電量呈現跳躍式成長。以近期的南部擴廠開發案為例，單一廠區的年預估用電量動輒高達上百億度，規模相當於整個縣市全年的住商用電總和。龐大的用電需求連帶推升了溫室氣體的間接排放，對台灣整體邁向2050年淨零碳排的承諾構成了極大的挑戰。</p><p>其次，監督的動機也源自於對環境正義與居民健康權的捍衛。台灣半導體的新建廠區近年來多集中於中南部，除了半導體廠本身的污染需要監督之外，新增的鉅額電力需求往往必須仰賴南部的燃氣發電廠來調度支應。高屏地區長期面臨空氣品質不佳的困境，雖然燃氣電廠的空污、碳排放相對燃煤電廠已有改善，但產業擴張的電力供應如依然高度依賴化石燃料，等同將經濟發展的環境成本轉嫁給在地居民承擔。</p><p>此外，督促企業落實國際綠能承諾並帶動本土能源轉型，也是監督行動的核心目的。面對國際供應鏈對100%使用再生能源（RE100）的嚴格要求，半導體大廠必須加速提高國內廠區的綠電使用率。</p><p>地球公民基金會的立場是，台灣科技產業在追求經濟成長之餘，必須負起相應的環境責任，確保台灣的空污、排碳不會因此惡化，更期待企業提出具體、有期程的再生能源目標，期望這些用電大戶能利用其龐大的採購力道，實質帶動台灣本土綠電市場與綠能基礎建設的發展，並落實資訊公開與建立社會溝通機制讓半導體產業的發展與台灣的永續未來能夠真正共存共榮。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50081",
+    "field_category_lead_pic[0][focal_point]": "13,27",
+    "field_issue_category[]": [
+      "325|翻轉污染的日常"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "監督半導體用電",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/455",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "0"
+  },
+  "main_files": [
+    {
+      "fids": "50081",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-018.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "455",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/455/edit"
+}

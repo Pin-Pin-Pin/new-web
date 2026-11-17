@@ -1,0 +1,189 @@
+{
+  "captured_at": "2026-11-04T07:43:08.824Z",
+  "ief": {
+    "field_action_item": [
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">《國土計畫法》的重要改革方向之一，是希望改變過去土地使用容易透過個案變更、缺乏整體規劃的問題，以「計畫引導使用」取代零散的個案變更邏輯，並將全台土地劃分為國土保育、海洋資源、城鄉發展與農業發展四大功能分區。</p><p dir=\"ltr\">地球公民在制度推動過程中，持續監督全國國土計畫的內容與空間發展策略，也嘗試與地方政府及縣市規劃團隊互動，針對國土功能分區劃設提出建議，希望避免城鄉發展區無序或過度擴張，並促使地方政府負起更完整的空間規劃責任，朝向「適地適用」——讓適合的土地做適合的事情——的目標前進。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50624",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "從個案變更走向整體規劃，重建國土秩序"
+        },
+        "files": [
+          {
+            "fids": "50624",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "5_3-1(650).png"
+          }
+        ],
+        "index": 0,
+        "list_text": "從個案變更走向整體規劃，重建國土秩序"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p>國土計畫牽涉功能分區、土地使用管制與人民權益，容易產生資訊落差與誤解。為了增加民眾對國土功能分區和土地使用管制的理解，地球公民推出【狗兔雞花搬新家】國土計畫專頁，將艱澀的制度轉化為生活化的圖文與 QA，說明國土計畫的核心概念與土地管理制度的變革。 同時，地球公民也持續追蹤各縣市國土功能分區的話設計頓，回應社會對農地使用、土地權益與開發限制的疑慮，降低錯誤資訊對公共討論的干擾。隨著多數直轄市、縣（市）陸續將「國土功能分區圖」函報中央審議，台灣也逐步朝向新的國土規劃制度轉軌。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50625",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "轉化專業知識，讓更多人參與國土規劃"
+        },
+        "files": [
+          {
+            "fids": "50625",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "5_3-2(650).png"
+          }
+        ],
+        "index": 1,
+        "list_text": "轉化專業知識，讓更多人參與國土規劃"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">面對部分地方政府及立法委員要求再次延後國土計畫全面實施，地球公民協同農業工作者、學術界及 30 多個民間團體發起聯合聲明與連署，針對「農地被判死刑」、「農民權益將受到限制」等爭議說法提出澄清，指出國土計畫的目的並非扼殺地方發展，而是透過事前的整體規劃，兼顧人民既有合法權益、環境風險與未來發展需求。儘管國土功能分區全面實施的時程最終仍遭延後，這場爭議也凸顯：從「個案變更」轉向「事前政體規劃」，不只是制度技術的改變，更涉及地方發展、土地利益與公共價值的重新協調，需要持續累積社會理解與公共對話。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50626",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "抗衡政治拖延，持續推動制度落實"
+        },
+        "files": [
+          {
+            "fids": "50626",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-2-form-field-comp-image-wrapper",
+            "file": "5_3-3(650).png"
+          }
+        ],
+        "index": 2,
+        "list_text": "抗衡政治拖延，持續推動制度落實"
+      },
+      {
+        "fields": {
+          "[field_comp_body][0][format]": [
+            "full_html|完整 HTML"
+          ],
+          "[field_comp_body][0][value]": "<p dir=\"ltr\">《國土計畫法》強化國土規劃過程中的資訊公開與民眾參與機制，象徵台灣的國土空間規劃有機會從「為民規劃」進一步走向「與民規劃」。相較於區域計畫的體制，新制度提供有多民眾參與空間，包括計畫擬定前廣詢意見、公開展覽與公聽會等程序。雖然距離真正充分的公民參與仍有一段路，這仍是空間民主化的重要一步。</p><p dir=\"ltr\">當「參與」成為國土規劃的重要環節，下一步要面對的，是如何建立真正有效的對話平台，讓規劃專業者、不同需求的民眾、以及肩負不同任務的中央與地方政府部門，能夠互相理解、協調與折衝，共同面對土地使用所涉及的公共利益與價值衝突，形成未必完美、但社會可以共同承擔的政策與空間規劃方案。</p>",
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50627",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[title][0][value]": "推動空間民主化，讓土地規劃成為公共討論"
+        },
+        "files": [
+          {
+            "fids": "50627",
+            "field": "edit-field-action-item-form-inline-entity-form-entities-3-form-field-comp-image-wrapper",
+            "file": "5_3-4(650).png"
+          }
+        ],
+        "index": 3,
+        "list_text": "推動空間民主化，讓土地規劃成為公共討論"
+      }
+    ],
+    "field_curation": [
+      {
+        "fields": {
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50170",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[field_comp_link][0][title]": "閱讀更多",
+          "[field_comp_link][0][uri]": "/node/100053",
+          "[field_comp_summary][0][value]": "規劃國土是像大家搬家後規劃新家的使用一樣，讓我們先撇開複雜的實際運作、政府分工，從核心上了解「國土計畫」的運作原理，一起藉著狗兔雞花小家庭搬新家的比喻，對應實際國土使用的情境，看看遇到了哪些問題。",
+          "[title][0][value]": "狗兔雞花搬新家（上）—國土計劃是什麼？"
+        },
+        "files": [
+          {
+            "fids": "50170",
+            "field": "edit-field-curation-form-inline-entity-form-entities-0-form-field-comp-image-wrapper",
+            "file": "20260827-024.webp"
+          }
+        ],
+        "index": 0,
+        "list_text": "狗兔雞花搬新家（上）—國土計劃是什麼？"
+      },
+      {
+        "fields": {
+          "[field_comp_image][0][alt]": "",
+          "[field_comp_image][0][fids]": "50171",
+          "[field_comp_image][0][focal_point]": "50,50",
+          "[field_comp_link][0][title]": "閱讀更多",
+          "[field_comp_link][0][uri]": "/freepageb/100054",
+          "[field_comp_summary][0][value]": "上集我們跟著狗兔雞花搬新家，讓大家了解「國土計畫」就像搬家搬進二手屋，要在既有的情況下做調整，哪些空間可以作為廚房、廁所、房間，會受到水管、插座、瓦斯在哪裡影響，就像現實土地的使用。而使用空間的人，也會有不同的需求，以下將會為你說明，國土計畫作為新制度，改變了哪些土地使用邏輯；會對土地的使用造成什麼影響；實際上又是怎麼執行。",
+          "[title][0][value]": "狗兔雞花搬新家（下）—有哪些土地管理大變革？"
+        },
+        "files": [
+          {
+            "fids": "50171",
+            "field": "edit-field-curation-form-inline-entity-form-entities-1-form-field-comp-image-wrapper",
+            "file": "20260827-025.webp"
+          }
+        ],
+        "index": 1,
+        "list_text": "狗兔雞花搬新家（下）—有哪些土地管理大變革？"
+      }
+    ]
+  },
+  "main_fields": {
+    "advanced__active_tab": "edit-revision-information",
+    "description[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "description[0][value]": "<p dir=\"ltr\">《國土計畫法》的誕生，主要源自台灣過去數十年來面臨的重大自然災害，以及對既有土地管理與空間規劃制度問題的深刻反思。這項立法構想早在 1997 年就首次被提出，歷經多年討論， 2009 年莫拉克風災（八八水災）帶來重創後，國土安全、環境敏感地區的土地利用與氣候風險更加受到社會重視。《國土計畫法》第一條便明定其核心立法目標為「因應氣候變遷」、「確保國土安全」與「追求國家永續發展」。</p><p dir=\"ltr\">除了因應環境風險，既有體制下農地破碎與土地任意變更的問題，也是推動國土規劃制度改革的重要背景。在《區域計畫法》體制下，非都市土地可以透過分區或使用地變更進行開發，長期累積的個案變更，使得土地利用缺乏整體規劃，增加農地破碎、開發蔓延與土地炒作等問題。此外，在國土計畫全面上路前，各地也出現渡假村、產業園區等開發案趕在既有制度退場前「壓線申請」的現象。當土地開發缺乏整體空間規劃，不僅可能造成公共建設資源配置失衡，也可能讓環境敏感或高風險的地區持續承受不適當的開發壓力。。</p><p dir=\"ltr\">此外，民間社會對於「空間民主化」的需求也日益受到重視。，過去的土地規劃 主要由政府與規劃專業者主導，一班民眾參與空間相對有限。因此民間團體長期倡議國土規劃制度改革，除了期待建立「適性適地」的永續發展思維，更重要的是提升土地規劃的公共性、減少土地開發受到少數利益主導的可能，並透過資訊公開與公民參與， 逐步推動土地規劃的「空間民主化」。</p><p dir=\"ltr\">《國土計畫法》於 2015 年底成功在立法院完成三讀，並於 2016 年正式公告施行。未來，地球公民仍將持續參與、監督國土計畫制度的後續推動，包括全國國土計畫的通盤檢討、部門空間發展策略、中央與地方及跨部門間的協作，以及國土規劃過程中的公民參與。</p><p dir=\"ltr\">我們期待的國土計畫，不只是一張把土地分成不同顏色的分區圖，而是一套讓社會共同討論「土地該如何使用、風險如何承擔、未來如何發展」的民主治理機制。國土空間的民主化，需要制度，也需要公民持續參與，才能讓「適性適地、永續發展」真正落實在台灣的土地上。</p>",
+    "field_action_item[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_action_item[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_action_item[entities][2][delta]": [
+      "2|2"
+    ],
+    "field_action_item[entities][3][delta]": [
+      "3|3"
+    ],
+    "field_category_lead_pic[0][alt]": "",
+    "field_category_lead_pic[0][fids]": "50169",
+    "field_category_lead_pic[0][focal_point]": "50,50",
+    "field_curation[entities][0][delta]": [
+      "0|0"
+    ],
+    "field_curation[entities][1][delta]": [
+      "1|1"
+    ],
+    "field_issue_category[]": [
+      "324|重整失序的國土"
+    ],
+    "field_key_case[0][format]": [
+      "full_html|完整 HTML"
+    ],
+    "field_key_case[0][value]": "",
+    "form_id": "taxonomy_term_action_category_form",
+    "name[0][value]": "國土計畫",
+    "parent[]": [
+      "0|<root>"
+    ],
+    "path[0][alias]": "/action/330",
+    "path[0][pathauto]": true,
+    "revision": false,
+    "revision_log_message[0][value]": "",
+    "status[value]": true,
+    "weight": "2"
+  },
+  "main_files": [
+    {
+      "fids": "50169",
+      "field": "edit-field-category-lead-pic-wrapper",
+      "file": "20260827-003.webp"
+    }
+  ],
+  "page_title": "編輯次分類 | 地球公民基金會",
+  "tid": "330",
+  "url": "https://www.cet-taiwan.org/taxonomy/term/330/edit"
+}
