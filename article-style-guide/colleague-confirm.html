@@ -420,6 +420,10 @@
       white-space: nowrap;
     }
     .opinion-heading { margin: 1rem 0 .25rem; font-weight: 700; }
+    .result-detail { margin: 0 0 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+    .result-detail > p { margin: 0 0 .75rem; }
+    .result-detail .choice { cursor: default; }
+    .result-detail .choice-count { margin-left: .5rem; color: var(--cet-dark); font-weight: 700; white-space: nowrap; }
     #back-to-form { margin-top: 1.5rem; }
     .modal {
       position: fixed;
@@ -475,10 +479,10 @@
 <body>
   <a class="skip" href="#styles">跳到確認建議樣式</a>
 
-  <div id="gate" class="gate">
+  <div id="gate" class="gate" hidden>
     <form id="gate-form" class="gate-card">
       <p class="eyebrow">地球公民基金會 · 新官網</p>
-      <h1>請先選擇你的姓名</h1>
+      <h1>作答前請先填寫姓名</h1>
       <p>同意、不同意、意見和投票都會記在這個姓名底下。</p>
       <p id="known-label" hidden>這台電腦出現過的姓名：</p>
       <div id="name-picks" class="name-picks"></div>
@@ -487,14 +491,15 @@
       <p id="gate-status" class="local-note" hidden></p>
       <p id="name-error" class="name-error" hidden>請填寫姓名。</p>
       <button class="start" type="submit">開始填答</button>
+      <button class="text-btn clear-answer" type="button" id="gate-cancel">先不填，繼續瀏覽</button>
     </form>
   </div>
 
-  <div id="app" hidden>
+  <div id="app">
     <div class="progress-dock">
       <div class="wrap">
         <div class="progress-row">
-          <p class="who"><span id="who"></span> <button type="button" class="text-btn" id="switch-name">更換姓名</button></p>
+          <p class="who"><span id="who">目前是瀏覽模式</span> <button type="button" class="text-btn" id="switch-name">填寫姓名來作答</button></p>
           <p class="save-state" id="save-state" aria-live="polite">尚未送出</p>
         </div>
         <p class="progress-label" id="progress-text">填答進度 0 / 11</p>
@@ -512,20 +517,18 @@
       </div>
     </header>
 
-    <!-- 填答／投票結果按鈕預計 11/10 公開結果時再取消註解
     <div class="wrap">
       <div class="tabs" role="tablist" aria-label="填答和結果">
-        <button type="button" id="tab-form" role="tab" aria-selected="true" aria-controls="form-view">填答</button>
-        <button type="button" id="tab-results" role="tab" hidden aria-selected="false" aria-controls="results-view">投票結果(預計11/10公開)</button>
+        <button type="button" id="tab-form" role="tab" aria-selected="true" aria-controls="form-view">填答(已截止)</button>
+        <button type="button" id="tab-results" role="tab" aria-selected="false" aria-controls="results-view">投票結果</button>
       </div>
     </div>
-    -->
 
     <div id="form-view">
     <main class="wrap">
       <section id="styles">
         <h2>確認建議樣式</h2>
-        <p>這些是目前建議採用的寫法。每題按同意或不同意，也可以寫意見。大家的意見會先記下來，投票結果預計 11/10 公開。</p>
+        <p>這些是目前建議採用的寫法。每題按同意或不同意，也可以寫意見。不用送出也能隨時到「投票結果」看大家的選擇和意見。</p>
 
         <!-- <article class="item" data-kind="style" data-item="para">
           <h3>
@@ -998,13 +1001,11 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
     </div>
     </div>
 
-    <!-- 投票結果頁預計 11/10 公開時再取消註解
     <div id="results-view" class="wrap" hidden>
       <h1 id="results-title" tabindex="-1">投票結果</h1>
       <div id="results-body"></div>
       <button type="button" class="ghost-btn" id="back-to-form">回到填答</button>
     </div>
-    -->
   </div>
 
   <div id="confirm-modal" class="modal" hidden>
@@ -1652,7 +1653,8 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
     }
 
     function requestSubmit() {
-      if (sending || !currentName) return;
+      if (sending) return;
+      if (needName()) return;
       if (hasGas && remoteState !== "ready") {
         setSaveState(remoteState === "loading"
           ? "正在讀取已送出的填答，請稍候再送出"
@@ -1724,6 +1726,38 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
       return row;
     }
 
+    function resultDetail(article, counts) {
+      var panel = article.querySelector(".panel");
+      if (!panel) return null;
+      var box = document.createElement("div");
+      box.className = "result-detail";
+      Array.prototype.forEach.call(panel.children, function (node) {
+        if (node.matches(".yn, .comment, .clear-answer")) return;
+        var copy = node.cloneNode(true);
+        copy.querySelectorAll(".clear-answer").forEach(function (el) { el.remove(); });
+        copy.querySelectorAll("label.choice").forEach(function (label) {
+          var input = label.querySelector("input");
+          var plain = document.createElement("div");
+          plain.className = label.className;
+          while (label.firstChild) plain.appendChild(label.firstChild);
+          if (input) {
+            var head = plain.querySelector(".choice-head");
+            if (head) {
+              var count = document.createElement("span");
+              count.className = "choice-count";
+              count.textContent = (counts[input.value] || 0) + " 票";
+              head.after(count);
+            }
+            input.remove();
+          }
+          label.replaceWith(plain);
+        });
+        copy.querySelectorAll("[id]").forEach(function (el) { el.removeAttribute("id"); });
+        box.appendChild(copy);
+      });
+      return box;
+    }
+
     function renderResultCard(article) {
       var card = document.createElement("div");
       card.className = "result-card";
@@ -1758,6 +1792,8 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
         banner.classList.add("tie");
         banner.textContent = "目前平手：" + leaders.map(function (opt) { return opt.label; }).join("、") + "，各 " + max + " 票";
       }
+      var detail = resultDetail(article, counts);
+      if (detail) card.appendChild(detail);
       card.appendChild(banner);
       if (total) {
         var stack = document.createElement("div");
@@ -1920,7 +1956,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
     function updateResultsTab() {
       var tab = document.getElementById("tab-results");
       if (!tab) return;
-      var show = !!(currentName && personHasSubmitted(currentName));
+      var show = true;
       tab.hidden = !show;
       if (!show && tab.getAttribute("aria-selected") === "true") showForm();
     }
@@ -1938,7 +1974,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
     function showResults() {
       var results = document.getElementById("results-view");
       var tabResults = document.getElementById("tab-results");
-      if (!results || !tabResults || !personHasSubmitted(currentName)) return;
+      if (!results || !tabResults) return;
       document.getElementById("form-view").hidden = true;
       results.hidden = false;
       document.getElementById("tab-form").setAttribute("aria-selected", "false");
@@ -1967,7 +2003,11 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
       area.maxLength = 1000;
       area.setAttribute("aria-labelledby", label.id);
       area.placeholder = "可略，會和這題一起按下方「送出填答」。";
+      area.addEventListener("focus", function () {
+        if (needName()) area.blur();
+      });
       area.addEventListener("input", function () {
+        if (!currentName) return;
         rememberComment(article, area.value);
         paintCommentState(article);
         updateSaveState();
@@ -1991,6 +2031,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
         button.textContent = choice === "agree" ? "同意" : "不同意";
         button.setAttribute("aria-pressed", "false");
         button.addEventListener("click", function () {
+          if (needName()) return;
           chooseStyle(article, choice);
         });
         actions.appendChild(button);
@@ -2018,6 +2059,10 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
         article.querySelectorAll('input[type="radio"]').forEach(function (input) {
           input.addEventListener("change", function () {
             if (!input.checked) return;
+            if (needName()) {
+              input.checked = false;
+              return;
+            }
             chooseVote(article, input.value);
           });
         });
@@ -2076,6 +2121,7 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
       if (!drafts[name]) drafts[name] = clonePerson(people[name]);
       writeStore();
       document.getElementById("who").textContent = "你正在以「" + name + "」填答";
+      document.getElementById("switch-name").textContent = "更換姓名";
       document.getElementById("gate").hidden = true;
       document.getElementById("app").hidden = false;
       showForm();
@@ -2083,12 +2129,26 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
       updateResultsTab();
     }
 
+    function browse() {
+      document.getElementById("who").textContent = "目前是瀏覽模式";
+      document.getElementById("switch-name").textContent = "填寫姓名來作答";
+      document.getElementById("gate").hidden = true;
+      document.getElementById("app").hidden = false;
+      updateResultsTab();
+    }
+
+    function needName() {
+      if (currentName) return false;
+      showGate();
+      return true;
+    }
+
     function showGate() {
       document.getElementById("app").hidden = true;
       document.getElementById("gate").hidden = false;
       closeModal();
       renderNamePicks();
-      document.getElementById("name-input").value = currentName || "";
+      document.getElementById("name-input").value = currentName || rememberedName || "";
       document.getElementById("name-input").focus();
     }
 
@@ -2126,6 +2186,11 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
     });
 
     document.getElementById("switch-name").addEventListener("click", showGate);
+    document.getElementById("gate-cancel").addEventListener("click", function () {
+      document.getElementById("name-error").hidden = true;
+      if (currentName) enter(currentName);
+      else browse();
+    });
     var tabFormBtn = document.getElementById("tab-form");
     var tabResultsBtn = document.getElementById("tab-results");
     var backToFormBtn = document.getElementById("back-to-form");
@@ -2154,9 +2219,11 @@ width、height 填縮圖後的實際像素；另外用行內樣式 width:100%
     document.querySelectorAll('#styles article[data-kind="style"]').forEach(addStyleControls);
     bindVotes();
     bindAccordions();
-    currentName = readStore();
+    var rememberedName = readStore();
+    currentName = "";
     renderNamePicks();
-    if (currentName) document.getElementById("name-input").value = currentName;
+    if (rememberedName) document.getElementById("name-input").value = rememberedName;
+    browse();
     if (hasGas) {
       setGateWaiting(true);
       google.script.run
