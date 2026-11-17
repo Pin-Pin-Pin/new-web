@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<title>(備份)限時活動-看見不一樣的未來 #21｜地球公民基金會</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="捐款滿額禮限時活動：月捐滿500元贈地球公民方巾一條。你的捐款，支持獨立自主的環保團體持續推動改變。">
+<meta property="og:title" content="限時活動-看見不一樣的未來 #21">
+<meta property="og:description" content="捐款滿額禮限時活動：月捐滿500元贈地球公民方巾一條。你的捐款，支持獨立自主的環保團體持續推動改變。">
+<meta property="og:image" content="https://www.cet-taiwan.org/sites/default/files/civicrm/custom/20201204-1_Ckcs8TNq.jpg">
+<meta property="og:site_name" content="地球公民基金會">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<style type="text/css">
+html {
+  font-size: 16px;
+}
+
+.lp-page {
+  --lp-accent: #35a97c;
+  --lp-accent-hover: #2b8a65;
+  --lp-title: #35a97c;
+  --lp-btn: var(--lp-accent);
+  --lp-btn-hover: var(--lp-accent-hover);
+  --lp-text: #333333;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--lp-text);
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+.lp-page *,
+.lp-page *::before,
+.lp-page *::after {
+  box-sizing: border-box;
+}
+
+.lp-page img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.lp-page h1,
+.lp-page h2,
+.lp-page h3,
+.lp-page h4 {
+  margin-top: 0;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.lp-page p {
+  margin: 0 0 1em;
+}
+
+.lp-page p:last-child {
+  margin-bottom: 0;
+}
+
+.lp-page a {
+  color: inherit;
+}
+
+.lp-page a:focus-visible {
+  outline: 2px solid var(--lp-accent);
+  outline-offset: 2px;
+}
+
+.lp-page .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ---------- 背景圖層 ---------- */
+.lp-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.lp-page .lp-bg img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-bg--shade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.lp-uplayer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- 首屏（連署頁、募款頁共用：左側文字框＋logo、右側表單） ----------
+   手機：背景只覆蓋左側區塊，表單接在下方
+   桌機：左側區塊 sticky 並水平垂直置中，右側固定 440px 表單欄 */
+.lp-petition {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background: #dddddd;
+}
+
+.lp-petition__bg {
+  grid-area: 1 / 1;
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+.lp-page .lp-petition__bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-petition__inner {
+  display: contents;
+}
+
+.lp-petition__side {
+  grid-area: 1 / 1;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-width: 0;
+  padding: 40px 16px;
+}
+
+.lp-petition__form {
+  grid-area: 2 / 1;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  justify-self: center;
+  padding: 24px 0 40px;
+}
+
+@media (max-width: 479px) {
+  .lp-petition__form {
+    padding: 0 0 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  .lp-petition {
+    display: block;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .lp-petition__bg {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+  }
+
+  .lp-petition__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 440px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .lp-petition__side {
+    grid-area: auto;
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+
+  .lp-petition__form {
+    grid-area: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: none;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .lp-petition__inner {
+    gap: 80px;
+  }
+}
+
+/* 左側文字框 */
+.lp-side-box {
+  width: 100%;
+  max-width: 480px;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.lp-side-box--light {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333333;
+}
+
+.lp-side-box p {
+  margin-bottom: 10px;
+}
+
+.lp-side-box p:last-child {
+  margin-bottom: 0;
+}
+
+.lp-side-box__title {
+  margin-bottom: 0.75rem;
+  font-size: 1.375rem;
+  text-align: center;
+}
+
+/* 募款頁左側：文字直接壓在背景上，不加底色 */
+.lp-side-box--plain {
+  padding: 0;
+  background: none;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+}
+
+/* 募款頁左側主標 */
+.lp-side-box__title--lg {
+  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+@media (min-width: 992px) {
+  .lp-side-box__title--lg {
+    font-size: 3rem;
+  }
+}
+
+.lp-side-box__mark {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 0.5rem;
+}
+
+.lp-side-box__lead {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.lp-page .lp-side-cta {
+  display: block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: 1px solid var(--lp-title);
+  color: #edfffb;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.lp-page .lp-side-cta:hover,
+.lp-page .lp-side-cta:focus {
+  background: var(--lp-title);
+  color: #ffffff;
+}
+
+.lp-side-logo {
+  width: 300px;
+  max-width: 80%;
+}
+
+/* 連署表單（示意用，不會送出） */
+.lp-pform {
+  padding: 37px 25px 25px;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #2b2b2b;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 479px) {
+  .lp-pform {
+    padding: 24px 16px 16px;
+    border-radius: 0;
+  }
+}
+
+.lp-pform__title {
+  margin: 0 0 20px;
+  padding: 15px;
+  color: var(--lp-title);
+  font-size: clamp(1.75rem, 4vw, 2.375rem);
+  font-weight: 900;
+  line-height: 1.33;
+  text-align: center;
+}
+
+.lp-pform__progress {
+  margin-bottom: 10px;
+}
+
+.lp-pform__bar {
+  height: 30px;
+  border-radius: 15px;
+  background: #eceff2;
+  overflow: hidden;
+}
+
+.lp-pform__fill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: max-content;
+  padding: 0 10px;
+  border-radius: 15px;
+  background: var(--lp-title);
+  color: #ffffff;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.lp-pform__goal {
+  margin: 8px 0 10px;
+  color: var(--lp-accent);
+  font-weight: 500;
+  text-align: right;
+}
+
+.lp-pform__row {
+  display: flex;
+  gap: 8px;
+}
+
+.lp-pform__row > .lp-pform__field {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.lp-pform__field {
+  margin-bottom: 20px;
+}
+
+.lp-pform__label {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--lp-accent);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.lp-pform__req {
+  margin-left: 2px;
+  color: #dc3545;
+  font-weight: 700;
+}
+
+.lp-pform__input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #d79142;
+  border-radius: 5px;
+  background: transparent;
+  color: #2b2b2b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.lp-pform__input--date {
+  border-color: #999999;
+  color: #333333;
+}
+
+.lp-pform__input:focus {
+  outline: none;
+  border-color: var(--lp-accent);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.lp-pform__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 4px 4px 4px 19px;
+  color: #35a97c;
+  font-size: 16px;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.lp-pform__check input {
+  flex: none;
+  width: 13px;
+  height: 13px;
+  margin: 3px 0 0;
+}
+
+.lp-pform__check a {
+  color: #0d6efd;
+}
+
+.lp-pform__submit {
+  display: block;
+  width: 100%;
+  height: 36px;
+  margin-top: 15px;
+  border: 0;
+  border-radius: 4px;
+  background: #4b9d95;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.lp-pform__submit:hover,
+.lp-pform__submit:focus {
+  background: #3d847d;
+}
+
+/* 捐款表單（示意用，不會送出；結構參考 general-donate 的 donation-box，以 radio 切換不需 JS） */
+.lp-dform {
+  padding: 24px;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #2d2d2d;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 479px) {
+  .lp-dform {
+    padding: 24px 16px;
+    border-radius: 0;
+  }
+}
+
+.lp-dform__title {
+  margin-bottom: 8px;
+  color: var(--lp-accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lp-dform__tabs {
+  display: flex;
+  margin: 0 0 24px;
+  padding: 0;
+  border: 1px solid var(--lp-accent);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lp-dform__tab {
+  flex: 1 1 0;
+  margin: 0;
+  padding: 8px 12px;
+  color: var(--lp-accent);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lp-dform__tab + .lp-dform__tab {
+  border-left: 1px solid var(--lp-accent);
+}
+
+#df-monthly:checked ~ .lp-dform__tabs .lp-dform__tab--monthly,
+#df-once:checked ~ .lp-dform__tabs .lp-dform__tab--once {
+  background: var(--lp-accent);
+  color: #ffffff;
+}
+
+#df-monthly:focus-visible ~ .lp-dform__tabs .lp-dform__tab--monthly,
+#df-once:focus-visible ~ .lp-dform__tabs .lp-dform__tab--once {
+  outline: 2px solid #2d2d2d;
+  outline-offset: -3px;
+}
+
+/* 每月／單筆切換對應的金額清單 */
+#df-monthly ~ .lp-dform__amounts--once,
+#df-once:checked ~ .lp-dform__amounts--monthly {
+  display: none;
+}
+
+#df-once:checked ~ .lp-dform__amounts--once {
+  display: block;
+}
+
+.lp-dform__single {
+  margin: 0 0 24px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: var(--lp-accent);
+  color: #ffffff;
+  text-align: center;
+}
+
+.lp-dform__subtitle {
+  margin-bottom: 8px;
+  color: var(--lp-accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lp-dform__amounts {
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+.lp-dform__amounts li + li {
+  border-top: 1px solid #e1e1e1;
+}
+
+.lp-dform__option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.lp-dform__value {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: 84px;
+}
+
+.lp-dform__currency {
+  font-size: 0.75rem;
+}
+
+.lp-dform__number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.lp-dform__desc {
+  font-size: 0.9375rem;
+}
+
+.lp-dform__option:hover,
+.lp-dform__option input:checked ~ span {
+  color: var(--lp-accent);
+}
+
+.lp-dform__option input:focus-visible ~ .lp-dform__value {
+  outline: 2px solid var(--lp-accent);
+  outline-offset: 2px;
+}
+
+.lp-dform__custom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.lp-dform__custom label {
+  flex: none;
+  margin: 0;
+  color: var(--lp-accent);
+  font-weight: 700;
+}
+
+.lp-dform__custom input {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  color: #2d2d2d;
+}
+
+.lp-dform__custom input:focus {
+  outline: none;
+  border-color: var(--lp-accent);
+}
+
+.lp-dform__submit {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--lp-accent);
+  color: #ffffff;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+}
+
+.lp-dform__submit:hover,
+.lp-dform__submit:focus {
+  background: var(--lp-accent-hover);
+}
+
+/* reCAPTCHA 外觀示意（無實際驗證） */
+.lp-recaptcha {
+  display: flex;
+  align-items: center;
+  width: 304px;
+  max-width: 100%;
+  height: 78px;
+  margin: 0 auto 20px;
+  padding: 0 8px 0 12px;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  background: #f9f9f9;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.08);
+  color: #000000;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.lp-recaptcha__box {
+  position: relative;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #c1c1c1;
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.lp-recaptcha input:checked + .lp-recaptcha__box {
+  border-color: transparent;
+  background: transparent;
+}
+
+.lp-recaptcha input:checked + .lp-recaptcha__box::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 8px;
+  width: 11px;
+  height: 22px;
+  border: solid #009e55;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+
+.lp-recaptcha input:focus-visible + .lp-recaptcha__box {
+  outline: 2px solid #4d90fe;
+}
+
+.lp-recaptcha__text {
+  flex: 1;
+  margin-left: 12px;
+  font-size: 14px;
+}
+
+.lp-recaptcha__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64px;
+  color: #555555;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.lp-recaptcha__brand img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 2px;
+}
+
+.lp-recaptcha__terms {
+  font-size: 8px;
+}
+
+/* ---------- 按鈕 ---------- */
+.lp-page .lp-btn {
+  display: inline-block;
+  min-width: 12rem;
+  padding: 0.7rem 2rem;
+  border: 2px solid var(--lp-btn);
+  border-radius: 999px;
+  background: var(--lp-btn);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.lp-page .lp-btn:hover,
+.lp-page .lp-btn:focus {
+  border-color: var(--lp-btn-hover);
+  background: var(--lp-btn-hover);
+  color: #ffffff;
+}
+
+.lp-page .lp-btn--ghost {
+  background: transparent;
+  color: var(--lp-btn);
+}
+
+.lp-page .lp-btn--ghost:hover,
+.lp-page .lp-btn--ghost:focus {
+  background: var(--lp-btn);
+  color: #ffffff;
+}
+
+.lp-page .lp-btn--light {
+  border-color: #ffffff;
+  background: transparent;
+  color: #ffffff;
+}
+
+.lp-page .lp-btn--light:hover,
+.lp-page .lp-btn--light:focus {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #2d3e49;
+}
+
+.lp-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ---------- 一般區塊 ---------- */
+.lp-section {
+  position: relative;
+  padding: 56px 0;
+  overflow: hidden;
+}
+
+.lp-section--tall {
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+}
+
+.lp-section > .container,
+.lp-section > .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+.lp-section__title {
+  margin-bottom: 1.25rem;
+  font-size: 1.75rem;
+}
+
+.lp-white {
+  color: #ffffff;
+}
+
+.lp-shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 768px) {
+  .lp-section {
+    padding: 80px 0;
+  }
+
+  .lp-section--tall {
+    min-height: 640px;
+  }
+
+  .lp-section__title {
+    font-size: 2rem;
+  }
+}
+
+/* 半透明文字框 */
+.lp-panel {
+  padding: 24px;
+  background: rgba(51, 51, 51, 0.85);
+  color: #ffffff;
+}
+
+.lp-panel--light {
+  background: rgba(255, 255, 255, 0.88);
+  color: #333333;
+}
+
+.lp-mark {
+  color: #ffff00;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.lp-square-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-square-list li {
+  position: relative;
+  margin-bottom: 0.5em;
+  padding-left: 1.4em;
+}
+
+.lp-square-list li:last-child {
+  margin-bottom: 0;
+}
+
+.lp-square-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 0.6em;
+  height: 0.6em;
+  background: currentColor;
+}
+
+/* ---------- 左右圖文 ---------- */
+.lp-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.lp-split__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-split__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.lp-split__title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .lp-split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .lp-split--media-right .lp-split__media {
+    order: 2;
+  }
+
+  .lp-split__body {
+    padding: 40px 48px;
+  }
+
+  .lp-split__title {
+    font-size: 1.75rem;
+  }
+}
+
+/* ---------- 影片 ---------- */
+.lp-video {
+  padding: 40px 0;
+  background: #111111;
+}
+
+.lp-video__frame {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.lp-video iframe {
+  border: 0;
+}
+
+/* ---------- 頁尾資訊 ---------- */
+.lp-info {
+  padding: 32px 0;
+  background: #4f4f4f;
+  color: #ffffff;
+  font-size: 0.9375rem;
+}
+
+.lp-page .lp-info a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- 本頁樣式 ---------- */
+.lp-d28 {
+  --lp-accent: #00b9a4;
+  --lp-accent-hover: #009684;
+  --lp-btn: #00b9a4;
+  --lp-btn-hover: #009684;
+}
+
+/* 手機版直式背景圖人物在右上 */
+.lp-d28 .lp-petition__bg img {
+  object-position: right top;
+}
+
+@media (min-width: 992px) {
+  .lp-d28 .lp-petition__bg img {
+    object-position: center;
+  }
+}
+
+.lp-d28 .lp-split__title {
+  font-weight: 500;
+}
+
+.lp-d28 .lp-banner img {
+  width: 100%;
+  height: clamp(240px, 34vw, 660px);
+  object-fit: cover;
+}
+
+.lp-d28 .lp-info h2 {
+  font-size: 1.375rem;
+  line-height: 1.6;
+}
+
+.lp-d28 .lp-info h2 small {
+  font-size: 1rem;
+  font-weight: 400;
+}
+</style>
+</head>
+<body>
+<div class="lp-page lp-d28">
+<section class="lp-petition lp-donate-hero">
+  <picture class="lp-petition__bg">
+    <source media="(max-width: 991px)" srcset="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u355/20201209-002.jpg" width="617" height="1081">
+    <img src="https://www.cet-taiwan.org/sites/default/files/civicrm/custom/20201204-1_Ckcs8TNq.jpg" alt="" width="1920" height="1081" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="lp-petition__inner container">
+    <div class="lp-petition__side">
+      <div class="lp-side-box lp-side-box--plain">
+        <h1 class="lp-side-box__title lp-side-box__title--lg">看見不一樣的未來</h1>
+        <p class="lp-side-box__lead">捐款滿額禮限時活動</p>
+      </div>
+      <a href="https://www.cet-taiwan.org/"><img class="lp-side-logo" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u143/logo-white.png" alt="地球公民基金會" width="2000" height="510" decoding="async"></a>
+    </div>
+    <div class="lp-petition__form">
+      <!-- 以下捐款表單僅供內部參考版面，不會實際送出資料 -->
+    <form class="lp-dform" action="#" aria-label="捐款表單（示意）">
+      <h2 class="lp-dform__title">選擇捐款方式</h2>
+      <input class="lp-dform__switch visually-hidden" type="radio" name="is_recur" id="df-monthly" value="1" checked>
+      <input class="lp-dform__switch visually-hidden" type="radio" name="is_recur" id="df-once" value="0">
+      <div class="lp-dform__tabs">
+        <label class="lp-dform__tab lp-dform__tab--monthly" for="df-monthly">每月捐款</label>
+        <label class="lp-dform__tab lp-dform__tab--once" for="df-once">單筆捐款</label>
+      </div>
+      <fieldset class="lp-dform__amounts lp-dform__amounts--monthly">
+        <legend class="lp-dform__subtitle">選擇金額或自訂金額</legend>
+        <ul class="list-unstyled mb-0">
+          <li>
+            <label class="lp-dform__option">
+              <input class="visually-hidden" type="radio" name="amount_monthly" value="500">
+              <span class="lp-dform__value"><span class="lp-dform__currency">NTD</span><span class="lp-dform__number">500</span></span>
+              <span class="lp-dform__desc">傾聽土地的呼喚，擁抱山溪河海的未來</span>
+            </label>
+          </li>
+          <li>
+            <label class="lp-dform__option">
+              <input class="visually-hidden" type="radio" name="amount_monthly" value="750" checked>
+              <span class="lp-dform__value"><span class="lp-dform__currency">NTD</span><span class="lp-dform__number">750</span></span>
+              <span class="lp-dform__desc">打造穩健而持續的防護力，對抗專業的環境破壞者</span>
+            </label>
+          </li>
+          <li>
+            <label class="lp-dform__option">
+              <input class="visually-hidden" type="radio" name="amount_monthly" value="1000">
+              <span class="lp-dform__value"><span class="lp-dform__currency">NTD</span><span class="lp-dform__number">1,000</span></span>
+              <span class="lp-dform__desc">投資地球，淨化每一口空氣、每滴雨，看見孩子的笑容</span>
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset class="lp-dform__amounts lp-dform__amounts--once">
+        <legend class="lp-dform__subtitle">選擇金額或自訂金額</legend>
+        <ul class="list-unstyled mb-0">
+          <li>
+            <label class="lp-dform__option">
+              <input class="visually-hidden" type="radio" name="amount_once" value="1200">
+              <span class="lp-dform__value"><span class="lp-dform__currency">NTD</span><span class="lp-dform__number">1,200</span></span>
+              <span class="lp-dform__desc">一份捐款，一個珍貴的環保力！</span>
+            </label>
+          </li>
+          <li>
+            <label class="lp-dform__option">
+              <input class="visually-hidden" type="radio" name="amount_once" value="2500" checked>
+              <span class="lp-dform__value"><span class="lp-dform__currency">NTD</span><span class="lp-dform__number">2,500</span></span>
+              <span class="lp-dform__desc">守護家園，有您真好！</span>
+            </label>
+          </li>
+          <li>
+            <label class="lp-dform__option">
+              <input class="visually-hidden" type="radio" name="amount_once" value="5000">
+              <span class="lp-dform__value"><span class="lp-dform__currency">NTD</span><span class="lp-dform__number">5,000</span></span>
+              <span class="lp-dform__desc">和地球公民一起前進，守護孕育我們的島！</span>
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+      <div class="lp-dform__custom">
+        <label for="df-custom">自訂金額</label>
+        <input id="df-custom" name="amount_other" type="text" inputmode="numeric" placeholder="請輸入金額" autocomplete="off">
+      </div>
+      <button class="lp-dform__submit" type="button">下一步</button>
+    </form>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="lp-split">
+    <div class="lp-split__media">
+      <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20201208-3.jpg" alt="地球公民方巾" width="1000" height="753" loading="lazy" decoding="async">
+    </div>
+    <div class="lp-split__body">
+      <h2 class="lp-split__title">初衷最美，為愛行動</h2>
+      <p>在這次捐款滿額贈送的方巾上，你可以看見地球公民13年來參與的許多議題，小小圖樣有著保護山林的初衷、改革礦業的決心。地球公民深信：專業的環保團體＋公民行動，是改變世界的最大動力。這條方巾連結著我們，串起各種社會力，推動改變法令政策。你的捐款將讓許多不可能成為可能！</p>
+    </div>
+  </div>
+  <div class="lp-split lp-split--media-right">
+    <div class="lp-split__media">
+      <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20201208-4.jpg" alt="用方巾包便當" width="1000" height="753" loading="lazy" decoding="async">
+    </div>
+    <div class="lp-split__body">
+      <h2 class="lp-split__title">愛的包袱，就是包福</h2>
+      <p>打開是期待，打包的是愛。這款方巾可以使用來外帶便當、水果，取代塑膠包裝。花色吸睛耐髒，材質易洗快乾，兼顧時尚與環保，是我們選擇捐款贈禮時的細緻考量。</p>
+      <p>生活環保需要你舉手之勞，大環境的破壞需要專業的環保團體對抗。地球公民不接受政府補助，是一個獨立自主的公益團體，需要您的捐助。本次限時推出捐款滿額禮贈送，請把握機會與我們相遇。</p>
+    </div>
+  </div>
+</section>
+
+<div class="lp-banner">
+  <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20201208-5b.jpg" alt="" width="1920" height="660" loading="lazy" decoding="async">
+</div>
+
+<div class="row g-0">
+  <div class="col-12 col-sm-4">
+    <img class="w-100" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20201208-6.jpg" alt="" width="1000" height="753" loading="lazy" decoding="async">
+  </div>
+  <div class="col-12 col-sm-4">
+    <img class="w-100" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20201208-7.jpg" alt="" width="1000" height="753" loading="lazy" decoding="async">
+  </div>
+  <div class="col-12 col-sm-4">
+    <img class="w-100" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20201208-8.jpg" alt="" width="1000" height="752" loading="lazy" decoding="async">
+  </div>
+</div>
+
+<section class="lp-section text-center">
+  <div class="container">
+    <a class="lp-btn" href="https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&amp;id=28">捐款支持</a>
+  </div>
+</section>
+
+<footer class="lp-info">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-8">
+        <h2 class="mb-0">捐款滿額禮限時活動2021/12/28~2022/1/31，<br>月捐滿500元贈方巾一條。<small>（顏色隨機）</small></h2>
+      </div>
+      <div class="col-12 col-lg-4">
+        <p>立案字號：環署綜字第0990100475號<br>
+          勸募字號：衛部救字第1101362026號<br>
+          免稅登記號碼：035020380</p>
+        <p><a href="https://www.cet-taiwan.org/node/3261" target="_blank" rel="noopener"><strong>隱私政策與個人資料收集聲明</strong></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

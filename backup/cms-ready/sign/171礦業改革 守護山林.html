@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<title>(備份)礦業改革 守護山林｜地球公民基金會</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="地球公民從2013年開始推動礦業改革，打破礦業霸權，礦業修法僅缺臨門一腳，一起挺身守護屬於大家的山林。">
+<meta property="og:title" content="礦業改革 守護山林">
+<meta property="og:description" content="地球公民從2013年開始推動礦業改革，打破礦業霸權，礦業修法僅缺臨門一腳，一起挺身守護屬於大家的山林。">
+<meta property="og:image" content="https://www.cet-taiwan.org/sites/default/files/civicrm/custom/20190521_2_RtVhVlbm.jpg">
+<meta property="og:site_name" content="地球公民基金會">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<style type="text/css">
+html {
+  font-size: 16px;
+}
+
+.lp-page {
+  --lp-accent: #35a97c;
+  --lp-accent-hover: #2b8a65;
+  --lp-title: #35a97c;
+  --lp-btn: var(--lp-accent);
+  --lp-btn-hover: var(--lp-accent-hover);
+  --lp-text: #333333;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--lp-text);
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+.lp-page *,
+.lp-page *::before,
+.lp-page *::after {
+  box-sizing: border-box;
+}
+
+.lp-page img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.lp-page h1,
+.lp-page h2,
+.lp-page h3,
+.lp-page h4 {
+  margin-top: 0;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.lp-page p {
+  margin: 0 0 1em;
+}
+
+.lp-page p:last-child {
+  margin-bottom: 0;
+}
+
+.lp-page a {
+  color: inherit;
+}
+
+.lp-page a:focus-visible {
+  outline: 2px solid var(--lp-accent);
+  outline-offset: 2px;
+}
+
+.lp-page .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ---------- 背景圖層 ---------- */
+.lp-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.lp-page .lp-bg img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-bg--shade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.lp-uplayer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- 首屏（連署頁、募款頁共用：左側文字框＋logo、右側表單） ----------
+   手機：背景只覆蓋左側區塊，表單接在下方
+   桌機：左側區塊 sticky 並水平垂直置中，右側固定 440px 表單欄 */
+.lp-petition {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background: #dddddd;
+}
+
+.lp-petition__bg {
+  grid-area: 1 / 1;
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+.lp-page .lp-petition__bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-petition__inner {
+  display: contents;
+}
+
+.lp-petition__side {
+  grid-area: 1 / 1;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-width: 0;
+  padding: 40px 16px;
+}
+
+.lp-petition__form {
+  grid-area: 2 / 1;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  justify-self: center;
+  padding: 24px 0 40px;
+}
+
+@media (max-width: 479px) {
+  .lp-petition__form {
+    padding: 0 0 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  .lp-petition {
+    display: block;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .lp-petition__bg {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+  }
+
+  .lp-petition__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 440px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .lp-petition__side {
+    grid-area: auto;
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+
+  .lp-petition__form {
+    grid-area: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: none;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .lp-petition__inner {
+    gap: 80px;
+  }
+}
+
+/* 左側文字框 */
+.lp-side-box {
+  width: 100%;
+  max-width: 480px;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.lp-side-box--light {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333333;
+}
+
+.lp-side-box p {
+  margin-bottom: 10px;
+}
+
+.lp-side-box p:last-child {
+  margin-bottom: 0;
+}
+
+.lp-side-box__title {
+  margin-bottom: 0.75rem;
+  font-size: 1.375rem;
+  text-align: center;
+}
+
+/* 募款頁左側：文字直接壓在背景上，不加底色 */
+.lp-side-box--plain {
+  padding: 0;
+  background: none;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+}
+
+/* 募款頁左側主標 */
+.lp-side-box__title--lg {
+  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+@media (min-width: 992px) {
+  .lp-side-box__title--lg {
+    font-size: 3rem;
+  }
+}
+
+.lp-side-box__mark {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 0.5rem;
+}
+
+.lp-side-box__lead {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.lp-page .lp-side-cta {
+  display: block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: 1px solid var(--lp-title);
+  color: #edfffb;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.lp-page .lp-side-cta:hover,
+.lp-page .lp-side-cta:focus {
+  background: var(--lp-title);
+  color: #ffffff;
+}
+
+.lp-side-logo {
+  width: 300px;
+  max-width: 80%;
+}
+
+/* 連署表單（示意用，不會送出） */
+.lp-pform {
+  padding: 37px 25px 25px;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #2b2b2b;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 479px) {
+  .lp-pform {
+    padding: 24px 16px 16px;
+    border-radius: 0;
+  }
+}
+
+.lp-pform__title {
+  margin: 0 0 20px;
+  padding: 15px;
+  color: var(--lp-title);
+  font-size: clamp(1.75rem, 4vw, 2.375rem);
+  font-weight: 900;
+  line-height: 1.33;
+  text-align: center;
+}
+
+.lp-pform__progress {
+  margin-bottom: 10px;
+}
+
+.lp-pform__bar {
+  height: 30px;
+  border-radius: 15px;
+  background: #eceff2;
+  overflow: hidden;
+}
+
+.lp-pform__fill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: max-content;
+  padding: 0 10px;
+  border-radius: 15px;
+  background: var(--lp-title);
+  color: #ffffff;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.lp-pform__goal {
+  margin: 8px 0 10px;
+  color: var(--lp-accent);
+  font-weight: 500;
+  text-align: right;
+}
+
+.lp-pform__row {
+  display: flex;
+  gap: 8px;
+}
+
+.lp-pform__row > .lp-pform__field {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.lp-pform__field {
+  margin-bottom: 20px;
+}
+
+.lp-pform__label {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--lp-accent);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.lp-pform__req {
+  margin-left: 2px;
+  color: #dc3545;
+  font-weight: 700;
+}
+
+.lp-pform__input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #d79142;
+  border-radius: 5px;
+  background: transparent;
+  color: #2b2b2b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.lp-pform__input--date {
+  border-color: #999999;
+  color: #333333;
+}
+
+.lp-pform__input:focus {
+  outline: none;
+  border-color: var(--lp-accent);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.lp-pform__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 4px 4px 4px 19px;
+  color: #35a97c;
+  font-size: 16px;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.lp-pform__check input {
+  flex: none;
+  width: 13px;
+  height: 13px;
+  margin: 3px 0 0;
+}
+
+.lp-pform__check a {
+  color: #0d6efd;
+}
+
+.lp-pform__submit {
+  display: block;
+  width: 100%;
+  height: 36px;
+  margin-top: 15px;
+  border: 0;
+  border-radius: 4px;
+  background: #4b9d95;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.lp-pform__submit:hover,
+.lp-pform__submit:focus {
+  background: #3d847d;
+}
+
+/* 捐款表單（示意用，不會送出；結構參考 general-donate 的 donation-box，以 radio 切換不需 JS） */
+.lp-dform {
+  padding: 24px;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #2d2d2d;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 479px) {
+  .lp-dform {
+    padding: 24px 16px;
+    border-radius: 0;
+  }
+}
+
+.lp-dform__title {
+  margin-bottom: 8px;
+  color: var(--lp-accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lp-dform__tabs {
+  display: flex;
+  margin: 0 0 24px;
+  padding: 0;
+  border: 1px solid var(--lp-accent);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lp-dform__tab {
+  flex: 1 1 0;
+  margin: 0;
+  padding: 8px 12px;
+  color: var(--lp-accent);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lp-dform__tab + .lp-dform__tab {
+  border-left: 1px solid var(--lp-accent);
+}
+
+#df-monthly:checked ~ .lp-dform__tabs .lp-dform__tab--monthly,
+#df-once:checked ~ .lp-dform__tabs .lp-dform__tab--once {
+  background: var(--lp-accent);
+  color: #ffffff;
+}
+
+#df-monthly:focus-visible ~ .lp-dform__tabs .lp-dform__tab--monthly,
+#df-once:focus-visible ~ .lp-dform__tabs .lp-dform__tab--once {
+  outline: 2px solid #2d2d2d;
+  outline-offset: -3px;
+}
+
+/* 每月／單筆切換對應的金額清單 */
+#df-monthly ~ .lp-dform__amounts--once,
+#df-once:checked ~ .lp-dform__amounts--monthly {
+  display: none;
+}
+
+#df-once:checked ~ .lp-dform__amounts--once {
+  display: block;
+}
+
+.lp-dform__single {
+  margin: 0 0 24px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: var(--lp-accent);
+  color: #ffffff;
+  text-align: center;
+}
+
+.lp-dform__subtitle {
+  margin-bottom: 8px;
+  color: var(--lp-accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lp-dform__amounts {
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+.lp-dform__amounts li + li {
+  border-top: 1px solid #e1e1e1;
+}
+
+.lp-dform__option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.lp-dform__value {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: 84px;
+}
+
+.lp-dform__currency {
+  font-size: 0.75rem;
+}
+
+.lp-dform__number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.lp-dform__desc {
+  font-size: 0.9375rem;
+}
+
+.lp-dform__option:hover,
+.lp-dform__option input:checked ~ span {
+  color: var(--lp-accent);
+}
+
+.lp-dform__option input:focus-visible ~ .lp-dform__value {
+  outline: 2px solid var(--lp-accent);
+  outline-offset: 2px;
+}
+
+.lp-dform__custom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.lp-dform__custom label {
+  flex: none;
+  margin: 0;
+  color: var(--lp-accent);
+  font-weight: 700;
+}
+
+.lp-dform__custom input {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  color: #2d2d2d;
+}
+
+.lp-dform__custom input:focus {
+  outline: none;
+  border-color: var(--lp-accent);
+}
+
+.lp-dform__submit {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--lp-accent);
+  color: #ffffff;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+}
+
+.lp-dform__submit:hover,
+.lp-dform__submit:focus {
+  background: var(--lp-accent-hover);
+}
+
+/* reCAPTCHA 外觀示意（無實際驗證） */
+.lp-recaptcha {
+  display: flex;
+  align-items: center;
+  width: 304px;
+  max-width: 100%;
+  height: 78px;
+  margin: 0 auto 20px;
+  padding: 0 8px 0 12px;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  background: #f9f9f9;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.08);
+  color: #000000;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.lp-recaptcha__box {
+  position: relative;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #c1c1c1;
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.lp-recaptcha input:checked + .lp-recaptcha__box {
+  border-color: transparent;
+  background: transparent;
+}
+
+.lp-recaptcha input:checked + .lp-recaptcha__box::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 8px;
+  width: 11px;
+  height: 22px;
+  border: solid #009e55;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+
+.lp-recaptcha input:focus-visible + .lp-recaptcha__box {
+  outline: 2px solid #4d90fe;
+}
+
+.lp-recaptcha__text {
+  flex: 1;
+  margin-left: 12px;
+  font-size: 14px;
+}
+
+.lp-recaptcha__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64px;
+  color: #555555;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.lp-recaptcha__brand img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 2px;
+}
+
+.lp-recaptcha__terms {
+  font-size: 8px;
+}
+
+/* ---------- 按鈕 ---------- */
+.lp-page .lp-btn {
+  display: inline-block;
+  min-width: 12rem;
+  padding: 0.7rem 2rem;
+  border: 2px solid var(--lp-btn);
+  border-radius: 999px;
+  background: var(--lp-btn);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.lp-page .lp-btn:hover,
+.lp-page .lp-btn:focus {
+  border-color: var(--lp-btn-hover);
+  background: var(--lp-btn-hover);
+  color: #ffffff;
+}
+
+.lp-page .lp-btn--ghost {
+  background: transparent;
+  color: var(--lp-btn);
+}
+
+.lp-page .lp-btn--ghost:hover,
+.lp-page .lp-btn--ghost:focus {
+  background: var(--lp-btn);
+  color: #ffffff;
+}
+
+.lp-page .lp-btn--light {
+  border-color: #ffffff;
+  background: transparent;
+  color: #ffffff;
+}
+
+.lp-page .lp-btn--light:hover,
+.lp-page .lp-btn--light:focus {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #2d3e49;
+}
+
+.lp-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ---------- 一般區塊 ---------- */
+.lp-section {
+  position: relative;
+  padding: 56px 0;
+  overflow: hidden;
+}
+
+.lp-section--tall {
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+}
+
+.lp-section > .container,
+.lp-section > .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+.lp-section__title {
+  margin-bottom: 1.25rem;
+  font-size: 1.75rem;
+}
+
+.lp-white {
+  color: #ffffff;
+}
+
+.lp-shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 768px) {
+  .lp-section {
+    padding: 80px 0;
+  }
+
+  .lp-section--tall {
+    min-height: 640px;
+  }
+
+  .lp-section__title {
+    font-size: 2rem;
+  }
+}
+
+/* 半透明文字框 */
+.lp-panel {
+  padding: 24px;
+  background: rgba(51, 51, 51, 0.85);
+  color: #ffffff;
+}
+
+.lp-panel--light {
+  background: rgba(255, 255, 255, 0.88);
+  color: #333333;
+}
+
+.lp-mark {
+  color: #ffff00;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.lp-square-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-square-list li {
+  position: relative;
+  margin-bottom: 0.5em;
+  padding-left: 1.4em;
+}
+
+.lp-square-list li:last-child {
+  margin-bottom: 0;
+}
+
+.lp-square-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 0.6em;
+  height: 0.6em;
+  background: currentColor;
+}
+
+/* ---------- 左右圖文 ---------- */
+.lp-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.lp-split__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-split__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.lp-split__title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .lp-split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .lp-split--media-right .lp-split__media {
+    order: 2;
+  }
+
+  .lp-split__body {
+    padding: 40px 48px;
+  }
+
+  .lp-split__title {
+    font-size: 1.75rem;
+  }
+}
+
+/* ---------- 影片 ---------- */
+.lp-video {
+  padding: 40px 0;
+  background: #111111;
+}
+
+.lp-video__frame {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.lp-video iframe {
+  border: 0;
+}
+
+/* ---------- 頁尾資訊 ---------- */
+.lp-info {
+  padding: 32px 0;
+  background: #4f4f4f;
+  color: #ffffff;
+  font-size: 0.9375rem;
+}
+
+.lp-page .lp-info a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- 本頁樣式 ---------- */
+.lp-s171 {
+  --lp-accent: #12a095;
+  --lp-accent-hover: #0e8279;
+  --lp-title: #e38e2a;
+  --lp-btn: #cf9235;
+  --lp-btn-hover: #b57c27;
+}
+
+.lp-s171 .lp-cta-band {
+  background: #5b9e95;
+  color: #ffffff;
+}
+
+.lp-s171 .lp-cta-band__link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+<div class="lp-page lp-s171">
+<section class="lp-petition">
+  <picture class="lp-petition__bg">
+    <img src="https://www.cet-taiwan.org/sites/default/files/civicrm/custom/20190521_2_RtVhVlbm.jpg" alt="" width="1600" height="1060" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="lp-petition__inner container">
+    <div class="lp-petition__side">
+      <div class="lp-side-box">
+        <p>地球公民從2013年開始推動「礦業改革」，由於全民關注與24萬人的連署，8年來「礦業改革」已向前邁進，達成幾項重要的階段性目標。</p>
+        <p>台灣的採礦業不僅破壞生態環境，更嚴重侵害人權。原因是一部用了90年的老舊礦業法，嚴重偏向礦權業者，不需地主同意便能在私人土地挖礦，既有礦場也多數未經環境影響評估。在地球公民和連署民意的壓力下，礦業法連續兩次列為立法院優先法案。</p>
+        <p>打破礦業霸權，礦業修法的關鍵時刻，僅缺臨門一腳。我們需要更多人加入連署，挺身守護屬於大家的山林，一起促成本會期完成修法！</p>
+        <a class="lp-side-cta" href="https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&amp;id=13&amp;utm_source=web&amp;utm_medium=petition&amp;utm_campaign=mine" target="_blank" rel="noopener">捐款支持</a>
+      </div>
+      <a href="https://www.cet-taiwan.org/"><img class="lp-side-logo" src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/u143/logo-white.png" alt="地球公民基金會" width="2000" height="510" decoding="async"></a>
+    </div>
+    <div class="lp-petition__form">
+      <!-- 以下表單僅供內部參考版面，不會實際送出資料；reCAPTCHA 僅為外觀示意 -->
+    <form class="lp-pform" action="#" aria-label="連署表單（示意）">
+      <h1 class="lp-pform__title">礦業修法<br>勢在必行</h1>
+      <div class="lp-pform__progress">
+        <div class="lp-pform__bar" role="img" aria-label="已達成 241195 人，召集連署目標 300000 人">
+          <div class="lp-pform__fill" style="width: 81%;">已達成 241195 人</div>
+        </div>
+        <div class="lp-pform__goal">召集連署目標 300000人</div>
+      </div>
+      <div class="lp-pform__field">
+        <label class="lp-pform__label" for="pf-email">電子郵件地址<span class="lp-pform__req" title="此欄位不可空白。">*</span></label>
+        <input class="lp-pform__input" id="pf-email" name="email" type="email" maxlength="60" autocomplete="email">
+      </div>
+      <fieldset>
+        <legend class="visually-hidden">連署用資料表單</legend>
+        <div class="lp-pform__row">
+          <div class="lp-pform__field">
+            <label class="lp-pform__label" for="pf-last-name">姓<span class="lp-pform__req" title="此欄位不可空白。">*</span></label>
+            <input class="lp-pform__input" id="pf-last-name" name="last_name" type="text" maxlength="64" autocomplete="family-name">
+          </div>
+          <div class="lp-pform__field">
+            <label class="lp-pform__label" for="pf-first-name">名<span class="lp-pform__req" title="此欄位不可空白。">*</span></label>
+            <input class="lp-pform__input" id="pf-first-name" name="first_name" type="text" maxlength="64" autocomplete="given-name">
+          </div>
+        </div>
+        <div class="lp-pform__field">
+          <label class="lp-pform__label" for="pf-birth">出生年份<span class="lp-pform__req" title="此欄位不可空白。">*</span></label>
+          <input class="lp-pform__input lp-pform__input--date" id="pf-birth" name="birth_date" type="text" readonly>
+        </div>
+        <div class="lp-pform__field">
+          <label class="lp-pform__label" for="pf-phone">行動電話<span class="lp-pform__req" title="此欄位不可空白。">*</span></label>
+          <input class="lp-pform__input" id="pf-phone" name="phone" type="tel" maxlength="32" autocomplete="tel">
+        </div>
+        <label class="lp-pform__check">
+          <input type="checkbox" name="subscribe" value="1" checked>
+          <span>我要收到相關訊息(本會尊重並保障您的個資，可隨時取消訂閱，請見<a href="https://www.cet-taiwan.org/node/3261" target="_blank" rel="noopener">隱私權條款</a>)</span>
+        </label>
+      </fieldset>
+      <label class="lp-recaptcha">
+        <input class="visually-hidden" type="checkbox" aria-label="我不是機器人（示意）">
+        <span class="lp-recaptcha__box"></span>
+        <span class="lp-recaptcha__text">我不是機器人</span>
+        <span class="lp-recaptcha__brand">
+          <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+          reCAPTCHA
+          <span class="lp-recaptcha__terms">隱私權 - 條款</span>
+        </span>
+      </label>
+      <button class="lp-pform__submit" type="button">立即連署</button>
+    </form>
+    </div>
+  </div>
+</section>
+
+<section class="lp-video">
+  <div class="container">
+    <div class="lp-video__frame">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/FmHeo3POaiw?rel=0" title="【礦業法非修不可】" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section lp-section--tall">
+  <picture class="lp-bg">
+    <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20190521-7_0.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+  </picture>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-6">
+        <h2 class="lp-section__title lp-white lp-shadow">礦業修法五大重點</h2>
+        <div class="lp-panel">
+          <ul class="lp-square-list">
+            <li>修正侵害財產權的 <span class="lp-mark">霸王條款</span></li>
+            <li>既有礦場 <span class="lp-mark">補辦環境影響評估</span></li>
+            <li>申請採礦的業者要 <span class="lp-mark">提出關礦計畫</span></li>
+            <li>礦業開發 <span class="lp-mark">資訊公開透明</span> 改善黑箱現況</li>
+            <li>在原住民族生活範圍中採礦要 <span class="lp-mark">遵守原基法規定</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section lp-section--tall">
+  <picture class="lp-bg">
+    <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20190521-8_0.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+  </picture>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-7 col-lg-5">
+        <h2 class="lp-section__title lp-white lp-shadow">礦業必須轉型</h2>
+        <div class="lp-panel">
+          <p>台灣地狹人稠，採礦是必要之惡，在合理的區位開採適當的量，是產業能永續的第一步，政府必須積極面對，提出政策引領產業往對的方向發展。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section lp-section--tall">
+  <picture class="lp-bg">
+    <img src="https://www.cet-taiwan.org/sites/cet-taiwan.org/files/glazed-builder/20190521-9_0.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+  </picture>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-9 col-lg-6">
+        <h2 class="lp-section__title lp-white lp-shadow">8年來<br>我們一起促成的礦業改革</h2>
+        <div class="lp-panel">
+          <ul class="list-unstyled mb-0">
+            <li><strong>2021年法院判決撤銷亞泥展延，</strong><span class="lp-mark">礦業法修法剩下最後一哩路</span></li>
+            <li><strong>2019年</strong>推進修法，小英總統公開承諾修礦業法</li>
+            <li><strong>2018年</strong>促成政府修改法規、礦務局廢止無產量礦權</li>
+            <li><strong>2017年</strong>舉辦遊行，促成水泥業礦業政策環評及礦業法開始審查</li>
+            <li><strong>2016年</strong>揭露礦場鑽法規漏洞，開啟修法契機</li>
+            <li><strong>2014年</strong>揭露水質水量保護區內違法採礦</li>
+            <li><strong>2013年</strong>以來保安林內未有新設礦業權</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section lp-cta-band">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-12 col-lg-8">
+        <h2 class="lp-section__title mb-0">礦業法修正，讓產業和環境一起永續。<br>您的支持，是修法前進最大的動力！</h2>
+      </div>
+      <div class="col-12 col-lg-4 text-center text-lg-start">
+        <a class="lp-cta-band__link" href="https://www.cet-taiwan.org/mine/act3" target="_blank" rel="noopener">》進一步了解礦業改革</a>
+        <div><a class="lp-btn" href="https://www.cet-taiwan.org/civicrm/contribute/transact?reset=1&amp;id=13&amp;utm_source=web&amp;utm_medium=petition&amp;utm_campaign=mine" target="_blank" rel="noopener">捐款支持</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-info">
+  <div class="container text-center text-lg-end">
+    <a href="https://www.cet-taiwan.org/node/3261" target="_blank" rel="noopener">隱私政策與個人資料收集聲明</a>
+  </div>
+</footer>
+</div>
+</body>
+</html>
