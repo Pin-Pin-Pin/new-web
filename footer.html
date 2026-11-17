@@ -16,6 +16,31 @@
         margin: 0;
         font-family: "Noto Sans TC", sans-serif;
     }
+    /* Drupal 文字格式「網址轉連結」會把信箱自動包成 mailto → 取消點擊與 hover 底線，維持純文字 */
+    .contact-email a,
+    .contact-email a:hover,
+    .contact-email a:focus {
+        color: inherit;
+        text-decoration: none;
+        cursor: text;
+        pointer-events: none;
+    }
+    .contact-email svg.mailto,
+    .contact-email span.mailto {
+        display: none;
+    }
+    /* 信封圖示：內嵌 SVG（不載入 icon 字型、無額外請求），以 currentColor 跟隨文字白色 */
+    .contact-email .contact-email__text::before {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-inline-end: 6px;
+        vertical-align: -3px;
+        background-color: currentColor;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='m3 7 9 6 9-6'/%3E%3C/svg%3E") no-repeat center / contain;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='m3 7 9 6 9-6'/%3E%3C/svg%3E") no-repeat center / contain;
+    }
     .sub-footer-offices {
         display: grid;
         grid-template-columns: 1fr;
@@ -123,7 +148,7 @@
     }
 </style>
 <div class="contact-email">
-    <p style="text-decoration: none;">cet@cet-taiwan.org</p>
+    <p class="contact-email__text">cet@cet-taiwan.org</p>
 </div>
 <div class="sub-footer-offices">
     <div class="office">
@@ -156,5 +181,5 @@
 </div>
 
 <!-- 地圖超連結＋活動頁同款右上箭頭（白版，適頁尾深底）
--email最常被問，希望維持顯示信箱純文字
+-email最常被問，希望維持顯示信箱純文字（前加信封圖示，不做 mailto、不加底線）；放辦公室上方，<992 置中、≥992 靠左對齊三欄
 -<768／≥992：地址與電話直向；768–991：地址｜電話同行 -->
